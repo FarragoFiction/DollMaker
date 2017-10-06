@@ -1,6 +1,7 @@
 import "HomestuckDollLib.dart";
 import "dart:html";
 import "includes/colour.dart";
+import "DollMakerTools.dart";
 
 HomestuckDoll doll;
 
@@ -37,6 +38,11 @@ void setupForms() {
         dataBox.select();
         document.execCommand('copy');
     });
+
+    Element layerControls = querySelector("#layerControls");
+    for(SpriteLayer l in doll.layers) {
+        DollMakerTolls.drawDropDownForSpriteLayer(layerControls, l,drawDollCreator);
+    }
 
     drawDollCreator();
 }

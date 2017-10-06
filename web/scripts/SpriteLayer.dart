@@ -6,6 +6,7 @@ typedef void JROnClick();
 class SpriteLayer {
     String imgFormat;
     String imgNameBase;
+    String name;
     int _imgNumber;
     int maxImageNumber;
     String description = "";
@@ -13,7 +14,7 @@ class SpriteLayer {
 
     bool changed = true; //generate descriptions when created, that will set it to false
 
-    SpriteLayer(this.imgNameBase, this._imgNumber, this.maxImageNumber, [this.syncedWith = null, this.imgFormat = "png"]) {
+    SpriteLayer(this.name, this.imgNameBase, this._imgNumber, this.maxImageNumber, [this.syncedWith = null, this.imgFormat = "png"]) {
         if(syncedWith == null) syncedWith = new List<SpriteLayer>();
     }
 
@@ -45,7 +46,7 @@ class ClickableSpriteLayer extends SpriteLayer {
     double height;
     JROnClick jrOnClick;
 
-    ClickableSpriteLayer(String imgNameBase, int imgNumber,int maxImageNumber, this.topLeftX, this.topLeftY, this.width, this.height,  [List<SpriteLayer> syncedWith = null,String format = "png"]): super(imgNameBase, imgNumber,maxImageNumber,syncedWith,format) {
+    ClickableSpriteLayer(String name, String imgNameBase, int imgNumber,int maxImageNumber, this.topLeftX, this.topLeftY, this.width, this.height,  [List<SpriteLayer> syncedWith = null,String format = "png"]): super(name, imgNameBase, imgNumber,maxImageNumber,syncedWith,format) {
         jrOnClick = incrementNumber;
     }
 
