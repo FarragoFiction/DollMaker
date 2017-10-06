@@ -49,21 +49,22 @@ abstract class DollMakerTools {
 
     static void drawColorPickersForPallete(Element div, Palette palette, dynamic callback) {
         for(String name in palette.names) {
-            drawColorPicker(name, div, palette[name]);
+            drawColorPicker(name, div, palette[name], palette, callback);
         }
         callback();
     }
 
     //TODO is it enough to modify this color, or do I need to pass it back?
-    static void drawColorPicker(String name, Element div, Colour color) {
+    static void drawColorPicker(String name, Element div, Colour color, Palette source, dynamic callback) {
         String html = "<input id = '${name}' type='color' name='${name}' value='${color.toStyleString()}'>";
         appendHtml(div, html);
 
         InputElement colorDiv = querySelector("#${name}");
         colorDiv.onChange.listen((Event e) {
-            String colorString = (querySelector("#customColor") as InputElement).value;
+            String colorString = (querySelector("#${name}") as InputElement).value;
             Colour newColor = new Colour.fromStyleString(colorString);
-            color.setRGB(newColor.red, newColor.green, newColor.blue);
+            source.add(name, newColor, true); //overright that shit.
+            callback();
         });
     }
 
