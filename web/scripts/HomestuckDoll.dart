@@ -85,18 +85,20 @@ class HomestuckDoll extends Doll {
             if(l.imgNumber == 0) l.imgNumber = 1;
         }
 
+        HomestuckPalette h = palette as HomestuckPalette;
         palette.add(HomestuckPalette._ACCENT, new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255)), true);
         palette.add(HomestuckPalette._ASPECT_LIGHT, new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255)), true);
-        palette.add(HomestuckPalette._ASPECT_DARK, new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255)), true);
+
+        palette.add(HomestuckPalette._ASPECT_DARK, new Colour(h.aspect_light.red, h.aspect_light.green, h.aspect_light.blue)..setHSV(h.aspect_light.hue, h.aspect_light.saturation, h.aspect_light.value/2), true);
         palette.add(HomestuckPalette._SHOE_LIGHT, new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255)), true);
-        palette.add(HomestuckPalette._SHOE_DARK, new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255)), true);
+        palette.add(HomestuckPalette._SHOE_DARK, new Colour(h.shoe_light.red, h.shoe_light.green, h.shoe_light.blue)..setHSV(h.shoe_light.hue, h.shoe_light.saturation, h.shoe_light.value/2), true);
         palette.add(HomestuckPalette._CLOAK_LIGHT, new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255)), true);
-        palette.add(HomestuckPalette._CLOAK_DARK, new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255)), true);
-        palette.add(HomestuckPalette._CLOAK_MID, new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255)), true);
+        palette.add(HomestuckPalette._CLOAK_DARK, new Colour(h.cloak_light.red, h.cloak_light.green, h.cloak_light.blue)..setHSV(h.cloak_light.hue, h.cloak_light.saturation, h.cloak_light.value/2), true);
+        palette.add(HomestuckPalette._CLOAK_MID, new Colour(h.cloak_dark.red, h.cloak_dark.green, h.cloak_dark.blue)..setHSV(h.cloak_dark.hue, h.cloak_dark.saturation, h.cloak_dark.value*3), true);
         palette.add(HomestuckPalette._SHIRT_LIGHT, new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255)), true);
-        palette.add(HomestuckPalette._SHIRT_DARK, new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255)), true);
+        palette.add(HomestuckPalette._SHIRT_DARK, new Colour(h.shirt_light.red, h.shirt_light.green, h.shirt_light.blue)..setHSV(h.shirt_light.hue, h.shirt_light.saturation, h.shirt_light.value/2), true);
         palette.add(HomestuckPalette._PANTS_LIGHT, new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255)), true);
-        palette.add(HomestuckPalette._PANTS_DARK, new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255)), true);
+        palette.add(HomestuckPalette._PANTS_DARK, new Colour(h.pants_light.red, h.pants_light.green, h.pants_light.blue)..setHSV(h.pants_light.hue, h.pants_light.saturation, h.pants_light.value/2), true);
         palette.add(HomestuckPalette._HAIR_ACCENT, new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255)), true);
         palette.add(HomestuckPalette._HAIR_MAIN, new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255)), true);
     }
