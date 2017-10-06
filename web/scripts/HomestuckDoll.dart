@@ -43,8 +43,8 @@ class HomestuckDoll extends Doll {
 
         layers.add(hairBack);
         layers.add(new SpriteLayer("Body","$folder/Body/", 1, maxBody));
-        layers.add(new SpriteLayer("LeftEye","$folder/LeftEye/", 0, maxEye));
-        layers.add(new SpriteLayer("RightEye","$folder/RightEye/", 0, maxEye));
+        layers.add(new SpriteLayer("LeftEye","$folder/LeftEye/", 1, maxEye));
+        layers.add(new SpriteLayer("RightEye","$folder/RightEye/", 1, maxEye));
         layers.add(hairTop);
         randomize();
     }
