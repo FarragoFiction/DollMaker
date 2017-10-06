@@ -14,7 +14,7 @@ class HomestuckDoll extends Doll {
     final int maxBody = 65; //holy shit, is tht really how many we have?
 
     @override
-    Palette palette = new AspectPalette()
+    Palette palette = new HomestuckPalette()
         ..accent = '#FF9B00'
         ..aspect_light = '#FF9B00'
         ..aspect_dark = '#FF8700'
@@ -32,8 +32,7 @@ class HomestuckDoll extends Doll {
 
     HomestuckDoll() {
         layers.add(new SpriteLayer("$folder/Body/", 1, maxBody));
-
-        randomizeNoColor();
+        randomize();
     }
 
     HomestuckDoll.fromDataString(String dataString){
@@ -71,6 +70,19 @@ class HomestuckDoll extends Doll {
             l.imgNumber = rand.nextInt(l.maxImageNumber+1);
             if(l.imgNumber == 0) l.imgNumber = 1;
         }
+        palette = new HomestuckPalette()
+            ..accent = new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255))
+            ..aspect_light = new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255))
+            ..aspect_dark = new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255))
+            ..shoe_light = new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255))
+            ..shoe_dark = new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255))
+            ..cloak_light =new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255))
+            ..cloak_mid = new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255))
+            ..cloak_dark = new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255))
+            ..shirt_light = new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255))
+            ..shirt_dark = new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255))
+            ..pants_light = new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255))
+            ..pants_dark = new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255));
     }
 
      void randomizeNoColor() {
@@ -86,7 +98,7 @@ class HomestuckDoll extends Doll {
 }
 
 /// Convenience class for getting/setting aspect palettes
-class AspectPalette extends Palette {
+class HomestuckPalette extends Palette {
     static String _ACCENT = "accent";
     static String _ASPECT_LIGHT = "aspect1";
     static String _ASPECT_DARK = "aspect2";

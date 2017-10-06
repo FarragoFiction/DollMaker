@@ -174,7 +174,7 @@ abstract class ReferenceColours {
     static Colour HAIR = new Colour.fromHex(0x313131);
     static Colour HAIR_ACCESSORY = new Colour.fromHex(0x202020);
 
-    static AspectPalette SPRITE_PALETTE = new AspectPalette()
+    static HomestuckPalette SPRITE_PALETTE = new HomestuckPalette()
         ..aspect_light = '#FEFD49'
         ..aspect_dark = '#FEC910'
         ..shoe_light = '#10E0FF'
@@ -187,7 +187,7 @@ abstract class ReferenceColours {
         ..pants_light = '#E76700'
         ..pants_dark = '#CA5B00';
 
-    static AspectPalette PROSPIT_PALETTE = new AspectPalette()
+    static HomestuckPalette PROSPIT_PALETTE = new HomestuckPalette()
         ..aspect_light = "#FFFF00"
         ..aspect_dark = "#FFC935"
     // no shoe colours here on purpose
@@ -199,7 +199,7 @@ abstract class ReferenceColours {
         ..pants_light = "#FFB71C"
         ..pants_dark = "#C67D00";
 
-    static AspectPalette DERSE_PALETTE = new AspectPalette()
+    static HomestuckPalette DERSE_PALETTE = new HomestuckPalette()
         ..aspect_light = "#F092FF"
         ..aspect_dark = "#D456EA"
     // no shoe colours here on purpose
@@ -211,7 +211,7 @@ abstract class ReferenceColours {
         ..pants_light = "#B400CC"
         ..pants_dark = "#770E87";
 
-    static AspectPalette ROBOT_PALETTE = new AspectPalette()
+    static HomestuckPalette ROBOT_PALETTE = new HomestuckPalette()
         ..aspect_light = "#0000FF"
         ..aspect_dark = "#0022cf"
         ..shoe_light = "#B6B6B6"
