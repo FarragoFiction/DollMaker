@@ -10,12 +10,12 @@ class HomestuckDoll extends Doll {
 
     @override
     String folder = "Homestuck";
-    final int maxBody = 66; //holy shit, is tht really how many we have?
+    final int maxBody = 65; //holy shit, is tht really how many we have?
 
 
 
     HomestuckDoll() {
-        layers.add(new SpriteLayer("$folder/Body", 1, maxBody));
+        layers.add(new SpriteLayer("$folder/Body/", 1, maxBody));
 
         randomizeNoColor();
     }
