@@ -91,7 +91,9 @@ class HomestuckDoll extends Doll {
             ..shirt_light = new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255))
             ..shirt_dark = new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255))
             ..pants_light = new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255))
-            ..pants_dark = new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255));
+            ..pants_dark = new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255))
+            ..hair_main = new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255))
+            ..hair_accent = new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255));
     }
 
      void randomizeNoColor() {
@@ -120,6 +122,8 @@ class HomestuckPalette extends Palette {
     static String _SHIRT_DARK = "shirt2";
     static String _PANTS_LIGHT = "pants1";
     static String _PANTS_DARK = "pants2";
+    static String _HAIR_MAIN = "hairMain";
+    static String _HAIR_ACCENT = "hairAccent";
 
     static Colour _handleInput(Object input) {
         if (input is Colour) {
@@ -190,4 +194,12 @@ class HomestuckPalette extends Palette {
     Colour get pants_dark => this[_PANTS_DARK];
 
     void set pants_dark(dynamic c) => this.add(_PANTS_DARK, _handleInput(c), true);
+
+    Colour get hair_main => this[_HAIR_MAIN];
+
+    void set hair_main(dynamic c) => this.add(_HAIR_MAIN, _handleInput(c), true);
+
+    Colour get hair_accent => this[_HAIR_ACCENT];
+
+    void set hair_accent(dynamic c) => this.add(_HAIR_ACCENT, _handleInput(c), true);
 }

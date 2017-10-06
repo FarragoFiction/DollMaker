@@ -193,7 +193,9 @@ abstract class ReferenceColours {
         ..shirt_light = '#FF8800'
         ..shirt_dark = '#D66E04'
         ..pants_light = '#E76700'
-        ..pants_dark = '#CA5B00';
+        ..pants_dark = '#CA5B00'
+        ..hair_main = '#313131'
+        ..hair_accent = '#202020';
 
     static HomestuckPalette PROSPIT_PALETTE = new HomestuckPalette()
         ..aspect_light = "#FFFF00"
