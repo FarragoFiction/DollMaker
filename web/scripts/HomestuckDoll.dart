@@ -12,8 +12,8 @@ class HomestuckDoll extends Doll {
     @override
     String folder = "Homestuck";
     final int maxBody = 65; //holy shit, is tht really how many we have?
-    final int maxHairBack = 74;
-    final int maxHairTop = 74;
+    final int maxHair = 74;
+    final int maxEye = 1;
 
 
     @override
@@ -29,18 +29,22 @@ class HomestuckDoll extends Doll {
         ..shirt_light = '#EFEFEF'
         ..shirt_dark = '#DBDBDB'
         ..pants_light = '#C6C6C6'
-        ..pants_dark = '#ADADAD';
+        ..eye_whites = '#ffffff'
+        ..pants_dark = '#ADADAD'
+        ..skin = '#ffffff';
 
 
 
     HomestuckDoll() {
-        SpriteLayer hairTop = new SpriteLayer("Hair","$folder/HairTop/", 1, maxHairTop);
-        SpriteLayer hairBack = new SpriteLayer("Hair","$folder/HairBack/", 1, maxHairBack, <SpriteLayer>[hairTop]);
+        SpriteLayer hairTop = new SpriteLayer("Hair","$folder/HairTop/", 1, maxHair);
+        SpriteLayer hairBack = new SpriteLayer("Hair","$folder/HairBack/", 1, maxHair, <SpriteLayer>[hairTop]);
         hairTop.syncedWith.add(hairBack);
         hairBack.slave = true; //can't be selected on it's own
 
         layers.add(hairBack);
         layers.add(new SpriteLayer("Body","$folder/Body/", 1, maxBody));
+        layers.add(new SpriteLayer("LeftEye","$folder/LeftEye/", 0, maxEye));
+        layers.add(new SpriteLayer("RightEye","$folder/RightEye/", 0, maxEye));
         layers.add(hairTop);
         randomize();
     }
@@ -125,6 +129,8 @@ class HomestuckPalette extends Palette {
     static String _PANTS_DARK = "pants2";
     static String _HAIR_MAIN = "hairMain";
     static String _HAIR_ACCENT = "hairAccent";
+    static String _EYE_WHITES = "eyeWhites";
+    static String _SKIN = "skin";
 
     static Colour _handleInput(Object input) {
         if (input is Colour) {
@@ -203,6 +209,14 @@ class HomestuckPalette extends Palette {
     Colour get hair_accent => this[_HAIR_ACCENT];
 
     void set hair_accent(dynamic c) => this.add(_HAIR_ACCENT, _handleInput(c), true);
+
+    Colour get eye_whites => this[_EYE_WHITES];
+
+    void set eye_whites(dynamic c) => this.add(_EYE_WHITES, _handleInput(c), true);
+
+    Colour get skin => this[_SKIN];
+
+    void set skin(dynamic c) => this.add(_SKIN, _handleInput(c), true);
 }
 
 
@@ -239,7 +253,9 @@ abstract class ReferenceColours {
         ..pants_light = '#E76700'
         ..pants_dark = '#CA5B00'
         ..hair_main = '#313131'
-        ..hair_accent = '#202020';
+        ..hair_accent = '#202020'
+        ..eye_whites = '#ffba29'
+        ..skin = '#ffffff';
 
     static HomestuckPalette PROSPIT_PALETTE = new HomestuckPalette()
         ..aspect_light = "#FFFF00"

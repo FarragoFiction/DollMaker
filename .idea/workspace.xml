@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6733a3fd-04cc-4bcc-ae10-a16d8433490d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.html" afterPath="$PROJECT_DIR$/web/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/scripts/DollMakerTools.dart" afterPath="$PROJECT_DIR$/web/scripts/DollMakerTools.dart" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/images/Homestuck/EyeLeft/0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/images/Homestuck/EyeRight/0.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/scripts/HomestuckDoll.dart" afterPath="$PROJECT_DIR$/web/scripts/HomestuckDoll.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/scripts/HomestuckDollController.dart" afterPath="$PROJECT_DIR$/web/scripts/HomestuckDollController.dart" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/scripts/Renderer.dart" afterPath="$PROJECT_DIR$/web/scripts/Renderer.dart" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,8 +21,8 @@
       <file leaf-file-name="Renderer.dart" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/scripts/Renderer.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="164" column="0" lean-forward="true" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
+            <state relative-caret-position="147">
+              <caret line="110" column="38" lean-forward="false" selection-start-line="110" selection-start-column="38" selection-end-line="110" selection-end-column="38" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -31,11 +30,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DollMakerTools.dart" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DollMakerTools.dart" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/scripts/DollMakerTools.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="58" column="23" lean-forward="true" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
+            <state relative-caret-position="368">
+              <caret line="58" column="23" lean-forward="false" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -73,11 +72,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomestuckDoll.dart" pinned="false" current-in-tab="false">
+      <file leaf-file-name="HomestuckDoll.dart" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/scripts/HomestuckDoll.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="96" column="124" lean-forward="false" selection-start-line="96" selection-start-column="124" selection-end-line="96" selection-end-column="124" />
+            <state relative-caret-position="222">
+              <caret line="32" column="32" lean-forward="true" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -136,11 +135,11 @@
         <option value="$PROJECT_DIR$/web/scripts/HomestuckDollLib.dart" />
         <option value="$PROJECT_DIR$/web/scripts/SpriteLayer.dart" />
         <option value="$PROJECT_DIR$/web/styles.css" />
-        <option value="$PROJECT_DIR$/web/scripts/Renderer.dart" />
         <option value="$PROJECT_DIR$/web/scripts/HomestuckDollController.dart" />
-        <option value="$PROJECT_DIR$/web/scripts/HomestuckDoll.dart" />
         <option value="$PROJECT_DIR$/web/index.html" />
         <option value="$PROJECT_DIR$/web/scripts/DollMakerTools.dart" />
+        <option value="$PROJECT_DIR$/web/scripts/Renderer.dart" />
+        <option value="$PROJECT_DIR$/web/scripts/HomestuckDoll.dart" />
       </list>
     </option>
   </component>
@@ -576,16 +575,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/scripts/Renderer.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="164" column="0" lean-forward="true" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/scripts/includes/colour.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="106">
@@ -612,14 +601,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/scripts/HomestuckDoll.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="96" column="124" lean-forward="false" selection-start-line="96" selection-start-column="124" selection-end-line="96" selection-end-column="124" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="67">
@@ -628,13 +609,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/scripts/Renderer.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="110" column="38" lean-forward="false" selection-start-line="110" selection-start-column="38" selection-end-line="110" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/scripts/DollMakerTools.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="58" column="23" lean-forward="true" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
+        <state relative-caret-position="368">
+          <caret line="58" column="23" lean-forward="false" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/scripts/HomestuckDoll.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="32" column="32" lean-forward="true" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>
