@@ -10,6 +10,8 @@ class SpriteLayer {
     int _imgNumber;
     int maxImageNumber;
     String description = "";
+    //slaves just match whatever another thingy tells them to do.
+    bool slave = false;
     List<SpriteLayer> syncedWith; //for things like hair where they should always match.
 
     bool changed = true; //generate descriptions when created, that will set it to false

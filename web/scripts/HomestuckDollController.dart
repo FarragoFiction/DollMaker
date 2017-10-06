@@ -30,8 +30,6 @@ void loadDoll() {
 void setupForms() {
     querySelector("#randomize").onClick.listen((e) => randomizeDoll());
 
-
-
     ButtonElement copyButton = querySelector("#copyButton");
     copyButton.onClick.listen((Event e) {
         TextAreaElement dataBox = querySelector("#shareableURL");
@@ -50,6 +48,9 @@ void setupForms() {
 
 
 void drawDollCreator() {
+    for(SpriteLayer l in doll.layers) {
+        DollMakerTolls.syncDropDownToSprite(l);
+    }
     CanvasElement canvas = querySelector("#doll_creator");
     Renderer.clearCanvas(canvas);
     Renderer.drawDoll(canvas, doll);

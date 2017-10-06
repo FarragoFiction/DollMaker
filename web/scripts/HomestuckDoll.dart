@@ -37,6 +37,7 @@ class HomestuckDoll extends Doll {
         SpriteLayer hairTop = new SpriteLayer("Hair","$folder/HairTop/", 1, maxHairTop);
         SpriteLayer hairBack = new SpriteLayer("Hair","$folder/HairBack/", 1, maxHairBack, <SpriteLayer>[hairTop]);
         hairTop.syncedWith.add(hairBack);
+        hairBack.slave = true; //can't be selected on it's own
 
         layers.add(hairBack);
         layers.add(new SpriteLayer("Body","$folder/Body/", 1, maxBody));

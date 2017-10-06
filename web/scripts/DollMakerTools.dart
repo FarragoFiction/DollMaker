@@ -5,10 +5,16 @@ import "includes/palette.dart";
 
 abstract class DollMakerTolls {
 
+    static void syncDropDownToSprite(SpriteLayer layer) {
+        SelectElement drawnDropDown = querySelector("#${layer.name}");
+        drawnDropDown.value = "${layer.imgNumber}";
+    }
+
     static void drawDropDownForSpriteLayer(Element div, SpriteLayer layer, dynamic callback) {
+        if(layer.slave) return; //this will be set by owner.
         //drop down should be set to whatever the layer's img number is,
         //and on change it should change the layers img number
-        String html = "<div class = 'dollDropDown'>${layer.name}<select id = '${layer.name}' name='${layer.name}'>";
+        String html = "<div class = 'dollDropDown'><span class = 'dropDownLabel'>${layer.name}<span><select id = '${layer.name}' name='${layer.name}'>";
         for (int i = 0; i <= layer.maxImageNumber; i++) {
             if (layer.imgNumber == i) {
                 html += '<option  selected = "selected" value="$i">$i</option>';
