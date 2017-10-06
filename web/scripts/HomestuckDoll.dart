@@ -13,7 +13,9 @@ class HomestuckDoll extends Doll {
     String folder = "Homestuck";
     final int maxBody = 65; //holy shit, is tht really how many we have?
     final int maxHair = 74;
-    final int maxEye = 1;
+    final int maxEye = 7;
+    final int maxMouth = 3;
+    final int maxSymbol = 19;
 
 
     @override
@@ -43,8 +45,10 @@ class HomestuckDoll extends Doll {
 
         layers.add(hairBack);
         layers.add(new SpriteLayer("Body","$folder/Body/", 1, maxBody));
+        layers.add(new SpriteLayer("Symbol","$folder/Symbol/", 1, maxSymbol));
         layers.add(new SpriteLayer("LeftEye","$folder/LeftEye/", 1, maxEye));
         layers.add(new SpriteLayer("RightEye","$folder/RightEye/", 1, maxEye));
+        layers.add(new SpriteLayer("Mouth","$folder/Mouth/", 1, maxMouth));
         layers.add(hairTop);
         randomize();
     }
@@ -79,9 +83,12 @@ class HomestuckDoll extends Doll {
 
     void randomize() {
         Random rand = new Random();
-        //color = new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255));
+        int firstEye = -100;
         for(SpriteLayer l in layers) {
             l.imgNumber = rand.nextInt(l.maxImageNumber+1);
+            //keep eyes synced unless player decides otherwise
+            if(firstEye > 0 && l.imgNameBase.contains("Eye")) l.imgNumber = firstEye;
+            if(firstEye < 0 && l.imgNameBase.contains("Eye")) firstEye = l.imgNumber;
             if(l.imgNumber == 0) l.imgNumber = 1;
         }
 

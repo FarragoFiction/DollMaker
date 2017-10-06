@@ -108,6 +108,14 @@ class Renderer {
             loadImage("${doll.folder}/Body/$i.png", callback);
         }
 
+        for(int i = 0; i<=doll.maxMouth; i++) {
+            loadImage("${doll.folder}/Mouth/$i.png", callback);
+        }
+
+        for(int i = 0; i<=doll.maxSymbol; i++) {
+            loadImage("${doll.folder}/Symbol/$i.png", callback);
+        }
+
         for(int i = 0; i<=doll.maxHair; i++) {
             loadImage("${doll.folder}/HairTop/$i.png", callback);
             loadImage("${doll.folder}/HairBack/$i.png", callback);
