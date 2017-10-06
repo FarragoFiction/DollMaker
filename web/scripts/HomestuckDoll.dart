@@ -12,6 +12,9 @@ class HomestuckDoll extends Doll {
     @override
     String folder = "Homestuck";
     final int maxBody = 65; //holy shit, is tht really how many we have?
+    final int maxHairBack = 74;
+    final int maxHairTop = 74;
+
 
     @override
     Palette palette = new HomestuckPalette()
@@ -31,7 +34,9 @@ class HomestuckDoll extends Doll {
 
 
     HomestuckDoll() {
+        layers.add(new SpriteLayer("$folder/HairBack/", 1, maxHairBack));
         layers.add(new SpriteLayer("$folder/Body/", 1, maxBody));
+        layers.add(new SpriteLayer("$folder/HairTop/", 1, maxHairTop));
         randomize();
     }
 

@@ -107,6 +107,14 @@ class Renderer {
         for(int i = 0; i<=doll.maxBody; i++) {
             loadImage("${doll.folder}/Body/$i.png", callback);
         }
+
+        for(int i = 0; i<=doll.maxHairTop; i++) {
+            loadImage("${doll.folder}/HairTop/$i.png", callback);
+        }
+
+        for(int i = 0; i<=doll.maxHairBack; i++) {
+            loadImage("${doll.folder}/HairBack/$i.png", callback);
+        }
     }
 
     static void loadImage(String img, dynamic callback) {
