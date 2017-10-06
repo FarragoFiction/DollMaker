@@ -3,11 +3,22 @@ import "dart:html";
 import "includes/colour.dart";
 import "includes/palette.dart";
 
-abstract class DollMakerTolls {
+abstract class DollMakerTools {
 
     static void syncDropDownToSprite(SpriteLayer layer) {
         SelectElement drawnDropDown = querySelector("#${layer.name}");
         drawnDropDown.value = "${layer.imgNumber}";
+    }
+
+    static void syncColorPickersToSprite(Palette palette) {
+        for(String name in palette.names) {
+            syncColorPickerToColor(name, palette[name]);
+        }
+    }
+
+    static void syncColorPickerToColor(String name, Colour color){
+        InputElement drawnDropDown = querySelector("#${name}");
+        drawnDropDown.value = "${color.toStyleString()}";
     }
 
     static void drawDropDownForSpriteLayer(Element div, SpriteLayer layer, dynamic callback) {
@@ -36,15 +47,24 @@ abstract class DollMakerTolls {
 
     }
 
-    static void drawColorPickersForPallete(Element div, Palette palette) {
-        /*for(Colour c in palette.iterator) {
-            //TODO why isn't an iterator an iterable? how do i get the list of colors in a palette?
-        }*/
+    static void drawColorPickersForPallete(Element div, Palette palette, dynamic callback) {
+        for(String name in palette.names) {
+            drawColorPicker(name, div, palette[name]);
+        }
+        callback();
     }
 
     //TODO is it enough to modify this color, or do I need to pass it back?
-    static void drawColorPicker(Element div, Colour color) {
+    static void drawColorPicker(String name, Element div, Colour color) {
+        String html = "<input id = '${name}' type='color' name='${name}' value='${color.toStyleString()}'>";
+        appendHtml(div, html);
 
+        InputElement colorDiv = querySelector("#${name}");
+        colorDiv.onChange.listen((Event e) {
+            String colorString = (querySelector("#customColor") as InputElement).value;
+            Colour newColor = new Colour.fromStyleString(colorString);
+            color.setRGB(newColor.red, newColor.green, newColor.blue);
+        });
     }
 
     static void appendHtml(Element element, String html) {
