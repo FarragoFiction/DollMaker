@@ -14,7 +14,7 @@ abstract class DollMakerTolls {
         if(layer.slave) return; //this will be set by owner.
         //drop down should be set to whatever the layer's img number is,
         //and on change it should change the layers img number
-        String html = "<div class = 'dollDropDown'><span class = 'dropDownLabel'>${layer.name}<span><select id = '${layer.name}' name='${layer.name}'>";
+        String html = "<div class = 'dollDropDownDiv'><span class = 'dropDownLabel'>${layer.name}:</span><select class = 'dollDropDown' id = '${layer.name}' name='${layer.name}'>";
         for (int i = 0; i <= layer.maxImageNumber; i++) {
             if (layer.imgNumber == i) {
                 html += '<option  selected = "selected" value="$i">$i</option>';
