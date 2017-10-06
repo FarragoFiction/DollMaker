@@ -56,7 +56,7 @@ abstract class DollMakerTools {
 
     //TODO is it enough to modify this color, or do I need to pass it back?
     static void drawColorPicker(String name, Element div, Colour color, Palette source, dynamic callback) {
-        String html = "<input id = '${name}' type='color' name='${name}' value='${color.toStyleString()}'>";
+        String html = "<input alt = '$name' id = '${name}' type='color' name='${name}' value='${color.toStyleString()}'>";
         appendHtml(div, html);
 
         InputElement colorDiv = querySelector("#${name}");

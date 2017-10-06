@@ -37,6 +37,7 @@ void setupForms() {
         document.execCommand('copy');
     });
 
+
     Element layerControls = querySelector("#layerControls");
     Element colorControls = querySelector("#colorControls");
     for(SpriteLayer l in doll.layers) {
@@ -54,7 +55,7 @@ void drawDollCreator() {
     for(SpriteLayer l in doll.layers) {
         DollMakerTools.syncDropDownToSprite(l);
     }
-    DollMakerTools.syncColorPickersToSprite(doll.palette);
+    //DollMakerTools.syncColorPickersToSprite(doll.palette);
 
     CanvasElement canvas = querySelector("#doll_creator");
     Renderer.clearCanvas(canvas);
@@ -66,5 +67,7 @@ void drawDollCreator() {
 void randomizeDoll() {
     print("randomizing and redrawing");
     doll.randomize();
+    //can't do it in regular draw part cuz onChange is a bitch.
+    DollMakerTools.syncColorPickersToSprite(doll.palette);
     drawDollCreator();
 }
