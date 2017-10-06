@@ -37,7 +37,9 @@ abstract class DollMakerTolls {
     }
 
     static void drawColorPickersForPallete(Element div, Palette palette) {
-
+        /*for(Colour c in palette.iterator) {
+            //TODO why isn't an iterator an iterable? how do i get the list of colors in a palette?
+        }*/
     }
 
     //TODO is it enough to modify this color, or do I need to pass it back?
