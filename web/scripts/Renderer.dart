@@ -1,5 +1,6 @@
 import "Doll.dart";
 import "HomestuckDoll.dart";
+import "HomestuckTrollDoll.dart";
 import "dart:html";
 import "SpriteLayer.dart";
 import "includes/colour.dart";
@@ -120,6 +121,42 @@ class Renderer {
             loadImage("${doll.folder}/HairTop/$i.png", callback);
             loadImage("${doll.folder}/HairBack/$i.png", callback);
 
+        }
+
+
+        for(int i = 0; i<=doll.maxEye; i++) {
+            loadImage("${doll.folder}/LeftEye/$i.png", callback);
+            loadImage("${doll.folder}/RightEye/$i.png", callback);
+        }
+    }
+
+    static void loadHomestuckTrollDollParts(HomestuckTrollDoll doll, dynamic callback) {
+
+        for(int i = 0; i<=doll.maxBody; i++) {
+            loadImage("${doll.folder}/Body/$i.png", callback);
+        }
+
+        for(int i = 0; i<=doll.maxMouth; i++) {
+            loadImage("${doll.folder}/Mouth/$i.png", callback);
+        }
+
+        for(int i = 0; i<=doll.maxSymbol; i++) {
+            loadImage("${doll.folder}/Symbol/$i.png", callback);
+        }
+
+        for(int i = 0; i<=doll.maxHair; i++) {
+            loadImage("${doll.folder}/HairTop/$i.png", callback);
+            loadImage("${doll.folder}/HairBack/$i.png", callback);
+        }
+
+        for(int i = 0; i<=doll.maxHorn; i++) {
+            loadImage("${doll.folder}/LeftHorn/$i.png", callback);
+            loadImage("${doll.folder}/RightHorn/$i.png", callback);
+        }
+
+        for(int i = 0; i<=doll.maxFin; i++) {
+            loadImage("${doll.folder}/LeftFin/$i.png", callback);
+            loadImage("${doll.folder}/RightFin/$i.png", callback);
         }
 
 

@@ -38,6 +38,13 @@ class HomestuckDoll extends Doll {
 
 
     HomestuckDoll() {
+        initLayers();
+        randomize();
+    }
+
+    void initLayers()
+
+    {
         SpriteLayer hairTop = new SpriteLayer("Hair","$folder/HairTop/", 1, maxHair);
         SpriteLayer hairBack = new SpriteLayer("Hair","$folder/HairBack/", 1, maxHair, <SpriteLayer>[hairTop]);
         hairTop.syncedWith.add(hairBack);
@@ -50,7 +57,6 @@ class HomestuckDoll extends Doll {
         layers.add(new SpriteLayer("RightEye","$folder/RightEye/", 1, maxEye));
         layers.add(new SpriteLayer("Mouth","$folder/Mouth/", 1, maxMouth));
         layers.add(hairTop);
-        randomize();
     }
 
     HomestuckDoll.fromDataString(String dataString){
