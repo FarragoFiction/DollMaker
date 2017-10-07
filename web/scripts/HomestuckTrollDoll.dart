@@ -16,6 +16,8 @@ class HomestuckTrollDoll extends HomestuckDoll {
     @override
     String folder = "Homestuck";
 
+    HomestuckTrollDoll():super();
+
     @override
     Palette palette = new HomestuckTrollPalette()
         ..accent = '#FF9B00'
@@ -26,8 +28,8 @@ class HomestuckTrollDoll extends HomestuckDoll {
         ..cloak_light = '#A3A3A3'
         ..cloak_mid = '#999999'
         ..cloak_dark = '#898989'
-        ..shirt_light = '#EFEFEF'
-        ..shirt_dark = '#DBDBDB'
+        ..shirt_light = '#111111'
+        ..shirt_dark = '#000000'
         ..pants_light = '#C6C6C6'
         ..eye_white_left = '#ffba29'
         ..eye_white_right = '#ffba29'
@@ -63,6 +65,17 @@ class HomestuckTrollDoll extends HomestuckDoll {
         layers.add(finLeft);
         layers.add(new SpriteLayer("LeftHorn","$folder/LeftHorn/", 1, maxHorn));
         layers.add(new SpriteLayer("RightHorn","$folder/RightHorn/", 1, maxHorn));
+    }
+
+
+    HomestuckTrollDoll.fromDataString(String dataString){
+        Uint8List thingy = BASE64URL.decode(dataString);
+        ByteReader reader = new ByteReader(thingy.buffer, 0);
+        initFromReader(reader);
+    }
+
+    HomestuckTrollDoll.fromReader(ByteReader reader){
+        initFromReader(reader);
     }
 
     void randomize() {
@@ -102,8 +115,6 @@ class HomestuckTrollDoll extends HomestuckDoll {
         palette.add(HomestuckTrollPalette._CLOAK_LIGHT, new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255)), true);
         palette.add(HomestuckTrollPalette._CLOAK_DARK, new Colour(h.cloak_light.red, h.cloak_light.green, h.cloak_light.blue)..setHSV(h.cloak_light.hue, h.cloak_light.saturation, h.cloak_light.value/2), true);
         palette.add(HomestuckTrollPalette._CLOAK_MID, new Colour(h.cloak_dark.red, h.cloak_dark.green, h.cloak_dark.blue)..setHSV(h.cloak_dark.hue, h.cloak_dark.saturation, h.cloak_dark.value*3), true);
-        palette.add(HomestuckTrollPalette._SHIRT_LIGHT, new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255)), true);
-        palette.add(HomestuckTrollPalette._SHIRT_DARK, new Colour(h.shirt_light.red, h.shirt_light.green, h.shirt_light.blue)..setHSV(h.shirt_light.hue, h.shirt_light.saturation, h.shirt_light.value/2), true);
         palette.add(HomestuckTrollPalette._PANTS_LIGHT, new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255)), true);
         palette.add(HomestuckTrollPalette._PANTS_DARK, new Colour(h.pants_light.red, h.pants_light.green, h.pants_light.blue)..setHSV(h.pants_light.hue, h.pants_light.saturation, h.pants_light.value/2), true);
         palette.add(HomestuckTrollPalette._WING1, new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255)), true);

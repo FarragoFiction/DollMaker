@@ -63,25 +63,49 @@ class HomestuckDoll extends Doll {
     HomestuckDoll.fromDataString(String dataString){
         Uint8List thingy = BASE64URL.decode(dataString);
         ByteReader reader = new ByteReader(thingy.buffer, 0);
-        //initFromReader(reader);
+        initFromReader(reader);
     }
 
      HomestuckDoll.fromReader(ByteReader reader){
-         //initFromReader(reader);
+         initFromReader(reader);
      }
+
+    void initFromReader(ByteReader reader) {
+         initLayers();
+        int numFeatures = reader.readExpGolomb();
+        print("I think there are ${numFeatures} features");
+        for(SpriteLayer l in layers) {
+            l.imgNumber = reader.readByte();
+        }
+
+        HomestuckPalette newP = new HomestuckPalette();
+         for(String name in palette.names) {
+            Colour newColor = new Colour(reader.readByte(),reader.readByte(),reader.readByte());
+            newP.add(name, newColor, true);
+        }
+
+        for(String name in newP.names) {
+            palette.add(name, newP[name], true);
+        }
+    }
 
     String toDataBytesX([ByteBuilder builder = null]) {
         if(builder == null) builder = new ByteBuilder();
          int length = layers.length + 3;  //3 for colors
          builder.appendExpGolomb(length); //for length
-         //builder.appendByte(color.red);
-         //builder.appendByte(color.green);
-         //builder.appendByte(color.blue);
-        // builder.appendByte(quality);
+
          for(SpriteLayer l in layers) {
              print("adding ${l.imgNameBase} to data string builder.");
              builder.appendByte(l.imgNumber);
          }
+
+        for(String name in palette.names) {
+            Colour color = palette[name];
+             builder.appendByte(color.red);
+             builder.appendByte(color.green);
+             builder.appendByte(color.blue);
+         }
+
          return BASE64URL.encode(builder.toBuffer().asUint8List());
      }
 

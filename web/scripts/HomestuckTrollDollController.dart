@@ -19,7 +19,8 @@ void loadDoll() {
     String dataString = window.location.search;
     print("dataSTring is $dataString");
     if(dataString.isNotEmpty) {
-        throw("TODO");
+        doll = new HomestuckTrollDoll.fromDataString(dataString.substring(1)); //chop off leading ?
+
     }
 
     //whether i loaded or not, it's time to draw.
@@ -60,8 +61,8 @@ void drawDollCreator() {
     CanvasElement canvas = querySelector("#doll_creator");
     Renderer.clearCanvas(canvas);
     Renderer.drawDoll(canvas, doll,ReferenceColours.TROLL_PALETTE);
-    //TextAreaElement dataBox = querySelector("#shareableURL");
-    //dataBox.value = "${window.location.origin}${window.location.pathname}?${doll.toDataBytesX()}";
+    TextAreaElement dataBox = querySelector("#shareableURL");
+    dataBox.value = "${window.location.origin}${window.location.pathname}?${doll.toDataBytesX()}";
 }
 
 void randomizeDoll() {
