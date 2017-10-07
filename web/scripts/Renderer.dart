@@ -82,6 +82,10 @@ class Renderer {
 
     static void drawWhatever(CanvasElement canvas, String imageString) {
         CanvasRenderingContext2D ctx = canvas.getContext('2d');
+        //Loader.getResource(imageString).then((ImageElement loaded) {
+            // stuff afterwards
+        //});
+        //ctx.drawImage(img, 0, 0);
         ImageElement img = imageSelector(imageString);
         if (img == null) {
             //print("img was null!");
