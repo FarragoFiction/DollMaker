@@ -18,7 +18,12 @@ window.onload = function() {
     if (getParameterByName("mouths")  == "true"){
             renderAllMouths();
             $("#header").html("Mouths");
-        }
+    }
+
+    if (getParameterByName("bodies")  == "true"){
+                renderAllBodies();
+                $("#header").html("Bodies");
+    }
 
 
 }
@@ -111,6 +116,14 @@ function renderAllMouths(){
 	var maxHorn = 73;
 	for(var i = minHorn; i<= maxHorn; i++){
 			renderLayeredSprites([new SpritePart("images/Homestuck/Body/head.png", ""),new SpritePart("images/Homestuck/Mouth/"+i+".png","mouth "+i)]);
+	}
+}
+
+function renderAllBodies(){
+	var minHorn = 1
+	var maxHorn = 73;
+	for(var i = minHorn; i<= maxHorn; i++){
+			renderLayeredSprites([new SpritePart("images/Homestuck/Body/"+i+".png","body "+i)]);
 	}
 }
 
