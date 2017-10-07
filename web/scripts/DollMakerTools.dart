@@ -48,7 +48,9 @@ abstract class DollMakerTools {
     }
 
     static void drawColorPickersForPallete(Element div, Palette palette, dynamic callback) {
-        for(String name in palette.names) {
+        List<String> names = new List<String>.from(palette.names);
+        names.sort();
+        for(String name in names) {
             drawColorPicker(name, div, palette[name], palette, callback);
         }
         callback();

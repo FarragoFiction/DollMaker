@@ -11,7 +11,7 @@ class HomestuckDoll extends Doll {
 
     @override
     String folder = "Homestuck";
-    final int maxBody = 65; //holy shit, is tht really how many we have?
+    final int maxBody = 64; //holy shit, is tht really how many we have?
     final int maxHair = 74;
     final int maxEye = 7;
     final int maxMouth = 3;
@@ -34,6 +34,8 @@ class HomestuckDoll extends Doll {
         ..eye_white_left = '#ffffff'
         ..eye_white_right = '#ffffff'
         ..pants_dark = '#ADADAD'
+        ..hair_main = '#ffffff'
+        ..hair_accent = '#ADADAD'
         ..skin = '#ffffff';
 
 
@@ -79,7 +81,9 @@ class HomestuckDoll extends Doll {
         }
 
         HomestuckPalette newP = new HomestuckPalette();
-         for(String name in palette.names) {
+         List<String> names = new List<String>.from(palette.names);
+         names.sort();
+         for(String name in names) {
             Colour newColor = new Colour(reader.readByte(),reader.readByte(),reader.readByte());
             newP.add(name, newColor, true);
         }
@@ -99,7 +103,9 @@ class HomestuckDoll extends Doll {
              builder.appendByte(l.imgNumber);
          }
 
-        for(String name in palette.names) {
+        List<String> names = new List<String>.from(palette.names);
+        names.sort();
+        for(String name in names) {
             Colour color = palette[name];
              builder.appendByte(color.red);
              builder.appendByte(color.green);
