@@ -76,9 +76,6 @@ class HomestuckDoll extends Doll {
          initLayers();
         int numFeatures = reader.readExpGolomb();
         print("I think there are ${numFeatures} features");
-        for(SpriteLayer l in layers) {
-            l.imgNumber = reader.readByte();
-        }
 
         HomestuckPalette newP = new HomestuckPalette();
          List<String> names = new List<String>.from(palette.names);
@@ -91,6 +88,11 @@ class HomestuckDoll extends Doll {
         for(String name in newP.names) {
             palette.add(name, newP[name], true);
         }
+
+        //layer is last so can add new layers.
+         for(SpriteLayer l in layers) {
+             l.imgNumber = reader.readByte();
+         }
     }
 
     String toDataBytesX([ByteBuilder builder = null]) {
@@ -98,10 +100,7 @@ class HomestuckDoll extends Doll {
          int length = layers.length + 3;  //3 for colors
          builder.appendExpGolomb(length); //for length
 
-         for(SpriteLayer l in layers) {
-             print("adding ${l.imgNameBase} to data string builder.");
-             builder.appendByte(l.imgNumber);
-         }
+
 
         List<String> names = new List<String>.from(palette.names);
         names.sort();
@@ -111,6 +110,12 @@ class HomestuckDoll extends Doll {
              builder.appendByte(color.green);
              builder.appendByte(color.blue);
          }
+
+         //layer is last so can add new layers
+        for(SpriteLayer l in layers) {
+            print("adding ${l.imgNameBase} to data string builder.");
+            builder.appendByte(l.imgNumber);
+        }
 
          return BASE64URL.encode(builder.toBuffer().asUint8List());
      }
