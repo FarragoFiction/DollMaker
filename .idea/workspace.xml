@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6733a3fd-04cc-4bcc-ae10-a16d8433490d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/scripts/HomestuckTrollDoll.dart" afterPath="$PROJECT_DIR$/web/scripts/HomestuckTrollDoll.dart" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/scripts/Renderer.dart" afterPath="$PROJECT_DIR$/web/scripts/Renderer.dart" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,8 +19,8 @@
       <file leaf-file-name="Renderer.dart" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/scripts/Renderer.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1042">
-              <caret line="158" column="46" lean-forward="false" selection-start-line="158" selection-start-column="46" selection-end-line="158" selection-end-column="46" />
+            <state relative-caret-position="1885">
+              <caret line="143" column="43" lean-forward="false" selection-start-line="143" selection-start-column="43" selection-end-line="143" selection-end-column="43" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -27,21 +28,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomestuckDoll.dart" pinned="false" current-in-tab="false">
+      <file leaf-file-name="HomestuckDoll.dart" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/scripts/HomestuckDoll.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="235" column="0" lean-forward="false" selection-start-line="129" selection-start-column="0" selection-end-line="235" selection-end-column="0" />
+            <state relative-caret-position="195">
+              <caret line="264" column="32" lean-forward="true" selection-start-line="264" selection-start-column="32" selection-end-line="264" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomestuckTrollDoll.dart" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HomestuckTrollDoll.dart" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/scripts/HomestuckTrollDoll.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="61" column="26" lean-forward="false" selection-start-line="61" selection-start-column="26" selection-end-line="61" selection-end-column="26" />
+            <state relative-caret-position="-364">
+              <caret line="52" column="41" lean-forward="false" selection-start-line="52" selection-start-column="41" selection-end-line="52" selection-end-column="41" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -636,14 +637,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/scripts/HomestuckDoll.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="235" column="0" lean-forward="false" selection-start-line="129" selection-start-column="0" selection-end-line="235" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/troll_index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -654,8 +647,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/scripts/Renderer.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1042">
-          <caret line="158" column="46" lean-forward="false" selection-start-line="158" selection-start-column="46" selection-end-line="158" selection-end-column="46" />
+        <state relative-caret-position="1885">
+          <caret line="143" column="43" lean-forward="false" selection-start-line="143" selection-start-column="43" selection-end-line="143" selection-end-column="43" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
@@ -664,11 +657,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/scripts/HomestuckTrollDoll.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="61" column="26" lean-forward="false" selection-start-line="61" selection-start-column="26" selection-end-line="61" selection-end-column="26" />
+        <state relative-caret-position="-364">
+          <caret line="52" column="41" lean-forward="false" selection-start-line="52" selection-start-column="41" selection-end-line="52" selection-end-column="41" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/scripts/HomestuckDoll.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="264" column="32" lean-forward="true" selection-start-line="264" selection-start-column="32" selection-end-line="264" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -140,6 +140,10 @@ class Renderer {
             loadImage("${doll.folder}/Mouth/$i.png", callback);
         }
 
+        for(int i = 0; i<=doll.maxWing; i++) {
+            loadImage("${doll.folder}/Wings/$i.png", callback);
+        }
+
         for(int i = 0; i<=doll.maxSymbol; i++) {
             loadImage("${doll.folder}/Symbol/$i.png", callback);
         }
