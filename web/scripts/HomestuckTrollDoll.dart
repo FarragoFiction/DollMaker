@@ -90,7 +90,7 @@ class HomestuckTrollDoll extends HomestuckDoll {
             if(l.imgNumber == 0 && !l.imgNameBase.contains("Fin")) l.imgNumber = 1;
         }
 
-        HomestuckPalette h = palette as HomestuckPalette;
+        HomestuckTrollPalette h = palette as HomestuckTrollPalette;
         palette.add(HomestuckTrollPalette._ACCENT, new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255)), true);
         palette.add(HomestuckTrollPalette._ASPECT_LIGHT, new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255)), true);
 
@@ -104,6 +104,9 @@ class HomestuckTrollDoll extends HomestuckDoll {
         palette.add(HomestuckTrollPalette._SHIRT_DARK, new Colour(h.shirt_light.red, h.shirt_light.green, h.shirt_light.blue)..setHSV(h.shirt_light.hue, h.shirt_light.saturation, h.shirt_light.value/2), true);
         palette.add(HomestuckTrollPalette._PANTS_LIGHT, new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255)), true);
         palette.add(HomestuckTrollPalette._PANTS_DARK, new Colour(h.pants_light.red, h.pants_light.green, h.pants_light.blue)..setHSV(h.pants_light.hue, h.pants_light.saturation, h.pants_light.value/2), true);
+        palette.add(HomestuckTrollPalette._WING1, new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255)), true);
+        palette.add(HomestuckTrollPalette._WING2, new Colour(h.wing1.red, h.wing1.green, h.wing1.blue)..setHSV(h.wing1.hue, h.wing1.saturation, h.wing1.value/2), true);
+
     }
 
 
@@ -126,6 +129,8 @@ class HomestuckTrollPalette extends HomestuckPalette {
     static String _SHIRT_DARK = "shirt2";
     static String _PANTS_LIGHT = "pants1";
     static String _PANTS_DARK = "pants2";
+    static String _WING1 = "wing1";
+    static String _WING2 = "wing2";
     static String _HAIR_MAIN = "hairMain";
     static String _HAIR_ACCENT = "hairAccent";
     static String _EYE_WHITES = "eyeWhites";
@@ -151,69 +156,11 @@ class HomestuckTrollPalette extends HomestuckPalette {
         throw "Invalid AspectPalette input: colour must be a Colour object, a valid colour int, or valid hex string (with or without leading #)";
     }
 
-    Colour get text => this[_ACCENT];
+    Colour get wing1 => this[_WING1];
 
-    Colour get accent => this[_ACCENT];
+    void set wing1(dynamic c) => this.add(_WING1, _handleInput(c), true);
 
-    void set accent(dynamic c) => this.add(_ACCENT, _handleInput(c), true);
+    Colour get wing2 => this[_WING2];
 
-    Colour get aspect_light => this[_ASPECT_LIGHT];
-
-    void set aspect_light(dynamic c) => this.add(_ASPECT_LIGHT, _handleInput(c), true);
-
-    Colour get aspect_dark => this[_ASPECT_DARK];
-
-    void set aspect_dark(dynamic c) => this.add(_ASPECT_DARK, _handleInput(c), true);
-
-    Colour get shoe_light => this[_SHOE_LIGHT];
-
-    void set shoe_light(dynamic c) => this.add(_SHOE_LIGHT, _handleInput(c), true);
-
-    Colour get shoe_dark => this[_SHOE_DARK];
-
-    void set shoe_dark(dynamic c) => this.add(_SHOE_DARK, _handleInput(c), true);
-
-    Colour get cloak_light => this[_CLOAK_LIGHT];
-
-    void set cloak_light(dynamic c) => this.add(_CLOAK_LIGHT, _handleInput(c), true);
-
-    Colour get cloak_mid => this[_CLOAK_MID];
-
-    void set cloak_mid(dynamic c) => this.add(_CLOAK_MID, _handleInput(c), true);
-
-    Colour get cloak_dark => this[_CLOAK_DARK];
-
-    void set cloak_dark(dynamic c) => this.add(_CLOAK_DARK, _handleInput(c), true);
-
-    Colour get shirt_light => this[_SHIRT_LIGHT];
-
-    void set shirt_light(dynamic c) => this.add(_SHIRT_LIGHT, _handleInput(c), true);
-
-    Colour get shirt_dark => this[_SHIRT_DARK];
-
-    void set shirt_dark(dynamic c) => this.add(_SHIRT_DARK, _handleInput(c), true);
-
-    Colour get pants_light => this[_PANTS_LIGHT];
-
-    void set pants_light(dynamic c) => this.add(_PANTS_LIGHT, _handleInput(c), true);
-
-    Colour get pants_dark => this[_PANTS_DARK];
-
-    void set pants_dark(dynamic c) => this.add(_PANTS_DARK, _handleInput(c), true);
-
-    Colour get hair_main => this[_HAIR_MAIN];
-
-    void set hair_main(dynamic c) => this.add(_HAIR_MAIN, _handleInput(c), true);
-
-    Colour get hair_accent => this[_HAIR_ACCENT];
-
-    void set hair_accent(dynamic c) => this.add(_HAIR_ACCENT, _handleInput(c), true);
-
-    Colour get eye_whites => this[_EYE_WHITES];
-
-    void set eye_whites(dynamic c) => this.add(_EYE_WHITES, _handleInput(c), true);
-
-    Colour get skin => this[_SKIN];
-
-    void set skin(dynamic c) => this.add(_SKIN, _handleInput(c), true);
+    void set wing2(dynamic c) => this.add(_WING2, _handleInput(c), true);
 }

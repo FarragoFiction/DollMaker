@@ -59,7 +59,7 @@ void drawDollCreator() {
 
     CanvasElement canvas = querySelector("#doll_creator");
     Renderer.clearCanvas(canvas);
-    Renderer.drawDoll(canvas, doll);
+    Renderer.drawDoll(canvas, doll,ReferenceColours.SPRITE_PALETTE);
     //TextAreaElement dataBox = querySelector("#shareableURL");
     //dataBox.value = "${window.location.origin}${window.location.pathname}?${doll.toDataBytesX()}";
 }
