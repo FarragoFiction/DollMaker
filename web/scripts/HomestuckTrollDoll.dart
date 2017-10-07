@@ -41,11 +41,15 @@ class HomestuckTrollDoll extends HomestuckDoll {
     {
         SpriteLayer hairTop = new SpriteLayer("Hair","$folder/HairTop/", 1, maxHair);
         SpriteLayer hairBack = new SpriteLayer("Hair","$folder/HairBack/", 1, maxHair, <SpriteLayer>[hairTop]);
+        hairTop.syncedWith.add(hairBack);
+        hairBack.slave = true; //can't be selected on it's own
 
         SpriteLayer finLeft = new SpriteLayer("Fin","$folder/LeftFin/", 1, maxFin);
         SpriteLayer finRight = new SpriteLayer("Fin","$folder/RightFin/", 1, maxFin, <SpriteLayer>[finLeft]);
         finLeft.syncedWith.add(finRight);
         finRight.slave = true; //can't be selected on it's own
+
+
 
         layers.add(hairBack);
         layers.add(finRight);
