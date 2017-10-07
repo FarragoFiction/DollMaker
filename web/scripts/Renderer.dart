@@ -6,11 +6,13 @@ import "SpriteLayer.dart";
 import "includes/colour.dart";
 import "includes/palette.dart";
 import "random.dart";
+import "loader/loader.dart";
 
 class Renderer {
     static int imagesWaiting = 0;
     static int imagesLoaded = 0;
     static drawDoll(CanvasElement canvas, Doll doll, Palette source) {
+        print("Drawing a doll");
         CanvasElement buffer = getBufferCanvas(querySelector("#doll_template"));
         for(SpriteLayer l in doll.layers) {
             drawWhatever(buffer, l.imgLocation);
@@ -81,17 +83,12 @@ class Renderer {
     }
 
     static void drawWhatever(CanvasElement canvas, String imageString) {
+        print("Trying to draw $imageString");
         CanvasRenderingContext2D ctx = canvas.getContext('2d');
-        //Loader.getResource(imageString).then((ImageElement loaded) {
-            // stuff afterwards
-        //});
-        //ctx.drawImage(img, 0, 0);
-        ImageElement img = imageSelector(imageString);
-        if (img == null) {
-            //print("img was null!");
-            //print("was looking for ${escapeId(imageString)}");
-        }
-        ctx.drawImage(img, 0, 0);
+        Loader.getResource(imageString).then((ImageElement loaded) {
+            ctx.drawImage(loaded, 0, 0);
+        });
+
     }
 
     static ImageElement imageSelector(String path) {

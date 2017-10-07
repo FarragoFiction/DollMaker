@@ -39,6 +39,7 @@ abstract class DollMakerTools {
         SelectElement drawnDropDown = querySelector("#${layer.name}");
 
         drawnDropDown.onChange.listen((Event e) {
+            print("layer changed");
             //InputElement classDropDown = querySelector('[name="className${player.id}""] option:selected'); //need to get what is selected inside the .change, otheriise is always the same;
             OptionElement option = drawnDropDown.selectedOptions[0];
             layer.imgNumber = int.parse(option.value);
@@ -51,6 +52,7 @@ abstract class DollMakerTools {
         List<String> names = new List<String>.from(palette.names);
         names.sort();
         for(String name in names) {
+            print("color changed");
             drawColorPicker(name, div, palette[name], palette, callback);
         }
         callback();

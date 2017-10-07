@@ -46,8 +46,6 @@ void setupForms() {
     }
     DollMakerTools.drawColorPickersForPallete(colorControls, doll.palette, drawDollCreator);
 
-
-    drawDollCreator();
 }
 
 

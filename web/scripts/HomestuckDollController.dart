@@ -10,8 +10,9 @@ void main() {
     Random rand = new Random();
     doll = new HomestuckDoll();
 
-
-    Renderer.loadHomestuckDollParts(doll, loadDoll);
+    loadDoll();
+    //bundle means i don't have to preload shit
+    //Renderer.loadHomestuckDollParts(doll, loadDoll);
 
 }
 
@@ -45,17 +46,15 @@ void setupForms() {
     }
     DollMakerTools.drawColorPickersForPallete(colorControls, doll.palette, drawDollCreator);
 
-
-    drawDollCreator();
 }
 
 
 
 void drawDollCreator() {
+    print("Draw doll creator");
     for(SpriteLayer l in doll.layers) {
         DollMakerTools.syncDropDownToSprite(l);
     }
-    //DollMakerTools.syncColorPickersToSprite(doll.palette);
 
     CanvasElement canvas = querySelector("#doll_creator");
     Renderer.clearCanvas(canvas);
