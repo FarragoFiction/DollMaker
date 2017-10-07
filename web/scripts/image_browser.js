@@ -10,6 +10,16 @@ window.onload = function() {
 		$("#header").html("Horns");
 	}
 
+	if (getParameterByName("eyes")  == "true"){
+    		renderAllEyes();
+    		$("#header").html("Eyes");
+    	}
+
+    if (getParameterByName("mouths")  == "true"){
+            renderAllMouths();
+            $("#header").html("Mouths");
+        }
+
 
 }
 
@@ -72,7 +82,7 @@ function renderRegularSprite(spritePart){
 
 
 function renderAllHair(){
-	var minHair = 1;
+	var minHair = 0;
 	var maxHair = 74;
 	//don't use canvas, but still layer?  bg, like for KR.
 	for(var i = minHair; i<= maxHair; i++){
@@ -81,10 +91,26 @@ function renderAllHair(){
 }
 
 function renderAllHorns(){
-	var minHorn = 1
+	var minHorn = 0
 	var maxHorn = 73;
 	for(var i = minHorn; i<= maxHorn; i++){
 			renderLayeredSprites([new SpritePart("images/Homestuck/Body/head.png", ""),new SpritePart("images/Homestuck/LeftHorn/"+i+".png","leftHorn "+i),new SpritePart("images/Homestuck/RightHorn/"+i+".png", "rightHorn" +i)]);
+	}
+}
+
+function renderAllEyes(){
+	var minHorn = 1
+	var maxHorn = 73;
+	for(var i = minHorn; i<= maxHorn; i++){
+			renderLayeredSprites([new SpritePart("images/Homestuck/Body/head.png", ""),new SpritePart("images/Homestuck/LeftEye/"+i+".png","leftEye "+i),new SpritePart("images/Homestuck/RightEye/"+i+".png", "rightEye" +i)]);
+	}
+}
+
+function renderAllMouths(){
+	var minHorn = 1
+	var maxHorn = 73;
+	for(var i = minHorn; i<= maxHorn; i++){
+			renderLayeredSprites([new SpritePart("images/Homestuck/Body/head.png", ""),new SpritePart("images/Homestuck/Mouth/"+i+".png","mouth "+i)]);
 	}
 }
 
