@@ -50,7 +50,7 @@ class HomestuckTrollDoll extends HomestuckDoll {
         finRight.slave = true; //can't be selected on it's own
 
 
-        layers.add(new SpriteLayer("Wings","$folder/Wings/", 1, maxWing));
+        layers.add(new SpriteLayer("Wings","$folder/Wings/", 0, maxWing));
         layers.add(hairBack);
         layers.add(finRight);
         layers.add(new SpriteLayer("Body","$folder/Body/", 1, maxBody));
@@ -69,7 +69,8 @@ class HomestuckTrollDoll extends HomestuckDoll {
         int firstEye = -100;
         int firstHorn = -100;
         for(SpriteLayer l in layers) {
-            l.imgNumber = rand.nextInt(l.maxImageNumber+1);
+            //don't have wings normally
+            if(!l.imgNameBase.contains("Wings")) l.imgNumber = rand.nextInt(l.maxImageNumber+1);
             //keep eyes synced unless player decides otherwise
             if(l.imgNameBase.contains("Eye")) {
                 if(firstEye < 0) {
@@ -87,7 +88,7 @@ class HomestuckTrollDoll extends HomestuckDoll {
                 }
             }
 
-            if(l.imgNumber == 0 && !l.imgNameBase.contains("Fin")) l.imgNumber = 1;
+            if(l.imgNumber == 0 && !l.imgNameBase.contains("Fin")&& !l.imgNameBase.contains("Wings")) l.imgNumber = 1;
         }
 
         HomestuckTrollPalette h = palette as HomestuckTrollPalette;
