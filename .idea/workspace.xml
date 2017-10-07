@@ -2,10 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6733a3fd-04cc-4bcc-ae10-a16d8433490d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/scripts/HomestuckDoll.dart" afterPath="$PROJECT_DIR$/web/scripts/HomestuckDoll.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/scripts/HomestuckTrollDoll.dart" afterPath="$PROJECT_DIR$/web/scripts/HomestuckTrollDoll.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/scripts/HomestuckTrollDollController.dart" afterPath="$PROJECT_DIR$/web/scripts/HomestuckTrollDollController.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/scripts/Renderer.dart" afterPath="$PROJECT_DIR$/web/scripts/Renderer.dart" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Body/Body.bundle" afterPath="$PROJECT_DIR$/web/images/Homestuck/Body/Body.bundle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/HairBack/HairBack.bundle" afterPath="$PROJECT_DIR$/web/images/Homestuck/HairBack/HairBack.bundle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/HairTop/HairTop.bundle" afterPath="$PROJECT_DIR$/web/images/Homestuck/HairTop/HairTop.bundle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/LeftEye/1.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/LeftEye/1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/LeftEye/2.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/LeftEye/2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/LeftEye/3.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/LeftEye/3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/LeftEye/4.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/LeftEye/4.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/LeftEye/5.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/LeftEye/5.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/LeftEye/6.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/LeftEye/6.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/LeftEye/7.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/LeftEye/7.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/LeftEye/8.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/LeftEye/8.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/LeftEye/LeftEye.bundle" afterPath="$PROJECT_DIR$/web/images/Homestuck/LeftEye/LeftEye.bundle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/LeftFin/LeftFin.bundle" afterPath="$PROJECT_DIR$/web/images/Homestuck/LeftFin/LeftFin.bundle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/LeftHorn/LeftHorn.bundle" afterPath="$PROJECT_DIR$/web/images/Homestuck/LeftHorn/LeftHorn.bundle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Mouth/1.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/Mouth/1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Mouth/2.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/Mouth/2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Mouth/3.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/Mouth/3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Mouth/Mouth.bundle" afterPath="$PROJECT_DIR$/web/images/Homestuck/Mouth/Mouth.bundle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/RightEye/1.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/RightEye/1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/RightEye/2.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/RightEye/2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/RightEye/3.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/RightEye/3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/RightEye/4.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/RightEye/4.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/RightEye/5.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/RightEye/5.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/RightEye/6.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/RightEye/6.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/RightEye/7.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/RightEye/7.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/RightEye/8.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/RightEye/8.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/RightEye/RightEye.bundle" afterPath="$PROJECT_DIR$/web/images/Homestuck/RightEye/RightEye.bundle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/RightFin/RightFin.bundle" afterPath="$PROJECT_DIR$/web/images/Homestuck/RightFin/RightFin.bundle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/RightHorn/RightHorn.bundle" afterPath="$PROJECT_DIR$/web/images/Homestuck/RightHorn/RightHorn.bundle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Symbol/Symbol.bundle" afterPath="$PROJECT_DIR$/web/images/Homestuck/Symbol/Symbol.bundle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Wings/Wings.bundle" afterPath="$PROJECT_DIR$/web/images/Homestuck/Wings/Wings.bundle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.html" afterPath="$PROJECT_DIR$/web/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/troll_index.html" afterPath="$PROJECT_DIR$/web/troll_index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,12 +72,44 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomestuckDoll.dart" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HomestuckDoll.dart" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/scripts/HomestuckDoll.dart">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="226">
               <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="troll_index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/troll_index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="227">
+              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bundlebuilder.dart" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/manifest/bundlebuilder.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="106">
+              <caret line="152" column="43" lean-forward="true" selection-start-line="152" selection-start-column="43" selection-end-line="152" selection-end-column="43" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -145,8 +207,6 @@
         <option value="$PROJECT_DIR$/web/scripts/SpriteLayer.dart" />
         <option value="$PROJECT_DIR$/web/scripts/HomestuckDollLib.dart" />
         <option value="$PROJECT_DIR$/web/styles.css" />
-        <option value="$PROJECT_DIR$/web/index.html" />
-        <option value="$PROJECT_DIR$/web/troll_index.html" />
         <option value="$PROJECT_DIR$/web/scripts/formats/Formats.dart" />
         <option value="$PROJECT_DIR$/pubspec.yaml" />
         <option value="$PROJECT_DIR$/web/scripts/formats/ZipFormat.dart" />
@@ -159,6 +219,8 @@
         <option value="$PROJECT_DIR$/web/scripts/HomestuckTrollDollController.dart" />
         <option value="$PROJECT_DIR$/web/scripts/HomestuckTrollDoll.dart" />
         <option value="$PROJECT_DIR$/web/scripts/HomestuckDoll.dart" />
+        <option value="$PROJECT_DIR$/web/troll_index.html" />
+        <option value="$PROJECT_DIR$/web/index.html" />
       </list>
     </option>
   </component>
@@ -784,22 +846,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/troll_index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/scripts/includes/path_utils.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -897,16 +943,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/manifest/bundlebuilder.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="161" column="16" lean-forward="true" selection-start-line="161" selection-start-column="16" selection-end-line="161" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/scripts/loader/loader.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -962,6 +998,32 @@
         <state relative-caret-position="226">
           <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/troll_index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/manifest/bundlebuilder.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="152" column="43" lean-forward="true" selection-start-line="152" selection-start-column="43" selection-end-line="152" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
