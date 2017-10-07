@@ -10,7 +10,7 @@ import "includes/palette.dart";
 class HomestuckDoll extends Doll {
 
     @override
-    String folder = "Homestuck";
+    String folder = "images/Homestuck";
     final int maxBody = 64; //holy shit, is tht really how many we have?
     final int maxHair = 74;
     final int maxEye = 7;

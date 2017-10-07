@@ -9,7 +9,7 @@ void main() {
     print("Hello World");
     Random rand = new Random();
     doll = new HomestuckDoll();
-
+    print("going to load doll");
     loadDoll();
     //bundle means i don't have to preload shit
     //Renderer.loadHomestuckDollParts(doll, loadDoll);
@@ -17,6 +17,7 @@ void main() {
 }
 
 void loadDoll() {
+    print("loading doll");
     String dataString = window.location.search;
     print("dataSTring is $dataString");
     if(dataString.isNotEmpty) {

@@ -52,10 +52,8 @@ abstract class DollMakerTools {
         List<String> names = new List<String>.from(palette.names);
         names.sort();
         for(String name in names) {
-            print("color changed");
             drawColorPicker(name, div, palette[name], palette, callback);
         }
-        callback();
     }
 
     //TODO is it enough to modify this color, or do I need to pass it back?
@@ -66,6 +64,7 @@ abstract class DollMakerTools {
 
         InputElement colorDiv = querySelector("#${name}");
         colorDiv.onChange.listen((Event e) {
+            print("color changed");
             String colorString = (querySelector("#${name}") as InputElement).value;
             Colour newColor = new Colour.fromStyleString(colorString);
             source.add(name, newColor, true); //overright that shit.

@@ -84,9 +84,9 @@ class Renderer {
 
     static void drawWhatever(CanvasElement canvas, String imageString) {
         print("Trying to draw $imageString");
-        CanvasRenderingContext2D ctx = canvas.getContext('2d');
         Loader.getResource(imageString).then((ImageElement loaded) {
-            ctx.drawImage(loaded, 0, 0);
+            print("image $loaded loaded");
+            canvas.context2D.drawImage(loaded, 0, 0);
         });
 
     }
