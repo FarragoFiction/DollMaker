@@ -14,7 +14,7 @@ class HomestuckTrollDoll extends HomestuckDoll {
     int maxFin = 1;
     int maxWing = 13;
     @override
-    String folder = "Homestuck";
+    String folder = "images/Homestuck";
 
     HomestuckTrollDoll():super();
 
@@ -52,7 +52,7 @@ class HomestuckTrollDoll extends HomestuckDoll {
         finLeft.syncedWith.add(finRight);
         finRight.slave = true; //can't be selected on it's own
 
-
+        layers.clear();
         layers.add(new SpriteLayer("Wings","$folder/Wings/", 0, maxWing));
         layers.add(hairBack);
         layers.add(finRight);

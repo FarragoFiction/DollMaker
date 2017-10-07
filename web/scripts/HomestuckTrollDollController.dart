@@ -10,8 +10,9 @@ void main() {
     Random rand = new Random();
     doll = new HomestuckTrollDoll();
 
-
-    Renderer.loadHomestuckTrollDollParts(doll, loadDoll);
+    loadDoll();
+    //don't need to preload anymore, thanks PL!
+    //Renderer.loadHomestuckTrollDollParts(doll, loadDoll);
 
 }
 
@@ -22,7 +23,6 @@ void loadDoll() {
         doll = new HomestuckTrollDoll.fromDataString(dataString.substring(1)); //chop off leading ?
 
     }
-
     //whether i loaded or not, it's time to draw.
     setupForms();
     drawDollCreator();

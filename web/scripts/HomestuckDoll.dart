@@ -52,6 +52,7 @@ class HomestuckDoll extends Doll {
         SpriteLayer hairBack = new SpriteLayer("Hair","$folder/HairBack/", 1, maxHair, <SpriteLayer>[hairTop]);
         hairTop.syncedWith.add(hairBack);
         hairBack.slave = true; //can't be selected on it's own
+        layers.clear();
 
         layers.add(hairBack);
         layers.add(new SpriteLayer("Body","$folder/Body/", 1, maxBody));
@@ -86,18 +87,20 @@ class HomestuckDoll extends Doll {
         }
 
         for(String name in newP.names) {
+             print("loading color $name");
             palette.add(name, newP[name], true);
         }
 
         //layer is last so can add new layers.
          for(SpriteLayer l in layers) {
+             print("loading layer ${l.name}");
              l.imgNumber = reader.readByte();
          }
     }
 
     String toDataBytesX([ByteBuilder builder = null]) {
         if(builder == null) builder = new ByteBuilder();
-         int length = layers.length + 3;  //3 for colors
+         int length = layers.length + palette.names.length;
          builder.appendExpGolomb(length); //for length
 
 

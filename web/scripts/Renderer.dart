@@ -15,12 +15,12 @@ class Renderer {
 
 
     static  Future<bool>  drawDoll(CanvasElement canvas, Doll doll, Palette source) async {
-        print("Drawing a doll");
+        //print("Drawing a doll");
         CanvasElement buffer = getBufferCanvas(querySelector("#doll_template"));
         for(SpriteLayer l in doll.layers) {
             bool res = await drawWhateverFuture(buffer, l.imgLocation);
         }
-        print("done drawing images");
+        //print("done drawing images");
         swapPalette(buffer, source, doll.palette);
         copyTmpCanvasToRealCanvasAtPos(canvas, buffer, 0, 0);
     }
@@ -99,7 +99,7 @@ class Renderer {
 
     static Future<bool>  drawWhateverFuture(CanvasElement canvas, String imageString) async {
         ImageElement image = await Loader.getResource((imageString));
-        print("got image $image");
+        //print("got image $image");
         canvas.context2D.drawImage(image, 0, 0);
         return true;
     }
