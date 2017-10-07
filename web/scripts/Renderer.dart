@@ -2,6 +2,7 @@ import "Doll.dart";
 import "HomestuckDoll.dart";
 import "HomestuckTrollDoll.dart";
 import "dart:html";
+import 'dart:async';
 import "SpriteLayer.dart";
 import "includes/colour.dart";
 import "includes/palette.dart";
@@ -11,15 +12,20 @@ import "loader/loader.dart";
 class Renderer {
     static int imagesWaiting = 0;
     static int imagesLoaded = 0;
-    static drawDoll(CanvasElement canvas, Doll doll, Palette source) {
+
+
+    static  Future<bool>  drawDoll(CanvasElement canvas, Doll doll, Palette source) async {
         print("Drawing a doll");
         CanvasElement buffer = getBufferCanvas(querySelector("#doll_template"));
         for(SpriteLayer l in doll.layers) {
-            drawWhatever(buffer, l.imgLocation);
+            bool res = await drawWhateverFuture(buffer, l.imgLocation);
         }
+        print("done drawing images");
         swapPalette(buffer, source, doll.palette);
         copyTmpCanvasToRealCanvasAtPos(canvas, buffer, 0, 0);
     }
+
+
     static CanvasElement getBufferCanvas(CanvasElement canvas) {
         return new CanvasElement(width: canvas.width, height: canvas.height);
     }
@@ -89,6 +95,13 @@ class Renderer {
             canvas.context2D.drawImage(loaded, 0, 0);
         });
 
+    }
+
+    static Future<bool>  drawWhateverFuture(CanvasElement canvas, String imageString) async {
+        ImageElement image = await Loader.getResource((imageString));
+        print("got image $image");
+        canvas.context2D.drawImage(image, 0, 0);
+        return true;
     }
 
     static ImageElement imageSelector(String path) {
