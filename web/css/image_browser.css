@@ -1,0 +1,48 @@
+.whiteCenterThingy{
+	width:1000px;
+	background-color: white;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+}
+
+.spriteImg{
+
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+
+#header{
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.spriteImgNoLayers{
+
+}
+
+.spriteParent{
+	width: 400px;
+	height: 300px;
+	display: inline-block;
+	position: relative;
+	border: 1px solid black;
+}
+
+.spriteParentNoSize{
+	display: inline-block;
+	position: relative;
+	border: 1px solid black;
+}
+
+.intro{
+	width:885px;
+}
+
+
+.void{
+	display: none;
+	background-color: #000066;
+	color: #ffffff;
+}
