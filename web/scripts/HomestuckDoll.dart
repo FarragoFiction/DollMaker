@@ -31,7 +31,8 @@ class HomestuckDoll extends Doll {
         ..shirt_light = '#EFEFEF'
         ..shirt_dark = '#DBDBDB'
         ..pants_light = '#C6C6C6'
-        ..eye_whites = '#ffffff'
+        ..eye_white_left = '#ffffff'
+        ..eye_white_right = '#ffffff'
         ..pants_dark = '#ADADAD'
         ..skin = '#ffffff';
 
@@ -144,7 +145,8 @@ class HomestuckPalette extends Palette {
     static String _PANTS_DARK = "pants2";
     static String _HAIR_MAIN = "hairMain";
     static String _HAIR_ACCENT = "hairAccent";
-    static String _EYE_WHITES = "eyeWhites";
+    static String _EYE_WHITE_LEFT = "eyeWhitesLeft";
+    static String _EYE_WHITE_RIGHT = "eyeWhitesRight";
     static String _SKIN = "skin";
 
     static Colour _handleInput(Object input) {
@@ -225,9 +227,13 @@ class HomestuckPalette extends Palette {
 
     void set hair_accent(dynamic c) => this.add(_HAIR_ACCENT, _handleInput(c), true);
 
-    Colour get eye_whites => this[_EYE_WHITES];
+    Colour get eye_white_left => this[_EYE_WHITE_LEFT];
 
-    void set eye_whites(dynamic c) => this.add(_EYE_WHITES, _handleInput(c), true);
+    void set eye_white_left(dynamic c) => this.add(_EYE_WHITE_LEFT, _handleInput(c), true);
+
+    Colour get eye_white_right => this[_EYE_WHITE_RIGHT];
+
+    void set eye_white_right(dynamic c) => this.add(_EYE_WHITE_RIGHT, _handleInput(c), true);
 
     Colour get skin => this[_SKIN];
 

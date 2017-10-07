@@ -250,7 +250,8 @@ abstract class ReferenceColours {
         ..pants_dark = '#CA5B00'
         ..hair_main = '#313131'
         ..hair_accent = '#202020'
-        ..eye_whites = '#ffba29'
+        ..eye_white_left = '#ffba35'
+        ..eye_white_right = '#ffba15'
         ..skin = '#ffffff';
 
     static HomestuckTrollPalette TROLL_PALETTE = new HomestuckTrollPalette()
@@ -270,7 +271,8 @@ abstract class ReferenceColours {
         ..pants_dark = '#CA5B00'
         ..hair_main = '#313131'
         ..hair_accent = '#202020'
-        ..eye_whites = '#ffba29'
+        ..eye_white_left = '#ffba35'
+        ..eye_white_right = '#ffba15'
         ..skin = '#ffffff';
 
     static HomestuckPalette PROSPIT_PALETTE = new HomestuckPalette()

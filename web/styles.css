@@ -24,3 +24,11 @@ html, body {
 .dollDropDown{
     padding: 10px;
 }
+
+#colorControls{
+    display: inline-block;
+}
+
+#layerControls{
+    display: inline-block;
+}
