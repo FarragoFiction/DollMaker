@@ -1,26 +1,37 @@
 SBURBSim Bundle Manifest
 
-images/Homestuck/Body
+images/Homestuck/Body/Body
+    \d+.png
+
+images/Homestuck/HairBack/HairBack
+    \d+.png
+
+images/Homestuck/HairTop/HairTop
+    \d+.png
+
+images/Homestuck/LeftEye/LeftEye
 \d+.png
-images/Homestuck/HairBack
+
+images/Homestuck/LeftFin/LeftFin
 \d+.png
-images/Homestuck/HairTop
+
+images/Homestuck/LeftHorn/LeftHorn
 \d+.png
-images/Homestuck/LeftEye
+
+images/Homestuck/Mouth/Mouth
 \d+.png
-images/Homestuck/LeftFin
+
+images/Homestuck/RightEye/RightEye
 \d+.png
-images/Homestuck/LeftHorn
+
+images/Homestuck/RightFin/RightFin
 \d+.png
-images/Homestuck/Mouth
+
+images/Homestuck/RightHorn/RightHorn
 \d+.png
-images/Homestuck/RightEye
+
+images/Homestuck/Symbol/Symbol
 \d+.png
-images/Homestuck/RightFin
-\d+.png
-images/Homestuck/RightHorn
-\d+.png
-images/Homestuck/Symbol
-\d+.png
-images/Homestuck/Wings
+
+images/Homestuck/Wings/Wings
 \d+.png
