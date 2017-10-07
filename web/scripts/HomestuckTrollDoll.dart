@@ -29,10 +29,10 @@ class HomestuckTrollDoll extends HomestuckDoll {
         ..shirt_light = '#EFEFEF'
         ..shirt_dark = '#DBDBDB'
         ..pants_light = '#C6C6C6'
-        ..eye_white_left = '#aaba29'
-        ..eye_white_right = '#aaba29'
+        ..eye_white_left = '#ffba29'
+        ..eye_white_right = '#ffba29'
         ..pants_dark = '#ADADAD'
-        ..hair_accent = '#FF9B00'
+        ..hair_accent = '#aa0000'
         ..hair_main = '#000000'
         ..skin = '#C4C4C4';
 
@@ -108,6 +108,7 @@ class HomestuckTrollDoll extends HomestuckDoll {
         palette.add(HomestuckTrollPalette._PANTS_DARK, new Colour(h.pants_light.red, h.pants_light.green, h.pants_light.blue)..setHSV(h.pants_light.hue, h.pants_light.saturation, h.pants_light.value/2), true);
         palette.add(HomestuckTrollPalette._WING1, new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255)), true);
         palette.add(HomestuckTrollPalette._WING2, new Colour(h.wing1.red, h.wing1.green, h.wing1.blue)..setHSV(h.wing1.hue, h.wing1.saturation, h.wing1.value/2), true);
+        palette.add(HomestuckTrollPalette._HAIR_ACCENT, new Colour(h.wing1.red, h.wing1.green, h.wing1.blue), true);
 
     }
 
