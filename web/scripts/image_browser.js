@@ -84,7 +84,7 @@ function renderAllHorns(){
 	var minHorn = 1
 	var maxHorn = 73;
 	for(var i = minHorn; i<= maxHorn; i++){
-			renderLayeredSprites([new SpritePart("images/Horns/left"+i+".png","leftHorn "+i),new SpritePart("images/Horns/right"+i+".png", "rightHorn" +i)]);
+			renderLayeredSprites([new SpritePart("images/Homestuck/Body/head.png", ""),new SpritePart("images/Homestuck/LeftHorn/"+i+".png","leftHorn "+i),new SpritePart("images/Homestuck/RightHorn/"+i+".png", "rightHorn" +i)]);
 	}
 }
 
