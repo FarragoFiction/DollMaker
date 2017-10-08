@@ -2,11 +2,12 @@ import "HomestuckDollLib.dart";
 import "dart:html";
 import "includes/colour.dart";
 import "DollMakerTools.dart";
-
+import "navbar.dart";
 HomestuckTrollDoll doll;
 
 void main() {
     print("Hello World");
+    loadNavbar();
     Random rand = new Random();
     doll = new HomestuckTrollDoll();
 

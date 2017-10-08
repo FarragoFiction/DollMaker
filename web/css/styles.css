@@ -13,8 +13,21 @@ html, body {
   text-align: center;
 }
 
+body{
+	background-image: url("../images/Skaia_Clouds.png");
+}
+
 .dollDropDownDiv{
     padding: 10px;
+}
+
+#contents{
+width:1000px;
+	background-color: white;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+
 }
 
 .dropDownLabel{
@@ -31,4 +44,167 @@ html, body {
 
 #layerControls{
     display: inline-block;
+}
+
+
+#navbar{
+	width:1020px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.links{
+	background-color: white;
+	padding: 10px;
+	width:1000px;
+	margin-left: auto;
+	margin-right: auto;
+	border: 3px solid black;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.fanLinks{
+	background-color: #9630bf;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: #cc87e8;
+	width:1000px;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid black;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.navbarLink{
+	padding-left: 10px;
+	padding-right:10px;
+}
+
+.navBarMenu{
+	display:none;
+}
+
+.menu{
+	background-color: #3da35a;
+	width:1015px;
+	height:30px;
+	margin-left: auto;
+	margin-right: auto;
+	border: 3px solid #386426;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.menuButton{
+	display:inline;
+	margin-left: 5px;
+	margin-right: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	border: 3px solid #386426;
+	background-color: #3da35a;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 25px;
+	color: #06ffc9;
+
+}
+
+
+ul.menuPureCSS {
+    list-style-type: none;
+		width: 1000px;
+    margin: 0, auto;
+		text-align: center;
+    padding: 0;
+    overflow: hidden;
+    background-color: #3da35a;
+		border: 2px solid #386426;
+		font-family: "Franklin Gothinc Demi", arial, sans;
+		font-size: 18px;
+}
+.refactoringStatus{
+    background-color: #544A3A;
+    vertical-align: bottom;
+    width: 200px;
+    display: inline-block;
+    padding: 10px;
+    height: 460px;
+    font-family: "Courier New", Courier, monospace;
+    margin: 0px;
+
+    font-weight:bold;
+    color: #8ED920;
+    text-shadow: 0 0 5px black, 0 0 3px black, 0 0 2px black, -1px 0 0 black, 1px 0 0 black, 0 -1px 0 black, 0 1px 0 black;
+
+    position:relative;
+    bottom:4px;
+
+    margin-right:5px;
+    margin-left:60px;
+}
+.refactoringGif, .refactoringStatus {
+    box-shadow: 0 0 5px #88CE21, 0 0 3px #88CE21, 0 0 3px #88CE21, 0 0 9px black, 0 0 7px black, 0 0 7px black;
+}
+.banner{
+    width: 1000px;
+}
+
+.banner img{
+    margin: 0px;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.centeredMenu{
+	width: 800px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+li.menuButtonPureCSS {
+    float: left;
+		padding-left: 10px;
+}
+
+li.menuButtonPureCSS a, .dropbtn {
+    display: block;
+    color:  #06ffc9;;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li.menuButtonPureCSS a:hover, .dropdown:hover .dropbtn {
+    background-color: #386426;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #3da35a;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
