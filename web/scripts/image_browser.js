@@ -25,6 +25,11 @@ window.onload = function() {
                 $("#header").html("Bodies");
     }
 
+    if (getParameterByName("symbols")  == "true"){
+                    renderAllSymbols();
+                    $("#header").html("Symbols");
+        }
+
 
 }
 
@@ -124,6 +129,14 @@ function renderAllBodies(){
 	var maxHorn = 73;
 	for(var i = minHorn; i<= maxHorn; i++){
 			renderLayeredSprites([new SpritePart("images/Homestuck/Body/"+i+".png","body "+i)]);
+	}
+}
+
+function renderAllSymbols(){
+	var minHorn = 1
+	var maxHorn = 73;
+	for(var i = minHorn; i<= maxHorn; i++){
+			renderLayeredSprites([new SpritePart("images/Homestuck/Symbol/"+i+".png","symbol "+i)]);
 	}
 }
 

@@ -76,6 +76,7 @@ class HomestuckDoll extends Doll {
     void initFromReader(ByteReader reader) {
          initLayers();
         int numFeatures = reader.readExpGolomb();
+        int type = reader.readByte(); //not gonna use, but confirms it's homestuck
         print("I think there are ${numFeatures} features");
 
         HomestuckPalette newP = new HomestuckPalette();
@@ -100,9 +101,9 @@ class HomestuckDoll extends Doll {
 
     String toDataBytesX([ByteBuilder builder = null]) {
         if(builder == null) builder = new ByteBuilder();
-         int length = layers.length + palette.names.length;
+         int length = layers.length + palette.names.length + 1;//one byte for doll type
          builder.appendExpGolomb(length); //for length
-
+         builder.appendByte(1); //value of 1 means homestuck doll
 
 
         List<String> names = new List<String>.from(palette.names);
