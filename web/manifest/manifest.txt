@@ -226,6 +226,7 @@ images/Homestuck/LeftEye/LeftEye
     1.png
     10.png
     11.png
+    12.png
     2.png
     3.png
     4.png
@@ -348,6 +349,7 @@ images/Homestuck/RightEye/RightEye
     1.png
     10.png
     11.png
+    12.png
     2.png
     3.png
     4.png
