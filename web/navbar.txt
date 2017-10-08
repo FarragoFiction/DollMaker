@@ -27,6 +27,7 @@
   <li class="dropdown menuButtonPureCSS">
     <a href="javascript:void(0)" class="dropbtn">INFO</a>
     <div class="dropdown-content">
+    <a href="contribute.html">Contribute Sprite Art</a>
       <a href="credits.html">Special Thanks</a>
       <a href = "https://github.com/jadedResearcher/DollMaker"> GitHub Repo</a>
     </div>

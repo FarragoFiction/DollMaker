@@ -1,0 +1,25 @@
+import "HomestuckDollLib.dart";
+import "dart:html";
+import "includes/colour.dart";
+import "DollMakerTools.dart";
+import "navbar.dart";
+
+
+void main() {
+    print("Hello World");
+    loadNavbar();
+
+    printPalette();
+
+}
+
+void printPalette() {
+    Element paletteDiv = querySelector("#palette");
+    String html = "";
+    List<String> names = new List<String>.from(ReferenceColours.TROLL_PALETTE.names);
+    names.sort();
+    for(String name in names) {
+        html += "<li>$name: ${ReferenceColours.TROLL_PALETTE[name].toStyleString()}</li>";
+    }
+    paletteDiv.setInnerHtml(html);
+}
