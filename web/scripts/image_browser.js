@@ -26,9 +26,15 @@ window.onload = function() {
     }
 
     if (getParameterByName("symbols")  == "true"){
-                    renderAllSymbols();
-                    $("#header").html("Symbols");
-        }
+        renderAllSymbols();
+        $("#header").html("Symbols");
+    }
+
+    if (getParameterByName("glasses")  == "true"){
+        renderAllGlasses();
+        $("#header").html("Glasses");
+    }
+
 
 
 }
@@ -121,6 +127,14 @@ function renderAllMouths(){
 	var maxHorn = 73;
 	for(var i = minHorn; i<= maxHorn; i++){
 			renderLayeredSprites([new SpritePart("images/Homestuck/Body/head.png", ""),new SpritePart("images/Homestuck/Mouth/"+i+".png","mouth "+i)]);
+	}
+}
+
+function renderAllGlasses(){
+	var minHorn = 1
+	var maxHorn = 73;
+	for(var i = minHorn; i<= maxHorn; i++){
+			renderLayeredSprites([new SpritePart("images/Homestuck/Body/head.png", ""),new SpritePart("images/Homestuck/Glasses/"+i+".png","mouth "+i)]);
 	}
 }
 

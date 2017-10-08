@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6733a3fd-04cc-4bcc-ae10-a16d8433490d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Body/Body.bundle" afterPath="$PROJECT_DIR$/web/images/Homestuck/Body/Body.bundle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Glasses/Glasses.bundle" afterPath="$PROJECT_DIR$/web/images/Homestuck/Glasses/Glasses.bundle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/HairBack/HairBack.bundle" afterPath="$PROJECT_DIR$/web/images/Homestuck/HairBack/HairBack.bundle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/HairTop/HairTop.bundle" afterPath="$PROJECT_DIR$/web/images/Homestuck/HairTop/HairTop.bundle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/LeftEye/LeftEye.bundle" afterPath="$PROJECT_DIR$/web/images/Homestuck/LeftEye/LeftEye.bundle" />
@@ -15,11 +16,10 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Symbol/Symbol.bundle" afterPath="$PROJECT_DIR$/web/images/Homestuck/Symbol/Symbol.bundle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Wings/Wings.bundle" afterPath="$PROJECT_DIR$/web/images/Homestuck/Wings/Wings.bundle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DollBuilder.iml" afterPath="$PROJECT_DIR$/DollBuilder.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/contribute.html" afterPath="$PROJECT_DIR$/web/contribute.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/manifest/manifest.txt" afterPath="$PROJECT_DIR$/web/manifest/manifest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/manifest/sourcemanifest.txt" afterPath="$PROJECT_DIR$/web/manifest/sourcemanifest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/scripts/HomestuckDoll.dart" afterPath="$PROJECT_DIR$/web/scripts/HomestuckDoll.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/scripts/HomestuckTrollDoll.dart" afterPath="$PROJECT_DIR$/web/scripts/HomestuckTrollDoll.dart" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/image_browser.html" afterPath="$PROJECT_DIR$/web/image_browser.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/scripts/image_browser.js" afterPath="$PROJECT_DIR$/web/scripts/image_browser.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,8 +47,18 @@
       <file leaf-file-name="contribute.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/contribute.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="55" column="42" lean-forward="false" selection-start-line="55" selection-start-column="42" selection-end-line="55" selection-end-column="42" />
+            <state relative-caret-position="60">
+              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/css/styles.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="181">
+              <caret line="28" column="14" lean-forward="true" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -67,14 +77,14 @@
       <file leaf-file-name="bundlebuilder.dart" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/manifest/bundlebuilder.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="34" lean-forward="false" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+            <state relative-caret-position="45">
+              <caret line="3" column="25" lean-forward="false" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomestuckTrollDoll.dart" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HomestuckTrollDoll.dart" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/scripts/HomestuckTrollDoll.dart">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="273">
@@ -82,6 +92,46 @@
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="image_browser.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/scripts/image_browser.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="260">
+              <caret line="136" column="127" lean-forward="false" selection-start-line="136" selection-start-column="127" selection-end-line="136" selection-end-column="127" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="image_browser.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/image_browser.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="19" lean-forward="false" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="21" lean-forward="false" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pubspec.yaml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pubspec.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -118,6 +168,8 @@
       <find>layers</find>
       <find>label</find>
       <find>appendHtml</find>
+      <find>mouths</find>
+      <find>contents</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -148,28 +200,28 @@
         <option value="$PROJECT_DIR$/web/scripts/Renderer.dart" />
         <option value="$PROJECT_DIR$/web/css/image_browser.css" />
         <option value="$PROJECT_DIR$/web/farragotransfer.sh" />
-        <option value="$PROJECT_DIR$/web/scripts/image_browser.js" />
         <option value="$PROJECT_DIR$/web/scripts/NavBarOnlyController.dart" />
         <option value="$PROJECT_DIR$/web/credits.html" />
         <option value="$PROJECT_DIR$/web/scripts/navbar.dart" />
-        <option value="$PROJECT_DIR$/web/image_browser.html" />
         <option value="$PROJECT_DIR$/web/scripts/HomestuckDollController.dart" />
         <option value="$PROJECT_DIR$/web/scripts/HomestuckTrollDollController.dart" />
         <option value="$PROJECT_DIR$/web/scripts/DollMakerTools.dart" />
         <option value="$PROJECT_DIR$/web/index.html" />
-        <option value="$PROJECT_DIR$/web/css/styles.css" />
         <option value="$PROJECT_DIR$/web/troll_index.html" />
         <option value="$PROJECT_DIR$/web/scripts/ContributeController.dart" />
         <option value="$PROJECT_DIR$/web/navbar.txt" />
         <option value="$PROJECT_DIR$/web/manifest/sourcemanifest.txt" />
-        <option value="$PROJECT_DIR$/web/contribute.html" />
         <option value="$PROJECT_DIR$/web/scripts/HomestuckDoll.dart" />
         <option value="$PROJECT_DIR$/web/scripts/HomestuckTrollDoll.dart" />
+        <option value="$PROJECT_DIR$/web/scripts/image_browser.js" />
+        <option value="$PROJECT_DIR$/web/css/styles.css" />
+        <option value="$PROJECT_DIR$/web/contribute.html" />
+        <option value="$PROJECT_DIR$/web/image_browser.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="64" />
+    <option name="x" value="25" />
     <option name="y" value="22" />
     <option name="width" value="1205" />
     <option name="height" value="673" />
@@ -568,7 +620,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="22" width="1205" height="673" extended-state="0" />
+    <frame x="25" y="22" width="1205" height="673" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -584,12 +636,12 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32871974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32871974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Pub Serve" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32871974" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32871974" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2473029" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -864,34 +916,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/scripts/image_browser.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="28" column="36" lean-forward="false" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="31" lean-forward="false" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/scripts/NavBarOnlyController.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/image_browser.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -913,22 +941,6 @@
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="21" column="21" lean-forward="false" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="37" column="23" lean-forward="false" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1004,14 +1016,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/contribute.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="55" column="42" lean-forward="false" selection-start-line="55" selection-start-column="42" selection-end-line="55" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/scripts/Renderer.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
@@ -1019,14 +1023,6 @@
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/manifest/bundlebuilder.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="34" lean-forward="false" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1045,6 +1041,62 @@
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/scripts/image_browser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="136" column="127" lean-forward="false" selection-start-line="136" selection-start-column="127" selection-end-line="136" selection-end-column="127" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/manifest/bundlebuilder.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="25" lean-forward="false" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="28" column="14" lean-forward="true" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/contribute.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="21" lean-forward="false" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/image_browser.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="19" lean-forward="false" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>

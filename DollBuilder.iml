@@ -8,6 +8,7 @@
       <excludeFolder url="file://$MODULE_DIR$/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/css/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/images/Homestuck/Body/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/web/images/Homestuck/Glasses/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/images/Homestuck/HairBack/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/images/Homestuck/HairTop/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/images/Homestuck/LeftEye/packages" />
