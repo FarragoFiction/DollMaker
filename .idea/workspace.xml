@@ -13,18 +13,24 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/RightEye/RightEye.bundle" afterPath="$PROJECT_DIR$/web/images/Homestuck/RightEye/RightEye.bundle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/RightFin/RightFin.bundle" afterPath="$PROJECT_DIR$/web/images/Homestuck/RightFin/RightFin.bundle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/RightHorn/RightHorn.bundle" afterPath="$PROJECT_DIR$/web/images/Homestuck/RightHorn/RightHorn.bundle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Symbol/1.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/Symbol/1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Symbol/2.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/Symbol/2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Symbol/3.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/Symbol/3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Symbol/4.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/Symbol/4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Symbol/5.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/Symbol/5.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Symbol/6.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/Symbol/6.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Symbol/7.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/Symbol/7.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Symbol/8.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/Symbol/8.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Symbol/9.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/Symbol/9.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Symbol/17.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/Symbol/17.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Symbol/18.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/Symbol/18.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Symbol/33.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/Symbol/33.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Symbol/35.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/Symbol/35.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Symbol/36.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/Symbol/36.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Symbol/37.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/Symbol/37.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Symbol/38.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/Symbol/38.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Symbol/39.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/Symbol/39.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Symbol/40.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/Symbol/40.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Symbol/41.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/Symbol/41.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Symbol/42.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/Symbol/42.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Symbol/43.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/Symbol/43.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Symbol/44.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/Symbol/44.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Symbol/45.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/Symbol/45.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Symbol/46.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/Symbol/46.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Symbol/Symbol.bundle" afterPath="$PROJECT_DIR$/web/images/Homestuck/Symbol/Symbol.bundle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Wings/Wings.bundle" afterPath="$PROJECT_DIR$/web/images/Homestuck/Wings/Wings.bundle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/manifest/manifest.txt" afterPath="$PROJECT_DIR$/web/manifest/manifest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -82,8 +88,8 @@
       <file leaf-file-name="bundlebuilder.dart" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/manifest/bundlebuilder.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="37" lean-forward="true" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
+            <state relative-caret-position="150">
+              <caret line="10" column="13" lean-forward="true" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -648,7 +654,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Pub Serve" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32871974" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32871974" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2473029" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1101,8 +1107,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/manifest/bundlebuilder.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="37" lean-forward="true" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
+        <state relative-caret-position="150">
+          <caret line="10" column="13" lean-forward="true" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
