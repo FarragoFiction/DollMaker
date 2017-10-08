@@ -31,7 +31,11 @@ width:1000px;
 }
 
 .dropDownLabel{
-    padding-right: 10px;
+    padding-left: 10px;
+}
+
+#doll_creator{
+    vertical-align: top;
 }
 
 .dollDropDown{
@@ -39,10 +43,12 @@ width:1000px;
 }
 
 #colorControls{
+    padding: 10px;
     display: inline-block;
 }
 
 #layerControls{
+    padding: 10px;
     display: inline-block;
 }
 

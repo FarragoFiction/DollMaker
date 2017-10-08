@@ -58,9 +58,9 @@ class HomestuckTrollDoll extends HomestuckDoll {
         layers.add(finRight);
         layers.add(new SpriteLayer("Body","$folder/Body/", 1, maxBody));
         layers.add(new SpriteLayer("Symbol","$folder/Symbol/", 1, maxSymbol));
+        layers.add(new SpriteLayer("Mouth","$folder/Mouth/", 1, maxMouth));
         layers.add(new SpriteLayer("LeftEye","$folder/LeftEye/", 1, maxEye));
         layers.add(new SpriteLayer("RightEye","$folder/RightEye/", 1, maxEye));
-        layers.add(new SpriteLayer("Mouth","$folder/Mouth/", 1, maxMouth));
         layers.add(hairTop);
         layers.add(finLeft);
         layers.add(new SpriteLayer("LeftHorn","$folder/LeftHorn/", 1, maxHorn));

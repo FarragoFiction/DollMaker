@@ -25,7 +25,7 @@ abstract class DollMakerTools {
         if(layer.slave) return; //this will be set by owner.
         //drop down should be set to whatever the layer's img number is,
         //and on change it should change the layers img number
-        String html = "<div class = 'dollDropDownDiv'><span class = 'dropDownLabel'>${layer.name}:</span><select class = 'dollDropDown' id = '${layer.name}' name='${layer.name}'>";
+        String html = "<div class = 'dollDropDownDiv'><select class = 'dollDropDown' id = '${layer.name}' name='${layer.name}'>";
         for (int i = 0; i <= layer.maxImageNumber; i++) {
             if (layer.imgNumber == i) {
                 html += '<option  selected = "selected" value="$i">$i</option>';
@@ -33,7 +33,7 @@ abstract class DollMakerTools {
                 html += '<option value="$i">$i</option>';
             }
         }
-        html += '</select></div>';
+        html += "</select><span class = 'dropDownLabel'>${layer.name}</span></div>";
         appendHtml(div, html);
 
         SelectElement drawnDropDown = querySelector("#${layer.name}");
@@ -59,7 +59,7 @@ abstract class DollMakerTools {
     //TODO is it enough to modify this color, or do I need to pass it back?
     static void drawColorPicker(String name, Element div, Colour color, Palette source, dynamic callback) {
 
-        String html = "<div class = 'colorPickerClass'><span class = 'dropDownLabel'>$name</span><input alt = '$name' id = '${name}' type='color' name='${name}' value='${color.toStyleString()}'></div>";
+        String html = "<div class = 'colorPickerClass'><input alt = '$name' id = '${name}' type='color' name='${name}' value='${color.toStyleString()}'><span class = 'dropDownLabel'>$name</span></div>";
         appendHtml(div, html);
 
         InputElement colorDiv = querySelector("#${name}");
