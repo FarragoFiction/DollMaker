@@ -62,7 +62,6 @@ images/Homestuck/Body/Body
     61.png
     62.png
     63.png
-    64.png
     7.png
     8.png
     9.png
