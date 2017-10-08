@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6733a3fd-04cc-4bcc-ae10-a16d8433490d" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Body/26.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/Body/26.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Body/Body.bundle" afterPath="$PROJECT_DIR$/web/images/Homestuck/Body/Body.bundle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Glasses/Glasses.bundle" afterPath="$PROJECT_DIR$/web/images/Homestuck/Glasses/Glasses.bundle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/HairBack/HairBack.bundle" afterPath="$PROJECT_DIR$/web/images/Homestuck/HairBack/HairBack.bundle" />
@@ -13,10 +14,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/RightEye/RightEye.bundle" afterPath="$PROJECT_DIR$/web/images/Homestuck/RightEye/RightEye.bundle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/RightFin/RightFin.bundle" afterPath="$PROJECT_DIR$/web/images/Homestuck/RightFin/RightFin.bundle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/RightHorn/RightHorn.bundle" afterPath="$PROJECT_DIR$/web/images/Homestuck/RightHorn/RightHorn.bundle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Symbol/36.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/Symbol/36.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Symbol/37.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/Symbol/37.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Symbol/42.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/Symbol/42.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Symbol/43.png" afterPath="$PROJECT_DIR$/web/images/Homestuck/Symbol/43.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Symbol/Symbol.bundle" afterPath="$PROJECT_DIR$/web/images/Homestuck/Symbol/Symbol.bundle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/Homestuck/Wings/Wings.bundle" afterPath="$PROJECT_DIR$/web/images/Homestuck/Wings/Wings.bundle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -77,8 +74,8 @@
       <file leaf-file-name="bundlebuilder.dart" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/manifest/bundlebuilder.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+            <state relative-caret-position="135">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -1077,8 +1074,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/manifest/bundlebuilder.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+        <state relative-caret-position="135">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
