@@ -516,8 +516,26 @@ images/Homestuck/Symbol/Symbol
     45.png
     46.png
     47.png
+    48.png
+    49.png
     5.png
+    50.png
+    51.png
+    52.png
+    53.png
+    54.png
+    55.png
+    56.png
+    57.png
+    58.png
+    59.png
     6.png
+    60.png
+    61.png
+    62.png
+    63.png
+    64.png
+    65.png
     7.png
     8.png
     9.png
