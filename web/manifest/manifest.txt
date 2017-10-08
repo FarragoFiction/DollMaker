@@ -224,6 +224,8 @@ images/Homestuck/HairTop/HairTop
 images/Homestuck/LeftEye/LeftEye
     0.png
     1.png
+    10.png
+    11.png
     2.png
     3.png
     4.png
@@ -231,6 +233,7 @@ images/Homestuck/LeftEye/LeftEye
     6.png
     7.png
     8.png
+    9.png
 
 images/Homestuck/LeftFin/LeftFin
     0.png
@@ -343,6 +346,8 @@ images/Homestuck/Mouth/Mouth
 images/Homestuck/RightEye/RightEye
     0.png
     1.png
+    10.png
+    11.png
     2.png
     3.png
     4.png
@@ -350,6 +355,7 @@ images/Homestuck/RightEye/RightEye
     6.png
     7.png
     8.png
+    9.png
 
 images/Homestuck/Glasses/Glasses
     0.png
@@ -371,6 +377,7 @@ images/Homestuck/Glasses/Glasses
     23.png
     24.png
     25.png
+    26.png
     3.png
     4.png
     5.png
