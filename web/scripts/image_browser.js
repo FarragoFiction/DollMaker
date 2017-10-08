@@ -99,7 +99,7 @@ function renderRegularSprite(spritePart){
 
 function renderAllHair(){
 	var minHair = 0;
-	var maxHair = 74;
+	var maxHair = 77;
 	//don't use canvas, but still layer?  bg, like for KR.
 	for(var i = minHair; i<= maxHair; i++){
 		renderLayeredSprites([new SpritePart("images/Homestuck/HairBack/"+i+".png", "Hair " +i),new SpritePart("images/Homestuck/Body/head.png", ""), new SpritePart("images/Homestuck/HairTop/"+i+".png", "")]);
@@ -108,7 +108,7 @@ function renderAllHair(){
 
 function renderAllHorns(){
 	var minHorn = 0
-	var maxHorn = 73;
+	var maxHorn = 79;
 	for(var i = minHorn; i<= maxHorn; i++){
 			renderLayeredSprites([new SpritePart("images/Homestuck/Body/head.png", ""),new SpritePart("images/Homestuck/LeftHorn/"+i+".png","leftHorn "+i),new SpritePart("images/Homestuck/RightHorn/"+i+".png", "rightHorn" +i)]);
 	}
