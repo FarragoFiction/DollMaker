@@ -16,6 +16,7 @@ class HomestuckDoll extends Doll {
     final int maxEye = 7;
     final int maxMouth = 20;
     final int maxSymbol = 47;
+    final int maxGlass = 25;
 
 
     @override
@@ -60,6 +61,7 @@ class HomestuckDoll extends Doll {
         layers.add(new SpriteLayer("Mouth","$folder/Mouth/", 1, maxMouth));
         layers.add(new SpriteLayer("LeftEye","$folder/LeftEye/", 1, maxEye));
         layers.add(new SpriteLayer("RightEye","$folder/RightEye/", 1, maxEye));
+        layers.add(new SpriteLayer("Glasses","$folder/Glasses/", 1, maxGlass));
         layers.add(hairTop);
     }
 
@@ -136,6 +138,7 @@ class HomestuckDoll extends Doll {
             if(firstEye > 0 && l.imgNameBase.contains("Eye")) l.imgNumber = firstEye;
             if(firstEye < 0 && l.imgNameBase.contains("Eye")) firstEye = l.imgNumber;
             if(l.imgNumber == 0) l.imgNumber = 1;
+            if(l.imgNameBase.contains("Glasses") && rand.nextDouble() > 0.35) l.imgNumber = 0;
         }
 
         HomestuckPalette h = palette as HomestuckPalette;

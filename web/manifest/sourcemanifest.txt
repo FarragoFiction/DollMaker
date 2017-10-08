@@ -24,6 +24,9 @@ images/Homestuck/Mouth/Mouth
 images/Homestuck/RightEye/RightEye
 \d+.png
 
+images/Homestuck/Glasses/Glasses
+\d+.png
+
 images/Homestuck/RightFin/RightFin
 \d+.png
 
