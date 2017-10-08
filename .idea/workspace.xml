@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6733a3fd-04cc-4bcc-ae10-a16d8433490d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/scripts/HomestuckTrollDoll.dart" afterPath="$PROJECT_DIR$/web/scripts/HomestuckTrollDoll.dart" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/credits.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/image_browser.html" afterPath="$PROJECT_DIR$/web/image_browser.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.html" afterPath="$PROJECT_DIR$/web/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/troll_index.html" afterPath="$PROJECT_DIR$/web/troll_index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,16 +41,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="troll_index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/troll_index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="18" column="37" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="bundlebuilder.dart" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/manifest/bundlebuilder.dart">
           <provider selected="true" editor-type-id="text-editor">
@@ -55,26 +49,6 @@
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="image_browser.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/scripts/image_browser.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="28" column="36" lean-forward="false" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="image_browser.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/image_browser.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="34" column="74" lean-forward="false" selection-start-line="34" selection-start-column="74" selection-end-line="34" selection-end-column="74" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -101,7 +75,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomestuckTrollDoll.dart" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HomestuckTrollDoll.dart" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/scripts/HomestuckTrollDoll.dart">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="91">
@@ -113,11 +87,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="farragotransfer.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/farragotransfer.sh">
+      <file leaf-file-name="credits.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/credits.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="146" lean-forward="false" selection-start-line="1" selection-start-column="146" selection-end-line="1" selection-end-column="146" />
+            <state relative-caret-position="21">
+              <caret line="18" column="83" lean-forward="false" selection-start-line="18" selection-start-column="83" selection-end-line="18" selection-end-column="83" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="134">
+              <caret line="18" column="154" lean-forward="true" selection-start-line="18" selection-start-column="116" selection-end-line="18" selection-end-column="154" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="troll_index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/troll_index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="179">
+              <caret line="18" column="108" lean-forward="false" selection-start-line="18" selection-start-column="108" selection-end-line="18" selection-end-column="108" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="image_browser.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/image_browser.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="26" column="106" lean-forward="false" selection-start-line="26" selection-start-column="106" selection-end-line="26" selection-end-column="106" />
               <folding />
             </state>
           </provider>
@@ -183,13 +187,14 @@
         <option value="$PROJECT_DIR$/web/scripts/Renderer.dart" />
         <option value="$PROJECT_DIR$/web/scripts/HomestuckTrollDollController.dart" />
         <option value="$PROJECT_DIR$/web/css/image_browser.css" />
-        <option value="$PROJECT_DIR$/web/index.html" />
-        <option value="$PROJECT_DIR$/web/troll_index.html" />
         <option value="$PROJECT_DIR$/web/farragotransfer.sh" />
-        <option value="$PROJECT_DIR$/web/image_browser.html" />
         <option value="$PROJECT_DIR$/web/scripts/image_browser.js" />
         <option value="$PROJECT_DIR$/web/scripts/HomestuckDoll.dart" />
         <option value="$PROJECT_DIR$/web/scripts/HomestuckTrollDoll.dart" />
+        <option value="$PROJECT_DIR$/web/credits.html" />
+        <option value="$PROJECT_DIR$/web/index.html" />
+        <option value="$PROJECT_DIR$/web/troll_index.html" />
+        <option value="$PROJECT_DIR$/web/image_browser.html" />
       </list>
     </option>
   </component>
@@ -334,8 +339,8 @@
       <recent name="$PROJECT_DIR$/web" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/web/scripts" />
       <recent name="$PROJECT_DIR$/web" />
+      <recent name="$PROJECT_DIR$/web/scripts" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -915,34 +920,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="18" column="50" lean-forward="false" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/troll_index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="18" column="37" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/farragotransfer.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="146" lean-forward="false" selection-start-line="1" selection-start-column="146" selection-end-line="1" selection-end-column="146" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/image_browser.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="34" column="74" lean-forward="false" selection-start-line="34" selection-start-column="74" selection-end-line="34" selection-end-column="74" />
           <folding />
         </state>
       </provider>
@@ -1008,6 +989,38 @@
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/credits.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="18" column="83" lean-forward="false" selection-start-line="18" selection-start-column="83" selection-end-line="18" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="18" column="154" lean-forward="true" selection-start-line="18" selection-start-column="116" selection-end-line="18" selection-end-column="154" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/troll_index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="18" column="108" lean-forward="false" selection-start-line="18" selection-start-column="108" selection-end-line="18" selection-end-column="108" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/image_browser.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="26" column="106" lean-forward="false" selection-start-line="26" selection-start-column="106" selection-end-line="26" selection-end-column="106" />
+          <folding />
         </state>
       </provider>
     </entry>
