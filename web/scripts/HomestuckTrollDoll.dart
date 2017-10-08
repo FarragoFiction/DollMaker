@@ -82,6 +82,9 @@ class HomestuckTrollDoll extends HomestuckDoll {
         Random rand = new Random();
         int firstEye = -100;
         int firstHorn = -100;
+        List<String> bloodColors = <String>["#A10000", "#a25203", "#a1a100", "#658200", "#416600", "#078446", "#008282", "#004182", "#0021cb", "#631db4", "#610061", "#99004d"];
+
+        String chosenBlood = rand.pickFrom(bloodColors);
         for(SpriteLayer l in layers) {
             //don't have wings normally
             if(!l.imgNameBase.contains("Wings")) l.imgNumber = rand.nextInt(l.maxImageNumber+1);
@@ -103,12 +106,18 @@ class HomestuckTrollDoll extends HomestuckDoll {
             }
 
             if(l.imgNumber == 0 && !l.imgNameBase.contains("Fin")&& !l.imgNameBase.contains("Wings")) l.imgNumber = 1;
+            if(l.imgNameBase.contains("Fin")){
+                //"#610061", "#99004d"
+                if(chosenBlood == "#610061" || chosenBlood == "#99004d"){
+                    l.imgNumber = 1;
+                }else{
+                    l.imgNumber = 0;
+                }
+            }
         }
 
         HomestuckTrollPalette h = palette as HomestuckTrollPalette;
-        List<String> bloodColors = <String>["#A10000", "#a25203", "#a1a100", "#658200", "#416600", "#078446", "#008282", "#004182", "#0021cb", "#631db4", "#610061", "#99004d"];
 
-        String chosenBlood = rand.pickFrom(bloodColors);
 
         palette.add(HomestuckTrollPalette._ACCENT, new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255)), true);
         palette.add(HomestuckTrollPalette._ASPECT_LIGHT, new Colour.fromStyleString(chosenBlood), true);
