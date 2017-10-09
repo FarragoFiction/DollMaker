@@ -1,8 +1,8 @@
-import "HomestuckDollLib.dart";
+import "../HomestuckDollLib.dart";
 import "dart:html";
-import "includes/colour.dart";
-import "DollMakerTools.dart";
-import "navbar.dart";
+import "../includes/colour.dart";
+import "../DollMakerTools.dart";
+import "../navbar.dart";
 
 HomestuckDoll doll;
 

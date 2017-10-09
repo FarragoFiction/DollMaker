@@ -1,7 +1,8 @@
 library HomestuckDollLib;
 
-export "HomestuckDoll.dart";
-export "HomestuckTrollDoll.dart";
+export "Dolls/HomestuckDoll.dart";
+export "Dolls/HomestuckTrollDoll.dart";
+export "Dolls/ConsortDoll.dart";
 export "SpriteLayer.dart";
 export "Renderer.dart";
 export "random.dart";

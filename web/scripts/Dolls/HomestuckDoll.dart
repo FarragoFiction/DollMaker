@@ -1,11 +1,11 @@
-import "random.dart";
-import "includes/colour.dart";
-import "Doll.dart";
-import "SpriteLayer.dart";
+import "../random.dart";
+import "../includes/colour.dart";
+import "../Dolls/Doll.dart";
+import "../SpriteLayer.dart";
 import "dart:typed_data";
 import 'dart:convert';
-import "includes/bytebuilder.dart";
-import "includes/palette.dart";
+import "../includes/bytebuilder.dart";
+import "../includes/palette.dart";
 
 class HomestuckDoll extends Doll {
 

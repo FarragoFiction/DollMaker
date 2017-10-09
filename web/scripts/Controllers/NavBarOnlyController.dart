@@ -1,4 +1,4 @@
-import "navbar.dart";
+import "../navbar.dart";
 
 
 void main() {

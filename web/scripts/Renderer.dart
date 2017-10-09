@@ -1,6 +1,6 @@
-import "Doll.dart";
-import "HomestuckDoll.dart";
-import "HomestuckTrollDoll.dart";
+import "Dolls/Doll.dart";
+import "Dolls/HomestuckDoll.dart";
+import "Dolls/HomestuckTrollDoll.dart";
 import "dart:html";
 import 'dart:async';
 import "SpriteLayer.dart";
