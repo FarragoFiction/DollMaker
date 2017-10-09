@@ -31,6 +31,8 @@ void loadDoll() {
 
 void setupForms() {
     querySelector("#randomize").onClick.listen((e) => randomizeDoll());
+    querySelector("#randomizeColors").onClick.listen((e) => randomizeDollColors());
+    querySelector("#randomizeNotColors").onClick.listen((e) => randomizeDollNotColors());
 
     ButtonElement copyButton = querySelector("#copyButton");
     copyButton.onClick.listen((Event e) {
@@ -67,6 +69,23 @@ void drawDollCreator() {
 void randomizeDoll() {
     print("randomizing and redrawing");
     doll.randomize();
+    //can't do it in regular draw part cuz onChange is a bitch.
+    DollMakerTools.syncColorPickersToSprite(doll.palette);
+    drawDollCreator();
+}
+
+
+void randomizeDollNotColors() {
+    print("randomizing and redrawing");
+    doll.randomizeNotColors();
+    //can't do it in regular draw part cuz onChange is a bitch.
+    DollMakerTools.syncColorPickersToSprite(doll.palette);
+    drawDollCreator();
+}
+
+void randomizeDollColors() {
+    print("randomizing and redrawing");
+    doll.randomizeColors();
     //can't do it in regular draw part cuz onChange is a bitch.
     DollMakerTools.syncColorPickersToSprite(doll.palette);
     drawDollCreator();
