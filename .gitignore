@@ -1,3 +1,7 @@
+.DS_STORE
+.idea/
+*.iml
+
 # Files and directories created by pub
 .packages
 .pub/
@@ -7,3 +11,8 @@ pubspec.lock
 
 # Directory created by dartdoc
 doc/api/
+
+# No need to push bundles or the manifest I guess - those can be generated simply enough
+*.bundle
+web/manifest/manifest.txt
+.idea/workspace.xml
