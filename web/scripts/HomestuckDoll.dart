@@ -14,7 +14,7 @@ class HomestuckDoll extends Doll {
     final int maxBody = 68; //holy shit, is tht really how many we have?
     final int maxHair = 85;
     final int maxEye =12;
-    final int maxMouth = 21;
+    final int maxMouth = 27;
     final int maxSymbol = 65;
     final int maxGlass = 26;
 

@@ -361,6 +361,9 @@ images/Homestuck/LeftHorn/LeftHorn
     91.png
     92.png
     93.png
+    94.png
+    95.png
+    96.png
 
 images/Homestuck/Mouth/Mouth
     0.png
@@ -378,6 +381,12 @@ images/Homestuck/Mouth/Mouth
     2.png
     20.png
     21.png
+    22.png
+    23.png
+    24.png
+    25.png
+    26.png
+    27.png
     3.png
     4.png
     5.png
@@ -529,6 +538,9 @@ images/Homestuck/RightHorn/RightHorn
     91.png
     92.png
     93.png
+    94.png
+    95.png
+    96.png
 
 images/Homestuck/Symbol/Symbol
     0.png
