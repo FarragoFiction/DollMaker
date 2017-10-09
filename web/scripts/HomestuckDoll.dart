@@ -11,7 +11,7 @@ class HomestuckDoll extends Doll {
 
     @override
     String folder = "images/Homestuck";
-    final int maxBody = 63; //holy shit, is tht really how many we have?
+    final int maxBody = 68; //holy shit, is tht really how many we have?
     final int maxHair = 77;
     final int maxEye =12;
     final int maxMouth = 21;
