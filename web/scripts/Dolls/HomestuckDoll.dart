@@ -15,7 +15,7 @@ class HomestuckDoll extends Doll {
     final int maxHair = 85;
     final int maxEye =16;
     final int maxMouth = 28;
-    final int maxSymbol = 65;
+    final int maxSymbol = 66;
     final int maxGlass = 26;
 
 
