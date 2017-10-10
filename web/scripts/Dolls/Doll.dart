@@ -8,7 +8,7 @@ import "../includes/bytebuilder.dart";
 import "../includes/palette.dart";
 abstract class Doll {
     String folder;
-
+    int renderingType = 0;
     ///in rendering order.
     List<SpriteLayer> layers = new List<SpriteLayer>();
     Palette palette;
@@ -47,7 +47,7 @@ abstract class Doll {
         if(builder == null) builder = new ByteBuilder();
         int length = layers.length + palette.names.length + 1;//one byte for doll type
         builder.appendExpGolomb(length); //for length
-        builder.appendByte(1); //value of 1 means homestuck doll
+        builder.appendByte(renderingType); //value of 1 means homestuck doll
 
 
         List<String> names = new List<String>.from(palette.names);

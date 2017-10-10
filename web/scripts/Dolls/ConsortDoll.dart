@@ -11,6 +11,9 @@ class ConsortDoll extends Doll {
     String folder = "images/Homestuck";
 
     @override
+    int renderingType =3;
+
+    @override
     Palette palette = new ConsortPalette()
         ..eyes = '#FF9B00'
         ..belly = '#EFEFEF'
