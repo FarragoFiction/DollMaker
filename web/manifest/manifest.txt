@@ -448,6 +448,7 @@ images/Homestuck/Consort/Consort
     5.png
     6.png
     7.png
+    8.png
 
 images/Homestuck/RightFin/RightFin
     0.png
