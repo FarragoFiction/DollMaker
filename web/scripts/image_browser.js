@@ -137,7 +137,7 @@ function renderAllMouths(){
 
 function renderAllConsorts(){
 	var minHorn = 0
-	var maxHorn = 8;
+	var maxHorn = 9;
 	for(var i = minHorn; i<= maxHorn; i++){
 			renderLayeredSprites([new SpritePart("images/Homestuck/Consort/"+i+".png","consort "+i)]);
 	}
