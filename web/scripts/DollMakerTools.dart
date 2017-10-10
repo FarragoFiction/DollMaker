@@ -70,6 +70,7 @@ abstract class DollMakerTools {
             for(String name in chosen.names) {
                 doll.palette.add(name, chosen[name],true);
             }
+            syncColorPickersToSprite(chosen);
             callback();
         });
     }
