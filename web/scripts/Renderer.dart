@@ -8,6 +8,7 @@ import "includes/colour.dart";
 import "includes/palette.dart";
 import "random.dart";
 import "loader/loader.dart";
+import "Dolls/ConsortDoll.dart";
 
 class Renderer {
     static int imagesWaiting = 0;
@@ -251,17 +252,17 @@ abstract class ReferenceColours {
     static Colour HAIR_ACCESSORY = new Colour.fromHex(0x202020);
 
     static HomestuckPalette SPRITE_PALETTE = new HomestuckPalette()
-        ..aspect_light = '#FEFD49'
+        ..aspect_light = '#FEFD49' //eyes
         ..aspect_dark = '#FEC910'
         ..shoe_light = '#10E0FF'
         ..shoe_dark = '#00A4BB'
         ..cloak_light = '#FA4900'
         ..cloak_mid = '#E94200'
         ..cloak_dark = '#C33700'
-        ..shirt_light = '#FF8800'
-        ..shirt_dark = '#D66E04'
-        ..pants_light = '#E76700'
-        ..pants_dark = '#CA5B00'
+        ..shirt_light = '#FF8800'  //consort belly
+        ..shirt_dark = '#D66E04' //consort belly outline
+        ..pants_light = '#E76700'//consort side
+        ..pants_dark = '#CA5B00'//consort outline
         ..hair_main = '#313131'
         ..hair_accent = '#202020'
         ..eye_white_left = '#ffba35'
@@ -289,6 +290,13 @@ abstract class ReferenceColours {
         ..eye_white_right = '#ffba15'
         ..skin = '#ffffff';
 
+    static ConsortPalette  CONSORT_PALETTE = new ConsortPalette()
+        ..eyes = '#FEFD49'
+        ..belly = '#FF8800'
+        ..bellyoutline = '#D66E04'
+        ..side = '#E76700'
+        ..outline = '#CA5B00';
+
     static HomestuckPalette PROSPIT_PALETTE = new HomestuckPalette()
         ..aspect_light = "#FFFF00"
         ..aspect_dark = "#FFC935"
@@ -312,6 +320,8 @@ abstract class ReferenceColours {
         ..shirt_dark = "#E760FF"
         ..pants_light = "#B400CC"
         ..pants_dark = "#770E87";
+
+
 
     static HomestuckPalette ROBOT_PALETTE = new HomestuckPalette()
         ..aspect_light = "#0000FF"
