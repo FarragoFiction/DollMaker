@@ -27,6 +27,9 @@ images/Homestuck/RightEye/RightEye
 images/Homestuck/Glasses/Glasses
 \d+.png
 
+images/Homestuck/Consort/Consort
+\d+.png
+
 images/Homestuck/RightFin/RightFin
 \d+.png
 
