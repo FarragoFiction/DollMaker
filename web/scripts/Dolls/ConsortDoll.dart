@@ -16,6 +16,7 @@ class ConsortDoll extends Doll {
         ..belly = '#EFEFEF'
         ..bellyoutline = '#DBDBDB'
         ..side = '#C6C6C6'
+        ..lightest_part = '#ffffff'
         ..outline = '#ADADAD';
 
     ConsortDoll() {
@@ -56,6 +57,8 @@ class ConsortDoll extends Doll {
       palette.add(ConsortPalette._SIDE, new Colour(c1.red, c1.green,c1.blue)..setHSV(c1.hue, c1.saturation, c1.value/3), true);
       palette.add(ConsortPalette._BELLYOUTLINE, new Colour(c1.red, c1.green,c1.blue)..setHSV(c1.hue, c1.saturation, c1.value/2), true);
       palette.add(ConsortPalette._BELLY, c1, true);
+      palette.add(ConsortPalette._LIGHTESTPART, new Colour(c1.red, c1.green,c1.blue)..setHSV(c1.hue, c1.saturation, c1.value*2), true);
+
 
 
   }
@@ -87,6 +90,7 @@ class ConsortPalette extends Palette {
     static String _BELLY = "belly";
     static String _BELLYOUTLINE = "belly_outline";
     static String _SIDE = "side";
+    static String _LIGHTESTPART = "lightest_part";
     static String _OUTLINE = "main_outline";
 
     static Colour _handleInput(Object input) {
@@ -126,6 +130,10 @@ class ConsortPalette extends Palette {
     Colour get bellyoutline => this[_BELLYOUTLINE];
 
     void set bellyoutline(dynamic c) => this.add(_BELLYOUTLINE, _handleInput(c), true);
+
+    Colour get lightest_part => this[_LIGHTESTPART];
+
+    void set lightest_part(dynamic c) => this.add(_LIGHTESTPART, _handleInput(c), true);
 
 
     Colour get side => this[_SIDE];

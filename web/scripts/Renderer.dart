@@ -295,6 +295,7 @@ abstract class ReferenceColours {
         ..belly = '#FF8800'
         ..bellyoutline = '#D66E04'
         ..side = '#E76700'
+        ..lightest_part = '#ffcd92'
         ..outline = '#CA5B00';
 
     static HomestuckPalette PROSPIT_PALETTE = new HomestuckPalette()
