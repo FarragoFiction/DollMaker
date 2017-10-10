@@ -2,6 +2,8 @@ import "SpriteLayer.dart";
 import "dart:html";
 import "includes/colour.dart";
 import "includes/palette.dart";
+import "HomestuckDollLib.dart";
+import "Dolls/Doll.dart";
 
 abstract class DollMakerTools {
 
@@ -46,6 +48,30 @@ abstract class DollMakerTools {
             callback();
         });
 
+    }
+
+    static void drawSamplePalettes(Element div, Doll doll, dynamic callback) {
+
+        String html = "<div class = 'dollDropDownDiv'><select class = 'dollDropDown' id = 'samplePalettes' name='samplePalettes'>";
+        html += "<option value = 'None'>None</option>";
+        Map<String, Palette> samples = ReferenceColours.paletteList;
+        for (String name in samples.keys) {
+            html += '<option value="$name">$name</option>';
+        }
+        html += "</select><span class = 'dropDownLabel'>Premade Palettes</span></div>";
+        appendHtml(div, html);
+
+        SelectElement drawnDropDown = querySelector("#samplePalettes");
+
+        drawnDropDown.onChange.listen((Event e) {
+            print("sample palette changed");
+            OptionElement option = drawnDropDown.selectedOptions[0];
+            Palette chosen  = samples[option.value];
+            for(String name in chosen.names) {
+                doll.palette.add(name, chosen[name],true);
+            }
+            callback();
+        });
     }
 
     static void drawColorPickersForPallete(Element div, Palette palette, dynamic callback) {

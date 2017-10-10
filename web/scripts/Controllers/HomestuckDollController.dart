@@ -46,9 +46,11 @@ void setupForms() {
 
     Element layerControls = querySelector("#layerControls");
     Element colorControls = querySelector("#colorControls");
+    Element samplePaletteControls = querySelector("#samplePaletteControls");
     for(SpriteLayer l in doll.layers.reversed) {
         DollMakerTools.drawDropDownForSpriteLayer(layerControls, l,drawDollCreator);
     }
+    DollMakerTools.drawSamplePalettes(samplePaletteControls, doll, drawDollCreator);
     DollMakerTools.drawColorPickersForPallete(colorControls, doll.palette, drawDollCreator);
 
 }

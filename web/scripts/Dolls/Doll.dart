@@ -18,7 +18,6 @@ abstract class Doll {
     void randomizeColors();
     void randomizeNotColors();
 
-    @override
     void initFromReader(ByteReader reader, Palette newP) {
         initLayers();
         int numFeatures = reader.readExpGolomb();
@@ -44,7 +43,6 @@ abstract class Doll {
         }
     }
 
-    @override
     String toDataBytesX([ByteBuilder builder = null]) {
         if(builder == null) builder = new ByteBuilder();
         int length = layers.length + palette.names.length + 1;//one byte for doll type

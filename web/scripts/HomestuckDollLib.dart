@@ -8,3 +8,4 @@ export "Renderer.dart";
 export "random.dart";
 export "weighted_lists.dart";
 export "DollMakerTools.dart";
+export "ReferenceColors.dart";
