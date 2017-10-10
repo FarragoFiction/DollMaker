@@ -42,11 +42,22 @@ class ConsortDoll extends Doll {
       for(SpriteLayer l in layers) {
           l.imgNumber = rand.nextInt(l.maxImageNumber+1);
       }
+      randomizeColors();
   }
 
   @override
   void randomizeColors() {
-    // TODO: implement randomizeColors
+      Random rand = new Random();
+      ConsortPalette p = palette as ConsortPalette;
+      Colour c1 = new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255));
+      Colour c2 = new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255));
+      palette.add(ConsortPalette._EYES, c2, true);
+      palette.add(ConsortPalette._OUTLINE, new Colour(c1.red, c1.green,c1.blue)..setHSV(c1.hue, c1.saturation, c1.value/4), true);
+      palette.add(ConsortPalette._SIDE, new Colour(c1.red, c1.green,c1.blue)..setHSV(c1.hue, c1.saturation, c1.value/3), true);
+      palette.add(ConsortPalette._BELLYOUTLINE, new Colour(c1.red, c1.green,c1.blue)..setHSV(c1.hue, c1.saturation, c1.value/2), true);
+      palette.add(ConsortPalette._BELLY, c1, true);
+
+
   }
 
   @override
@@ -72,11 +83,11 @@ class ConsortDoll extends Doll {
 
 
 class ConsortPalette extends Palette {
-    static String _EYES = "aspect1";
-    static String _BELLY = "shirt1";
-    static String _BELLYOUTLINE = "shirt2";
-    static String _SIDE = "pants1";
-    static String _OUTLINE = "pants2";
+    static String _EYES = "eyes";
+    static String _BELLY = "belly";
+    static String _BELLYOUTLINE = "belly_outline";
+    static String _SIDE = "side";
+    static String _OUTLINE = "main_outline";
 
     static Colour _handleInput(Object input) {
         if (input is Colour) {
