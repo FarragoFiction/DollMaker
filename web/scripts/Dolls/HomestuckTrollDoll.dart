@@ -10,7 +10,7 @@ import "../Dolls/HomestuckDoll.dart";
 
 class HomestuckTrollDoll extends HomestuckDoll {
 
-    int maxHorn = 96;
+    int maxHorn = 97;
     int maxFin = 1;
     int maxWing = 13;
     @override
