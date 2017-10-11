@@ -18,10 +18,11 @@ abstract class Doll {
         randomizeColors();
         randomizeNotColors();
     }
-    
+
     void randomizeColors() {
         Random rand = new Random();
-        for(String name in palette.names) {
+        List<String> names = new List<String>.from(palette.names);
+        for(String name in names) {
             palette.add(name, new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255)), true);
         }
     }

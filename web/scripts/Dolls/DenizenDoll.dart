@@ -14,13 +14,13 @@ class DenizenDoll extends Doll{
   int renderingType =4;
   @override
   String folder = "images/Homestuck/Denizen";
-  final int maxFace = 74; //holy shit, is tht really how many we have?
-  final int maxBack = 86;
-  final int maxMouth =29;
-  final int maxOther = 28;
-  final int maxBody = 73;
-  final int maxCore = 26;
-  final int maxEyes = 26;
+  final int maxFace = 13; //holy shit, is tht really how many we have?
+  final int maxBack = 10;
+  final int maxMouth =13;
+  final int maxOther = 2;
+  final int maxBody = 4;
+  final int maxCore = 1;
+  final int maxEyes = 7;
 
   @override
   Palette palette = new DenizenPalette()
@@ -48,6 +48,12 @@ class DenizenDoll extends Doll{
     randomize();
   }
 
+  DenizenDoll.fromDataString(String dataString){
+    Uint8List thingy = BASE64URL.decode(dataString);
+    ByteReader reader = new ByteReader(thingy.buffer, 0);
+    initFromReader(reader, new DenizenPalette());
+  }
+
   @override
   void initLayers() {
 
@@ -70,11 +76,11 @@ then the mouths(edited)
 then the eyes
 then lastly the other bits.
 */
-      layers.add(new SpriteLayer("Back","$folder/Back/", 1, maxBody));
+      layers.add(new SpriteLayer("Back","$folder/Back/", 1, maxBack));
       layers.add(new SpriteLayer("Core","$folder/Core/", 1, maxCore));
-      layers.add(new SpriteLayer("Body","$folder/Body/", 1, maxMouth));
+      layers.add(new SpriteLayer("Body","$folder/Body/", 1, maxBody));
       layers.add(new SpriteLayer("AspectFace","$folder/AspectFace/", 1, maxFace));
-      layers.add(new SpriteLayer("Mouths","$folder/Mouths/", 1, maxMouth));
+      layers.add(new SpriteLayer("Mouth","$folder/Mouth/", 1, maxMouth));
       layers.add(new SpriteLayer("Eyes","$folder/Eyes/", 1, maxEyes));
       layers.add(new SpriteLayer("Other","$folder/Other/", 1, maxOther));
 
