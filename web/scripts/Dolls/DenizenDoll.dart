@@ -14,13 +14,13 @@ class DenizenDoll extends Doll{
   int renderingType =4;
   @override
   String folder = "images/Homestuck/Denizen";
-  final int maxFace = 13; //holy shit, is tht really how many we have?
-  final int maxBack = 10;
-  final int maxMouth =13;
-  final int maxOther = 2;
-  final int maxBody = 4;
+  final int maxFace = 14; //holy shit, is tht really how many we have?
+  final int maxBack = 11;
+  final int maxMouth =14;
+  final int maxOther = 3;
+  final int maxBody = 5;
   final int maxCore = 1;
-  final int maxEyes = 7;
+  final int maxEyes = 8;
 
   @override
   Palette palette = new DenizenPalette()
