@@ -14,7 +14,7 @@ class HomestuckDoll extends Doll {
     String folder = "images/Homestuck";
     final int maxBody = 74; //holy shit, is tht really how many we have?
     final int maxHair = 86;
-    final int maxEye =17;
+    final int maxEye =29;
     final int maxMouth = 28;
     final int maxSymbol = 73;
     final int maxGlass = 26;
