@@ -14,9 +14,30 @@ abstract class Doll {
     Palette palette;
 
     void initLayers();
-    void randomize();
-    void randomizeColors();
-    void randomizeNotColors();
+    void randomize() {
+        randomizeColors();
+        randomizeNotColors();
+    }
+    
+    void randomizeColors() {
+        Random rand = new Random();
+        for(String name in palette.names) {
+            palette.add(name, new Colour(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255)), true);
+        }
+    }
+
+    void randomizeNotColors() {
+        Random rand = new Random();
+        int firstEye = -100;
+        for(SpriteLayer l in layers) {
+            l.imgNumber = rand.nextInt(l.maxImageNumber+1);
+            //keep eyes synced unless player decides otherwise
+            if(firstEye > 0 && l.imgNameBase.contains("Eye")) l.imgNumber = firstEye;
+            if(firstEye < 0 && l.imgNameBase.contains("Eye")) firstEye = l.imgNumber;
+            if(l.imgNumber == 0) l.imgNumber = 1;
+            if(l.imgNameBase.contains("Glasses") && rand.nextDouble() > 0.35) l.imgNumber = 0;
+        }
+    }
 
     void initFromReader(ByteReader reader, Palette newP) {
         initLayers();
