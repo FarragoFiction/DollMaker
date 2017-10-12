@@ -12,7 +12,7 @@ class HomestuckDoll extends Doll {
     int renderingType =1;
     @override
     String folder = "images/Homestuck";
-    final int maxBody = 78; //75 is currently colored wrong
+    final int maxBody = 84; //75 is currently colored wrong
     final int maxHair = 87;
     final int maxEye =35;
     final int maxMouth = 30;
