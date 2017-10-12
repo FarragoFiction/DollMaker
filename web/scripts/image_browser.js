@@ -161,7 +161,7 @@ function renderAllBodies(){
 
 function renderAllSymbols(){
 	var minHorn = 1
-	var maxHorn = 73;
+	var maxHorn = 148;
 	for(var i = minHorn; i<= maxHorn; i++){
 			renderLayeredSprites([new SpritePart("images/Homestuck/Symbol/bg.png", ""),new SpritePart("images/Homestuck/Symbol/"+i+".png","symbol "+i)]);
 	}
