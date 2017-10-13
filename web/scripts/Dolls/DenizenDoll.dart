@@ -17,7 +17,7 @@ class DenizenDoll extends Doll{
   final int maxFace = 14; //holy shit, is tht really how many we have?
   final int maxBack = 11;
   final int maxMouth =14;
-  final int maxOther = 3;
+  final int maxOther = 9;
   final int maxBody = 14;
   final int maxCore = 1;
   final int maxEyes = 18;
@@ -46,6 +46,14 @@ class DenizenDoll extends Doll{
   DenizenDoll() {
     initLayers();
     randomize();
+  }
+
+  @override
+  void randomizeNotColors() {
+    Random rand = new Random();
+    for(SpriteLayer l in layers) {
+      l.imgNumber = rand.nextInt(l.maxImageNumber+1);
+    }
   }
 
   DenizenDoll.fromDataString(String dataString){

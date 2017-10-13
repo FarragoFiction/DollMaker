@@ -694,6 +694,8 @@ images/Homestuck/Symbol/Symbol5
     150.png
     151.png
     152.png
+    153.png
+    154.png
 
 images/Homestuck/Wings/Wings
     0.png
