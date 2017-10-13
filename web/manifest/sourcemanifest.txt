@@ -1,13 +1,28 @@
 SBURBSim Bundle Manifest
 
-images/Homestuck/Body/Body
-    \d+.png
+images/Homestuck/Body/Body1
+([0-9]|[1-2][0-9])\.png
 
-images/Homestuck/HairBack/HairBack
-    \d+.png
+images/Homestuck/Body/Body2
+([3-5][0-9])\.png
 
-images/Homestuck/HairTop/HairTop
-    \d+.png
+images/Homestuck/Body/Body3
+
+images/Homestuck/HairBack/HairBack1
+([0-9]|[1-2][0-9])\.png
+
+images/Homestuck/HairBack/HairBack2
+([3-5][0-9])\.png
+
+images/Homestuck/HairBack/HairBack3
+
+images/Homestuck/HairTop/HairTop1
+([0-9]|[1-2][0-9])\.png
+
+images/Homestuck/HairTop/HairTop2
+([3-5][0-9])\.png
+
+images/Homestuck/HairTop/HairTop3
 
 images/Homestuck/LeftEye/LeftEye
 \d+.png
@@ -15,8 +30,13 @@ images/Homestuck/LeftEye/LeftEye
 images/Homestuck/LeftFin/LeftFin
 \d+.png
 
-images/Homestuck/LeftHorn/LeftHorn
-\d+.png
+images/Homestuck/LeftHorn/LeftHorn1
+([0-9]|[1-2][0-9])\.png
+
+images/Homestuck/LeftHorn/LeftHorn2
+([3-5][0-9])\.png
+
+images/Homestuck/LeftHorn/LeftHorn3
 
 images/Homestuck/Mouth/Mouth
 \d+.png
@@ -33,8 +53,13 @@ images/Homestuck/Consort/Consort
 images/Homestuck/RightFin/RightFin
 \d+.png
 
-images/Homestuck/RightHorn/RightHorn
-\d+.png
+images/Homestuck/RightHorn/RightHorn1
+([0-9]|[1-2][0-9])\.png
+
+images/Homestuck/RightHorn/RightHorn2
+([3-5][0-9])\.png
+
+images/Homestuck/RightHorn/RightHorn3
 
 images/Homestuck/Symbol/Symbol1
 ([0-9]|[1-2][0-9])\.png
