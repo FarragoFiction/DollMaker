@@ -85,7 +85,13 @@ images/Homestuck/Body/Body
     82.png
     83.png
     84.png
+    85.png
+    86.png
+    87.png
+    88.png
+    89.png
     9.png
+    90.png
 
 images/Homestuck/HairBack/HairBack
     0.png
@@ -175,6 +181,8 @@ images/Homestuck/HairBack/HairBack
     85.png
     86.png
     87.png
+    88.png
+    89.png
     9.png
 
 images/Homestuck/HairTop/HairTop
@@ -265,6 +273,8 @@ images/Homestuck/HairTop/HairTop
     85.png
     86.png
     87.png
+    88.png
+    89.png
     9.png
 
 images/Homestuck/LeftEye/LeftEye
@@ -298,7 +308,20 @@ images/Homestuck/LeftEye/LeftEye
     33.png
     34.png
     35.png
+    36.png
+    37.png
+    38.png
+    39.png
     4.png
+    40.png
+    41.png
+    42.png
+    43.png
+    44.png
+    45.png
+    46.png
+    47.png
+    48.png
     5.png
     6.png
     7.png
@@ -435,6 +458,13 @@ images/Homestuck/Mouth/Mouth
     29.png
     3.png
     30.png
+    31.png
+    32.png
+    33.png
+    34.png
+    35.png
+    36.png
+    37.png
     4.png
     5.png
     6.png
@@ -473,7 +503,20 @@ images/Homestuck/RightEye/RightEye
     33.png
     34.png
     35.png
+    36.png
+    37.png
+    38.png
+    39.png
     4.png
+    40.png
+    41.png
+    42.png
+    43.png
+    44.png
+    45.png
+    46.png
+    47.png
+    48.png
     5.png
     6.png
     7.png
@@ -501,6 +544,7 @@ images/Homestuck/Glasses/Glasses
     24.png
     25.png
     26.png
+    27.png
     3.png
     4.png
     5.png
