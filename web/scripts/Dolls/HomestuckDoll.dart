@@ -14,7 +14,7 @@ class HomestuckDoll extends Doll {
     String folder = "images/Homestuck";
     final int maxBody = 93; //75 is currently colored wrong
     final int maxHair = 89;
-    final int maxEye =48;
+    final int maxEye =53;
     final int maxMouth = 46;
     final int maxSymbol = 152;
     final int maxGlass = 28;
