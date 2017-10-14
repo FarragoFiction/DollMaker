@@ -7,7 +7,7 @@ import 'dart:convert';
 import "../includes/bytebuilder.dart";
 import "../includes/palette.dart";
 class ConsortDoll extends Doll {
-    int maxBody = 10;
+    int maxBody = 11;
     String folder = "images/Homestuck";
 
     @override
