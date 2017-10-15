@@ -1,9 +1,7 @@
-import "SpriteLayer.dart";
 import "dart:html";
-import "includes/colour.dart";
-import "includes/palette.dart";
+import "DollLib/DollRenderer.dart";
+
 import "HomestuckDollLib.dart";
-import "Dolls/Doll.dart";
 
 abstract class DollMakerTools {
 

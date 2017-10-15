@@ -1,6 +1,6 @@
 import "../HomestuckDollLib.dart";
 import "dart:html";
-import "../includes/colour.dart";
+import "../DollLib/DollRenderer.dart";
 import "../DollMakerTools.dart";
 import "../navbar.dart";
 
