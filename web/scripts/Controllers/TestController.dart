@@ -37,6 +37,6 @@ void drawDollCreator() {
 
     CanvasElement canvas = querySelector("#doll_creator");
     Renderer.clearCanvas(canvas);
-    Renderer.drawDoll(canvas, doll,ReferenceColours.SPRITE_PALETTE);
+    Renderer.drawDoll(canvas, doll);
 
 }
