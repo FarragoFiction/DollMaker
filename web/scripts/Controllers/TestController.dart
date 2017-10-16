@@ -5,6 +5,7 @@ import "../navbar.dart";
 
 Doll doll;
 
+
 void main() {
     print("Hello World");
     loadNavbar();
