@@ -455,6 +455,9 @@ images/Homestuck/Glasses/Glasses
 images/Homestuck/Consort/Consort
     0.png
     1.png
+    10.png
+    11.png
+    12.png
     2.png
     3.png
     4.png
@@ -696,6 +699,7 @@ images/Homestuck/Symbol/Symbol5
     152.png
     153.png
     154.png
+    155.png
 
 images/Homestuck/Wings/Wings
     0.png
