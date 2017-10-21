@@ -67,6 +67,7 @@
       <excludeFolder url="file://$MODULE_DIR$/web/scripts/DollLib/src/images/Homestuck/RightHorn/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/scripts/DollLib/src/images/Homestuck/Sprite/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/scripts/DollLib/src/images/Homestuck/Symbol/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/web/scripts/DollLib/src/images/Homestuck/Underlings/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/scripts/DollLib/src/images/Homestuck/Wings/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/scripts/DollLib/src/images/Homestuck/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/scripts/DollLib/src/images/packages" />

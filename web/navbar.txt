@@ -22,6 +22,7 @@
     <a href="javascript:void(0)" class="dropbtn">TOOLS</a>
     <div class="dropdown-content">
       <a href="image_browser.html?bodies=true">View Parts</a>
+      <a href="http://www.farragofiction.com/CardSim">Make Trading Cards</a>
 
     </div>
   </li>
