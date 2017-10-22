@@ -23,6 +23,7 @@
     <div class="dropdown-content">
       <a href="image_browser.html?bodies=true">View Parts</a>
       <a href="http://www.farragofiction.com/CardSim">Make Trading Cards</a>
+      <a href="http://www.farragofiction.com/DollSim/charSheetCreator">Make Character Sheets</a>
 
     </div>
   </li>
