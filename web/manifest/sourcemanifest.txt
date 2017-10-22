@@ -1,12 +1,5 @@
 SBURBSim Bundle Manifest
 
-images/Homestuck/Body/Body1
-([0-9]|[1-2][0-9])\.png
-
-images/Homestuck/Body/Body2
-([3-5][0-9])\.png
-
-images/Homestuck/Body/Body3
 
 images/Homestuck/HairBack/HairBack1
 ([0-9]|[1-2][0-9])\.png
