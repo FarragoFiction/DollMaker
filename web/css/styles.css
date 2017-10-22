@@ -8,6 +8,39 @@ html, body {
   font-family: 'Roboto', sans-serif;
 }
 
+
+
+.cardWithForm{
+    display: inline-block;
+}
+
+.cardCanvas{
+    display: inline-block;
+}
+
+button{
+    display: block;
+}
+.textAreaElement{
+    text-align: right;
+    align: right;
+}
+
+.paddingTop{
+    padding-top: 10px;
+}
+
+textarea{
+    width:300px;
+}
+
+.cardForm{
+    vertical-align: top;
+    padding: 10px;
+    display: inline-block;
+    align: left;
+    text-align: left;
+}
 #output {
   padding: 20px;
   text-align: center;

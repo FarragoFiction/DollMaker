@@ -7,6 +7,7 @@
       <excludeFolder url="file://$MODULE_DIR$/build" />
       <excludeFolder url="file://$MODULE_DIR$/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/css/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/web/images/CharSheets/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/images/Homestuck/Body/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/images/Homestuck/Consort/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/images/Homestuck/Denizen/AspectFace/packages" />
@@ -39,10 +40,12 @@
       <excludeFolder url="file://$MODULE_DIR$/web/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/scripts/Controllers/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/scripts/DollLib/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/web/scripts/DollLib/src/CharSheets/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/scripts/DollLib/src/Dolls/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/scripts/DollLib/src/Misc/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/scripts/DollLib/src/Rendering/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/scripts/DollLib/src/formats/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/web/scripts/DollLib/src/images/CharSheets/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/scripts/DollLib/src/images/Homestuck/Body/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/scripts/DollLib/src/images/Homestuck/Consort/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/scripts/DollLib/src/images/Homestuck/Denizen/AspectFace/packages" />
@@ -63,9 +66,7 @@
       <excludeFolder url="file://$MODULE_DIR$/web/scripts/DollLib/src/images/Homestuck/LeftHorn/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/scripts/DollLib/src/images/Homestuck/Mouth/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/scripts/DollLib/src/images/Homestuck/RightEye/packages" />
-      <excludeFolder url="file://$MODULE_DIR$/web/scripts/DollLib/src/images/Homestuck/RightFin/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/scripts/DollLib/src/images/Homestuck/RightHorn/packages" />
-      <excludeFolder url="file://$MODULE_DIR$/web/scripts/DollLib/src/images/Homestuck/Sprite/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/scripts/DollLib/src/images/Homestuck/Symbol/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/scripts/DollLib/src/images/Homestuck/Underlings/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/scripts/DollLib/src/images/Homestuck/Wings/packages" />
@@ -73,7 +74,6 @@
       <excludeFolder url="file://$MODULE_DIR$/web/scripts/DollLib/src/images/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/scripts/DollLib/src/includes/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/scripts/DollLib/src/loader/packages" />
-      <excludeFolder url="file://$MODULE_DIR$/web/scripts/DollLib/src/manifest/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/scripts/DollLib/src/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/scripts/packages" />
     </content>
