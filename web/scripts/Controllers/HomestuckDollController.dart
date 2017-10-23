@@ -5,7 +5,9 @@ import "../navbar.dart";
 
 HomestuckDoll doll;
 void makeEgg() {
-    doll = new EggDoll();
+    Doll d = new EggDoll();
+    d.palette = doll.palette;
+    doll = d;
 }
 void main() {
     print("Hello World");

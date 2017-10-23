@@ -27,7 +27,9 @@ void hintAtEgg() {
 }
 
 void makeEgg() {
-    doll = new TrollEggDoll();
+    Doll d = new TrollEggDoll();
+    d.palette = doll.palette;
+    doll = d;
 }
 
 void loadDoll() {

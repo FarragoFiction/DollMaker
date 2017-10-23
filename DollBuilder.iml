@@ -18,6 +18,7 @@
       <excludeFolder url="file://$MODULE_DIR$/web/images/Homestuck/Denizen/Mouth/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/images/Homestuck/Denizen/Other/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/images/Homestuck/Denizen/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/web/images/Homestuck/Egg/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/images/Homestuck/Frog/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/images/Homestuck/Glasses/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/images/Homestuck/Grist/packages" />
@@ -56,6 +57,7 @@
       <excludeFolder url="file://$MODULE_DIR$/web/scripts/DollLib/src/images/Homestuck/Denizen/Mouth/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/scripts/DollLib/src/images/Homestuck/Denizen/Other/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/scripts/DollLib/src/images/Homestuck/Denizen/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/web/scripts/DollLib/src/images/Homestuck/Egg/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/scripts/DollLib/src/images/Homestuck/Frog/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/scripts/DollLib/src/images/Homestuck/Glasses/packages" />
       <excludeFolder url="file://$MODULE_DIR$/web/scripts/DollLib/src/images/Homestuck/Grist/packages" />
