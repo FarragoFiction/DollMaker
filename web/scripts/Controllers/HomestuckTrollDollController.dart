@@ -5,6 +5,7 @@ import "../DollMakerTools.dart";
 import "../navbar.dart";
 HomestuckTrollDoll doll;
 
+
 void main() {
     print("Hello World");
     loadNavbar();
@@ -12,9 +13,21 @@ void main() {
     doll = new HomestuckTrollDoll();
 
     loadDoll();
+    hintAtEgg();
+
     //don't need to preload anymore, thanks PL!
     //Renderer.loadHomestuckTrollDollParts(doll, loadDoll);
+}
 
+void hintAtEgg() {
+    AnchorElement a = new AnchorElement();
+    a.setInnerHtml("???");
+    a.onClick.listen((e) => makeEgg());
+    querySelector("#contents").append(a);
+}
+
+void makeEgg() {
+    doll = new TrollEggDoll();
 }
 
 void loadDoll() {

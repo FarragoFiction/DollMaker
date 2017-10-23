@@ -4,7 +4,9 @@ import "../DollMakerTools.dart";
 import "../navbar.dart";
 
 HomestuckDoll doll;
-
+void makeEgg() {
+    doll = new EggDoll();
+}
 void main() {
     print("Hello World");
     loadNavbar();
@@ -12,9 +14,20 @@ void main() {
     doll = new HomestuckDoll();
     print("going to load doll");
     loadDoll();
+    hintAtEgg();
+
+
+
     //bundle means i don't have to preload shit
     //Renderer.loadHomestuckDollParts(doll, loadDoll);
 
+}
+
+void hintAtEgg() {
+    AnchorElement a = new AnchorElement();
+    a.setInnerHtml("???");
+    a.onClick.listen((e) => makeEgg());
+    querySelector("#contents").append(a);
 }
 
 void loadDoll() {
