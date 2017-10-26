@@ -147,7 +147,7 @@ function renderAllGlasses(){
 	var minHorn = 1
 	var maxHorn = 73;
 	for(var i = minHorn; i<= maxHorn; i++){
-			renderLayeredSprites([new SpritePart("images/Homestuck/Body/head.png", ""),new SpritePart("images/Homestuck/Glasses/"+i+".png","mouth "+i)]);
+			renderLayeredSprites([new SpritePart("images/Homestuck/Body/head.png", ""),new SpritePart("images/Homestuck/Glasses/"+i+".png","accessory "+i)]);
 	}
 }
 
