@@ -113,7 +113,7 @@ function renderAllHair(){
 
 function renderAllHorns(){
 	var minHorn = 0
-	var maxHorn = 100;
+	var maxHorn = 102;
 	for(var i = minHorn; i<= maxHorn; i++){
 			renderLayeredSprites([new SpritePart("images/Homestuck/Body/head.png", ""),new SpritePart("images/Homestuck/LeftHorn/"+i+".png","leftHorn "+i),new SpritePart("images/Homestuck/RightHorn/"+i+".png", "rightHorn" +i)]);
 	}
@@ -121,7 +121,7 @@ function renderAllHorns(){
 
 function renderAllEyes(){
 	var minHorn = 1
-	var maxHorn = 73;
+	var maxHorn = 56;
 	for(var i = minHorn; i<= maxHorn; i++){
 			renderLayeredSprites([new SpritePart("images/Homestuck/Body/head.png", ""),new SpritePart("images/Homestuck/LeftEye/"+i+".png","leftEye "+i),new SpritePart("images/Homestuck/RightEye/"+i+".png", "rightEye" +i)]);
 	}
@@ -129,7 +129,7 @@ function renderAllEyes(){
 
 function renderAllMouths(){
 	var minHorn = 1
-	var maxHorn = 73;
+	var maxHorn = 49;
 	for(var i = minHorn; i<= maxHorn; i++){
 			renderLayeredSprites([new SpritePart("images/Homestuck/Body/head.png", ""),new SpritePart("images/Homestuck/Mouth/"+i+".png","mouth "+i)]);
 	}
@@ -137,7 +137,7 @@ function renderAllMouths(){
 
 function renderAllConsorts(){
 	var minHorn = 0
-	var maxHorn = 9;
+	var maxHorn = 18;
 	for(var i = minHorn; i<= maxHorn; i++){
 			renderLayeredSprites([new SpritePart("images/Homestuck/Consort/"+i+".png","consort "+i)]);
 	}
@@ -145,7 +145,7 @@ function renderAllConsorts(){
 
 function renderAllGlasses(){
 	var minHorn = 1
-	var maxHorn = 73;
+	var maxHorn = 40;
 	for(var i = minHorn; i<= maxHorn; i++){
 			renderLayeredSprites([new SpritePart("images/Homestuck/Body/head.png", ""),new SpritePart("images/Homestuck/Glasses/"+i+".png","accessory "+i)]);
 	}
@@ -153,7 +153,7 @@ function renderAllGlasses(){
 
 function renderAllBodies(){
 	var minHorn = 0
-	var maxHorn = 101;
+	var maxHorn = 104;
 	for(var i = minHorn; i<= maxHorn; i++){
 			renderLayeredSprites([new SpritePart("images/Homestuck/Body/"+i+".png","body "+i)]);
 	}
@@ -161,7 +161,7 @@ function renderAllBodies(){
 
 function renderAllSymbols(){
 	var minHorn = 0
-	var maxHorn = 170;
+	var maxHorn = 201;
 	for(var i = minHorn; i<= maxHorn; i++){
 			renderLayeredSprites([new SpritePart("images/Homestuck/Symbol/bg.png", ""),new SpritePart("images/Homestuck/Symbol/"+i+".png","symbol "+i)]);
 	}
