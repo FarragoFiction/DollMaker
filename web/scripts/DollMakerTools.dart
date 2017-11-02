@@ -22,6 +22,7 @@ abstract class DollMakerTools {
     }
 
     static void drawDropDownForSpriteLayer(Element div, SpriteLayer layer, dynamic callback) {
+        print("drawing drop down for ${layer.name}, is it a slave? ${layer.slave}");
         if(layer.slave) return; //this will be set by owner.
         //drop down should be set to whatever the layer's img number is,
         //and on change it should change the layers img number
