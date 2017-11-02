@@ -54,20 +54,7 @@ images/Homestuck/RightHorn/RightHorn2
 
 images/Homestuck/RightHorn/RightHorn3
 
-images/Homestuck/Symbol/Symbol1
-([0-9]|[1-2][0-9])\.png
 
-images/Homestuck/Symbol/Symbol2
-([3-5][0-9])\.png
-
-images/Homestuck/Symbol/Symbol3
-([6-9][0-9])\.png
-
-images/Homestuck/Symbol/Symbol4
-(1[0-3][0-9])\.png
-
-images/Homestuck/Symbol/Symbol5
-(1[4-6][0-9])\.png
 
 
 images/Homestuck/Wings/Wings
