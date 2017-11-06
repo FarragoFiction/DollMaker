@@ -15,6 +15,7 @@
       <a href="troll_index.html">Troll Maker</a>
       <a href="consort_index.html">Consort Maker</a>
       <a href="denizen_index.html">Denizen Maker by TG</a>
+      <a href="dad_index.html">Dad Maker by YD</a>
     </div>
   </li>
 
