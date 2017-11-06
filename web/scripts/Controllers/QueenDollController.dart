@@ -6,13 +6,13 @@ import "../DollMakerTools.dart";
 import "../navbar.dart";
 import "BaseController.dart";
 
-BaseController controller;
+QueenController controller;
 
 void main() {
     print("Hello World");
     loadNavbar();
     Random rand = new Random();
-    controller = new BaseController(new QueenDoll());
+    controller = new QueenController(new QueenDoll());
     print("going to load doll");
     loadDoll();
     //bundle means i don't have to preload shit
@@ -31,4 +31,11 @@ void loadDoll() {
     //whether i loaded or not, it's time to draw.
     controller.setupForms();
     controller.drawDollCreator();
+}
+
+
+class QueenController extends BaseController {
+  QueenController(Doll doll) : super(doll);
+
+
 }
