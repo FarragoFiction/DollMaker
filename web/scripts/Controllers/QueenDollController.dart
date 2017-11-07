@@ -37,5 +37,44 @@ void loadDoll() {
 class QueenController extends BaseController {
   QueenController(Doll doll) : super(doll);
 
+  @override
+  void drawDollCreator() {
+      print("Draw doll creator");
+      for (SpriteLayer l in doll.renderingOrderLayers) {
+          //TODO this will work differently for named layers
+          //DollMakerTools.syncDropDownToSprite(l);
+      }
+
+      CanvasElement canvas = querySelector("#doll_creator");
+      Renderer.clearCanvas(canvas);
+      Renderer.drawDoll(canvas, doll);
+      TextAreaElement dataBox = querySelector("#shareableURL");
+      dataBox.value = "${window.location.origin}${window.location.pathname}?${doll.toDataBytesX()}";
+  }
+
+
+@override
+  void setupForms() {
+      querySelector("#randomize").onClick.listen((e) => randomizeDoll());
+      querySelector("#randomizeColors").onClick.listen((e) => randomizeDollColors());
+      querySelector("#randomizeNotColors").onClick.listen((e) => randomizeDollNotColors());
+
+      ButtonElement copyButton = querySelector("#copyButton");
+      copyButton.onClick.listen((Event e) {
+          TextAreaElement dataBox = querySelector("#shareableURL");
+          dataBox.select();
+          document.execCommand('copy');
+      });
+
+
+      Element layerControls = querySelector("#layerControls");
+      Element colorControls = querySelector("#colorControls");
+      for (SpriteLayer l in doll.renderingOrderLayers.reversed) {
+          //TODO: need to display current layers and let you delete
+          //DollMakerTools.drawDropDownForSpriteLayer(layerControls, l, drawDollCreator);
+      }
+      //TODO need to have a section for adding a new layer.
+      DollMakerTools.drawColorPickersForPallete(colorControls, doll.palette, drawDollCreator);
+  }
 
 }

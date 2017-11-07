@@ -1,5 +1,6 @@
 import "dart:html";
 import "DollLib/DollRenderer.dart";
+import 'DollLib/src/includes/path_utils.dart';
 
 import "HomestuckDollLib.dart";
 
@@ -101,6 +102,8 @@ abstract class DollMakerTools {
     static void appendHtml(Element element, String html) {
         element.appendHtml(html, treeSanitizer: NodeTreeSanitizer.trusted);
     }
+
+
 
 
 }
