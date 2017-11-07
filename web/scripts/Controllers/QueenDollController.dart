@@ -70,8 +70,7 @@ class QueenController extends BaseController {
       Element layerControls = querySelector("#layerControls");
       Element colorControls = querySelector("#colorControls");
       for (SpriteLayer l in doll.renderingOrderLayers.reversed) {
-          //TODO: need to display current layers and let you delete
-          //DollMakerTools.drawDropDownForSpriteLayer(layerControls, l, drawDollCreator);
+          DollMakerTools.drawDropDownForSpriteLayer(layerControls, l, drawDollCreator);
       }
       //TODO need to have a section for adding a new layer.
       DollMakerTools.drawColorPickersForPallete(colorControls, doll.palette, drawDollCreator);

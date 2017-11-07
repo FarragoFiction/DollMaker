@@ -23,6 +23,10 @@ abstract class DollMakerTools {
     }
 
     static void drawDropDownForSpriteLayer(Element div, SpriteLayer layer, dynamic callback) {
+        if(layer is NamedSpriteLayer) {
+            drawDropDownForNamedSpriteLayer(div, layer, callback);
+            return;
+        }
         print("drawing drop down for ${layer.name}, is it a slave? ${layer.slave}");
         if(layer.slave) return; //this will be set by owner.
         //drop down should be set to whatever the layer's img number is,
@@ -47,6 +51,37 @@ abstract class DollMakerTools {
             layer.imgNumber = int.parse(option.value);
             callback();
         });
+
+    }
+
+    static void drawDropDownForNamedSpriteLayer(Element div, NamedSpriteLayer layer, dynamic callback) {
+        print("drawing drop down for ${layer.name}, is it a slave? ${layer.slave}");
+        if(layer.slave) return; //this will be set by owner.
+        //drop down should be set to whatever the layer's img number is,
+        //and on change it should change the layers img number
+        String html = "<div class = 'dollDropDownDiv'><select class = 'dollDropDown' id = '${layer.name}' name='${layer.name}'>";
+        for (String s in layer.possibleNames) {
+            if (layer.name == s) {
+                html += '<option  selected = "selected" value="$s">$s</option>';
+            } else {
+                html += '<option value="$s">$s</option>';
+            }
+        }
+        html += "</select><span class = 'dropDownLabel'>Layer</span></div>";
+
+        if(layer.possibleNames.isNotEmpty) {
+            appendHtml(div, html);
+
+            SelectElement drawnDropDown = querySelector("#${layer.name}");
+
+            drawnDropDown.onChange.listen((Event e) {
+                print("layer changed");
+                //InputElement classDropDown = querySelector('[name="className${player.id}""] option:selected'); //need to get what is selected inside the .change, otheriise is always the same;
+                OptionElement option = drawnDropDown.selectedOptions[0];
+                layer.imgNumber = int.parse(option.value);
+                callback();
+            });
+        }
 
     }
 
