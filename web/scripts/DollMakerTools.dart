@@ -22,9 +22,9 @@ abstract class DollMakerTools {
         drawnDropDown.value = "${color.toStyleString()}";
     }
 
-    static void drawDropDownForSpriteLayer(Element div, SpriteLayer layer, dynamic callback) {
+    static void drawDropDownForSpriteLayer(Doll doll, Element div, SpriteLayer layer, dynamic callback) {
         if(layer is NamedSpriteLayer) {
-            drawDropDownForNamedSpriteLayer(div, layer, callback);
+            drawDropDownForNamedSpriteLayer(doll, div, layer, callback);
             return;
         }
         print("drawing drop down for ${layer.name}, is it a slave? ${layer.slave}");
@@ -54,12 +54,13 @@ abstract class DollMakerTools {
 
     }
 
-    static void drawDropDownForNamedSpriteLayer(Element div, NamedSpriteLayer layer, dynamic callback) {
+    static void drawDropDownForNamedSpriteLayer(NamedLayerDoll doll, Element div, NamedSpriteLayer layer, dynamic callback) {
         print("drawing drop down for ${layer.name}, is it a slave? ${layer.slave}");
+        SpanElement wrapper = new SpanElement();
         if(layer.slave) return; //this will be set by owner.
         //drop down should be set to whatever the layer's img number is,
         //and on change it should change the layers img number
-        String html = "<div class = 'dollDropDownDiv'><select class = 'dollDropDown' id = '${layer.name}' name='${layer.name}'>";
+        String html = "<span class = 'dollDropDownDiv'><select class = 'dollDropDown' id = '${layer.name}' name='${layer.name}'>";
         for (String s in layer.possibleNames) {
             if (layer.name == s) {
                 html += '<option  selected = "selected" value="$s">$s</option>';
@@ -67,18 +68,28 @@ abstract class DollMakerTools {
                 html += '<option value="$s">$s</option>';
             }
         }
-        html += "</select><span class = 'dropDownLabel'>Layer</span></div>";
+        html += "</select><span class = 'dropDownLabel'>Layer</span></span>";
 
         if(layer.possibleNames.isNotEmpty) {
-            appendHtml(div, html);
+            ButtonElement b = new ButtonElement();
+            b.setInnerHtml("[X]");
+            wrapper.append(b);
+            appendHtml(wrapper, html);
+            div.append(wrapper);
 
             SelectElement drawnDropDown = querySelector("#${layer.name}");
+
+            b.onClick.listen((Event e) {
+                doll.layers.remove(layer);
+                wrapper.style.display = "none";
+                callback();
+            });
 
             drawnDropDown.onChange.listen((Event e) {
                 print("layer changed");
                 //InputElement classDropDown = querySelector('[name="className${player.id}""] option:selected'); //need to get what is selected inside the .change, otheriise is always the same;
                 OptionElement option = drawnDropDown.selectedOptions[0];
-                layer.imgNumber = int.parse(option.value);
+                layer.name = option.value ;
                 callback();
             });
         }

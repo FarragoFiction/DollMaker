@@ -25,7 +25,7 @@ class BaseController {
         Element layerControls = querySelector("#layerControls");
         Element colorControls = querySelector("#colorControls");
         for (SpriteLayer l in doll.renderingOrderLayers.reversed) {
-            DollMakerTools.drawDropDownForSpriteLayer(layerControls, l, drawDollCreator);
+            DollMakerTools.drawDropDownForSpriteLayer(doll, layerControls, l, drawDollCreator);
         }
         DollMakerTools.drawColorPickersForPallete(colorControls, doll.palette, drawDollCreator);
     }
