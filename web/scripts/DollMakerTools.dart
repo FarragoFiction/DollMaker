@@ -96,6 +96,35 @@ abstract class DollMakerTools {
 
     }
 
+
+
+    static void addNewNamedLayerButton(NamedLayerDoll doll, Element div, dynamic callback) {
+        print("What am i even doing here?");
+        Element layerControls = querySelector("#layerControls");
+        NamedLayerDoll d = doll as NamedLayerDoll;
+        NamedSpriteLayer newLayer = new NamedSpriteLayer(d.possibleParts, "New Layer", "", 0, 0);
+        DivElement wrapper = new DivElement();
+        wrapper.classes.add("dollDropDownDiv");
+        SelectElement selectElement = new SelectElement();
+        selectElement.classes.add("dollDropDown");
+        for(String s in newLayer.possibleNames) {
+            OptionElement o = new OptionElement();
+            o.value = s;
+            o.setInnerHtml(s);
+            selectElement.append(o);
+        }
+        wrapper.append(selectElement);
+        layerControls.append(wrapper);
+
+        ButtonElement b = new ButtonElement();
+        b.setInnerHtml("Add Prototyping");
+        wrapper.append(b);
+
+
+    }
+
+
+
     static void drawSamplePalettes(Element div, Doll doll, dynamic callback) {
 
         String html = "<div class = 'dollDropDownDiv'><select class = 'dollDropDown' id = 'samplePalettes' name='samplePalettes'>";
