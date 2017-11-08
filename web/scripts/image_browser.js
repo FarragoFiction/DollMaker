@@ -10,6 +10,11 @@ window.onload = function() {
 		$("#header").html("Horns");
 	}
 
+	if (getParameterByName("fins")  == "true"){
+    		renderAllFins();
+    		$("#header").html("Fins");
+    	}
+
 	if (getParameterByName("eyes")  == "true"){
     		renderAllEyes();
     		$("#header").html("Eyes");
@@ -39,6 +44,11 @@ window.onload = function() {
         renderAllGlasses();
         $("#header").html("Glasses");
     }
+
+    if (getParameterByName("glasses2")  == "true"){
+            renderAllGlasses2();
+            $("#header").html("Glasses2");
+        }
 
 
 
@@ -121,9 +131,18 @@ function renderAllHorns(){
 
 function renderAllEyes(){
 	var minHorn = 1
-	var maxHorn = 56;
+	var maxHorn = 100;
 	for(var i = minHorn; i<= maxHorn; i++){
 			renderLayeredSprites([new SpritePart("images/Homestuck/Body/head.png", ""),new SpritePart("images/Homestuck/LeftEye/"+i+".png","leftEye "+i),new SpritePart("images/Homestuck/RightEye/"+i+".png", "rightEye" +i)]);
+	}
+}
+
+
+function renderAllFins(){
+	var minHorn = 1
+	var maxHorn = 100;
+	for(var i = minHorn; i<= maxHorn; i++){
+			renderLayeredSprites([new SpritePart("images/Homestuck/RightFin/"+i+".png","fin "+i),new SpritePart("images/Homestuck/Body/head.png", ""),new SpritePart("images/Homestuck/LeftFin/"+i+".png", "fin" +i)]);
 	}
 }
 
@@ -145,9 +164,17 @@ function renderAllConsorts(){
 
 function renderAllGlasses(){
 	var minHorn = 1
-	var maxHorn = 40;
+	var maxHorn = 100;
 	for(var i = minHorn; i<= maxHorn; i++){
 			renderLayeredSprites([new SpritePart("images/Homestuck/Body/head.png", ""),new SpritePart("images/Homestuck/Glasses/"+i+".png","accessory "+i)]);
+	}
+}
+
+function renderAllGlasses2(){
+	var minHorn = 1
+	var maxHorn = 100;
+	for(var i = minHorn; i<= maxHorn; i++){
+			renderLayeredSprites([new SpritePart("images/Homestuck/Body/head.png", ""),new SpritePart("images/Homestuck/Glasses2/"+i+".png","accessory "+i)]);
 	}
 }
 
@@ -161,7 +188,7 @@ function renderAllBodies(){
 
 function renderAllSymbols(){
 	var minHorn = 0
-	var maxHorn = 201;
+	var maxHorn = 255;
 	for(var i = minHorn; i<= maxHorn; i++){
 			renderLayeredSprites([new SpritePart("images/Homestuck/Symbol/bg.png", ""),new SpritePart("images/Homestuck/Symbol/"+i+".png","symbol "+i)]);
 	}
