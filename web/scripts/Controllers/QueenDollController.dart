@@ -72,6 +72,9 @@ class QueenController extends BaseController {
       for (SpriteLayer l in doll.renderingOrderLayers.reversed) {
           DollMakerTools.drawDropDownForSpriteLayer(doll, layerControls, l, drawDollCreator);
       }
+
+      NamedLayerDoll d = doll as NamedLayerDoll;
+      NamedSpriteLayer newLayer = new NamedSpriteLayer(d.possibleParts, "New Layer", "", 0, 0);
       //TODO need to have a section for adding a new layer.
       DollMakerTools.drawColorPickersForPallete(colorControls, doll.palette, drawDollCreator);
   }
