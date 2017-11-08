@@ -54,6 +54,27 @@ class QueenController extends BaseController {
 
 
 @override
+  void randomizeDoll() {
+      print("randomizing and redrawing");
+      doll.randomize();
+      //can't do it in regular draw part cuz onChange is a bitch.
+      DollMakerTools.syncColorPickersToSprite(doll.palette);
+      drawLayerControls();
+      drawDollCreator();
+  }
+
+  @override
+  void randomizeDollNotColors() {
+      print("randomizing and redrawing");
+      doll.randomizeNotColors();
+      //can't do it in regular draw part cuz onChange is a bitch.
+      DollMakerTools.syncColorPickersToSprite(doll.palette);
+      drawDollCreator();
+      drawLayerControls();
+  }
+
+
+@override
   void setupForms() {
       querySelector("#randomize").onClick.listen((e) => randomizeDoll());
       querySelector("#randomizeColors").onClick.listen((e) => randomizeDollColors());
@@ -67,8 +88,15 @@ class QueenController extends BaseController {
       });
 
 
-      Element layerControls = querySelector("#layerControls");
       Element colorControls = querySelector("#colorControls");
+
+        drawLayerControls();
+      DollMakerTools.drawColorPickersForPallete(colorControls, doll.palette, drawDollCreator);
+  }
+
+  void drawLayerControls() {
+      Element layerControls = querySelector("#layerControls");
+      layerControls.setInnerHtml("");
       for (SpriteLayer l in doll.renderingOrderLayers.reversed) {
           DollMakerTools.drawDropDownForSpriteLayer(doll, layerControls, l, drawDollCreator);
       }
@@ -76,8 +104,6 @@ class QueenController extends BaseController {
 
       //want to be able to add new layers
       DollMakerTools.addNewNamedLayerButton(doll, layerControls, drawDollCreator);
-
-      DollMakerTools.drawColorPickersForPallete(colorControls, doll.palette, drawDollCreator);
   }
 
 

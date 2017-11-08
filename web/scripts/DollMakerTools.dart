@@ -81,7 +81,7 @@ abstract class DollMakerTools {
 
             b.onClick.listen((Event e) {
                 doll.layers.remove(layer);
-                wrapper.style.display = "none";
+                wrapper.remove();
                 callback();
             });
 
@@ -124,7 +124,7 @@ abstract class DollMakerTools {
             OptionElement option = selectElement.selectedOptions[0];
             doll.addLayerNamed(option.value);
             DollMakerTools.drawDropDownForSpriteLayer(doll, layerControls, doll.layers.last, callback);
-            wrapper.style.display = "none";
+            wrapper.remove();
             addNewNamedLayerButton( doll,  div,  callback);
             callback();
         });
