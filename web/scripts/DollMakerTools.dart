@@ -120,6 +120,19 @@ abstract class DollMakerTools {
         b.setInnerHtml("Add Prototyping");
         wrapper.append(b);
 
+        b.onClick.listen((Event e) {
+            OptionElement option = selectElement.selectedOptions[0];
+
+            doll.addLayerNamed(option.value);
+            /*TODO
+                I need to add this layer to the doll, remove myself,
+                 and add the layer as a thing, then re-add
+                a new version of mysef.
+
+             */
+            callback();
+        });
+
 
     }
 
