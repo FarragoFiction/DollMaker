@@ -43,12 +43,6 @@ class QueenController extends BaseController {
   @override
   void drawDollCreator() {
       print("Draw doll creator");
-      for (SpriteLayer l in doll.renderingOrderLayers) {
-          //TODO this will work differently for named layers
-          //DollMakerTools.syncDropDownToSprite(l);
-      }
-
-      CanvasElement canvas = querySelector("#doll_creator");
       Renderer.clearCanvas(canvas);
       Renderer.drawDoll(canvas, doll);
       TextAreaElement dataBox = querySelector("#shareableURL");
