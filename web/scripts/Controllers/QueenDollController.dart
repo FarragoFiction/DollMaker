@@ -12,7 +12,10 @@ void main() {
     print("Hello World");
     loadNavbar();
     Random rand = new Random();
-    controller = new QueenController(new QueenDoll());
+    Doll doll = new QueenDoll();
+    CanvasElement canvas = new CanvasElement(width: doll.width, height: doll.height);
+    querySelector("#doll").append(canvas);
+    controller = new QueenController(doll,canvas);
     print("going to load doll");
     loadDoll();
     //bundle means i don't have to preload shit
@@ -35,7 +38,7 @@ void loadDoll() {
 
 
 class QueenController extends BaseController {
-  QueenController(Doll doll) : super(doll);
+  QueenController(Doll doll, CanvasElement canvas) : super(doll, canvas);
 
   @override
   void drawDollCreator() {

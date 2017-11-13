@@ -12,7 +12,10 @@ void main() {
     print("Hello World");
     loadNavbar();
     Random rand = new Random();
-    controller = new BaseController(new DadDoll());
+    Doll doll = new DadDoll();
+    CanvasElement canvas = new CanvasElement(width: doll.width, height: doll.height);
+    querySelector("#doll").append(canvas);
+    controller = new BaseController(doll,canvas);
     print("going to load doll");
     loadDoll();
     //bundle means i don't have to preload shit

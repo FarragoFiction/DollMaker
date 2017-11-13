@@ -6,8 +6,10 @@ import "../DollMakerTools.dart";
 import "../navbar.dart";
 class BaseController {
     Doll doll;
+    CanvasElement canvas;
 
-    BaseController(this.doll);
+
+    BaseController(this.doll, this.canvas);
 
     void setupForms() {
         querySelector("#randomize").onClick.listen((e) => randomizeDoll());
@@ -37,7 +39,6 @@ class BaseController {
             DollMakerTools.syncDropDownToSprite(l);
         }
 
-        CanvasElement canvas = querySelector("#doll_creator");
         Renderer.clearCanvas(canvas);
         Renderer.drawDoll(canvas, doll);
         TextAreaElement dataBox = querySelector("#shareableURL");
