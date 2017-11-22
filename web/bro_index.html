@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<!--
+  Copyright (c) 2017, JR. All rights reserved. Use of this source code
+  is governed by a BSD-style license that can be found in the LICENSE file.
+-->
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Homestuck Bro Doll Maker, by SBURBSim</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="favicon.ico">
+    <script defer src="scripts/Controllers/BroDollController.dart" type="application/dart"></script>
+    <script defer src="packages/browser/dart.js"></script>
+</head>
+
+<body>
+<div id = "navbar"></div>
+<div id = 'contents'>
+    <table>
+        <tr>
+            <td>
+                <div id =  "doll"></div>
+
+            </td>
+            <td>
+                <div id = 'info'>
+                    <div id="loading_stats"></div>
+                    <div id = "debug">
+
+                    </div>
+                    <div id="layerControls">
+
+                    </div>
+
+                    <div id="colorControls">
+
+                    </div>
+                    <br><Br>
+                    <button id = 'randomize'>Randomize</button>
+                    <button id = 'randomizeColors'>Randomize Just Colors</button>
+                    <button id = 'randomizeNotColors'>Randomize Everything But Colors</button><br><br>
+                    <textarea id = 'shareableURL'></textarea>
+                    <br><button id="copyButton">Copy Doll URL</button><br><br>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+<div style = "display:none;" id="loading_image_staging"></div>
+
+</body>
+</html>
