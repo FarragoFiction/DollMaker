@@ -8,6 +8,16 @@ html, body {
   font-family: 'Roboto', sans-serif;
 }
 
+.trollcall{
+    font-family: 'trollcall', sans-serif;
+}
+
+
+@font-face {
+    font-family: trollcall;
+    src: url("../fonts/Berlin_Sans_FB Demi_Bold.ttf");
+}
+
 
 
 .cardWithForm{
