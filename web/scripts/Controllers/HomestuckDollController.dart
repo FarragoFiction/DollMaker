@@ -57,6 +57,11 @@ void setupForms() {
         document.execCommand('copy');
     });
 
+    ButtonElement saveButton = querySelector("#saveButton");
+    saveButton.onClick.listen((Event e) {
+        doll.save();
+    });
+
 
     Element layerControls = querySelector("#layerControls");
     Element colorControls = querySelector("#colorControls");

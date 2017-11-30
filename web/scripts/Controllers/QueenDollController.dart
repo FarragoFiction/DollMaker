@@ -84,6 +84,11 @@ class QueenController extends BaseController {
           document.execCommand('copy');
       });
 
+      ButtonElement saveButton = querySelector("#saveButton");
+      saveButton.onClick.listen((Event e) {
+          doll.save();
+      });
+
 
       Element colorControls = querySelector("#colorControls");
 
