@@ -11,6 +11,8 @@ class BaseController {
 
     BaseController(this.doll, this.canvas);
 
+
+
     void setupForms() {
         querySelector("#randomize").onClick.listen((e) => randomizeDoll());
         querySelector("#randomizeColors").onClick.listen((e) => randomizeDollColors());
@@ -21,6 +23,11 @@ class BaseController {
             TextAreaElement dataBox = querySelector("#shareableURL");
             dataBox.select();
             document.execCommand('copy');
+        });
+
+        ButtonElement saveButton = querySelector("#saveButton");
+        saveButton.onClick.listen((Event e) {
+            doll.save();
         });
 
 
