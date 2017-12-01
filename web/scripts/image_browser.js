@@ -40,6 +40,11 @@ window.onload = function() {
         $("#header").html("Symbols");
     }
 
+     if (getParameterByName("canonsymbols")  == "true"){
+            renderAllCanonSymbols();
+            $("#header").html("Canon Troll Symbols");
+        }
+
     if (getParameterByName("glasses")  == "true"){
         renderAllGlasses();
         $("#header").html("Glasses");
@@ -186,11 +191,52 @@ function renderAllBodies(){
 	}
 }
 
+function bloodcolor(imgNumber){
+     var bloodColors = ["burgundy", "bronze", "gold", "lime", "olive", "jade", "teal", "cerulean", "indigo", "purple", "violet", "fuchsia"];
+        varchosenBlood = "";
+        if(imgNumber <= 24) {
+            chosenBlood = bloodColors[0];
+        }else if(imgNumber <= 24*2) {
+            chosenBlood = bloodColors[1];
+        }else if(imgNumber <= 24*3) {
+            chosenBlood = bloodColors[2];
+        }else if(imgNumber <= 24*4) {
+            chosenBlood = bloodColors[3];
+        }else if(imgNumber <= 24*5) {
+            chosenBlood = bloodColors[4];
+        }else if(imgNumber <= 24*6) {
+            chosenBlood = bloodColors[5];
+        }else if(imgNumber <= 24*7) {
+            chosenBlood = bloodColors[6];
+        }else if(imgNumber <= 24*8) {
+            chosenBlood = bloodColors[7];
+        }else if(imgNumber <= 24*9) {
+            chosenBlood = bloodColors[8];
+        }else if(imgNumber <= 24*10) {
+            chosenBlood = bloodColors[9];
+        }else if(imgNumber <= 24*11) {
+            chosenBlood = bloodColors[10];
+        }else if(imgNumber <= 24*12) {
+            chosenBlood = bloodColors[11];
+        }
+        //it's just random if it somehow doesn't fit
+        return chosenBlood;
+}
+
 function renderAllSymbols(){
 	var minHorn = 0
 	var maxHorn = 255;
 	for(var i = minHorn; i<= maxHorn; i++){
-			renderLayeredSprites([new SpritePart("images/Homestuck/Symbol/bg.png", ""),new SpritePart("images/Homestuck/Symbol/"+i+".png","symbol "+i)]);
+			renderLayeredSprites([new SpritePart("images/Homestuck/Symbol/bg.png", ""),new SpritePart("images/Homestuck/Symbol/"+i+".png", "symbol "+i)]);
+	}
+}
+
+function renderAllCanonSymbols(){
+	var minHorn = 0
+	var maxHorn = 288;
+	for(var i = minHorn; i<= maxHorn; i++){
+		        var chosenBlood = bloodcolor(i);
+			renderLayeredSprites([new SpritePart("images/Homestuck/Symbol/bg.png", ""),new SpritePart("images/Homestuck/CanonSymbol/"+i+".png",chosenBlood+" canon symbol "+i)]);
 	}
 }
 
