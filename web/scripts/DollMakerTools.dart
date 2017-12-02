@@ -27,11 +27,12 @@ abstract class DollMakerTools {
             drawDropDownForNamedSpriteLayer(doll, div, layer, callback);
             return;
         }
+
         print("drawing drop down for ${layer.name}, is it a slave? ${layer.slave}");
         if(layer.slave) return; //this will be set by owner.
         //drop down should be set to whatever the layer's img number is,
         //and on change it should change the layers img number
-        String html = "<div class = 'dollDropDownDiv'><select class = 'dollDropDown' id = '${layer.name}' name='${layer.name}'>";
+        String html = "<span class = 'dollDropDownDiv'><select class = 'dollDropDown' id = '${layer.name}' name='${layer.name}'>";
         for (int i = 0; i <= layer.maxImageNumber; i++) {
             if (layer.imgNumber == i) {
                 html += '<option  selected = "selected" value="$i">$i</option>';
@@ -39,8 +40,18 @@ abstract class DollMakerTools {
                 html += '<option value="$i">$i</option>';
             }
         }
-        html += "</select><span class = 'dropDownLabel'>${layer.name}</span></div>";
+        html += "</select><span class = 'dropDownLabel'>${layer.name}</span></span><br>";
+
+        ButtonElement randomizer = new ButtonElement();
+        randomizer.style.display = "inline-block";
+        randomizer.setInnerHtml("?");
+        div.append(randomizer);
         appendHtml(div, html);
+
+        randomizer.onClick.listen((E) {
+            layer.randomize();
+            callback();
+        });
 
         SelectElement drawnDropDown = querySelector("#${layer.name}");
 
