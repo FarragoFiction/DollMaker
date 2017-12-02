@@ -185,7 +185,7 @@ function renderAllGlasses2(){
 
 function renderAllBodies(){
 	var minHorn = 0
-	var maxHorn = 104;
+	var maxHorn = 130;
 	for(var i = minHorn; i<= maxHorn; i++){
 			renderLayeredSprites([new SpritePart("images/Homestuck/Body/"+i+".png","body "+i)]);
 	}
