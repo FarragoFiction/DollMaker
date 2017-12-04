@@ -83,6 +83,7 @@ class BaseController {
             return;
         }
         doll = Doll.loadSpecificDoll(actionQueue[actionQueueIndex]);
+        DollMakerTools.syncColorPickersToSprite(doll.palette);
         drawDollCreator(true);
     }
 

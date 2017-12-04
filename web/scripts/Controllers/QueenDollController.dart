@@ -42,6 +42,8 @@ class QueenController extends BaseController {
 
   @override
   void drawDollCreator([bool inQueue = false]) {
+      DollMakerTools.syncColorPickersToSprite(doll.palette);
+      drawLayerControls();
       print("Draw doll creator");
       Renderer.clearCanvas(canvas);
       Renderer.drawDoll(canvas, doll);
@@ -59,9 +61,6 @@ class QueenController extends BaseController {
   void randomizeDoll() {
       print("randomizing and redrawing");
       doll.randomize();
-      //can't do it in regular draw part cuz onChange is a bitch.
-      DollMakerTools.syncColorPickersToSprite(doll.palette);
-      drawLayerControls();
       drawDollCreator();
   }
 
