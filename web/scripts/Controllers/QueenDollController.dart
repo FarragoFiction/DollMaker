@@ -41,12 +41,16 @@ class QueenController extends BaseController {
   QueenController(Doll doll, CanvasElement canvas) : super(doll, canvas);
 
   @override
-  void drawDollCreator() {
+  void drawDollCreator([bool inQueue = false]) {
       print("Draw doll creator");
       Renderer.clearCanvas(canvas);
       Renderer.drawDoll(canvas, doll);
       TextAreaElement dataBox = querySelector("#shareableURL");
       dataBox.value = "${window.location.origin}${window.location.pathname}?${doll.toDataBytesX()}";
+      actionQueue.add(doll.toDataBytesX());
+      if(!inQueue) {
+          actionQueueIndex = actionQueue.length-1;
+      }
   }
 
 
