@@ -39,8 +39,31 @@ class BaseController {
             DollMakerTools.drawDropDownForSpriteLayer(doll, layerControls, l, drawDollCreator);
         }
         DollMakerTools.drawColorPickersForPallete(colorControls, doll.palette, drawDollCreator);
+
+        ButtonElement undo = new ButtonElement();
+        undo.setInnerHtml("Undo");
+        querySelector("#contents").append(undo);
+        undo.onClick.listen((e) =>loadFromQueue());
     }
 
+
+
+
+    void loadFromQueue() {
+        print("loading doll from queue");
+        if(actionQueueIndex >= actionQueue.length) {
+            window.alert("no more to redo");
+            actionQueueIndex = actionQueue.length-1;
+            return;
+        }else if(actionQueueIndex < 0 || actionQueue.isEmpty || actionQueue.length == 1) {
+            window.alert("no more to undo");
+            actionQueueIndex =0;
+            return;
+        }
+        doll = Doll.loadSpecificDoll(actionQueue[actionQueueIndex]);
+        setupForms();
+        drawDollCreator();
+    }
 
     void drawDollCreator([bool inQueue = false]) {
         print("Draw doll creator");
