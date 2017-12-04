@@ -80,7 +80,6 @@ class BaseController {
             return;
         }
         doll = Doll.loadSpecificDoll(actionQueue[actionQueueIndex]);
-        setupForms();
         drawDollCreator();
     }
 
