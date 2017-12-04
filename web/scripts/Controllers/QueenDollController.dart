@@ -98,6 +98,20 @@ class QueenController extends BaseController {
 
         drawLayerControls();
       DollMakerTools.drawColorPickersForPallete(colorControls, doll.palette, drawDollCreator);
+
+      if(undo == null) {
+          undo = new ButtonElement();
+          undo.setInnerHtml("Undo");
+          querySelector("#contents").append(undo);
+          undo.onClick.listen((e) => undoFunction());
+      }
+
+      if(redo == null) {
+          redo = new ButtonElement();
+          redo.setInnerHtml("Redo");
+          querySelector("#contents").append(redo);
+          redo.onClick.listen((e) => redoFunction());
+      }
   }
 
   void drawLayerControls() {
