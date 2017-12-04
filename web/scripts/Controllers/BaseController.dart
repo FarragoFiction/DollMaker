@@ -82,7 +82,7 @@ class BaseController {
             return;
         }
         doll = Doll.loadSpecificDoll(actionQueue[actionQueueIndex]);
-        drawDollCreator();
+        drawDollCreator(true);
     }
 
     void drawDollCreator([bool inQueue = false]) {
@@ -95,8 +95,9 @@ class BaseController {
         Renderer.drawDoll(canvas, doll);
         TextAreaElement dataBox = querySelector("#shareableURL");
         dataBox.value = "${window.location.origin}${window.location.pathname}?${doll.toDataBytesX()}";
-        actionQueue.add(doll.toDataBytesX());
+        //don't add it to the queue if you're already messing around in it, dunkass. you'll never escape the loop.
         if(!inQueue) {
+            actionQueue.add(doll.toDataBytesX());
             actionQueueIndex = actionQueue.length-1;
         }
     }
