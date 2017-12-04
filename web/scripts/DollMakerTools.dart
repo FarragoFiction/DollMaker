@@ -1,6 +1,8 @@
 import "dart:html";
 import "DollLib/DollRenderer.dart";
 import 'DollLib/src/includes/path_utils.dart';
+import "Controllers/BaseController.dart";
+
 
 import "HomestuckDollLib.dart";
 
@@ -22,9 +24,10 @@ abstract class DollMakerTools {
         drawnDropDown.value = "${color.toStyleString()}";
     }
 
-    static void drawDropDownForSpriteLayer(Doll doll, Element div, SpriteLayer layer, dynamic callback) {
+    //takes in a controller so doll is always accurate, even if i swap it
+    static void drawDropDownForSpriteLayer(BaseController controller, Element div, SpriteLayer layer, dynamic callback) {
         if(layer is NamedSpriteLayer) {
-            drawDropDownForNamedSpriteLayer(doll, div, layer, callback);
+            drawDropDownForNamedSpriteLayer(controller, div, layer, callback);
             return;
         }
 
@@ -65,7 +68,7 @@ abstract class DollMakerTools {
 
     }
 
-    static void drawDropDownForNamedSpriteLayer(NamedLayerDoll doll, Element div, NamedSpriteLayer layer, dynamic callback) {
+    static void drawDropDownForNamedSpriteLayer(BaseController controller, Element div, NamedSpriteLayer layer, dynamic callback) {
         print("drawing drop down for ${layer.name}, is it a slave? ${layer.slave}");
         SpanElement wrapper = new SpanElement();
         if(layer.slave) return; //this will be set by owner.
@@ -91,7 +94,8 @@ abstract class DollMakerTools {
             SelectElement drawnDropDown = querySelector("#${layer.name}");
 
             b.onClick.listen((Event e) {
-                doll.layers.remove(layer);
+                NamedLayerDoll d = controller.doll as NamedLayerDoll;
+                d.layers.remove(layer);
                 wrapper.remove();
                 callback();
             });
@@ -109,10 +113,10 @@ abstract class DollMakerTools {
 
 
 
-    static void addNewNamedLayerButton(NamedLayerDoll doll, Element div, dynamic callback) {
+    static void addNewNamedLayerButton(BaseController controller, Element div, dynamic callback) {
         print("What am i even doing here?");
         Element layerControls = querySelector("#layerControls");
-        NamedLayerDoll d = doll as NamedLayerDoll;
+        NamedLayerDoll d = controller.doll as NamedLayerDoll;
         NamedSpriteLayer newLayer = new NamedSpriteLayer(d.possibleParts, "New Layer", "", 0, 0);
         DivElement wrapper = new DivElement();
         wrapper.classes.add("dollDropDownDiv");
@@ -133,10 +137,12 @@ abstract class DollMakerTools {
 
         b.onClick.listen((Event e) {
             OptionElement option = selectElement.selectedOptions[0];
-            doll.addLayerNamed(option.value);
-            DollMakerTools.drawDropDownForSpriteLayer(doll, layerControls, doll.layers.last, callback);
+            NamedLayerDoll d = controller.doll as NamedLayerDoll;
+
+            d.addLayerNamed(option.value);
+            DollMakerTools.drawDropDownForSpriteLayer(controller, layerControls, d.layers.last, callback);
             wrapper.remove();
-            addNewNamedLayerButton( doll,  div,  callback);
+            addNewNamedLayerButton( controller,  div,  callback);
             callback();
         });
 
@@ -145,7 +151,7 @@ abstract class DollMakerTools {
 
 
 
-    static void drawSamplePalettes(Element div, Doll doll, dynamic callback) {
+    static void drawSamplePalettes(Element div, BaseController controller, dynamic callback) {
 
         String html = "<div class = 'dollDropDownDiv'><select class = 'dollDropDown' id = 'samplePalettes' name='samplePalettes'>";
         html += "<option value = 'None'>None</option>";
@@ -163,7 +169,7 @@ abstract class DollMakerTools {
             OptionElement option = drawnDropDown.selectedOptions[0];
             Palette chosen  = samples[option.value];
             for(String name in chosen.names) {
-                doll.palette.add(name, chosen[name],true);
+                controller.doll.palette.add(name, chosen[name],true);
             }
             syncColorPickersToSprite(chosen);
             callback();

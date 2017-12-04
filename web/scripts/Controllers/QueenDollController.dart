@@ -118,12 +118,12 @@ class QueenController extends BaseController {
       Element layerControls = querySelector("#layerControls");
       layerControls.setInnerHtml("");
       for (SpriteLayer l in doll.renderingOrderLayers.reversed) {
-          DollMakerTools.drawDropDownForSpriteLayer(doll, layerControls, l, drawDollCreator);
+          DollMakerTools.drawDropDownForSpriteLayer(controller, layerControls, l, drawDollCreator);
       }
 
 
       //want to be able to add new layers
-      DollMakerTools.addNewNamedLayerButton(doll, layerControls, drawDollCreator);
+      DollMakerTools.addNewNamedLayerButton(controller, layerControls, drawDollCreator);
   }
 
 

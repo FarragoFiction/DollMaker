@@ -61,7 +61,7 @@ class TrollController extends BaseController {
     void setupForms() {
         super.setupForms();
         Element samplePaletteControls = querySelector("#samplePaletteControls");
-        DollMakerTools.drawSamplePalettes(samplePaletteControls, doll, drawDollCreator);
+        DollMakerTools.drawSamplePalettes(samplePaletteControls, controller, drawDollCreator);
     }
 }
 

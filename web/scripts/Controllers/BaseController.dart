@@ -40,7 +40,7 @@ class BaseController {
         Element layerControls = querySelector("#layerControls");
         Element colorControls = querySelector("#colorControls");
         for (SpriteLayer l in doll.renderingOrderLayers.reversed) {
-            DollMakerTools.drawDropDownForSpriteLayer(doll, layerControls, l, drawDollCreator);
+            DollMakerTools.drawDropDownForSpriteLayer(this, layerControls, l, drawDollCreator);
         }
         DollMakerTools.drawColorPickersForPallete(colorControls, doll.palette, drawDollCreator);
 
@@ -82,7 +82,7 @@ class BaseController {
             actionQueueIndex =0;
             return;
         }
-        doll = Doll.loadSpecificDoll(actionQueue[actionQueueIndex]);
+        doll.load(actionQueue[actionQueueIndex]);
         DollMakerTools.syncColorPickersToSprite(doll.palette);
         drawDollCreator(true);
     }
