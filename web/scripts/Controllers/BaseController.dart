@@ -60,10 +60,12 @@ class BaseController {
 
 
     void undoFunction() {
+        print("undo");
         actionQueueIndex += -1;
         loadFromQueue();
     }
     void redoFunction() {
+        print("redo");
         actionQueueIndex += 1;
         loadFromQueue();
     }
