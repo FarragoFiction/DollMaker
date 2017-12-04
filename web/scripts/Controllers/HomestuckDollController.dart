@@ -16,7 +16,7 @@ void main() {
     Doll doll = new HomestuckDoll();
     CanvasElement canvas = new CanvasElement(width: doll.width, height: doll.height);
     querySelector("#doll").append(canvas);
-    controller = new BaseController(doll,canvas);
+    controller = new KidController(doll,canvas);
     print("going to load doll");
     loadDoll();
     hintAtEgg();
@@ -53,6 +53,17 @@ void loadDoll() {
     controller.drawDollCreator();
 }
 
+
+class KidController extends BaseController {
+    KidController(Doll doll, CanvasElement canvas) : super(doll, canvas);
+
+    @override
+    void setupForms() {
+        super.setupForms();
+        Element samplePaletteControls = querySelector("#samplePaletteControls");
+        DollMakerTools.drawSamplePalettes(samplePaletteControls, doll, drawDollCreator);
+    }
+}
 
 
 

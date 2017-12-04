@@ -16,7 +16,7 @@ void main() {
     Doll doll = new HomestuckTrollDoll();
     CanvasElement canvas = new CanvasElement(width: doll.width, height: doll.height);
     querySelector("#doll").append(canvas);
-    controller = new BaseController(doll,canvas);
+    controller = new TrollController(doll,canvas);
     print("going to load doll");
     loadDoll();
     hintAtEgg();
@@ -54,5 +54,15 @@ void loadDoll() {
 }
 
 
+class TrollController extends BaseController {
+  TrollController(Doll doll, CanvasElement canvas) : super(doll, canvas);
+
+  @override
+    void setupForms() {
+        super.setupForms();
+        Element samplePaletteControls = querySelector("#samplePaletteControls");
+        DollMakerTools.drawSamplePalettes(samplePaletteControls, doll, drawDollCreator);
+    }
+}
 
 
