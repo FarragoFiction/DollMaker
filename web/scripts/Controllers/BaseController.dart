@@ -7,6 +7,9 @@ import "../navbar.dart";
 class BaseController {
     Doll doll;
     CanvasElement canvas;
+    ButtonElement undo;
+    ButtonElement redo;
+
     List<String> actionQueue = new List<String>();
     int actionQueueIndex = 0;
 
@@ -40,14 +43,30 @@ class BaseController {
         }
         DollMakerTools.drawColorPickersForPallete(colorControls, doll.palette, drawDollCreator);
 
-        ButtonElement undo = new ButtonElement();
-        undo.setInnerHtml("Undo");
-        querySelector("#contents").append(undo);
-        undo.onClick.listen((e) =>loadFromQueue());
+        if(undo == null) {
+            undo = new ButtonElement();
+            undo.setInnerHtml("Undo");
+            querySelector("#contents").append(undo);
+            undo.onClick.listen((e) => undoFunction());
+        }
+
+        if(redo == null) {
+            redo = new ButtonElement();
+            redo.setInnerHtml("Redo");
+            querySelector("#contents").append(redo);
+            redo.onClick.listen((e) => redoFunction());
+        }
     }
 
 
-
+    void undoFunction() {
+        actionQueueIndex += -1;
+        loadFromQueue();
+    }
+    void redoFunction() {
+        actionQueueIndex += 1;
+        loadFromQueue();
+    }
 
     void loadFromQueue() {
         print("loading doll from queue");
