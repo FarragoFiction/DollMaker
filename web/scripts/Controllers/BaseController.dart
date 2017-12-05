@@ -88,7 +88,7 @@ class BaseController {
     }
 
     void drawDollCreator([bool inQueue = false]) {
-        print("Draw doll creator");
+        print("Draw doll creator: ${doll.toDataBytesX()}");
         for (SpriteLayer l in doll.renderingOrderLayers) {
             DollMakerTools.syncDropDownToSprite(l);
         }
