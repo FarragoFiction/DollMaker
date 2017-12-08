@@ -10,6 +10,13 @@ window.onload = function() {
 		$("#header").html("Horns");
 	}
 
+	if (getParameterByName("paint")  == "true"){
+    		renderAllPaint();
+    		$("#header").html("FacePaint");
+    }
+
+
+
 	if (getParameterByName("fins")  == "true"){
     		renderAllFins();
     		$("#header").html("Fins");
@@ -150,6 +157,15 @@ function renderAllFins(){
 			renderLayeredSprites([new SpritePart("images/Homestuck/RightFin/"+i+".png","fin "+i),new SpritePart("images/Homestuck/Body/head.png", ""),new SpritePart("images/Homestuck/LeftFin/"+i+".png", "fin" +i)]);
 	}
 }
+
+function renderAllPaint(){
+	var minHorn = 1
+	var maxHorn = 49;
+	for(var i = minHorn; i<= maxHorn; i++){
+			renderLayeredSprites([new SpritePart("images/Homestuck/Body/head.png", ""),new SpritePart("images/Homestuck/FacePaint/"+i+".png","mouth "+i)]);
+	}
+}
+
 
 function renderAllMouths(){
 	var minHorn = 1
