@@ -160,7 +160,7 @@ function renderAllFins(){
 
 function renderAllPaint(){
 	var minHorn = 1
-	var maxHorn = 49;
+	var maxHorn = 80;
 	for(var i = minHorn; i<= maxHorn; i++){
 			renderLayeredSprites([new SpritePart("images/Homestuck/Body/head.png", ""),new SpritePart("images/Homestuck/FacePaint/"+i+".png","paint "+i)]);
 	}
