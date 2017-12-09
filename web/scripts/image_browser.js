@@ -126,7 +126,7 @@ function renderRegularSprite(spritePart){
 
 function renderAllHair(){
 	var minHair = 0;
-	var maxHair = 120;
+	var maxHair = 140;
 	//don't use canvas, but still layer?  bg, like for KR.
 	for(var i = minHair; i<= maxHair; i++){
 		renderLayeredSprites([new SpritePart("images/Homestuck/HairBack/"+i+".png", "Hair " +i),new SpritePart("images/Homestuck/Body/head.png", ""), new SpritePart("images/Homestuck/HairTop/"+i+".png", "")]);
