@@ -45,7 +45,9 @@ abstract class CharSheet {
         ret.append(dollButton);
 
         dollButton.onClick.listen((Event e) {
+            print("Trying to load doll");
             doll = Doll.loadSpecificDoll(dollArea.value);
+            print("trying to draw loaded doll");
             draw();
         });
         return ret;
