@@ -34,6 +34,8 @@
       <a href="http://www.farragofiction.com/MiniSims/StrifeSim">Strife Sim!</a>
       <a href="http://www.farragofiction.com/DollSim/charSheetCreator">Make Character Sheets</a>
       <a href="http://www.farragofiction.com/DollSim/trollCall.html">TrollCall Sheets</a>
+            <a href="http://www.farragofiction.com/DollSim/echeladder.html">Make Echeladders</a>
+
 
 
     </div>
