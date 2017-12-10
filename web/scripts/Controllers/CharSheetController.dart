@@ -2,7 +2,7 @@ import "../HomestuckDollLib.dart";
 import "dart:html";
 import "package:DollLibCorrect/DollRenderer.dart";
 import "../navbar.dart";
-import "package:DollLibCorrect/CharSheetLib.dart";
+import "../CharSheetLib.dart";
 import 'dart:async';
 
 CharSheet sheet;
