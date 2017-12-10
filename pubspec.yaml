@@ -11,6 +11,8 @@ dependencies:
   xml: "^2.6.0"
   source_map_stack_trace: ^1.1.4
   archive: "^1.0.31"
+  DollLibCorrect:
+      git: git@github.com:jadedResearcher/DollLibCorrect.git
 
 dev_dependencies:
   browser: ^0.10.0

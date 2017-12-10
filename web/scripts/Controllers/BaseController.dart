@@ -1,7 +1,7 @@
 
 import "../HomestuckDollLib.dart";
 import "dart:html";
-import "../DollLib/DollRenderer.dart";
+import "package:DollLibCorrect/DollRenderer.dart";
 import "../DollMakerTools.dart";
 import "../navbar.dart";
 //bluh

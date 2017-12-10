@@ -1,6 +1,5 @@
 import "dart:html";
-import "DollLib/DollRenderer.dart";
-import 'DollLib/src/includes/path_utils.dart';
+import "package:DollLibCorrect/DollRenderer.dart";
 import "Controllers/BaseController.dart";
 
 

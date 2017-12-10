@@ -1,8 +1,8 @@
 import "../HomestuckDollLib.dart";
 import "dart:html";
-import "../DollLib/DollRenderer.dart";
+import "package:DollLibCorrect/DollRenderer.dart";
 import "../navbar.dart";
-import "../DollLib/CharSheetLib.dart";
+import "package:DollLibCorrect/CharSheetLib.dart";
 import 'dart:async';
 
 Echeladder sheet;
