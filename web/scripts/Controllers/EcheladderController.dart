@@ -13,7 +13,7 @@ void main() {
 }
 
 Future<Null> drawSheet() async {
-    sheet = new Echeladder(new HomestuckDoll());
+    sheet = new Echeladder(Doll.makeRandomDoll());
     Element innerDiv  = new DivElement();
     innerDiv.className = "cardWithForm";
     CanvasElement finishedProduct = await sheet.draw();
