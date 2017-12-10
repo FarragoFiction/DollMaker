@@ -1,4 +1,3 @@
-import "../HomestuckDollLib.dart";
 import "dart:html";
 import "package:DollLibCorrect/DollRenderer.dart";
 import "../navbar.dart";
