@@ -253,26 +253,36 @@ class SylveonSheet extends CharSheet {
 
 
   @override
-  Future<CanvasElement> draw() async {
-      if(canvas == null) canvas = new CanvasElement(width: width, height: height);
+  Future<Null> draw([Element container]) async {
+      if(canvas == null) {
+          print("making new canvas");
+          canvas = new CanvasElement(width: width, height: height);
+          canvas.className = "cardCanvas";
+      }
+
+      if(container != null) {
+          print("appending canvas to container $container");
+          container.append(canvas);
+      }
+      canvas.context2D.clearRect(0,0,width,height);
+
       CanvasElement sheetElement = await drawSheetTemplate();
-      CanvasElement dollElement = await drawDoll(doll,375,480);
+      canvas.context2D.drawImage(sheetElement, 0, 0);
+
       CanvasElement symbolElement = await drawSymbol();
+      if(symbolElement != null) canvas.context2D.drawImage(symbolElement,582, 702);
+
       CanvasElement textCanvas = await drawText();
+      canvas.context2D.drawImage(textCanvas, 0, 0);
+
+      CanvasElement dollElement = await drawDoll(doll,375,480);
+      canvas.context2D.drawImage(dollElement,590, 180);
+
       //Renderer.drawBG(dollElement, ReferenceColours.RED, ReferenceColours.RED);
 
 
-      canvas.context2D.clearRect(0,0,width,height);
-
-      canvas.context2D.drawImage(sheetElement, 0, 0);
-      canvas.context2D.drawImage(textCanvas, 0, 0);
-      canvas.context2D.drawImage(dollElement,590, 180);
-      if(symbolElement != null) canvas.context2D.drawImage(symbolElement,582, 702);
-
       if(saveLink == null) saveLink = new AnchorElement();
       saveLink.href = canvas.toDataUrl();
-
-      return canvas;
   }
 }
 

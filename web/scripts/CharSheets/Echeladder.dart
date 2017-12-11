@@ -247,21 +247,28 @@ class Echeladder extends CharSheet {
     }
 
     @override
-    Future<CanvasElement> draw() async {
+    Future<Null> draw([Element container]) async {
         invertFont();
-        if (canvas == null) canvas = new CanvasElement(width: width, height: height);
+        if(canvas == null) {
+            print("making new canvas");
+            canvas = new CanvasElement(width: width, height: height);
+            canvas.className = "cardCanvas";
+        }
+        if(container != null) {
+            print("appending canvas to container $container");
+            container.append(canvas);
+        }
+        canvas.context2D.clearRect(0, 0, width, height);
+
         CanvasElement sheetElement = await drawSheetTemplate();
-
         Renderer.swapPalette(sheetElement, paletteToReplace, palette);
+        canvas.context2D.drawImage(sheetElement, echeladderStartX, echeladderStartY);
 
+
+        CanvasElement textCanvas = await drawText();
+        canvas.context2D.drawImage(textCanvas, 0, 0);
 
         CanvasElement dollElement = await drawDoll(doll, 200, 200);
-        CanvasElement textCanvas = await drawText();
-
-
-        canvas.context2D.clearRect(0, 0, width, height);
-        canvas.context2D.drawImage(sheetElement, echeladderStartX, echeladderStartY);
-        canvas.context2D.drawImage(textCanvas, 0, 0);
         if (!hideDoll) canvas.context2D.drawImage(dollElement, 75, 100);
 
         return canvas;

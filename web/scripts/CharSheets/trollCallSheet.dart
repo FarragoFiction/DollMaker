@@ -123,24 +123,30 @@ class TrollCallSheet extends CharSheet {
 
 
     @override
-    Future<CanvasElement> draw() async {
-        if(canvas == null) canvas = new CanvasElement(width: width, height: height);
-        CanvasElement sheetElement = await drawSheetTemplate();
-        Renderer.swapColors(sheetElement, tint);
-
-        CanvasElement dollElement = await drawDoll(doll,300,450);
-        CanvasElement textCanvas = await drawText();
-        CanvasElement symbolElement = await drawSymbol();
-
+    Future<Null> draw([Element container]) async {
+        if(canvas == null) {
+            print("making new canvas");
+            canvas = new CanvasElement(width: width, height: height);
+            canvas.className = "cardCanvas";
+        }
+        if(container != null) {
+            print("appending canvas to container $container");
+            container.append(canvas);
+        }
 
         canvas.context2D.clearRect(0,0,width,height);
+
+        CanvasElement sheetElement = await drawSheetTemplate();
+        Renderer.swapColors(sheetElement, tint);
         canvas.context2D.drawImage(sheetElement, 0, 0);
+
+        CanvasElement textCanvas = await drawText();
         canvas.context2D.drawImage(textCanvas, 0, 0);
-        if(!hideDoll)canvas.context2D.drawImage(dollElement,50, 275);
+
+        CanvasElement symbolElement = await drawSymbol();
         if(symbolElement != null) canvas.context2D.drawImage(symbolElement,459, 610);
 
-
-
-        return canvas;
+        CanvasElement dollElement = await drawDoll(doll,300,450);
+        if(!hideDoll)canvas.context2D.drawImage(dollElement,50, 275);
     }
 }

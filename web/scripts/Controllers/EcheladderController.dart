@@ -16,9 +16,7 @@ Future<Null> drawSheet() async {
     sheet = new Echeladder(Doll.makeRandomDoll());
     Element innerDiv  = new DivElement();
     innerDiv.className = "cardWithForm";
-    CanvasElement finishedProduct = await sheet.draw();
-    finishedProduct.className = "cardCanvas";
-    innerDiv.append(finishedProduct);
+    await sheet.draw(innerDiv);
     innerDiv.append(sheet.makeForm());
     ButtonElement button = new ButtonElement();
     button.text = "Random";

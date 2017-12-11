@@ -15,9 +15,7 @@ Future<Null> drawSheet() async {
     sheet = new SylveonSheet(Doll.makeRandomDoll());
     Element innerDiv  = new DivElement();
     innerDiv.className = "cardWithForm";
-    CanvasElement finishedProduct = await sheet.draw();
-    finishedProduct.className = "cardCanvas";
-    innerDiv.append(finishedProduct);
+    await sheet.draw(innerDiv);
     innerDiv.append(sheet.makeForm());
     querySelector("#contents").append(innerDiv);
 }
