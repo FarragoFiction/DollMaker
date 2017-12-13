@@ -15,7 +15,11 @@ class BaseController {
     int actionQueueIndex = 0;
 
 
-    BaseController(this.doll, this.canvas);
+    BaseController(this.doll, this.canvas) {
+        window.onError.listen((e) {
+            window.alert("Shit. There's been an error.");
+        });
+    }
 
 
 

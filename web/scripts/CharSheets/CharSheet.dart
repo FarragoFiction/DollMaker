@@ -190,7 +190,6 @@ abstract class CharSheet {
         saveLink.href = canvas.toDataUrl();
         saveLink.target = "_blank";
         saveLink.setInnerHtml("Download PNG?");
-
         ret.append(saveLink);
         return ret;
     }
