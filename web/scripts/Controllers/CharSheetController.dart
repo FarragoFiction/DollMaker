@@ -13,6 +13,8 @@ void main() {
 
 Future<Null> drawSheet() async {
     sheet = new SylveonSheet(Doll.makeRandomDoll());
+    //sheet = new SylveonSheet(new MonsterPocketDoll());
+
     Element innerDiv  = new DivElement();
     innerDiv.className = "cardWithForm";
     await sheet.draw(innerDiv);

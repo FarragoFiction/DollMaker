@@ -21,6 +21,7 @@
       <a href="mom_index.html">Mom Maker by YD</a>
       <a href="bro_index.html">Bro Maker by YD</a>
        <a href="queen_index.html">Queen Maker by MF</a>
+       <a href="monster_pocket_index.html">Monster Pocket Maker by Frew</a>
     </div>
   </li>
 
