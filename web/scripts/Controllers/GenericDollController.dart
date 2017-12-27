@@ -13,10 +13,7 @@ void main() {
     print("Hello World");
     loadNavbar();
     Random rand = new Random();
-    Doll doll = new HomestuckDoll();
-    CanvasElement canvas = new CanvasElement(width: doll.width, height: doll.height);
-    querySelector("#doll").append(canvas);
-    controller = new KidController(doll,canvas);
+
     print("going to load doll");
     loadDoll();
     //hintAtEgg();
@@ -46,9 +43,16 @@ void loadDoll() {
     print("loading doll");
     String dataString = window.location.search;
     print("dataSTring is $dataString");
+    Doll doll;
     if(dataString.isNotEmpty) {
-        controller.doll = Doll.loadSpecificDoll(dataString.substring(1)); //chop off leading ?
+        doll = Doll.loadSpecificDoll(dataString.substring(1)); //chop off leading ?
     }
+
+    //doing it this way ensures no incorrect sized canvas from a default doll.
+    if(doll == null) doll = Doll.makeRandomDoll();
+    CanvasElement canvas = new CanvasElement(width: doll.width, height: doll.height);
+    querySelector("#doll").append(canvas);
+    controller = new KidController(doll,canvas);
 
     //whether i loaded or not, it's time to draw.
     controller.setupForms();
