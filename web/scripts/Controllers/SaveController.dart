@@ -19,7 +19,7 @@ void loadDolls() {
     container = querySelector("#contents");
 
     if(savedDolls.length == 0) {
-        container.setInnerHtml("<h1>You have no saved dolls! Maybe you should make <a href = 'index.html'>make some</a> or something???</h1>");
+        container.setInnerHtml("<h1>You have no saved dolls! Maybe you should make <a href = 'index.html?type=1'>make some</a> or something???</h1>");
     }
 
     for(SavedDoll doll in savedDolls) {
