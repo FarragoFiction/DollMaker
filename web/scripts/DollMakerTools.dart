@@ -21,7 +21,7 @@ abstract class DollMakerTools {
                 syncColorPickerToColor(name, palette[name]);
             }else {
                 //won't look as good but this way can apply homestuck kid palette to pigeons, denizens, whatever
-                syncColorPickerToColor(paletteDropDownNames[i], palette[name]);
+                if(i < paletteDropDownNames.length) syncColorPickerToColor(paletteDropDownNames[i], palette[name]);
             }
             i ++;
         }
