@@ -6,6 +6,8 @@ import "Controllers/BaseController.dart";
 import "HomestuckDollLib.dart";
 
 abstract class DollMakerTools {
+    //used for generic palette handling. store what the dolls actual palette is when initing the drop downs.
+    static List<String> paletteDropDownNames = new List<String>();
 
     static void syncDropDownToSprite(SpriteLayer layer) {
         SelectElement drawnDropDown = querySelector("#${layer.name}");
@@ -13,8 +15,15 @@ abstract class DollMakerTools {
     }
 
     static void syncColorPickersToSprite(Palette palette) {
+        int i = 0; //for if the palette doesn't match perfectly
         for(String name in palette.names) {
-            syncColorPickerToColor(name, palette[name]);
+            if(paletteDropDownNames.contains(name)) {
+                syncColorPickerToColor(name, palette[name]);
+            }else {
+                //won't look as good but this way can apply homestuck kid palette to pigeons, denizens, whatever
+                syncColorPickerToColor(paletteDropDownNames[i], palette[name]);
+            }
+            i ++;
         }
     }
 
@@ -179,6 +188,7 @@ abstract class DollMakerTools {
         List<String> names = new List<String>.from(palette.names);
         names.sort();
         for(String name in names) {
+            paletteDropDownNames.add(name);
             drawColorPicker(name, div, palette[name], palette, callback);
         }
     }
