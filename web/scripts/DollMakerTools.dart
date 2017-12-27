@@ -176,8 +176,16 @@ abstract class DollMakerTools {
             print("sample palette changed");
             OptionElement option = drawnDropDown.selectedOptions[0];
             Palette chosen  = samples[option.value];
+            //TODO if i can't find the name in the palette change SOMETHING
+            int i = 0;
+            List<String> names = new List<String>.from(controller.doll.palette.names);
             for(String name in chosen.names) {
-                controller.doll.palette.add(name, chosen[name],true);
+                if(names.contains(name)) {
+                    controller.doll.palette.add(name, chosen[name], true);
+                }else {
+                    if(i < names.length)controller.doll.palette.add(names[i], chosen[name], true);
+                }
+                i++;
             }
             syncColorPickersToSprite(chosen);
             callback();
