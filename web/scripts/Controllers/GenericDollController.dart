@@ -16,7 +16,7 @@ void main() {
 
     print("going to load doll");
     loadDoll();
-    //hintAtEgg();
+    hintAtEgg();
 }
 
 void makeEgg() {
@@ -44,7 +44,10 @@ void loadDoll() {
     String dataString = window.location.search;
     print("dataSTring is $dataString");
     Doll doll;
-    if(dataString.isNotEmpty) {
+    if(dataString.isNotEmpty && getParameterByName("type",null)  != null) {
+        doll = Doll.randomDollOfType(int.parse(getParameterByName("type",null))); //chop off leading ?
+
+    }else {
         doll = Doll.loadSpecificDoll(dataString.substring(1)); //chop off leading ?
     }
 
