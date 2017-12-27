@@ -11,17 +11,17 @@
   <li class="dropdown menuButtonPureCSS">
     <a href="javascript:void(0)" class="dropbtn">DOLLS</a>
     <div class="dropdown-content">
-      <a href="index.html">Kid Maker</a>
-      <a href="troll_index.html">Troll Maker</a>
-      <a href="baby_index.html">Baby Maker</a>
-      <a href="grub_index.html">Grub Maker</a>
-      <a href="consort_index.html">Consort Maker</a>
-      <a href="denizen_index.html">Denizen Maker by TG</a>
-      <a href="dad_index.html">Dad Maker by YD</a>
-      <a href="mom_index.html">Mom Maker by YD</a>
-      <a href="bro_index.html">Bro Maker by YD</a>
-       <a href="queen_index.html">Queen Maker by MF</a>
-       <a href="monster_pocket_index.html">Monster Pocket Maker by Frew</a>
+      <a href="genericIndex.html?type=1">Kid Maker</a>
+      <a href="genericIndex.html?type=2">Troll Maker</a>
+      <a href="genericIndex.html?type=12">Baby Maker</a>
+      <a href="genericIndex.html?type=13">Grub Maker</a>
+      <a href="genericIndex.html?type=3">Consort Maker</a>
+      <a href="genericIndex.html?type=4">Denizen Maker by TG</a>
+      <a href="genericIndex.html?type=7">Dad Maker by YD</a>
+      <a href="genericIndex.html?type=9">Mom Maker by YD</a>
+      <a href="genericIndex.html?type=10">Bro Maker by YD</a>
+      <a href="genericIndex.html?type=8">Queen Maker by MF</a>
+      <a href="genericIndex.html?type=151">Monster Pocket Maker by Frew</a>
     </div>
   </li>
 
