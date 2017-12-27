@@ -52,7 +52,12 @@ void loadDoll() {
     if(doll == null) doll = Doll.makeRandomDoll();
     CanvasElement canvas = new CanvasElement(width: doll.width, height: doll.height);
     querySelector("#doll").append(canvas);
-    controller = new KidController(doll,canvas);
+    if(doll is QueenDoll) {
+        controller = new QueenController(doll, canvas);
+
+    }else {
+        controller = new KidController(doll, canvas);
+    }
 
     //whether i loaded or not, it's time to draw.
     controller.setupForms();
@@ -71,5 +76,96 @@ class KidController extends BaseController {
     }
 }
 
+
+
+class QueenController extends BaseController {
+    QueenController(Doll doll, CanvasElement canvas) : super(doll, canvas);
+
+    @override
+    void drawDollCreator([bool inQueue = false]) {
+        DollMakerTools.syncColorPickersToSprite(doll.palette);
+        drawLayerControls();
+        print("Draw doll creator");
+        Renderer.clearCanvas(canvas);
+        Renderer.drawDoll(canvas, doll);
+        TextAreaElement dataBox = querySelector("#shareableURL");
+        dataBox.value = "${window.location.origin}${window.location.pathname}?${doll.toDataBytesX()}";
+        //don't add it to the queue if you're already messing around in it, dunkass. you'll never escape the loop.
+        if (!inQueue) {
+            actionQueue.add(doll.toDataBytesX());
+            actionQueueIndex = actionQueue.length - 1;
+        }
+    }
+
+
+    @override
+    void randomizeDoll() {
+        print("randomizing and redrawing");
+        doll.randomize();
+        drawDollCreator();
+    }
+
+    @override
+    void randomizeDollNotColors() {
+        print("randomizing and redrawing");
+        doll.randomizeNotColors();
+        //can't do it in regular draw part cuz onChange is a bitch.
+        DollMakerTools.syncColorPickersToSprite(doll.palette);
+        drawDollCreator();
+        drawLayerControls();
+    }
+
+
+    @override
+    void setupForms() {
+        querySelector("#randomize").onClick.listen((e) => randomizeDoll());
+        querySelector("#randomizeColors").onClick.listen((e) => randomizeDollColors());
+        querySelector("#randomizeNotColors").onClick.listen((e) => randomizeDollNotColors());
+
+        ButtonElement copyButton = querySelector("#copyButton");
+        copyButton.onClick.listen((Event e) {
+            TextAreaElement dataBox = querySelector("#shareableURL");
+            dataBox.select();
+            document.execCommand('copy');
+        });
+
+        ButtonElement saveButton = querySelector("#saveButton");
+        saveButton.onClick.listen((Event e) {
+            doll.save();
+        });
+
+
+        Element colorControls = querySelector("#colorControls");
+
+        drawLayerControls();
+        DollMakerTools.drawColorPickersForPallete(colorControls, doll.palette, drawDollCreator);
+
+        if (undo == null) {
+            undo = new ButtonElement();
+            undo.setInnerHtml("Undo");
+            querySelector("#contents").append(undo);
+            undo.onClick.listen((e) => undoFunction());
+        }
+
+        if (redo == null) {
+            redo = new ButtonElement();
+            redo.setInnerHtml("Redo");
+            querySelector("#contents").append(redo);
+            redo.onClick.listen((e) => redoFunction());
+        }
+    }
+
+    void drawLayerControls() {
+        Element layerControls = querySelector("#layerControls");
+        layerControls.setInnerHtml("");
+        for (SpriteLayer l in doll.renderingOrderLayers.reversed) {
+            DollMakerTools.drawDropDownForSpriteLayer(controller, layerControls, l, drawDollCreator);
+        }
+
+
+        //want to be able to add new layers
+        DollMakerTools.addNewNamedLayerButton(controller, layerControls, drawDollCreator);
+    }
+}
 
 
