@@ -126,7 +126,7 @@ function renderRegularSprite(spritePart){
 
 function renderAllHair(){
 	var minHair = 0;
-	var maxHair = 140;
+	var maxHair = 255;
 	//don't use canvas, but still layer?  bg, like for KR.
 	for(var i = minHair; i<= maxHair; i++){
 		renderLayeredSprites([new SpritePart("images/Homestuck/HairBack/"+i+".png", "Hair " +i),new SpritePart("images/Homestuck/Body/head.png", ""), new SpritePart("images/Homestuck/HairTop/"+i+".png", "")]);
@@ -135,7 +135,7 @@ function renderAllHair(){
 
 function renderAllHorns(){
 	var minHorn = 0
-	var maxHorn = 140;
+	var maxHorn = 255;
 	for(var i = minHorn; i<= maxHorn; i++){
 			renderLayeredSprites([new SpritePart("images/Homestuck/Body/head.png", ""),new SpritePart("images/Homestuck/LeftHorn/"+i+".png","leftHorn "+i),new SpritePart("images/Homestuck/RightHorn/"+i+".png", "rightHorn" +i)]);
 	}
@@ -143,7 +143,7 @@ function renderAllHorns(){
 
 function renderAllEyes(){
 	var minHorn = 1
-	var maxHorn = 100;
+	var maxHorn = 255;
 	for(var i = minHorn; i<= maxHorn; i++){
 			renderLayeredSprites([new SpritePart("images/Homestuck/Body/head.png", ""),new SpritePart("images/Homestuck/LeftEye/"+i+".png","leftEye "+i),new SpritePart("images/Homestuck/RightEye/"+i+".png", "rightEye" +i)]);
 	}
@@ -152,7 +152,7 @@ function renderAllEyes(){
 
 function renderAllFins(){
 	var minHorn = 1
-	var maxHorn = 100;
+	var maxHorn = 255;
 	for(var i = minHorn; i<= maxHorn; i++){
 			renderLayeredSprites([new SpritePart("images/Homestuck/RightFin/"+i+".png","fin "+i),new SpritePart("images/Homestuck/Body/head.png", ""),new SpritePart("images/Homestuck/LeftFin/"+i+".png", "fin" +i)]);
 	}
@@ -160,7 +160,7 @@ function renderAllFins(){
 
 function renderAllPaint(){
 	var minHorn = 1
-	var maxHorn = 80;
+	var maxHorn = 255;
 	for(var i = minHorn; i<= maxHorn; i++){
 			renderLayeredSprites([new SpritePart("images/Homestuck/Body/head.png", ""),new SpritePart("images/Homestuck/FacePaint/"+i+".png","paint "+i)]);
 	}
@@ -169,7 +169,7 @@ function renderAllPaint(){
 
 function renderAllMouths(){
 	var minHorn = 1
-	var maxHorn = 49;
+	var maxHorn = 255;
 	for(var i = minHorn; i<= maxHorn; i++){
 			renderLayeredSprites([new SpritePart("images/Homestuck/Body/head.png", ""),new SpritePart("images/Homestuck/Mouth/"+i+".png","mouth "+i)]);
 	}
@@ -185,7 +185,7 @@ function renderAllConsorts(){
 
 function renderAllGlasses(){
 	var minHorn = 1
-	var maxHorn = 100;
+	var maxHorn = 255;
 	for(var i = minHorn; i<= maxHorn; i++){
 			renderLayeredSprites([new SpritePart("images/Homestuck/Body/head.png", ""),new SpritePart("images/Homestuck/Glasses/"+i+".png","accessory "+i)]);
 	}
@@ -193,7 +193,7 @@ function renderAllGlasses(){
 
 function renderAllGlasses2(){
 	var minHorn = 1
-	var maxHorn = 100;
+	var maxHorn = 255;
 	for(var i = minHorn; i<= maxHorn; i++){
 			renderLayeredSprites([new SpritePart("images/Homestuck/Body/head.png", ""),new SpritePart("images/Homestuck/Glasses2/"+i+".png","accessory "+i)]);
 	}
@@ -201,7 +201,7 @@ function renderAllGlasses2(){
 
 function renderAllBodies(){
 	var minHorn = 0
-	var maxHorn = 177;
+	var maxHorn = 255;
 	for(var i = minHorn; i<= maxHorn; i++){
 			renderLayeredSprites([new SpritePart("images/Homestuck/Body/"+i+".png","body "+i)]);
 	}
