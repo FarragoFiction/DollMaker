@@ -20,7 +20,7 @@
       <a href="index.html?type=7">Dad Maker by YD</a>
       <a href="index.html?type=9">Mom Maker by YD</a>
       <a href="index.html?type=10">Bro Maker by YD</a>
-      <a href="index.html?type=914">Hiveswap Maker by YD</a>
+      <a href="index.html?type=14">Hiveswap Maker by YD</a>
       <a href="index.html?type=113">Pigeon Maker by Xexus</a>
 
       <a href="index.html?type=8">Queen Maker by MF</a>

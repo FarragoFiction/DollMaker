@@ -13,7 +13,13 @@ void main() {
 }
 
 Future<Null> drawSheet() async {
-    sheet = new TrollCallSheet(new HomestuckTrollDoll()); //it's in the name, dunkass.
+    Doll d;
+    if(getParameterByName("canon",null) == "true") {
+        d = new HiveswapDoll();
+    }else {
+        d = new HomestuckTrollDoll();
+    }
+    sheet = new TrollCallSheet(d); //it's in the name, dunkass.
     Element innerDiv  = new DivElement();
     innerDiv.className = "cardWithForm";
     await sheet.draw(innerDiv);
