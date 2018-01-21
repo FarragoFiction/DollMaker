@@ -75,7 +75,7 @@ class KidController extends BaseController {
     void setupForms() {
         super.setupForms();
         Element samplePaletteControls = querySelector("#samplePaletteControls");
-        DollMakerTools.drawSamplePalettes(samplePaletteControls, controller, drawDollCreator);
+        DollMakerTools.drawSamplePalettes(samplePaletteControls, controller, drawDollCreator, doll);
     }
 }
 

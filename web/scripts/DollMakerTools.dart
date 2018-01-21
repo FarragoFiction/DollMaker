@@ -159,11 +159,17 @@ abstract class DollMakerTools {
 
 
 
-    static void drawSamplePalettes(Element div, BaseController controller, dynamic callback) {
+    static void drawSamplePalettes(Element div, BaseController controller, dynamic callback, Doll doll) {
 
         String html = "<div class = 'dollDropDownDiv'><select class = 'dollDropDown' id = 'samplePalettes' name='samplePalettes'>";
         html += "<option value = 'None'>None</option>";
         Map<String, Palette> samples = ReferenceColours.paletteList;
+
+        for(String s in doll.validPalettesMap.keys) {
+            print("special palette is $s");
+            samples[s] = doll.validPalettesMap[s];
+        }
+
         for (String name in samples.keys) {
             html += '<option value="$name">$name</option>';
         }
