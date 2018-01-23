@@ -76,6 +76,35 @@ abstract class DollMakerTools {
 
     }
 
+    static void drawLoadButtonForSpriteLayer(BaseController controller, Element div, SpriteLayer layer, dynamic callback) {
+        SpanElement container = new SpanElement();
+        InputElement fileElement = new InputElement();
+        fileElement.type = "file";
+        fileElement.setInnerHtml("Load Layer To Test?");
+        container.append(fileElement);
+        div.append(container);
+
+        fileElement.onChange.listen((e) {
+            List<File> loadFiles = fileElement.files;
+            File file = loadFiles.first;
+            FileReader reader = new FileReader();
+            reader.readAsDataUrl(file);
+            reader.onLoadEnd.listen((e) {
+                String loadData = reader.result;
+                ImageElement imageThumbnail = new ImageElement();
+                ImageElement image = new ImageElement();
+                imageThumbnail.style.height = "20px";
+                //imageThumbnail.style.width = "20px";
+                container.append(imageThumbnail);
+                image.src = loadData;
+                imageThumbnail.src = loadData;
+                layer.preloadedElement = image;
+                print ("going to callback");
+                callback();
+            });
+        });
+    }
+
     static void drawDropDownForNamedSpriteLayer(BaseController controller, Element div, NamedSpriteLayer layer, dynamic callback) {
         print("drawing drop down for ${layer.name}, is it a slave? ${layer.slave}");
         SpanElement wrapper = new SpanElement();

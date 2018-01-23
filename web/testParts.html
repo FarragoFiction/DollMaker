@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<!--
+  Copyright (c) 2017, JR. All rights reserved. Use of this source code
+  is governed by a BSD-style license that can be found in the LICENSE file.
+-->
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Doll Part Tester, by SBURBSim</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="favicon.ico">
+    <script defer src="scripts/Controllers/GenericDollTesterController.dart" type="application/dart"></script>
+    <script defer src="packages/browser/dart.js"></script>
+</head>
+
+<body>
+<div id = "navbar"></div>
+<a href="testParts.html?type=1">Kid Maker</a>
+<a href="testParts.html?type=2">Troll Maker</a>
+<a href="testParts.html?type=12">Baby Maker</a>
+<a href="testParts.html?type=13">Grub Maker</a>
+<a href="testParts.html?type=3">Consort Maker</a>
+<a href="testParts.html?type=4">Denizen Maker by TG</a>
+<a href="testParts.html?type=7">Dad Maker by YD</a>
+<a href="testParts.html?type=9">Mom Maker by YD</a>
+<a href="testParts.html?type=10">Bro Maker by YD</a>
+<a href="testParts.html?type=14">Hiveswap Maker by MC</a>
+<a href="testParts.html?type=113">Pigeon Maker by Xexus</a>
+<a href="testParts.html?type=15">Satyr Maker by PM</a>
+<a href="testParts.html?type=8">Queen Maker by MF</a>
+<a href="testParts.html?type=151">Monster Pocket Maker by Frew</a>
+<a href="testParts.html?type=16">SuperbSuck Maker by KW</a>
+
+<div id = 'contents'>
+    <table border = "1">
+        <tr>
+            <td>
+                <div id =  "doll"></div>
+
+            </td>
+            <td>
+                <div id = 'info'>
+                    <div id="loading_stats"></div>
+                    <div id = "debug">
+                        Pick a layer in order to replace the existing image with an uploaded image. This will let you test positioning, color replacement, etc. Or do dumb shit.
+                        <br><br>
+                        Common Problems:
+                        <li><b>An entire color is not being replaced: </b> Are you sure it's EXACTLY the right color for the palette? And you're not using an indexed color profile on the file?</li>
+                        <li><b>Parts of the sprite's color isn't being replaced:</b>Make sure there is no anti-aliasing or areas of pixels where there's slightly different colors.</li>
+                        <li><b>No colors are being replaced: </b>Welcome to the wonderful world of Gamma. Things like Paint.net add it to files and it ruins everything, forever. You will need to use a program to remove it. I use <a href = "https://imageoptim.com/versions.html">ImageOptim for Mac</a>.</li>
+                    </div>
+                    <div id="layerControls">
+
+                    </div>
+
+                    <div id="colorControls">
+
+                    </div>
+
+                    <div id="samplePaletteControls">
+
+                    </div>
+                    <br><Br>
+                    <button id = 'randomize'>Randomize</button>
+                    <button id = 'randomizeColors'>Randomize Just Colors</button>
+                    <button id = 'randomizeNotColors'>Randomize Everything But Colors</button><br><br>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+<canvas id="doll_template" width="400" height="300"></canvas>
+<div style = "display:none;" id="loading_image_staging"></div>
+
+</body>
+</html>
