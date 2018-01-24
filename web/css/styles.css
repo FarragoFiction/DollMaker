@@ -8,6 +8,10 @@ html, body {
   font-family: 'Roboto', sans-serif;
 }
 
+#imageSize{
+    font-size: 24px;
+}
+
 .trollcall{
     font-family: 'trollcall', sans-serif;
 }

@@ -74,6 +74,7 @@ class TestController extends BaseController {
 
     @override
     void setupForms() {
+        querySelector("#imageSize").appendHtml("Images should be ${doll.width} width by ${doll.height} height");
         querySelector("#randomize").onClick.listen((e) => randomizeDoll());
         querySelector("#randomizeColors").onClick.listen((e) => randomizeDollColors());
         querySelector("#randomizeNotColors").onClick.listen((e) => randomizeDollNotColors());
