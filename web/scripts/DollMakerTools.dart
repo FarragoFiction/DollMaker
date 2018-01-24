@@ -99,8 +99,14 @@ abstract class DollMakerTools {
                 image.src = loadData;
                 imageThumbnail.src = loadData;
                 layer.preloadedElement = image;
-                print ("going to callback");
-                callback();
+                //you would  think it's already loaded by definition, but maybe not into the huge sized image.
+                //trying to figure out why it's invisible when on the server but not locally with no errors
+                image.onLoad.listen((e)
+                {
+                    print ("going to callback");
+
+                    callback();
+                });
             });
         });
     }
