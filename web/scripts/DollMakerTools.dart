@@ -78,6 +78,7 @@ abstract class DollMakerTools {
 
     static void drawLoadButtonForSpriteLayer(BaseController controller, Element div, SpriteLayer layer, dynamic callback) {
         SpanElement container = new SpanElement();
+        container.text = "${layer.name}";
         InputElement fileElement = new InputElement();
         fileElement.type = "file";
         fileElement.setInnerHtml("Load Layer To Test?");
@@ -104,7 +105,6 @@ abstract class DollMakerTools {
                 image.onLoad.listen((e)
                 {
                     print ("going to callback");
-
                     callback();
                 });
             });

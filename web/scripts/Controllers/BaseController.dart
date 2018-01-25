@@ -29,6 +29,9 @@ class BaseController {
         querySelector("#randomizeNotColors").onClick.listen((e) => randomizeDollNotColors());
 
         ButtonElement copyButton = querySelector("#copyButton");
+
+        TextAreaElement dataBox = querySelector("#shareableURL");
+        dataBox.value = "${window.location.origin}${window.location.pathname}?${doll.toDataBytesX()}";
         copyButton.onClick.listen((Event e) {
             TextAreaElement dataBox = querySelector("#shareableURL");
             dataBox.select();
@@ -44,9 +47,7 @@ class BaseController {
         Element layerControls = querySelector("#layerControls");
         Element colorControls = querySelector("#colorControls");
         for (SpriteLayer l in doll.renderingOrderLayers.reversed) {
-            DollMakerTools.drawLoadButtonForSpriteLayer(this, layerControls, l, drawDollCreator);
             DollMakerTools.drawDropDownForSpriteLayer(this, layerControls, l, drawDollCreator);
-
         }
         DollMakerTools.drawColorPickersForPallete(colorControls, doll.palette, drawDollCreator);
 
