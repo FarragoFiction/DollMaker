@@ -16,10 +16,20 @@ html, body {
     font-family: 'trollcall', sans-serif;
 }
 
+.trollcallNotBold{
+    font-family: 'trollcallNotBold', sans-serif;
+}
+
+
+@font-face {
+    font-family: trollcallNotBold;
+    src: url("../Fonts/Berlin_Sans_FB_Regular.ttf");
+}
+
 
 @font-face {
     font-family: trollcall;
-    src: url("../Fonts/Berlin_Sans_FB Demi_Bold.ttf");
+    src: url("../Fonts/Berlin_Sans_FB_Demi_Bold.ttf");
 }
 
 
