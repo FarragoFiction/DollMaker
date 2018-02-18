@@ -91,7 +91,7 @@ abstract class CharSheet {
         CanvasElement monsterElement = new CanvasElement(width:w, height: h);
         if(hideDoll) return monsterElement;
         CanvasElement dollCanvas = new CanvasElement(width: doll.width, height: doll.height);
-        await Renderer.drawDoll(dollCanvas, doll);
+        await DollRenderer.drawDoll(dollCanvas, doll);
         //Renderer.drawBG(monsterElement, ReferenceColours.RED, ReferenceColours.WHITE);
 
         dollCanvas = Renderer.cropToVisible(dollCanvas);
