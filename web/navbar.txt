@@ -13,6 +13,7 @@
     <div class="dropdown-content">
       <a href="index.html?type=1">Kid Maker</a>
       <a href="index.html?type=2">Troll Maker</a>
+      <a href="index.html?type=16">Cherub Maker</a>
       <a href="index.html?type=12">Baby Maker</a>
       <a href="index.html?type=13">Grub Maker</a>
       <a href="index.html?type=3">Consort Maker</a>

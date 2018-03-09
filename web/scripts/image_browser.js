@@ -42,6 +42,17 @@ window.onload = function() {
                 $("#header").html("Bodies");
     }
 
+    if (getParameterByName("cherubBodies")  == "true"){
+        renderAllCherubBodies();
+        $("#header").html("Cherub Bodies");
+     }
+
+    if (getParameterByName("cherubEyes")  == "true"){
+            renderAllCherubEyes();
+            $("#header").html("Cherub Eyes");
+    }
+
+
     if (getParameterByName("symbols")  == "true"){
         renderAllSymbols();
         $("#header").html("Symbols");
@@ -150,6 +161,14 @@ function renderAllEyes(){
 }
 
 
+function renderAllCherubEyes(){
+	var minHorn = 1
+	var maxHorn = 255;
+	for(var i = minHorn; i<= maxHorn; i++){
+			renderLayeredSprites([new SpritePart("/DollSource/images/Homestuck/Body/head.png", ""),new SpritePart("/DollSource/images/Homestuck/CherubLeftEye/"+i+".png","leftEye "+i),new SpritePart("/DollSource/images/Homestuck/CherubRightEye/"+i+".png", "rightEye" +i)]);
+	}
+}
+
 function renderAllFins(){
 	var minHorn = 1
 	var maxHorn = 255;
@@ -204,6 +223,14 @@ function renderAllBodies(){
 	var maxHorn = 255;
 	for(var i = minHorn; i<= maxHorn; i++){
 			renderLayeredSprites([new SpritePart("/DollSource/images/Homestuck/Body/"+i+".png","body "+i)]);
+	}
+}
+
+function renderAllCherubBodies(){
+	var minHorn = 0
+	var maxHorn = 255;
+	for(var i = minHorn; i<= maxHorn; i++){
+			renderLayeredSprites([new SpritePart("/DollSource/images/Homestuck/CherubBody/"+i+".png","body "+i)]);
 	}
 }
 
