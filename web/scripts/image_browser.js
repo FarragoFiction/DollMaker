@@ -165,7 +165,7 @@ function renderAllCherubEyes(){
 	var minHorn = 1
 	var maxHorn = 255;
 	for(var i = minHorn; i<= maxHorn; i++){
-			renderLayeredSprites([new SpritePart("/DollSource/images/Homestuck/Body/head.png", ""),new SpritePart("/DollSource/images/Homestuck/CherubLeftEye/"+i+".png","leftEye "+i),new SpritePart("/DollSource/images/Homestuck/CherubRightEye/"+i+".png", "rightEye" +i)]);
+			renderLayeredSprites([new SpritePart("/DollSource/images/Homestuck/Body/head.png", ""),new SpritePart("/DollSource/images/Homestuck/CherubLeftEyes/"+i+".png","leftEye "+i),new SpritePart("/DollSource/images/Homestuck/CherubRightEyes/"+i+".png", "rightEye" +i)]);
 	}
 }
 
