@@ -26,7 +26,7 @@
       <a href="index.html?type=15">Satyr Maker by PM</a>
       <a href="index.html?type=8">Queen Maker by MF</a>
       <a href="index.html?type=151">Monster Pocket Maker by Frew</a>
-      <a href="index.html?type=16">SuperbSuck Maker by KW</a>
+      <a href="index.html?type=17">SuperbSuck Maker by KW</a>
 
     </div>
   </li>
