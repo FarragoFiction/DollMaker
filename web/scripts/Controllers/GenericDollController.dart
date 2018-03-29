@@ -17,6 +17,18 @@ void main() {
     print("going to load doll");
     loadDoll();
     hintAtEgg();
+    storeCard("N4Igzg9grgTgxgUxALhAWQIYGsCWA7AcwAIMiARCAG0pABoQ8MBbJVAcQQBcj8SiAhGBgDuNepwQAPTihBEIwvAhgJGLGEQJcwPPHwBmOMN0MEAFt2E5OZojYzcMYMGaoIiAEwV6b74yq4AOiIAFTMEAE8iVQ8iKAAHXTtwogBlABkAQTQ0AFEAJSJ9CA14qAAjShw4IhgFD3wEZ2C6EHKMOCwCOqg8DwA5ZlYQVMpmAClmUeYyXtxCMIRppnVA+MJWzhgcAi0YAGEzDDxEWQAGQIBWVrBEJTAQiABVPEoITtkAbQBdVpUwKCUThgVKcBxgL7AAA6DCGMOQMNyqRCuVyaBhtBhADcMJQoAh4TCALQAZhhAF9fuJtrtlKDwekmmBlF8qSAtjs9vTgWwVA4WahPtDYSxCSAyAB5NAASX6mX6+1yGOxuPxYoAjBS2RzaTBuWBcgBHKC41kgclAA");
+}
+
+void storeCard(String card) {
+    String key = "LIFESIMFOUNDCARDS";
+    if(window.localStorage.containsKey(key)) {
+        String existing = window.localStorage[key];
+        List<String> parts = existing.split(",");
+        if(!parts.contains(card)) window.localStorage[key] = "$existing,$card";
+    }else {
+        window.localStorage[key] = card;
+    }
 }
 
 void makeEgg() {
