@@ -77,6 +77,7 @@ void loadDoll() {
     //whether i loaded or not, it's time to draw.
     controller.setupForms();
     controller.drawDollCreator();
+    querySelector("title").text = "${doll.name} Doll Maker";
 }
 
 

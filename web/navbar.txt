@@ -14,19 +14,14 @@
       <a href="index.html?type=1">Kid Maker</a>
       <a href="index.html?type=2">Troll Maker</a>
       <a href="index.html?type=16">Cherub Maker by Neytra</a>
-      <a href="index.html?type=12">Baby Maker</a>
-      <a href="index.html?type=13">Grub Maker</a>
-      <a href="index.html?type=3">Consort Maker</a>
-      <a href="index.html?type=4">Denizen Maker by TG</a>
-      <a href="index.html?type=7">Dad Maker by YD</a>
-      <a href="index.html?type=9">Mom Maker by YD</a>
-      <a href="index.html?type=10">Bro Maker by YD</a>
       <a href="index.html?type=14">Hiveswap Maker by MC</a>
-      <a href="index.html?type=113">Pigeon Maker by Xexus</a>
       <a href="index.html?type=15">Satyr Maker by PM</a>
-      <a href="index.html?type=8">Queen Maker by MF</a>
-      <a href="index.html?type=151">Monster Pocket Maker by Frew</a>
       <a href="index.html?type=17">SuperbSuck Maker by KW</a>
+      <a href="index.html?type=18">Virus Maker by PB</a>
+      <a href="dollTypes.html?">See All Doll Types</a>
+
+
+
 
     </div>
   </li>
