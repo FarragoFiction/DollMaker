@@ -99,7 +99,7 @@ void drawAllImagesForPart() {
         img.src = "${selectedPart.imgNameBase}${i}.${selectedPart.imgFormat}";
         container.append(img);
     }
-    partDetailDiv.append(container);
+    detailDiv.append(container);
 }
 
 void drawPalette(Element container) {
@@ -142,7 +142,7 @@ void drawDollBox(Doll doll) {
 void drawPartBox(SpriteLayer part, Element container) {
     DivElement box = new DivElement();
     container.append(box);
-    CustomRadio cr = new CustomRadio(box, part.name, "PartRadioGroup");
+    CustomRadio cr = new CustomRadio(box, "${part.name} (${part.maxImageNumber +1})", "PartRadioGroup");
     partRadios.add(cr);
 
     box.onClick.listen((e)
