@@ -134,6 +134,10 @@ width:1000px;
 	vertical-align: middle;
 }
 
+.selected{
+    background-color: green;
+}
+
 .fanLinks{
 	background-color: #9630bf;
 	padding-top: 5px;
