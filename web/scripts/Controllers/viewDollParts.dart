@@ -9,19 +9,18 @@ List<CustomRadio> dollRadios = new List<CustomRadio>();
 List<CustomRadio> partRadios = new List<CustomRadio>();
 DivElement div;
 Doll selectedDoll;
-DivElement detailDiv;
-DivElement partDetailDiv;
+SpriteLayer selectedPart;
+SpanElement detailDiv;
+SpanElement partDetailDiv;
 void main() {
     loadNavbar();
     div = querySelector("#output");
-    detailDiv = new DivElement();
+    detailDiv = new SpanElement();
     detailDiv.text = "Select a Doll to View It's Details";
     detailDiv.id = "detailDiv";
-    partDetailDiv = new DivElement();
+    partDetailDiv = new SpanElement();
     partDetailDiv.id = "partDetailDiv";
     initDollList();
-    todo("get selected Doll");
-    todo("display dolls palette automatically, both color and box");
     todo("drop down menu of each types parts Name: Number of Options");
     todo("when a part is selected, display all of them, min to max");
     todo("take in a doll type for initial selection");
@@ -43,18 +42,27 @@ void initDollList() {
     }
 }
 
+void drawAllParts() {
+    if(selectedDoll is QueenDoll) {
+        partDetailDiv.setInnerHtml("Apologies, this doll type is not yet supported.");
+    }
+    for(SpriteLayer s in selectedDoll.renderingOrderLayers) {
+        drawPartBox(s);
+    }
+}
+
 Future<Null> drawAllBoxes() async {
     await Loader.preloadManifest();
 
     for(Doll doll in dollExamples) {
-        drawBox(doll);
+        drawDollBox(doll);
     }
     div.append(detailDiv);
     detailDiv.append(partDetailDiv);
 }
 
-void handleSelections() {
-    for(CustomRadio cr in dollRadios) {
+void handleSelections(List<CustomRadio> list) {
+    for(CustomRadio cr in list) {
         cr.syncSelected();
     }
 }
@@ -63,8 +71,13 @@ void selectDoll(Doll doll) {
     selectedDoll = doll;
     detailDiv.setInnerHtml("");
     drawPalette();
-    todo("print out layers for ${doll.name}");
-    todo("have layers be clickable to show all images for that layer");
+    drawAllParts();
+}
+
+void selectPart(SpriteLayer part) {
+    selectedPart = part;
+    partDetailDiv.setInnerHtml("");
+    todo("print out images for ${part.name}");
 }
 
 void drawPalette() {
@@ -90,7 +103,7 @@ void drawPalette() {
     detailDiv.append(table);
 }
 
-void drawBox(Doll doll) {
+void drawDollBox(Doll doll) {
     DivElement box = new DivElement();
     div.append(box);
     CustomRadio cr = new CustomRadio(box, doll.name);
@@ -99,8 +112,22 @@ void drawBox(Doll doll) {
     box.onClick.listen((e)
     {
         cr.radioHidden.checked = true;
-        handleSelections();
+        handleSelections(dollRadios);
         selectDoll(doll);
+    });
+}
+
+void drawPartBox(SpriteLayer part) {
+    DivElement box = new DivElement();
+    div.append(box);
+    CustomRadio cr = new CustomRadio(box, part.name);
+    partRadios.add(cr);
+
+    box.onClick.listen((e)
+    {
+        cr.radioHidden.checked = true;
+        handleSelections(partRadios);
+        selectPart(part);
     });
 }
 
