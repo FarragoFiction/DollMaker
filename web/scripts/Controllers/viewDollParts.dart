@@ -6,6 +6,7 @@ import "dart:async";
 
 List<Doll> dollExamples = new List<Doll>();
 List<CustomRadio> dollRadios = new List<CustomRadio>();
+List<CustomRadio> partRadios = new List<CustomRadio>();
 DivElement div;
 Doll selectedDoll;
 DivElement detailDiv;
@@ -14,7 +15,10 @@ void main() {
     loadNavbar();
     div = querySelector("#output");
     detailDiv = new DivElement();
+    detailDiv.text = "Select a Doll to View It's Details";
+    detailDiv.id = "detailDiv";
     partDetailDiv = new DivElement();
+    partDetailDiv.id = "partDetailDiv";
     initDollList();
     todo("get selected Doll");
     todo("display dolls palette automatically, both color and box");
@@ -23,8 +27,7 @@ void main() {
     todo("take in a doll type for initial selection");
     todo("have each doll maker or prt tester link to this page with doll type set");
     drawAllBoxes();
-    div.append(detailDiv);
-    detailDiv.append(partDetailDiv);
+
 }
 
 void todo(String text) {
@@ -46,6 +49,8 @@ Future<Null> drawAllBoxes() async {
     for(Doll doll in dollExamples) {
         drawBox(doll);
     }
+    div.append(detailDiv);
+    detailDiv.append(partDetailDiv);
 }
 
 void handleSelections() {
@@ -56,6 +61,7 @@ void handleSelections() {
 
 void selectDoll(Doll doll) {
     selectedDoll = doll;
+    detailDiv.setInnerHtml("");
     drawPalette();
     todo("print out layers for ${doll.name}");
     todo("have layers be clickable to show all images for that layer");
@@ -68,9 +74,9 @@ void drawPalette() {
         TableCellElement td1 = new TableCellElement();
         td1.text = "${name}";
         TableCellElement td2 = new TableCellElement();
-        td2.text = "${selectedDoll.palette[name].toStyleString()}";
+        td2.text = "${selectedDoll.paletteSource[name].toStyleString()}";
         TableCellElement td3 = new TableCellElement();
-        td3.style.backgroundColor = "${selectedDoll.palette[name].toStyleString()}";
+        td3.style.backgroundColor = "${selectedDoll.paletteSource[name].toStyleString()}";
         td3.style.width = "50px";
         td1.style.border = "1px solid black";
         td2.style.border = "1px solid black";
@@ -86,21 +92,13 @@ void drawPalette() {
 
 void drawBox(Doll doll) {
     DivElement box = new DivElement();
-    box.style.display = "inline-block";
-    box.style.padding = "5px";
-    box.style.border = "3px solid black";
-    DivElement name = new DivElement();
-    name.text = doll.name;
-    box.append(name);
     div.append(box);
-    RadioButtonInputElement radio = new RadioButtonInputElement();
-    radio.name = "DollRadioGroup";
-    box.append(radio);
-    dollRadios.add(new CustomRadio(box, radio));
+    CustomRadio cr = new CustomRadio(box, doll.name);
+    dollRadios.add(cr);
 
     box.onClick.listen((e)
     {
-        radio.checked = true;
+        cr.radioHidden.checked = true;
         handleSelections();
         selectDoll(doll);
     });
@@ -111,7 +109,19 @@ class CustomRadio
     RadioButtonInputElement radioHidden;
     Element radioVisible;
 
-    CustomRadio(Element this.radioVisible, RadioButtonInputElement this.radioHidden);
+    CustomRadio(Element this.radioVisible, String label) {
+        radioVisible.style.display = "inline-block";
+        radioVisible.style.padding = "5px";
+        radioVisible.style.border = "3px solid black";
+        DivElement name = new DivElement();
+        name.text = label;
+        radioVisible.append(name);
+        radioHidden = new RadioButtonInputElement();
+        radioHidden.name = "DollRadioGroup";
+        radioVisible.append(radioHidden);
+    }
+
+
 
     void syncSelected() {
         if(radioHidden.checked) {
