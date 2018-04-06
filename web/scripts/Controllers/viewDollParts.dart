@@ -42,12 +42,13 @@ void initDollList() {
     }
 }
 
-void drawAllParts() {
+void drawAllParts(Element container) {
     if(selectedDoll is QueenDoll) {
-        partDetailDiv.setInnerHtml("Apologies, this doll type is not yet supported.");
+        container.setInnerHtml("Apologies, this doll type is not yet supported.");
+        return;
     }
     for(SpriteLayer s in selectedDoll.renderingOrderLayers) {
-        drawPartBox(s);
+        drawPartBox(s, container);
     }
 }
 
@@ -57,6 +58,7 @@ Future<Null> drawAllBoxes() async {
     for(Doll doll in dollExamples) {
         drawDollBox(doll);
     }
+
     div.append(detailDiv);
     detailDiv.append(partDetailDiv);
 }
@@ -70,17 +72,37 @@ void handleSelections(List<CustomRadio> list) {
 void selectDoll(Doll doll) {
     selectedDoll = doll;
     detailDiv.setInnerHtml("");
-    drawPalette();
-    drawAllParts();
+    TableElement detailTable = new TableElement();
+    TableRowElement tr = new TableRowElement();
+    TableCellElement td1 = new TableCellElement();
+    TableCellElement td2 = new TableCellElement();
+    tr.append(td1);
+    tr.append(td2);
+    detailTable.append(tr);
+    detailDiv.append(detailTable);
+
+    drawPalette(td1);
+    drawAllParts(td2);
 }
 
 void selectPart(SpriteLayer part) {
     selectedPart = part;
     partDetailDiv.setInnerHtml("");
-    todo("print out images for ${part.name}");
+    drawAllImagesForPart();
 }
 
-void drawPalette() {
+void drawAllImagesForPart() {
+    DivElement container = new DivElement();
+    for(int i = 0; i<selectedPart.maxImageNumber; i++) {
+        ImageElement img = new ImageElement();
+        //auto async
+        img.src = "${selectedPart.imgNameBase}${i}.${selectedPart.imgFormat}";
+        container.append(img);
+    }
+    partDetailDiv.append(container);
+}
+
+void drawPalette(Element container) {
     TableElement table = new TableElement();
     for(String name in selectedDoll.paletteSource.names) {
         TableRowElement line = new TableRowElement();
@@ -100,13 +122,13 @@ void drawPalette() {
         line.append(td3);
         table.append(line);
     }
-    detailDiv.append(table);
+    container.append(table);
 }
 
 void drawDollBox(Doll doll) {
     DivElement box = new DivElement();
     div.append(box);
-    CustomRadio cr = new CustomRadio(box, doll.name);
+    CustomRadio cr = new CustomRadio(box, doll.name, "DollRadioGroup");
     dollRadios.add(cr);
 
     box.onClick.listen((e)
@@ -117,10 +139,10 @@ void drawDollBox(Doll doll) {
     });
 }
 
-void drawPartBox(SpriteLayer part) {
+void drawPartBox(SpriteLayer part, Element container) {
     DivElement box = new DivElement();
-    div.append(box);
-    CustomRadio cr = new CustomRadio(box, part.name);
+    container.append(box);
+    CustomRadio cr = new CustomRadio(box, part.name, "PartRadioGroup");
     partRadios.add(cr);
 
     box.onClick.listen((e)
@@ -136,7 +158,7 @@ class CustomRadio
     RadioButtonInputElement radioHidden;
     Element radioVisible;
 
-    CustomRadio(Element this.radioVisible, String label) {
+    CustomRadio(Element this.radioVisible, String label, String group) {
         radioVisible.style.display = "inline-block";
         radioVisible.style.padding = "5px";
         radioVisible.style.border = "3px solid black";
@@ -144,7 +166,7 @@ class CustomRadio
         name.text = label;
         radioVisible.append(name);
         radioHidden = new RadioButtonInputElement();
-        radioHidden.name = "DollRadioGroup";
+        radioHidden.name = group;
         radioVisible.append(radioHidden);
     }
 
