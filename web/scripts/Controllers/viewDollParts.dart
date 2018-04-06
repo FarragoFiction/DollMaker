@@ -60,7 +60,7 @@ Future<Null> drawAllBoxes() async {
     }
 
     div.append(detailDiv);
-    detailDiv.append(partDetailDiv);
+    div.append(partDetailDiv);
 }
 
 void handleSelections(List<CustomRadio> list) {
@@ -72,6 +72,8 @@ void handleSelections(List<CustomRadio> list) {
 void selectDoll(Doll doll) {
     selectedDoll = doll;
     detailDiv.setInnerHtml("");
+    partDetailDiv.setInnerHtml("");
+
     TableElement detailTable = new TableElement();
     TableRowElement tr = new TableRowElement();
     TableCellElement td1 = new TableCellElement();
@@ -82,7 +84,19 @@ void selectDoll(Doll doll) {
     detailDiv.append(detailTable);
 
     drawPalette(td1);
-    drawAllParts(td2);
+    drawDoll(td2);
+}
+
+Future<Null> drawDoll(Element element) async {
+    DivElement title = new DivElement();
+    title.text = "Width: ${selectedDoll.width} by Height: ${selectedDoll.height}";
+    element.append(title);
+    CanvasElement canvas = new CanvasElement(width: selectedDoll.width, height: selectedDoll.height);
+    element.append(canvas);
+    DivElement container = new DivElement();
+    element.append(container);
+    drawAllParts(container);
+    DollRenderer.drawDoll(canvas, selectedDoll);
 }
 
 void selectPart(SpriteLayer part) {
@@ -93,13 +107,16 @@ void selectPart(SpriteLayer part) {
 
 void drawAllImagesForPart() {
     DivElement container = new DivElement();
-    for(int i = 0; i<selectedPart.maxImageNumber; i++) {
+    container.style.display = "inline-block";
+    for(int i = 0; i<selectedPart.maxImageNumber+1; i++) {
         ImageElement img = new ImageElement();
         //auto async
+        img.style.border = "3px solid black";
+
         img.src = "${selectedPart.imgNameBase}${i}.${selectedPart.imgFormat}";
         container.append(img);
     }
-    detailDiv.append(container);
+    partDetailDiv.append(container);
 }
 
 void drawPalette(Element container) {
