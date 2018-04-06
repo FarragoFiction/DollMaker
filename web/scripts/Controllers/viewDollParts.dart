@@ -27,6 +27,10 @@ void main() {
     todo("have each doll maker or prt tester link to this page with doll type set");
     drawAllBoxes();
 
+    if(getParameterByName("type",null)  != null) {
+        selectDollByNumber(int.parse(getParameterByName("type",null))); //chop off leading ?
+    }
+
 }
 
 void todo(String text) {
@@ -36,10 +40,14 @@ void todo(String text) {
 }
 
 void initDollList() {
-    List<int> dollTypes = <int>[1,2,16,12,13,3,4,7,9,10,14,113,15,8,151,17,18];
-    for(int type in dollTypes) {
+    for(int type in Doll.allDollTypes) {
         dollExamples.add(Doll.randomDollOfType(type));
     }
+}
+
+void selectDollByNumber(int number) {
+    //why yes, this WOULD allow it to work on dolls not listed in 'allDollTypes', why do you ask???
+    selectDoll(Doll.randomDollOfType(number));
 }
 
 void drawAllParts(Element container) {
