@@ -21,10 +21,6 @@ void main() {
     partDetailDiv = new SpanElement();
     partDetailDiv.id = "partDetailDiv";
     initDollList();
-    todo("drop down menu of each types parts Name: Number of Options");
-    todo("when a part is selected, display all of them, min to max");
-    todo("take in a doll type for initial selection");
-    todo("have each doll maker or prt tester link to this page with doll type set");
     drawAllBoxes();
 
     if(getParameterByName("type",null)  != null) {
@@ -117,12 +113,23 @@ void drawAllImagesForPart() {
     DivElement container = new DivElement();
     container.style.display = "inline-block";
     for(int i = 0; i<selectedPart.maxImageNumber+1; i++) {
+        DivElement innerContainer = new DivElement();
+        innerContainer.style.position = "relative";
+        innerContainer.style.width = "${selectedDoll.width}px";
+        innerContainer.style.height = "${selectedDoll.height}px";
+        innerContainer.style.display = "inline-block";
+        innerContainer.text = "${i}.${selectedPart.imgFormat}";
         ImageElement img = new ImageElement();
+        img.style.position = "absolute";
+        img.style.top = "-10px";
+        img.style.left = "0px";
+
         //auto async
         img.style.border = "3px solid black";
 
         img.src = "${selectedPart.imgNameBase}${i}.${selectedPart.imgFormat}";
-        container.append(img);
+        innerContainer.append(img);
+        container.append(innerContainer);
     }
     partDetailDiv.append(container);
 }
@@ -137,6 +144,7 @@ void drawPalette(Element container) {
         td2.text = "${selectedDoll.paletteSource[name].toStyleString()}";
         TableCellElement td3 = new TableCellElement();
         td3.style.backgroundColor = "${selectedDoll.paletteSource[name].toStyleString()}";
+        td3.text = "___";
         td3.style.width = "50px";
         td1.style.border = "1px solid black";
         td2.style.border = "1px solid black";
