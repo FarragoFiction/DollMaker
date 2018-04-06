@@ -59,6 +59,7 @@ void loadDoll() {
     if(dataString.isNotEmpty && getParameterByName("type",null)  != null) {
         doll = Doll.randomDollOfType(int.parse(getParameterByName("type",null))); //chop off leading ?
 
+
     }else if (dataString.isNotEmpty) {
         doll = Doll.loadSpecificDoll(dataString.substring(1)); //chop off leading ?
     }
@@ -67,6 +68,14 @@ void loadDoll() {
     if(doll == null) doll =  Doll.randomDollOfType(1);
     CanvasElement canvas = new CanvasElement(width: doll.width, height: doll.height);
     querySelector("#doll").append(canvas);
+    DivElement linkDiv = new DivElement();
+    AnchorElement a = new AnchorElement(href: "viewParts.html?type=${doll.renderingType}");
+    a.text = "View All Parts for ${doll.name}";
+    a.target = "_blank";
+    linkDiv.append(a);
+    querySelector("#samplePaletteControls").append(linkDiv);
+
+
     if(doll is QueenDoll) {
         controller = new QueenController(doll, canvas);
 
