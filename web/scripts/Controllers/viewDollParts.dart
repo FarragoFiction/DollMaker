@@ -8,9 +8,13 @@ List<Doll> dollExamples = new List<Doll>();
 List<CustomRadio> dollRadios = new List<CustomRadio>();
 DivElement div;
 Doll selectedDoll;
+DivElement detailDiv;
+DivElement partDetailDiv;
 void main() {
     loadNavbar();
     div = querySelector("#output");
+    detailDiv = new DivElement();
+    partDetailDiv = new DivElement();
     initDollList();
     todo("get selected Doll");
     todo("display dolls palette automatically, both color and box");
@@ -19,7 +23,8 @@ void main() {
     todo("take in a doll type for initial selection");
     todo("have each doll maker or prt tester link to this page with doll type set");
     drawAllBoxes();
-
+    div.append(detailDiv);
+    detailDiv.append(partDetailDiv);
 }
 
 void todo(String text) {
@@ -51,9 +56,32 @@ void handleSelections() {
 
 void selectDoll(Doll doll) {
     selectedDoll = doll;
-    todo("Print out palette for ${doll.name}");
+    drawPalette();
     todo("print out layers for ${doll.name}");
     todo("have layers be clickable to show all images for that layer");
+}
+
+void drawPalette() {
+    TableElement table = new TableElement();
+    for(String name in selectedDoll.paletteSource.names) {
+        TableRowElement line = new TableRowElement();
+        TableCellElement td1 = new TableCellElement();
+        td1.text = "${name}";
+        TableCellElement td2 = new TableCellElement();
+        td2.text = "${selectedDoll.palette[name].toStyleString()}";
+        TableCellElement td3 = new TableCellElement();
+        td3.style.backgroundColor = "${selectedDoll.palette[name].toStyleString()}";
+        td3.style.width = "50px";
+        td1.style.border = "1px solid black";
+        td2.style.border = "1px solid black";
+        td3.style.border = "1px solid black";
+
+        line.append(td1);
+        line.append(td2);
+        line.append(td3);
+        table.append(line);
+    }
+    detailDiv.append(table);
 }
 
 void drawBox(Doll doll) {
