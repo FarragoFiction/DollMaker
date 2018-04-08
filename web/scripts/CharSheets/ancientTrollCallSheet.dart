@@ -43,9 +43,12 @@ class TrollCallSheetAncient extends CharSheet {
         for (SpriteLayer layer in doll.renderingOrderLayers) {
             if (layer.imgNameBase.contains("Symbol")) {
                 // print("found a symbol ${layer.imgLocation}");
-                foundSymbol = true;
-                await Renderer.drawWhateverFuture(cardElement, layer.imgLocation);
-                Renderer.swapPalette(cardElement, doll.paletteSource, doll.palette);
+                //if it's zero it tries to draw something clear to the end product and it messes up online???
+                if(layer.imgNumber != 0) {
+                    foundSymbol = true;
+                    await Renderer.drawWhateverFuture(cardElement, layer.imgLocation);
+                    Renderer.swapPalette(cardElement, doll.paletteSource, doll.palette);
+                }
             }
         }
         if (foundSymbol) {
