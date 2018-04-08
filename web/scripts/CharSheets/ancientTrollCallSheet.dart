@@ -44,6 +44,7 @@ class TrollCallSheetAncient extends CharSheet {
             if (layer.imgNameBase.contains("Symbol")) {
                 // print("found a symbol ${layer.imgLocation}");
                 //if it's zero it tries to draw something clear to the end product and it messes up online???
+                //but only firefox, chrome is fine
                 if(layer.imgNumber != 0) {
                     foundSymbol = true;
                     await Renderer.drawWhateverFuture(cardElement, layer.imgLocation);

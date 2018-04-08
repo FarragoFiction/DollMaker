@@ -3,6 +3,7 @@ import "dart:html";
 import "package:DollLibCorrect/DollRenderer.dart";
 import "../DollMakerTools.dart";
 import "../navbar.dart";
+import "dart:async";
 
 import "BaseController.dart";
 List<SavedDoll> savedDolls = new List<SavedDoll>();
@@ -13,7 +14,8 @@ void main() {
     loadDolls();
 }
 
-void loadDolls() {
+Future<Null> loadDolls() async {
+    await Loader.preloadManifest();
     savedDolls = Doll.loadAllFromLocalStorage();
     print("loaded ${savedDolls.length} dolls");
     container = querySelector("#contents");
