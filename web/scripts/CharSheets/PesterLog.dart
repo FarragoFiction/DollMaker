@@ -254,6 +254,8 @@ class PesterLog extends CharSheet {
             cachedDollCanvas2 = new CanvasElement(width: w, height: h);
             if (hideDoll) return cachedDollCanvas2;
             CanvasElement dollCanvas = new CanvasElement(width: doll.width, height: doll.height);
+            dollCanvas.context2D.translate(dollCanvas.width, 0);
+            dollCanvas.context2D.scale(-1, 1);
             await DollRenderer.drawDoll(dollCanvas, doll);
             //Renderer.drawBG(monsterElement, ReferenceColours.RED, ReferenceColours.WHITE);
 
@@ -301,7 +303,6 @@ class PesterLog extends CharSheet {
 
 
         CanvasElement dollElement = await drawDoll(doll,250,300);
-       // secondDoll.orientation = Doll.TURNWAYS; <-- jesus fuck WHY WONT YOU WORK
         CanvasElement dollElement2 = await drawDoll2(secondDoll,250,300);
 
         int y1 = height - dollElement.height;
