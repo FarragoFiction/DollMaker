@@ -10,7 +10,7 @@ export "CharSheets/CharSheet.dart";
 export "CharSheets/SylveonSheet.dart";
 export "CharSheets/trollCallSheet.dart";
 export "CharSheets/ancientTrollCallSheet.dart";
-
+export "CharSheets/PesterLog.dart";
 export "CharSheets/Echeladder.dart";
 
 
