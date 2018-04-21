@@ -200,6 +200,14 @@ abstract class CharSheet {
         return ret;
     }
 
+    void syncSaveLink() {
+        if(saveLink != null) {
+            saveLink.href = canvas.toDataUrl();
+            saveLink.target = "_blank";
+            saveLink.setInnerHtml("Download PNG?");
+        }
+    }
+
 
 
 

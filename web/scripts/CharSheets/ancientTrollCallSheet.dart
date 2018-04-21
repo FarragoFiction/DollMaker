@@ -153,5 +153,6 @@ class TrollCallSheetAncient extends CharSheet {
 
         CanvasElement dollElement = await drawDoll(doll,150,250);
         if(!hideDoll)canvas.context2D.drawImage(dollElement,0, 0);
+        syncSaveLink();
     }
 }

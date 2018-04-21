@@ -266,11 +266,12 @@ class PesterLog extends CharSheet {
     }
 
 
+    Future<Null> drawREst([Element container]) async {
 
+    }
 
     @override
     Future<Null> draw([Element container]) async {
-
         if(useRandomChat) {
             makeRandomChatBasedOnDolls();
         }
@@ -307,7 +308,7 @@ class PesterLog extends CharSheet {
         int y2= height - dollElement2.height;
         if(!hideDoll)canvas.context2D.drawImage(dollElement,0, y1);
         if(!hideDoll)canvas.context2D.drawImage(dollElement2,750, y2);
-
+        syncSaveLink();
     }
 }
 

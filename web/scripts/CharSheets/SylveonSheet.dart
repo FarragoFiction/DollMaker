@@ -287,6 +287,7 @@ class SylveonSheet extends CharSheet {
 
       if(saveLink == null) saveLink = new AnchorElement();
       saveLink.href = canvas.toDataUrl();
+      syncSaveLink();
   }
 }
 
