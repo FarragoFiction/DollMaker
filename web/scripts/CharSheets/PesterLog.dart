@@ -24,6 +24,8 @@ class PesterLog extends CharSheet {
     String chatHandle2 = "authorBot";
     Colour tint2;
     String chatText = "JR: HELLO WORLD\nAB:No need to shout.";
+
+    bool useRandomChat = true;
     /**
      *
      * TODO:
@@ -54,9 +56,9 @@ class PesterLog extends CharSheet {
     }
 
     void makeRandomChatBasedOnDolls() {
-        chatText = "";
-
-        chatText = BullshitLine.buildConversation(doll, secondDoll);
+        String first = chatHandleShort(chatHandle1);
+        String second = chatHandleShortCheckDup(chatHandle2, first);
+        chatText = BullshitLine.buildConversation(doll, secondDoll, first, second);
     }
 
 
@@ -168,13 +170,17 @@ class PesterLog extends CharSheet {
         Element ret = new DivElement();
         ret.setInnerHtml("Pesterlog Text, with Chat Initials On First Line:");
         TextAreaElement dollArea = new TextAreaElement();
-        dollArea.value = doll.toDataBytesX();
+        dollArea.value = chatText;
+        dollArea.rows = 10;
+        dollArea.cols = 60;
         ButtonElement dollButton = new ButtonElement();
         dollButton.setInnerHtml("Change Chat");
         ret.append(dollArea);
         ret.append(dollButton);
 
         dollButton.onClick.listen((Event e) {
+            chatText = dollArea.value;
+            useRandomChat = false;
             draw();
         });
         return ret;
@@ -264,6 +270,11 @@ class PesterLog extends CharSheet {
 
     @override
     Future<Null> draw([Element container]) async {
+
+        if(useRandomChat) {
+            makeRandomChatBasedOnDolls();
+        }
+
         if(canvas == null) {
             print("making new canvas");
             canvas = new CanvasElement(width: width, height: height);
@@ -318,6 +329,7 @@ class BullshitLine {
     }
 
     bool validResponse(String line) {
+        if(responseKeyWords.isEmpty) return true; //all are valid
         for(String word in responseKeyWords) {
             if(line.contains(word)) return true;
         }
@@ -327,33 +339,39 @@ class BullshitLine {
 
 
     //is this the simplest possible "coherent" conversation?
-    static String buildConversation(Doll doll, Doll secondDoll) {
+    static String buildConversation(Doll doll, Doll secondDoll, String ch1, String ch2) {
         List<BullshitLine> person1Lines = BullshitLine.getLines(doll);
         List<BullshitLine> person2Lines = BullshitLine.getLines(secondDoll);
         String ret = "";
         Random rand = new Random();
         String line = rand.pickFrom(person1Lines).randomLine;
-        ret = "$ret$line\n";
+        ret = "$ret$ch1:$line\n";
         List<BullshitLine> validLines1 = new List<BullshitLine>();
         List<BullshitLine> validLines2 = new List<BullshitLine>();
 
-        for(int i = 0; i<8; i++) {
+        for(int i = 0; i<7; i++) {
             validLines1.clear();
             validLines2.clear();
             for(BullshitLine l in person2Lines) {
                 if(l.validResponse(line)) validLines2.add(l);
             }
 
-            line = rand.pickFrom(validLines2).randomLine;
-            ret = "$ret$line\n";
+            if(validLines2.isNotEmpty) {
+                line = rand.pickFrom(validLines2).randomLine;
+            }else {
+                line = "...";
+            }
+            ret = "$ret$ch2:$line\n";
 
             for(BullshitLine l in person1Lines) {
                 if(l.validResponse(line)) validLines1.add(l);
             }
-
-            line = rand.pickFrom(validLines1).randomLine;
-            ret = "$ret$line\n";
-
+            if(validLines1.isNotEmpty) {
+                line = rand.pickFrom(validLines1).randomLine;
+            }else {
+                line = "...";
+            }
+            ret = "$ret$ch1:$line\n";
         }
 
         return ret;
