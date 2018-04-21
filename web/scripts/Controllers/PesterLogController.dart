@@ -13,7 +13,8 @@ void main() {
 }
 
 Future<Null> drawSheet() async {
-    sheet = new PesterLog(Doll.makeRandomDoll(),Doll.makeRandomDoll());
+    Random rand = new Random();
+    sheet = new PesterLog(Doll.randomDollOfType(rand.pickFrom(Doll.allDollTypes)),Doll.randomDollOfType(rand.pickFrom(Doll.allDollTypes)));
    // sheet = new Echeladder(new MonsterPocketDoll());
 
     Element innerDiv  = new DivElement();

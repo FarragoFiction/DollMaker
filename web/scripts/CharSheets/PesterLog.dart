@@ -40,11 +40,42 @@ class PesterLog extends CharSheet {
         tint = doll.associatedColor;
 
         Colour color = new Colour.from(tint)..setHSV(tint.hue, 0.2, 1.0 );
-        intro = new TextLayer("Fact1","X began Pestering Y",370.0,130.0, fontSize: 25, maxWidth: 220, fontName: "trollcall", emphasis: emphasis,fontColor: color);
+        intro = new TextLayer("Intro Text","X began Pestering Y",370.0,130.0, fontSize: 25, maxWidth: 220, fontName: "trollcall", emphasis: emphasis,fontColor: color);
         //TODO parse a chat log, turn into objects
     }
 
 
+    @override
+    Element makeForm() {
+        Element ret = new DivElement();
+        ret.className = "cardForm";
+        ret.append(makeDollLoader());
+        ret.append(makeDollLoader2());
+        ret.append(makeHideButton());
+        ret.append(makeTintSelector());
+        ret.append(makeTextLoader());
+        ret.append(makeSaveButton());
+        return ret;
+    }
+
+    Element makeDollLoader2() {
+        Element ret = new DivElement();
+        ret.setInnerHtml("Doll URL2: ");
+        TextAreaElement dollArea = new TextAreaElement();
+        dollArea.value = doll.toDataBytesX();
+        ButtonElement dollButton = new ButtonElement();
+        dollButton.setInnerHtml("Load Doll2");
+        ret.append(dollArea);
+        ret.append(dollButton);
+
+        dollButton.onClick.listen((Event e) {
+            print("Trying to load doll");
+            secondDoll = Doll.loadSpecificDoll(dollArea.value);
+            print("trying to draw loaded doll");
+            draw();
+        });
+        return ret;
+    }
 
 
 
@@ -84,11 +115,14 @@ class PesterLog extends CharSheet {
        //canvas.context2D.drawImage(textCanvas, 0, 0);
 
 
-        CanvasElement dollElement = await drawDoll(doll,400,300);
-        CanvasElement dollElement2 = await drawDoll(secondDoll,400,300);
+        CanvasElement dollElement = await drawDoll(doll,250,300);
+       // secondDoll.orientation = Doll.TURNWAYS; <-- jesus fuck WHY WONT YOU WORK
+        CanvasElement dollElement2 = await drawDoll(secondDoll,250,300);
 
-        if(!hideDoll)canvas.context2D.drawImage(dollElement,-100, 275);
-        if(!hideDoll)canvas.context2D.drawImage(dollElement2,650, 275);
+        int y1 = height - dollElement.height;
+        int y2= height - dollElement2.height;
+        if(!hideDoll)canvas.context2D.drawImage(dollElement,0, y1);
+        if(!hideDoll)canvas.context2D.drawImage(dollElement2,750, y2);
 
     }
 }
