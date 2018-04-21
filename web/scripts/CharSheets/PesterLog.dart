@@ -55,10 +55,8 @@ class PesterLog extends CharSheet {
 
     void makeRandomChatBasedOnDolls() {
         chatText = "";
-        List<BullshitLine> lines1 = BullshitLine.getLines(doll);
-        List<BullshitLine> lines2 = BullshitLine.getLines(secondDoll);
 
-
+        chatText = BullshitLine.buildConversation(doll, secondDoll);
     }
 
 
@@ -310,8 +308,55 @@ class BullshitLine {
     //if empty, assume it can respond to anything.
     List<String> responseKeyWords;
 
+    String get randomLine {
+        Random rand = new Random();
+        return rand.pickFrom(textOptions);
+    }
+
     BullshitLine(List<String> this.textOptions, [List<String> this.responseKeyWords = null]) {
         if(responseKeyWords == null) responseKeyWords = <String>[];
+    }
+
+    bool validResponse(String line) {
+        for(String word in responseKeyWords) {
+            if(line.contains(word)) return true;
+        }
+        return false;
+    }
+
+
+
+    //is this the simplest possible "coherent" conversation?
+    static String buildConversation(Doll doll, Doll secondDoll) {
+        List<BullshitLine> person1Lines = BullshitLine.getLines(doll);
+        List<BullshitLine> person2Lines = BullshitLine.getLines(secondDoll);
+        String ret = "";
+        Random rand = new Random();
+        String line = rand.pickFrom(person1Lines).randomLine;
+        ret = "$ret$line\n";
+        List<BullshitLine> validLines1 = new List<BullshitLine>();
+        List<BullshitLine> validLines2 = new List<BullshitLine>();
+
+        for(int i = 0; i<8; i++) {
+            validLines1.clear();
+            validLines2.clear();
+            for(BullshitLine l in person2Lines) {
+                if(l.validResponse(line)) validLines2.add(l);
+            }
+
+            line = rand.pickFrom(validLines2).randomLine;
+            ret = "$ret$line\n";
+
+            for(BullshitLine l in person1Lines) {
+                if(l.validResponse(line)) validLines1.add(l);
+            }
+
+            line = rand.pickFrom(validLines1).randomLine;
+            ret = "$ret$line\n";
+
+        }
+
+        return ret;
     }
 
     static List<BullshitLine> getLines(Doll doll) {
@@ -319,7 +364,7 @@ class BullshitLine {
         if(doll is PigeonDoll) ret.addAll(pigeonTalk());
 
         if(doll is HomestuckGrubDoll) ret.addAll(grubTalk());
-        //TODO have lines for all dolls, and have Troll Dolls have quirks
+        //TODO have lines for most dolls, and have Troll Dolls have quirks
         ret.addAll(pigeonTalk());
         return ret;
     }
