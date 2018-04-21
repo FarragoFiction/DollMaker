@@ -18,6 +18,8 @@ class PesterLog extends CharSheet {
     TextLayer intro;
     Doll secondDoll;
 
+    bool dollDirty2 = true;
+    CanvasElement cachedDollCanvas2;
     String chatHandle1 = "jadedResearcher";
     String chatHandle2 = "authorBot";
     Colour tint2;
@@ -40,10 +42,9 @@ class PesterLog extends CharSheet {
     PesterLog(Doll doll, Doll this.secondDoll) : super(doll) {
         tint = doll.associatedColor;
         tint2 = secondDoll.associatedColor;
-
-        Colour color = new Colour.from(tint)..setHSV(tint.hue, 0.2, 1.0 );
-        intro = new TextLayer("Intro Text","",290.0,65.0, fontSize: 12, maxWidth: 220,fontColor: ReferenceColours.BLACK);
-        //TODO parse a chat log, turn into objects
+        chatHandle1 = handleForDoll();
+        chatHandle2 = handleForDoll();
+        intro = new TextLayer("X Began Pestering Y","",290.0,65.0, fontSize: 12, maxWidth: 220,fontColor: ReferenceColours.BLACK);
     }
 
     String get introText {
@@ -143,6 +144,9 @@ class PesterLog extends CharSheet {
         ret.className = "cardForm";
         ret.append(makeDollLoader());
         ret.append(makeDollLoader2());
+        ret.append(makeChatHandle1());
+        ret.append(makeChatHandle2());
+        makeChatHandle1();
         ret.append(makeHideButton());
         ret.append(makeTintSelector());
         ret.append(makeTintSelector2());
@@ -168,11 +172,45 @@ class PesterLog extends CharSheet {
         return ret;
     }
 
+    Element makeChatHandle1() {
+        Element ret = new DivElement();
+        ret.setInnerHtml("chatHandle1");
+        TextInputElement dollArea = new TextInputElement();
+        dollArea.value = chatHandle1;
+        ButtonElement dollButton = new ButtonElement();
+        dollButton.setInnerHtml("Load Doll");
+        ret.append(dollArea);
+        ret.append(dollButton);
+
+        dollButton.onClick.listen((Event e) {
+            chatHandle1 = dollArea.value;
+            draw();
+        });
+        return ret;
+    }
+
+    Element makeChatHandle2() {
+        Element ret = new DivElement();
+        ret.setInnerHtml("chatHandle1");
+        TextInputElement dollArea = new TextInputElement();
+        dollArea.value = chatHandle2;
+        ButtonElement dollButton = new ButtonElement();
+        dollButton.setInnerHtml("Load Doll");
+        ret.append(dollArea);
+        ret.append(dollButton);
+
+        dollButton.onClick.listen((Event e) {
+            chatHandle2 = dollArea.value;
+            draw();
+        });
+        return ret;
+    }
+
     Element makeDollLoader2() {
         Element ret = new DivElement();
         ret.setInnerHtml("Doll URL2: ");
         TextAreaElement dollArea = new TextAreaElement();
-        dollArea.value = doll.toDataBytesX();
+        dollArea.value = secondDoll.toDataBytesX();
         ButtonElement dollButton = new ButtonElement();
         dollButton.setInnerHtml("Load Doll2");
         ret.append(dollArea);
@@ -180,6 +218,7 @@ class PesterLog extends CharSheet {
 
         dollButton.onClick.listen((Event e) {
             print("Trying to load doll");
+            dollDirty2 = true;
             secondDoll = Doll.loadSpecificDoll(dollArea.value);
             print("trying to draw loaded doll");
             draw();
@@ -196,7 +235,21 @@ class PesterLog extends CharSheet {
     @override
     List<TextLayer> get textLayers => <TextLayer>[intro]; //placeholder
 
+    Future<CanvasElement>  drawDoll2(Doll doll, int w, int h) async {
+        if(dollDirty2 || cachedDollCanvas2 == null) {
+            cachedDollCanvas2 = new CanvasElement(width: w, height: h);
+            if (hideDoll) return cachedDollCanvas2;
+            CanvasElement dollCanvas = new CanvasElement(width: doll.width, height: doll.height);
+            await DollRenderer.drawDoll(dollCanvas, doll);
+            //Renderer.drawBG(monsterElement, ReferenceColours.RED, ReferenceColours.WHITE);
 
+            dollCanvas = Renderer.cropToVisible(dollCanvas);
+
+            Renderer.drawToFitCentered(cachedDollCanvas2, dollCanvas);
+            dollDirty2 = false;
+        }
+        return cachedDollCanvas2;
+    }
 
 
 
@@ -218,7 +271,9 @@ class PesterLog extends CharSheet {
         CanvasElement sheetElement = await drawSheetTemplate();
         canvas.context2D.drawImage(sheetElement, 0, 0);
 
-        if(intro.text == "") intro.text = introText;
+        if((intro.element.children.last as TextAreaElement).value == "") {
+            intro.text = introText;
+        }
         CanvasElement textCanvas = await drawText();
         canvas.context2D.drawImage(textCanvas, 0, 0);
 
@@ -227,7 +282,7 @@ class PesterLog extends CharSheet {
 
         CanvasElement dollElement = await drawDoll(doll,250,300);
        // secondDoll.orientation = Doll.TURNWAYS; <-- jesus fuck WHY WONT YOU WORK
-        CanvasElement dollElement2 = await drawDoll(secondDoll,250,300);
+        CanvasElement dollElement2 = await drawDoll2(secondDoll,250,300);
 
         int y1 = height - dollElement.height;
         int y2= height - dollElement2.height;

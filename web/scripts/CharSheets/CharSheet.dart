@@ -15,6 +15,8 @@ abstract class CharSheet {
     bool hideDoll = false;
     String folder = "images/CharSheets";
     String fontName = "Courier New";
+    CanvasElement cachedDollCanvas;
+    bool dollDirty = true;
     String emphasis = "bold";
     int fontSize = 14;
     int type = 0;
@@ -46,6 +48,7 @@ abstract class CharSheet {
 
         dollButton.onClick.listen((Event e) {
             print("Trying to load doll");
+            dollDirty = true;
             doll = Doll.loadSpecificDoll(dollArea.value);
             print("trying to draw loaded doll");
             draw();
@@ -88,16 +91,19 @@ abstract class CharSheet {
     }
 
     Future<CanvasElement>  drawDoll(Doll doll, int w, int h) async {
-        CanvasElement monsterElement = new CanvasElement(width:w, height: h);
-        if(hideDoll) return monsterElement;
-        CanvasElement dollCanvas = new CanvasElement(width: doll.width, height: doll.height);
-        await DollRenderer.drawDoll(dollCanvas, doll);
-        //Renderer.drawBG(monsterElement, ReferenceColours.RED, ReferenceColours.WHITE);
+        if(dollDirty || cachedDollCanvas == null) {
+            cachedDollCanvas = new CanvasElement(width: w, height: h);
+            if (hideDoll) return cachedDollCanvas;
+            CanvasElement dollCanvas = new CanvasElement(width: doll.width, height: doll.height);
+            await DollRenderer.drawDoll(dollCanvas, doll);
+            //Renderer.drawBG(monsterElement, ReferenceColours.RED, ReferenceColours.WHITE);
 
-        dollCanvas = Renderer.cropToVisible(dollCanvas);
+            dollCanvas = Renderer.cropToVisible(dollCanvas);
 
-        Renderer.drawToFitCentered(monsterElement, dollCanvas);
-        return monsterElement;
+            Renderer.drawToFitCentered(cachedDollCanvas, dollCanvas);
+            dollDirty = false;
+        }
+        return cachedDollCanvas;
     }
 
     Future<CanvasElement>  drawText() async {
