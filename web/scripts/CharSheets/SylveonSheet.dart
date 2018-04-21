@@ -93,7 +93,7 @@ class SylveonSheet extends CharSheet {
         lineY = 102.0;
         textColor = new TextLayer("Text Color: ",doll.associatedColor.toStyleString(),132.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
         gender = new TextLayer("Gender: ",rand.pickFrom(<String>["F","M","???"]),373.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
-        specibus = new TextLayer("Strife Specibus: ",randomSpecibus(),596.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
+        specibus = new TextLayer("Strife Specibus: ",CharSheet.randomSpecibus(),596.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
         ancestor = new TextLayer("Ancestor: ","???",832.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
 
         lineY = 145.0;
@@ -191,14 +191,7 @@ class SylveonSheet extends CharSheet {
     List<String> possibilities = <String>["Video Game","Investment","EXP","Computer","Phone","Hacker","Television","Array","HashSet","Stack","Queue","Git","Wallet","Linked List","Queuestack","Tree","Hash Map","Memory","Jenga","Pictionary","Recipe","Fibonacci Heap ","Puzzle","Message in a Bottle ","Tech-Hop","Encryption","Ouija","Miracle","Chastity ","8 Ball","Scratch and Sniff","Pogs","JuJu","Sweet Bro","Purse","Meme","Cards Against Humanity","LARP"];
     return rand.pickFrom(possibilities);
   }
-    String randomSpecibus() {
-        WeightedList<String> modifiers = new WeightedList<String>();
-        modifiers.add("",1.0);
-        modifiers.add("1/2",0.5);
-        modifiers.add("2x",0.5);
-        List<String> possibilities = <String>["hammer","needle","sword","rifle","spoon","fork","pistol","fist","gun","fncysnta","blade","puppet","flashlight","whip","lance","sickle","claw","makeup","chainsaw","cane","club","joker","3dent","trident","wand","bat","stick","harpoon","piano","instrument","craft","grenade","sceptre","ball","aerosol","bomb","bow","broom","bust","glasses","chain","pen","cleaver","knife","dagger","dart","crowbar","fan","fireext","glove","ax","hatchet","hose","iron","ladel","pot","lamp","peppermill","paddle","oar","pipe","candlestick","wrench","tool","saw","meme","pog","marble","plunger","rake","razor","rock","scissor","scythe","shoe","shotgun","stapler","office","trophy","umbrella","vacuum","woodwind","guitar","yoyo"];
-        return "${rand.pickFrom(modifiers)}${rand.pickFrom(possibilities)}";
-    }
+
 
 
     Future<CanvasElement>  drawText() async {

@@ -215,6 +215,16 @@ abstract class CharSheet {
         throw("ABSTRACT DOESNT DO THIS");
     }
 
+    static String randomSpecibus() {
+        Random rand  = new Random();
+        WeightedList<String> modifiers = new WeightedList<String>();
+        modifiers.add("",1.0);
+        modifiers.add("1/2",0.5);
+        modifiers.add("2x",0.5);
+        List<String> possibilities = <String>["hammer","needle","sword","rifle","spoon","fork","pistol","fist","gun","fncysnta","blade","puppet","flashlight","whip","lance","sickle","claw","makeup","chainsaw","cane","club","joker","3dent","trident","wand","bat","stick","harpoon","piano","instrument","craft","grenade","sceptre","ball","aerosol","bomb","bow","broom","bust","glasses","chain","pen","cleaver","knife","dagger","dart","crowbar","fan","fireext","glove","ax","hatchet","hose","iron","ladel","pot","lamp","peppermill","paddle","oar","pipe","candlestick","wrench","tool","saw","meme","pog","marble","plunger","rake","razor","rock","scissor","scythe","shoe","shotgun","stapler","office","trophy","umbrella","vacuum","woodwind","guitar","yoyo"];
+        return "${rand.pickFrom(modifiers)}${rand.pickFrom(possibilities)}";
+    }
+
     String handleForDoll() {
         List<String> firstNames = <String>["ecto","pants","tentacle","garden","turntech","tipsy","golgothas","ghosty","gutsy","apocalypse","adios","twin","carcino","arsenic","grim","gallows","arachnids","centaurs","terminally","jaded","recursive","caligulas","cuttlefish","manic","aspiring","karmic","woo","insufferable","no","dilletant","bourbon","jaunty","faraway","fantastical","jolly","jilted","farrago","reclaimed","authorial","resting","rioting","blazing","frosty","callous","cynical","careful","magestic","proud","friendly","timaeus","uranian","undying"];
         List<String> lastNames = <String>["Biologist","Therapist","Godhead","Terror","Trickster","Gnostic","Gnostalgic","Gumshoe","Arisen","Toreador","Armageddons","Geneticist","Catnip","Auxiliatrix","Calibrator","Grip","Testicle","Capricious","Aquarium","Culler","Reseracher","Slacker","Insomniac","Watcher","Retribution","Mod","Oracle","Body","Mathematician","Recluse","Cephalopd","Squid","Fairy","Fiction","Author","Bot","Majesty","Minion","King","Queen","Fan","Scholar","Athelete","Lawyer","Dragon","Beast","Testified","Umbra","Umbrage","Frog","Turtle","Player","Gamer","Knitter","Crafter","Dreamer","Seeker"];
