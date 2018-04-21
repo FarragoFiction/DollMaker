@@ -53,6 +53,14 @@ class PesterLog extends CharSheet {
         return "--$chatHandle1 [$first] began pestering $chatHandle2[${second}]--";
     }
 
+    void makeRandomChatBasedOnDolls() {
+        chatText = "";
+        List<BullshitLine> lines1 = BullshitLine.getLines(doll);
+        List<BullshitLine> lines2 = BullshitLine.getLines(secondDoll);
+
+
+    }
+
 
 
     Element makeTintSelector2() {
@@ -60,7 +68,7 @@ class PesterLog extends CharSheet {
         ret.setInnerHtml("Color2: ");
         InputElement colorPicker = new InputElement();
         colorPicker.type = "color";
-        colorPicker.value = tint.toStyleString();
+        colorPicker.value = tint2.toStyleString();
         colorPicker.onChange.listen((Event e) {
             tint2 = new Colour.fromStyleString(colorPicker.value);
             draw();
@@ -109,6 +117,7 @@ class PesterLog extends CharSheet {
 
     //matches line color to player font color
     void fillChatTextMultiLine(CanvasElement canvas, String chat,int x, num y) {
+        print("trying to draw $chat");
         CanvasRenderingContext2D ctx = canvas.getContext("2d");
         double lineHeight = ctx
             .measureText("M")
@@ -117,16 +126,17 @@ class PesterLog extends CharSheet {
         String player1Start = chatHandleShort(chatHandle1);
         String player2Start = chatHandleShortCheckDup(chatHandle2, player1Start);
         for (int i = 0; i < lines.length; ++i) {
+            print("line is ${lines[i]}");
             //does the text begin with player 1's chat handle short? if so: getChatFontColor
             String ct = lines[i].trim();
 
             //check player 2 first 'cause they'll be more specific if they have same initials
             if (ct.startsWith(player2Start)) {
-                ctx.fillStyle = tint;
+                ctx.fillStyle = tint.toStyleString();
                 ctx.font = "12px Times New Roman";
             } else if (ct.startsWith(player1Start)) {
-                ctx.fillStyle = tint2;
-                    ctx.font = "12px Times New Roman";
+                ctx.fillStyle = tint2.toStyleString();
+                ctx.font = "12px Times New Roman";
             } else {
                 ctx.fillStyle = "#000000";
             }
@@ -162,7 +172,7 @@ class PesterLog extends CharSheet {
         TextAreaElement dollArea = new TextAreaElement();
         dollArea.value = doll.toDataBytesX();
         ButtonElement dollButton = new ButtonElement();
-        dollButton.setInnerHtml("Load Doll");
+        dollButton.setInnerHtml("Change Chat");
         ret.append(dollArea);
         ret.append(dollButton);
 
@@ -178,7 +188,7 @@ class PesterLog extends CharSheet {
         TextInputElement dollArea = new TextInputElement();
         dollArea.value = chatHandle1;
         ButtonElement dollButton = new ButtonElement();
-        dollButton.setInnerHtml("Load Doll");
+        dollButton.setInnerHtml("Change ChatHandle");
         ret.append(dollArea);
         ret.append(dollButton);
 
@@ -195,7 +205,7 @@ class PesterLog extends CharSheet {
         TextInputElement dollArea = new TextInputElement();
         dollArea.value = chatHandle2;
         ButtonElement dollButton = new ButtonElement();
-        dollButton.setInnerHtml("Load Doll");
+        dollButton.setInnerHtml("Change ChatHandle");
         ret.append(dollArea);
         ret.append(dollButton);
 
@@ -275,9 +285,9 @@ class PesterLog extends CharSheet {
             intro.text = introText;
         }
         CanvasElement textCanvas = await drawText();
+        fillChatTextMultiLine(textCanvas, chatText, 270, 80);
         canvas.context2D.drawImage(textCanvas, 0, 0);
 
-        fillChatTextMultiLine(textCanvas, chatText, 8, 80);
 
 
         CanvasElement dollElement = await drawDoll(doll,250,300);
@@ -292,3 +302,33 @@ class PesterLog extends CharSheet {
     }
 }
 
+
+class BullshitLine {
+    //things that are all basically the same thing.
+    List<String> textOptions;
+    //if i'm responding to something, what should it have in it somewhere?
+    //if empty, assume it can respond to anything.
+    List<String> responseKeyWords;
+
+    BullshitLine(List<String> this.textOptions, [List<String> this.responseKeyWords = null]) {
+        if(responseKeyWords == null) responseKeyWords = <String>[];
+    }
+
+    static List<BullshitLine> getLines(Doll doll) {
+        List<BullshitLine> ret = new List<BullshitLine>();
+        if(doll is PigeonDoll) ret.addAll(pigeonTalk());
+
+        if(doll is HomestuckGrubDoll) ret.addAll(grubTalk());
+        //TODO have lines for all dolls, and have Troll Dolls have quirks
+        ret.addAll(pigeonTalk());
+        return ret;
+    }
+
+    static List<BullshitLine> pigeonTalk() {
+        return <BullshitLine>[new BullshitLine(<String>["coo","coo coo","oh-oo-oor","roo-c'too-coo"])];
+    }
+
+    static List<BullshitLine> grubTalk() {
+        return <BullshitLine>[new BullshitLine(<String>["u bad","u gud","bite u","pap u"])];
+    }
+}
