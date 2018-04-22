@@ -132,10 +132,10 @@ class PesterLog extends CharSheet {
 
             //check player 2 first 'cause they'll be more specific if they have same initials
             if (ct.startsWith(player2Start)) {
-                ctx.fillStyle = tint.toStyleString();
+                ctx.fillStyle = tint2.toStyleString();
                 ctx.font = "12px Times New Roman";
             } else if (ct.startsWith(player1Start)) {
-                ctx.fillStyle = tint2.toStyleString();
+                ctx.fillStyle = tint.toStyleString();
                 ctx.font = "12px Times New Roman";
             } else {
                 ctx.fillStyle = "#000000";
