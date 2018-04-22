@@ -543,10 +543,11 @@ class BullshitLine {
         //        ret.add(new BullshitLine(<String>[""]));
         ret.add(new BullshitLine(<String>["Denizens suck.","My denizen is a huge fucking asshole.","My denizen keeps threatening to eat me.","Have you ever had a giant snake monster ordering you around all day?","My land is fucking wrecked my the giant snake asshole."], <String>["denizen","boss"]));
         ret.add(new BullshitLine(<String>["I cannot stand quests.","No, I do not want to do a fucking quest.","Just LET ME HAVE THE GRIST HOARD."], <String>["Are you ready for a Quest"]));
+        ret.add(new BullshitLine(<String>["Haha trick question I refuse to choose.","Absolutely not.","I choose the third option.","My choice is to choose nothing.","I'm not sure I want to choose anything.","Will I need a lawyer for this?"], <String>["choice","choose"]));
 
         ret.add(new BullshitLine(<String>["Are you from SBURB, too?","Let me tell you about Homestuck.","What's your classpect?","What's your specibus?","Do you use ${CharSheet.randomSpecibus()}kind?"]));
         ret.add(new BullshitLine(<String>["Huh, god tier pajamas are surprisingly comfortable.","Dream pajamas are such a weird concept.","You know, when I first started out being able to alchemize clothes was so cool, but now why even bother changing clothes..."], <String>["clothes","shorts","shopping","sburb","alchemy"]));
-        ret.add(new BullshitLine(<String>["I really hate cake.","Alchemized food tastes so bad."], <String>["food","cake","gushers","alchemy","SBURB","eat"]));
+        ret.add(new BullshitLine(<String>["I really hate cake.","Alchemized food tastes so bad.","I remember what real food tasted like.","I miss steak.","I'd kill for a salad.","I even miss cake sometimes."], <String>["food","cake","gushers","alchemy","SBURB","eat"]));
         ret.add(new BullshitLine(<String>["You ever done any alchemy?","Wow, you can make some broken shit with alchemy.","God my sylladex is such bullshit."], <String>["specibus","alchemy","sburb","sylladex","strife"]));
         ret.add(new BullshitLine(<String>["Man, my Land is absolute bullshit.","Are all denizens flaming assholes?","God, my consorts are so annoying."], <String>["quest","land","consort","denizen","bullshit","sburb"]));
         ret.add(new BullshitLine(<String>["Yeah, I'm not killing myself just to become immortal.","I hear that quest beds are how you take an epic nap?"], <String>["god tier","god","slab","quest bed","immortality","bed","nap","quest","sburb"]));
