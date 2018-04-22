@@ -370,6 +370,7 @@ class BullshitLine {
         Random rand = new Random();
         String line = "";
         if(person1Lines.isNotEmpty) line = rand.pickFrom(person1Lines).randomLine;
+        line = doll.quirk.translate(line);
         ret = "$ret$ch1:$line\n";
         WeightedList<BullshitLine> validLines1 = new WeightedList<BullshitLine>();
         WeightedList<BullshitLine> validLines2 = new WeightedList<BullshitLine>();
@@ -402,6 +403,8 @@ class BullshitLine {
             }else {
                 line = "...";
             }
+            line = secondDoll.quirk.translate(line);
+
             ret = "$ret$ch2:$line\n";
 
             for(BullshitLine l in person1Lines) {
@@ -426,6 +429,7 @@ class BullshitLine {
                 line = "...";
                 bullshit = true;
             }
+            line = doll.quirk.translate(line);
             ret = "$ret$ch1:$line\n";
         }
 
