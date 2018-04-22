@@ -333,9 +333,17 @@ class BullshitLine {
     //if empty, assume it can respond to anything.
     List<String> responseKeyWords;
 
+    String get first {
+        return textOptions.first;
+    }
+
     String get randomLine {
         Random rand = new Random();
         return rand.pickFrom(textOptions);
+    }
+
+    String toString() {
+        return "$textOptions";
     }
 
     BullshitLine(List<String> this.textOptions, [List<String> this.responseKeyWords = null]) {
@@ -384,7 +392,12 @@ class BullshitLine {
             if(validLines2.isNotEmpty) {
                 bullshit = false;
                 BullshitLine lineSource = rand.pickFrom(validLines2);
-                if(genericShit.contains(lineSource)) bullshit = true;
+                if(genericShit.first.first == lineSource.first) {
+                    //print("detecting a generic response");
+                    bullshit = true;
+                }else {
+                    //print("${lineSource.first} is not generic, ${genericShit.first}");
+                }
                 line = lineSource.randomLine;
             }else {
                 line = "...";
@@ -402,7 +415,12 @@ class BullshitLine {
             if(validLines1.isNotEmpty) {
                 bullshit = false;
                 BullshitLine lineSource = rand.pickFrom(validLines1);
-                if(genericShit.contains(lineSource)) bullshit = true;
+                if(genericShit.first.first == lineSource.first) {
+                    //print("detecting a generic response");
+                    bullshit = true;
+                }else {
+                    //print("${lineSource.first} is not generic, ${genericShit.first}");
+                }
                 line = lineSource.randomLine;
             }else {
                 line = "...";
@@ -502,7 +520,7 @@ class BullshitLine {
         //clothes, food, SBURB
         Random rand = new Random(seed);
         List<String> sounds = <String>["beep","ping","doop","schlub","rattle","fip","thwip","glub","nak"];
-        List<String> bullshit = <String>[""];
+        List<String> bullshit = <String>["Charms","Wind","Shade","Speed",'Light',"Breeze","Mind","Neurons","Thought","Heart","Mirrors","Jazz","Clouds","Hope","Angels","Festivals","Castles","Villas","Romance","Dungeons","Dragons","Maps","Treasure","Balls","Sticks","Gyms","Blood","Beat","Drums","Rhythm"];
         String sound = rand.pickFrom(sounds);
         String land = "Land of ${rand.pickFrom(bullshit)} and ${rand.pickFrom(bullshit)}";
         ret.add(new BullshitLine(<String>["What's that, ${sound}? Can you eat it?"],<String>["food","cake","grub","pants","shorts","jeans","shopping","steak","salad","bacon"]));
@@ -523,12 +541,12 @@ class BullshitLine {
         List<BullshitLine> ret = <BullshitLine>[];
         //clothes, food, SBURB
         //        ret.add(new BullshitLine(<String>[""]));
-        ret.add(new BullshitLine(<String>["Denizens suck.","My denizen is a huge fucking asshole."], <String>["denizen"]));
-        ret.add(new BullshitLine(<String>["I cannot stand quests.","No, I do not want to do a fucking quest.","Just LET ME HAVE THE GRIST HOARD."], <String>["Are you ready for a Quest?"]));
+        ret.add(new BullshitLine(<String>["Denizens suck.","My denizen is a huge fucking asshole.","My denizen keeps threatening to eat me.","Have you ever had a giant snake monster ordering you around all day?","My land is fucking wrecked my the giant snake asshole."], <String>["denizen","boss"]));
+        ret.add(new BullshitLine(<String>["I cannot stand quests.","No, I do not want to do a fucking quest.","Just LET ME HAVE THE GRIST HOARD."], <String>["Are you ready for a Quest"]));
 
         ret.add(new BullshitLine(<String>["Are you from SBURB, too?","Let me tell you about Homestuck.","What's your classpect?","What's your specibus?","Do you use ${CharSheet.randomSpecibus()}kind?"]));
         ret.add(new BullshitLine(<String>["Huh, god tier pajamas are surprisingly comfortable.","Dream pajamas are such a weird concept.","You know, when I first started out being able to alchemize clothes was so cool, but now why even bother changing clothes..."], <String>["clothes","shorts","shopping","sburb","alchemy"]));
-        ret.add(new BullshitLine(<String>["I really hate cake.","Alchemized food tastes so bad."], <String>["food","cake","gushers","alchemy","SBURB"]));
+        ret.add(new BullshitLine(<String>["I really hate cake.","Alchemized food tastes so bad."], <String>["food","cake","gushers","alchemy","SBURB","eat"]));
         ret.add(new BullshitLine(<String>["You ever done any alchemy?","Wow, you can make some broken shit with alchemy.","God my sylladex is such bullshit."], <String>["specibus","alchemy","sburb","sylladex","strife"]));
         ret.add(new BullshitLine(<String>["Man, my Land is absolute bullshit.","Are all denizens flaming assholes?","God, my consorts are so annoying."], <String>["quest","land","consort","denizen","bullshit","sburb"]));
         ret.add(new BullshitLine(<String>["Yeah, I'm not killing myself just to become immortal.","I hear that quest beds are how you take an epic nap?"], <String>["god tier","god","slab","quest bed","immortality","bed","nap","quest","sburb"]));
@@ -554,6 +572,7 @@ class BullshitLine {
         ret.add(new BullshitLine(<String>["Orange!"], <String>["Who's there?"]));
         ret.add(new BullshitLine(<String>["Orange Who?"], <String>["orange"]));
         //great jub fucking the joke up, 'dad'
+        ret.add(new BullshitLine(<String>["The ancient art of hedge trimming can't be ignored.","I really need to mow some time.","What's the point of a whole land you can't mow?", "Mowing is just shaving for your lawn."], <String>["land","lawn","mowing","mow"]));
         ret.add(new BullshitLine(<String>["Orange you glad I didn't say banana?"], <String>["Orange Who?"]));
         ret.add(new BullshitLine(<String>["Want to hear a joke?","Want some cake?","I think you could use some shaving advise.","Want to hear a Dad joke?"]));
         ret.add(new BullshitLine(<String>["You can't go wrong with socks plus sandals.", "Cargo pants are so versitile.","I think I might need to go shopping some time.", "A perfectly well groomed man should own several suits for various occasions."], <String>["clothes", "sandals", "socks", "cargo", "shorts", "shorts","loafers","suits","pants", "cargo","cargo pants"]));
