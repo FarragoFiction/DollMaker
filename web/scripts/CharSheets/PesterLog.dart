@@ -468,7 +468,6 @@ class BullshitLine {
     static List<BullshitLine> trollTalk() {
         List<BullshitLine> ret = <BullshitLine>[];
         //clothes, food, SBURB
-        ret.add(new BullshitLine(<String>["What are you, a grub?","Wait, are you a grub?"], <String>["u"]));
         ret.add(new BullshitLine(<String>["So, what kind of game grubs do you have?","What caste are you?","Do you like my horns?"]));
         ret.add(new BullshitLine(<String>["What kind of food do you keep in your thermal hull?","I'm as real as kraft grubsauce.","I kind of like to eat beefgrubs", "You can't go wrong with oink strips and cluckbeast ova.","I think it's important to try to eat lots of fart nibblets for fiber.","Do you like flavor discs?","Have you ever tried grubloaf?"], <String>["eat","food","grubs","nutrition","beast","meat","beefgrubs","grubloaf","grubsauce","flavor discs","cluckbeast ova"]));
         ret.add(new BullshitLine(<String>["Uh, trolls just kind of don't care about fashion.","Do you like my clothes?"], <String>["clothes","pants","shorts","fashion"]));
@@ -503,11 +502,17 @@ class BullshitLine {
         //clothes, food, SBURB
         Random rand = new Random(seed);
         List<String> sounds = <String>["beep","ping","doop","schlub","rattle","fip","thwip","glub","nak"];
+        List<String> bullshit = <String>[""];
         String sound = rand.pickFrom(sounds);
+        String land = "Land of ${rand.pickFrom(bullshit)} and ${rand.pickFrom(bullshit)}";
         ret.add(new BullshitLine(<String>["What's that, ${sound}? Can you eat it?"],<String>["food","cake","grub","pants","shorts","jeans","shopping","steak","salad","bacon"]));
         ret.add(new BullshitLine(<String>["Ultimate nap! ${sound}!"],<String>["nap","god","bed"]));
         ret.add(new BullshitLine(<String>["I'm a consort! ${sound}!","${sound} I'm waiting for the Player!"],<String>["sburb"]));
-        ret.add(new BullshitLine(<String>["What's a classpect, ${sound}?"],<String>["classpect"]));
+        ret.add(new BullshitLine(<String>["This is the ${land}!","$sound This is the $land! "],<String>["classpect"]));
+        ret.add(new BullshitLine(<String>["What's a classpect, ${sound}?"],<String>["land"]));
+        ret.add(new BullshitLine(<String>["Is that a weapon? $sound"],<String>["kind"]));
+
+
         ret.add(new BullshitLine(<String>["${sound} ${sound} ${sound}","${sound} Hello!","I am a Secret Wizard! ${sound}!","${sound}! I don't get it!","Okay! ${sound}!","${sound}?"]));
         return ret;
     }
@@ -518,6 +523,9 @@ class BullshitLine {
         List<BullshitLine> ret = <BullshitLine>[];
         //clothes, food, SBURB
         //        ret.add(new BullshitLine(<String>[""]));
+        ret.add(new BullshitLine(<String>["Denizens suck.","My denizen is a huge fucking asshole."], <String>["denizen"]));
+        ret.add(new BullshitLine(<String>["I cannot stand quests.","No, I do not want to do a fucking quest.","Just LET ME HAVE THE GRIST HOARD."], <String>["Are you ready for a Quest?"]));
+
         ret.add(new BullshitLine(<String>["Are you from SBURB, too?","Let me tell you about Homestuck.","What's your classpect?","What's your specibus?","Do you use ${CharSheet.randomSpecibus()}kind?"]));
         ret.add(new BullshitLine(<String>["Huh, god tier pajamas are surprisingly comfortable.","Dream pajamas are such a weird concept.","You know, when I first started out being able to alchemize clothes was so cool, but now why even bother changing clothes..."], <String>["clothes","shorts","shopping","sburb","alchemy"]));
         ret.add(new BullshitLine(<String>["I really hate cake.","Alchemized food tastes so bad."], <String>["food","cake","gushers","alchemy","SBURB"]));
