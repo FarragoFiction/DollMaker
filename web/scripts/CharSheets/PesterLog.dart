@@ -359,7 +359,8 @@ class BullshitLine {
         List<BullshitLine> person2Lines = BullshitLine.getLines(secondDoll);
         String ret = "";
         Random rand = new Random();
-        String line = rand.pickFrom(person1Lines).randomLine;
+        String line = "";
+        if(person1Lines.isNotEmpty) line = rand.pickFrom(person1Lines).randomLine;
         ret = "$ret$ch1:$line\n";
         List<BullshitLine> validLines1 = new List<BullshitLine>();
         List<BullshitLine> validLines2 = new List<BullshitLine>();
@@ -387,7 +388,7 @@ class BullshitLine {
             }
             if(validLines1.isNotEmpty) {
                 bullshit = false;
-                BullshitLine lineSource = rand.pickFrom(validLines2);
+                BullshitLine lineSource = rand.pickFrom(validLines1);
                 if(genericShit.contains(lineSource)) bullshit = true;
                 line = lineSource.randomLine;
             }else {
@@ -420,7 +421,7 @@ class BullshitLine {
         }
 
 
-        if(!(doll is HomestuckBabyDoll) || !(doll is HomestuckGrubDoll) || !(doll is PigeonDoll) || !(doll is MonsterPocketDoll)) {
+        if(!(doll is HomestuckBabyDoll) && !(doll is HomestuckGrubDoll) && !(doll is PigeonDoll) && !(doll is MonsterPocketDoll)) {
             ret.addAll(genericTalk());
             if((doll is HomestuckTrollDoll) || doll is SuperbSuckDoll || (doll is HomestuckDoll) || (doll is HiveswapDoll) || (doll is HomestuckCherubDoll)) {
                 ret.addAll(SBURBTalk());
@@ -452,6 +453,7 @@ class BullshitLine {
     static List<BullshitLine> trollTalk() {
         List<BullshitLine> ret = <BullshitLine>[];
         //clothes, food, SBURB
+        ret.add(new BullshitLine(<String>["What are you, a grub?","Wait, are you a grub?"], <String>["u"]));
         ret.add(new BullshitLine(<String>["So, what kind of game grubs do you have?","What caste are you?","Do you like my horns?"]));
         ret.add(new BullshitLine(<String>["What kind of food do you keep in your thermal hull?","I'm as real as kraft grubsauce.","I kind of like to eat beefgrubs", "You can't go wrong with oink strips and cluckbeast ova.","I think it's important to try to eat lots of fart nibblets for fiber.","Do you like flavor discs?","Have you ever tried grubloaf?"], <String>["eat","food","grubs","nutrition","beast","meat","beefgrubs","grubloaf","grubsauce","flavor discs","cluckbeast ova"]));
         ret.add(new BullshitLine(<String>["Uh, trolls just kind of don't care about fashion.","Do you like my clothes?"], <String>["clothes","pants","shorts","fashion"]));
@@ -477,6 +479,10 @@ class BullshitLine {
         Random rand = new Random(seed);
         List<String> sounds = <String>["beep","ping","doop","schlub","rattle","fip","thwip","glub","nak"];
         String sound = rand.pickFrom(sounds);
+        ret.add(new BullshitLine(<String>["What's that, ${sound}? Can you eat it?"],<String>["food","cake","grub","pants","shorts","jeans","shopping","steak","salad","bacon"]));
+        ret.add(new BullshitLine(<String>["Ultimate nap! ${sound}!"],<String>["nap","god","bed"]));
+        ret.add(new BullshitLine(<String>["I'm a consort! ${sound}!","${sound} I'm waiting for the Player!"],<String>["sburb"]));
+        ret.add(new BullshitLine(<String>["What's a classpect, ${sound}?"],<String>["classpect"]));
         ret.add(new BullshitLine(<String>["${sound} ${sound} ${sound}","${sound} Hello!","I am a Secret Wizard! ${sound}!","${sound}! I don't get it!","Okay! ${sound}!","${sound}?"]));
         return ret;
     }
