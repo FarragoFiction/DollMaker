@@ -237,6 +237,18 @@ class PesterLog extends CharSheet {
             print("trying to draw loaded doll");
             draw();
         });
+
+        ButtonElement dollButton2 = new ButtonElement();
+        dollButton2.setInnerHtml("Randomize Doll");
+        ret.append(dollButton2);
+
+        dollButton2.onClick.listen((Event e) {
+            print("Trying to load doll");
+            dollDirty2 = true;
+            secondDoll =Doll.randomDollOfType(rand.pickFrom(Doll.allDollTypes));
+            draw();
+        });
+
         return ret;
     }
 
@@ -342,6 +354,7 @@ class BullshitLine {
 
     //is this the simplest possible "coherent" conversation?
     static String buildConversation(Doll doll, Doll secondDoll, String ch1, String ch2) {
+        List<BullshitLine> genericShit = genericTalk();
         List<BullshitLine> person1Lines = BullshitLine.getLines(doll);
         List<BullshitLine> person2Lines = BullshitLine.getLines(secondDoll);
         String ret = "";
@@ -361,7 +374,9 @@ class BullshitLine {
 
             if(validLines2.isNotEmpty) {
                 bullshit = false;
-                line = rand.pickFrom(validLines2).randomLine;
+                BullshitLine lineSource = rand.pickFrom(validLines2);
+                if(genericShit.contains(lineSource)) bullshit = true;
+                line = lineSource.randomLine;
             }else {
                 line = "...";
             }
@@ -372,7 +387,9 @@ class BullshitLine {
             }
             if(validLines1.isNotEmpty) {
                 bullshit = false;
-                line = rand.pickFrom(validLines1).randomLine;
+                BullshitLine lineSource = rand.pickFrom(validLines2);
+                if(genericShit.contains(lineSource)) bullshit = true;
+                line = lineSource.randomLine;
             }else {
                 line = "...";
                 bullshit = true;
@@ -405,7 +422,7 @@ class BullshitLine {
 
         if(!(doll is HomestuckBabyDoll) || !(doll is HomestuckGrubDoll) || !(doll is PigeonDoll) || !(doll is MonsterPocketDoll)) {
             ret.addAll(genericTalk());
-            if(!(doll is HomestuckTrollDoll) || !(doll is HomestuckDoll) || !(doll is HiveswapDoll) || !(doll is HomestuckCherubDoll)) {
+            if((doll is HomestuckTrollDoll) || doll is SuperbSuckDoll || (doll is HomestuckDoll) || (doll is HiveswapDoll) || (doll is HomestuckCherubDoll)) {
                 ret.addAll(SBURBTalk());
             }
         }
@@ -429,11 +446,13 @@ class BullshitLine {
     static List<BullshitLine> genericTalk() {
         List<BullshitLine> ret = <BullshitLine>[];
         ret.add(new BullshitLine(<String>["Hrmmm...","Yes.","Interesting!!!","I don't think so?","Do you really think that?","I guess?"]));
+        return ret;
     }
 
     static List<BullshitLine> trollTalk() {
         List<BullshitLine> ret = <BullshitLine>[];
         //clothes, food, SBURB
+        ret.add(new BullshitLine(<String>["So, what kind of game grubs do you have?","What caste are you?","Do you like my horns?"]));
         ret.add(new BullshitLine(<String>["What kind of food do you keep in your thermal hull?","I'm as real as kraft grubsauce.","I kind of like to eat beefgrubs", "You can't go wrong with oink strips and cluckbeast ova.","I think it's important to try to eat lots of fart nibblets for fiber.","Do you like flavor discs?","Have you ever tried grubloaf?"], <String>["eat","food","grubs","nutrition","beast","meat","beefgrubs","grubloaf","grubsauce","flavor discs","cluckbeast ova"]));
         ret.add(new BullshitLine(<String>["Uh, trolls just kind of don't care about fashion.","Do you like my clothes?"], <String>["clothes","pants","shorts","fashion"]));
 
@@ -444,7 +463,7 @@ class BullshitLine {
     static List<BullshitLine> denizenTalk() {
         List<BullshitLine> ret = <BullshitLine>[];
         //clothes, food, SBURB
-        ret.add(new BullshitLine(<String>["Greetings. I have a Choice for you.","Salutations, Player. I am a Denizen.", "In SBURB, Denizens are part challenge and part ally.","Greetings, Player. Are you ready for a Quest?"]));
+        ret.add(new BullshitLine(<String>["Greetings. I have a Choice for you.","Salutations, Player. I am a Denizen.", "In SBURB, Denizens are part challenge and part ally.","Player. Are you ready for a Quest?"]));
         ret.add(new BullshitLine(<String>["Do not grasp too strongly for power. The God Tiers are not for the hasty."], <String>["god","godtier","quest","questbed"]));
         ret.add(new BullshitLine(<String>["I do not understand the human concept of 'pants'."], <String>["clothes","pants","shirt"]));
         ret.add(new BullshitLine(<String>["Should you fail my Choice, I will eat you, Player."], <String>["food","meat","vore"]));
@@ -467,9 +486,11 @@ class BullshitLine {
     static List<BullshitLine> SBURBTalk() {
         List<BullshitLine> ret = <BullshitLine>[];
         //clothes, food, SBURB
+        //        ret.add(new BullshitLine(<String>[""]));
+        ret.add(new BullshitLine(<String>["Are you from SBURB, too?","Let me tell you about Homestuck.","What's your classpect?","What's your specibus?","Do you use ${CharSheet.randomSpecibus()}kind?"]));
         ret.add(new BullshitLine(<String>["Huh, god tier pajamas are surprisingly comfortable.","Dream pajamas are such a weird concept.","You know, when I first started out being able to alchemize clothes was so cool, but now why even bother changing clothes..."], <String>["clothes","shorts","shopping","sburb","alchemy"]));
         ret.add(new BullshitLine(<String>["I really hate cake.","Alchemized food tastes so bad."], <String>["food","cake","gushers","alchemy","SBURB"]));
-        ret.add(new BullshitLine(<String>["You ever done any alchemy?","Wow, you can make some broken shit with alchemy.","Do you use ${CharSheet.randomSpecibus()}kind","God my sylladex is such bullshit."], <String>["specibus","alchemy","sburb","sylladex","strife"]));
+        ret.add(new BullshitLine(<String>["You ever done any alchemy?","Wow, you can make some broken shit with alchemy.","God my sylladex is such bullshit."], <String>["specibus","alchemy","sburb","sylladex","strife"]));
         ret.add(new BullshitLine(<String>["Man, my Land is absolute bullshit.","Are all denizens flaming assholes?","God, my consorts are so annoying."], <String>["quest","land","consort","denizen","bullshit","sburb"]));
         ret.add(new BullshitLine(<String>["Yeah, I'm not killing myself just to become immortal.","I hear that quest beds are how you take an epic nap?"], <String>["god tier","god","slab","quest bed","immortality","bed","nap","quest","sburb"]));
         ret.add(new BullshitLine(<String>["God, this SBURB game really is bullshit, you know?","Does this game even have a point?","I can't wait till I beat this game.","SBURB is the worst game of all time."], <String>["SBURB","SGRUB","game","land","denizen","sprite","specibus","sylladex","quest"]));
@@ -479,6 +500,7 @@ class BullshitLine {
 
     static List<BullshitLine> momTalk() {
         List<BullshitLine> ret = <BullshitLine>[];
+        ret.add(new BullshitLine(<String>["Who does your hair?","Would you like to try a little alcohol?","You're so funny!","Would you like a pony?"]));
         ret.add(new BullshitLine(<String>["What kind of food do you like to eat?","Sweetie, I'll show you a a killer recipe I have for a martini!","The occasional drink is perfectly healthy!","Would you like a wine cooler?","I swear if I eat another salad I will just puke."], <String>["food","eat","drinks","martini","alcohol","drunk","beer","wine","fruit","salads","wine cooler","drink"]));
         ret.add(new BullshitLine(<String>["I don't know why 'Mom Jeans' get such a bad rep. They're really comfortable.","You can pry my 'Mom Jeans' from my cold dead hands.","Do you need new pants?","We should go shopping for pants some time.","What kind of clothes do you like?"], <String>["jeans","pants","trousers","legs","tights","hose","jeggings","leg", "clothes", "shopping"]));
         return ret;
@@ -486,6 +508,7 @@ class BullshitLine {
 
     static List<BullshitLine> dadTalk() {
         List<BullshitLine> ret = <BullshitLine>[];
+        ret.add(new BullshitLine(<String>["Want to hear a joke?","Want some cake?","I think you could use some shaving advise.","Want to hear a Dad joke?"]));
         ret.add(new BullshitLine(<String>["You can't go wrong with socks plus sandals.", "Cargo pants are so versitile.","I think I might need to go shopping some time.", "A perfectly well groomed man should own several suits for various occasions."], <String>["clothes", "sandals", "socks", "cargo", "shorts", "shorts","loafers","suits","pants", "cargo","cargo pants"]));
         ret.add(new BullshitLine(<String>["What kind of food do you like to eat?","The only food I eat is massive steaks.", "Can I get uhhhhhhh....burger?", "I am pretty sure you can put bacon on anything.","Would you like some cake?"], <String>["steak","food","meat","bacon","burger","cake","eat"]));
         return ret;

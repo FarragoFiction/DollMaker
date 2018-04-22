@@ -53,6 +53,17 @@ abstract class CharSheet {
             print("trying to draw loaded doll");
             draw();
         });
+
+        ButtonElement dollButton2 = new ButtonElement();
+        dollButton2.setInnerHtml("Randomize Doll");
+        ret.append(dollButton2);
+
+        dollButton2.onClick.listen((Event e) {
+            print("Trying to load doll");
+            dollDirty = true;
+            doll =Doll.randomDollOfType(rand.pickFrom(Doll.allDollTypes));
+            draw();
+        });
         return ret;
     }
 
