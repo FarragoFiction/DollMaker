@@ -140,7 +140,7 @@ class PesterLog extends CharSheet {
             } else {
                 ctx.fillStyle = "#000000";
             }
-            int lines_wrapped = Renderer.wrap_text(ctx, ct, x, y, lineHeight, canvas.width - 50, "left");
+            int lines_wrapped = Renderer.wrap_text(ctx, ct, x, y, lineHeight,400, "left");
             y += lineHeight * lines_wrapped;
         }
         //word wrap these
@@ -343,9 +343,10 @@ class BullshitLine {
     }
 
     bool validResponse(String line) {
+        line = line.toLowerCase();
         if(responseKeyWords.isEmpty) return true; //all are valid
         for(String word in responseKeyWords) {
-            if(line.contains(word)) return true;
+            if(line.contains(word.toLowerCase())) return true;
         }
         return false;
     }
@@ -536,11 +537,19 @@ class BullshitLine {
         return ret;
     }
 
+
+
     static List<BullshitLine> dadTalk() {
         List<BullshitLine> ret = <BullshitLine>[];
+        ret.add(new BullshitLine(<String>["Knock Knock!","Fruit flies like a banana!"], <String>["joke","lol","haha"]));
+        ret.add(new BullshitLine(<String>["Who's there?"], <String>["knock"]));
+        ret.add(new BullshitLine(<String>["Orange!"], <String>["Who's there?"]));
+        ret.add(new BullshitLine(<String>["Orange Who?"], <String>["orange"]));
+        //great jub fucking the joke up, 'dad'
+        ret.add(new BullshitLine(<String>["Orange you glad I didn't say banana?"], <String>["Orange Who?"]));
         ret.add(new BullshitLine(<String>["Want to hear a joke?","Want some cake?","I think you could use some shaving advise.","Want to hear a Dad joke?"]));
         ret.add(new BullshitLine(<String>["You can't go wrong with socks plus sandals.", "Cargo pants are so versitile.","I think I might need to go shopping some time.", "A perfectly well groomed man should own several suits for various occasions."], <String>["clothes", "sandals", "socks", "cargo", "shorts", "shorts","loafers","suits","pants", "cargo","cargo pants"]));
-        ret.add(new BullshitLine(<String>["What kind of food do you like to eat?","The only food I eat is massive steaks.", "Can I get uhhhhhhh....burger?", "I am pretty sure you can put bacon on anything.","Would you like some cake?"], <String>["steak","food","meat","bacon","burger","cake","eat"]));
+        ret.add(new BullshitLine(<String>["What kind of food do you like to eat?","The only food I eat is massive steaks.", "Can I get uhhhhhhh....burger?", "I am pretty sure you can put bacon on anything.","Would you like some cake?"], <String>["steak","food","meat","bacon","burger","cake","eat","banana"]));
         return ret;
     }
 }
