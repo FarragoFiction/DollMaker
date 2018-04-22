@@ -362,15 +362,22 @@ class BullshitLine {
         String line = "";
         if(person1Lines.isNotEmpty) line = rand.pickFrom(person1Lines).randomLine;
         ret = "$ret$ch1:$line\n";
-        List<BullshitLine> validLines1 = new List<BullshitLine>();
-        List<BullshitLine> validLines2 = new List<BullshitLine>();
+        WeightedList<BullshitLine> validLines1 = new WeightedList<BullshitLine>();
+        WeightedList<BullshitLine> validLines2 = new WeightedList<BullshitLine>();
         //if they don't respond to you, you're legally allowed to talk about whatever.
         bool bullshit = false;
         for(int i = 0; i<7; i++) {
             validLines1.clear();
             validLines2.clear();
             for(BullshitLine l in person2Lines) {
-                if(l.validResponse(line) || bullshit) validLines2.add(l);
+                if(l.validResponse(line) || bullshit) {
+                    double weight = 0.01;
+                    if(l.responseKeyWords.isNotEmpty) {
+                        //shorter keyword length means greater weight
+                        weight = 10/l.responseKeyWords.length;
+                    }
+                    validLines2.add(l,weight);
+                }
             }
 
             if(validLines2.isNotEmpty) {
@@ -384,7 +391,12 @@ class BullshitLine {
             ret = "$ret$ch2:$line\n";
 
             for(BullshitLine l in person1Lines) {
-                if(l.validResponse(line) || bullshit) validLines1.add(l);
+                double weight = 0.01;
+                if(l.responseKeyWords.isNotEmpty) {
+                    //shorter keyword length means greater weight
+                    weight = 10/l.responseKeyWords.length;
+                }
+                if(l.validResponse(line) || bullshit) validLines1.add(l,weight);
             }
             if(validLines1.isNotEmpty) {
                 bullshit = false;
@@ -414,6 +426,8 @@ class BullshitLine {
         if(doll is MomDoll) ret.addAll(momTalk());
         if(doll is DadDoll) ret.addAll(dadTalk());
         if(doll is DenizenDoll) ret.addAll(denizenTalk());
+        if(doll is QueenDoll) ret.addAll(queenTalk());
+
 
         if(doll is ConsortDoll) {
             int seed = doll.renderingOrderLayers.first.imgNumber;
@@ -470,6 +484,16 @@ class BullshitLine {
         ret.add(new BullshitLine(<String>["I do not understand the human concept of 'pants'."], <String>["clothes","pants","shirt"]));
         ret.add(new BullshitLine(<String>["Should you fail my Choice, I will eat you, Player."], <String>["food","meat","vore"]));
 
+        return ret;
+    }
+
+    //ret.add(new BullshitLine(<String>[""], <String>[""]));
+    static List<BullshitLine> queenTalk() {
+        List<BullshitLine> ret = <BullshitLine>[];
+        //clothes, food, SBURB
+        ret.add(new BullshitLine(<String>["Leave me alone.", "Begone.","Are you feeling lucky?"]));
+        ret.add(new BullshitLine(<String>["You want some help god tiering?"], <String>["god","godtier","quest","questbed"]));
+        ret.add(new BullshitLine(<String>["I make my lackeys wear the most delightful costumes."], <String>["clothes","pants","shirt"]));
         return ret;
     }
 
