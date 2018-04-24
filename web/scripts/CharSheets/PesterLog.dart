@@ -303,6 +303,7 @@ class PesterLog extends CharSheet {
         canvas.context2D.clearRect(0,0,width,height);
 
         CanvasElement sheetElement = await drawSheetTemplate();
+        //Renderer.swapColors(sheetElement, tint);
         canvas.context2D.drawImage(sheetElement, 0, 0);
 
         if((intro.element.children.last as TextAreaElement).value == "") {
