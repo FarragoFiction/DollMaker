@@ -15,6 +15,8 @@ abstract class CharSheet {
     bool hideDoll = false;
     String folder = "images/CharSheets";
     String fontName = "Courier New";
+    CanvasElement cachedDollCanvas;
+    bool dollDirty = true;
     String emphasis = "bold";
     int fontSize = 14;
     int type = 0;
@@ -46,8 +48,20 @@ abstract class CharSheet {
 
         dollButton.onClick.listen((Event e) {
             print("Trying to load doll");
+            dollDirty = true;
             doll = Doll.loadSpecificDoll(dollArea.value);
             print("trying to draw loaded doll");
+            draw();
+        });
+
+        ButtonElement dollButton2 = new ButtonElement();
+        dollButton2.setInnerHtml("Randomize Doll");
+        ret.append(dollButton2);
+
+        dollButton2.onClick.listen((Event e) {
+            print("Trying to load doll");
+            dollDirty = true;
+            doll =Doll.randomDollOfType(rand.pickFrom(Doll.allDollTypes));
             draw();
         });
         return ret;
@@ -88,16 +102,19 @@ abstract class CharSheet {
     }
 
     Future<CanvasElement>  drawDoll(Doll doll, int w, int h) async {
-        CanvasElement monsterElement = new CanvasElement(width:w, height: h);
-        if(hideDoll) return monsterElement;
-        CanvasElement dollCanvas = new CanvasElement(width: doll.width, height: doll.height);
-        await Renderer.drawDoll(dollCanvas, doll);
-        //Renderer.drawBG(monsterElement, ReferenceColours.RED, ReferenceColours.WHITE);
+        if(dollDirty || cachedDollCanvas == null) {
+            cachedDollCanvas = new CanvasElement(width: w, height: h);
+            if (hideDoll) return cachedDollCanvas;
+            CanvasElement dollCanvas = new CanvasElement(width: doll.width, height: doll.height);
+            await DollRenderer.drawDoll(dollCanvas, doll);
+            //Renderer.drawBG(monsterElement, ReferenceColours.RED, ReferenceColours.WHITE);
 
-        dollCanvas = Renderer.cropToVisible(dollCanvas);
+            dollCanvas = Renderer.cropToVisible(dollCanvas);
 
-        Renderer.drawToFitCentered(monsterElement, dollCanvas);
-        return monsterElement;
+            Renderer.drawToFitCentered(cachedDollCanvas, dollCanvas);
+            dollDirty = false;
+        }
+        return cachedDollCanvas;
     }
 
     Future<CanvasElement>  drawText() async {
@@ -194,11 +211,29 @@ abstract class CharSheet {
         return ret;
     }
 
+    void syncSaveLink() {
+        if(saveLink != null) {
+            saveLink.href = canvas.toDataUrl();
+            saveLink.target = "_blank";
+            saveLink.setInnerHtml("Download PNG?");
+        }
+    }
+
 
 
 
     Future<Null> draw([Element container]) async {
         throw("ABSTRACT DOESNT DO THIS");
+    }
+
+    static String randomSpecibus() {
+        Random rand  = new Random();
+        WeightedList<String> modifiers = new WeightedList<String>();
+        modifiers.add("",1.0);
+        modifiers.add("1/2",0.5);
+        modifiers.add("2x",0.5);
+        List<String> possibilities = <String>["hammer","needle","sword","rifle","spoon","fork","pistol","fist","gun","fncysnta","blade","puppet","flashlight","whip","lance","sickle","claw","makeup","chainsaw","cane","club","joker","3dent","trident","wand","bat","stick","harpoon","piano","instrument","craft","grenade","sceptre","ball","aerosol","bomb","bow","broom","bust","glasses","chain","pen","cleaver","knife","dagger","dart","crowbar","fan","fireext","glove","ax","hatchet","hose","iron","ladel","pot","lamp","peppermill","paddle","oar","pipe","candlestick","wrench","tool","saw","meme","pog","marble","plunger","rake","razor","rock","scissor","scythe","shoe","shotgun","stapler","office","trophy","umbrella","vacuum","woodwind","guitar","yoyo"];
+        return "${rand.pickFrom(modifiers)}${rand.pickFrom(possibilities)}";
     }
 
     String handleForDoll() {

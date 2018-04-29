@@ -17,6 +17,18 @@ void main() {
     print("going to load doll");
     loadDoll();
     hintAtEgg();
+    storeCard("N4Igzg9grgTgxgUxALhAWQIYGsCWA7AcwAIMiARCAG0pABoQ8MBbJVAcQQBcj8SiAhGBgDuNepwQAPTihBEIwvAhgJGLGEQJcwPPHwBmOMN0MEAFt2E5OZojYzcMYMGaoIiAEwV6b74yq4AOiIAFTMEAE8iVQ8iKAAHXTtwogBlABkAQTQ0AFEAJSJ9CA14qAAjShw4IhgFD3wEZ2C6EHKMOCwCOqg8DwA5ZlYQVMpmAClmUeYyXtxCMIRppnVA+MJWzhgcAi0YAGEzDDxEWQAGQIBWVrBEJTAQiABVPEoITtkAbQBdVpUwKCUThgVKcBxgL7AAA6DCGMOQMNyqRCuVyaBhtBhADcMJQoAh4TCALQAZhhAF9fuJtrtlKDwekmmBlF8qSAtjs9vTgWwVA4WahPtDYSxCSAyAB5NAASX6mX6+1yGOxuPxYoAjBS2RzaTBuWBcgBHKC41kgclAA");
+}
+
+void storeCard(String card) {
+    String key = "LIFESIMFOUNDCARDS";
+    if(window.localStorage.containsKey(key)) {
+        String existing = window.localStorage[key];
+        List<String> parts = existing.split(",");
+        if(!parts.contains(card)) window.localStorage[key] = "$existing,$card";
+    }else {
+        window.localStorage[key] = card;
+    }
 }
 
 void makeEgg() {
@@ -47,6 +59,7 @@ void loadDoll() {
     if(dataString.isNotEmpty && getParameterByName("type",null)  != null) {
         doll = Doll.randomDollOfType(int.parse(getParameterByName("type",null))); //chop off leading ?
 
+
     }else if (dataString.isNotEmpty) {
         doll = Doll.loadSpecificDoll(dataString.substring(1)); //chop off leading ?
     }
@@ -55,6 +68,14 @@ void loadDoll() {
     if(doll == null) doll =  Doll.randomDollOfType(1);
     CanvasElement canvas = new CanvasElement(width: doll.width, height: doll.height);
     querySelector("#doll").append(canvas);
+    DivElement linkDiv = new DivElement();
+    AnchorElement a = new AnchorElement(href: "viewParts.html?type=${doll.renderingType}");
+    a.text = "View All Parts for ${doll.name}";
+    a.target = "_blank";
+    linkDiv.append(a);
+    querySelector("#samplePaletteControls").append(linkDiv);
+
+
     if(doll is QueenDoll) {
         controller = new QueenController(doll, canvas);
 
@@ -65,6 +86,7 @@ void loadDoll() {
     //whether i loaded or not, it's time to draw.
     controller.setupForms();
     controller.drawDollCreator();
+    querySelector("title").text = "${doll.name} Doll Maker";
 }
 
 
@@ -90,7 +112,7 @@ class QueenController extends BaseController {
         drawLayerControls();
         print("Draw doll creator");
         Renderer.clearCanvas(canvas);
-        Renderer.drawDoll(canvas, doll);
+        DollRenderer.drawDoll(canvas, doll);
         TextAreaElement dataBox = querySelector("#shareableURL");
         dataBox.value = "${window.location.origin}${window.location.pathname}?${doll.toDataBytesX()}";
         //don't add it to the queue if you're already messing around in it, dunkass. you'll never escape the loop.

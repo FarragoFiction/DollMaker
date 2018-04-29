@@ -38,6 +38,6 @@ void drawDollCreator() {
 
     CanvasElement canvas = querySelector("#doll_creator");
     Renderer.clearCanvas(canvas);
-    Renderer.drawDoll(canvas, doll);
+    DollRenderer.drawDoll(canvas, doll);
 
 }

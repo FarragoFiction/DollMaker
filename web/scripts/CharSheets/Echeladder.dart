@@ -270,7 +270,7 @@ class Echeladder extends CharSheet {
 
         CanvasElement dollElement = await drawDoll(doll, 200, 200);
         if (!hideDoll) canvas.context2D.drawImage(dollElement, 75, 100);
-
+        syncSaveLink();
         //return canvas;
     }
 }

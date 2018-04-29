@@ -16,10 +16,20 @@ html, body {
     font-family: 'trollcall', sans-serif;
 }
 
+.trollcallNotBold{
+    font-family: 'trollcallNotBold', sans-serif;
+}
+
+
+@font-face {
+    font-family: trollcallNotBold;
+    src: url("../Fonts/Berlin_Sans_FB_Regular.ttf");
+}
+
 
 @font-face {
     font-family: trollcall;
-    src: url("../Fonts/Berlin_Sans_FB Demi_Bold.ttf");
+    src: url("../Fonts/Berlin_Sans_FB_Demi_Bold.ttf");
 }
 
 
@@ -61,6 +71,10 @@ textarea{
 #output {
   padding: 20px;
   text-align: center;
+  background-color: white;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 body{
@@ -118,6 +132,10 @@ width:1000px;
 	border: 3px solid black;
 	text-align: center;
 	vertical-align: middle;
+}
+
+.selected{
+    background-color: green;
 }
 
 .fanLinks{
