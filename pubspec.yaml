@@ -13,6 +13,8 @@ dependencies:
   archive: "^1.0.31"
   DollLibCorrect:
       git: git@github.com:jadedResearcher/DollLibCorrect.git
+  RenderingLib:
+            git: git@github.com:jadedResearcher/RenderingLib.git
 
 dev_dependencies:
   browser: ^0.10.0
