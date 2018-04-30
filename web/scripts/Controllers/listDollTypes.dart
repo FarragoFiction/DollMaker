@@ -14,7 +14,7 @@ void main() {
 }
 
 void initDollList() {
-    List<int> dollTypes = <int>[1,2,16,12,13,3,4,7,9,10,14,113,15,8,151,17,18];
+    List<int> dollTypes = Doll.allDollTypes;
     for(int type in dollTypes) {
         dollExamples.add(Doll.randomDollOfType(type));
     }
