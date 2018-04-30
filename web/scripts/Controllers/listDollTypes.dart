@@ -39,7 +39,7 @@ void drawBox(Doll doll) {
     canvas.style.border = "3px solid black";
 
     DivElement name = new DivElement();
-    name.text = doll.name;
+    name.text = "${doll.name} (idea and original parts by ${doll.originalCreator})";
     box.append(name);
     a.append(canvas);
     div.append(box);
