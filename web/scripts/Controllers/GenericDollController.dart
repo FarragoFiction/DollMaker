@@ -2,6 +2,7 @@ import "dart:html";
 import "package:DollLibCorrect/DollRenderer.dart";
 import "../DollMakerTools.dart";
 import "../navbar.dart";
+import "dart:async";
 
 import "BaseController.dart";
 
@@ -51,7 +52,9 @@ void hintAtEgg() {
     querySelector("#contents").append(a);
 }
 
-void loadDoll() {
+Future<Null> loadDoll() async {
+    await Loader.preloadManifest();
+
     print("loading doll");
     String dataString = window.location.search;
     print("dataSTring is $dataString");

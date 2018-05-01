@@ -32,6 +32,7 @@ void drawBox(Doll doll) {
     DivElement box = new DivElement();
     box.style.width = "${doll.width}";
     AnchorElement a = new AnchorElement(href: "index.html?type=${doll.renderingType}");
+    a.target = "_blank";
     box.append(a);
     CanvasElement canvas = new CanvasElement(width:doll.width, height:doll.height);
     box.style.border = "3px solid black";
