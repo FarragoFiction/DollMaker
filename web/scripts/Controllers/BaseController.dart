@@ -10,6 +10,7 @@ class BaseController {
     CanvasElement canvas;
     ButtonElement undo;
     ButtonElement redo;
+    bool disclaimed = false;
 
     List<String> actionQueue = new List<String>();
     int actionQueueIndex = 0;
@@ -101,7 +102,18 @@ class BaseController {
         }
 
         Renderer.clearCanvas(canvas);
-        DollRenderer.drawDoll(canvas, doll);
+        canvas.context2D.font = "48px Courier New";
+        if(!disclaimed) {
+            disclaimed = true;
+            Renderer.wrapTextAndResizeIfNeeded(canvas.context2D, "Click here to acknowledge that all sprites and sprite parts are provided for non commercial use only. Please link to DollSim credits if used. (creative commons attribution plus noncommercial)", "Courier New", 50, 50, 180, doll.width - 50, doll.height - 50);
+            canvas.onClick.listen((e) {
+                Renderer.clearCanvas(canvas);
+                DollRenderer.drawDoll(canvas, doll);
+            });
+        }else {
+            DollRenderer.drawDoll(canvas, doll);
+        }
+
         TextAreaElement dataBox = querySelector("#shareableURL");
         dataBox.value = "${window.location.origin}${window.location.pathname}?${doll.toDataBytesX()}";
         //don't add it to the queue if you're already messing around in it, dunkass. you'll never escape the loop.
