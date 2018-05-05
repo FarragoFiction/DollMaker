@@ -6,7 +6,8 @@ import "dart:async";
 
 List<Doll> dollExamples = new List<Doll>();
 DivElement div;
-void main() {
+Future<Null> main() async {
+    await Loader.preloadManifest();
     loadNavbar();
     div = querySelector("#output");
     initDollList();
@@ -17,6 +18,8 @@ void initDollList() {
     List<int> dollTypes = Doll.allDollTypes;
     for(int type in dollTypes) {
         dollExamples.add(Doll.randomDollOfType(type));
+        print("made doll example ${dollExamples.last} from type $type");
+
     }
 }
 
@@ -29,6 +32,7 @@ Future<Null> drawAllBoxes() async {
 }
 
 void drawBox(Doll doll) {
+    print ("drawing box for $doll");
     DivElement box = new DivElement();
     box.style.width = "${doll.width}";
     AnchorElement a = new AnchorElement(href: "index.html?type=${doll.renderingType}");

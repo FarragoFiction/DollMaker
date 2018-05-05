@@ -12,6 +12,8 @@ class BaseController {
     ButtonElement redo;
     bool disclaimed = false;
 
+    TextAreaElement hatchBox;
+
     List<String> actionQueue = new List<String>();
     int actionQueueIndex = 0;
 
@@ -38,6 +40,20 @@ class BaseController {
             dataBox.select();
             document.execCommand('copy');
         });
+
+        if(doll is EasterEggDoll) {
+            ButtonElement copyButton2 = new ButtonElement();
+            copyButton2.text = "Copy Hatched Egg";
+            hatchBox = new TextAreaElement();
+            PigeonDoll pigeon = (doll as EasterEggDoll).hatch();
+            hatchBox.value = "${window.location.origin}${window.location.pathname}?${pigeon.toDataBytesX()}";
+            copyButton2.onClick.listen((Event e) {
+                hatchBox.select();
+                document.execCommand('copy');
+            });
+            querySelector("#info").append(hatchBox);
+            querySelector("#info").append(copyButton2);
+        }
 
         ButtonElement saveButton = querySelector("#saveButton");
         saveButton.onClick.listen((Event e) {
@@ -103,6 +119,7 @@ class BaseController {
 
         Renderer.clearCanvas(canvas);
         canvas.context2D.font = "48px Courier New";
+        if(doll.width<100) disclaimed = true; //too small
         if(!disclaimed) {
             disclaimed = true;
             Renderer.wrapTextAndResizeIfNeeded(canvas.context2D, "Click here to acknowledge that all sprites and sprite parts are provided for non commercial use only. Please link to DollSim credits if used. (creative commons attribution plus noncommercial)", "Courier New", 50, 50, 180, doll.width - 50, doll.height - 50);
@@ -116,6 +133,8 @@ class BaseController {
 
         TextAreaElement dataBox = querySelector("#shareableURL");
         dataBox.value = "${window.location.origin}${window.location.pathname}?${doll.toDataBytesX()}";
+        if(hatchBox != null) hatchBox.value = "${window.location.origin}${window.location.pathname}?${(doll as EasterEggDoll).hatch().toDataBytesX()}";
+
         //don't add it to the queue if you're already messing around in it, dunkass. you'll never escape the loop.
         if(!inQueue) {
             actionQueue.add(doll.toDataBytesX());
