@@ -45,7 +45,21 @@ class BaseController {
             ButtonElement copyButton2 = new ButtonElement();
             copyButton2.text = "Copy Hatched Egg";
             hatchBox = new TextAreaElement();
-            PigeonDoll pigeon = (doll as EasterEggDoll).hatch();
+            HatchedChick pigeon = (doll as EasterEggDoll).hatch();
+            hatchBox.value = "${window.location.origin}${window.location.pathname}?${pigeon.toDataBytesX()}";
+            copyButton2.onClick.listen((Event e) {
+                hatchBox.select();
+                document.execCommand('copy');
+            });
+            querySelector("#info").append(hatchBox);
+            querySelector("#info").append(copyButton2);
+        }
+
+        if(doll is HatchedChick) {
+            ButtonElement copyButton2 = new ButtonElement();
+            copyButton2.text = "Copy Grown Bird";
+            hatchBox = new TextAreaElement();
+            PigeonDoll pigeon = (doll as HatchedChick).hatch();
             hatchBox.value = "${window.location.origin}${window.location.pathname}?${pigeon.toDataBytesX()}";
             copyButton2.onClick.listen((Event e) {
                 hatchBox.select();
@@ -133,7 +147,8 @@ class BaseController {
 
         TextAreaElement dataBox = querySelector("#shareableURL");
         dataBox.value = "${window.location.origin}${window.location.pathname}?${doll.toDataBytesX()}";
-        if(hatchBox != null) hatchBox.value = "${window.location.origin}${window.location.pathname}?${(doll as EasterEggDoll).hatch().toDataBytesX()}";
+        if(hatchBox != null && doll is EasterEggDoll) hatchBox.value = "${window.location.origin}${window.location.pathname}?${(doll as EasterEggDoll).hatch().toDataBytesX()}";
+        if(hatchBox != null && doll is HatchedChick) hatchBox.value = "${window.location.origin}${window.location.pathname}?${(doll as HatchedChick).hatch().toDataBytesX()}";
 
         //don't add it to the queue if you're already messing around in it, dunkass. you'll never escape the loop.
         if(!inQueue) {
