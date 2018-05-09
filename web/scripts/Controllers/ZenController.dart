@@ -11,6 +11,7 @@ Doll doll;
 Random rand = new Random();
 int currentBuffer = 0;
 int buffersForDoll = 3;
+int tickRate = 1000;
 CanvasElement canvas;
 CanvasElement buffer;
 
@@ -45,6 +46,9 @@ Future<Null> main() async {
     querySelector("#contents").append(borderElement);
     music = querySelector("#bgAudio");
 
+    if(getParameterByName("tickRateInMilliseconds",null)  != null) {
+        tickRate = int.parse(getParameterByName("tickRateInMilliseconds", null)); //chop off leading ?
+    }
     tick();
 
 }
@@ -60,7 +64,7 @@ void pause() {
 }
 
 Future<Null> tick() async {
-    //print("buffer $currentBuffer");
+    print("buffer $currentBuffer, tick rate is $tickRate");
     if(!paused) {
         if (currentBuffer % buffersForDoll == 0 || doll == null) {
             //print("new doll");
@@ -75,7 +79,7 @@ Future<Null> tick() async {
         getNextBuffer(); //don't need to wait for it.
         //what's the bpm of manic's music? 90, he says
     }
-    new Timer(new Duration(milliseconds: 2667), () => tick());
+    new Timer(new Duration(milliseconds: tickRate), () => tick());
 }
 
 Future<Null> drawDoll() {
