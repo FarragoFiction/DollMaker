@@ -75,7 +75,7 @@ Future<Null> tick() async {
         getNextBuffer(); //don't need to wait for it.
         //what's the bpm of manic's music? 90, he says
     }
-    new Timer(new Duration(milliseconds: 1000), () => tick());
+    new Timer(new Duration(milliseconds: 2667), () => tick());
 }
 
 Future<Null> drawDoll() {
