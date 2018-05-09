@@ -11,7 +11,7 @@ Doll doll;
 Random rand = new Random();
 int currentBuffer = 0;
 int buffersForDoll = 3;
-int tickRate = 1000;
+int tickRate = 1800;
 CanvasElement canvas;
 CanvasElement buffer;
 
