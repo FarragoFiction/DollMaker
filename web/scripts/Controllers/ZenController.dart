@@ -14,7 +14,11 @@ int buffersForDoll = 3;
 CanvasElement canvas;
 CanvasElement buffer;
 
+AudioElement music;
+AnchorElement editLink;
+
 bool loading = false;
+bool paused = false;
 
 Future<Null> main() async {
     await Loader.preloadManifest();
@@ -22,31 +26,55 @@ Future<Null> main() async {
     DivElement borderElement = new DivElement();
     borderElement.style.marginLeft = "auto";
     borderElement.style.marginRight = "auto";
+    borderElement.style.borderRadius = "25px";
     borderElement.style.display = "inline-block";
-    borderElement.style.border = "3px solid #000000";
+    borderElement.style.border = "13px solid #000000";
     canvas = new CanvasElement();
     canvas.style.border = "3px solid #ffffff";
+    canvas.style.borderRadius = "25px";
     borderElement.append(canvas);
+
+    ButtonElement pauseButton = new ButtonElement()..text = "Pause";
+    pauseButton.onClick.listen((MouseEvent e) => pause());
+    ButtonElement editButton = new ButtonElement()..text = "Edit Current Doll";
+
+    editLink = new AnchorElement()..append(editButton)..target = "_blank";
+
+    querySelector("#contents").append(pauseButton);
+    querySelector("#contents").append(editLink);
     querySelector("#contents").append(borderElement);
+    music = querySelector("#bgAudio");
 
     tick();
 
 }
 
-Future<Null> tick() async {
-    print("buffer $currentBuffer");
-    if(currentBuffer % buffersForDoll == 0 || doll == null) {
-        print("new doll");
-        loading = false;
-        newDoll();
+void pause() {
+    paused = !paused;
+    if(paused) {
+        music.pause();
     }else {
-        print("new color");
-        newColor();
+        music.play();
     }
 
-    if(buffer != null) await drawDoll();
-    getNextBuffer(); //don't need to wait for it.
-    //todo what's the bpm of manic's music? 90, he says
+}
+
+Future<Null> tick() async {
+    //print("buffer $currentBuffer");
+    if(!paused) {
+        if (currentBuffer % buffersForDoll == 0 || doll == null) {
+            //print("new doll");
+            loading = false;
+            newDoll();
+        } else {
+            //print("new color");
+            newColor();
+        }
+
+        if (buffer != null) await drawDoll();
+        getNextBuffer(); //don't need to wait for it.
+        //what's the bpm of manic's music? 90, he says
+    }
     new Timer(new Duration(milliseconds: 1000), () => tick());
 }
 
@@ -56,6 +84,7 @@ Future<Null> drawDoll() {
     canvas.height = buffer.height;
     canvas.context2D.drawImage(buffer,0,0);
     print("updated canvas from buffer");
+    editLink.href= "index.html?${doll.toDataBytesX()}";
 
 }
 
@@ -66,7 +95,6 @@ Future<Null> getNextBuffer() async {
      await  DollRenderer.drawDoll(buffer, doll);
     currentBuffer ++;
     print("got buffer");
-
     loading = false;
 }
 
