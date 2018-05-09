@@ -83,7 +83,7 @@ Future<Null> drawDoll() {
     canvas.width = buffer.width;
     canvas.height = buffer.height;
     canvas.context2D.drawImage(buffer,0,0);
-    print("updated canvas from buffer");
+    //print("updated canvas from buffer");
     editLink.href= "index.html?${doll.toDataBytesX()}";
 
 }
@@ -94,7 +94,7 @@ Future<Null> getNextBuffer() async {
     buffer = new CanvasElement(width: doll.width, height: doll.height);
      await  DollRenderer.drawDoll(buffer, doll);
     currentBuffer ++;
-    print("got buffer");
+    //print("got buffer");
     loading = false;
 }
 
