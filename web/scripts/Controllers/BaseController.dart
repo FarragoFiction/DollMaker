@@ -15,6 +15,7 @@ class BaseController {
     AnchorElement eastereggLink;
 
     TextAreaElement hatchBox;
+    AnchorElement hatchLink;
 
     List<String> actionQueue = new List<String>();
     int actionQueueIndex = 0;
@@ -43,33 +44,28 @@ class BaseController {
             document.execCommand('copy');
         });
 
-        if(doll is EasterEggDoll) {
+        if(doll is HatchableDoll) {
             ButtonElement copyButton2 = new ButtonElement();
             copyButton2.text = "Copy Hatched Egg";
             hatchBox = new TextAreaElement();
-            HatchedChick pigeon = (doll as EasterEggDoll).hatch();
-            hatchBox.value = "${window.location.origin}${window.location.pathname}?${pigeon.toDataBytesX()}";
+            Doll newDoll = (doll as HatchableDoll).hatch();
+            hatchBox.value = "${window.location.origin}${window.location.pathname}?${newDoll.toDataBytesX()}";
             copyButton2.onClick.listen((Event e) {
                 hatchBox.select();
                 document.execCommand('copy');
             });
+
+            hatchLink = new AnchorElement(href:"${window.location.origin}${window.location.pathname}?${newDoll.toDataBytesX()}" );
+            hatchLink.text = "Transform?";
+            hatchLink.style.display="block";
+            hatchLink.target = "_blank";
             querySelector("#info").append(hatchBox);
             querySelector("#info").append(copyButton2);
+            querySelector("#info").append(hatchLink);
+
         }
 
-        if(doll is HatchedChick) {
-            ButtonElement copyButton2 = new ButtonElement();
-            copyButton2.text = "Copy Grown Bird";
-            hatchBox = new TextAreaElement();
-            PigeonDoll pigeon = (doll as HatchedChick).hatch();
-            hatchBox.value = "${window.location.origin}${window.location.pathname}?${pigeon.toDataBytesX()}";
-            copyButton2.onClick.listen((Event e) {
-                hatchBox.select();
-                document.execCommand('copy');
-            });
-            querySelector("#info").append(hatchBox);
-            querySelector("#info").append(copyButton2);
-        }
+
 
         ButtonElement saveButton = querySelector("#saveButton");
         saveButton.onClick.listen((Event e) {
@@ -161,8 +157,11 @@ class BaseController {
 
         TextAreaElement dataBox = querySelector("#shareableURL");
         dataBox.value = "${window.location.origin}${window.location.pathname}?${doll.toDataBytesX()}";
-        if(hatchBox != null && doll is EasterEggDoll) hatchBox.value = "${window.location.origin}${window.location.pathname}?${(doll as EasterEggDoll).hatch().toDataBytesX()}";
-        if(hatchBox != null && doll is HatchedChick) hatchBox.value = "${window.location.origin}${window.location.pathname}?${(doll as HatchedChick).hatch().toDataBytesX()}";
+        if(hatchBox != null && doll is HatchableDoll) {
+            hatchBox.value = "${window.location.origin}${window.location.pathname}?${(doll as HatchableDoll).hatch().toDataBytesX()}";
+            hatchLink.href = "${window.location.origin}${window.location.pathname}?${(doll as HatchableDoll).hatch().toDataBytesX()}";
+        }
+
 
         //don't add it to the queue if you're already messing around in it, dunkass. you'll never escape the loop.
         if(!inQueue) {
