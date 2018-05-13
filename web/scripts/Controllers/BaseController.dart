@@ -14,7 +14,6 @@ class BaseController {
 
     AnchorElement eastereggLink;
 
-    TextAreaElement hatchBox;
     AnchorElement hatchLink;
 
     List<String> actionQueue = new List<String>();
@@ -45,24 +44,14 @@ class BaseController {
         });
 
         if(doll is HatchableDoll) {
-            ButtonElement copyButton2 = new ButtonElement();
-            copyButton2.text = "Copy Hatched Egg";
-            hatchBox = new TextAreaElement();
+
             Doll newDoll = (doll as HatchableDoll).hatch();
-            hatchBox.value = "${window.location.origin}${window.location.pathname}?${newDoll.toDataBytesX()}";
-            copyButton2.onClick.listen((Event e) {
-                hatchBox.select();
-                document.execCommand('copy');
-            });
 
             hatchLink = new AnchorElement(href:"${window.location.origin}${window.location.pathname}?${newDoll.toDataBytesX()}" );
             hatchLink.text = "Transform?";
             hatchLink.style.display="block";
             hatchLink.target = "_blank";
-            querySelector("#info").append(hatchBox);
-            querySelector("#info").append(copyButton2);
             querySelector("#info").append(hatchLink);
-
         }
 
 
@@ -157,8 +146,7 @@ class BaseController {
 
         TextAreaElement dataBox = querySelector("#shareableURL");
         dataBox.value = "${window.location.origin}${window.location.pathname}?${doll.toDataBytesX()}";
-        if(hatchBox != null && doll is HatchableDoll) {
-            hatchBox.value = "${window.location.origin}${window.location.pathname}?${(doll as HatchableDoll).hatch().toDataBytesX()}";
+        if(hatchLink != null && doll is HatchableDoll) {
             hatchLink.href = "${window.location.origin}${window.location.pathname}?${(doll as HatchableDoll).hatch().toDataBytesX()}";
         }
 
