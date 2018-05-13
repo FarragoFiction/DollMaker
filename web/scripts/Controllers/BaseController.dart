@@ -12,6 +12,8 @@ class BaseController {
     ButtonElement redo;
     bool disclaimed = false;
 
+    AnchorElement eastereggLink;
+
     TextAreaElement hatchBox;
 
     List<String> actionQueue = new List<String>();
@@ -126,6 +128,18 @@ class BaseController {
     }
 
     void drawDollCreator([bool inQueue = false]) {
+
+        if(doll is EasterEggDoll) {
+            if(eastereggLink == null) {
+                eastereggLink = new AnchorElement(href: (doll as EasterEggDoll).getEasterEgg());
+                eastereggLink.target = "_blank";
+                eastereggLink.text = "Would you like some eggs with your eggs? (${(doll as EasterEggDoll).base.imgNumber % EasterEggDoll.eggs.length})";
+                querySelector('#layerControls').append(eastereggLink);
+            }else {
+                eastereggLink.href = (doll as EasterEggDoll).getEasterEgg();
+                eastereggLink.text = "Would you like some eggs with your eggs? (${(doll as EasterEggDoll).base.imgNumber % EasterEggDoll.eggs.length})";
+            }
+        }
         print("Draw doll creator: ${doll.toDataBytesX()}");
         for (SpriteLayer l in doll.renderingOrderLayers) {
             if(!l.slave) DollMakerTools.syncDropDownToSprite(l);
