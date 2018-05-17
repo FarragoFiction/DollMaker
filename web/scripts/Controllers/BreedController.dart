@@ -121,6 +121,16 @@ Future<Null> drawResult(String text) async {
     result.context2D.drawImage(one, 0, 0);
     result.context2D.drawImage(two, 400, 0);
     result.context2D.drawImage(three, 800, 0);
+
+    LabelElement label = new LabelElement()..text = "Child Code:";
+    TextAreaElement code = new TextAreaElement();
+    code.value = child.toDataBytesX();
+    label.append(code);
+    AnchorElement anchorElement = new AnchorElement(href:"index.html?${child.toDataBytesX()}");
+    anchorElement.target = "_blank";
+    anchorElement.text = "Edit Child";
+    container.append(label);
+    container.append(anchorElement);
 }
 
 void drawTextBG(CanvasElement canvas, String text) {
