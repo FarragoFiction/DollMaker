@@ -18,13 +18,6 @@ Future<Null> main() async{
     loadNavbar();
     await Loader.preloadManifest();
     container = querySelector("#contents");
-    container.text = "testing";
-    todo("draw two dolls");
-    todo("draw two text area inputs");
-    todo("draw drop down of and/or/breed");
-    todo("draw combine button");
-    todo("output single canvas of parents + operation +  result");
-    todo("can output as many as you want");
     initParents();
     drawParents();
     makeBreedButtons();
@@ -51,14 +44,32 @@ void drawOneParent(Doll parent) {
     parentCanvas.style.border = "3px solid #000000";
 
     ButtonElement loadButton = new ButtonElement()..text = "Load";
+    ButtonElement randomizeButton = new ButtonElement()..text = "Randomize";
+
 
     TextAreaElement dataBox = new TextAreaElement();
     dataBox.style.display = "block";
     dataBox.value = "${parent.toDataBytesX()}";
     loadButton.onClick.listen((Event e) {
         Renderer.clearCanvas(parentCanvas);
-        parent = Doll.loadSpecificDoll(dataBox.value);
+        Doll tmp = Doll.loadSpecificDoll(dataBox.value);
+        if(parent == doll1) doll1 = tmp;
+        if(parent == doll2) doll2 = tmp;
+
+        parent = tmp;
         parentCanvas.width = parent.width;
+        parentCanvas.height = parent.height;
+
+        DollRenderer.drawDoll(parentCanvas, parent);
+    });
+
+    randomizeButton.onClick.listen((Event e) {
+        Renderer.clearCanvas(parentCanvas);
+        Doll tmp = Doll.randomDollOfType(parent.renderingType);
+        if(parent == doll1) doll1 = tmp;
+        if(parent == doll2) doll2 = tmp;
+
+        parent = tmp;        parentCanvas.width = parent.width;
         parentCanvas.height = parent.height;
 
         DollRenderer.drawDoll(parentCanvas, parent);
@@ -67,6 +78,8 @@ void drawOneParent(Doll parent) {
     div.append(parentCanvas);
     div.append(dataBox);
     div.append(loadButton);
+    div.append(randomizeButton);
+
     container.append(div);
 
     DollRenderer.drawDoll(parentCanvas, parent);
