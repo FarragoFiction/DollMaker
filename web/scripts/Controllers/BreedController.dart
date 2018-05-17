@@ -95,30 +95,42 @@ void makeBreedButtons() {
 
     and.onClick.listen((Event e) {
         child = Doll.andAlchemizeDolls(<Doll>[doll1, doll2]);
-        drawResult();
+        drawResult("and and and and and");
     });
 
     or.onClick.listen((Event e) {
         child = Doll.orAlchemizeDolls(<Doll>[doll1, doll2]);
-        drawResult();
+        drawResult("or or or or or");
     });
 
     breed.onClick.listen((Event e) {
         child = Doll.breedDolls(<Doll>[doll1, doll2]);
-        drawResult();
+        drawResult("x x x x x x x x");
     });
 }
 
-Future<Null> drawResult() async {
+Future<Null> drawResult(String text) async {
     CanvasElement result = new CanvasElement(width: 1200, height: 300);
     container.append(result);
 
     CanvasElement one = await drawDoll(doll1, 400,300);
     CanvasElement two = await drawDoll(doll2, 400,300);
     CanvasElement three = await drawDoll(child, 400,300);
+    drawTextBG(result, text);
+    result.context2D.fillText("",0,0);
     result.context2D.drawImage(one, 0, 0);
     result.context2D.drawImage(two, 400, 0);
     result.context2D.drawImage(three, 800, 0);
+}
+
+void drawTextBG(CanvasElement canvas, String text) {
+    int fontSize = 400;
+    canvas.context2D.font = "${fontSize}px Strife";
+    canvas.context2D.fillStyle = "#000000";
+    Random rand = new Random();
+    int y = (canvas.height/2).round() + rand.nextInt(10)+50;
+    int x = (canvas.width/2).round()+ rand.nextInt(10)-200;
+    Renderer.wrap_text(canvas.context2D,"$text",x,y,fontSize,canvas.width,"center");
 }
 
 Future<CanvasElement>  drawDoll(Doll doll, int w, int h) async {

@@ -17,7 +17,7 @@
       <a href="index.html?type=14">Hiveswap Maker by MC</a>
       <a href="index.html?type=15">Satyr Maker by PM</a>
       <a href="index.html?type=17">SuperbSuck Maker by KW</a>
-      <a href="index.html?type=18">Virus Maker by DF</a>
+      <a href="breed.html">Combine Dolls</a>
       <a href="dollTypes.html?">See All Doll Types</a>
 
 
