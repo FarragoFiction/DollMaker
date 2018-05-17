@@ -10,6 +10,8 @@ Doll doll2;
 Doll child;
 Random rand = new Random();
 
+CanvasElement canvas1;
+CanvasElement canvas2;
 
 
 Future<Null> main() async{
@@ -25,6 +27,7 @@ Future<Null> main() async{
     todo("can output as many as you want");
     initParents();
     drawParents();
+    makeBreedButtons();
 }
 
 void initParents() {
@@ -36,12 +39,12 @@ void initParents() {
     }
 }
 
-Future<Null> drawParents() async {
+void drawParents() {
     drawOneParent(doll1);
     drawOneParent(doll2);
 }
 
-Future<Null> drawOneParent(Doll parent) async {
+void drawOneParent(Doll parent) {
     DivElement div = new DivElement();
     div.classes.add("breedingParent");
     CanvasElement parentCanvas = new CanvasElement(width: parent.width, height: parent.height);
@@ -67,6 +70,51 @@ Future<Null> drawOneParent(Doll parent) async {
     container.append(div);
 
     DollRenderer.drawDoll(parentCanvas, parent);
+}
+
+void makeBreedButtons() {
+    ButtonElement and = new ButtonElement()..text = "Combine with AND Alchemy";
+    ButtonElement or = new ButtonElement()..text = "Combine with OR Alchemy";
+    ButtonElement breed = new ButtonElement()..text = "Combine the Old Fashioned Way";
+    container.append(and);
+    container.append(or);
+    container.append(breed);
+
+    and.onClick.listen((Event e) {
+        child = Doll.andAlchemizeDolls(<Doll>[doll1, doll2]);
+        drawResult();
+    });
+
+    or.onClick.listen((Event e) {
+        child = Doll.orAlchemizeDolls(<Doll>[doll1, doll2]);
+        drawResult();
+    });
+
+    breed.onClick.listen((Event e) {
+        child = Doll.breedDolls(<Doll>[doll1, doll2]);
+        drawResult();
+    });
+}
+
+Future<Null> drawResult() async {
+    CanvasElement result = new CanvasElement(width: 1200, height: 300);
+    container.append(result);
+
+    CanvasElement one = await drawDoll(doll1, 400,300);
+    CanvasElement two = await drawDoll(doll2, 400,300);
+    CanvasElement three = await drawDoll(child, 400,300);
+    result.context2D.drawImage(one, 0, 0);
+    result.context2D.drawImage(two, 400, 0);
+    result.context2D.drawImage(three, 800, 0);
+}
+
+Future<CanvasElement>  drawDoll(Doll doll, int w, int h) async {
+        CanvasElement ret = new CanvasElement(width: w, height: h);
+        CanvasElement dollCanvas = new CanvasElement(width: doll.width, height: doll.height);
+        await DollRenderer.drawDoll(dollCanvas, doll);
+        dollCanvas = Renderer.cropToVisible(dollCanvas);
+        Renderer.drawToFitCentered(ret, dollCanvas);
+        return ret;
 }
 
 void todo(String todo) {
