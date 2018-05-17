@@ -95,17 +95,17 @@ void makeBreedButtons() {
 
     and.onClick.listen((Event e) {
         child = Doll.andAlchemizeDolls(<Doll>[doll1, doll2]);
-        drawResult("and and and and and");
+        drawResult("and");
     });
 
     or.onClick.listen((Event e) {
         child = Doll.orAlchemizeDolls(<Doll>[doll1, doll2]);
-        drawResult("or or or or or");
+        drawResult("or");
     });
 
     breed.onClick.listen((Event e) {
         child = Doll.breedDolls(<Doll>[doll1, doll2]);
-        drawResult("x x x x x x x x");
+        drawResult("x");
     });
 }
 
