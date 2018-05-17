@@ -45,6 +45,8 @@ void drawOneParent(Doll parent) {
 
     ButtonElement loadButton = new ButtonElement()..text = "Load";
     ButtonElement randomizeButton = new ButtonElement()..text = "Randomize";
+    ButtonElement randomizeTypeButton = new ButtonElement()..text = "Randomize Type";
+
 
 
     TextAreaElement dataBox = new TextAreaElement();
@@ -75,10 +77,24 @@ void drawOneParent(Doll parent) {
         DollRenderer.drawDoll(parentCanvas, parent);
     });
 
+    randomizeTypeButton.onClick.listen((Event e) {
+        Renderer.clearCanvas(parentCanvas);
+        Doll tmp = Doll.randomDollOfType(rand.pickFrom(Doll.allDollTypes));
+        if(parent == doll1) doll1 = tmp;
+        if(parent == doll2) doll2 = tmp;
+
+        parent = tmp;
+        parentCanvas.width = parent.width;
+        parentCanvas.height = parent.height;
+
+        DollRenderer.drawDoll(parentCanvas, parent);
+    });
+
     div.append(parentCanvas);
     div.append(dataBox);
     div.append(loadButton);
     div.append(randomizeButton);
+    div.append(randomizeTypeButton);
 
     container.append(div);
 
@@ -134,13 +150,15 @@ Future<Null> drawResult(String text) async {
 }
 
 void drawTextBG(CanvasElement canvas, String text) {
-    int fontSize = 400;
+    int fontSize = 100;
     canvas.context2D.font = "${fontSize}px Strife";
     canvas.context2D.fillStyle = "#000000";
     Random rand = new Random();
-    int y = (canvas.height/2).round() + rand.nextInt(10)+50;
-    int x = (canvas.width/2).round()+ rand.nextInt(10)-200;
-    Renderer.wrap_text(canvas.context2D,"$text",x,y,fontSize,canvas.width,"center");
+    int y = (canvas.height/2).round();
+    int x = (canvas.width/2).round()-400;
+    Renderer.wrap_text(canvas.context2D,"$text",x,y,fontSize,400,"center");
+    Renderer.wrap_text(canvas.context2D,"=",x+400,y,fontSize,400,"center");
+
 }
 
 Future<CanvasElement>  drawDoll(Doll doll, int w, int h) async {
