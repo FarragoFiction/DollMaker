@@ -169,6 +169,26 @@ width:1000px;
 	display:none;
 }
 
+.navButtonJR{
+    padding: 15px;
+    background-color: #3da35a;
+	border: 3px solid #386426;
+    text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	 color: #06ffc9;
+}
+
+.navButtonJRSelected{
+    padding: 15px;
+    background-color: #06ffc9;
+	border: 3px solid #386426;
+    text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	color: #3da35a;
+}
+
 .menu{
 	background-color: #3da35a;
 	width:1015px;
