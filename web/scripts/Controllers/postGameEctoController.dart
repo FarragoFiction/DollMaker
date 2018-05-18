@@ -9,7 +9,7 @@ Element childContainer;
 List<Doll> players = new List<Doll>();
 List<Doll> currentCropChildren = new List<Doll>();
 
-int numBabiesInCrop = 13;
+int numBabiesInCrop = 12;
 
 Random rand = new Random();
 
@@ -62,12 +62,16 @@ void drawOneParent(Doll parent) {
     ButtonElement loadButton = new ButtonElement()..text = "Load";
     loadButton.style.display = "inline-block";
     loadButton.classes.add("targetButton");
-    ButtonElement randomizeButton = new ButtonElement()..text = "Randomize";
+    ButtonElement randomizeButton = new ButtonElement()..text = "Random";
     randomizeButton.style.display = "inline-block";
     randomizeButton.classes.add("targetButton");
-    ButtonElement randomizeTypeButton = new ButtonElement()..text = "Randomize Type";
+    ButtonElement randomizeTypeButton = new ButtonElement()..text = "New Type";
     randomizeTypeButton.style.display = "inline-block";
     randomizeTypeButton.classes.add("targetButton");
+
+    ButtonElement removeButton = new ButtonElement()..text = "Remove";
+    removeButton.style.display = "inline-block";
+    removeButton.classes.add("targetButton");
 
 
 
@@ -129,10 +133,17 @@ void drawOneParent(Doll parent) {
         DollRenderer.drawDoll(parentCanvas, parent);
     });
 
+    removeButton.onClick.listen((Event e) {
+        players.remove(parent);
+        div.remove();
+    });
+
     div.append(ectoJar);
     div.append(loadButton);
     div.append(randomizeButton);
     div.append(randomizeTypeButton);
+    div.append(removeButton);
+
     div.append(parentCanvas);
 
 
@@ -165,12 +176,10 @@ void makeBreedButtons() {
 
     breed.onClick.listen((Event e) {
         makeBabiesHumanWay();
-        drawBabies();
     });
 
-    breed.onClick.listen((Event e) {
+    breed2.onClick.listen((Event e) {
         makeBabiesTrollWay();
-        drawBabies();
     });
 
     clear.onClick.listen((Event e) {
@@ -186,6 +195,7 @@ Future<Null> makeBabiesHumanWay() async {
 
 //pick random pairs of two
 Future<Null> makeBabies(bool humanWay) async {
+    currentCropChildren.clear();
     for(int i = 0; i< numBabiesInCrop; i++) {
         int number = 2;
         if(!humanWay) {
@@ -196,11 +206,16 @@ Future<Null> makeBabies(bool humanWay) async {
         //i don't have a cherub baby or satyr baby doll maker
         if(child is HomestuckTrollDoll) {
             child = Doll.convertOneDollToAnother(child, new HomestuckGrubDoll());
+            (child as HomestuckTrollDoll).symbol.imgNumber = 0;
+            (child as HomestuckTrollDoll).canonSymbol.imgNumber = 0;
+
         }else if(!(child is HomestuckCherubDoll) && !(child is HomestuckSatyrDoll)) {
             child = Doll.convertOneDollToAnother(child, new HomestuckBabyDoll());
+            (child as HomestuckDoll).symbol.imgNumber = 0;
         }
         currentCropChildren.add(child);
     }
+    drawBabies();
 }
 
 //pick random subsets between two and all parents
@@ -209,22 +224,39 @@ Future<Null> makeBabiesTrollWay() async {
 }
 
 List<Doll> getXParents(int x) {
+    print("getting $x parents");
     List<Doll> ret = new List<Doll>();
     List<Doll> tmp = new List<Doll>.from(players);
     for(int i = 0; i<x; i++) {
         Doll doll = rand.pickFrom(tmp);
-        tmp.add(doll);
+        //print("got $doll");
+        ret.add(doll);
         tmp.remove(doll);
     }
     return ret;
 }
 
 Future<Null> drawBabies() async {
+    int totalWidth = 800;
+    int totalHeight = 800;
+    CanvasElement section = new CanvasElement(width: totalWidth, height: totalHeight);
+    childContainer.append(section);
+    int x = 0;
+    int y = 0;
+    int width = 200;
+    int height = 200;
+    int padding = 0;
     for(Doll doll in currentCropChildren) {
-        CanvasElement canvas = new CanvasElement(width: doll.width, height: doll.height);
-        childContainer.append(canvas);
-        DollRenderer.drawDoll(canvas, doll);
+        CanvasElement canvas = await drawDoll(doll, 200, 200);
+        section.context2D.drawImage(canvas, x, y);
+        x = (x + width + padding);
+        if(x > totalWidth) {
+            x = 0;
+            y = (y + height + padding);
+        }
+
     }
+
 }
 
 
