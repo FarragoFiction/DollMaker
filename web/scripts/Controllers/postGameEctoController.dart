@@ -317,6 +317,15 @@ void drawTextBoxes() {
         area.classes.add("ectoSlime");
         area.value = doll.toDataBytesX();
         ectoJar.append(area);
+        AnchorElement a = new AnchorElement(href: "index.html?${doll.toDataBytesX()}");
+        a.text = "edit";
+        a.target = "_blank";
+        a.style.display = "block";
+        a.classes.add("targetButton");
+        a.style.paddingLeft = "20px";
+        a.style.marginLeft = "auto";
+        a.style.marginRight = "auto";
+        ectoJar.append(a);
         tmp.append(ectoJar);
     }
 }

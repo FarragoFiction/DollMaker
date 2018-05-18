@@ -170,10 +170,15 @@ width:1000px;
 .ectoButton{
     background-color: #0063d6;
     border: 3px solid #00316b;
+    padding: 15px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    vertical-align: middle;
     color: white;
     border-radius: 15px;
-    padding: 15px;
 }
+
+
 
 #ectoContents{
     width:1000px;
