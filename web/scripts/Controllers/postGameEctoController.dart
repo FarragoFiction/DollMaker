@@ -252,7 +252,7 @@ Future<Null> makeBabies(bool humanWay) async {
             child = Doll.convertOneDollToAnother(child, new HomestuckGrubDoll());
             (child as HomestuckTrollDoll).symbol.imgNumber = 0;
             (child as HomestuckTrollDoll).canonSymbol.imgNumber = 0;
-
+            (child as HomestuckGrubDoll).pickCasteAppropriateBody();
         }else if(!(child is HomestuckCherubDoll) && !(child is HomestuckSatyrDoll)) {
             child = Doll.convertOneDollToAnother(child, new HomestuckBabyDoll());
             (child as HomestuckDoll).symbol.imgNumber = 0;
