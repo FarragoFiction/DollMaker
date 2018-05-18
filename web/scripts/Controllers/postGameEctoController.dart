@@ -39,17 +39,17 @@ void initValidTypes() {
 }
 
 void initParents() {
-    doll1 = Doll.randomDollOfType(rand.pickFrom(dollTypes));
-    if(rand.nextBool()) {
-        doll2 = Doll.randomDollOfType(rand.pickFrom(dollTypes));
-    }else {
-        doll2 = Doll.randomDollOfType(doll1.renderingType);
+    int type = rand.pickFrom(dollTypes);
+    int number = rand.nextIntRange(2, 13);
+    for(int i = 2; i<number; i++) {
+        players.add(Doll.randomDollOfType(type));
     }
 }
 
 void drawParents() {
-    drawOneParent(doll1);
-    drawOneParent(doll2);
+    for(Doll player in players) {
+        drawOneParent(player);
+    }
 }
 
 void drawOneParent(Doll parent) {
@@ -94,9 +94,8 @@ void drawOneParent(Doll parent) {
     loadButton.onClick.listen((Event e) {
         Renderer.clearCanvas(parentCanvas);
         Doll tmp = Doll.loadSpecificDoll(dataBox.value);
-        if(parent == doll1) doll1 = tmp;
-        if(parent == doll2) doll2 = tmp;
-
+        players.remove(parent);
+        players.add(tmp);
         parent = tmp;
         parentCanvas.width = parent.width;
         parentCanvas.height = parent.height;
@@ -107,9 +106,8 @@ void drawOneParent(Doll parent) {
     randomizeButton.onClick.listen((Event e) {
         Renderer.clearCanvas(parentCanvas);
         Doll tmp = Doll.randomDollOfType(parent.renderingType);
-        if(parent == doll1) doll1 = tmp;
-        if(parent == doll2) doll2 = tmp;
-
+        players.remove(parent);
+        players.add(tmp);
         parent = tmp;
         parentCanvas.width = parent.width;
         parentCanvas.height = parent.height;
@@ -120,8 +118,8 @@ void drawOneParent(Doll parent) {
     randomizeTypeButton.onClick.listen((Event e) {
         Renderer.clearCanvas(parentCanvas);
         Doll tmp = Doll.randomDollOfType(rand.pickFrom(dollTypes));
-        if(parent == doll1) doll1 = tmp;
-        if(parent == doll2) doll2 = tmp;
+        players.remove(parent);
+        players.add(tmp);
 
         parent = tmp;
         parentCanvas.width = parent.width;
@@ -144,21 +142,32 @@ void drawOneParent(Doll parent) {
 
 void makeBreedButtons() {
     DivElement buttonContainer = new DivElement();
-    ButtonElement breed = new ButtonElement()..text = ">Populate Planet";
+    ButtonElement breed = new ButtonElement()..text = ">Populate Planet the Human Way";
     breed.style.display = "inline-block";
     breed.classes.add("ectoButton");
+
+
+    ButtonElement breed2 = new ButtonElement()..text = ">Populate Planet the Troll Way";
+    breed2.style.display = "inline-block";
+    breed2.classes.add("ectoButton");
+
 
     ButtonElement clear = new ButtonElement()..text = "Clear Combinations";
     clear.classes.add("ectoButton");
 
     buttonContainer.append(breed);
+    buttonContainer.append(breed2);
+
     buttonContainer.append(clear);
     container.append(buttonContainer);
 
 
     breed.onClick.listen((Event e) {
-        child = Doll.breedDolls(<Doll>[doll1, doll2]);
-        drawResult("x");
+        makeBabiesHumanWay();
+    });
+
+    breed.onClick.listen((Event e) {
+        makeBabiesTrollWay();
     });
 
     clear.onClick.listen((Event e) {
@@ -166,41 +175,14 @@ void makeBreedButtons() {
     });
 }
 
-Future<Null> drawResult(String text) async {
-    CanvasElement result = new CanvasElement(width: 1200, height: 300);
-    childContainer.append(result);
-
-    CanvasElement one = await drawDoll(doll1, 400,300);
-    CanvasElement two = await drawDoll(doll2, 400,300);
-    CanvasElement three = await drawDoll(child, 400,300);
-    drawTextBG(result, text);
-    result.context2D.fillText("",0,0);
-    result.context2D.drawImage(one, 0, 0);
-    result.context2D.drawImage(two, 400, 0);
-    result.context2D.drawImage(three, 800, 0);
-
-    LabelElement label = new LabelElement()..text = "Child Code:";
-    TextAreaElement code = new TextAreaElement();
-    code.value = child.toDataBytesX();
-    label.append(code);
-    AnchorElement anchorElement = new AnchorElement(href:"index.html?${child.toDataBytesX()}");
-    anchorElement.target = "_blank";
-    anchorElement.text = "Edit Child";
-    childContainer.append(label);
-    childContainer.append(anchorElement);
-}
-
-void drawTextBG(CanvasElement canvas, String text) {
-    int fontSize = 100;
-    canvas.context2D.font = "${fontSize}px Strife";
-    canvas.context2D.fillStyle = "#000000";
-    Random rand = new Random();
-    int y = (canvas.height/2).round();
-    int x = (canvas.width/2).round()-400;
-    Renderer.wrap_text(canvas.context2D,"$text",x,y,fontSize,400,"center");
-    Renderer.wrap_text(canvas.context2D,"=",x+400,y,fontSize,400,"center");
+Future<Null> makeBabiesHumanWay() async {
 
 }
+
+Future<Null> makeBabiesTrollWay() async {
+
+}
+
 
 Future<CanvasElement>  drawDoll(Doll doll, int w, int h) async {
         CanvasElement ret = new CanvasElement(width: w, height: h);
