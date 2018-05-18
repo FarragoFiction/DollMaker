@@ -4,10 +4,14 @@ import "dart:async";
 import 'package:DollLibCorrect/DollRenderer.dart';
 
 Element container;
+Element parentContainer;
 Element childContainer;
+Element buttonContainer;
 
 List<Doll> players = new List<Doll>();
 List<Doll> currentCropChildren = new List<Doll>();
+
+String chosenCategory;
 
 int numBabiesInCrop = 12;
 
@@ -26,9 +30,14 @@ Future<Null> main() async{
     initValidTypes();
     container = querySelector("#ectoContents");
     childContainer = new DivElement();
-    initParents();
+    await initParents();
+    parentContainer = new DivElement();
+
     drawParents();
+    buttonContainer = new DivElement();
     makeBreedButtons();
+    container.append(parentContainer);
+    container.append(buttonContainer);
     container.append(childContainer);
 }
 
@@ -39,11 +48,18 @@ void initValidTypes() {
     dollTypes.add(16,0.3);
 }
 
-void initParents() {
-    int type = rand.pickFrom(dollTypes);
-    int number = rand.nextIntRange(2, 13);
-    for(int i = 0; i<number; i++) {
-        players.add(Doll.randomDollOfType(type));
+Future<Null> initParents() async {
+    pickCategory();
+    if(chosenCategory == null) {
+        int type = rand.pickFrom(dollTypes);
+        int number = rand.nextIntRange(2, 13);
+
+
+        for (int i = 0; i < number; i++) {
+            players.add(Doll.randomDollOfType(type));
+        }
+    }else {
+        await slurpDolls();
     }
 }
 
@@ -134,8 +150,12 @@ void drawOneParent(Doll parent) {
     });
 
     removeButton.onClick.listen((Event e) {
-        players.remove(parent);
-        div.remove();
+        if(players.length ==2) {
+            window.alert("I can't let you do that, Observer. You need at least two players to do ectobiology.");
+        }else{
+            players.remove(parent);
+            div.remove();
+        }
     });
 
     div.append(ectoJar);
@@ -147,13 +167,12 @@ void drawOneParent(Doll parent) {
     div.append(parentCanvas);
 
 
-    container.append(div);
+    parentContainer.append(div);
 
     DollRenderer.drawDoll(parentCanvas, parent);
 }
 
 void makeBreedButtons() {
-    DivElement buttonContainer = new DivElement();
     ButtonElement breed = new ButtonElement()..text = ">Populate Planet the Human Way";
     breed.style.display = "inline-block";
     breed.classes.add("ectoButton");
@@ -166,12 +185,19 @@ void makeBreedButtons() {
 
     ButtonElement clear = new ButtonElement()..text = "Clear Combinations";
     clear.classes.add("ectoButton");
+    clear.style.display = "inline-block";
+
+    ButtonElement addButton = new ButtonElement()..text = "Add Player";
+    addButton.style.display = "inline-block";
+    addButton.classes.add("ectoButton");
+
 
     buttonContainer.append(breed);
     buttonContainer.append(breed2);
 
     buttonContainer.append(clear);
-    container.append(buttonContainer);
+    buttonContainer.append(addButton);
+
 
 
     breed.onClick.listen((Event e) {
@@ -184,6 +210,12 @@ void makeBreedButtons() {
 
     clear.onClick.listen((Event e) {
         childContainer.text = "";
+    });
+
+    addButton.onClick.listen((Event e) {
+        Doll player = Doll.randomDollOfType(players.first.renderingType);
+        players.add(player);
+        drawOneParent(player);
     });
 }
 
@@ -273,4 +305,28 @@ void todo(String todo) {
     LIElement tmp = new LIElement();
     tmp.setInnerHtml("TODO: $todo");
     container.append(tmp);
+}
+
+void pickCategory() {
+    chosenCategory = getParameterByName("target");
+    if(chosenCategory == null) chosenCategory = "homestuck";
+}
+
+Future<Null> slurpDolls() async{
+    //yes, i know it' sspelled wrong. no, i don't care.
+    await HttpRequest.getString(PathUtils.adjusted("DollHoarde/${chosenCategory}.txt")).then((String data) {
+        List<String> parts = data.split("\n");
+        for(String line in parts) {
+            if(line.isNotEmpty) {
+                try {
+                    players.add(Doll.loadSpecificDoll(line));
+                }catch(e) {
+                    DivElement error = new DivElement();
+                    error.text = "Error loading $line, $e";
+                    error.style.color = "red";
+                    print(e);
+                }
+            }
+        }
+    });
 }
