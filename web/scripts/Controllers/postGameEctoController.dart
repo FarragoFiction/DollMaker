@@ -250,7 +250,7 @@ Future<Null> drawBabies() async {
         CanvasElement canvas = await drawDoll(doll, 200, 200);
         section.context2D.drawImage(canvas, x, y);
         x = (x + width + padding);
-        if(x > totalWidth) {
+        if(x > totalWidth-width) {
             x = 0;
             y = (y + height + padding);
         }
