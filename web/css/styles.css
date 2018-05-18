@@ -9,7 +9,7 @@ html, body {
 }
 
 .breedingParent{
-    width: auto;
+    width: 500px;
     display: inline-block;
 }
 
@@ -123,6 +123,15 @@ width:1000px;
     top: 220px;
     z-index: 1;
 }
+
+.jarSimple{
+    border: 3px solid #6d6d6d;
+    color: #29f501;
+    border-radius: 35px;
+    padding: 5px;
+    display: inline-block;
+}
+
 
 .jarAir{
     height: 30px;

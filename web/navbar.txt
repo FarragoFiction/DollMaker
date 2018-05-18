@@ -30,6 +30,9 @@
     <a href="javascript:void(0)" class="dropbtn">TOOLS</a>
     <div class="dropdown-content">
       <a target="_blank" href="myDolls.html">View Saved Dolls</a>
+      <a target = "_blank" href = "postGameEcto.html">Ectobiology</a>
+       <a target = "_blank" href = "postGameEcto.html?target=homestuck">Canon Ectobiology</a>
+
       <a href="zen.html">Zen Mode</a>
       <a href = "premadeViewer.html">PreMade Dolls</a>
       <a href="http://www.farragofiction.com/MiniSims/CardSim">Make Trading Cards</a>

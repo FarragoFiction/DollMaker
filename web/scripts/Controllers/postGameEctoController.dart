@@ -33,6 +33,8 @@ Future<Null> main() async{
     await initParents();
     parentContainer = new DivElement();
 
+
+
     drawParents();
     buttonContainer = new DivElement();
     makeBreedButtons();
@@ -44,28 +46,38 @@ Future<Null> main() async{
 void initValidTypes() {
     dollTypes.add(1);
     dollTypes.add(2);
-    dollTypes.add(15,0.3);
-    dollTypes.add(16,0.3);
+    dollTypes.add(15,0.5);
+    dollTypes.add(16,0.5);
 }
 
 Future<Null> initParents() async {
     pickCategory();
+    int number = rand.nextIntRange(2, 13);
     if(chosenCategory == null) {
         int type = rand.pickFrom(dollTypes);
-        int number = rand.nextIntRange(2, 13);
-
-
         for (int i = 0; i < number; i++) {
             players.add(Doll.randomDollOfType(type));
         }
     }else {
         await slurpDolls();
+        //random amount from that category
+        List<Doll> tmp = new List<Doll>();
+        for (int i = 0; i < number; i++) {
+            if(players.isNotEmpty) {
+                Doll doll = rand.pickFrom(players);
+                tmp.add(doll);
+                players.remove(doll);
+            }
+        }
+
+        players = tmp;
     }
 }
 
-void drawParents() {
+Future<Null> drawParents() async {
     for(Doll player in players) {
         drawOneParent(player);
+        await new Future.delayed(const Duration(milliseconds : 500));
     }
 }
 
@@ -270,7 +282,7 @@ List<Doll> getXParents(int x) {
 
 Future<Null> drawBabies() async {
     int totalWidth = 800;
-    int totalHeight = 800;
+    int totalHeight = 600;
     CanvasElement section = new CanvasElement(width: totalWidth, height: totalHeight);
     childContainer.append(section);
     int x = 0;
@@ -278,7 +290,9 @@ Future<Null> drawBabies() async {
     int width = 200;
     int height = 200;
     int padding = 0;
+    drawTextBoxes();
     for(Doll doll in currentCropChildren) {
+
         CanvasElement canvas = await drawDoll(doll, 200, 200);
         section.context2D.drawImage(canvas, x, y);
         x = (x + width + padding);
@@ -286,10 +300,27 @@ Future<Null> drawBabies() async {
             x = 0;
             y = (y + height + padding);
         }
-
+        await new Future.delayed(const Duration(milliseconds : 500));
     }
-
 }
+
+
+void drawTextBoxes() {
+    DivElement tmp = new DivElement();
+    childContainer.append(tmp);
+    tmp.style.width = "800px";
+    tmp.setInnerHtml("DataStrings in same order as Dolls.<br>");
+    for(Doll doll in currentCropChildren) {
+        DivElement ectoJar = new DivElement();
+        ectoJar.classes.add("jarSimple");
+        TextAreaElement area = new TextAreaElement();
+        area.classes.add("ectoSlime");
+        area.value = doll.toDataBytesX();
+        ectoJar.append(area);
+        tmp.append(ectoJar);
+    }
+}
+
 
 
 Future<CanvasElement>  drawDoll(Doll doll, int w, int h) async {
@@ -309,11 +340,11 @@ void todo(String todo) {
 
 void pickCategory() {
     chosenCategory = getParameterByName("target");
-    if(chosenCategory == null) chosenCategory = "homestuck";
 }
 
 Future<Null> slurpDolls() async{
     //yes, i know it' sspelled wrong. no, i don't care.
+    print("source is $chosenCategory");
     await HttpRequest.getString(PathUtils.adjusted("DollHoarde/${chosenCategory}.txt")).then((String data) {
         List<String> parts = data.split("\n");
         for(String line in parts) {

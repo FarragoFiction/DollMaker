@@ -82,6 +82,10 @@ void pickCategory() {
     DivElement category = new DivElement();
     category.style.fontSize = "33px";
     category.text = "$chosenCategory PreMade Dolls";
+    AnchorElement a = new AnchorElement(href: "postGameEcto.html?target=${chosenCategory}");
+    a.target = "_blank";
+    a.text = "Perform Ectobiology?";
+    category.append(a);
     container.append(category);
 }
 
