@@ -103,6 +103,74 @@ width:1000px;
 
 }
 
+.ectoJarContainer{
+    position:relative;
+    height: 400px;
+}
+
+.jar{
+    border: 3px solid #6d6d6d;
+    color: #29f501;
+    border-radius: 25px;
+    padding: 5px;
+    height: 250px;
+    border-top: none;
+    display: inline-block;
+    position: absolute;
+    top: 220px;
+    z-index: 1;
+}
+
+.jarAir{
+    height: 30px;
+    display: inline-block;
+}
+
+.jarTop{
+    display: block;
+    width: 182px;
+    position: absolute;
+    top: 0px;
+    z-index: 2;
+}
+
+
+.ectoSlime{
+    background-color: #00710c;
+    border: 3px solid #03570c;
+    color: #29f501;
+    border-radius: 25px;
+    padding: 15px;
+    vertical-align: bottom;
+    height: 180px;
+    width: 135px;
+}
+
+.targetButton{
+    background-color: #079c00;
+    border: 3px solid #005100;
+    color: white;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.ectoButton{
+    background-color: #0063d6;
+    border: 3px solid #00316b;
+    color: white;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+#ectoContents{
+    width:1000px;
+	background-color: #5a5a5a;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+
+}
+
 .dropDownLabel{
     padding-left: 10px;
 }

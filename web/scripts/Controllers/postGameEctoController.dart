@@ -14,11 +14,15 @@ Random rand = new Random();
 CanvasElement canvas1;
 CanvasElement canvas2;
 
+WeightedList<int> dollTypes = new WeightedList<int>();
+
 
 Future<Null> main() async{
     loadNavbar();
+    rand.nextInt(); //init
     await Loader.preloadManifest();
-    container = querySelector("#contents");
+    initValidTypes();
+    container = querySelector("#ectoContents");
     childContainer = new DivElement();
     initParents();
     drawParents();
@@ -26,10 +30,17 @@ Future<Null> main() async{
     container.append(childContainer);
 }
 
+void initValidTypes() {
+    dollTypes.add(1);
+    dollTypes.add(2);
+    dollTypes.add(15,0.3);
+    dollTypes.add(16,0.3);
+}
+
 void initParents() {
-    doll1 = Doll.randomDollOfType(rand.pickFrom(Doll.allDollTypes));
+    doll1 = Doll.randomDollOfType(rand.pickFrom(dollTypes));
     if(rand.nextBool()) {
-        doll2 = Doll.randomDollOfType(rand.pickFrom(Doll.allDollTypes));
+        doll2 = Doll.randomDollOfType(rand.pickFrom(dollTypes));
     }else {
         doll2 = Doll.randomDollOfType(doll1.renderingType);
     }
@@ -44,20 +55,40 @@ void drawOneParent(Doll parent) {
     DivElement div = new DivElement();
     div.classes.add("breedingParent");
     CanvasElement parentCanvas = new CanvasElement(width: parent.width, height: parent.height);
-    parentCanvas.style.border = "3px solid #000000";
 
     ButtonElement loadButton = new ButtonElement()..text = "Load";
     loadButton.style.display = "inline-block";
+    loadButton.classes.add("targetButton");
     ButtonElement randomizeButton = new ButtonElement()..text = "Randomize";
     randomizeButton.style.display = "inline-block";
+    randomizeButton.classes.add("targetButton");
     ButtonElement randomizeTypeButton = new ButtonElement()..text = "Randomize Type";
     randomizeTypeButton.style.display = "inline-block";
+    randomizeTypeButton.classes.add("targetButton");
 
 
+
+    DivElement ectoJar = new DivElement();
+    ectoJar.classes.add("ectoJarContainer");
+    ImageElement jarTop = new ImageElement(src: "images/jarTop.png");
+    jarTop.classes.add("jarTop");
+    ectoJar.append(jarTop);
+
+    DivElement jarElement = new DivElement();
+    ectoJar.append(jarElement);
+    jarElement.classes.add("jar");
+    //why is it so hard to put a thing on the bottom of another thing without it suddenly
+    //making it's parent think it's empty
+    DivElement jarAir = new DivElement();
+    jarAir.classes.add("jarAir");
+    jarElement.append(jarAir);
 
     TextAreaElement dataBox = new TextAreaElement();
+    dataBox.classes.add("ectoSlime");
     dataBox.style.display = "block";
     dataBox.value = "${parent.toDataBytesX()}";
+    jarElement.append(dataBox);
+
     loadButton.onClick.listen((Event e) {
         Renderer.clearCanvas(parentCanvas);
         Doll tmp = Doll.loadSpecificDoll(dataBox.value);
@@ -97,7 +128,7 @@ void drawOneParent(Doll parent) {
     });
 
     div.append(parentCanvas);
-    div.append(dataBox);
+    div.append(ectoJar);
     div.append(loadButton);
     div.append(randomizeButton);
     div.append(randomizeTypeButton);
@@ -109,33 +140,17 @@ void drawOneParent(Doll parent) {
 
 void makeBreedButtons() {
     DivElement buttonContainer = new DivElement();
-    ButtonElement and = new ButtonElement()..text = "Combine with AND Alchemy";
-    and.style.display = "inline-block";
-
-    ButtonElement or = new ButtonElement()..text = "Combine with OR Alchemy";
-    or.style.display = "inline-block";
-
-    ButtonElement breed = new ButtonElement()..text = "Combine the Old Fashioned Way";
+    ButtonElement breed = new ButtonElement()..text = ">";
     breed.style.display = "inline-block";
+    breed.classes.add("ectoButton");
 
     ButtonElement clear = new ButtonElement()..text = "Clear Combinations";
+    clear.classes.add("ectoButton");
 
-    buttonContainer.append(and);
-    buttonContainer.append(or);
     buttonContainer.append(breed);
     buttonContainer.append(clear);
     container.append(buttonContainer);
 
-
-    and.onClick.listen((Event e) {
-        child = Doll.andAlchemizeDolls(<Doll>[doll1, doll2]);
-        drawResult("and");
-    });
-
-    or.onClick.listen((Event e) {
-        child = Doll.orAlchemizeDolls(<Doll>[doll1, doll2]);
-        drawResult("or");
-    });
 
     breed.onClick.listen((Event e) {
         child = Doll.breedDolls(<Doll>[doll1, doll2]);
