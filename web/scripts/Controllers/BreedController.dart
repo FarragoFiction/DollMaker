@@ -4,6 +4,7 @@ import "dart:async";
 import 'package:DollLibCorrect/DollRenderer.dart';
 
 Element container;
+Element childContainer;
 
 Doll doll1;
 Doll doll2;
@@ -18,9 +19,11 @@ Future<Null> main() async{
     loadNavbar();
     await Loader.preloadManifest();
     container = querySelector("#contents");
+    childContainer = new DivElement();
     initParents();
     drawParents();
     makeBreedButtons();
+    container.append(childContainer);
 }
 
 void initParents() {
@@ -102,12 +105,24 @@ void drawOneParent(Doll parent) {
 }
 
 void makeBreedButtons() {
+    DivElement buttonContainer = new DivElement();
     ButtonElement and = new ButtonElement()..text = "Combine with AND Alchemy";
+    and.style.display = "inline-block";
+
     ButtonElement or = new ButtonElement()..text = "Combine with OR Alchemy";
+    or.style.display = "inline-block";
+
     ButtonElement breed = new ButtonElement()..text = "Combine the Old Fashioned Way";
-    container.append(and);
-    container.append(or);
-    container.append(breed);
+    breed.style.display = "inline-block";
+
+    ButtonElement clear = new ButtonElement()..text = "Clear Combinations";
+
+    buttonContainer.append(and);
+    buttonContainer.append(or);
+    buttonContainer.append(breed);
+    buttonContainer.append(clear);
+    container.append(buttonContainer);
+
 
     and.onClick.listen((Event e) {
         child = Doll.andAlchemizeDolls(<Doll>[doll1, doll2]);
@@ -123,11 +138,15 @@ void makeBreedButtons() {
         child = Doll.breedDolls(<Doll>[doll1, doll2]);
         drawResult("x");
     });
+
+    clear.onClick.listen((Event e) {
+        childContainer.text = "";
+    });
 }
 
 Future<Null> drawResult(String text) async {
     CanvasElement result = new CanvasElement(width: 1200, height: 300);
-    container.append(result);
+    childContainer.append(result);
 
     CanvasElement one = await drawDoll(doll1, 400,300);
     CanvasElement two = await drawDoll(doll2, 400,300);
@@ -145,8 +164,8 @@ Future<Null> drawResult(String text) async {
     AnchorElement anchorElement = new AnchorElement(href:"index.html?${child.toDataBytesX()}");
     anchorElement.target = "_blank";
     anchorElement.text = "Edit Child";
-    container.append(label);
-    container.append(anchorElement);
+    childContainer.append(label);
+    childContainer.append(anchorElement);
 }
 
 void drawTextBG(CanvasElement canvas, String text) {
