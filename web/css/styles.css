@@ -105,13 +105,16 @@ width:1000px;
 
 .ectoJarContainer{
     position:relative;
-    height: 400px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
 }
 
 .jar{
     border: 3px solid #6d6d6d;
     color: #29f501;
-    border-radius: 25px;
+    border-radius: 35px;
     padding: 5px;
     height: 250px;
     border-top: none;
@@ -139,11 +142,12 @@ width:1000px;
     background-color: #00710c;
     border: 3px solid #03570c;
     color: #29f501;
-    border-radius: 25px;
+    border-radius: 35px;
     padding: 15px;
     vertical-align: bottom;
     height: 180px;
     width: 135px;
+    text-align: bottom;
 }
 
 .targetButton{

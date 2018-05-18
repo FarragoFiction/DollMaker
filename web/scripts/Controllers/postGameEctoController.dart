@@ -6,9 +6,10 @@ import 'package:DollLibCorrect/DollRenderer.dart';
 Element container;
 Element childContainer;
 
-Doll doll1;
-Doll doll2;
-Doll child;
+List<Doll> players = new List<Doll>();
+List<Doll> currentCropChildren = new List<Doll>();
+
+
 Random rand = new Random();
 
 CanvasElement canvas1;
@@ -55,6 +56,7 @@ void drawOneParent(Doll parent) {
     DivElement div = new DivElement();
     div.classes.add("breedingParent");
     CanvasElement parentCanvas = new CanvasElement(width: parent.width, height: parent.height);
+    parentCanvas.style.display = "block";
 
     ButtonElement loadButton = new ButtonElement()..text = "Load";
     loadButton.style.display = "inline-block";
@@ -108,7 +110,8 @@ void drawOneParent(Doll parent) {
         if(parent == doll1) doll1 = tmp;
         if(parent == doll2) doll2 = tmp;
 
-        parent = tmp;        parentCanvas.width = parent.width;
+        parent = tmp;
+        parentCanvas.width = parent.width;
         parentCanvas.height = parent.height;
 
         DollRenderer.drawDoll(parentCanvas, parent);
@@ -116,7 +119,7 @@ void drawOneParent(Doll parent) {
 
     randomizeTypeButton.onClick.listen((Event e) {
         Renderer.clearCanvas(parentCanvas);
-        Doll tmp = Doll.randomDollOfType(rand.pickFrom(Doll.allDollTypes));
+        Doll tmp = Doll.randomDollOfType(rand.pickFrom(dollTypes));
         if(parent == doll1) doll1 = tmp;
         if(parent == doll2) doll2 = tmp;
 
@@ -127,11 +130,12 @@ void drawOneParent(Doll parent) {
         DollRenderer.drawDoll(parentCanvas, parent);
     });
 
-    div.append(parentCanvas);
     div.append(ectoJar);
     div.append(loadButton);
     div.append(randomizeButton);
     div.append(randomizeTypeButton);
+    div.append(parentCanvas);
+
 
     container.append(div);
 
@@ -140,7 +144,7 @@ void drawOneParent(Doll parent) {
 
 void makeBreedButtons() {
     DivElement buttonContainer = new DivElement();
-    ButtonElement breed = new ButtonElement()..text = ">";
+    ButtonElement breed = new ButtonElement()..text = ">Populate Planet";
     breed.style.display = "inline-block";
     breed.classes.add("ectoButton");
 
