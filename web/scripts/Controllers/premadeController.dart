@@ -45,9 +45,10 @@ void drawOneLink(Element div, String link) {
     div.append(a);
 }
 
-void drawDolls() {
+Future<Null> drawDolls() async {
     for(Doll d in dolls) {
         drawOneDoll(d);
+        await new Future.delayed(const Duration(milliseconds : 500));
     }
 }
 
@@ -87,6 +88,9 @@ void pickCategory() {
     a.text = "Perform Ectobiology?";
     category.append(a);
     container.append(category);
+    if(chosenCategory == "homestuck") {
+        container.appendHtml("Thanks to someoneLikeable  and prismaticJelly for Canon Doll creation!");
+    }
 }
 
 Future<Null> slurpDolls() async{
