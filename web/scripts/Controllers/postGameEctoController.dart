@@ -9,6 +9,7 @@ Element childContainer;
 List<Doll> players = new List<Doll>();
 List<Doll> currentCropChildren = new List<Doll>();
 
+int numBabiesInCrop = 13;
 
 Random rand = new Random();
 
@@ -41,7 +42,7 @@ void initValidTypes() {
 void initParents() {
     int type = rand.pickFrom(dollTypes);
     int number = rand.nextIntRange(2, 13);
-    for(int i = 2; i<number; i++) {
+    for(int i = 0; i<number; i++) {
         players.add(Doll.randomDollOfType(type));
     }
 }
@@ -175,12 +176,31 @@ void makeBreedButtons() {
     });
 }
 
+//pick random pairs of two
 Future<Null> makeBabiesHumanWay() async {
-
+    for(int i = 0; i< numBabiesInCrop; i++) {
+        List<Doll> parents = getXParents(2);
+    }
 }
 
+//pick random subsets between two and all parents
 Future<Null> makeBabiesTrollWay() async {
+    for(int i = 0; i< numBabiesInCrop; i++) {
+        List<Doll> parents = getXParents(rand.nextInt(players.length));
 
+    }
+}
+
+List<Doll> getXParents(int x) {
+    List<Doll> ret = new List<Doll>();
+    List<Doll> tmp = new List<Doll>.from(players);
+    for(int i = 0; i<x; i++) {
+        Doll doll = rand.pickFrom(tmp);
+        tmp.add(doll);
+        tmp.remove(doll);
+    }
+
+    return ret;
 }
 
 
