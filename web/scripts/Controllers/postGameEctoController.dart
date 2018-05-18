@@ -165,10 +165,12 @@ void makeBreedButtons() {
 
     breed.onClick.listen((Event e) {
         makeBabiesHumanWay();
+        drawBabies();
     });
 
     breed.onClick.listen((Event e) {
         makeBabiesTrollWay();
+        drawBabies();
     });
 
     clear.onClick.listen((Event e) {
@@ -178,17 +180,32 @@ void makeBreedButtons() {
 
 //pick random pairs of two
 Future<Null> makeBabiesHumanWay() async {
+    makeBabies(true);
+}
+
+
+//pick random pairs of two
+Future<Null> makeBabies(bool humanWay) async {
     for(int i = 0; i< numBabiesInCrop; i++) {
-        List<Doll> parents = getXParents(2);
+        int number = 2;
+        if(!humanWay) {
+            number = rand.nextIntRange(2, players.length);
+        }
+        List<Doll> parents = getXParents(number);
+        Doll child = Doll.breedDolls(parents);
+        //i don't have a cherub baby or satyr baby doll maker
+        if(child is HomestuckTrollDoll) {
+            child = Doll.convertOneDollToAnother(child, new HomestuckGrubDoll());
+        }else if(!(child is HomestuckCherubDoll) && !(child is HomestuckSatyrDoll)) {
+            child = Doll.convertOneDollToAnother(child, new HomestuckBabyDoll());
+        }
+        currentCropChildren.add(child);
     }
 }
 
 //pick random subsets between two and all parents
 Future<Null> makeBabiesTrollWay() async {
-    for(int i = 0; i< numBabiesInCrop; i++) {
-        List<Doll> parents = getXParents(rand.nextInt(players.length));
-
-    }
+    makeBabies(false);
 }
 
 List<Doll> getXParents(int x) {
@@ -199,8 +216,15 @@ List<Doll> getXParents(int x) {
         tmp.add(doll);
         tmp.remove(doll);
     }
-
     return ret;
+}
+
+Future<Null> drawBabies() async {
+    for(Doll doll in currentCropChildren) {
+        CanvasElement canvas = new CanvasElement(width: doll.width, height: doll.height);
+        childContainer.append(canvas);
+        DollRenderer.drawDoll(canvas, doll);
+    }
 }
 
 
