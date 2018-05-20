@@ -89,7 +89,7 @@ void pickCategory() {
     category.append(a);
     container.append(category);
     if(chosenCategory == "homestuck") {
-        container.appendHtml("Thanks to someoneLikeable  and prismaticJelly for Canon Doll creation!");
+        container.appendHtml("Thanks to someoneLikeable, prismaticJelly and Grip for Canon Doll creation!");
     }
 }
 
