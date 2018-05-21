@@ -145,7 +145,7 @@ class BaseController {
         }
 
         TextAreaElement dataBox = querySelector("#shareableURL");
-        dataBox.value = "${window.location.origin}${window.location.pathname}?${doll.toDataBytesX()}";
+        if(dataBox != null) dataBox.value = "${window.location.origin}${window.location.pathname}?${doll.toDataBytesX()}";
         if(hatchLink != null && doll is HatchableDoll) {
             hatchLink.href = "${window.location.origin}${window.location.pathname}?${(doll as HatchableDoll).hatch().toDataBytesX()}";
         }

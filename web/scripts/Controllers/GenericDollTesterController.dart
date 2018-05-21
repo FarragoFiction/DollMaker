@@ -16,28 +16,8 @@ void main() {
 
     print("going to load doll");
     loadDoll();
-    hintAtEgg();
 }
 
-void makeEgg() {
-    if(controller.doll is HomestuckDoll) {
-        Doll d = new EggDoll();
-        d.palette = controller.doll.palette;
-        controller.doll = d;
-    }else if(controller.doll is HomestuckTrollDoll) {
-        Doll d = new TrollEggDoll();
-        d.palette = controller.doll.palette;
-        controller.doll = d;
-    }
-}
-
-
-void hintAtEgg() {
-    AnchorElement a = new AnchorElement();
-    a.setInnerHtml("???");
-    a.onClick.listen((e) => makeEgg());
-    querySelector("#contents").append(a);
-}
 
 void loadDoll() {
     print("loading doll");
