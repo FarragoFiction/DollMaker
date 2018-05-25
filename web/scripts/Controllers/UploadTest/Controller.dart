@@ -22,7 +22,6 @@ void main() {
     loadDoll();
     //shitpost(); //enable this when i need to know all directories
     makeUploadObjects();
-    todo("for each layer in the doll, make a new UploadObject. just have layer name");
     todo("if a layer is slaved, it has it's slave in teh UploadObject with it");
     todo("new concept of 'partner' for things like eyes and horns that aren't slaves but should still be paired");
     todo("stub out form for each UploadObject: want nameToCredit (sanitize), the file itself, and the file path, and the max number known ");
@@ -32,9 +31,13 @@ void makeUploadObjects() {
     for(SpriteLayer layer in controller.doll.renderingOrderLayers) {
         //TODO eventually add slaves and partners? or have it do it itself?
         //skip slaves and partners here too
-        UploadObject u = new UploadObject(<SpriteLayer>[layer]);
-        uploadObjects.add(u);
-        u.draw(uploaderDiv);
+        if(!layer.slave) {
+            List<SpriteLayer> layers = <SpriteLayer>[layer];
+            layers.addAll(layer.syncedWith);
+            UploadObject u = new UploadObject(layers);
+            uploadObjects.add(u);
+            u.draw(uploaderDiv);
+        }
     }
 }
 
