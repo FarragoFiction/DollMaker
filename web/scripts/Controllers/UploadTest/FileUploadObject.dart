@@ -43,10 +43,10 @@ class FileUploadObject
                 layer.preloadedElement = upload;
                 upload.onLoad.listen((e)
                 {
-                    if((upload.width - controller.doll.width).abs() < wiggleRoom) {
+                    if((upload.width - controller.doll.width).abs() > wiggleRoom) {
                         window.alert("Your uploaded part is width ${upload.width} instead of ${controller.doll.width}. Rejected.");
                         upload.src = null;
-                    }else if((upload.height - controller.doll.height).abs() < wiggleRoom) {
+                    }else if((upload.height - controller.doll.height).abs() > wiggleRoom) {
                         window.alert("Your uploaded part is height ${upload.height} instead of ${controller.doll.height}. Rejected.");
                         upload.src = null;
                     }else {
