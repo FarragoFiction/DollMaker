@@ -87,11 +87,13 @@ class UploadObject {
             HttpRequest.postFormData("http://192.168.1.65:4046/experiment", toJSON().json).then((HttpRequest request) {
 
                 print("success? $request, ${request.responseText}");
-                request.onReadyStateChange.listen((Event response) => print("response is ${response}"));
+                results.text = "Uploaded Successfully to Server!";
+                request.onReadyStateChange.listen((ProgressEvent response) => print("response is ${response.type}"));
 
 
             }).catchError((error) {
-
+                results.text = "Server Error uploading doll part.";
+                window.alert("Server Error uploading doll part.");
                 print("error: $error ${error.target.responseText}");
 
             });
