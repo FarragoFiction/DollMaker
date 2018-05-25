@@ -8,8 +8,10 @@ class FileUploadObject
     SpriteLayer layer;
     ImageElement upload;
     BaseController controller;
+    //if you're almost there i'll count it, especially because of rounding errors
+    int wiggleRoom = 5;
 
-    FileUploadObject(BaseController controller, SpriteLayer this.layer);
+    FileUploadObject(BaseController this.controller, SpriteLayer this.layer);
 
     void draw(Element container) {
         myElement = new DivElement();
@@ -41,10 +43,12 @@ class FileUploadObject
                 layer.preloadedElement = upload;
                 upload.onLoad.listen((e)
                 {
-                    if(upload.width != controller.doll.width) {
+                    if((upload.width - controller.doll.width).abs() < wiggleRoom) {
                         window.alert("Your uploaded part is width ${upload.width} instead of ${controller.doll.width}. Rejected.");
-                    }else if(upload.height != controller.doll.height) {
+                        upload.src = null;
+                    }else if((upload.height - controller.doll.height).abs() < wiggleRoom) {
                         window.alert("Your uploaded part is height ${upload.height} instead of ${controller.doll.height}. Rejected.");
+                        upload.src = null;
                     }else {
                         DollRenderer.drawDoll(controller.canvas, controller.doll);
                     }
