@@ -75,7 +75,12 @@ class UploadObject {
         myElement.append(results);
         String error = checkValidityBeforeUploading();
         if(error == null) {
-            results.text = "TODO: upload this: ${toJSON()}";
+            //results.text = "TODO: upload this: ${toJSON()}";
+            HttpRequest request = new HttpRequest();
+            request.open("POST", 'http://192.168.1.65:4046/experiment');
+            request.setRequestHeader("Content-Type", "image/png");
+            print("about to send post to DM's stuff: $request");
+            request.send(toJSON());
         }else {
             results.text = "ERROR: $error";
         }

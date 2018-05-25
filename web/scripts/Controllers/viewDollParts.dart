@@ -150,7 +150,7 @@ void drawAllImagesForPart() {
         for(SpriteLayer s in selectedPart.partners) {
             ImageElement img = new ImageElement();
             img.style.position = "absolute";
-            img.style.top = "-10px";
+            img.style.top = "-8px";
             img.style.left = "0px";
             img.src = "${s.imgNameBase}${i}.${s.imgFormat}";
             innerContainer.append(img);
@@ -159,7 +159,7 @@ void drawAllImagesForPart() {
         for(SpriteLayer s in selectedPart.syncedWith) {
             ImageElement img = new ImageElement();
             img.style.position = "absolute";
-            img.style.top = "-10px";
+            img.style.top = "-8px";
             img.style.left = "0px";
 
             //auto async

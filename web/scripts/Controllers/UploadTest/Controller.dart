@@ -22,16 +22,12 @@ Future<Null> main() async {
     await loadDoll();
     //shitpost(); //enable this when i need to know all directories
     makeUploadObjects();
-    todo("file chooser for each layer");
-    todo("file chooser displays part (colored) in box and also puts it on the doll");
     todo("sanitize the shit out of all inputs");
-    todo("'upload' button that just prints out the json for now");
-    todo("stub out form for each UploadObject: want nameToCredit (sanitize), the file itself, and the file path, and the max number known ");
+    todo("actually upload");
 }
 
 void makeUploadObjects() {
     for(SpriteLayer layer in controller.doll.renderingOrderLayers) {
-        //TODO eventually add slaves and partners? or have it do it itself?
         //skip slaves and partners here too
         if(!layer.slave && layer.primaryPartner) {
             List<SpriteLayer> layers = <SpriteLayer>[layer];

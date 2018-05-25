@@ -29,7 +29,7 @@ class FileUploadObject
         JSONObject json = new JSONObject();
         json["directory"] = layer.imgNameBase;
         json["maxImageNumberKnown"] = "${layer.maxImageNumber}";
-        json["data"] = "TODO"; //TODO as a blob or whatever
+        json["data"] = "${upload.src}"; //TODO as a blob or whatever
         return json;
     }
 
