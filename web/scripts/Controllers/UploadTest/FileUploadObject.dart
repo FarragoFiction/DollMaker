@@ -7,6 +7,7 @@ class FileUploadObject
     Element myElement;
     SpriteLayer layer;
     ImageElement upload;
+    CanvasElement uploadColorPreview;
     BaseController controller;
     //if you're almost there i'll count it, especially because of rounding errors
     int wiggleRoom = 5;
@@ -22,8 +23,32 @@ class FileUploadObject
     }
 
     void drawImagePreview() {
+        TableElement tableElement = new TableElement();
+        TableRowElement row1 = new TableRowElement();
+        TableRowElement row2 = new TableRowElement();
+        TableCellElement header = new TableCellElement()..text = "Look at the image to the right to see if recoloration is happening. If pixels aren't being recolored on the edges, you used anti-aliasing (Don't do that). If no pixels are being recolored, your colors are wrong. Check for color profile (pick RGB and not indexed or SRGB) and make sure color values are exact.";
+        header.colSpan = 2;
+        TableCellElement cell1 = new TableCellElement();
+        TableCellElement cell2 = new TableCellElement();
+        myElement.append(tableElement);
+        tableElement.append(row1);
+        tableElement.append(row2);
+
+        row1.append(header);
+        row2.append(cell1);
+        row2.append(cell2);
+
         upload = new ImageElement();
-        myElement.append(upload);
+        uploadColorPreview= new CanvasElement(width: controller.doll.width, height: controller.doll.height);
+
+        cell1.append(upload);
+        cell2.append(uploadColorPreview);
+    }
+
+    void drawCanvasColorPreview() {
+        Renderer.clearCanvas(uploadColorPreview);
+        uploadColorPreview.context2D.drawImage(upload, 0, 0);
+        Renderer.swapPalette(uploadColorPreview, controller.doll.paletteSource, controller.doll.palette);
     }
 
     void drawFileChooser() {
@@ -46,11 +71,19 @@ class FileUploadObject
                     if((upload.width - controller.doll.width).abs() > wiggleRoom) {
                         window.alert("Your uploaded part is width ${upload.width} instead of ${controller.doll.width}. Rejected.");
                         upload.src = null;
+                        Renderer.clearCanvas(controller.canvas);
+                        DollRenderer.drawDoll(controller.canvas, controller.doll);
+                        drawCanvasColorPreview();
                     }else if((upload.height - controller.doll.height).abs() > wiggleRoom) {
                         window.alert("Your uploaded part is height ${upload.height} instead of ${controller.doll.height}. Rejected.");
                         upload.src = null;
-                    }else {
+                        Renderer.clearCanvas(controller.canvas);
                         DollRenderer.drawDoll(controller.canvas, controller.doll);
+                        drawCanvasColorPreview();
+                    }else {
+                        Renderer.clearCanvas(controller.canvas);
+                        DollRenderer.drawDoll(controller.canvas, controller.doll);
+                        drawCanvasColorPreview();
                     }
                 });
             });
