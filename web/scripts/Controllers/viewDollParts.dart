@@ -121,6 +121,21 @@ void drawAllImagesForPart() {
         innerContainer.style.height = "${selectedDoll.height}px";
         innerContainer.style.display = "inline-block";
         innerContainer.text = "${i}.${selectedPart.imgFormat}";
+
+        //so you can see where thing are positioned
+        if(selectedDoll is HomestuckDoll && !selectedPart.name.contains("Body")) {
+            ImageElement img = new ImageElement();
+            img.style.position = "absolute";
+            img.style.top = "-10px";
+            img.style.left = "0px";
+
+            //auto async
+            img.style.border = "3px solid black";
+
+            img.src = "images/Homestuck/symbol/bg.png";
+            innerContainer.append(img);
+        }
+        
         ImageElement img = new ImageElement();
         img.style.position = "absolute";
         img.style.top = "-10px";
@@ -153,6 +168,8 @@ void drawAllImagesForPart() {
             img.src = "${s.imgNameBase}${i}.${s.imgFormat}";
             innerContainer.append(img);
         }
+
+
         container.append(innerContainer);
     }
     partDetailDiv.append(container);
