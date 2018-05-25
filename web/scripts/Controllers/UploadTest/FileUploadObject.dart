@@ -1,3 +1,4 @@
+import '../../JSONObject.dart';
 import '../BaseController.dart';
 import "dart:html";
 
@@ -20,6 +21,15 @@ class FileUploadObject
         container.append(myElement);
         drawFileChooser();
         drawImagePreview();
+    }
+
+
+    JSONObject toJSON() {
+        JSONObject json = new JSONObject();
+        json["directory"] = layer.imgNameBase;
+        json["maxImageNumberKnown"] = "${layer.maxImageNumber}";
+        json["data"] = "TODO"; //TODO as a blob or whatever
+        return json;
     }
 
     void drawImagePreview() {

@@ -1,3 +1,4 @@
+import '../../JSONObject.dart';
 import '../BaseController.dart';
 import 'FileUploadObject.dart';
 import "dart:html";
@@ -18,6 +19,18 @@ class UploadObject {
         initUploadObjects();
     }
 
+    JSONObject toJSON() {
+        JSONObject json = new JSONObject();
+        json["name"] = creatorNameInput.value;
+        json["website"] = creatorNameWebsite.value;
+
+        List<JSONObject> fileUploadObjectsArray = new List<JSONObject>();
+        for(FileUploadObject f in fileUploadObjects) {
+            fileUploadObjectsArray.add(f.toJSON());
+        }
+        json["fileUploadObjects"] = fileUploadObjectsArray.toString();
+        return json;
+    }
     void initUploadObjects() {
         for(SpriteLayer layer in layers) {
             fileUploadObjects.add(new FileUploadObject(controller,layer));
@@ -31,6 +44,19 @@ class UploadObject {
         container.append(myElement);
         drawCreatorInput();
         drawFileUploadObjects();
+        drawUploadButton();
+    }
+
+    void drawUploadButton() {
+        ButtonElement uploadButton = new ButtonElement()..text = "Upload To Server To Await Processing";
+        myElement.append(uploadButton);
+        uploadButton.onClick.listen((Event e) => processUploads());
+    }
+
+    void processUploads() {
+        DivElement results = new DivElement();
+        myElement.append(results);
+        results.text = "TODO: upload this: ${toJSON()}";
     }
 
     void drawFileUploadObjects() {
