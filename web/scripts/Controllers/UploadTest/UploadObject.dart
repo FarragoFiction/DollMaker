@@ -1,3 +1,5 @@
+import '../BaseController.dart';
+import 'FileUploadObject.dart';
 import "dart:html";
 
 import 'package:DollLibCorrect/DollRenderer.dart';
@@ -8,8 +10,19 @@ class UploadObject {
     List<SpriteLayer> layers;
     InputElement creatorNameInput;
     InputElement creatorNameWebsite;
+    List<FileUploadObject> fileUploadObjects = new List<FileUploadObject>();
+    //used for size checking
+    BaseController controller;
 
-    UploadObject(List<SpriteLayer> this.layers);
+    UploadObject(BaseController this.controller, List<SpriteLayer> this.layers) {
+        initUploadObjects();
+    }
+
+    void initUploadObjects() {
+        for(SpriteLayer layer in layers) {
+            fileUploadObjects.add(new FileUploadObject(controller,layer));
+        }
+    }
 
     void draw(Element container) {
         myElement = new DivElement();
@@ -17,8 +30,14 @@ class UploadObject {
         myElement.text = "${layers.join(",")}";
         container.append(myElement);
         drawCreatorInput();
+        drawFileUploadObjects();
     }
 
+    void drawFileUploadObjects() {
+        for(FileUploadObject fio in fileUploadObjects) {
+            fio.draw(myElement);
+        }
+    }
     void drawCreatorInput() {
         DivElement creator = new DivElement();
         myElement.append(creator);
@@ -36,4 +55,6 @@ class UploadObject {
         creator.append(creatorNameWebsite);
     }
 
+
 }
+

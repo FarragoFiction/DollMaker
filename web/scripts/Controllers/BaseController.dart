@@ -4,6 +4,7 @@ import "dart:html";
 import "package:DollLibCorrect/DollRenderer.dart";
 import "../DollMakerTools.dart";
 import "../navbar.dart";
+import "dart:async";
 //bluh
 class BaseController {
     Doll doll;
@@ -112,7 +113,7 @@ class BaseController {
         drawDollCreator(true);
     }
 
-    void drawDollCreator([bool inQueue = false]) {
+    Future<Null> drawDollCreator([bool inQueue = false]) async {
 
         if(doll is EasterEggDoll) {
             if(eastereggLink == null) {
@@ -141,7 +142,7 @@ class BaseController {
                 DollRenderer.drawDoll(canvas, doll);
             });
         }else {
-            DollRenderer.drawDoll(canvas, doll);
+            await DollRenderer.drawDoll(canvas, doll);
         }
 
         TextAreaElement dataBox = querySelector("#shareableURL");

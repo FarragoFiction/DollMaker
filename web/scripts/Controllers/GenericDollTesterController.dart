@@ -2,7 +2,7 @@ import "dart:html";
 import "package:DollLibCorrect/DollRenderer.dart";
 import "../DollMakerTools.dart";
 import "../navbar.dart";
-
+import "dart:async";
 import "BaseController.dart";
 
 
@@ -101,7 +101,7 @@ class QueenController extends BaseController {
     QueenController(Doll doll, CanvasElement canvas) : super(doll, canvas);
 
     @override
-    void drawDollCreator([bool inQueue = false]) {
+    Future<Null> drawDollCreator([bool inQueue = false]) async {
         DollMakerTools.syncColorPickersToSprite(doll.palette);
         drawLayerControls();
         print("Draw doll creator");

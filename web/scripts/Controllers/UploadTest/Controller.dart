@@ -6,20 +6,20 @@ import "../../navbar.dart";
 
 import "../BaseController.dart";
 import "../QueenController.dart";
-
+import "dart:async";
 BaseController controller;
 
 DivElement uploaderDiv;
 
 //probably don't need to keep refs but it can't hurt
 List<UploadObject> uploadObjects = new List<UploadObject>();
-void main() {
+Future<Null> main() async {
     print("Hello World");
     loadNavbar();
     Random rand = new Random();
     uploaderDiv = querySelector("#uploader");
     print("going to load doll");
-    loadDoll();
+    await loadDoll();
     //shitpost(); //enable this when i need to know all directories
     makeUploadObjects();
     todo("file chooser for each layer");
@@ -37,7 +37,7 @@ void makeUploadObjects() {
             List<SpriteLayer> layers = <SpriteLayer>[layer];
             layers.addAll(layer.syncedWith);
             layers.addAll(layer.partners);
-            UploadObject u = new UploadObject(layers);
+            UploadObject u = new UploadObject(controller,layers);
             uploadObjects.add(u);
             u.draw(uploaderDiv);
         }
@@ -70,7 +70,7 @@ void todo(String text) {
 }
 
 
-void loadDoll() {
+Future<Null> loadDoll() async {
     print("loading doll");
     String dataString = window.location.search;
     print("dataSTring is $dataString");
