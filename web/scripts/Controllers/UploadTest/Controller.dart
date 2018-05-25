@@ -22,8 +22,10 @@ void main() {
     loadDoll();
     //shitpost(); //enable this when i need to know all directories
     makeUploadObjects();
-    todo("if a layer is slaved, it has it's slave in teh UploadObject with it");
-    todo("new concept of 'partner' for things like eyes and horns that aren't slaves but should still be paired");
+    todo("file chooser for each layer");
+    todo("file chooser displays part (colored) in box and also puts it on the doll");
+    todo("sanitize the shit out of all inputs");
+    todo("'upload' button that just prints out the json for now");
     todo("stub out form for each UploadObject: want nameToCredit (sanitize), the file itself, and the file path, and the max number known ");
 }
 
