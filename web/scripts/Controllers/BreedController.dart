@@ -81,6 +81,8 @@ void drawOneParent(Doll parent) {
         parentCanvas.height = parent.height;
 
         DollRenderer.drawDoll(parentCanvas, parent);
+        dataBox.value = "${parent.toDataBytesX()}";
+
     });
 
     randomizeTypeButton.onClick.listen((Event e) {
@@ -94,6 +96,7 @@ void drawOneParent(Doll parent) {
         parentCanvas.height = parent.height;
 
         DollRenderer.drawDoll(parentCanvas, parent);
+        dataBox.value = "${parent.toDataBytesX()}";
     });
 
     div.append(parentCanvas);
