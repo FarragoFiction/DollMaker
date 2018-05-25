@@ -1,3 +1,4 @@
+import 'UploadObject.dart';
 import "dart:html";
 import "package:DollLibCorrect/DollRenderer.dart";
 import "../../DollMakerTools.dart";
@@ -8,14 +9,58 @@ import "../QueenController.dart";
 
 BaseController controller;
 
+DivElement uploaderDiv;
 
+//probably don't need to keep refs but it can't hurt
+List<UploadObject> uploadObjects = new List<UploadObject>();
 void main() {
     print("Hello World");
     loadNavbar();
     Random rand = new Random();
-
+    uploaderDiv = querySelector("#uploader");
     print("going to load doll");
     loadDoll();
+    //shitpost(); //enable this when i need to know all directories
+    makeUploadObjects();
+    todo("for each layer in the doll, make a new UploadObject. just have layer name");
+    todo("if a layer is slaved, it has it's slave in teh UploadObject with it");
+    todo("new concept of 'partner' for things like eyes and horns that aren't slaves but should still be paired");
+    todo("stub out form for each UploadObject: want nameToCredit (sanitize), the file itself, and the file path, and the max number known ");
+}
+
+void makeUploadObjects() {
+    for(SpriteLayer layer in controller.doll.renderingOrderLayers) {
+        //TODO eventually add slaves and partners? or have it do it itself?
+        //skip slaves and partners here too
+        UploadObject u = new UploadObject(<SpriteLayer>[layer]);
+        uploadObjects.add(u);
+        u.draw(uploaderDiv);
+    }
+}
+
+//do this when i need to know all directories
+void shitpost() {
+    //it's a set so no repeats
+    Set<String> oneOfEachDollDirectory = new Set<String>();
+    for(int i in Doll.allDollTypes) {
+        Doll doll = Doll.randomDollOfType(i);
+        oneOfEachDollDirectory.addAll(doll.getAllNeededDirectories());
+    }
+
+    int i = 0;
+    for(String text in oneOfEachDollDirectory) {
+        String t = text;
+        i ++;
+        //this is for if i want to know how many directories there are
+        //t = "$i: $text";
+        DivElement li = new DivElement()..text = t;
+        uploaderDiv.append(li);
+    }
+}
+
+void todo(String text) {
+    LIElement li = new LIElement()..text = text;
+    uploaderDiv.append(li);
 }
 
 
