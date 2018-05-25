@@ -76,6 +76,7 @@ class UploadObject {
         String error = checkValidityBeforeUploading();
         if(error == null) {
             //results.text = "TODO: upload this: ${toJSON()}";
+            //this way sends a "METHOD"
             /*
             HttpRequest request = new HttpRequest();
             request.open("POST", 'http://192.168.1.65:4046/experiment');
@@ -83,7 +84,17 @@ class UploadObject {
             print("about to send post to DM's stuff: $request");
             request.send(toJSON().toString());
             */
-            HttpRequest.postFormData("http://192.168.1.65:4046/experiment", toJSON().json);
+            HttpRequest.postFormData("http://192.168.1.65:4046/experiment", toJSON().json).then((HttpRequest request) {
+
+                print("success? $request, ${request.responseText}");
+                request.onReadyStateChange.listen((Event response) => print("response is ${response}"));
+
+
+            }).catchError((error) {
+
+                print("error: $error ${error.target.responseText}");
+
+            });
         }else {
             results.text = "ERROR: $error";
         }
