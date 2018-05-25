@@ -31,9 +31,10 @@ void makeUploadObjects() {
     for(SpriteLayer layer in controller.doll.renderingOrderLayers) {
         //TODO eventually add slaves and partners? or have it do it itself?
         //skip slaves and partners here too
-        if(!layer.slave) {
+        if(!layer.slave && layer.primaryPartner) {
             List<SpriteLayer> layers = <SpriteLayer>[layer];
             layers.addAll(layer.syncedWith);
+            layers.addAll(layer.partners);
             UploadObject u = new UploadObject(layers);
             uploadObjects.add(u);
             u.draw(uploaderDiv);

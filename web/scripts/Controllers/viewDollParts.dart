@@ -135,7 +135,7 @@ void drawAllImagesForPart() {
             img.src = "images/Homestuck/symbol/bg.png";
             innerContainer.append(img);
         }
-        
+
         ImageElement img = new ImageElement();
         img.style.position = "absolute";
         img.style.top = "-10px";
