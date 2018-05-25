@@ -10,6 +10,7 @@ class FileUploadObject
     ImageElement upload;
     CanvasElement uploadColorPreview;
     BaseController controller;
+    bool valid = true;
     //if you're almost there i'll count it, especially because of rounding errors
     int wiggleRoom = 5;
 
@@ -36,7 +37,7 @@ class FileUploadObject
         TableElement tableElement = new TableElement();
         TableRowElement row1 = new TableRowElement();
         TableRowElement row2 = new TableRowElement();
-        TableCellElement header = new TableCellElement()..text = "Look at the image to the right to see if recoloration is happening. If pixels aren't being recolored on the edges, you used anti-aliasing (Don't do that). If no pixels are being recolored, your colors are wrong. Check for color profile (pick RGB and not indexed or SRGB) and make sure color values are exact.";
+        TableCellElement header = new TableCellElement()..setInnerHtml("<i>Look at the image to the right to see if recoloration is happening. If pixels aren't being recolored on the edges, you used anti-aliasing (Don't do that). If no pixels are being recolored, your colors are wrong. Check for color profile (pick RGB and not indexed or SRGB) and make sure color values are exact.</i>");
         header.colSpan = 2;
         TableCellElement cell1 = new TableCellElement();
         TableCellElement cell2 = new TableCellElement();
@@ -80,17 +81,20 @@ class FileUploadObject
                 {
                     if((upload.width - controller.doll.width).abs() > wiggleRoom) {
                         window.alert("Your uploaded part is width ${upload.width} instead of ${controller.doll.width}. Rejected.");
-                        upload.src = null;
+                        upload.src = "";
+                        valid = false;
                         Renderer.clearCanvas(controller.canvas);
                         DollRenderer.drawDoll(controller.canvas, controller.doll);
                         drawCanvasColorPreview();
                     }else if((upload.height - controller.doll.height).abs() > wiggleRoom) {
                         window.alert("Your uploaded part is height ${upload.height} instead of ${controller.doll.height}. Rejected.");
-                        upload.src = null;
+                        upload.src = "";
+                        valid = false;
                         Renderer.clearCanvas(controller.canvas);
                         DollRenderer.drawDoll(controller.canvas, controller.doll);
                         drawCanvasColorPreview();
                     }else {
+                        valid = true;
                         Renderer.clearCanvas(controller.canvas);
                         DollRenderer.drawDoll(controller.canvas, controller.doll);
                         drawCanvasColorPreview();

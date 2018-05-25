@@ -56,7 +56,22 @@ class UploadObject {
     void processUploads() {
         DivElement results = new DivElement();
         myElement.append(results);
-        results.text = "TODO: upload this: ${toJSON()}";
+        String error = checkValidityBeforeUploading();
+        if(error == null) {
+            results.text = "TODO: upload this: ${toJSON()}";
+        }else {
+            results.text = "ERROR: $error";
+        }
+    }
+
+    String checkValidityBeforeUploading() {
+        for(FileUploadObject f in fileUploadObjects) {
+            print("data is ${f.upload.src}");
+            if(f.upload.src == null || f.upload.src.isEmpty || !f.valid) {
+                return "Mising Data for ${f.layer}"; //not valid
+            }
+        }
+        return null;
     }
 
     void drawFileUploadObjects() {
