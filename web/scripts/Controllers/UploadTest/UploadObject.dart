@@ -38,10 +38,27 @@ class UploadObject {
     }
 
     void draw(Element container) {
+        DivElement hiderThingy = new DivElement();
+        hiderThingy.classes.add("uploadElement");
+        hiderThingy.text = "Upload ${layers.join(" and ")}";
+        ButtonElement button = new ButtonElement()..text = "Expand";
+        hiderThingy.append(button);
+        button.classes.add("fileUploadButton");
+        button.onClick.listen((Event e) {
+            if( myElement.style.display == "block") {
+                myElement.style.display = "none";
+                button.text = "Expand";
+            }else {
+                myElement.style.display = "block";
+                button.text = "Collapse";
+            }
+        });
+
+
+        container.append(hiderThingy);
         myElement = new DivElement();
-        myElement.classes.add("uploadElement");
-        myElement.text = "${layers.join(",")}";
-        container.append(myElement);
+        myElement.style.display = "none";
+        hiderThingy.append(myElement);
         drawCreatorInput();
         drawFileUploadObjects();
         drawUploadButton();
