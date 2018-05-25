@@ -52,7 +52,9 @@ void drawAllParts(Element container) {
         return;
     }
     for(SpriteLayer s in selectedDoll.renderingOrderLayers) {
-        drawPartBox(s, container);
+        if(!s.slave && s.primaryPartner) {
+            drawPartBox(s, container);
+        }
     }
 }
 
@@ -129,6 +131,28 @@ void drawAllImagesForPart() {
 
         img.src = "${selectedPart.imgNameBase}${i}.${selectedPart.imgFormat}";
         innerContainer.append(img);
+
+        for(SpriteLayer s in selectedPart.partners) {
+            ImageElement img = new ImageElement();
+            img.style.position = "absolute";
+            img.style.top = "-10px";
+            img.style.left = "0px";
+            img.src = "${s.imgNameBase}${i}.${s.imgFormat}";
+            innerContainer.append(img);
+        }
+
+        for(SpriteLayer s in selectedPart.syncedWith) {
+            ImageElement img = new ImageElement();
+            img.style.position = "absolute";
+            img.style.top = "-10px";
+            img.style.left = "0px";
+
+            //auto async
+            img.style.border = "3px solid black";
+
+            img.src = "${s.imgNameBase}${i}.${s.imgFormat}";
+            innerContainer.append(img);
+        }
         container.append(innerContainer);
     }
     partDetailDiv.append(container);
