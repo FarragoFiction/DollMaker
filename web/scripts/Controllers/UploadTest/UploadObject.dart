@@ -86,7 +86,9 @@ class UploadObject {
             print("about to send post to DM's stuff: $request");
             request.send(toJSON().toString());
             */
-            HttpRequest.postFormData("${serverHost}:${serverPort}", toJSON().json).then((HttpRequest request) {
+            String loc = "${serverHost}:${serverPort}";
+            print("about to post to $loc");
+            HttpRequest.postFormData(loc, toJSON().json).then((HttpRequest request) {
 
                 print("success? $request, ${request.responseText}");
                 results.text = "Uploaded Successfully to Server!";
