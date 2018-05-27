@@ -86,7 +86,8 @@ class UploadObject {
             print("about to send post to DM's stuff: $request");
             request.send(toJSON().toString());
             */
-            String loc = "${serverHost}:${serverPort}";
+            //http://farragofiction.com:4037/experiment
+            String loc = "${serverHost}:${serverPort}/experiment";
             print("about to post to $loc");
             HttpRequest.postFormData(loc, toJSON().json).then((HttpRequest request) {
 
