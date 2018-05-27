@@ -6,6 +6,8 @@ import "dart:html";
 import 'package:DollLibCorrect/DollRenderer.dart';
 
 class UploadObject {
+    String serverHost = "http://www.farragofiction.com";
+    String serverPort = "4037";
     DivElement myElement;
     //usually will be one, but sometimes slaves/partners like for hair/horns
     List<SpriteLayer> layers;
@@ -84,7 +86,7 @@ class UploadObject {
             print("about to send post to DM's stuff: $request");
             request.send(toJSON().toString());
             */
-            HttpRequest.postFormData("http://192.168.1.65:4046/experiment", toJSON().json).then((HttpRequest request) {
+            HttpRequest.postFormData("${serverHost}:${serverPort}", toJSON().json).then((HttpRequest request) {
 
                 print("success? $request, ${request.responseText}");
                 results.text = "Uploaded Successfully to Server!";

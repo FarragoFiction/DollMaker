@@ -5,6 +5,7 @@ import "dart:html";
 import 'package:DollLibCorrect/DollRenderer.dart';
 class FileUploadObject
 {
+
     Element myElement;
     SpriteLayer layer;
     ImageElement upload;
