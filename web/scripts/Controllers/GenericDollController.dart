@@ -76,8 +76,8 @@ Future<Null> loadDoll() async {
     a.text = "View All Parts for ${doll.name}";
     a.target = "_blank";
 
-    AnchorElement a3 = new AnchorElement(href: "testParts.html?type=${doll.renderingType}");
-    a3.text = "Test New Parts for ${doll.name}";
+    AnchorElement a3 = new AnchorElement(href: "uploadParts.html?type=${doll.renderingType}");
+    a3.text = "Contribute New Parts for ${doll.name}";
     a3.style.display = "block";
     a3.target = "_blank";
 
