@@ -14,7 +14,6 @@ DivElement uploaderDiv;
 //probably don't need to keep refs but it can't hurt
 List<UploadObject> uploadObjects = new List<UploadObject>();
 Future<Null> main() async {
-    print("Hello World");
     loadNavbar();
     Random rand = new Random();
     uploaderDiv = querySelector("#uploader");
@@ -22,8 +21,6 @@ Future<Null> main() async {
     await loadDoll();
     //shitpost(); //enable this when i need to know all directories
     makeUploadObjects();
-    todo("sanitize the shit out of all inputs");
-    todo("actually upload");
 }
 
 void makeUploadObjects() {

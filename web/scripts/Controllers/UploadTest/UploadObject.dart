@@ -92,7 +92,8 @@ class UploadObject {
             HttpRequest.postFormData(loc, toJSON().json).then((HttpRequest request) {
 
                 print("success? $request, ${request.responseText}");
-                results.text = "Uploaded Successfully to Server!";
+                AnchorElement a = new AnchorElement(href: "http://www.farragofiction.com:4037")..text = "Uploaded Successfully to Server! Click to view all uploaded parts since last slurp."..target = "_blank";
+                results.append(a);
                 request.onReadyStateChange.listen((ProgressEvent response) => print("response is ${response.type}"));
 
 
