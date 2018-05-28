@@ -104,6 +104,8 @@ Future<Null> loadDoll() async {
     controller.setupForms();
     controller.drawDollCreator();
     querySelector("title").text = "${doll.name} Doll Maker";
+    DivElement credits = new DivElement()..text = "(idea and initial parts by ${doll.originalCreator})";
+    querySelector("#doll").append(credits);
 }
 
 
