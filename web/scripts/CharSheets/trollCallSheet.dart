@@ -1,9 +1,11 @@
 //https://swirlygerm-art.tumblr.com/post/167621990417/hey-wanna-make-a-trollsona-for-hiveswap-like-how
 import "package:DollLibCorrect/DollRenderer.dart";
+import "package:TextEngine/TextEngine.dart";
 import "CharSheet.dart";
 import 'dart:async';
 import "BarLayer.dart";
 import 'dart:html';
+
 class TrollCallSheet extends CharSheet {
 
 
@@ -23,9 +25,13 @@ class TrollCallSheet extends CharSheet {
 
     TrollCallSheet(Doll doll) : super(doll) {
         tint = doll.associatedColor;
-        String fact1String = randomFact();
-        String fact2String = randomFact();
-        String fact3String = randomFact();
+
+    }
+
+    Future<Null> setup() async {
+        String fact1String = await randomFact();
+        String fact2String = await randomFact();
+        String fact3String = await randomFact();
         Colour color = new Colour.from(tint)..setHSV(tint.hue, 0.2, 1.0 );
         name = new TextLayer("Name",nameForDoll().toUpperCase(),345.0,470.0, fontSize: 60, maxWidth: 100, fontName: "trollcall", emphasis: emphasis,fontColor: color);
         fact1 = new TextLayer("Fact1",fact1String,370.0,130.0, fontSize: 25, maxWidth: 220, fontName: "trollcall", emphasis: emphasis,fontColor: color);
@@ -74,9 +80,15 @@ class TrollCallSheet extends CharSheet {
     List<TextLayer> get textLayers => <TextLayer>[name,fact1,fact2,fact3]; //placeholder
 
 
+    Future<String> randomFact() async{
+        TextEngine textEngine = new  TextEngine();
+        await textEngine.loadList("headcanon");
 
-    //obsessed with nouns. verbs a noun every single day.
-    String randomFact() {
+        return "Is PL's thing working? ${textEngine.phrase("JRheadcanon")}";
+    }
+
+    //obsessed with nouns. verbs a noun every single day. JR did this
+    String randomFactOld() {
         List<String> verbs = <String>["imagine","tap","use","discard","draw","imbibe","create","devour","vore","scatter","shred","place","select","choose","levitate","burn","throw away","place","dominate","humiliate","oggle","auto-parry","be","wear","flip","fondly regard","retrieve","throw","slay","defeat","become","grab","order","steal","smell","sample","taste","caress","fondle","placate","handle","pirouette","entrench","crumple","shatter","drop","farm","sign","pile","smash","resist","sip","understand","contemplate", "murder", "elevate", "enslave"];
         List<String> nouns =<String> ["Bro","Mom","royalty","Queen","guardian","parent","Dad","opponent","graveyard","irrelevancy corner","card","monster","item","deed","feat","artifact","weapon","armor","shield","ring","mana","deck","creature","sword","legendary artifact","legendary weapon","god","meme","red mile", "ring of orbs no-fold","arm","mechanical bull","mystery","token","shrubbery","Blue Lady","gem","egg","coin","talisman", "turn", "head","goddamn mushroom"];
         List<String> effects = <String>["legal","so totally illegal","illegal","extra legal","ironic","ripe","angsting","shitty","disappointing","amazing","perfect","confused","poisoned","dead","alive", "audited", "insane","unconditionally immortal", "immortal", "on fire","boring","missing","lost","litigated","deceitful","irrelevant","a lost cause","annoying","smelly","chaotic","trembling","afraid","beserk","vomiting","depressed","disappointing","in a fandom","unloved","apathetic","addicted","uncomfortable","boggling", "goaded", "enhanced", "murdered","asleep"];

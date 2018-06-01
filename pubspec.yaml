@@ -12,9 +12,11 @@ dependencies:
   source_map_stack_trace: ^1.1.4
   archive: "^1.0.31"
   DollLibCorrect:
-      git: git@github.com:jadedResearcher/DollLibCorrect.git
+    git: git://github.com/jadedResearcher/DollLibCorrect.git
   RenderingLib:
-            git: git@github.com:jadedResearcher/RenderingLib.git
+    git: git://github.com/jadedResearcher/RenderingLib.git
+  TextEngine:
+      git: git://github.com/FarragoFiction/TextEngine.git
 
 dev_dependencies:
   browser: ^0.10.0

@@ -34,7 +34,9 @@ void printAllDollPaths() {
 }
 
 void printOneDollPath(Doll doll) {
-    String source = "http://www.farragofiction.com/DollPartsUpload/DollSource"; //assume we are local
+    //String source = "http://www.farragofiction.com/DollPartsUpload/DollSource"; //assume we are local
+    String source = "http://www.farragofiction.com/DollPartsUpload/"; //assume we are local
+
     DivElement dollDiv = new DivElement()..setInnerHtml("<h1>${doll.name}</h1>");
     dollDiv.style.margin = "30px";
     dollDiv.style.border = "3px solid black";
