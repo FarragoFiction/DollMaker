@@ -1,1 +1,0 @@
-cobaltcollision provided bases, but don't have anything else yet.
