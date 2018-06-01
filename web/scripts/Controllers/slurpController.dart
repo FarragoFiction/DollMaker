@@ -1,8 +1,20 @@
+import 'dart:async';
 import 'dart:html';
 
 import 'package:DollLibCorrect/DollRenderer.dart';
 
+
+List<String> extensions = <String>[
+    "png",
+    "gif",
+    "jpg",
+    "jpeg",
+];
 Element container;
+RegExp filePattern = new RegExp('<a href="([^?]*?)">');
+RegExp extensionPattern = new RegExp("\\\.(${extensions.join("|")})\$");
+RegExp numberedFilePattern = new RegExp("([a-zA-Z_]+?)(\\d+?)\\.");
+
 void main() {
     container = querySelector("#contents");
     todo("for each doll, for each doll part, print out name of file path");
@@ -22,19 +34,78 @@ void printAllDollPaths() {
 }
 
 void printOneDollPath(Doll doll) {
-    String source = "DollPartsUpload/DollSource"; //assume we are local
+    String source = "http://www.farragofiction.com/DollPartsUpload/DollSource"; //assume we are local
     DivElement dollDiv = new DivElement()..setInnerHtml("<h1>${doll.name}</h1>");
     dollDiv.style.margin = "30px";
     dollDiv.style.border = "3px solid black";
     container.append(dollDiv);
-    for(SpriteLayer layer in doll.dataOrderLayers) {
-        printOneDirectory("$source/${layer.imgNameBase}", dollDiv);
+    for(SpriteLayer layer in doll.renderingOrderLayers) {
+        printOneDirectory(layer, "$source/${layer.imgNameBase}", dollDiv);
     }
 }
 
-void printOneDirectory(String dir, Element div) {
+Future<Null> printOneDirectory(SpriteLayer layer, String dir, Element div) async {
     DivElement line = new DivElement();
-
-    line.setInnerHtml("<b>$dir</b>: TODO: print contents");
+    line.style.padding = "10px";
     div.append(line);
+    List<String> files = await getDirectoryListing(dir);
+    if(files.isEmpty) {
+        line.setInnerHtml("<b>${layer.name}</b>: No New Parts");
+    }else {
+        int max = getHighestSequentialFile(files);
+        line.setInnerHtml(" <b>${layer.name}</b>:   Highest: ${max}<Br>, so ${max - layer.maxImageNumber} parts found (compared to old highest of ${layer.maxImageNumber})");
+    }
+
+    ButtonElement view = new ButtonElement()..text = "Toggle Parts";
+    line.append(view);
+    DivElement parts = new DivElement();
+    parts.style.display == "none";
+    line.append(parts);
+    view.onClick.listen((Event e) {
+        if(parts.children.isEmpty) {
+            fillParts(files, parts);
+        }
+        if(parts.style.display == "none") {
+            parts.style.display = "inline-block";
+        }else {
+            parts.style.display = "none";
+        }
+    });
+}
+
+void fillParts(List<String> files, DivElement parts) {
+    for(String file in files) {
+        ImageElement img = new ImageElement(src: file, height: 50);
+        parts.append(img);
+    }
+}
+
+
+Future<List<String>> getDirectoryListing(String url) async {
+    List<String> files = <String>[];
+    String content = await HttpRequest.getString(url);
+    Iterable<Match> matches = filePattern.allMatches(content); // find all link targets
+    for (Match m in matches) {
+        String filename = m.group(1);
+        if (!extensionPattern.hasMatch(filename)) { continue; } // extension rejection
+
+        //print(filename);
+
+        files.add(filename);
+    }
+
+    return files;
+}
+
+
+//thanks PL, yoinked this from SBURBSim then modified it. uh. heavily.
+int getHighestSequentialFile(List<String> files) {
+    List<int> numbers = <int>[];
+
+    for (String file in files) {
+         numbers.add(int.parse(file.split(".png")[0]));
+    }
+    numbers.sort();
+
+    return numbers.last;
 }
