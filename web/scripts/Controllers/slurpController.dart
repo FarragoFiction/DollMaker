@@ -53,29 +53,34 @@ Future<Null> printOneDirectory(SpriteLayer layer, String dir, Element div) async
         line.setInnerHtml("<b>${layer.name}</b>: No New Parts");
     }else {
         int max = getHighestSequentialFile(files);
-        line.setInnerHtml(" <b>${layer.name}</b>:   Highest: ${max}<Br>, so ${max - layer.maxImageNumber} parts found (compared to old highest of ${layer.maxImageNumber})");
+        line.setInnerHtml(" <b>${layer.name}</b>:   Highest: ${max} ........ so ${max - layer.maxImageNumber} parts found");
     }
 
-    ButtonElement view = new ButtonElement()..text = "Toggle Parts";
+    ButtonElement view = new ButtonElement()..text = "Show Parts";
     line.append(view);
     DivElement parts = new DivElement();
     parts.style.display == "none";
     line.append(parts);
     view.onClick.listen((Event e) {
+        print("toggling");
         if(parts.children.isEmpty) {
-            fillParts(files, parts);
+            fillParts(dir, files, parts);
         }
-        if(parts.style.display == "none") {
-            parts.style.display = "inline-block";
-        }else {
+        if(parts.style.display == "inline-block") {
+            view.text = "Show Parts";
             parts.style.display = "none";
+        }else {
+            view.text = "Hide Parts";
+            parts.style.display = "inline-block";
         }
     });
 }
 
-void fillParts(List<String> files, DivElement parts) {
+void fillParts(String dir, List<String> files, DivElement parts) {
     for(String file in files) {
-        ImageElement img = new ImageElement(src: file, height: 50);
+        String fileName = "$dir$file";
+        print("trying out $fileName");
+        ImageElement img = new ImageElement(src: fileName, height: 150);
         parts.append(img);
     }
 }
