@@ -8,7 +8,7 @@ import 'dart:html';
 
 class TrollCallSheet extends CharSheet {
 
-
+    TextEngine textEngine;
     @override
     int width = 728;
     @override
@@ -81,8 +81,10 @@ class TrollCallSheet extends CharSheet {
 
 
     Future<String> randomFact() async{
-        TextEngine textEngine = new  TextEngine();
-        await textEngine.loadList("trollcall");
+        if(textEngine == null) {
+            textEngine = new TextEngine();
+            await textEngine.loadList("trollcall");
+        }
 
         return "${textEngine.phrase("TrollCall")}";
     }

@@ -7,15 +7,15 @@ TrollCall
     Is part #noun#: 0.3
     Master of the #noun#: 0.3
     Spells '#noun#' right on the first try.: 0.3
-    Practices #verb@continuous# the #noun# every #timeframe.: 0.3
-    Practices to be a #rebel# every #timeframe.: 0.3
-    Pretends to be a #rebel# all the time.: 0.3
+    Practices #verb@continuous# the #noun# every #timeframe#.: 0.3
+    Practices to be a #proffession# every #timeframe#.: 0.3
+    Pretends to be a #proffession# all the time.: 0.3
     Been in detention their whole life.: 0.1
     Imitation #noun# bracelet.: 0.3
-    13 #noun@plural at last count: 0.3
-    #verb@presentThird# once a #timeframe. :0.3
+    13 #noun@plural# at last count: 0.3
+    #verb@presentThird# once a #timeframe#. :0.3
     Sleeps once a week. :0.1
-    Does not #verb# #noun@plural. :0.3
+    Does not #verb# #noun@plural#. :0.3
     Aspiring #noun#. :0.3
     Aspiring #proffession#. :0.3
     #qualifier# reblogs #noun# posts: 0.3
@@ -28,8 +28,8 @@ TrollCall
     #qualifier# into #effect# #noun@plural# :0.3
     #qualifier# #effect# when you aren't looking :0.3
     #qualifier# a sweetheart: 0.1
-    Ask them about #verb@continuous#  #noun@plural if you can spare an hour:0.3
-    Ask them about #effect#  #noun@plural if you can spare an hour:0.3
+    Ask them about #verb@continuous#  #noun@plural# if you can spare an hour:0.3
+    Ask them about #effect#  #noun@plural# if you can spare an hour:0.3
     Is currently #effect#: 0.3
     Never #verb@continuous#. Ever. :0.3
     Has two #noun_quadmate@plural#. :0.3

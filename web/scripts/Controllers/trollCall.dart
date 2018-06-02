@@ -21,9 +21,15 @@ Future<Null> drawSheet() async {
     }
     sheet = new TrollCallSheet(d); //it's in the name, dunkass.
     await sheet.setup();
+
     Element innerDiv  = new DivElement();
     innerDiv.className = "cardWithForm";
     await sheet.draw(innerDiv);
     innerDiv.append(sheet.makeForm());
     querySelector("#contents").append(innerDiv);
+
+    for(int i = 0; i<50; i++) {
+        String srt = await sheet.randomFact();
+        print(srt);
+    }
 }

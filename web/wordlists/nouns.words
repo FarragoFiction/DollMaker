@@ -16,6 +16,7 @@ noun
     @noun_object
     @noun_building
     @noun_quadmate
+    @noun_misc
 
 
 noun_object
@@ -39,6 +40,21 @@ noun_object
     door
     pant
         plural: pant
+    card
+    item
+    deed
+    artifact
+    weapon
+    armor
+    shield
+    ring
+    sword
+    legendary artifact
+    legendary weapon
+    ring of orbs no-fold
+    mechanical bull
+    coin
+    talisman
 
 noun_building
     ?collective: district
@@ -50,6 +66,7 @@ noun_building
     factory
         plural: factories
     shop
+    graveyard
 
 noun_animal
     ?collective: group
@@ -128,6 +145,8 @@ noun_vegetable
     pumpkin
     gourd
     pepper
+    goddamn mushroom
+
 
 noun_fruit
     ?collective: bunch
@@ -146,6 +165,35 @@ noun_fruit
         plural: kiwi fruit
     strawberry
         plural: strawberries
+
+
+noun_misc
+    Bro
+    Mom
+    royalty
+    Queen
+    guardian
+    parent
+    Dad
+    opponent
+    irrelevancy corner
+    monster
+    feat
+    mana
+    creature
+    god
+    meme
+    red mile
+    deck
+    arm
+    mystery
+    token
+    shrubbery
+    Blue Lady
+    gem
+    egg
+    turn
+    head
 
 // ####################################################
 // ABSTRACT

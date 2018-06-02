@@ -44,6 +44,7 @@ verb_action
     pet
         pc: pett
     sample
+        pc: sampl
     imagine
         pc: imagin
     tap
@@ -93,7 +94,7 @@ verb_action
         tast
     caress
     fondle
-        fondl
+        pc: fondl
     hydrate
         pc: hydrat
     placate
