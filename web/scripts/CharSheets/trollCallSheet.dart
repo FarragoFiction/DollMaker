@@ -29,15 +29,21 @@ class TrollCallSheet extends CharSheet {
     }
 
     Future<Null> setup() async {
-        String fact1String = await randomFact();
-        String fact2String = await randomFact();
-        String fact3String = await randomFact();
+
         Colour color = new Colour.from(tint)..setHSV(tint.hue, 0.2, 1.0 );
         name = new TextLayer("Name",nameForDoll().toUpperCase(),345.0,470.0, fontSize: 60, maxWidth: 100, fontName: "trollcall", emphasis: emphasis,fontColor: color);
-        fact1 = new TextLayer("Fact1",fact1String,370.0,130.0, fontSize: 25, maxWidth: 220, fontName: "trollcall", emphasis: emphasis,fontColor: color);
-        fact2 = new TextLayer("Fact2",fact2String,370.0,210.0, fontSize: 25, maxWidth: 220, fontName: "trollcall", emphasis: emphasis,fontColor:color);
-        fact3 = new TextLayer("Fact3",fact3String,370.0,290.0, fontSize: 25, maxWidth: 220, fontName: "trollcall", emphasis: emphasis,fontColor: color);
+        fact1 = new TextLayer("Fact1","",370.0,130.0, fontSize: 25, maxWidth: 220, fontName: "trollcall", emphasis: emphasis,fontColor: color);
+        fact2 = new TextLayer("Fact2","",370.0,210.0, fontSize: 25, maxWidth: 220, fontName: "trollcall", emphasis: emphasis,fontColor:color);
+        fact3 = new TextLayer("Fact3","",370.0,290.0, fontSize: 25, maxWidth: 220, fontName: "trollcall", emphasis: emphasis,fontColor: color);
+        setFacts();
+    }
 
+    Future<Null> setFacts() async {
+        if(textEngine != null) textEngine.setSeed(doll.seed);
+
+        fact1.text = await randomFact();
+        fact2.text = await randomFact();
+        fact3.text = await randomFact();
     }
 
 
@@ -84,6 +90,7 @@ class TrollCallSheet extends CharSheet {
         if(textEngine == null) {
             textEngine = new TextEngine();
             await textEngine.loadList("trollcall");
+            textEngine.setSeed(doll.seed);
         }
 
         return "${textEngine.phrase("TrollCall")}";
@@ -147,6 +154,7 @@ class TrollCallSheet extends CharSheet {
             canvas = new CanvasElement(width: width, height: height);
             canvas.className = "cardCanvas";
         }
+        setFacts();
         if(container != null) {
             print("appending canvas to container $container");
             container.append(canvas);
