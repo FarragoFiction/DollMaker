@@ -28,9 +28,9 @@ Future<Null> drawSheet() async {
     innerDiv.append(sheet.makeForm());
     querySelector("#contents").append(innerDiv);
 
-    /*
-    for(int i = 0; i<50; i++) {
+
+    for(int i = 0; i<15; i++) {
         String srt = await sheet.randomFact();
         print(srt);
-    }*/
+    }
 }

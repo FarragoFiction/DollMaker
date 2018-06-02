@@ -91,7 +91,7 @@ verb_action
     sample
         pc: sampl
     taste
-        tast
+        pc: tast
     caress
     fondle
         pc: fondl

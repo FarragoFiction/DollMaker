@@ -35,7 +35,7 @@ class TrollCallSheet extends CharSheet {
         fact1 = new TextLayer("Fact1","",370.0,130.0, fontSize: 25, maxWidth: 220, fontName: "trollcall", emphasis: emphasis,fontColor: color);
         fact2 = new TextLayer("Fact2","",370.0,210.0, fontSize: 25, maxWidth: 220, fontName: "trollcall", emphasis: emphasis,fontColor:color);
         fact3 = new TextLayer("Fact3","",370.0,290.0, fontSize: 25, maxWidth: 220, fontName: "trollcall", emphasis: emphasis,fontColor: color);
-        setFacts();
+        await setFacts();
     }
 
     Future<Null> setFacts() async {
@@ -154,6 +154,7 @@ class TrollCallSheet extends CharSheet {
             canvas = new CanvasElement(width: width, height: height);
             canvas.className = "cardCanvas";
         }
+        tint = doll.associatedColor;
         setFacts();
         if(container != null) {
             print("appending canvas to container $container");
