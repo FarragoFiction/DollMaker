@@ -15,6 +15,8 @@ noun
     @noun_food
     @noun_object
     @noun_building
+    @noun_quadmate
+
 
 noun_object
     ball
@@ -95,6 +97,14 @@ noun_animal
 noun_food
     @noun_vegetable
     @noun_fruit
+
+
+noun_quadmate
+    moirail
+    kismesis
+        plural: kismesises
+    matesprit
+    auspistice
 
 noun_vegetable
     ?collective: bunch

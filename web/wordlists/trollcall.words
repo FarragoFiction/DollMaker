@@ -4,9 +4,44 @@ TextEngine Word List
 @verbs
 
 TrollCall
-    #verb_action@pastThird# a #noun#: 0.3
-    #verb# #noun#: 0.3
-    spell '#noun#' right on the first try.: 0.3
+    Is part #noun#: 0.3
+    Master of the #noun#: 0.3
+    Spells '#noun#' right on the first try.: 0.3
+    Practices #verb@continuous# the #noun# every #timeframe.: 0.3
+    Been in detention their whole life.: 0.1
+    Imitation #noun# bracelet.: 0.3
+    13 #noun@plural at last count: 0.3
+    #verb@presentThird# once a #timeframe. :0.3
+    Sleeps once a week. :0.1
+    Does not #verb# #noun@plural. :0.3
+    Aspiring #noun#. :0.3
+    #qualifier# reblogs #noun# posts: 0.3
+    Keeps hydrated: 0.1
+    Omnicidal except towards #noun@plural# :0.3
+    Has a soft spot for #effect# #noun@plural# :0.3
+    Has a soft spot for #verb@continuous# #noun@plural# :0.3
+    #qualifier# into #verb@continuous# #noun@plural# :0.3
+    #qualifier# #verb@continuous# when you aren't looking
+    #qualifier# into #effect# #noun@plural# :0.3
+    #qualifier# #effect# when you aren't looking :0.3
+    #qualifier# a sweetheart: 0.1
+    Ask them about #verb@continuous#  #noun@plural if you can spare an hour:0.3
+    Ask them about #effect#  #noun@plural if you can spare an hour:0.3
+    Is currently #effect#: 0.3
+    Never #verb@continuous#. Ever.: 0.3
+    Has two #noun_quadmate@plural#s. 0.3
+    Is a good #noun_quadmate#. 0.3
+    Is a bad #noun_quadmate#. 0.3
 
+qualifier
+    probably
+    really
+    actually
+    always
+    never
 
-
+timeframe:
+    week
+    day
+    perigree
+    sweep
