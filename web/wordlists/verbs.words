@@ -44,6 +44,83 @@ verb_action
     pet
         pc: pett
     sample
+    imagine
+        pc: imagin
+    tap
+    use
+        pc: us
+    discard
+    draw
+    imbibe
+        pc: imbib
+    create
+        pc: creat
+    devour
+    vore
+        pc: vor
+    scatter
+    shred
+    place
+        pc: plac
+    select
+    choose
+        past: chose
+    levitate
+        pc: levitat
+    burn
+    throw
+    place
+    humiliate
+        pc: humilat
+    dominate
+        pc: dominat
+    oggle
+    auto-parry
+    wear
+    flip
+    fondly regard
+    retrieve
+        pc: retriev
+    slay
+    defeat
+    grab
+    order
+    steal
+    smell
+    sample
+        pc: sampl
+    taste
+        tast
+    caress
+    fondle
+        fondl
+    hydrate
+        pc: hydrat
+    placate
+        pc: placat
+    handle
+    pirouette
+        pc: piroutt
+    entrench
+    crumple
+        pc: crumpl
+    shatter
+    drop
+    farm
+    sign
+    pile
+        pc: pil
+    smash
+    resist
+    sip
+    understand
+    contemplate
+        pc: contemplat
+    murder
+    elevate
+       pc: elevat
+    enslave
+        pc: enslav
 
 verb_travel
     walk

@@ -15,6 +15,8 @@ dependencies:
     git: git://github.com/jadedResearcher/DollLibCorrect.git
   RenderingLib:
     git: git://github.com/jadedResearcher/RenderingLib.git
+  LoaderLib:
+      git: git://github.com/FarragoFiction/LoaderLib.git
   TextEngine:
       git: git://github.com/FarragoFiction/TextEngine.git
 

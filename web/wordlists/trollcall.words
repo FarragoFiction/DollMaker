@@ -1,0 +1,12 @@
+TextEngine Word List
+
+@nouns
+@verbs
+
+TrollCall
+    #verb_action@pastThird# a #noun#: 0.3
+    #verb# #noun#: 0.3
+    spell '#noun#' right on the first try.: 0.3
+
+
+

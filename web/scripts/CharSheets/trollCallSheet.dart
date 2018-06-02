@@ -82,9 +82,9 @@ class TrollCallSheet extends CharSheet {
 
     Future<String> randomFact() async{
         TextEngine textEngine = new  TextEngine();
-        await textEngine.loadList("headcanon");
+        await textEngine.loadList("trollcall");
 
-        return "Is PL's thing working? ${textEngine.phrase("JRheadcanon")}";
+        return "${textEngine.phrase("TrollCall")}";
     }
 
     //obsessed with nouns. verbs a noun every single day. JR did this
