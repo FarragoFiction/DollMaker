@@ -4,8 +4,8 @@ TextEngine Word List
 @verbs
 
 TrollCall
-    Is part #noun#: 0.3
-    Master of the #noun#: 0.3
+    #simpleNounAddition# #noun#: 0.5
+    #qualifier# #simpleNounAddition# #noun#: 0.5
     Spells '#noun#' right on the first try.: 0.3
     Practices #verb@continuous# the #noun# every #timeframe#.: 0.3
     Practices to be a #proffession# every #timeframe#.: 0.3
@@ -16,7 +16,6 @@ TrollCall
     #verb@presentThird# once a #timeframe#. :0.3
     Sleeps once a week. :0.1
     Does not #verb# #noun@plural#. :0.3
-    Aspiring #noun#. :0.3
     Aspiring #proffession#. :0.3
     #qualifier# reblogs #noun# posts: 0.3
     Keeps hydrated: 0.1
@@ -64,6 +63,21 @@ proffession
     Rebel
     Firebrigand
     Cultist
+
+simpleNounAddition
+    Is part
+    Owns a small
+    Addicted to
+    Aspiring
+    Master of the
+    Owns a single
+    Afraid of
+    Enamored with
+    Decorates their hive with
+    Has a statue of a
+    Hates every
+    Absolutely Hates every
+    Can't stand any
 
 qualifier
     probably

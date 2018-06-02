@@ -1,7 +1,7 @@
 TextEngine Word List
 
-?plural: ?MAIN?s
-?collective: pile
+?plural:?MAIN?s
+?collective:pile
 
 noun_all
     @noun
