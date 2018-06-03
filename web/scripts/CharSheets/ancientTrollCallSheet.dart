@@ -4,10 +4,12 @@ import "CharSheet.dart";
 import 'dart:async';
 import "BarLayer.dart";
 import 'dart:html';
+import 'package:TextEngine/TextEngine.dart';
 
 class TrollCallSheetAncient extends CharSheet {
 
 
+    TextEngine textEngine;
     @override
     int width = 385;
     @override
@@ -24,16 +26,26 @@ class TrollCallSheetAncient extends CharSheet {
 
     TrollCallSheetAncient(Doll doll) : super(doll) {
         tint = doll.associatedColor;
-        String fact1String = randomFact();
-        String fact2String = randomFact();
-        String fact3String = randomFact();
+    }
+
+    Future<Null> setup() async {
         Colour color = new Colour.from(tint)..setHSV(tint.hue, 0.2, 1.0 );
         name = new TextLayer("Name",nameForDoll().toUpperCase(),250.0,150.0, justification: "right", fontSize: 30, maxWidth: 50, fontName: "trollcall", emphasis: emphasis,fontColor: color);
-        fact1 = new TextLayer("Fact1",fact1String,160.0,45.0, fontSize: 12, maxWidth: 160, fontName: "trollcallNotBold", emphasis: emphasis,fontColor: color);
-        fact2 = new TextLayer("Fact2",fact2String,160.0,70.0, fontSize: 12, maxWidth: 160, fontName: "trollcallNotBold", emphasis: emphasis,fontColor:color);
-        fact3 = new TextLayer("Fact3",fact3String,160.0,95.0, fontSize: 12, maxWidth: 160, fontName: "trollcallNotBold", emphasis: emphasis,fontColor: color);
+        fact1 = new TextLayer("Fact1","",160.0,45.0, fontSize: 12, maxWidth: 160, fontName: "trollcallNotBold", emphasis: emphasis,fontColor: color);
+        fact2 = new TextLayer("Fact2","",160.0,70.0, fontSize: 12, maxWidth: 160, fontName: "trollcallNotBold", emphasis: emphasis,fontColor:color);
+        fact3 = new TextLayer("Fact3","",160.0,95.0, fontSize: 12, maxWidth: 160, fontName: "trollcallNotBold", emphasis: emphasis,fontColor: color);
+        await setFacts();
 
     }
+
+    Future<Null> setFacts() async {
+        if(textEngine != null) textEngine.setSeed(doll.seed);
+
+        fact1.text = await randomFact();
+        fact2.text = await randomFact();
+        fact3.text = await randomFact();
+    }
+
 
 
     Future<CanvasElement> drawSymbol() async {
@@ -138,6 +150,8 @@ class TrollCallSheetAncient extends CharSheet {
             print("appending canvas to container $container");
             container.append(canvas);
         }
+        tint = doll.associatedColor;
+        setFacts();
 
         canvas.context2D.clearRect(0,0,width,height);
 

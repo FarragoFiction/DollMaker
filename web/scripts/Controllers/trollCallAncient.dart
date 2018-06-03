@@ -20,6 +20,7 @@ Future<Null> drawSheet() async {
         d = new HomestuckTrollDoll();
     }
     sheet = new TrollCallSheetAncient(d); //thanks ancient
+    await sheet.setup();
     Element innerDiv  = new DivElement();
     innerDiv.className = "cardWithForm";
     await sheet.draw(innerDiv);
