@@ -150,8 +150,11 @@ class TrollCallSheetAncient extends CharSheet {
             print("appending canvas to container $container");
             container.append(canvas);
         }
-        tint = doll.associatedColor;
-        setFacts();
+        //if i just loaded the doll, change tint, otherwise keep it(could be users)
+        if(dollDirty) {
+            tint = doll.associatedColor;
+            setFacts();
+        }
 
         canvas.context2D.clearRect(0,0,width,height);
 

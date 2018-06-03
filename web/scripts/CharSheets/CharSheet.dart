@@ -30,6 +30,7 @@ abstract class CharSheet {
     Colour tint;
     AnchorElement saveLink;
 
+
     CharSheet(Doll this.doll) {
         rand = new Random();
         tint = new Colour(rand.nextInt(255),rand.nextInt(255), rand.nextInt(255));

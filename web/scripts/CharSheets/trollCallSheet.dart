@@ -154,8 +154,11 @@ class TrollCallSheet extends CharSheet {
             canvas = new CanvasElement(width: width, height: height);
             canvas.className = "cardCanvas";
         }
-        tint = doll.associatedColor;
-        setFacts();
+        //if i just loaded the doll, change tint, otherwise keep it(could be users)
+        if(dollDirty) {
+            tint = doll.associatedColor;
+            setFacts();
+        }
         if(container != null) {
             print("appending canvas to container $container");
             container.append(canvas);
