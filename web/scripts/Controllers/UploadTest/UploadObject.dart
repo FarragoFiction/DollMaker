@@ -24,7 +24,8 @@ class UploadObject {
     JSONObject toJSON() {
         JSONObject json = new JSONObject();
         json["name"] = creatorNameInput.value;
-        json["website"] = creatorNameWebsite.value;
+        //ignore
+        //json["website"] = creatorNameWebsite.value;
 
         List<JSONObject> fileUploadObjectsArray = new List<JSONObject>();
         for(FileUploadObject f in fileUploadObjects) {

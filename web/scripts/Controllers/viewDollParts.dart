@@ -132,7 +132,7 @@ void drawAllImagesForPart() {
             //auto async
             img.style.border = "3px solid black";
 
-            img.src = "images/Homestuck/symbol/bg.png";
+            img.src = "images/Homestuck/Symbol/bg.png";
             innerContainer.append(img);
         }
 
