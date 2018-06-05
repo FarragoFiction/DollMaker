@@ -126,18 +126,21 @@ class UploadObject {
     void drawCreatorInput() {
         DivElement creator = new DivElement();
         myElement.append(creator);
-        LabelElement label = new LabelElement()..text = "How You Want To Be Credited:";
+        SpanElement label = new SpanElement()..setInnerHtml('Credits DataString (optional)');
+        AnchorElement a = new AnchorElement(href: "http://farragofiction.com/CreditSim/create.html")..text = "Make DataString"..target="_blank";
+        label.append(a);
         creatorNameInput = new InputElement();
         creatorNameInput.classes.add("uploadInput");
 
+        //deprecated
         LabelElement label2 = new LabelElement()..text = "Your Tumblr/Website/Etc:";
         creatorNameWebsite = new InputElement();
         creatorNameWebsite.classes.add("uploadInput");
 
         creator.append(label);
         creator.append(creatorNameInput);
-        creator.append(label2);
-        creator.append(creatorNameWebsite);
+        //creator.append(label2);
+       // creator.append(creatorNameWebsite);
     }
 
 
