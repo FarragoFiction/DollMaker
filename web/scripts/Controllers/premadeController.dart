@@ -96,7 +96,7 @@ void pickCategory() {
 Future<Null> slurpDolls() async{
     //yes, i know it' sspelled wrong. no, i don't care.
     await HttpRequest.getString(PathUtils.adjusted("DollHoarde/${chosenCategory}.txt")).then((String data) {
-        List<String> parts = data.split("\n");
+        List<String> parts = data.split(new RegExp("\n|\r"));
         for(String line in parts) {
             if(line.isNotEmpty) {
                 try {

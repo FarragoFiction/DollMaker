@@ -19,7 +19,7 @@ Future<Null> main() async {
     uploaderDiv = querySelector("#uploader");
     print("going to load doll");
     await loadDoll();
-    //shitpost(); //enable this when i need to know all directories
+    shitpost(); //enable this when i need to know all directories
     makeUploadObjects();
 }
 
@@ -45,6 +45,10 @@ void shitpost() {
         Doll doll = Doll.randomDollOfType(i);
         oneOfEachDollDirectory.addAll(doll.getAllNeededDirectories());
     }
+    oneOfEachDollDirectory.addAll(Doll.randomDollOfType(25).getAllNeededDirectories());
+    oneOfEachDollDirectory.addAll(Doll.randomDollOfType(26).getAllNeededDirectories());
+    oneOfEachDollDirectory.addAll(Doll.randomDollOfType(24).getAllNeededDirectories());
+
 
     int i = 0;
     for(String text in oneOfEachDollDirectory) {

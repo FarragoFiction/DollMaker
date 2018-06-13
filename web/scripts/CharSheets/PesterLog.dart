@@ -122,7 +122,7 @@ class PesterLog extends CharSheet {
         double lineHeight = ctx
             .measureText("M")
             .width * 1.2;
-        List<String> lines = chat.split("\n");
+        List<String> lines = chat.split(new RegExp("\n|\r"));
         String player1Start = chatHandleShort(chatHandle1);
         String player2Start = chatHandleShortCheckDup(chatHandle2, player1Start);
         for (int i = 0; i < lines.length; ++i) {
