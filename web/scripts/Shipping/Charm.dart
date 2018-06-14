@@ -16,7 +16,7 @@ class Charm {
         if(_allCharms == null || _allCharms.isEmpty) {
             initCharms();
         }
-        return _allCharms;
+        return new List.from(_allCharms); //don't let ppl edit this
     }
     static String folder = "images/Charms/";
     String name;

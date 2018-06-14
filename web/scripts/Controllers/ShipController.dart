@@ -1,3 +1,5 @@
+import '../Shipping/Participant.dart';
+import '../Shipping/Trove.dart';
 import "dart:html";
 import "../navbar.dart";
 import "dart:async";
@@ -6,10 +8,10 @@ import 'package:DollLibCorrect/DollRenderer.dart';
 Element container;
 Element childContainer;
 
-Doll doll1;
-Doll doll2;
-Doll child;
+//TODO eventually let this be an array
 Random rand = new Random();
+Trove trove;
+int numberParticipants = 2;
 
 CanvasElement canvas1;
 CanvasElement canvas2;
@@ -20,98 +22,18 @@ Future<Null> main() async{
     await Loader.preloadManifest();
     container = querySelector("#contents");
     childContainer = new DivElement();
-    initParents();
-    drawParents();
     ship();
     container.append(childContainer);
 }
 
 void ship() {
         container.appendText("TODO");
-}
-
-void initParents() {
-    doll1 = Doll.randomDollOfType(rand.pickFrom(Doll.allDollTypes));
-    if(rand.nextBool()) {
-        doll2 = Doll.randomDollOfType(rand.pickFrom(Doll.allDollTypes));
-    }else {
-        doll2 = Doll.randomDollOfType(doll1.renderingType);
-    }
-}
-
-void drawParents() {
-    drawOneParent(doll1);
-    drawOneParent(doll2);
-}
-
-void drawOneParent(Doll parent) {
-    DivElement div = new DivElement();
-    div.classes.add("breedingParent");
-    CanvasElement parentCanvas = new CanvasElement(width: parent.width, height: parent.height);
-    parentCanvas.style.border = "3px solid #000000";
-
-    ButtonElement loadButton = new ButtonElement()..text = "Load";
-    loadButton.style.display = "inline-block";
-    ButtonElement randomizeButton = new ButtonElement()..text = "Randomize";
-    randomizeButton.style.display = "inline-block";
-    ButtonElement randomizeTypeButton = new ButtonElement()..text = "Randomize Type";
-    randomizeTypeButton.style.display = "inline-block";
-
-
-
-    TextAreaElement dataBox = new TextAreaElement();
-    dataBox.style.display = "block";
-    dataBox.value = "${parent.toDataBytesX()}";
-    loadButton.onClick.listen((Event e) {
-        Renderer.clearCanvas(parentCanvas);
-        Doll tmp = Doll.loadSpecificDoll(dataBox.value);
-        if(parent == doll1) doll1 = tmp;
-        if(parent == doll2) doll2 = tmp;
-
-        parent = tmp;
-        parentCanvas.width = parent.width;
-        parentCanvas.height = parent.height;
-
-        DollRenderer.drawDoll(parentCanvas, parent);
-    });
-
-    randomizeButton.onClick.listen((Event e) {
-        Renderer.clearCanvas(parentCanvas);
-        Doll tmp = Doll.randomDollOfType(parent.renderingType);
-        if(parent == doll1) doll1 = tmp;
-        if(parent == doll2) doll2 = tmp;
-
-        parent = tmp;        parentCanvas.width = parent.width;
-        parentCanvas.height = parent.height;
-
-        DollRenderer.drawDoll(parentCanvas, parent);
-        dataBox.value = "${parent.toDataBytesX()}";
-
-    });
-
-    randomizeTypeButton.onClick.listen((Event e) {
-        Renderer.clearCanvas(parentCanvas);
-        Doll tmp = Doll.randomDollOfType(rand.pickFrom(Doll.allDollTypes));
-        if(parent == doll1) doll1 = tmp;
-        if(parent == doll2) doll2 = tmp;
-
-        parent = tmp;
-        parentCanvas.width = parent.width;
-        parentCanvas.height = parent.height;
-
-        DollRenderer.drawDoll(parentCanvas, parent);
-        dataBox.value = "${parent.toDataBytesX()}";
-    });
-
-    div.append(parentCanvas);
-    div.append(dataBox);
-    div.append(loadButton);
-    div.append(randomizeButton);
-    div.append(randomizeTypeButton);
-
-    container.append(div);
-
-    DollRenderer.drawDoll(parentCanvas, parent);
+        List<Participant> p = new List<Participant>();
+        for(int i = 0; i<numberParticipants; i++) {
+            new Participant("Name$i", Doll.randomDollOfType(rand.pickFrom(Doll.allDollTypes)));
+        }
+        trove = new Trove(p);
+        trove.drawParticipants(container);
 }
 
 
