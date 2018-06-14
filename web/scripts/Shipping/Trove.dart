@@ -2,6 +2,7 @@ import 'Charm.dart';
 import 'Participant.dart';
 import 'dart:html';
 import 'package:CommonLib/Random.dart';
+import "dart:math" as Math;
 
 /*
 
@@ -30,6 +31,7 @@ class Trove {
     }
 
     void drawParticipants(Element element) {
+        print("drawing participants");
         for(Participant p in participants) {
             p.draw(element);
         }
@@ -42,7 +44,8 @@ class Trove {
         Random rand = new Random(seed);
         copyOfAllCharms.shuffle(rand);
         int i = rand.nextInt(13); //between zero and 13 charms
-        charms = copyOfAllCharms.sublist(0,i); //what does this do if you ask for more than there are elements?
+        i = Math.min(i, copyOfAllCharms.length-1); //don't be bigger than list
+        charms = copyOfAllCharms.sublist(0,i);
     }
 
 }

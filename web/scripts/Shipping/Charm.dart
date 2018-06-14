@@ -23,7 +23,9 @@ class Charm {
 
     String get imgLocation => "$folder$name.png";
 
-    Charm(String this.name);
+    Charm(String this.name) {
+        _allCharms.add(this);
+    }
 
     static initCharms() {
         new Charm("Heart");

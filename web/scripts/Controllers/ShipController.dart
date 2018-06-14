@@ -27,10 +27,9 @@ Future<Null> main() async{
 }
 
 void ship() {
-        container.appendText("TODO");
         List<Participant> p = new List<Participant>();
         for(int i = 0; i<numberParticipants; i++) {
-            new Participant("Name$i", Doll.randomDollOfType(rand.pickFrom(Doll.allDollTypes)));
+           p.add( new Participant("Name$i", Doll.randomDollOfType(rand.pickFrom(Doll.allDollTypes))));
         }
         trove = new Trove(p);
         trove.drawParticipants(container);
