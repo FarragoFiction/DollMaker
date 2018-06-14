@@ -33,6 +33,7 @@ void ship() {
         }
         trove = new Trove(p);
         trove.drawParticipants(container);
+        trove.drawCharms(container);
 }
 
 

@@ -1,3 +1,4 @@
+import 'dart:html';
 
 /*
 A charm is repesented by a single symbol.
@@ -27,8 +28,16 @@ class Charm {
         _allCharms.add(this);
     }
 
+    //for editing, not in a canvas yet.
+    void draw(Element element) {
+        ImageElement img = new ImageElement(src:imgLocation);
+        element.append(img);
+    }
+
     static initCharms() {
-        new Charm("Heart");
+        new Charm("Hearts");
         new Charm("Spades");
+        new Charm("Diamonds");
+        new Charm("Clubs");
     }
 }

@@ -1,3 +1,4 @@
+import 'Trove.dart';
 import 'dart:html';
 import 'package:DollLibCorrect/DollRenderer.dart';
 
@@ -8,6 +9,7 @@ class Participant {
     Doll doll;
     String name;
     //??? gender???
+    Trove trove; //so it knows to rewrite it if you change the doll
     Participant(String this.name, Doll this.doll);
 
     void draw(Element element) {
@@ -36,6 +38,7 @@ class Participant {
             parentCanvas.height = doll.height;
 
             DollRenderer.drawDoll(parentCanvas, doll);
+            trove.setCharms();
         });
 
         randomizeButton.onClick.listen((Event e) {
@@ -45,6 +48,7 @@ class Participant {
             parentCanvas.height = doll.height;
 
             DollRenderer.drawDoll(parentCanvas, doll);
+            trove.setCharms();
             dataBox.value = "${doll.toDataBytesX()}";
 
         });
@@ -58,6 +62,7 @@ class Participant {
 
             DollRenderer.drawDoll(parentCanvas, doll);
             dataBox.value = "${doll.toDataBytesX()}";
+            trove.setCharms();
         });
 
         div.append(parentCanvas);
