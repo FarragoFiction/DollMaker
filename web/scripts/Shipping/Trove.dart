@@ -163,8 +163,7 @@ class Trove {
         List<Charm> charmsByType = Charm.getAllCharmsByType(type);
         charmsByType.forEach((Charm c) {
             OptionElement o = new OptionElement()..value = c.name..text = c.name;
-            ImageElement img = new ImageElement(src: c.imgLocation);
-            o.append(img);
+            o.style.backgroundImage = "url(${c.imgLocation})";
             charmSelect.append(o);
         });
         charmSelect.options.first.selected = true;

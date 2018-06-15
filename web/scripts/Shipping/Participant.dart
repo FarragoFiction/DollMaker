@@ -76,6 +76,15 @@ class Participant{
 
         element.append(div);
 
+        LabelElement nameLabel = new LabelElement()..text = "Name: ";
+        TextInputElement nameElement = new TextInputElement()..value = name;
+
+        div.append(nameLabel)..append(nameElement);
+        nameElement.onChange.listen((Event e) {
+            _name = nameElement.value;
+            trove.createStory(null);
+        });
+
         DollRenderer.drawDoll(parentCanvas, doll);
     }
 }
