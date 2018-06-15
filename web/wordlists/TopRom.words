@@ -9,8 +9,8 @@ BeginningFirst
 MiddleFirst
     #Transition#, #Middle# :0.5
 
-EndingFirst
-    #Conclusion#, #Ending# :0.5
+EndFirst
+    #Conclusion#, #End# :0.5
 
 Introduction
     In the beginning

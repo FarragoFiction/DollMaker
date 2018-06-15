@@ -52,7 +52,7 @@ class Trove {
 
     Future<String> getStory() async {
         //pass this to phrases
-        String ret = "";
+        String ret = "${charms.join(',')} ";
         Random rand = new Random(seed);
         try {
             TextStory story = new TextStory();
@@ -62,9 +62,10 @@ class Trove {
             //top level things everything can access rember to import in words files
             await textEngine.loadList("TopRom");
             for (Charm c in charms) {
+                print("loading ${c.name}");
                 await textEngine.loadList(c.name);
             }
-            print("${textEngine.sourceWordLists}");
+           // print("${textEngine.loadedFiles}");
             //begiing = how they met
             //middle = shit they did courting
             //end = how their relationship stabilized
@@ -88,16 +89,16 @@ class Trove {
         int numLines = getRandomNumberOfLines();
         ret = "$ret ${textEngine.phrase("${section}First", story: story)}";
         for(int i = 0; i< numLines; i++) {
-            print("number of lines is $numLines and i'm on $i");
+           // print("number of lines is $numLines and i'm on $i");
             ret = "$ret ${textEngine.phrase(section, story: story)}";
         }
         return ret;
     }
 
     int getRandomNumberOfLines() {
-        int ret = 1;
+        int ret = 0;
         int max = 1;
-        max += charms.length;
+        max += (charms.length/2).round();
         max = Math.min(5, max);
         Random rand = new Random(seed);
         //lower numbers are most common
@@ -165,7 +166,7 @@ class Trove {
         int ret = 1;
         //lower numbers are most common
         for(int i = 0; i <13; i++) {
-            if(rand.nextDouble() < .9) {
+            if(rand.nextDouble() < .6) {
                 ret++;
             }else {
                 break; //pl has taught me dangerous things

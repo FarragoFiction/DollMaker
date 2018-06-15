@@ -76,6 +76,11 @@ class Charm {
         element.append(img);
     }
 
+    @override
+    String toString() {
+        return name;
+    }
+
     static initCharms() {
         new Charm("Hearts", troll: true, human: true);
         new Charm("Spades", troll: true);
@@ -95,7 +100,20 @@ class Charm {
         new Charm("CharmRainbows", leprechaun: true);
         new Charm("CharmPotsOfGold", leprechaun: true);
 
-        //TODO have shogunate stuff
+        new Charm("Auberiginastycitiy", dynamo: true);
+        new Charm("Smile", dynamo: true);
+        new Charm("Poop", dynamo: true);
+        new Charm("Okay", dynamo: true);
+        new Charm("hatched_chick", dynamo: true);
+        new Charm("Fear", dynamo: true);
+        new Charm("Thumb", dynamo: true);
+        new Charm("Typosity", dynamo: true);
+        new Charm("Dab", dynamo: true);
+        new Charm("Clown", dynamo: true);
+        new Charm("Horse", dynamo: true);
+        new Charm("100", dynamo: true);
+
+
 
         //TODO make a vaccilation charm (which has two random subsets, have it set by trove)
 
