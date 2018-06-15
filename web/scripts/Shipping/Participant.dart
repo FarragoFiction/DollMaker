@@ -9,6 +9,7 @@ class Participant{
     static String REPLACE = "REPLACE";
     Doll doll;
     String _name;
+    CanvasElement cachedDollCanvas;
     //??? gender???
 
     String get name => "${_name.replaceAll(REPLACE,doll.name)}";
@@ -16,10 +17,11 @@ class Participant{
     Participant(String this._name, Doll this.doll);
 
     void draw(Element element) {
+        cachedDollCanvas = null; //reload l8r, don't do now cuz this isn't asysnc
         DivElement div = new DivElement();
         div.classes.add("breedingParent");
-        CanvasElement parentCanvas = new CanvasElement(width: doll.width, height: doll.height);
-        parentCanvas.style.border = "3px solid #000000";
+        CanvasElement tmpCanvas = new CanvasElement(width: doll.width, height: doll.height);
+        tmpCanvas.style.border = "3px solid #000000";
 
         ButtonElement loadButton = new ButtonElement()..text = "Load";
         loadButton.style.display = "inline-block";
@@ -34,41 +36,41 @@ class Participant{
         dataBox.style.display = "block";
         dataBox.value = "${doll.toDataBytesX()}";
         loadButton.onClick.listen((Event e) {
-            Renderer.clearCanvas(parentCanvas);
+            Renderer.clearCanvas(tmpCanvas);
             doll = Doll.loadSpecificDoll(dataBox.value);
 
-            parentCanvas.width = doll.width;
-            parentCanvas.height = doll.height;
+            tmpCanvas.width = doll.width;
+            tmpCanvas.height = doll.height;
 
-            DollRenderer.drawDoll(parentCanvas, doll);
+            DollRenderer.drawDoll(tmpCanvas, doll);
             trove.setCharmsRandom();
         });
 
         randomizeButton.onClick.listen((Event e) {
-            Renderer.clearCanvas(parentCanvas);
+            Renderer.clearCanvas(tmpCanvas);
             doll = Doll.randomDollOfType(doll.renderingType);
-            parentCanvas.width = doll.width;
-            parentCanvas.height = doll.height;
+            tmpCanvas.width = doll.width;
+            tmpCanvas.height = doll.height;
 
-            DollRenderer.drawDoll(parentCanvas, doll);
+            DollRenderer.drawDoll(tmpCanvas, doll);
             trove.setCharmsRandom();
             dataBox.value = "${doll.toDataBytesX()}";
 
         });
 
         randomizeTypeButton.onClick.listen((Event e) {
-            Renderer.clearCanvas(parentCanvas);
+            Renderer.clearCanvas(tmpCanvas);
             Random rand = new Random(); //true random
             doll = Doll.randomDollOfType(rand.pickFrom(Doll.allDollTypes));
-            parentCanvas.width = doll.width;
-            parentCanvas.height = doll.height;
+            tmpCanvas.width = doll.width;
+            tmpCanvas.height = doll.height;
 
-            DollRenderer.drawDoll(parentCanvas, doll);
+            DollRenderer.drawDoll(tmpCanvas, doll);
             dataBox.value = "${doll.toDataBytesX()}";
             trove.setCharmsRandom();
         });
 
-        div.append(parentCanvas);
+        div.append(tmpCanvas);
         div.append(dataBox);
         div.append(loadButton);
         div.append(randomizeButton);
@@ -85,6 +87,6 @@ class Participant{
             trove.createStory(null);
         });
 
-        DollRenderer.drawDoll(parentCanvas, doll);
+        DollRenderer.drawDoll(tmpCanvas, doll);
     }
 }

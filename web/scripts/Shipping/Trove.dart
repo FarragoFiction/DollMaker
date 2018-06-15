@@ -22,13 +22,12 @@ class Trove {
     SelectElement romSelect;
     ButtonElement addCharm;
     SelectElement charmSelect;
+    ImageElement romanticBG;
 
     List<Charm> charms = new List<Charm>();
     Element charmDiv;
     Element storyDiv;
-
-
-
+    CanvasElement canvas;
     int get seed {
         int ret = 0;
         participants.forEach((Participant p) {
@@ -51,7 +50,60 @@ class Trove {
         //TODO eventually have a nice canvas with the participants drawn on and the trove drawn on
         //and then all the text.
         //maybe it looks like a book? a photo albulm? instagram???
+        if(romanticBG == null) {
+            romanticBG = new ImageElement(src: "images/Charms/romanticBG.png");
+            await romanticBG.onLoad;
+        }
         storyDiv.text = await getStory();
+        CanvasElement buffer = new CanvasElement(width: romanticBG.width, height:romanticBG.height);
+        buffer.context2D.drawImage(romanticBG, 0, 0);
+        if(canvas == null) {
+            canvas = new CanvasElement(width: romanticBG.width, height: romanticBG.height);
+            storyDiv.append(canvas);
+        }
+        await drawParticipantsOnCanvas(buffer);
+        await drawTroveOnCanvas(buffer);
+        await drawStoryOnCanvas(buffer, storyDiv.text);
+        canvas.context2D.drawImage(buffer,0,0);
+    }
+
+    Future<Null> drawParticipantsOnCanvas(CanvasElement givenCanvas) async {
+        int x = 0;
+        int groundPos = 300;
+        for(Participant p in participants){
+            print("drawing ${p.name} to the canvas");
+            CanvasElement tmp = new CanvasElement(width: 400, height: 300);
+            //tmp.context2D.fillRect(0,0, 400,300);
+            if(p.cachedDollCanvas == null) {
+                p.cachedDollCanvas = new CanvasElement(width: p.doll.width, height: p.doll.height);
+                await  DollRenderer.drawDoll(p.cachedDollCanvas, p.doll);
+                p.cachedDollCanvas = Renderer.cropToVisible(p.cachedDollCanvas);
+            }
+            await Renderer.drawToFitCentered(tmp, p.cachedDollCanvas);
+            givenCanvas.context2D.drawImage(tmp, x, givenCanvas.height-groundPos);
+            x = givenCanvas.width - tmp.width;
+        }
+    }
+
+    Future<Null> drawStoryOnCanvas(CanvasElement givenCanvas, String story) async{
+
+    }
+
+    Future<Null> drawTroveOnCanvas(CanvasElement givenCanvas) async{
+        int x = 0;
+        int groundPos = 150;
+        int totalWidth = 0;
+        List<ImageElement> allImages = new List<ImageElement>();
+        for(Charm c in charms){
+            ImageElement img = new ImageElement(src: c.imgLocation);
+            await img.onLoad;
+            totalWidth += img.width;
+            allImages.add(img);
+        }
+        int startX = givenCanvas.width - totalWidth;
+        for(ImageElement img in allImages) {
+            givenCanvas.context2D.drawImage(img, startX, givenCanvas.height-groundPos);
+        }
     }
 
     Future<String> getStory() async {
