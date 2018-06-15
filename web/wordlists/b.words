@@ -4,10 +4,10 @@ TextEngine Word List
 @verbs
 //:b:anter and :b:attle :b:ros without honor
 Beginning
-    #noun|var@name1# and #noun|var@name2# meet on the :b:attlefield. : 0.5
+    #noun|var@name1# and #noun|var@name2# meet on the Battlefield. : 0.5
 
 Middle
-    #noun|var@name2#  and #noun|var@name1# :b:anter incessently about who sucks the most. : 0.5
+    #noun|var@name2#  and #noun|var@name1# Banter incessently about who sucks the most. : 0.5
 
 End
-    #noun|var@name1# stabs #noun|var@name2# :b:efore the enemy can. : 0.5
+    #noun|var@name1# stabs #noun|var@name2# Before the enemy can. : 0.5

@@ -170,14 +170,14 @@ class Trove {
         charmSelect.options.first.selected = true;
 
         if(addCharm == null) {
-            addCharm = new ButtonElement()
-                ..text = "Add Charm";
+            addCharm = new ButtonElement()..text = "Add Charm";
+            element.append(addCharm);
+            addCharm.onClick.listen((Event e) {
+                charms.add(Charm.byName(charmSelect.options[charmSelect.selectedIndex].value));
+                drawCharms(null);
+            });
         }
-        element.append(addCharm);
-        addCharm.onClick.listen((Event e) {
-            charms.add(Charm.byName(charmSelect.options[charmSelect.selectedIndex].value));
-            drawCharms(null);
-        });
+
 
 
     }
