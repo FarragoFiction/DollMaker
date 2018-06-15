@@ -17,6 +17,15 @@ how to generate a date.
 it also has two or more dolls as participants, which it uses to seed its random (addative)
  */
 class Trove {
+    static String SHOGUN = "Dynamo";
+    static String TROLL = "Quadrants";
+    static String LEPRECHAUN = "Troves";
+    static String HUMAN = "Human";
+    static String GLORIOUSBULLSHIT = "Glorious Bullshit";
+    static String ANY = "ANY";
+
+
+    static List<String> romanceTypes = <String>[ANY, HUMAN, TROLL, LEPRECHAUN, SHOGUN, GLORIOUSBULLSHIT];
     //only the first two will be named
     List<Participant> participants = new List<Participant>();
     List<Charm> charms = new List<Charm>();
@@ -143,18 +152,30 @@ class Trove {
         Random rand = new Random(seed);
         if(charms == null) charms = new List<Charm>();
         double randomDouble = rand.nextDouble();
-        if(randomDouble > 0.75 || participants.first.doll is HomestuckTrollDoll) {
+        if(participants.first.doll is HomestuckTrollDoll) {
             setCharmsTroll();
-        }else if(randomDouble > 0.5) {
-            setCharmsLeprechaun();
-        }else if(randomDouble > 0.25) {
-            setCharmsShogun();
         }else {
-            setCharmsAll();
+            setCharmsByType(rand.pickFrom(romanceTypes));
         }
         if(charmDiv != null) {
             drawCharms(null);
             createStory(null);
+        }
+    }
+
+    void setCharmsByType(String type) {
+        if(type == TROLL) {
+            setCharmsTroll();
+        }else if(type == HUMAN) {
+            setCharmsHuman();
+        }else if(type == GLORIOUSBULLSHIT) {
+            setCharmsGloriousBullshit();
+        }else if(type == LEPRECHAUN) {
+            setCharmsLeprechaun();
+        }else if (type == SHOGUN) {
+            setCharmsShogun();
+        }else {
+            setCharmsAll();
         }
     }
 
@@ -218,7 +239,25 @@ class Trove {
         }
         ret = Math.min(ret, copyOfAllCharms.length); //don't be bigger than list
         charms = copyOfAllCharms.sublist(0,ret);
+    }
 
+    void setCharmsGloriousBullshit() {
+        print("going to set gb charms");
+        if(charms != null) charms.clear(); //out with the old, make sure to always sync to dolls.
+        List<Charm> copyOfAllCharms = Charm.allGloriousBullshit;
+        Random rand = new Random(seed);
+        copyOfAllCharms.shuffle(rand);
+        int ret = 1;
+        //lower numbers are most common
+        for(int i = 0; i <13; i++) {
+            if(rand.nextDouble() < .5) {
+                ret++;
+            }else {
+                break; //pl has taught me dangerous things
+            }
+        }
+        ret = Math.min(ret, copyOfAllCharms.length); //don't be bigger than list
+        charms = copyOfAllCharms.sublist(0,ret);
     }
 
     void setCharmsTroll() {
@@ -229,7 +268,15 @@ class Trove {
         copyOfAllCharms.shuffle(rand);
         charms.add(copyOfAllCharms.first);
         //TODO though they can also vaccilate, once i implement that
+    }
 
+    void setCharmsHuman() {
+        print("going to set human charms");
+        if(charms != null) charms.clear(); //out with the old, make sure to always sync to dolls.
+        List<Charm> copyOfAllCharms = Charm.allHuman;
+        Random rand = new Random(seed);
+        copyOfAllCharms.shuffle(rand);
+        charms.add(copyOfAllCharms.first);
     }
 
 }
