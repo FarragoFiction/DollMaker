@@ -158,18 +158,18 @@ class Trove {
         List<Charm> copyOfAllCharms = Charm.allCharms;
         Random rand = new Random(seed);
         copyOfAllCharms.shuffle(rand);
-        int i = 1;
+        int ret = 1;
         //lower numbers are most common
         for(int i = 0; i <13; i++) {
-            if(rand.nextDouble() < .5) {
-                i++;
+            if(rand.nextDouble() < .9) {
+                ret++;
             }else {
                 break; //pl has taught me dangerous things
             }
         }
 
-        i = Math.min(i, copyOfAllCharms.length); //don't be bigger than list
-        charms = copyOfAllCharms.sublist(0,i);
+        ret = Math.min(ret, copyOfAllCharms.length); //don't be bigger than list
+        charms = copyOfAllCharms.sublist(0,ret);
 
     }
 
@@ -179,18 +179,18 @@ class Trove {
         List<Charm> copyOfAllCharms = Charm.allLeprechaun;
         Random rand = new Random(seed);
         copyOfAllCharms.shuffle(rand);
-        int i = 3;
+        int ret = 3;
         //lower numbers are most common
         for(int i = 0; i <13; i++) {
             if(rand.nextDouble() < .6) {
-                i++;
+                ret++;
             }else {
                 break; //pl has taught me dangerous things
             }
         }
 
-        i = Math.min(i, copyOfAllCharms.length); //don't be bigger than list
-        charms = copyOfAllCharms.sublist(0,i);
+        ret = Math.min(ret, copyOfAllCharms.length); //don't be bigger than list
+        charms = copyOfAllCharms.sublist(0,ret);
 
     }
 
