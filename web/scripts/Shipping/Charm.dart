@@ -1,3 +1,4 @@
+import 'Trove.dart';
 import 'dart:html';
 
 /*
@@ -12,6 +13,16 @@ a charm also has a name. it's trove will use these to generate text
  */
 
 class Charm {
+    static String SHOGUN = "Dynamo";
+    static String TROLL = "Quadrants";
+    static String LEPRECHAUN = "Troves";
+    static String HUMAN = "Human";
+    static String GLORIOUSBULLSHIT = "Glorious Bullshit";
+    static String ANY = "ANY";
+
+    static List<String> romanceTypes = <String>[ANY, HUMAN, TROLL, LEPRECHAUN, SHOGUN, GLORIOUSBULLSHIT];
+
+
     static List<Charm> _allCharms  = new List<Charm>();
     static List<Charm> get allHuman {
         if(_allCharms == null || _allCharms.isEmpty) {
@@ -57,12 +68,17 @@ class Charm {
 
 
     static String folder = "images/Charms/";
+
+
+
     String name;
     bool human = false;
     bool troll = false;
     bool leprechaun = false;
     bool dynamo = false;
     bool gloriousBullshit = false;
+    //so i can remove myself from it on click
+    Trove trove;
 
     String get imgLocation => "$folder$name.png";
 
@@ -70,10 +86,30 @@ class Charm {
         _allCharms.add(this);
     }
 
+    static List<Charm> getAllCharmsByType(String type) {
+        if(type == TROLL) {
+            return allTroll;
+        }else if(type == HUMAN) {
+            return allHuman;
+        }else if(type == GLORIOUSBULLSHIT) {
+            return allGloriousBullshit;
+        }else if(type == LEPRECHAUN) {
+            return allLeprechaun;
+        }else if (type == SHOGUN) {
+           return allDynamo;
+        }else {
+            return allCharms;
+        }
+    }
+
+
     //for editing, not in a canvas yet.
     void draw(Element element) {
         ImageElement img = new ImageElement(src:imgLocation);
         element.append(img);
+        img.onClick.listen((Event e) {
+            if(trove != null) trove.removeCharm(this);
+        });
     }
 
     @override

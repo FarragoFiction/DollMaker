@@ -17,18 +17,11 @@ how to generate a date.
 it also has two or more dolls as participants, which it uses to seed its random (addative)
  */
 class Trove {
-    static String SHOGUN = "Dynamo";
-    static String TROLL = "Quadrants";
-    static String LEPRECHAUN = "Troves";
-    static String HUMAN = "Human";
-    static String GLORIOUSBULLSHIT = "Glorious Bullshit";
-    static String ANY = "ANY";
-
-
-    static List<String> romanceTypes = <String>[ANY, HUMAN, TROLL, LEPRECHAUN, SHOGUN, GLORIOUSBULLSHIT];
     //only the first two will be named
     List<Participant> participants = new List<Participant>();
     SelectElement romSelect;
+    SelectElement charmSelect;
+
     List<Charm> charms = new List<Charm>();
     Element charmDiv;
     Element storyDiv;
@@ -79,8 +72,6 @@ class Trove {
             //begiing = how they met
             //middle = shit they did courting
             //end = how their relationship stabilized
-            //TODO get a series of phrases, x from begining, x from middle, x from end
-            //TODO pass in name of two characters
             //story ties it all together
             ret = "$ret ${getLines('Beginning', textEngine, story)}\n\n";
             ret = "$ret ${getLines('Middle', textEngine, story)}\n\n";
@@ -92,6 +83,12 @@ class Trove {
             return "ERROR??? In MY RomCom??? It's more likely than you'd think. $e";
         }
 
+    }
+
+    void removeCharm(Charm charm) {
+        print("removing $charm from trove");
+        charms.remove(charm);
+        drawCharms(null);
     }
 
     String getLines(String section, TextEngine textEngine, TextStory story) {
@@ -139,7 +136,7 @@ class Trove {
     void drawRomTypeDropdowns(Element element) {
         romSelect = new SelectElement();
         element.append(romSelect);
-        romanceTypes.forEach((String type) {
+        Charm.romanceTypes.forEach((String type) {
             OptionElement o = new OptionElement()..text = type..value =type;
             romSelect.append(o);
         });
@@ -147,7 +144,30 @@ class Trove {
         romSelect.onInput.listen((Event e) {
             setCharmsByType(romSelect.options[romSelect.selectedIndex].value);
             drawCharms(null);
+            drawCharmDropdowns(element);
         });
+        drawCharmDropdowns(element);
+    }
+
+    void drawCharmDropdowns(Element element) {
+        if(charmSelect == null) {
+            charmSelect = new SelectElement();
+            element.append(charmSelect);
+        }
+        charmSelect.setInnerHtml("");
+        //TODO need to draw all charms of selected
+        String type = "ANY";
+        if(romSelect != null && romSelect.selectedIndex >0) type = romSelect.options[romSelect.selectedIndex].value;
+
+        List<Charm> charmsByType = Charm.getAllCharmsByType(type);
+        charmsByType.forEach((Charm c) {
+            OptionElement o = new OptionElement()..value = c.name;
+            ImageElement img = new ImageElement(src: c.imgLocation);
+            o.append(img);
+            charmSelect.append(o);
+        });
+
+
     }
 
     void drawCharms(Element element) {
@@ -158,6 +178,7 @@ class Trove {
         charmDiv.setInnerHtml(""); //wipe out any already drawn charms
         print("drawing participants");
         for(Charm c in charms) {
+            c.trove = this;
             c.draw(charmDiv);
         }
         createStory(element);
@@ -171,7 +192,7 @@ class Trove {
         } else if(participants.first.doll is HomestuckTrollDoll) {
             setCharmsTroll();
         }else {
-            setCharmsByType(rand.pickFrom(romanceTypes));
+            setCharmsByType(rand.pickFrom(Charm.romanceTypes));
         }
         if(charmDiv != null) {
             drawCharms(null);
@@ -180,21 +201,20 @@ class Trove {
     }
 
     void setCharmsByType(String type) {
-        if(type == TROLL) {
+        if(type == Charm.TROLL) {
             setCharmsTroll();
-        }else if(type == HUMAN) {
+        }else if(type == Charm.HUMAN) {
             setCharmsHuman();
-        }else if(type == GLORIOUSBULLSHIT) {
+        }else if(type == Charm.GLORIOUSBULLSHIT) {
             setCharmsGloriousBullshit();
-        }else if(type == LEPRECHAUN) {
+        }else if(type == Charm.LEPRECHAUN) {
             setCharmsLeprechaun();
-        }else if (type == SHOGUN) {
+        }else if (type == Charm.SHOGUN) {
             setCharmsShogun();
         }else {
             setCharmsAll();
         }
     }
-
 
     void setCharmsAll() {
         print("going to set absolutely random charms");
