@@ -2,6 +2,7 @@ TextEngine Word List
 
 @nouns
 @verbs
+//name1 is dominent, does most actions. pranks
 
 Beginning
     #noun|var@name1# pulls an amazing prank involving a #noun#, a #noun# and a   #noun|var@romanticItem# on  #noun|var@name2#. It's completely amazing. : 0.5

@@ -4,10 +4,10 @@ TextEngine Word List
 @verbs
 
 Beginning
-    #noun|var@name1# and  #noun|var@name2# just can't stand each other sometimes. : 0.5
+    #noun|var@name1# completely wrecks a project about #noun@plural# that #noun|var@name2# had spent weeks on. : 0.5
 
 Middle
-    #noun|var@name2# finds someone to help them learn to not throttle #noun|var@name1#. : 0.5
+    #noun|var@name1# ruins #noun|var@name1#'s save data in a game they'd been playing for hundreds of hours. : 0.5
 
 End
-    #noun|var@name2#  and  #noun|var@name1# mostly can stand to be in the same room together, especially if there is #noun|var@romanticItem# to distract them. : 0.5
+    #noun|var@name1#  continues to keep destroying #noun|var@name1#'s hard work. : 0.5

@@ -4,10 +4,10 @@ TextEngine Word List
 @verbs
 
 Beginning
-    #noun|var@name1# and  #noun|var@name2# just can't stand each other sometimes. : 0.5
+    #noun|var@name2# 'helpfully' points out a minor flaw in a project that #noun|var@name2# was working on. : 0.5
 
 Middle
-    #noun|var@name2# finds someone to help them learn to not throttle #noun|var@name1#. : 0.5
+    #noun|var@name2# points out that #noun|var@name1# missed a spot while cleaning. : 0.5
 
 End
-    #noun|var@name2#  and  #noun|var@name1# mostly can stand to be in the same room together, especially if there is #noun|var@romanticItem# to distract them. : 0.5
+    #noun|var@name2#  continues to quietly encourage #noun|var@name1# to correct minor flaws. : 0.5

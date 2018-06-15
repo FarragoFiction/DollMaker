@@ -2,6 +2,7 @@ TextEngine Word List
 
 @nouns
 @verbs
+//name1 is dominent, does most actions. prankish riddles
 
 Beginning
     #noun|var@name1# gigglesnorts relentlessly to  #noun|var@name2# about #noun@plural|var@romanticItem#. : 0.5

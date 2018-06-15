@@ -2,12 +2,14 @@ TextEngine Word List
 
 @nouns
 @verbs
+//neither party necessarily means overtly for the thing to happen. intentional gambit reversal.
+ //(i.e one person tries to do thing but the other person wins through cleverness)
 
 Beginning
-    #noun|var@name1# and  #noun|var@name2# just can't stand each other sometimes. : 0.5
+    #noun|var@name1# sets up a joke to break the ice with #noun|var@name2# but it backfires completely when #noun|var@name2# makes a quick joke right back. : 0.5
 
 Middle
-    #noun|var@name2# finds someone to help them learn to not throttle #noun|var@name1#. : 0.5
+    #noun|var@name2# spends days setting up a great prank, but #noun|var@name1# easily spots it and wins the gambit. : 0.5
 
 End
-    #noun|var@name2#  and  #noun|var@name1# mostly can stand to be in the same room together, especially if there is #noun|var@romanticItem# to distract them. : 0.5
+    #noun|var@name2#  and  #noun|var@name1# go back and forth trying to one up each other by countering each other's pranks. : 0.5
