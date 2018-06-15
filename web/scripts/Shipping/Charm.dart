@@ -102,6 +102,10 @@ class Charm {
         }
     }
 
+    static Charm byName(String name) {
+        return allCharms.where((Charm c) => c.name == name).first;
+    }
+
 
     //for editing, not in a canvas yet.
     void draw(Element element) {

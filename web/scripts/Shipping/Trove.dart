@@ -20,6 +20,7 @@ class Trove {
     //only the first two will be named
     List<Participant> participants = new List<Participant>();
     SelectElement romSelect;
+    ButtonElement addCharm;
     SelectElement charmSelect;
 
     List<Charm> charms = new List<Charm>();
@@ -166,9 +167,17 @@ class Trove {
             o.append(img);
             charmSelect.append(o);
         });
+        charmSelect.options.first.selected = true;
 
-        ButtonElement addCharm = new ButtonElement()..text = "Add Charm";
+        if(addCharm == null) {
+            addCharm = new ButtonElement()
+                ..text = "Add Charm";
+        }
         element.append(addCharm);
+        addCharm.onClick.listen((Event e) {
+            charms.add(Charm.byName(charmSelect.options[charmSelect.selectedIndex].value));
+            drawCharms(null);
+        });
 
 
     }

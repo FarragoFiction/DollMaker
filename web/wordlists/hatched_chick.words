@@ -7,7 +7,7 @@ Beginning
     #noun|var@name1# can't get over how adorable #noun|var@name2# is and vows to protect them. : 0.5
 
 Middle
-    #noun|var@name1# is starting to be unsettled by how often #noun|var@name1# #verb@present# #noun@plural|var@romanticItem#. : 0.5
+    #noun|var@name1# is starting to be unsettled by how often #noun|var@name2# #verb@present# #noun@plural|var@romanticItem#. : 0.5
 
 End
-    #noun|var@name1#  accepts that  #noun|var@name1# is both adorable and terrifying. : 0.5
+    #noun|var@name1#  accepts that  #noun|var@name2# is both adorable and terrifying. : 0.5
