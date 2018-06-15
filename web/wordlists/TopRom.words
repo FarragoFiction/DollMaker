@@ -1,0 +1,30 @@
+TextEngine Word List
+
+@nouns
+@verbs
+
+BeginningFirst
+    #Introduction#, #Beginning# : 0.5
+
+MiddleFirst
+    #Transition#, #Middle# :0.5
+
+EndingFirst
+    #Conclusion#, #Ending# :0.5
+
+Introduction
+    In the beginning
+    At first
+    When it all began
+    Before #noun|var@name1# and #noun|var@name2# got close
+
+Transition
+    Later
+    Then
+    In the following #noun_timeframe@plural#
+
+Conclusion
+    In the end
+    Eventually
+    At some point
+

@@ -59,9 +59,12 @@ class Trove {
             story.setString("name1","${participants.first.name}");
             story.setString("name2","${participants.last.name}");
             TextEngine textEngine = new TextEngine(seed);
+            //top level things everything can access rember to import in words files
+            await textEngine.loadList("TopRom");
             for (Charm c in charms) {
                 await textEngine.loadList(c.name);
             }
+            print("${textEngine.sourceWordLists}");
             //begiing = how they met
             //middle = shit they did courting
             //end = how their relationship stabilized
@@ -83,6 +86,7 @@ class Trove {
     String getLines(String section, TextEngine textEngine, TextStory story) {
         String ret = "";
         int numLines = getRandomNumberOfLines();
+        ret = "$ret ${textEngine.phrase("${section}First", story: story)}";
         for(int i = 0; i< numLines; i++) {
             print("number of lines is $numLines and i'm on $i");
             ret = "$ret ${textEngine.phrase(section, story: story)}";

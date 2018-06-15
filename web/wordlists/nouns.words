@@ -56,6 +56,12 @@ noun_object
     coin
     talisman
 
+noun_timeframe
+    week
+    day
+    month
+    year
+
 noun_building
     ?collective: district
 
