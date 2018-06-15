@@ -28,6 +28,7 @@ class Trove {
     static List<String> romanceTypes = <String>[ANY, HUMAN, TROLL, LEPRECHAUN, SHOGUN, GLORIOUSBULLSHIT];
     //only the first two will be named
     List<Participant> participants = new List<Participant>();
+    SelectElement romSelect;
     List<Charm> charms = new List<Charm>();
     Element charmDiv;
     Element storyDiv;
@@ -135,6 +136,20 @@ class Trove {
         }
     }
 
+    void drawRomTypeDropdowns(Element element) {
+        romSelect = new SelectElement();
+        element.append(romSelect);
+        romanceTypes.forEach((String type) {
+            OptionElement o = new OptionElement()..text = type..value =type;
+            romSelect.append(o);
+        });
+        romSelect.options.first.selected;
+        romSelect.onInput.listen((Event e) {
+            setCharmsByType(romSelect.options[romSelect.selectedIndex].value);
+            drawCharms(null);
+        });
+    }
+
     void drawCharms(Element element) {
         if(charmDiv == null) {
             charmDiv = new DivElement();
@@ -151,8 +166,9 @@ class Trove {
     void setCharmsRandom() {
         Random rand = new Random(seed);
         if(charms == null) charms = new List<Charm>();
-        double randomDouble = rand.nextDouble();
-        if(participants.first.doll is HomestuckTrollDoll) {
+        if(romSelect != null && romSelect.selectedIndex >0) {
+            setCharmsByType(romSelect.options[romSelect.selectedIndex].value);
+        } else if(participants.first.doll is HomestuckTrollDoll) {
             setCharmsTroll();
         }else {
             setCharmsByType(rand.pickFrom(romanceTypes));
