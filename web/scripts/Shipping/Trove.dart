@@ -58,12 +58,14 @@ class Trove {
         CanvasElement buffer = new CanvasElement(width: romanticBG.width, height:romanticBG.height);
         buffer.context2D.drawImage(romanticBG, 0, 0);
         if(canvas == null) {
+            print("making a new canvas");
             canvas = new CanvasElement(width: romanticBG.width, height: romanticBG.height);
-            storyDiv.append(canvas);
+            element.append(canvas);
         }
         await drawParticipantsOnCanvas(buffer);
         await drawTroveOnCanvas(buffer);
         await drawStoryOnCanvas(buffer, storyDiv.text);
+        Renderer.clearCanvas(canvas);
         canvas.context2D.drawImage(buffer,0,0);
     }
 
@@ -86,7 +88,7 @@ class Trove {
     }
 
     Future<Null> drawStoryOnCanvas(CanvasElement givenCanvas, String story) async{
-        int fontsize = 72;
+        int fontsize = 48;
         //TODO pick this from drop down
         //TODO have romance types have associated fonts
         String font = "Papyrus";
