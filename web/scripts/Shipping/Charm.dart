@@ -23,26 +23,26 @@ class Charm {
         if(_allCharms == null || _allCharms.isEmpty) {
             initCharms();
         }
-        new List<Charm>.from(_allCharms.where((Charm c) => c.troll));
+        return new List<Charm>.from(_allCharms.where((Charm c) => c.troll));
     }
     static List<Charm> get allLeprechaun {
         if(_allCharms == null || _allCharms.isEmpty) {
             initCharms();
         }
-        new List<Charm>.from(_allCharms.where((Charm c) => c.leprechaun));
+        return new List<Charm>.from(_allCharms.where((Charm c) => c.leprechaun));
     }
     static List<Charm> get allDynamo {
         if(_allCharms == null || _allCharms.isEmpty) {
             initCharms();
         }
-        new List<Charm>.from(_allCharms.where((Charm c) => c.dynamo));
+        return new List<Charm>.from(_allCharms.where((Charm c) => c.dynamo));
     }
 
     static List<Charm> get allGloriousBullshit {
         if(_allCharms == null || _allCharms.isEmpty) {
             initCharms();
         }
-        new List<Charm>.from(_allCharms.where((Charm c) => c.gloriousBullshit));
+        return new List<Charm>.from(_allCharms.where((Charm c) => c.gloriousBullshit));
     }
 
 
