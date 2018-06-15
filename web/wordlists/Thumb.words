@@ -4,10 +4,10 @@ TextEngine Word List
 @verbs
 
 Beginning
-    #noun|var@name1# finds  #noun|var@name2# raging at a  #noun|var@romanticItem#. : 0.5
+    #noun|var@name1# accidentally trips #noun|var@name2# but they aren't injured too bad. : 0.5
 
 Middle
-    #noun|var@name2# reminds #noun|var@name1# to eat. : 0.5
+    #noun|var@name2# lets #noun|var@name1# know that their cooking is acceptable. : 0.5
 
 End
-    #noun|var@name2#  and  #noun|var@name1# remember to give each other #noun|var@romanticItem# as gifts every year. : 0.5
+    #noun|var@name2# and #noun|var@name1# accept each other. : 0.5

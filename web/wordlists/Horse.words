@@ -4,10 +4,10 @@ TextEngine Word List
 @verbs
 
 Beginning
-    #noun|var@name1# and  #noun|var@name2# both reach for the same #noun|var@romanticItem#. : 0.5
+    #noun|var@name1# is a horse.  #noun|var@name2# is a horse. : 0.5
 
 Middle
-    #noun|var@name2# #verb@past# a #noun|var@romanticItem# to surprise #noun|var@name1#. : 0.5
+    #noun|var@name2# is a horse.  #noun|var@name1# is a horse. : 0.5
 
 End
-    #noun|var@name2#  and  #noun|var@name1# remember to give each other #noun|var@romanticItem# as gifts every year. : 0.5
+    #noun|var@name1# is a horse.  #noun|var@name2# is a horse. They are both horses. : 0.5

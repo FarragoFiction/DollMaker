@@ -4,10 +4,10 @@ TextEngine Word List
 @verbs
 
 Beginning
-    #noun|var@name1# and  #noun|var@name2# fought over a #noun|var@romanticItem#. : 0.5
+    #noun|var@name1# finds #noun|var@name2# giving their best and is inspired. : 0.5
 
 Middle
-    #noun|var@name2# #verb@past# a #noun|var@romanticItem# to taunt #noun|var@name1#. : 0.5
+    #noun|var@name2# #verb@past# a #noun|var@romanticItem# to inspire #noun|var@name1#. : 0.5
 
 End
-    #noun|var@name2#  and  #noun|var@name1# have yearly #noun|var@romanticItem# competitions. : 0.5
+    #noun|var@name2#  and  #noun|var@name1# have yearly #noun|var@romanticItem# competitions in order to keep each other in top form. : 0.5

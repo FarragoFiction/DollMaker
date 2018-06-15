@@ -4,10 +4,10 @@ TextEngine Word List
 @verbs
 //Red Squiggles fucking ruin shit.
 Beginning
-    #noun|var@name1# completely wrecks a project about #noun@plural# that #noun|var@name2# had spent weeks on. : 0.5
+    #noun|var@name1# corrects a typo in an online post #noun|var@name2# had been working on. : 0.5
 
 Middle
-    #noun|var@name1# ruins #noun|var@name1#'s save data in a game they'd been playing for hundreds of hours. : 0.5
+    #noun|var@name1# corrects a typo in an important document that #noun|var@name2# had been working on. : 0.5
 
 End
-    #noun|var@name1#  continues to keep destroying #noun|var@name1#'s hard work. : 0.5
+    #noun|var@name1# agrees to preemptively edit anything #noun|var@name2# works on before it gets sent in.: 0.5
