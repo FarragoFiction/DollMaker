@@ -112,6 +112,8 @@ class Charm {
         new Charm("Clown", dynamo: true);
         new Charm("Horse", dynamo: true);
         new Charm("100", dynamo: true);
+        new Charm("b", dynamo: true);
+
 
 
 
