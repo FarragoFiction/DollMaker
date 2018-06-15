@@ -59,6 +59,7 @@ class Trove {
 
     void setCharmsRandom() {
         Random rand = new Random(seed);
+        if(charms == null) charms = new List<Charm>();
         double randomDouble = rand.nextDouble();
         if(randomDouble > 0.6 || participants.first.doll is HomestuckTrollDoll) {
             setCharmsTroll();
@@ -102,7 +103,7 @@ class Trove {
         int i = 3;
         //lower numbers are most common
         for(int i = 0; i <13; i++) {
-            if(rand.nextDouble() < .3) {
+            if(rand.nextDouble() < .6) {
                 i++;
             }else {
                 break; //pl has taught me dangerous things
