@@ -93,16 +93,18 @@ class Trove {
         int x = 0;
         int groundPos = 150;
         int totalWidth = 0;
+        int buffer = 5;
         List<ImageElement> allImages = new List<ImageElement>();
         for(Charm c in charms){
             ImageElement img = new ImageElement(src: c.imgLocation);
             await img.onLoad;
-            totalWidth += img.width;
+            totalWidth += img.width+buffer;
             allImages.add(img);
         }
-        int startX = givenCanvas.width - totalWidth;
+        int startX = (givenCanvas.width/2 - totalWidth/2).round();
         for(ImageElement img in allImages) {
             givenCanvas.context2D.drawImage(img, startX, givenCanvas.height-groundPos);
+            startX += img.width+buffer;
         }
     }
 
