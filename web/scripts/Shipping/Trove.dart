@@ -84,23 +84,27 @@ class Trove {
         String ret = "";
         int numLines = getRandomNumberOfLines();
         for(int i = 0; i< numLines; i++) {
+            print("number of lines is $numLines and i'm on $i");
             ret = "$ret ${textEngine.phrase(section, story: story)}";
         }
         return ret;
     }
 
     int getRandomNumberOfLines() {
-        int i = 1;
+        int ret = 1;
+        int max = 1;
+        max += charms.length;
+        max = Math.min(5, max);
         Random rand = new Random(seed);
         //lower numbers are most common
-        for(int i = 0; i <5; i++) {
-            if(rand.nextDouble() < .9) {
-                i++;
+        for(int i = 0; i <max; i++) {
+            if(rand.nextDouble() < .5) {
+                ret++;
             }else {
-                break; //pl has taught me dangerous things
+                break;
             }
         }
-        return i;
+        return ret;
     }
 
 
