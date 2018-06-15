@@ -4,10 +4,10 @@ TextEngine Word List
 @verbs
 
 Beginning
-    #noun|var@name1# and  #noun|var@name2# just can't stand each other sometimes. : 0.5
+    #noun|var@name2# leaves their phone number on a napkin for #noun|var@name2# to find. : 0.5
 
 Middle
-    #noun|var@name2# finds someone to help them learn to not throttle #noun|var@name1#. : 0.5
+    #noun|var@name1# randomly finds the #noun|var@romanticItem# #noun|var@name2# has been looking for and surprises them with it. : 0.5
 
 End
-    #noun|var@name2#  and  #noun|var@name1# mostly can stand to be in the same room together, especially if there is #noun|var@romanticItem# to distract them. : 0.5
+    #noun|var@name2#  wins tickets to #noun|var@name1#'s favorite play, The Lonely #noun|var@romanticItem#, just in time for their anniversary! Talk about lucky! : 0.5
