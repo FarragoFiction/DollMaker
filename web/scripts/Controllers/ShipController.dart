@@ -38,6 +38,8 @@ void ship() {
 
 
 
+
+
 void drawTextBG(CanvasElement canvas, String text) {
     int fontSize = 100;
     canvas.context2D.font = "${fontSize}px Strife";

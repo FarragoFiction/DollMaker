@@ -17,9 +17,13 @@ how to generate a date.
 it also has two or more dolls as participants, which it uses to seed its random (addative)
  */
 class Trove {
+    //only the first two will be named
     List<Participant> participants = new List<Participant>();
     List<Charm> charms = new List<Charm>();
     Element charmDiv;
+    Element storyDiv;
+
+
 
     int get seed {
         int ret = 0;
@@ -29,23 +33,76 @@ class Trove {
         return ret;
     }
 
-    Future<String> getStory() async {
-        //pass this to phrases
-        TextStory story = new TextStory();
-        TextEngine textEngine = new TextEngine(seed);
-        for(Charm c in charms) {
-            await textEngine.loadList(c.name);
-        }
-        //TODO get a series of phrases, x from start, x from middle, x from end
-        //story ties it all together
-        return textEngine.phrase("TrollCall", story: story);
-
-    }
 
     Trove(List<Participant> this.participants, {List<Charm> this.charms}) {
         if(charms == null || charms.isEmpty) setCharmsRandom();
         initParticipants();
     }
+
+    Future<Null> createStory(Element element) async{
+        if(storyDiv == null) {
+            storyDiv = new DivElement();
+            element.append(storyDiv);
+        }
+        //TODO eventually have a nice canvas with the participants drawn on and the trove drawn on
+        //and then all the text.
+        //maybe it looks like a book? a photo albulm? instagram???
+        storyDiv.text = await getStory();
+    }
+
+    Future<String> getStory() async {
+        //pass this to phrases
+        String ret = "";
+        Random rand = new Random(seed);
+        try {
+            TextStory story = new TextStory();
+            story.setString("name1","${participants.first.name}");
+            story.setString("name2","${participants.last.name}");
+            TextEngine textEngine = new TextEngine(seed);
+            for (Charm c in charms) {
+                await textEngine.loadList(c.name);
+            }
+            //begiing = how they met
+            //middle = shit they did courting
+            //end = how their relationship stabilized
+            //TODO get a series of phrases, x from begining, x from middle, x from end
+            //TODO pass in name of two characters
+            //story ties it all together
+            ret = "$ret ${getLines('Beginning', textEngine, story)}";
+            ret = "$ret ${getLines('Middle', textEngine, story)}";
+            ret = "$ret ${getLines('End', textEngine, story)}";
+            return ret;
+
+        }catch(e) {
+            print(e);
+            return "ERROR??? In MY RomCom??? It's more likely than you'd think. $e";
+        }
+
+    }
+
+    String getLines(String section, TextEngine textEngine, TextStory story) {
+        String ret = "";
+        int numLines = getRandomNumberOfLines();
+        for(int i = 0; i< numLines; i++) {
+            ret = "$ret ${textEngine.phrase(section, story: story)}";
+        }
+        return ret;
+    }
+
+    int getRandomNumberOfLines() {
+        int i = 1;
+        Random rand = new Random(seed);
+        //lower numbers are most common
+        for(int i = 0; i <5; i++) {
+            if(rand.nextDouble() < .9) {
+                i++;
+            }else {
+                break; //pl has taught me dangerous things
+            }
+        }
+        return i;
+    }
+
 
     void initParticipants() {
         for(Participant p in participants) {
@@ -70,6 +127,7 @@ class Trove {
         for(Charm c in charms) {
             c.draw(charmDiv);
         }
+        createStory(element);
     }
 
     void setCharmsRandom() {
@@ -82,6 +140,10 @@ class Trove {
             setCharmsLeprechaun();
         }else {
             setCharmsAll();
+        }
+        if(charmDiv != null) {
+            drawCharms(null);
+            createStory(null);
         }
     }
 
@@ -104,9 +166,7 @@ class Trove {
 
         i = Math.min(i, copyOfAllCharms.length); //don't be bigger than list
         charms = copyOfAllCharms.sublist(0,i);
-        if(charmDiv != null) {
-            drawCharms(null);
-        }
+
     }
 
     void setCharmsLeprechaun() {
@@ -127,9 +187,7 @@ class Trove {
 
         i = Math.min(i, copyOfAllCharms.length); //don't be bigger than list
         charms = copyOfAllCharms.sublist(0,i);
-        if(charmDiv != null) {
-            drawCharms(null);
-        }
+
     }
 
     void setCharmsTroll() {
@@ -140,9 +198,7 @@ class Trove {
         copyOfAllCharms.shuffle(rand);
         charms.add(copyOfAllCharms.first);
         //TODO though they can also vaccilate, once i implement that
-        if(charmDiv != null) {
-            drawCharms(null);
-        }
+
     }
 
 }
