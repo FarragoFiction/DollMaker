@@ -4,10 +4,10 @@ TextEngine Word List
 @verbs
 
 Beginning
-    #noun|var@name1# and  #noun|var@name2# fought over a #noun|var@romanticItem#. : 0.5
+    #noun|var@name1# scares the shit out of #noun|var@name2#. : 0.5
 
 Middle
-    #noun|var@name2# #verb@past# a #noun|var@romanticItem# to taunt #noun|var@name1#. : 0.5
+    #noun|var@name1# #verb@past# a #noun|var@romanticItem# to terrify #noun|var@name1#. : 0.5
 
 End
-    #noun|var@name2#  and  #noun|var@name1# have yearly #noun|var@romanticItem# competitions. : 0.5
+    #noun|var@name1# sneaks into  #noun|var@name1#'s #noun_building# every year to scare the shit out of them.: 0.5
