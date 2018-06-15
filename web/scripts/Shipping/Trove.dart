@@ -86,6 +86,14 @@ class Trove {
     }
 
     Future<Null> drawStoryOnCanvas(CanvasElement givenCanvas, String story) async{
+        int fontsize = 72;
+        //TODO pick this from drop down
+        //TODO have romance types have associated fonts
+        String font = "Papyrus";
+        givenCanvas.context2D.font = "${fontsize}px $font";
+        int buffer = 50;
+
+        Renderer.wrapTextAndResizeIfNeeded(givenCanvas.context2D, story, font, 10, fontsize, fontsize, givenCanvas.width-buffer, 400);
 
     }
 
@@ -110,7 +118,7 @@ class Trove {
 
     Future<String> getStory() async {
         //pass this to phrases
-        String ret = "${charms.join(',')} ";
+        String ret = "";
         Random rand = new Random(seed);
         try {
             TextStory story = new TextStory();
