@@ -13,10 +13,37 @@ a charm also has a name. it's trove will use these to generate text
 
 class Charm {
     static List<Charm> _allCharms  = new List<Charm>();
-    static List<Charm> allTroll = new List<Charm>.from(_allCharms.where((Charm c)=> c.troll || c.human));
-    static List<Charm> allLeprechaun = new List<Charm>.from(_allCharms.where((Charm c)=> c.leprechaun));
-    static List<Charm> allDynamo = new List<Charm>.from(_allCharms.where((Charm c)=> c.dynamo));
-    static List<Charm> allGloriousBullshit = new List<Charm>.from(_allCharms.where((Charm c)=> c.gloriousBullshit));
+    static List<Charm> get allHuman {
+        if(_allCharms == null || _allCharms.isEmpty) {
+            initCharms();
+        }
+        return new List<Charm>.from(_allCharms.where((Charm c) => c.human));
+    }
+    static List<Charm> get allTroll {
+        if(_allCharms == null || _allCharms.isEmpty) {
+            initCharms();
+        }
+        new List<Charm>.from(_allCharms.where((Charm c) => c.troll));
+    }
+    static List<Charm> get allLeprechaun {
+        if(_allCharms == null || _allCharms.isEmpty) {
+            initCharms();
+        }
+        new List<Charm>.from(_allCharms.where((Charm c) => c.leprechaun));
+    }
+    static List<Charm> get allDynamo {
+        if(_allCharms == null || _allCharms.isEmpty) {
+            initCharms();
+        }
+        new List<Charm>.from(_allCharms.where((Charm c) => c.dynamo));
+    }
+
+    static List<Charm> get allGloriousBullshit {
+        if(_allCharms == null || _allCharms.isEmpty) {
+            initCharms();
+        }
+        new List<Charm>.from(_allCharms.where((Charm c) => c.gloriousBullshit));
+    }
 
 
     static List<Charm> get allCharms {
@@ -39,7 +66,7 @@ class Charm {
 
     String get imgLocation => "$folder$name.png";
 
-    Charm(String this.name, {bool this.human, bool this.troll, bool this.leprechaun, bool this.dynamo, bool this.gloriousBullshit}) {
+    Charm(String this.name, {bool this.human: false, bool this.troll:false, bool this.leprechaun:false, bool this.dynamo:false, bool this.gloriousBullshit:false}) {
         _allCharms.add(this);
     }
 
@@ -50,7 +77,7 @@ class Charm {
     }
 
     static initCharms() {
-        new Charm("Hearts", human: true);
+        new Charm("Hearts", troll: true, human: true);
         new Charm("Spades", troll: true);
         new Charm("Diamonds", troll: true);
         new Charm("Clubs", troll: true);
@@ -66,7 +93,7 @@ class Charm {
         new Charm("CharmHorseshoes", leprechaun: true);
         new Charm("CharmBalloons", leprechaun: true);
         new Charm("CharmRainbows", leprechaun: true);
-        new Charm("CharmPotsOfGold", leprechaun: true)
+        new Charm("CharmPotsOfGold", leprechaun: true);
 
         //TODO have shogunate stuff
 

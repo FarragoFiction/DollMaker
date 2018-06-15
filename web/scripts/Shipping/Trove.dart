@@ -58,7 +58,6 @@ class Trove {
     }
 
     void setCharmsRandom() {
-        if(charms != null) charms.clear(); //out with the old, make sure to always sync to dolls.
         Random rand = new Random(seed);
         double randomDouble = rand.nextDouble();
         if(randomDouble > 0.6 || participants.first.doll is HomestuckTrollDoll) {
@@ -72,6 +71,7 @@ class Trove {
 
 
     void setCharmsAll() {
+        print("going to set absolutely random charms");
         if(charms != null) charms.clear(); //out with the old, make sure to always sync to dolls.
         List<Charm> copyOfAllCharms = Charm.allCharms;
         Random rand = new Random(seed);
@@ -94,6 +94,7 @@ class Trove {
     }
 
     void setCharmsLeprechaun() {
+        print("going to set leprechaun charms");
         if(charms != null) charms.clear(); //out with the old, make sure to always sync to dolls.
         List<Charm> copyOfAllCharms = Charm.allLeprechaun;
         Random rand = new Random(seed);
@@ -116,13 +117,13 @@ class Trove {
     }
 
     void setCharmsTroll() {
+        print("going to set troll charms");
         if(charms != null) charms.clear(); //out with the old, make sure to always sync to dolls.
         List<Charm> copyOfAllCharms = Charm.allTroll;
         Random rand = new Random(seed);
         copyOfAllCharms.shuffle(rand);
-        int i = 1;
-        i = Math.min(i, copyOfAllCharms.length); //don't be bigger than list
-        charms = copyOfAllCharms.sublist(0,i);
+        charms.add(copyOfAllCharms.first);
+        //TODO though they can also vaccilate, once i implement that
         if(charmDiv != null) {
             drawCharms(null);
         }
