@@ -1,0 +1,13 @@
+TextEngine Word List
+
+@nouns
+@verbs
+//BlackSquiggles aren't optional. You gotta do shit right.
+Beginning
+    #noun|var@name1# forces #noun|var@name2# to get their shit together. : 0.5
+
+Middle
+    #noun|var@name2# tries to be sloppy, but #noun|var@name1# just isn't having it. : 0.5
+
+End
+    #noun|var@name1# stands outside #noun|var@name2#'s room waving a #noun|var@romanticItem# ominously until they clean it. : 0.5

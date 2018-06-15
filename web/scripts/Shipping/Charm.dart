@@ -102,12 +102,12 @@ class Charm {
 
         new Charm("Auberiginastycitiy", dynamo: true);
         new Charm("Smile", dynamo: true);
-        new Charm("Poop", dynamo: true);
+        new Charm("Patristewartus", dynamo: true);
         new Charm("Okay", dynamo: true);
         new Charm("hatched_chick", dynamo: true);
         new Charm("Fear", dynamo: true);
         new Charm("Thumb", dynamo: true);
-        new Charm("Typosity", dynamo: true);
+        new Charm("Tpyosity", dynamo: true);
         new Charm("Dab", dynamo: true);
         new Charm("Clown", dynamo: true);
         new Charm("Horse", dynamo: true);
