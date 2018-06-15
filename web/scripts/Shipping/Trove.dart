@@ -1,8 +1,10 @@
 import 'Charm.dart';
 import 'Participant.dart';
+import 'dart:async';
 import 'dart:html';
 import "dart:math" as Math;
 import 'package:DollLibCorrect/DollRenderer.dart';
+import 'package:TextEngine/TextEngine.dart';
 
 /*
 
@@ -25,6 +27,19 @@ class Trove {
             ret += p.doll.seed;
         });
         return ret;
+    }
+
+    Future<String> getStory() async {
+        //pass this to phrases
+        TextStory story = new TextStory();
+        TextEngine textEngine = new TextEngine(seed);
+        for(Charm c in charms) {
+            await textEngine.loadList(c.name);
+        }
+        //TODO get a series of phrases, x from start, x from middle, x from end
+        //story ties it all together
+        return textEngine.phrase("TrollCall", story: story);
+
     }
 
     Trove(List<Participant> this.participants, {List<Charm> this.charms}) {
