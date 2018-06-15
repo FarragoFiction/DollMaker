@@ -5,7 +5,7 @@ TextEngine Word List
 //neither party necessarily means overtly for the thing to happen. subtle affection. (i.e. it looks like htey hate each other but secretly they are both taking care of each other via the hate)
 //its the tsundere charm. it's not like i like you or anything
 Beginning
-    #noun|var@name1# secretly trips  #noun|var@name2#, then helps them and dusts them off. : 0.5
+    #noun|var@name1# secretly trips  #noun|var@name2#, then helps them up and dusts them off. : 0.5
 
 Middle
     #noun|var@name2# teases #noun|var@name1# about being lazy until they finally write that novel about #noun|var@romanticItem# they've been meaning to. : 0.5

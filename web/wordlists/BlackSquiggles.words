@@ -2,7 +2,7 @@ TextEngine Word List
 
 @nouns
 @verbs
-
+//BlackSquiggles aren't optional. You gotta do shit right.
 Beginning
     #noun|var@name1# forces #noun|var@name2# to get their shit together. : 0.5
 
