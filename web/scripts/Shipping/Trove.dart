@@ -143,10 +143,12 @@ class Trove {
         Random rand = new Random(seed);
         if(charms == null) charms = new List<Charm>();
         double randomDouble = rand.nextDouble();
-        if(randomDouble > 0.6 || participants.first.doll is HomestuckTrollDoll) {
+        if(randomDouble > 0.75 || participants.first.doll is HomestuckTrollDoll) {
             setCharmsTroll();
-        }else if(randomDouble > 0.3) {
+        }else if(randomDouble > 0.5) {
             setCharmsLeprechaun();
+        }else if(randomDouble > 0.25) {
+            setCharmsShogun();
         }else {
             setCharmsAll();
         }
@@ -194,6 +196,26 @@ class Trove {
             }
         }
 
+        ret = Math.min(ret, copyOfAllCharms.length); //don't be bigger than list
+        charms = copyOfAllCharms.sublist(0,ret);
+
+    }
+
+    void setCharmsShogun() {
+        print("going to set shogun charms");
+        if(charms != null) charms.clear(); //out with the old, make sure to always sync to dolls.
+        List<Charm> copyOfAllCharms = Charm.allDynamo;
+        Random rand = new Random(seed);
+        copyOfAllCharms.shuffle(rand);
+        int ret = 2;
+        //lower numbers are most common
+        for(int i = 0; i <13; i++) {
+            if(rand.nextDouble() < .7) {
+                ret++;
+            }else {
+                break; //pl has taught me dangerous things
+            }
+        }
         ret = Math.min(ret, copyOfAllCharms.length); //don't be bigger than list
         charms = copyOfAllCharms.sublist(0,ret);
 
