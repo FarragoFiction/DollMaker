@@ -3,11 +3,13 @@ TextEngine Word List
 @nouns
 @verbs
 
+//lewd jokes, especially ones meant to be shocking?
+
 Beginning
-    #noun|var@name1# and  #noun|var@name2# both reach for the same #noun|var@romanticItem#. : 0.5
+    #noun|var@name1# makes an absolutely inappropriate joke towards #noun|var@name2# and is surprised when they counter right back with an offcolor story about a #noun|var@romanticItem#. : 0.5
 
 Middle
-    #noun|var@name2# #verb@past# a #noun|var@romanticItem# to surprise #noun|var@name1#. : 0.5
+    #noun|var@name2# #verb@past# a #noun|var@romanticItem# to try to shock #noun|var@name1#, but it doesn't work. : 0.5
 
 End
-    #noun|var@name2#  and  #noun|var@name1# remember to give each other #noun|var@romanticItem# as gifts every year. : 0.5
+    #noun|var@name2#  and  #noun|var@name1# have yearly competitions to see who can top the other with increasingly lewd stories about non standard uses for a #noun|var@romanticItem# . : 0.5

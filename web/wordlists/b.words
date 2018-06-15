@@ -2,12 +2,12 @@ TextEngine Word List
 
 @nouns
 @verbs
-//BlackSquiggles aren't optional. You gotta do shit right.
+//:b:anter and :b:attle :b:ros without honor
 Beginning
-    #noun|var@name1# forces #noun|var@name2# to get their shit together. : 0.5
+    #noun|var@name1# and #noun|var@name2# meet on the :b:attlefield. : 0.5
 
 Middle
-    #noun|var@name2# tries to be sloppy, but #noun|var@name1# just isn't having it. : 0.5
+    #noun|var@name2#  and #noun|var@name1# :b:anter incessently about who sucks the most. : 0.5
 
 End
-    #noun|var@name1# stands outside #noun|var@name2#'s room waving a #noun|var@romanticItem# ominously until they clean it. : 0.5
+    #noun|var@name1# stabs #noun|var@name2# :b:efore the enemy can. : 0.5
