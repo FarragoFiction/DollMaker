@@ -38,7 +38,7 @@ class Participant {
             parentCanvas.height = doll.height;
 
             DollRenderer.drawDoll(parentCanvas, doll);
-            trove.setCharms();
+            trove.setCharmsRandom();
         });
 
         randomizeButton.onClick.listen((Event e) {
@@ -48,7 +48,7 @@ class Participant {
             parentCanvas.height = doll.height;
 
             DollRenderer.drawDoll(parentCanvas, doll);
-            trove.setCharms();
+            trove.setCharmsRandom();
             dataBox.value = "${doll.toDataBytesX()}";
 
         });
@@ -62,7 +62,7 @@ class Participant {
 
             DollRenderer.drawDoll(parentCanvas, doll);
             dataBox.value = "${doll.toDataBytesX()}";
-            trove.setCharms();
+            trove.setCharmsRandom();
         });
 
         div.append(parentCanvas);

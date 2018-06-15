@@ -1,8 +1,8 @@
 import 'Charm.dart';
 import 'Participant.dart';
 import 'dart:html';
-import 'package:CommonLib/Random.dart';
 import "dart:math" as Math;
+import 'package:DollLibCorrect/DollRenderer.dart';
 
 /*
 
@@ -28,7 +28,7 @@ class Trove {
     }
 
     Trove(List<Participant> this.participants, {List<Charm> this.charms}) {
-        if(charms == null || charms.isEmpty) setCharms();
+        if(charms == null || charms.isEmpty) setCharmsRandom();
         initParticipants();
     }
 
@@ -57,13 +57,48 @@ class Trove {
         }
     }
 
+    void setCharmsRandom() {
+        if(charms != null) charms.clear(); //out with the old, make sure to always sync to dolls.
+        Random rand = new Random(seed);
+        double randomDouble = rand.nextDouble();
+        if(randomDouble > 0.6 || participants.first.doll is HomestuckTrollDoll) {
+            setCharmsTroll();
+        }else if(randomDouble > 0.3) {
+            setCharmsLeprechaun();
+        }else {
+            setCharmsAll();
+        }
+    }
 
-    void setCharms() {
+
+    void setCharmsAll() {
         if(charms != null) charms.clear(); //out with the old, make sure to always sync to dolls.
         List<Charm> copyOfAllCharms = Charm.allCharms;
         Random rand = new Random(seed);
         copyOfAllCharms.shuffle(rand);
         int i = 1;
+        //lower numbers are most common
+        for(int i = 0; i <13; i++) {
+            if(rand.nextDouble() < .5) {
+                i++;
+            }else {
+                break; //pl has taught me dangerous things
+            }
+        }
+
+        i = Math.min(i, copyOfAllCharms.length); //don't be bigger than list
+        charms = copyOfAllCharms.sublist(0,i);
+        if(charmDiv != null) {
+            drawCharms(null);
+        }
+    }
+
+    void setCharmsLeprechaun() {
+        if(charms != null) charms.clear(); //out with the old, make sure to always sync to dolls.
+        List<Charm> copyOfAllCharms = Charm.allLeprechaun;
+        Random rand = new Random(seed);
+        copyOfAllCharms.shuffle(rand);
+        int i = 3;
         //lower numbers are most common
         for(int i = 0; i <13; i++) {
             if(rand.nextDouble() < .3) {
@@ -73,6 +108,19 @@ class Trove {
             }
         }
 
+        i = Math.min(i, copyOfAllCharms.length); //don't be bigger than list
+        charms = copyOfAllCharms.sublist(0,i);
+        if(charmDiv != null) {
+            drawCharms(null);
+        }
+    }
+
+    void setCharmsTroll() {
+        if(charms != null) charms.clear(); //out with the old, make sure to always sync to dolls.
+        List<Charm> copyOfAllCharms = Charm.allTroll;
+        Random rand = new Random(seed);
+        copyOfAllCharms.shuffle(rand);
+        int i = 1;
         i = Math.min(i, copyOfAllCharms.length); //don't be bigger than list
         charms = copyOfAllCharms.sublist(0,i);
         if(charmDiv != null) {
