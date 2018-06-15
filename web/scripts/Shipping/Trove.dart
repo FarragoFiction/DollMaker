@@ -68,9 +68,9 @@ class Trove {
             //TODO get a series of phrases, x from begining, x from middle, x from end
             //TODO pass in name of two characters
             //story ties it all together
-            ret = "$ret ${getLines('Beginning', textEngine, story)}";
-            ret = "$ret ${getLines('Middle', textEngine, story)}";
-            ret = "$ret ${getLines('End', textEngine, story)}";
+            ret = "$ret ${getLines('Beginning', textEngine, story)}\n\n";
+            ret = "$ret ${getLines('Middle', textEngine, story)}\n\n";
+            ret = "$ret ${getLines('End', textEngine, story)}\n\n";
             return ret;
 
         }catch(e) {

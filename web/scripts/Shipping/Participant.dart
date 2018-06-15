@@ -5,12 +5,15 @@ import 'package:DollLibCorrect/DollRenderer.dart';
 /*
 a participant has a doll and a name and....a....gender???
  */
-class Participant {
+class Participant{
+    static String REPLACE = "REPLACE";
     Doll doll;
-    String name;
+    String _name;
     //??? gender???
+
+    String get name => "${_name.replaceAll(REPLACE,doll.name)}";
     Trove trove; //so it knows to rewrite it if you change the doll
-    Participant(String this.name, Doll this.doll);
+    Participant(String this._name, Doll this.doll);
 
     void draw(Element element) {
         DivElement div = new DivElement();
