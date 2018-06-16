@@ -194,13 +194,17 @@ class Vacillation extends Charm {
     @override
     void draw(Element element) {
         if(first == null) setRandomSubCharms();
+        first.vaccilator = this;
+        second.vaccilator = this;
         print("trying to draw a vaccilation between $first and $second");
         DivElement span = new DivElement();
         span.style.display = "inline";
         element.append(span);
         span.style.border = "2px solid black"; //so you know what's vaccilating
         first.draw(span);
+
         ImageElement img = new ImageElement(src:imgLocation);
+        span.append(img);
         element.append(span);
         img.onClick.listen((Event e) {
             if(trove != null) {
@@ -230,7 +234,11 @@ class Vacillation extends Charm {
         int index = charmsByType.indexOf(charm);
         index ++;
         if(index > charmsByType.length) index =0;
-        first = charmsByType[index];
+        if(charm == first) {
+            first = charmsByType[index];
+        }else {
+            second = charmsByType[index];
+        }
         trove.drawCharms(null);
     }
 
