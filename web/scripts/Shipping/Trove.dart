@@ -332,7 +332,7 @@ class Trove {
 
         ret = Math.min(ret, copyOfAllCharms.length); //don't be bigger than list
         for(int i = 0; i<ret; i++) {
-            charms.add(copyOfAllCharms[i]..clone());
+            charms.add(copyOfAllCharms[i].clone());
         }
 
     }
@@ -355,7 +355,7 @@ class Trove {
 
         ret = Math.min(ret, copyOfAllCharms.length); //don't be bigger than list
         for(int i = 0; i<ret; i++) {
-            charms.add(copyOfAllCharms[i]..clone());
+            charms.add(copyOfAllCharms[i].clone());
         }
     }
 
@@ -376,7 +376,7 @@ class Trove {
         }
         ret = Math.min(ret, copyOfAllCharms.length); //don't be bigger than list
         for(int i = 0; i<ret; i++) {
-            charms.add(copyOfAllCharms[i]..clone());
+            charms.add(copyOfAllCharms[i].clone());
         }
     }
 
@@ -397,7 +397,7 @@ class Trove {
         }
         ret = Math.min(ret, copyOfAllCharms.length); //don't be bigger than list
         for(int i = 0; i<ret; i++) {
-            charms.add(copyOfAllCharms[i]..clone());
+            charms.add(copyOfAllCharms[i].clone());
         }
     }
 
