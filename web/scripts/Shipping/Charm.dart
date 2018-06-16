@@ -138,43 +138,40 @@ class Charm {
     }
 
     static initCharms() {
-        new Charm("Hearts", troll: true, human: true);
-        new Charm("Spades", troll: true);
-        new Charm("Diamonds", troll: true);
-        new Charm("Clubs", troll: true);
-        new Charm("RedSquiggles", gloriousBullshit: true);
-        new Charm("GreenSquiggles", gloriousBullshit: true);
-        new Charm("BlackSquiggles", gloriousBullshit: true);
+        if(_allCharms == null || _allCharms.isEmpty) {
+            new Charm("Hearts", troll: true, human: true);
+            new Charm("Spades", troll: true);
+            new Charm("Diamonds", troll: true);
+            new Charm("Clubs", troll: true);
+            new Charm("RedSquiggles", gloriousBullshit: true);
+            new Charm("GreenSquiggles", gloriousBullshit: true);
+            new Charm("BlackSquiggles", gloriousBullshit: true);
 
-        new Charm("CharmHearts", leprechaun: true);
-        new Charm("CharmMoons", leprechaun: true);
-        new Charm("CharmStars", leprechaun: true);
-        new Charm("CharmClovers", leprechaun: true);
-        new Charm("CharmDiamonds", leprechaun: true);
-        new Charm("CharmHorseshoes", leprechaun: true);
-        new Charm("CharmBalloons", leprechaun: true);
-        new Charm("CharmRainbows", leprechaun: true);
-        new Charm("CharmPotsOfGold", leprechaun: true);
+            new Charm("CharmHearts", leprechaun: true);
+            new Charm("CharmMoons", leprechaun: true);
+            new Charm("CharmStars", leprechaun: true);
+            new Charm("CharmClovers", leprechaun: true);
+            new Charm("CharmDiamonds", leprechaun: true);
+            new Charm("CharmHorseshoes", leprechaun: true);
+            new Charm("CharmBalloons", leprechaun: true);
+            new Charm("CharmRainbows", leprechaun: true);
+            new Charm("CharmPotsOfGold", leprechaun: true);
 
-        new Charm("Auberiginastycitiy", dynamo: true);
-        new Charm("Smile", dynamo: true);
-        new Charm("Patristewartus", dynamo: true);
-        new Charm("Okay", dynamo: true);
-        new Charm("hatched_chick", dynamo: true);
-        new Charm("Fear", dynamo: true);
-        new Charm("Thumb", dynamo: true);
-        new Charm("Tpyosity", dynamo: true);
-        new Charm("Dab", dynamo: true);
-        new Charm("Clown", dynamo: true);
-        new Charm("Horse", dynamo: true);
-        new Charm("100", dynamo: true);
-        new Charm("b", dynamo: true);
-        new Vacillation();
-
-
-
-
-        //TODO make a vaccilation charm (which has two random subsets, have it set by trove)
+            new Charm("Auberiginastycitiy", dynamo: true);
+            new Charm("Smile", dynamo: true);
+            new Charm("Patristewartus", dynamo: true);
+            new Charm("Okay", dynamo: true);
+            new Charm("hatched_chick", dynamo: true);
+            new Charm("Fear", dynamo: true);
+            new Charm("Thumb", dynamo: true);
+            new Charm("Tpyosity", dynamo: true);
+            new Charm("Dab", dynamo: true);
+            new Charm("Clown", dynamo: true);
+            new Charm("Horse", dynamo: true);
+            new Charm("100", dynamo: true);
+            new Charm("b", dynamo: true);
+            new Vacillation();
+        }
     }
 }
 
@@ -239,20 +236,26 @@ class Vacillation extends Charm {
         print("type for vaccilator is $type");
         List<Charm> charmsByType = Charm.getAllCharmsByType(type);
         List<Charm> availableCharms = new List<Charm>();
-        for(Charm c in trove.charms) {
-            print("removing $c from vaccilator options");
-            //can't just remove because clones
-            for(Charm c2 in charmsByType) {
-                if(c.name != c2.name) {
-                    availableCharms.add(c);
+
+        for(Charm c in charmsByType) {
+            bool available = true;
+            for(Charm c2 in trove.charms) {
+                if(c2.name == c.name) {
+                    available = false;
                 }
             }
-
+            if(available) availableCharms.add(c);
         }
 
         availableCharms.shuffle(new Random(trove.seed));
-        first = availableCharms.first;
-        second = availableCharms.last;
+        print("available charms is $availableCharms");
+        if(availableCharms.length < 2) { //allow repeats
+            first = charmsByType.first;
+            second = charmsByType.last;
+        }else {
+            first = availableCharms.first;
+            second = availableCharms.last;
+        }
     }
 
     @override
