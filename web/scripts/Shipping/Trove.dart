@@ -23,6 +23,8 @@ class Trove {
     ButtonElement addCharm;
     SelectElement charmSelect;
     ImageElement romanticBG;
+    int fontsize = 32;
+    String font = "Papyrus";
 
     List<Charm> charms = new List<Charm>();
     Element charmDiv;
@@ -76,6 +78,7 @@ class Trove {
     Future<Null> drawParticipantsOnCanvas(CanvasElement givenCanvas) async {
         int x = 0;
         int groundPos = 300;
+        givenCanvas.context2D.font = "${fontsize}px $font";
         for(Participant p in participants){
             print("drawing ${p.name} to the canvas");
             CanvasElement tmp = new CanvasElement(width: 400, height: 300);
@@ -87,15 +90,14 @@ class Trove {
             }
             await Renderer.drawToFitCentered(tmp, p.cachedDollCanvas);
             givenCanvas.context2D.drawImage(tmp, x, givenCanvas.height-groundPos);
+            givenCanvas.context2D.fillText(p.name, x+p.doll.width/3, givenCanvas.height-groundPos);
             x = givenCanvas.width - tmp.width;
         }
     }
 
     Future<Null> drawStoryOnCanvas(CanvasElement givenCanvas, String story) async{
-        int fontsize = 32;
         //TODO pick this from drop down
         //TODO have romance types have associated fonts
-        String font = "Papyrus";
         givenCanvas.context2D.font = "${fontsize}px $font";
         int buffer = 25;
 

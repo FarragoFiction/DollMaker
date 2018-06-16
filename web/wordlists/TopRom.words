@@ -44,14 +44,15 @@ startComment
     It foreshadowed things to come.
     It was great.
     It was so cute.
-    ... : 10.0
+    .: 10.0
 
 middleComment
     They really were made for each other.
-    : 3.0
+
+    .: 3.0
 
 endingComment
-    Everyone could see they were going to live happily ever after.
-     : 3.0
+    Everyone can see they were going to live happily ever after.
+     .: 3.0
 
 
