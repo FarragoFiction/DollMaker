@@ -88,6 +88,7 @@ class Charm {
 
     String get imgLocation => "$folder$name.png";
 
+    //if add more optional params remember to modify clone function
     Charm(String this.name, {bool this.human: false, bool this.troll:false, bool this.leprechaun:false, bool this.dynamo:false, bool this.gloriousBullshit:false}) {
         _allCharms.add(this);
     }
@@ -110,6 +111,10 @@ class Charm {
 
     static Charm byName(String name) {
         return allCharms.where((Charm c) => c.name == name).first;
+    }
+
+    Charm clone() {
+        return new Charm(name, human: human, troll:troll, leprechaun: leprechaun, dynamo: dynamo, gloriousBullshit: gloriousBullshit);
     }
 
 
@@ -224,6 +229,7 @@ class Vacillation extends Charm {
 
     void setRandomSubCharms(){
         String type = Charm.ANY;
+        print("setting random thingies, trove has rom selected of ${trove.romSelect.selectedIndex}");
         if(trove.romSelect != null && trove.romSelect.selectedIndex >0) type = trove.romSelect.options[trove.romSelect.selectedIndex].value;
         List<Charm> charmsByType = Charm.getAllCharmsByType(type);
         for(Charm c in trove.charms) {

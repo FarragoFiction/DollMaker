@@ -259,7 +259,7 @@ class Trove {
             addCharm = new ButtonElement()..text = "Add Charm";
             element.append(addCharm);
             addCharm.onClick.listen((Event e) {
-                charms.add(Charm.byName(charmSelect.options[charmSelect.selectedIndex].value));
+                charms.add(Charm.byName(charmSelect.options[charmSelect.selectedIndex].value).clone());
                 drawCharms(null);
             });
         }
@@ -331,7 +331,9 @@ class Trove {
         }
 
         ret = Math.min(ret, copyOfAllCharms.length); //don't be bigger than list
-        charms = copyOfAllCharms.sublist(0,ret);
+        for(int i = 0; i<ret; i++) {
+            charms.add(copyOfAllCharms[i]..clone());
+        }
 
     }
 
@@ -352,8 +354,9 @@ class Trove {
         }
 
         ret = Math.min(ret, copyOfAllCharms.length); //don't be bigger than list
-        charms = copyOfAllCharms.sublist(0,ret);
-
+        for(int i = 0; i<ret; i++) {
+            charms.add(copyOfAllCharms[i]..clone());
+        }
     }
 
     void setCharmsShogun() {
@@ -372,7 +375,9 @@ class Trove {
             }
         }
         ret = Math.min(ret, copyOfAllCharms.length); //don't be bigger than list
-        charms = copyOfAllCharms.sublist(0,ret);
+        for(int i = 0; i<ret; i++) {
+            charms.add(copyOfAllCharms[i]..clone());
+        }
     }
 
     void setCharmsGloriousBullshit() {
@@ -391,7 +396,9 @@ class Trove {
             }
         }
         ret = Math.min(ret, copyOfAllCharms.length); //don't be bigger than list
-        charms = copyOfAllCharms.sublist(0,ret);
+        for(int i = 0; i<ret; i++) {
+            charms.add(copyOfAllCharms[i]..clone());
+        }
     }
 
     void setCharmsTroll() {
@@ -400,7 +407,7 @@ class Trove {
         List<Charm> copyOfAllCharms = Charm.allTroll;
         Random rand = new Random(seed);
         copyOfAllCharms.shuffle(rand);
-        charms.add(copyOfAllCharms.first);
+        charms.add(copyOfAllCharms.first.clone());
     }
 
     void setCharmsHuman() {
@@ -409,7 +416,7 @@ class Trove {
         List<Charm> copyOfAllCharms = Charm.allHuman;
         Random rand = new Random(seed);
         copyOfAllCharms.shuffle(rand);
-        charms.add(copyOfAllCharms.first);
+        charms.add(copyOfAllCharms.first.clone());
     }
 
 }
