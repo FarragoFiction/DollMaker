@@ -138,9 +138,10 @@ class Trove {
             //middle = shit they did courting
             //end = how their relationship stabilized
             //story ties it all together
-            ret = "$ret ${getLines('Beginning', textEngine, story)}\n\n";
-            ret = "$ret ${getLines('Middle', textEngine, story)}\n\n";
-            ret = "$ret ${getLines('End', textEngine, story)}\n\n";
+            //space plus newline is what makes it work
+            ret = "$ret ${getLines('Beginning', textEngine, story)}\n \n ";
+            ret = "$ret ${getLines('Middle', textEngine, story)}\n \n ";
+            ret = "$ret ${getLines('End', textEngine, story)}\n \n";
             return ret;
 
         }catch(e) {
@@ -169,8 +170,8 @@ class Trove {
 
     int getRandomNumberOfLines() {
         int ret = 0;
-        int max = 1;
-        max += (charms.length/4).round();
+        int max = 2;
+        max += (charms.length/5).round();
         max = Math.min(5, max);
         Random rand = new Random(seed);
         //lower numbers are most common
