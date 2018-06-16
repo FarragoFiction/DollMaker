@@ -82,6 +82,8 @@ class Charm {
     bool gloriousBullshit = false;
     //so i can remove myself from it on click
     Trove trove;
+    //so i can remove myself from it on click
+    Vacillation vaccilator;
 
     String get imgLocation => "$folder$name.png";
 
@@ -116,6 +118,7 @@ class Charm {
         element.append(img);
         img.onClick.listen((Event e) {
             if(trove != null) trove.removeCharm(this);
+            if(vaccilator != null) vaccilator.cycleCharm(this);
         });
     }
 
@@ -179,13 +182,42 @@ class Vacillation extends Charm {
     //todo and getting text also  does subcharms (move getting text into here instead of trove)
     @override
     void draw(Element element) {
-        first.draw(element);
+        SpanElement span = new SpanElement();
+        element.append(span);
+        span.style.border = "2px solid black"; //so you know what's vaccilating
+        first.draw(span);
         ImageElement img = new ImageElement(src:imgLocation);
-        element.append(img);
+        element.append(span);
         img.onClick.listen((Event e) {
-            if(trove != null) trove.removeCharm(this);
+            if(trove != null) {
+                trove.removeCharm(this);
+                trove.removeCharm(first);
+                trove.removeCharm(second);
+            }
         });
-        second.draw(element);
+        second.draw(span);
+    }
+
+    void addCharm(Charm charm) {
+        //will change it's behavior
+        charm.vaccilator = this;
+        if(first == null) {
+            first = charm;
+        }else {
+            second = charm;
+        }
+    }
+
+    //when my side charms are clicked,
+    void cycleCharm(Charm charm) {
+        String type = Charm.ANY;
+        if(trove.romSelect != null && trove.romSelect.selectedIndex >0) type = trove.romSelect.options[trove.romSelect.selectedIndex].value;
+        List<Charm> charmsByType = Charm.getAllCharmsByType(type);
+        int index = charmsByType.indexOf(charm);
+        index ++;
+        if(index > charmsByType.length) index =0;
+        first = charmsByType[index];
+        trove.drawCharms(null);
     }
 
     @override
