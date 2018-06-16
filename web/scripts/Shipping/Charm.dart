@@ -90,7 +90,17 @@ class Charm {
 
     //if add more optional params remember to modify clone function
     Charm(String this.name, {bool this.human: false, bool this.troll:false, bool this.leprechaun:false, bool this.dynamo:false, bool this.gloriousBullshit:false}) {
-        _allCharms.add(this);
+        decideIfAdd();
+    }
+
+    void decideIfAdd() {
+        bool notYetIn = true;
+        for(Charm c in _allCharms) {
+            if(c.name == name){
+                notYetIn = false;
+            }
+        }
+        if(notYetIn)_allCharms.add(this);
     }
 
     static List<Charm> getAllCharmsByType(String type) {
@@ -242,7 +252,10 @@ class Vacillation extends Charm {
             for(Charm c2 in trove.charms) {
                 if(c2.name == c.name) {
                     available = false;
-                }
+                }else if(c2 is Vacillation) {
+                    Vacillation v = c as Vacillation;
+                    if(v.first.name == c.name || v.second.name == c.name) available = false;
+                    }
             }
             if(available) availableCharms.add(c);
         }
