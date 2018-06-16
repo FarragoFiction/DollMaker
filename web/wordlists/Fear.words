@@ -2,7 +2,8 @@ TextEngine Word List
 
 @nouns
 @verbs
-
+// Fear is a two state emotion. You are either the person fearing your friends display of power or you're the one
+ //inducing fear. While there are instances of Fear, it takes a lot of Fear to have a Fearship with someone else.
 Beginning
     #noun|var@name1# scares the shit out of #noun|var@name2#. : 0.5
 

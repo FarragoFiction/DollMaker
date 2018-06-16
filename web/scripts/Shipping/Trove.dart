@@ -93,9 +93,9 @@ class Trove {
         //TODO have romance types have associated fonts
         String font = "Papyrus";
         givenCanvas.context2D.font = "${fontsize}px $font";
-        int buffer = 50;
+        int buffer = 25;
 
-        Renderer.wrapTextAndResizeIfNeeded(givenCanvas.context2D, story, font, 10, fontsize, fontsize, givenCanvas.width-buffer, 400);
+        Renderer.wrapTextAndResizeIfNeeded(givenCanvas.context2D, story, font, buffer, fontsize, fontsize, givenCanvas.width-buffer, 250,10);
 
     }
 

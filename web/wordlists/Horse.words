@@ -2,7 +2,9 @@ TextEngine Word List
 
 @nouns
 @verbs
-
+//Horse is ominous. It's uncertain concern that may have been inflicted upon you. You don't have mutual horse.
+ //You either inflict horse on someone else or you are feeling horse towards someone else.
+  //Horse back and forth between two people isn't mutual horse.
 Beginning
     #noun|var@name1# is a horse.  #noun|var@name2# is a horse. : 0.5
 

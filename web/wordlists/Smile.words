@@ -2,7 +2,7 @@ TextEngine Word List
 
 @nouns
 @verbs
-
+// Is bottoming
 Beginning
     #noun|var@name1# and  #noun|var@name2# both reach for the same #noun|var@romanticItem#. : 0.5
 

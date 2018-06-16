@@ -3,6 +3,9 @@ TextEngine Word List
 @nouns
 @verbs
 //:b:anter and :b:attle :b:ros without honor
+// is simply an alliance with someone and an agreement that at any moment you can and will throw hands.
+//A friendship built on equal strength. The most extreme :b:ships are blood pacts, agreements that the only
+ //other person with the rite to your life is your :b:rother.
 Beginning
     #noun|var@name1# and #noun|var@name2# meet on the Battlefield. : 0.5
 

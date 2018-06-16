@@ -2,7 +2,8 @@ TextEngine Word List
 
 @nouns
 @verbs
-
+//Is checking in on your friend frequently to see how they're doing. It's essentially pale.
+ //More Alliance leaning than Concern.
 Beginning
     #noun|var@name1# and  #noun|var@name2# get along pretty well right away. : 0.5
 
