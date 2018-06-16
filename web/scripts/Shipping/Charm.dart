@@ -179,11 +179,12 @@ class Vacillation extends Charm {
     //doesn't take them in at creation tho, but later
     Vacillation() : super("Vacillation",human: false, troll:true, leprechaun:true, dynamo:true, gloriousBullshit:true);
 
-    //todo drawing self on canvas also draws two sub charms
-    //todo and getting text also  does subcharms (move getting text into here instead of trove)
     @override
     void draw(Element element) {
-        SpanElement span = new SpanElement();
+        if(first == null) setRandomSubCharms();
+        print("trying to draw a vaccilation between $first and $second");
+        DivElement span = new DivElement();
+        span.style.display = "inline";
         element.append(span);
         span.style.border = "2px solid black"; //so you know what's vaccilating
         first.draw(span);
@@ -225,6 +226,9 @@ class Vacillation extends Charm {
         String type = Charm.ANY;
         if(trove.romSelect != null && trove.romSelect.selectedIndex >0) type = trove.romSelect.options[trove.romSelect.selectedIndex].value;
         List<Charm> charmsByType = Charm.getAllCharmsByType(type);
+        for(Charm c in trove.charms) {
+            charmsByType.remove(c); //don't try to vaccilate somethign you already have yo
+        }
         charmsByType.shuffle(new Random(trove.seed));
         first = charmsByType.first;
         second = charmsByType.last;

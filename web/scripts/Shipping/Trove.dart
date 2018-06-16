@@ -112,7 +112,6 @@ class Trove {
         int totalWidth = 0;
         int buffer = 5;
         List<ImageElement> allImages = new List<ImageElement>();
-        //TODO how to handle vaccilation
         for(Charm c in charms){
             if(c is Vacillation) {
                 ImageElement img = new ImageElement(src: c.first.imgLocation);
@@ -313,13 +312,6 @@ class Trove {
         }else {
             setCharmsAll();
         }
-        checkVaccilation();
-    }
-
-    void checkVaccilation() {
-        for(Charm c in charms) {
-            if(c is Vacillation) c.setRandomSubCharms();
-        }
     }
 
     void setCharmsAll() {
@@ -409,7 +401,6 @@ class Trove {
         Random rand = new Random(seed);
         copyOfAllCharms.shuffle(rand);
         charms.add(copyOfAllCharms.first);
-        //TODO though they can also vaccilate, once i implement that
     }
 
     void setCharmsHuman() {
