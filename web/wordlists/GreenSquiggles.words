@@ -5,7 +5,7 @@ TextEngine Word List
 //green squiggles show typos in intellij. who even cares about that
 //it WORKS doesn't it ???
 Beginning
-    #noun|var@name2# 'helpfully' points out a minor flaw in a project that #noun|var@name2# was working on. : 0.5
+    #noun|var@name2# 'helpfully' points out a minor flaw in a project that #noun|var@name1# was working on. : 0.5
 
 Middle
     #noun|var@name2# points out that #noun|var@name1# missed a spot while cleaning. : 0.5

@@ -90,6 +90,7 @@ class Trove {
             }
             await Renderer.drawToFitCentered(tmp, p.cachedDollCanvas);
             givenCanvas.context2D.drawImage(tmp, x, givenCanvas.height-groundPos);
+            Renderer.wrapTextAndResizeIfNeeded(givenCanvas.context2D, p.name, font, x, givenCanvas.height-groundPos, fontsize, 400,fontsize);
             givenCanvas.context2D.fillText(p.name, x+p.doll.width/3, givenCanvas.height-groundPos);
             x = givenCanvas.width - tmp.width;
         }

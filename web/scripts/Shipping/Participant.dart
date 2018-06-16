@@ -12,7 +12,14 @@ class Participant{
     CanvasElement cachedDollCanvas;
     //??? gender???
 
-    String get name => "${_name.replaceAll(REPLACE,doll.name)}";
+    String get name {
+        if(doll is HomestuckTrollDoll) {
+            HomestuckTrollDoll t = doll as HomestuckTrollDoll;
+            return "${_name.replaceAll(REPLACE, '${t.bloodColor} Blooded ${doll.name}')}";
+        }else {
+            return "${_name.replaceAll(REPLACE, doll.name)}";
+        }
+    }
     Trove trove; //so it knows to rewrite it if you change the doll
     Participant(String this._name, Doll this.doll);
 
@@ -37,6 +44,7 @@ class Participant{
         dataBox.value = "${doll.toDataBytesX()}";
         loadButton.onClick.listen((Event e) {
             Renderer.clearCanvas(tmpCanvas);
+            cachedDollCanvas = null;
             doll = Doll.loadSpecificDoll(dataBox.value);
 
             tmpCanvas.width = doll.width;
@@ -48,6 +56,7 @@ class Participant{
 
         randomizeButton.onClick.listen((Event e) {
             Renderer.clearCanvas(tmpCanvas);
+            cachedDollCanvas = null;
             doll = Doll.randomDollOfType(doll.renderingType);
             tmpCanvas.width = doll.width;
             tmpCanvas.height = doll.height;
@@ -60,6 +69,7 @@ class Participant{
 
         randomizeTypeButton.onClick.listen((Event e) {
             Renderer.clearCanvas(tmpCanvas);
+            cachedDollCanvas = null;
             Random rand = new Random(); //true random
             doll = Doll.randomDollOfType(rand.pickFrom(Doll.allDollTypes));
             tmpCanvas.width = doll.width;
