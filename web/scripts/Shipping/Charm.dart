@@ -216,16 +216,6 @@ class Vacillation extends Charm {
         second.draw(span);
     }
 
-    void addCharm(Charm charm) {
-        //will change it's behavior
-        charm.vaccilator = this;
-        if(first == null) {
-            first = charm;
-        }else {
-            second = charm;
-        }
-    }
-
     //when my side charms are clicked,
     void cycleCharm(Charm charm) {
         String type = Charm.ANY;
@@ -246,13 +236,23 @@ class Vacillation extends Charm {
         String type = Charm.ANY;
         print("setting random thingies, trove has rom selected of ${trove.romSelect.selectedIndex}");
         if(trove.romSelect != null && trove.romSelect.selectedIndex >0) type = trove.romSelect.options[trove.romSelect.selectedIndex].value;
+        print("type for vaccilator is $type");
         List<Charm> charmsByType = Charm.getAllCharmsByType(type);
+        List<Charm> availableCharms = new List<Charm>();
         for(Charm c in trove.charms) {
+            print("removing $c from vaccilator options");
             charmsByType.remove(c); //don't try to vaccilate somethign you already have yo
+            //can't just remove because clones
+            for(Charm c2 in charmsByType) {
+                if(c.name != c2.name) {
+                    availableCharms.add(c);
+                }
+            }
+
         }
-        charmsByType.shuffle(new Random(trove.seed));
-        first = charmsByType.first;
-        second = charmsByType.last;
+        availableCharms.shuffle(new Random(trove.seed));
+        first = availableCharms.first;
+        second = availableCharms.last;
     }
 
     @override
