@@ -124,7 +124,7 @@ class Trove {
                 ImageElement img3 = new ImageElement(src: c.second.imgLocation);
                 await img3.onLoad;
                 totalWidth += img3.width + buffer;
-                allImages.add(img1);
+                allImages.add(img);
                 allImages.add(img2);
                 allImages.add(img3);
             }else {
