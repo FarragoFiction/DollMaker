@@ -253,7 +253,7 @@ class Vacillation extends Charm {
                 if(c2.name == c.name) {
                     available = false;
                 }else if(c2 is Vacillation) {
-                    Vacillation v = c as Vacillation;
+                    Vacillation v = c2 as Vacillation;
                     if(v.first.name == c.name || v.second.name == c.name) available = false;
                     }
             }
