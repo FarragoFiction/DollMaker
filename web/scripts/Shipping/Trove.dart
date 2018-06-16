@@ -70,7 +70,7 @@ class Trove {
         await drawParticipantsOnCanvas(buffer);
         await drawTroveOnCanvas(buffer);
         await drawStoryOnCanvas(buffer, storyDiv.text);
-        storyDiv.setInnerHtml(storyDiv.text.replaceAll("\n","<br>"));
+        //storyDiv.setInnerHtml(storyDiv.text.replaceAll("\n","<br>"));
         Renderer.clearCanvas(canvas);
         canvas.context2D.drawImage(buffer,0,0);
     }
@@ -90,8 +90,8 @@ class Trove {
             }
             await Renderer.drawToFitCentered(tmp, p.cachedDollCanvas);
             givenCanvas.context2D.drawImage(tmp, x, givenCanvas.height-groundPos);
-            Renderer.wrapTextAndResizeIfNeeded(givenCanvas.context2D, p.name, font, x, givenCanvas.height-groundPos, fontsize, 400,fontsize);
-            givenCanvas.context2D.fillText(p.name, x+p.doll.width/3, givenCanvas.height-groundPos);
+            Renderer.wrapTextAndResizeIfNeeded(givenCanvas.context2D, p.name, font, x, givenCanvas.height-groundPos-fontsize, fontsize, 400,fontsize);
+            //givenCanvas.context2D.fillText(p.name, x+p.doll.width/3, givenCanvas.height-groundPos);
             x = givenCanvas.width - tmp.width;
         }
     }
@@ -176,14 +176,14 @@ class Trove {
     }
 
     int getRandomNumberOfLines() {
-        int ret = 1;
+        int ret = 0;
         int max = 2;
         max += (charms.length/5).ceil();
         max = Math.min(5, max);
         Random rand = new Random(seed);
         //lower numbers are most common
         for(int i = 0; i <max; i++) {
-            if(rand.nextDouble() < .5) {
+            if(rand.nextDouble() < .3) {
                 ret++;
             }else {
                 break;
