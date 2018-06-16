@@ -112,11 +112,27 @@ class Trove {
         int totalWidth = 0;
         int buffer = 5;
         List<ImageElement> allImages = new List<ImageElement>();
+        //TODO how to handle vaccilation
         for(Charm c in charms){
-            ImageElement img = new ImageElement(src: c.imgLocation);
-            await img.onLoad;
-            totalWidth += img.width+buffer;
-            allImages.add(img);
+            if(c is Vacillation) {
+                ImageElement img = new ImageElement(src: c.first.imgLocation);
+                await img.onLoad;
+                totalWidth += img.width + buffer;
+                ImageElement img2 = new ImageElement(src: c.imgLocation);
+                await img2.onLoad;
+                totalWidth += img2.width + buffer;
+                ImageElement img3 = new ImageElement(src: c.second.imgLocation);
+                await img3.onLoad;
+                totalWidth += img3.width + buffer;
+                allImages.add(img1);
+                allImages.add(img2);
+                allImages.add(img3);
+            }else {
+                ImageElement img = new ImageElement(src: c.imgLocation);
+                await img.onLoad;
+                totalWidth += img.width + buffer;
+                allImages.add(img);
+            }
         }
         int startX = (givenCanvas.width/2 - totalWidth/2).round();
         for(ImageElement img in allImages) {
