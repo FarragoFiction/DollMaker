@@ -241,7 +241,6 @@ class Vacillation extends Charm {
         List<Charm> availableCharms = new List<Charm>();
         for(Charm c in trove.charms) {
             print("removing $c from vaccilator options");
-            charmsByType.remove(c); //don't try to vaccilate somethign you already have yo
             //can't just remove because clones
             for(Charm c2 in charmsByType) {
                 if(c.name != c2.name) {
@@ -250,6 +249,7 @@ class Vacillation extends Charm {
             }
 
         }
+
         availableCharms.shuffle(new Random(trove.seed));
         first = availableCharms.first;
         second = availableCharms.last;
