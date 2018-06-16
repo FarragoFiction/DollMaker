@@ -36,3 +36,19 @@ randomRomanticItem
     #noun|var@romanticItem1#
     #noun|var@romanticItem2#
     #noun|var@romanticItem3#: 0.3
+
+startComment
+    They'll tell the story of when they first met met for years to come.
+    They had know idea how important this would be for their future.
+    They hit it off right away.
+    It foreshadowed things to come.
+    It was great.
+    It was so cute.
+
+middleComment
+    They really were made for each other.
+
+endingComment
+    Everyone could see they were going to live happily ever after.
+
+

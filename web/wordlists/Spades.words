@@ -4,31 +4,36 @@ TextEngine Word List
 @verbs
 
 Beginning
-    #noun|var@name1# and #noun|var@name2# #verb_rivalry@past# over a #randomRomanticItem#. : 0.5
-    They #verb_rivalry@past# over a #randomRomanticItem#. : 0.2
-    #noun|var@name1# and #noun|var@name2# #verb_rivalry@past# over a #noun#. : 0.2
-    They #verb_rivalry@past# over a #noun#. : 0.1
+    #noun|var@name1# and #noun|var@name2# #verb_rivalry@past# over a #randomRomanticItem#. #startComment# : 0.5
+    They #verb_rivalry@past# over a #randomRomanticItem#. #startComment# : 0.2
+    #noun|var@name1# and #noun|var@name2# #verb_rivalry@past# over a #noun#. #startComment# : 0.2
+    They #verb_rivalry@past# over a #noun#. #startComment# : 0.1
 
 Middle
-    #noun|var@name2# #verb@past# a #randomRomanticItem# to taunt #noun|var@name1#. #rivalrySentence# : 0.5
-    They never stop #verb_rivalry@continuous# over #noun@plural|var@romanticItem#. #rivalrySentence# : 0.2
-    #noun|var@2# never lets #noun|var@name1# forget the time they were scared of a #randomRomanticItem#. #rivalrySentence# : 0.5
+    #noun|var@name2# #verb@present# a #randomRomanticItem# to taunt #noun|var@name1#. #middleComment# : 0.5
+    They never stop #verb_rivalry@continuous# over #noun@plural|var@romanticItem#. #middleComment# : 0.2
+    #noun|var@name2# never lets #noun|var@name1# forget the time they were scared of a #randomRomanticItem#. #middleComment# : 0.5
     #randomParticipant#'s #noun_building# gets destroyed, and they know exactly who to blame.: 0.3
-    #noun|var@name2# #verb@past# a #noun# to taunt #noun|var@name1#. #rivalrySentence# : 0.2
-    They never stop ##verb_rivalry@continuous# over #noun@plural#. #rivalrySentence# : 0.1
-    #noun|var@2# never lets #noun|var@name1# forget the time they were scared of a #noun#. #rivalrySentence# : 0.2
+    #noun|var@name2# #verb@present# a #noun# to taunt #noun|var@name1#. #middleComment# : 0.2
+    They never stop #verb_rivalry@continuous# over #noun@plural#. #middleComment# : 0.1
+    #noun|var@name2# never lets #noun|var@name1# forget the time they were scared of a #noun#. #middleComment# : 0.2
 
 End
-    #noun|var@name2#  and  #noun|var@name1# have yearly #randomRomanticItem# competitions.  #rivalrySentence# : 0.5
-    They never get tired of  ##verb_rivalry@continuous# over #randomRomanticItem#. #rivalrySentence#: 0.3
+    #noun|var@name2#  and  #noun|var@name1# have yearly #randomRomanticItem# competitions.  #endComment# : 0.5
+    They never get tired of  #verb_rivalry@continuous# over #randomRomanticItem#. #endComment#: 0.3
     #randomParticipant# always keeps things interesting by #verb@continuous# a #noun|var@romanticItem#. :0.5
 
 
-rivalrySentence
+middleComment
     It's actually kind of adorable how they don't get along.
     They are so used to competing that they rush to finish each other's sentences.
     #randomParticipant# usually gets the upper hand.
-    #randomParticipant# usually gets the upper hand, unless there is a #noun|var@romanticItem2#.
+    #randomParticipant# usually gets the upper hand, unless there is a #noun|var@romanticItem2#
 
+endComment
+    It's actually kind of adorable how they don't get along.
+    They are so used to competing that they rush to finish each other's sentences.
+    #randomParticipant# usually gets the upper hand.
+    #randomParticipant# usually gets the upper hand, unless there is a #noun|var@romanticItem2#
 
 

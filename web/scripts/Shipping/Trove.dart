@@ -39,6 +39,9 @@ class Trove {
 
     Trove(List<Participant> this.participants, {List<Charm> this.charms}) {
         if(charms == null || charms.isEmpty) setCharmsRandom();
+        if(romanticBG == null) {
+            romanticBG = new ImageElement(src: "images/Charms/romanticBG.png");
+        }
         initParticipants();
     }
 
@@ -170,9 +173,9 @@ class Trove {
     }
 
     int getRandomNumberOfLines() {
-        int ret = 0;
+        int ret = 1;
         int max = 2;
-        max += (charms.length/5).round();
+        max += (charms.length/5).ceil();
         max = Math.min(5, max);
         Random rand = new Random(seed);
         //lower numbers are most common
