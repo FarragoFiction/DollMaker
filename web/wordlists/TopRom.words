@@ -28,3 +28,11 @@ Conclusion
     Eventually
     At some point
 
+randomParticipant
+    #noun|var@name1#
+    #noun|var@name2#
+
+randomRomanticItem
+    #noun|var@romanticItem1#
+    #noun|var@romanticItem2#
+    #noun|var@romanticItem3#: 0.3

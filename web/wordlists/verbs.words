@@ -19,7 +19,20 @@ verb
     @verb_programming: 0.2
     @verb_travel
     @verb_action
+    @verb_rivalry
 
+
+verb_rivalry
+    fight
+        past: fought
+    compete
+        pc: compet
+    quarrel
+    argue
+        pc: argu
+    bicker
+    struggle
+        pc: struggl
 
 verb_action
     // to be or not to be?
