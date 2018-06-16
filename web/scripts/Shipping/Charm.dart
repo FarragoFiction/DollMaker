@@ -184,6 +184,13 @@ class Vacillation extends Charm {
     //doesn't take them in at creation tho, but later
     Vacillation() : super("Vacillation",human: false, troll:true, leprechaun:true, dynamo:true, gloriousBullshit:true);
 
+
+    @override
+    Charm clone() {
+        return new Vacillation();
+    }
+
+
     @override
     void draw(Element element) {
         if(first == null) setRandomSubCharms();
