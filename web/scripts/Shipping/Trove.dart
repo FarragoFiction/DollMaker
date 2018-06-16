@@ -88,7 +88,7 @@ class Trove {
     }
 
     Future<Null> drawStoryOnCanvas(CanvasElement givenCanvas, String story) async{
-        int fontsize = 48;
+        int fontsize = 32;
         //TODO pick this from drop down
         //TODO have romance types have associated fonts
         String font = "Papyrus";
@@ -170,7 +170,7 @@ class Trove {
     int getRandomNumberOfLines() {
         int ret = 0;
         int max = 1;
-        max += (charms.length/2).round();
+        max += (charms.length/4).round();
         max = Math.min(5, max);
         Random rand = new Random(seed);
         //lower numbers are most common
