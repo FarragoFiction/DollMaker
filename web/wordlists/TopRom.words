@@ -3,12 +3,15 @@ TextEngine Word List
 @nouns
 @verbs
 
+//past tense
 BeginningFirst
     #Introduction#, #Beginning# : 0.5
 
+//past tense
 MiddleFirst
     #Transition#, #Middle# :0.5
 
+//continuous tense
 EndFirst
     #Conclusion#, #End# :0.5
 
