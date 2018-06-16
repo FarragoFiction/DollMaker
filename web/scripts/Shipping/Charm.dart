@@ -2,6 +2,7 @@ import 'Trove.dart';
 import 'dart:async';
 import 'dart:html';
 
+import 'package:RenderingLib/RendereringLib.dart';
 import 'package:TextEngine/TextEngine.dart';
 
 /*
@@ -218,6 +219,15 @@ class Vacillation extends Charm {
         if(index > charmsByType.length) index =0;
         first = charmsByType[index];
         trove.drawCharms(null);
+    }
+
+    void setRandomSubCharms(){
+        String type = Charm.ANY;
+        if(trove.romSelect != null && trove.romSelect.selectedIndex >0) type = trove.romSelect.options[trove.romSelect.selectedIndex].value;
+        List<Charm> charmsByType = Charm.getAllCharmsByType(type);
+        charmsByType.shuffle(new Random(trove.seed));
+        first = charmsByType.first;
+        second = charmsByType.last;
     }
 
     @override

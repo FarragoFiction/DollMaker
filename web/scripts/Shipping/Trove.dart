@@ -313,6 +313,13 @@ class Trove {
         }else {
             setCharmsAll();
         }
+        checkVaccilation();
+    }
+
+    void checkVaccilation() {
+        for(Charm c in charms) {
+            if(c is Vacillation) c.setRandomSubCharms();
+        }
     }
 
     void setCharmsAll() {
