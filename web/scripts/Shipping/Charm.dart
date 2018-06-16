@@ -167,5 +167,15 @@ class Vacillation extends Charm {
     Charm second;
     //doesn't take them in at creation tho, but later
     Vacillation() : super("Vacillation",human: false, troll:true, leprechaun:true, dynamo:true, gloriousBullshit:true);
+    //todo drawing self also draws two sub charms
 
+    void draw(Element element) {
+        first.draw(element);
+        ImageElement img = new ImageElement(src:imgLocation);
+        element.append(img);
+        img.onClick.listen((Event e) {
+            if(trove != null) trove.removeCharm(this);
+        });
+        second.draw(element);
+    }
 }
