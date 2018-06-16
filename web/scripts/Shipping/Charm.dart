@@ -153,15 +153,19 @@ class Charm {
         new Charm("Horse", dynamo: true);
         new Charm("100", dynamo: true);
         new Charm("b", dynamo: true);
+        new Vacillation();
 
 
 
 
         //TODO make a vaccilation charm (which has two random subsets, have it set by trove)
-
-
-
-
-
     }
+}
+
+class Vacillation extends Charm {
+    Charm first;
+    Charm second;
+    //doesn't take them in at creation tho, but later
+    Vacillation() : super("Vacillation",human: false, troll:true, leprechaun:true, dynamo:true, gloriousBullshit:true);
+
 }
