@@ -1,5 +1,8 @@
 import 'Trove.dart';
+import 'dart:async';
 import 'dart:html';
+
+import 'package:TextEngine/TextEngine.dart';
 
 /*
 A charm is repesented by a single symbol.
@@ -116,6 +119,10 @@ class Charm {
         });
     }
 
+    Future<Null> getPossibilities(TextEngine textEngine) async{
+        await textEngine.loadList(name);
+    }
+
     @override
     String toString() {
         return name;
@@ -167,8 +174,10 @@ class Vacillation extends Charm {
     Charm second;
     //doesn't take them in at creation tho, but later
     Vacillation() : super("Vacillation",human: false, troll:true, leprechaun:true, dynamo:true, gloriousBullshit:true);
-    //todo drawing self also draws two sub charms
 
+    //todo drawing self on canvas also draws two sub charms
+    //todo and getting text also  does subcharms (move getting text into here instead of trove)
+    @override
     void draw(Element element) {
         first.draw(element);
         ImageElement img = new ImageElement(src:imgLocation);
@@ -177,5 +186,11 @@ class Vacillation extends Charm {
             if(trove != null) trove.removeCharm(this);
         });
         second.draw(element);
+    }
+
+    @override
+    Future<Null> getPossibilities(TextEngine textEngine) async{
+        await textEngine.loadList(first.name);
+        await textEngine.loadList(second.name);
     }
 }

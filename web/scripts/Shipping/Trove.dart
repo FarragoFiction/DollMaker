@@ -138,7 +138,7 @@ class Trove {
             await textEngine.loadList("TopRom");
             for (Charm c in charms) {
                 print("loading ${c.name}");
-                await textEngine.loadList(c.name);
+                await c.getPossibilities(textEngine);
             }
            // print("${textEngine.loadedFiles}");
             //begiing = how they met
