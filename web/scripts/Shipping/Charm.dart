@@ -228,13 +228,31 @@ class Vacillation extends Charm {
         String type = Charm.ANY;
         if(trove.romSelect != null && trove.romSelect.selectedIndex >0) type = trove.romSelect.options[trove.romSelect.selectedIndex].value;
         List<Charm> charmsByType = Charm.getAllCharmsByType(type);
-        int index = charmsByType.indexOf(charm);
+        for(Charm c in charmsByType) {
+            if(c is Vacillation) {
+                charmsByType.remove(c);
+                break;
+            }
+        }
+        int index = 0; //can't just index of because clones
+        for(Charm c in charmsByType) {
+            if(c.name == charm.name) break;
+            index ++;
+        }
+        print("index of charm $charm is $index in $charmsByType");
         index ++;
-        if(index > charmsByType.length) index =0;
+        print("index of charm plus one  is $index");
+        if(index >= charmsByType.length) {
+            print("resetting because $index was too high for a thing of ${charmsByType.length}");
+            index = 0;
+        }
+        print("after checking for a cycle, index is $index");
         if(charm == first) {
-            first = charmsByType[index];
+            first = charmsByType[index].clone();
+            first.vaccilator = this;
         }else {
-            second = charmsByType[index];
+            second = charmsByType[index].clone();
+            second.vaccilator = this;
         }
         trove.drawCharms(null);
     }
