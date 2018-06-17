@@ -5,10 +5,15 @@ TextEngine Word List
 //Is checking in on your friend frequently to see how they're doing. It's essentially pale.
  //More Alliance leaning than Concern.
 Beginning
-    #noun|var@name1# and  #noun|var@name2# get along pretty well right away. : 0.5
+    #noun|var@name1# realized that #noun|var@name2# isn't doing so great.
+    #noun|var@name1# saw #noun|var@name2#  #verb@past# a #noun# and began to worry about them.
+
 
 Middle
-    #noun|var@name2# and #noun|var@name1# both like #noun@plural|var@romanticItem#. : 0.5
+    #noun|var@name1# asked if #noun|var@name2# was okay. They weren't.
+    #noun|var@name1# asked if #noun|var@name2# was okay. They were, but appreciated the thought.
+
 
 End
-    #noun|var@name2#  and  #noun|var@name1# agree that #noun@plural|var@romanticItem# are pretty okay. : 0.5
+    #noun|var@name1# checks in on #noun|var@name2# pretty frequently, especially when its #noun@plural|var@romanticItem# season.
+    #noun|var@name1# makes sure #noun|var@name2# is doing okay.
