@@ -5,8 +5,8 @@ TextEngine Word List
 // Is letting your friend who wants to display his power display his power with the intent
  //of you benefitting from it. It's more Sauce leaning that Shogun leaning.
 Beginning
-    #noun|var@name1# saw #noun|var@name2# making a power move and just #positiveFeedback@past#.  #startComment#
-    #noun|var@name1# #positiveFeedback@past# when they see #noun|var@name2# #verb@past# a #noun|var@romanticItem#.  #startComment#
+    #noun|var@name1# saw #noun|var@name2# making a power move and just #verbpositiveFeedback@past#.  #startComment#
+    #noun|var@name1# #verbpositiveFeedback@past# when they see #noun|var@name2# #verb@past# a #noun|var@romanticItem#.  #startComment#
      #noun|var@name1# said 'Oh Damn!' when they see #noun|var@name2# #verb@past# a #noun|var@romanticItem#.  #startComment#
 
 Middle
@@ -15,7 +15,7 @@ Middle
 
 
 End
-    #noun|var@name2# does a huge power move #verb@past# a #noun|var@romanticItem# and #noun|var@name1# acts as their hype man.
+    #noun|var@name2# does a huge power move #verb@continuous# a #noun|var@romanticItem# and #noun|var@name1# acts as their hype man.
     #noun|var@name2#  becomes really famous as powerful fighter, and #noun|var@name1# is right there with them, supporting them.
 
 

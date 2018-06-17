@@ -20,6 +20,8 @@ verb
     @verb_travel
     @verb_action
     @verb_rivalry
+    @verbpositiveFeedback
+    @verbnegativeFeedback
 
 
 verb_rivalry
@@ -137,6 +139,23 @@ verb_action
        pc: elevat
     enslave
         pc: enslav
+
+verbpositiveFeedback
+    cheer
+    clap
+    applaud
+    dab
+        pc: dabb
+    smile
+        pc:smil
+    grin
+
+verbnegativeFeedback
+    frown
+    boo
+    jeer
+    scowl
+    laugh
 
 verb_travel
     walk
