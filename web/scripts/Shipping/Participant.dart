@@ -21,7 +21,7 @@ class Participant{
         }
     }
 
-    void set name(String n) => (name = n);
+    void set name(String n) => (_name = n);
     Trove trove; //so it knows to rewrite it if you change the doll
     Participant(String this._name, Doll this.doll);
 

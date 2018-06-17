@@ -219,9 +219,9 @@ class Trove {
         for(Participant p in participants) {
             p.trove = this; //so they can refresh the charms if they change.
             if(dollName == null) {
-                dollName = p.doll.name;
-            }else if(dollName == p.doll.name) {
-                String n = p.name; //so it doesn't stack overflow sinc etha'ts a get
+                dollName = p.name;
+            }else if(dollName == p.name) {
+                String n = "${p.name}"; //so it doesn't stack overflow sinc etha'ts a get
                 p.name = "${n}2";
             }
         }
