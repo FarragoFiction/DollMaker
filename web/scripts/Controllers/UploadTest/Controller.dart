@@ -19,7 +19,7 @@ Future<Null> main() async {
     uploaderDiv = querySelector("#uploader");
     print("going to load doll");
     await loadDoll();
-    shitpost(); //enable this when i need to know all directories
+    //shitpost(); //enable this when i need to know all directories
     makeUploadObjects();
 }
 
