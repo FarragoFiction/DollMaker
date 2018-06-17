@@ -275,11 +275,15 @@ class Trove {
     }
 
     void drawTextBox(Element element) {
+        LabelElement label = new LabelElement()..text = "Write Your Own Story";
+        label.style.display = "block";
+        element.append(label);
         storyInputElement = new TextAreaElement()..value = storyText;
         element.append(storyInputElement);
         storyInputElement.onChange.listen((Event e) {
             storyText = storyInputElement.value;
             userModifiedStory = true;
+            createStory(null);
         });
     }
 
