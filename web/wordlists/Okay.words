@@ -10,10 +10,16 @@ Beginning
 
 
 Middle
-    #noun|var@name1# asked if #noun|var@name2# was okay. They weren't.
+    #noun|var@name1# asked if #noun|var@name2# was okay. They weren't. #noun|var@name1# #comfortActivities#.
     #noun|var@name1# asked if #noun|var@name2# was okay. They were, but appreciated the thought.
 
 
 End
     #noun|var@name1# checks in on #noun|var@name2# pretty frequently, especially when its #noun@plural|var@romanticItem# season.
     #noun|var@name1# makes sure #noun|var@name2# is doing okay.
+
+comfortActivities
+    comforted them
+    let them talk it out
+    let them vent
+    helped them figure out how they were feeling
