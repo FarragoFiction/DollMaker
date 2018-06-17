@@ -121,6 +121,7 @@ verb_action
         pc: crumpl
     shatter
     drop
+        pc: dropp
     farm
     sign
     pile

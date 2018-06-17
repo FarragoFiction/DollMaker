@@ -20,6 +20,8 @@ class Participant{
             return "${_name.replaceAll(REPLACE, doll.name)}";
         }
     }
+
+    void set name(String n) => (name = n);
     Trove trove; //so it knows to rewrite it if you change the doll
     Participant(String this._name, Doll this.doll);
 
