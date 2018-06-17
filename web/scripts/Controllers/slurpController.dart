@@ -40,6 +40,7 @@ void printOneDollPath(Doll doll) {
     DivElement dollDiv = new DivElement()..setInnerHtml("<h1>${doll.name}</h1>");
     dollDiv.style.margin = "30px";
     dollDiv.style.border = "3px solid black";
+    dollDiv.style.backgroundColor = "#aaaaaa";
     container.append(dollDiv);
     for(SpriteLayer layer in doll.renderingOrderLayers) {
         printOneDirectory(layer, "$source/${layer.imgNameBase}", dollDiv);

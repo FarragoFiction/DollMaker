@@ -116,6 +116,7 @@ void drawAllImagesForPart() {
     container.style.display = "inline-block";
     for(int i = 0; i<selectedPart.maxImageNumber+1; i++) {
         DivElement innerContainer = new DivElement();
+        innerContainer.style.backgroundColor = "#aaaaaa";
         innerContainer.style.position = "relative";
         innerContainer.style.width = "${selectedDoll.width}px";
         innerContainer.style.height = "${selectedDoll.height}px";
