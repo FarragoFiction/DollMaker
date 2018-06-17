@@ -19,10 +19,15 @@ it also has two or more dolls as participants, which it uses to seed its random 
 class Trove {
     //only the first two will be named
     List<Participant> participants = new List<Participant>();
+    String storyText;
+    //if this is ever true stop randomizing, just like trollcall
+    bool userModifiedStory  = false;
+
     SelectElement romSelect;
     ButtonElement addCharm;
     SelectElement charmSelect;
     ImageElement romanticBG;
+    TextAreaElement storyInputElement;
     int fontsize = 32;
     String font = "Papyrus";
 
@@ -141,9 +146,10 @@ class Trove {
     }
 
     Future<String> getStory() async {
-        //pass this to phrases
-        String ret = "";
+        //once the user does a thing, no more randomizing
+        if(userModifiedStory) return storyText;
         Random rand = new Random(seed);
+        storyText = "";
         try {
             TextStory story = new TextStory();
             story.setString("name1","${participants.first.name}");
@@ -161,10 +167,10 @@ class Trove {
             //end = how their relationship stabilized
             //story ties it all together
             //space plus newline is what makes it work
-            ret = "$ret ${getLines('Beginning', textEngine, story)}\n \n ";
-            ret = "$ret ${getLines('Middle', textEngine, story)}\n \n ";
-            ret = "$ret ${getLines('End', textEngine, story)}\n \n";
-            return ret;
+            storyText = "$storyText ${getLines('Beginning', textEngine, story)}\n \n ";
+            storyText = "$storyText ${getLines('Middle', textEngine, story)}\n \n ";
+            storyText = "$storyText ${getLines('End', textEngine, story)}\n \n";
+            return storyText;
 
         }catch(e) {
             print(e);
@@ -266,6 +272,15 @@ class Trove {
 
 
 
+    }
+
+    void drawTextBox(Element element) {
+        storyInputElement = new TextAreaElement()..value = storyText;
+        element.append(storyInputElement);
+        storyInputElement.onChange.listen((Event e) {
+            storyText = storyInputElement.value;
+            userModifiedStory = true;
+        });
     }
 
     void drawCharms(Element element) {

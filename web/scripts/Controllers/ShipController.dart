@@ -35,6 +35,8 @@ void ship() {
         trove.drawParticipants(container);
         trove.drawRomTypeDropdowns(container);
         trove.drawCharms(container);
+        trove.drawTextBox(container);
+
 }
 
 
