@@ -47,21 +47,39 @@ randomRomanticItem
     #noun|var@romanticItem3#: 0.3
 
 startComment
-    They'll tell the story of when they first met met for years to come.
-    They had know idea how important this would be for their future.
-    They hit it off right away.
-    It foreshadowed things to come.
-    It was great.
-    It was so cute.
+    They'll tell the story of when they first met met for years to come.: 0.2
+    They had know idea how important this would be for their future.: 0.2
+    They hit it off right away. : 0.2
+    It foreshadowed things to come.: 0.2
+    It was great.: 0.2
+    It was so cute.: 0.2
     .: 10.0
 
 middleComment
-    They really were made for each other.
+    They really were made for each other.: 0.2
 
     .: 3.0
 
 endingComment
-    Everyone can see they were going to live happily ever after.
+    Everyone can see they were going to live happily ever after.: 0.2
      .: 3.0
+
+positiveFeedback
+    cheer
+    clap
+    applaud
+    dab
+    smile
+        past: smil
+    grin
+
+negativeFeedback
+    frown
+    boo
+    jeer
+    scowl
+    laugh
+
+
 
 
