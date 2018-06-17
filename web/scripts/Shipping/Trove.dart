@@ -70,7 +70,7 @@ class Trove {
         await drawParticipantsOnCanvas(buffer);
         await drawTroveOnCanvas(buffer);
         await drawStoryOnCanvas(buffer, storyDiv.text);
-        //storyDiv.setInnerHtml(storyDiv.text.replaceAll("\n","<br>"));
+        storyDiv.setInnerHtml(storyDiv.text.replaceAll("\n","<br>"));
         Renderer.clearCanvas(canvas);
         canvas.context2D.drawImage(buffer,0,0);
     }
