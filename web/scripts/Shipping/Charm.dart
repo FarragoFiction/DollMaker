@@ -239,14 +239,14 @@ class Vacillation extends Charm {
             if(c.name == charm.name) break;
             index ++;
         }
-        print("index of charm $charm is $index in $charmsByType");
+        //print("index of charm $charm is $index in $charmsByType");
         index ++;
-        print("index of charm plus one  is $index");
+        //print("index of charm plus one  is $index");
         if(index >= charmsByType.length) {
-            print("resetting because $index was too high for a thing of ${charmsByType.length}");
+          //  print("resetting because $index was too high for a thing of ${charmsByType.length}");
             index = 0;
         }
-        print("after checking for a cycle, index is $index");
+        //print("after checking for a cycle, index is $index");
         if(charm == first) {
             first = charmsByType[index].clone();
             first.vaccilator = this;
@@ -259,9 +259,9 @@ class Vacillation extends Charm {
 
     void setRandomSubCharms(){
         String type = Charm.ANY;
-        print("setting random thingies, trove has rom selected of ${trove.romSelect.selectedIndex}");
+       // print("setting random thingies, trove has rom selected of ${trove.romSelect.selectedIndex}");
         if(trove.romSelect != null && trove.romSelect.selectedIndex >0) type = trove.romSelect.options[trove.romSelect.selectedIndex].value;
-        print("type for vaccilator is $type");
+        //print("type for vaccilator is $type");
         List<Charm> charmsByType = Charm.getAllCharmsByType(type);
         List<Charm> availableCharms = new List<Charm>();
 

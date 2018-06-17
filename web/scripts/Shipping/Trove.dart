@@ -273,7 +273,7 @@ class Trove {
             charmDiv = new DivElement();
             element.append(charmDiv);
         }
-        charmDiv.setInnerHtml(""); //wipe out any already drawn charms
+        charmDiv.setInnerHtml("Click a charm to remove it. If it's in a Vacillation, click it to cycle through options.<br>"); //wipe out any already drawn charms
         print("drawing participants");
         for(Charm c in charms) {
             c.trove = this;
