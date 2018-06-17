@@ -1,3 +1,4 @@
+import 'DollSlurper.dart';
 import "dart:html";
 import "../navbar.dart";
 import "dart:async";
@@ -59,7 +60,7 @@ Future<Null> initParents() async {
             players.add(Doll.randomDollOfType(type));
         }
     }else {
-        await slurpDolls();
+        await slurpDolls(players, chosenCategory);
         //random amount from that category
         List<Doll> tmp = new List<Doll>();
         for (int i = 0; i < number; i++) {
@@ -349,24 +350,4 @@ void todo(String todo) {
 
 void pickCategory() {
     chosenCategory = getParameterByName("target");
-}
-
-Future<Null> slurpDolls() async{
-    //yes, i know it' sspelled wrong. no, i don't care.
-    print("source is $chosenCategory");
-    await HttpRequest.getString(PathUtils.adjusted("DollHoarde/${chosenCategory}.txt")).then((String data) {
-        List<String> parts = data.split(new RegExp("\n|\r"));
-        for(String line in parts) {
-            if(line.isNotEmpty) {
-                try {
-                    players.add(Doll.loadSpecificDoll(line));
-                }catch(e) {
-                    DivElement error = new DivElement();
-                    error.text = "Error loading $line, $e";
-                    error.style.color = "red";
-                    print(e);
-                }
-            }
-        }
-    });
 }

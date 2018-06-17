@@ -1,5 +1,6 @@
 import '../Shipping/Participant.dart';
 import '../Shipping/Trove.dart';
+import 'DollSlurper.dart';
 import "dart:html";
 import "../navbar.dart";
 import "dart:async";
@@ -26,10 +27,13 @@ Future<Null> main() async{
     container.append(childContainer);
 }
 
-void ship() {
+Future<Null> ship() async{
         List<Participant> p = new List<Participant>();
-        for(int i = 0; i<numberParticipants; i++) {
-           p.add( new Participant("${Participant.REPLACE}", Doll.randomDollOfType(rand.pickFrom(Doll.allDollTypes))));
+        String chosenCategory = getParameterByName("target");
+        if(chosenCategory == null) {
+            randomParticipants(p);
+        }else {
+            await slurpDolls();
         }
         trove = new Trove(p);
         trove.drawParticipants(container);
@@ -39,7 +43,12 @@ void ship() {
 
 }
 
-
+void randomParticipants(List<Participant> p) {
+    for (int i = 0; i < numberParticipants; i++) {
+        p.add(new Participant("${Participant.REPLACE}",
+        Doll.randomDollOfType(rand.pickFrom(Doll.allDollTypes))));
+    }
+}
 
 
 
