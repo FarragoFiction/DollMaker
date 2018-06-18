@@ -35,13 +35,23 @@ class BaseController {
         querySelector("#randomizeNotColors").onClick.listen((e) => randomizeDollNotColors());
 
         ButtonElement copyButton = querySelector("#copyButton");
+        LabelElement nameLabel = new LabelElement()..text = "Name:";
+        TextInputElement name = new TextInputElement();
+
+
 
         TextAreaElement dataBox = querySelector("#shareableURL");
+        querySelector("#samplePaletteControls").append(nameLabel)..append(name);
         dataBox.value = "${window.location.origin}${window.location.pathname}?${doll.toDataBytesX()}";
         copyButton.onClick.listen((Event e) {
             TextAreaElement dataBox = querySelector("#shareableURL");
             dataBox.select();
             document.execCommand('copy');
+        });
+
+        name.onInput.listen((Event e) {
+            doll.dollName = name.value;
+            dataBox.value = "${window.location.origin}${window.location.pathname}?${doll.toDataBytesX()}";
         });
 
         if(doll is HatchableDoll) {
