@@ -76,6 +76,9 @@ Future<Null> drawOneDoll(Doll d) async {
         area.select();
         document.execCommand('copy');
     });
+
+    AnchorElement editLink = new AnchorElement(href: "index.html?${d.toDataUrlPart()}")..text = "Edit"..target="_blank";
+    div.append(editLink);
 }
 
 void pickCategory() {
