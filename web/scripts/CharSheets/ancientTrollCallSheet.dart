@@ -88,14 +88,24 @@ class TrollCallSheetAncient extends CharSheet {
     List<TextLayer> get textLayers => <TextLayer>[name,fact1,fact2,fact3]; //placeholder
 
 
+    Future<String> randomFact() async{
+        if(textEngine == null) {
+            textEngine = new TextEngine();
+            await textEngine.loadList("trollcall");
+            textEngine.setSeed(doll.seed);
+        }
+
+        return "${textEngine.phrase("TrollCall")}";
+    }
+
 
     //obsessed with nouns. verbs a noun every single day.
-    String randomFact() {
+    String randomFactOld() {
         List<String> verbs = <String>["imagine","tap","use","discard","draw","imbibe","create","devour","vore","scatter","shred","place","select","choose","levitate","burn","throw away","place","dominate","humiliate","oggle","auto-parry","be","wear","flip","fondly regard","retrieve","throw","slay","defeat","become","grab","order","steal","smell","sample","taste","caress","fondle","placate","handle","pirouette","entrench","crumple","shatter","drop","farm","sign","pile","smash","resist","sip","understand","contemplate", "murder", "elevate", "enslave"];
         List<String> nouns =<String> ["Bro","Mom","royalty","Queen","guardian","parent","Dad","opponent","graveyard","irrelevancy corner","card","monster","item","deed","feat","artifact","weapon","armor","shield","ring","mana","deck","creature","sword","legendary artifact","legendary weapon","god","meme","red mile", "ring of orbs no-fold","arm","mechanical bull","mystery","token","shrubbery","Blue Lady","gem","egg","coin","talisman", "turn", "head","goddamn mushroom"];
         List<String> effects = <String>["legal","so totally illegal","illegal","extra legal","ironic","ripe","angsting","shitty","disappointing","amazing","perfect","confused","poisoned","dead","alive", "audited", "insane","unconditionally immortal", "immortal", "on fire","boring","missing","lost","litigated","deceitful","irrelevant","a lost cause","annoying","smelly","chaotic","trembling","afraid","beserk","vomiting","depressed","disappointing","in a fandom","unloved","apathetic","addicted","uncomfortable","boggling", "goaded", "enhanced", "murdered","asleep"];
         List<String> quadrants = <String>["moirail","kismesis","matesprit","auspistice"];
-        Random rand = new Random();
+        Random rand = new Random(doll.seed);
 
         String noun = rand.pickFrom(nouns);
         String verb = rand.pickFrom(verbs);
