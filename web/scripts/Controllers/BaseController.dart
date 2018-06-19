@@ -30,7 +30,7 @@ class BaseController {
 
 
     void setupLinks(Element container) {
-        AnchorElement trollCallLink = new AnchorElement(href: "trollCall.html?${doll.toDataUrlPart()}");
+        trollCallLink = new AnchorElement(href: "trollCall.html?${doll.toDataUrlPart()}");
         trollCallLink.text = "Troll Call";
         trollCallLink.target = "_blank";
         container.append(trollCallLink);
@@ -61,13 +61,15 @@ class BaseController {
             document.execCommand('copy');
         });
 
+        setupLinks(querySelector("#info"));
+
+
         name.onInput.listen((Event e) {
             doll.dollName = name.value;
             syncLinks();
             dataBox.value = "${window.location.origin}${window.location.pathname}?${doll.toDataUrlPart()}";
         });
 
-        setupLinks(querySelector("#info"));
         if(doll is HatchableDoll) {
 
             Doll newDoll = (doll as HatchableDoll).hatch();
