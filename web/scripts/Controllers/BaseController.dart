@@ -37,7 +37,7 @@ class BaseController {
     }
 
     void syncLinks() {
-        trollCallLink.href = "trollCall.html?${doll.toDataUrlPart()}";
+        if(trollCallLink != null) trollCallLink.href = "trollCall.html?${doll.toDataUrlPart()}";
     }
 
     void setupForms() {
