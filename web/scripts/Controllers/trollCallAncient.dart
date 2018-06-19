@@ -14,7 +14,15 @@ void main() {
 
 Future<Null> drawSheet() async {
     Doll d;
-    if(getParameterByName("canon",null) == "true") {
+
+    String dataString = window.location.search;
+    if(dataString.isNotEmpty && getParameterByName("type",null)  != null) {
+        d = Doll.randomDollOfType(int.parse(getParameterByName("type",null))); //chop off leading ?
+
+
+    }else if (dataString.isNotEmpty) {
+        d = Doll.loadSpecificDoll(dataString.substring(1)); //chop off leading ?
+    }else if(getParameterByName("canon",null) == "true") {
         d = new HiveswapDoll();
     }else {
         d = new HomestuckTrollDoll();

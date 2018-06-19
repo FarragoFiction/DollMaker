@@ -262,6 +262,7 @@ abstract class CharSheet {
         return randomAsFuckName();
     }
     String nameForDoll() {
+        if(doll.dollName != doll.name) return doll.dollName;
         if(doll is HomestuckTrollDoll || doll is HiveswapDoll) return trollName();
         if(doll is HomestuckDoll) return humanName();
         if(doll is DadDoll) return dadName();

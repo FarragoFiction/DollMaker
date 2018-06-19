@@ -14,7 +14,18 @@ void main() {
 
 Future<Null> drawSheet() async {
     Random rand = new Random();
-    sheet = new PesterLog(Doll.randomDollOfType(rand.pickFrom(Doll.allDollTypes)),Doll.randomDollOfType(rand.pickFrom(Doll.allDollTypes)));
+    String dataString = window.location.search;
+    Doll doll;
+    if(dataString.isNotEmpty && getParameterByName("type",null)  != null) {
+        doll = Doll.randomDollOfType(int.parse(getParameterByName("type",null))); //chop off leading ?
+
+
+    }else if (dataString.isNotEmpty) {
+        doll = Doll.loadSpecificDoll(dataString.substring(1)); //chop off leading ?
+    }else {
+        doll = Doll.randomDollOfType(new Random().pickFrom(Doll.allDollTypes));
+    }
+    sheet = new PesterLog(doll,Doll.randomDollOfType(rand.pickFrom(Doll.allDollTypes)));
    // sheet = new Echeladder(new MonsterPocketDoll());
 
     Element innerDiv  = new DivElement();
