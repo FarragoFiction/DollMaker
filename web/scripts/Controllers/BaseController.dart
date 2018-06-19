@@ -63,6 +63,7 @@ class BaseController {
 
         name.onInput.listen((Event e) {
             doll.dollName = name.value;
+            syncLinks();
             dataBox.value = "${window.location.origin}${window.location.pathname}?${doll.toDataUrlPart()}";
         });
 
