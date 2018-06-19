@@ -14,6 +14,7 @@ class BaseController {
     bool disclaimed = false;
 
     AnchorElement eastereggLink;
+    AnchorElement trollCallLink;
 
     AnchorElement hatchLink;
 
@@ -28,6 +29,16 @@ class BaseController {
     }
 
 
+    void setupLinks(Element container) {
+        AnchorElement trollCallLink = new AnchorElement(href: "trollCall.html?${doll.toDataUrlPart()}");
+        trollCallLink.text = "Troll Call";
+        trollCallLink.target = "_blank";
+        container.append(trollCallLink);
+    }
+
+    void syncLinks() {
+        trollCallLink.href = "trollCall.html?${doll.toDataUrlPart()}";
+    }
 
     void setupForms() {
         querySelector("#randomize").onClick.listen((e) => randomizeDoll());
@@ -55,6 +66,7 @@ class BaseController {
             dataBox.value = "${window.location.origin}${window.location.pathname}?${doll.toDataUrlPart()}";
         });
 
+        setupLinks(querySelector("#info"));
         if(doll is HatchableDoll) {
 
             Doll newDoll = (doll as HatchableDoll).hatch();
@@ -158,6 +170,7 @@ class BaseController {
 
         TextAreaElement dataBox = querySelector("#shareableURL");
         if(dataBox != null) dataBox.value = "${window.location.origin}${window.location.pathname}?${doll.toDataBytesX()}";
+        syncLinks();
         if(hatchLink != null && doll is HatchableDoll) {
             hatchLink.href = "${window.location.origin}${window.location.pathname}?${(doll as HatchableDoll).hatch().toDataBytesX()}";
         }

@@ -18,12 +18,10 @@ Future<Null> drawSheet() async {
     Doll doll;
     if(dataString.isNotEmpty && getParameterByName("type",null)  != null) {
         doll = Doll.randomDollOfType(int.parse(getParameterByName("type",null))); //chop off leading ?
-
-
-    }else if (dataString.isNotEmpty) {
-        doll = Doll.loadSpecificDoll(dataString.substring(1)); //chop off leading ?
     }else if(getParameterByName("canon",null) == "true") {
         d = new HiveswapDoll();
+    }else if (dataString.isNotEmpty) {
+        doll = Doll.loadSpecificDoll(dataString.substring(1)); //chop off leading ?
     }else {
         d = new HomestuckTrollDoll();
     }

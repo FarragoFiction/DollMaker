@@ -86,9 +86,12 @@ Future<Null> loadDoll() async {
     AnchorElement a2 = new AnchorElement(href: "zen.html?type=${doll.renderingType}");
     a2.text = "${doll.name} Zen Mode";
     a2.target = "_blank";
+
+
     linkDiv.append(a);
     linkDiv2.append(a3);
     linkDiv2.append(a2);
+
 
     querySelector("#samplePaletteControls").append(linkDiv);
     querySelector("#samplePaletteControls").append(linkDiv2);
