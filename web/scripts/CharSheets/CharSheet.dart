@@ -3,7 +3,7 @@ import "package:DollLibCorrect/DollRenderer.dart";
 import 'dart:async';
 import 'dart:html';
 import "BarLayer.dart";
-import 'package:LoaderLib/Loader.dart';
+import 'package:RenderingLib/src/loader/loader.dart';
 
 /*
 In addition to providing a way for ppl to share and visualize their chars,

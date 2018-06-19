@@ -5,8 +5,8 @@ import "CharSheet.dart";
 import 'dart:async';
 import "BarLayer.dart";
 import 'dart:html';
-import 'package:LoaderLib/Loader.dart';
-import 'package:LoaderLib/Loader.dart';
+
+
 
 class PesterLog extends CharSheet {
 

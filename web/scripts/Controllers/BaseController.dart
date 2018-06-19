@@ -42,7 +42,7 @@ class BaseController {
 
         TextAreaElement dataBox = querySelector("#shareableURL");
         querySelector("#samplePaletteControls").append(nameLabel)..append(name);
-        dataBox.value = "${window.location.origin}${window.location.pathname}?${doll.toDataBytesX()}";
+        dataBox.value = "${window.location.origin}${window.location.pathname}?${doll.toDataUrlPart()}";
         copyButton.onClick.listen((Event e) {
             TextAreaElement dataBox = querySelector("#shareableURL");
             dataBox.select();
@@ -51,7 +51,7 @@ class BaseController {
 
         name.onInput.listen((Event e) {
             doll.dollName = name.value;
-            dataBox.value = "${window.location.origin}${window.location.pathname}?${doll.toDataBytesX()}";
+            dataBox.value = "${window.location.origin}${window.location.pathname}?${doll.toDataUrlPart()}";
         });
 
         if(doll is HatchableDoll) {

@@ -168,7 +168,7 @@ Future<Null> drawResult(String text) async {
     TextAreaElement code = new TextAreaElement();
     code.value = child.toDataBytesX();
     label.append(code);
-    AnchorElement anchorElement = new AnchorElement(href:"index.html?${child.toDataBytesX()}");
+    AnchorElement anchorElement = new AnchorElement(href:"index.html?${child.toDataUrlPart()}");
     anchorElement.target = "_blank";
     anchorElement.text = "Edit Child";
     childContainer.append(label);

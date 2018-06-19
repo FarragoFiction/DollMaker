@@ -1,4 +1,5 @@
-import 'package:LoaderLib/Loader.dart';
+
+import 'package:RenderingLib/src/loader/loader.dart';
 import "package:DollLibCorrect/DollRenderer.dart";
 import "CharSheet.dart";
 import 'dart:async';

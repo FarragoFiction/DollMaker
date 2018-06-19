@@ -89,7 +89,7 @@ Future<Null> drawDoll() {
     canvas.height = buffer.height;
     canvas.context2D.drawImage(buffer,0,0);
     //print("updated canvas from buffer");
-    editLink.href= "index.html?${doll.toDataBytesX()}";
+    editLink.href= "index.html?${doll.toDataUrlPart()}";
 
 }
 

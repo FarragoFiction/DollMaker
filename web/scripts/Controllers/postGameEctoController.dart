@@ -320,7 +320,7 @@ void drawTextBoxes() {
         area.classes.add("ectoSlime");
         area.value = doll.toDataBytesX();
         ectoJar.append(area);
-        AnchorElement a = new AnchorElement(href: "index.html?${doll.toDataBytesX()}");
+        AnchorElement a = new AnchorElement(href: "index.html?${doll.toDataUrlPart()}");
         a.text = "edit";
         a.target = "_blank";
         a.style.display = "block";
