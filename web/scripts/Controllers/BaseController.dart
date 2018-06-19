@@ -37,6 +37,7 @@ class BaseController {
         ButtonElement copyButton = querySelector("#copyButton");
         LabelElement nameLabel = new LabelElement()..text = "Name:";
         TextInputElement name = new TextInputElement();
+        name.value = doll.dollName;
 
 
 
