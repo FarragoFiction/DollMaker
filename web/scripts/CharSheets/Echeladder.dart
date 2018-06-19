@@ -44,7 +44,7 @@ class Echeladder extends CharSheet {
         initLevels();
         double x = echeladderStartX + 6.0;
         double y = echeladderStartY + 291.0;
-        Random rand = new Random();
+        Random rand = new Random(doll.seed);
         int maxWidth = 180;
         int maxHeight = 14;
         textLayers.add(new TextLayer("one", rand.pickFrom(levels), x, y, fontSize: 14, maxHeight: maxHeight, maxWidth: maxWidth, fontName: "Courier New", emphasis: "Bold", fontColor: ReferenceColours.BLACK));

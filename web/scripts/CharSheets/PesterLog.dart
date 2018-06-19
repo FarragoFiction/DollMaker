@@ -372,7 +372,7 @@ class BullshitLine {
         List<BullshitLine> person1Lines = BullshitLine.getLines(doll);
         List<BullshitLine> person2Lines = BullshitLine.getLines(secondDoll);
         String ret = "";
-        Random rand = new Random();
+        Random rand = new Random(doll.seed);
         String line = "";
         if(person1Lines.isNotEmpty) line = rand.pickFrom(person1Lines).randomLine;
         line = doll.quirk.translate(line);

@@ -35,7 +35,7 @@ abstract class CharSheet {
 
 
     CharSheet(Doll this.doll) {
-        rand = new Random();
+        rand = new Random(doll.seed);
         tint = new Colour(rand.nextInt(255),rand.nextInt(255), rand.nextInt(255));
     }
 
@@ -230,8 +230,8 @@ abstract class CharSheet {
         throw("ABSTRACT DOESNT DO THIS");
     }
 
-    static String randomSpecibus() {
-        Random rand  = new Random();
+    static String randomSpecibus([Doll doll]) {
+        Random rand  = new Random(doll.seed);
         WeightedList<String> modifiers = new WeightedList<String>();
         modifiers.add("",1.0);
         modifiers.add("1/2",0.5);

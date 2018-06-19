@@ -15,6 +15,13 @@ class BaseController {
 
     AnchorElement eastereggLink;
     AnchorElement trollCallLink;
+    AnchorElement trollCardLink;
+    AnchorElement echeladderLink;
+    AnchorElement pesterlogLink;
+    AnchorElement charSheetLink;
+
+
+
 
     AnchorElement hatchLink;
 
@@ -30,14 +37,39 @@ class BaseController {
 
 
     void setupLinks(Element container) {
-        trollCallLink = new AnchorElement(href: "trollCall.html?${doll.toDataUrlPart()}");
+        trollCallLink = new AnchorElement(href: "trollCall.html?${doll.toDataUrlPart()}")..style.padding = "5px";
         trollCallLink.text = "Troll Call";
         trollCallLink.target = "_blank";
         container.append(trollCallLink);
+
+        trollCardLink = new AnchorElement(href: "trollCard.html?${doll.toDataUrlPart()}")..style.padding = "5px";
+        trollCardLink.text = "Troll Card";
+        trollCardLink.target = "_blank";
+        container.append(trollCardLink);
+
+        echeladderLink = new AnchorElement(href: "echeladder.html?${doll.toDataUrlPart()}")..style.padding = "5px";
+        echeladderLink.text = "Echeladder";
+        echeladderLink.target = "_blank";
+        container.append(echeladderLink);
+
+        pesterlogLink = new AnchorElement(href: "pesterlog.html?${doll.toDataUrlPart()}")..style.padding = "5px";
+        pesterlogLink.text = "Pesterlog";
+        pesterlogLink.target = "_blank";
+        container.append(pesterlogLink);
+
+        charSheetLink = new AnchorElement(href: "charSheetCreator.html?${doll.toDataUrlPart()}")..style.padding = "5px";
+        charSheetLink.text = "Charsheet";
+        charSheetLink.target = "_blank";
+        charSheetLink.append(charSheetLink);
     }
 
     void syncLinks() {
         if(trollCallLink != null) trollCallLink.href = "trollCall.html?${doll.toDataUrlPart()}";
+        if(trollCardLink != null) trollCardLink.href = "trollCard.html?${doll.toDataUrlPart()}";
+        if(echeladderLink != null) echeladderLink.href = "echeladder.html?${doll.toDataUrlPart()}";
+        if(pesterlogLink != null) pesterlogLink.href = "pesterlog.html?${doll.toDataUrlPart()}";
+        if(charSheetLink != null) charSheetLink.href = "charSheetCreator.html?${doll.toDataUrlPart()}";
+
     }
 
     void setupForms() {
