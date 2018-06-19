@@ -2,6 +2,7 @@ import "dart:html";
 import "../navbar.dart";
 import "dart:async";
 import 'package:DollLibCorrect/DollRenderer.dart';
+import 'package:RenderingLib/src/loader/loader.dart';
 
 Element container;
 Element childContainer;

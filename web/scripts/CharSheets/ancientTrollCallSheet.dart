@@ -4,6 +4,7 @@ import "CharSheet.dart";
 import 'dart:async';
 import "BarLayer.dart";
 import 'dart:html';
+import 'package:LoaderLib/Loader.dart';
 import 'package:TextEngine/TextEngine.dart';
 
 class TrollCallSheetAncient extends CharSheet {

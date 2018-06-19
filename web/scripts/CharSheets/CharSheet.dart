@@ -1,7 +1,10 @@
+import 'package:CommonLib/src/collection/weighted_lists.dart';
 import "package:DollLibCorrect/DollRenderer.dart";
 import 'dart:async';
 import 'dart:html';
 import "BarLayer.dart";
+import 'package:LoaderLib/Loader.dart';
+
 /*
 In addition to providing a way for ppl to share and visualize their chars,
 I could use variations on this to set up chars for a particular sim.

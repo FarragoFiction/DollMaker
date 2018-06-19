@@ -1,9 +1,13 @@
 //https://swirlygerm-art.tumblr.com/post/167621990417/hey-wanna-make-a-trollsona-for-hiveswap-like-how
+import 'package:CommonLib/src/collection/weighted_lists.dart';
 import "package:DollLibCorrect/DollRenderer.dart";
 import "CharSheet.dart";
 import 'dart:async';
 import "BarLayer.dart";
 import 'dart:html';
+import 'package:LoaderLib/Loader.dart';
+import 'package:LoaderLib/Loader.dart';
+
 class PesterLog extends CharSheet {
 
 

@@ -6,6 +6,7 @@ import "dart:async";
 
 import "BaseController.dart";
 import "QueenController.dart";
+import 'package:RenderingLib/src/loader/loader.dart';
 
 BaseController controller;
 

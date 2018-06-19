@@ -4,6 +4,7 @@ import "dart:async";
 
 import 'package:DollLibCorrect/DollRenderer.dart';
 import 'package:RenderingLib/RendereringLib.dart';
+import 'package:RenderingLib/src/loader/loader.dart';
 
 Element container;
 List<String> cateogories = <String>["wranglers","credits","homestuck","rps"];

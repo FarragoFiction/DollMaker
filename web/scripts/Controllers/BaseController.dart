@@ -118,7 +118,7 @@ class BaseController {
             actionQueueIndex =0;
             return;
         }
-        doll.load(actionQueue[actionQueueIndex]);
+        doll.load(null,actionQueue[actionQueueIndex]);
         DollMakerTools.syncColorPickersToSprite(doll.palette);
         drawDollCreator(true);
     }

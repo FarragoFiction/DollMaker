@@ -2,6 +2,7 @@ import "package:DollLibCorrect/DollRenderer.dart";
 import "../navbar.dart";
 import "dart:html";
 import "dart:async";
+import 'package:RenderingLib/src/loader/loader.dart';
 
 
 List<Doll> dollExamples = new List<Doll>();

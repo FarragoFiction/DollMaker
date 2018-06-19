@@ -2,6 +2,7 @@
 import "package:DollLibCorrect/DollRenderer.dart";
 import "package:TextEngine/TextEngine.dart";
 import "CharSheet.dart";
+import 'package:LoaderLib/Loader.dart';
 import 'dart:async';
 import "BarLayer.dart";
 import 'dart:html';

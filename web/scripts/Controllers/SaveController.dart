@@ -4,6 +4,7 @@ import "package:DollLibCorrect/DollRenderer.dart";
 import "../DollMakerTools.dart";
 import "../navbar.dart";
 import "dart:async";
+import 'package:RenderingLib/src/loader/loader.dart';
 
 import "BaseController.dart";
 List<SavedDoll> savedDolls = new List<SavedDoll>();
