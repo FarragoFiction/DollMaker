@@ -19,6 +19,8 @@ dependencies:
       git: git://github.com/FarragoFiction/LoaderLib.git
   TextEngine:
       git: git://github.com/FarragoFiction/TextEngine.git
+  CommonLib:
+            git: git://github.com/FarragoFiction/CommonLib.git
 
 dev_dependencies:
   browser: ^0.10.0

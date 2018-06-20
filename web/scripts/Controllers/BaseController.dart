@@ -60,7 +60,7 @@ class BaseController {
         charSheetLink = new AnchorElement(href: "charSheetCreator.html?${doll.toDataUrlPart()}")..style.padding = "5px";
         charSheetLink.text = "Charsheet";
         charSheetLink.target = "_blank";
-        charSheetLink.append(charSheetLink);
+        container.append(charSheetLink);
     }
 
     void syncLinks() {
