@@ -8,22 +8,15 @@ a participant has a doll and a name and....a....gender???
 class Participant{
     static String REPLACE = "REPLACE";
     Doll doll;
-    String _name;
     CanvasElement cachedDollCanvas;
     //??? gender???
 
     String get name {
-        if(doll is HomestuckTrollDoll) {
-            HomestuckTrollDoll t = doll as HomestuckTrollDoll;
-            return "${_name.replaceAll(REPLACE, '${t.bloodColor} Blooded ${doll.name}')}";
-        }else {
-            return "${_name.replaceAll(REPLACE, doll.name)}";
-        }
+        return doll.name;
     }
 
-    void set name(String n) => (_name = n);
     Trove trove; //so it knows to rewrite it if you change the doll
-    Participant(String this._name, Doll this.doll);
+    Participant(Doll this.doll);
 
     void draw(Element element) {
         cachedDollCanvas = null; //reload l8r, don't do now cuz this isn't asysnc
@@ -90,14 +83,6 @@ class Participant{
 
         element.append(div);
 
-        LabelElement nameLabel = new LabelElement()..text = "Name: ";
-        TextInputElement nameElement = new TextInputElement()..value = name;
-
-        div.append(nameLabel)..append(nameElement);
-        nameElement.onChange.listen((Event e) {
-            _name = nameElement.value;
-            trove.createStory(null);
-        });
 
         DollRenderer.drawDoll(tmpCanvas, doll);
     }

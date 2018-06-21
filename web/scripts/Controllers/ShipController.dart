@@ -38,8 +38,8 @@ Future<Null> ship() async{
             await slurpDolls(possibleDolls, chosenCategory);
             possibleDolls.shuffle();//true random
             //todo have name/doll pairing
-            p.add(new Participant("${Participant.REPLACE}", possibleDolls.first));
-            p.add(new Participant("${Participant.REPLACE}", possibleDolls.last));
+            p.add(new Participant(possibleDolls.first));
+            p.add(new Participant(possibleDolls.last));
         }
         trove = new Trove(p);
         trove.drawParticipants(container);
@@ -51,7 +51,7 @@ Future<Null> ship() async{
 
 void randomParticipants(List<Participant> p) {
     for (int i = 0; i < numberParticipants; i++) {
-        p.add(new Participant("${Participant.REPLACE}", Doll.randomDollOfType(rand.pickFrom(Doll.allDollTypes))));
+        p.add(new Participant(Doll.randomDollOfType(rand.pickFrom(Doll.allDollTypes))));
     }
 }
 
