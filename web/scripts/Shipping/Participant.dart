@@ -12,7 +12,7 @@ class Participant{
     //??? gender???
 
     String get name {
-        return doll.name;
+        return doll.dollName;
     }
 
     Trove trove; //so it knows to rewrite it if you change the doll

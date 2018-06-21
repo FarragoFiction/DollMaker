@@ -108,7 +108,7 @@ class QueenController extends BaseController {
         Renderer.clearCanvas(canvas);
         DollRenderer.drawDoll(canvas, doll);
         TextAreaElement dataBox = querySelector("#shareableURL");
-        dataBox.value = "${window.location.origin}${window.location.pathname}?${doll.toDataBytesX()}";
+        dataBox.value = "${window.location.origin}${window.location.pathname}?${doll.toDataUrlPart()}";
         //don't add it to the queue if you're already messing around in it, dunkass. you'll never escape the loop.
         if (!inQueue) {
             actionQueue.add(doll.toDataBytesX());

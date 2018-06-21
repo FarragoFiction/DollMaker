@@ -106,7 +106,7 @@ class BaseController {
 
             Doll newDoll = (doll as HatchableDoll).hatch();
 
-            hatchLink = new AnchorElement(href:"${window.location.origin}${window.location.pathname}?${newDoll.toDataBytesX()}" );
+            hatchLink = new AnchorElement(href:"${window.location.origin}${window.location.pathname}?${newDoll.toDataUrlPart()}" );
             hatchLink.text = "Transform?";
             hatchLink.style.display="block";
             hatchLink.target = "_blank";
@@ -204,10 +204,10 @@ class BaseController {
         }
 
         TextAreaElement dataBox = querySelector("#shareableURL");
-        if(dataBox != null) dataBox.value = "${window.location.origin}${window.location.pathname}?${doll.toDataBytesX()}";
+        if(dataBox != null) dataBox.value = "${window.location.origin}${window.location.pathname}?${doll.toDataUrlPart()}";
         syncLinks();
         if(hatchLink != null && doll is HatchableDoll) {
-            hatchLink.href = "${window.location.origin}${window.location.pathname}?${(doll as HatchableDoll).hatch().toDataBytesX()}";
+            hatchLink.href = "${window.location.origin}${window.location.pathname}?${(doll as HatchableDoll).hatch().toDataUrlPart()}";
         }
 
 
