@@ -5,10 +5,29 @@ TextEngine Word List
 //Is dank memes the relationship.
 //despacito
 Beginning
-    #noun|var@name1# finds #noun|var@name2# giving their best and is inspired. : 0.5
+    #noun|var@name1# found #noun|var@name2# memeing about #randomRomanticItem#.
+    #noun|var@name2# found #noun|var@name1# memeing about #randomRomanticItem#.
+    They both memed about #randomRomanticItem#.
 
 Middle
-    #noun|var@name2# #verb@past# a #noun|var@romanticItem# to inspire #noun|var@name1#. : 0.5
-
+    #noun|var@name2# #verb@past# spelled out #randomRomanticItem# with a  #noun@collective|var@thing# of #noun@collective|var@romanticItem1# to troll #noun|var@name1#.
+    #noun|var@name1# #verb@past# spelled out #randomRomanticItem# with a  #noun@collective|var@thing# of #noun@collective|var@romanticItem1# to troll #noun|var@name2#.
+    #randomRomanticItem# is so old, but still #noun|var@name1# and #noun|var@name2# meme about it.
 End
-    #noun|var@name2#  and  #noun|var@name1# have yearly #noun|var@romanticItem# competitions in order to keep each other in top form. : 0.5
+    #noun|var@name2#  and  #noun|var@name1# spend huge amounts of time trying to hide #randomRomanticItem# in normal objects, especially #noun@plural|var@romanticItem#.
+    They never stop memeing about #randomRomanticItem#
+
+memes
+    loss
+    despacito
+    shitty old memes
+    memes
+    smash mouth remixes
+
+randomRomanticItem
+    #memes|var@romanticItem1#
+    #memes|var@romanticItem2#
+    #memes|var@romanticItem3#
+    #memes|var@romanticItem4#
+    #memes|var@romanticItem5#
+    #memes|var@romanticItem6# :3.0

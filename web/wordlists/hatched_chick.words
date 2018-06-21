@@ -4,10 +4,10 @@ TextEngine Word List
 @verbs
 // Is being an instrument of destruction to be used. More Shogun leaning than Sauce leaning.
 Beginning
-    #noun|var@name1# can't get over how adorable #noun|var@name2# is and vows to protect them. : 0.5
+    #noun|var@name2# realized just how useful #noun|var@name2# could be. : 0.5
 
 Middle
-    #noun|var@name1# is starting to be unsettled by how often #noun|var@name2# #verb@present# #noun@plural|var@romanticItem#. : 0.5
+    #noun|var@name1# had #noun|var@name2# #verb@present# destroy all #noun@plural|var@romanticItem# as a test. : 0.5
 
 End
-    #noun|var@name1#  accepts that  #noun|var@name2# is both adorable and terrifying. : 0.5
+    #noun|var@name1# uses #noun|var@name2# as an instrument of destruction. : 0.5

@@ -6,10 +6,16 @@ TextEngine Word List
  //You either inflict horse on someone else or you are feeling horse towards someone else.
   //Horse back and forth between two people isn't mutual horse.
 Beginning
-    #noun|var@name1# is a horse.  #noun|var@name2# is a horse. : 0.5
+    #noun|var@name2# had a vague bad feeling about #noun|var@name1#.
+    #noun|var@name2# felt like maybe #noun|var@name1# is up to something.
+    #noun|var@name1# seemed really ominous to #noun|var@name2#.
 
 Middle
-    #noun|var@name2# is a horse.  #noun|var@name1# is a horse. : 0.5
+    #noun|var@name2# became more and more nervous around #noun|var@name1#.
+    #noun|var@name1# was just standing there. Watching.
+    #noun|var@name2# couldn't shake the feeling that #noun|var@name1# was up to something.
 
 End
-    #noun|var@name1# is a horse.  #noun|var@name2# is a horse. They are both horses. : 0.5
+    #noun|var@name1# never did figure out what  #noun|var@name2# was planning.
+    #noun|var@name1#'s plans have yet to be revealed to #noun|var@name2#.
+    #noun|var@name1# is just standing there. Watching. Still.
