@@ -3,13 +3,18 @@ TextEngine Word List
 @nouns
 @verbs
 // Is bottoming
+//JR note: the challenge is to make this have the same connotation without being too lewd
 Beginning
-    #noun|var@name1# blushed when they saw #noun|var@name2#
+    #noun|var@name1# blushed when they saw #noun|var@name2# looking at #noun|var@romanticItem#. 
     #noun|var@name1# got all flustered when they met #noun|var@name2#.
     #noun|var@name1# immediately had a crush on #noun|var@name2#.
 
 Middle
-    #noun|var@name2# #verb@past# a #noun|var@romanticItem# to surprise #noun|var@name1#. : 0.5
+    #noun|var@name2# smiled at #noun|var@name1# and they just melted.
+    #noun|var@name1# tried to work up the courage to ask #noun|var@name2# out. :0.5
+    #noun|var@name1# continued to be all flustered around #noun|var@name2#.
 
 End
-    #noun|var@name2#  and  #noun|var@name1# remember to give each other #noun|var@romanticItem# as gifts every year. : 0.5
+    #noun|var@name2# treats #noun|var@name1# right.
+    #noun|var@name1# is always ready to do things with #noun|var@name2#.
+    #noun|var@name2# always has fun ideas of things to do with #noun|var@name1# and #noun|var@romanticItem#.

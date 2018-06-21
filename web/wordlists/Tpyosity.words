@@ -5,10 +5,32 @@ TextEngine Word List
 // Is helping your friend who has immense talent in a field but one minor drawback with that drawback.
  //Like a good coder who is know for frequently making typos for the speed they work at.
 Beginning
-    #noun|var@name1# corrects a typo in an online post #noun|var@name2# had been working on. : 0.5
+    #noun|var@name1# corrected a typo in #noviceWorks# #noun|var@name2# had been working on.
+    #noun|var@name1# was really impressed with #noviceWorks# about #noun@plural|var@romanticItem# #noun|var@name2# made, and offered to help them fix small parts of it.
 
 Middle
-    #noun|var@name1# corrects a typo in an important document that #noun|var@name2# had been working on. : 0.5
+    #noun|var@name1# corrected a typo in #importantWorks# that #noun|var@name2# had been working on.
 
 End
-    #noun|var@name1# agrees to preemptively edit anything #noun|var@name2# works on before it gets sent in.: 0.5
+    #noun|var@name1# agrees to preemptively edit anything #noun|var@name2# works on before it gets sent in.
+    #noun|var@name1# helps polish in #proffesionalWorks# that #noun|var@name2# has put a lot of work into.
+
+
+noviceWorks
+    an online post
+    a cool story
+    a short story
+    fanfiction
+    a mini game
+
+importantWorks
+    a short novel
+    an important document
+    an online blog
+    an indie game
+    a screenplay
+
+proffesionalWorks
+    a novel
+    a screenplay for a blockbuster
+    a sequel to their famous game
