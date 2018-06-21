@@ -4,7 +4,9 @@ TextEngine Word List
 @verbs
 // Is bottoming
 Beginning
-    #noun|var@name1# and  #noun|var@name2# both reach for the same #noun|var@romanticItem#. : 0.5
+    #noun|var@name1# blushed when they saw #noun|var@name2#
+    #noun|var@name1# got all flustered when they met #noun|var@name2#.
+    #noun|var@name1# immediately had a crush on #noun|var@name2#.
 
 Middle
     #noun|var@name2# #verb@past# a #noun|var@romanticItem# to surprise #noun|var@name1#. : 0.5
