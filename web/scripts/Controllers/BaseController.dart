@@ -44,6 +44,9 @@ class BaseController {
         saveLink.target = "_blank";
         saveLink.setInnerHtml("Download PNG?");
         container.append(saveLink);
+        saveLink.onMouseDown.listen((Event e) {
+            saveLink.href = canvas.toDataUrl();
+        });
 
         trollCallLink = new AnchorElement(href: "trollCall.html?${doll.toDataUrlPart()}")..style.padding = "5px";
         trollCallLink.text = "Troll Call";
@@ -72,13 +75,11 @@ class BaseController {
     }
 
     void syncLinks() {
-        if(saveLink != null) saveLink.href = canvas.toDataUrl();
         if(trollCallLink != null) trollCallLink.href = "trollCall.html?${doll.toDataUrlPart()}";
         if(trollCardLink != null) trollCardLink.href = "trollCard.html?${doll.toDataUrlPart()}";
         if(echeladderLink != null) echeladderLink.href = "echeladder.html?${doll.toDataUrlPart()}";
         if(pesterlogLink != null) pesterlogLink.href = "pesterlog.html?${doll.toDataUrlPart()}";
         if(charSheetLink != null) charSheetLink.href = "charSheetCreator.html?${doll.toDataUrlPart()}";
-
     }
 
     void setupForms() {
@@ -207,6 +208,7 @@ class BaseController {
             canvas.onClick.listen((e) {
                 Renderer.clearCanvas(canvas);
                 DollRenderer.drawDoll(canvas, doll);
+                syncLinks();
             });
         }else {
             await DollRenderer.drawDoll(canvas, doll);
