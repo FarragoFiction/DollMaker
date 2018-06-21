@@ -14,6 +14,7 @@ class BaseController {
     bool disclaimed = false;
 
     AnchorElement eastereggLink;
+    AnchorElement saveLink;
     AnchorElement trollCallLink;
     AnchorElement trollCardLink;
     AnchorElement echeladderLink;
@@ -37,6 +38,13 @@ class BaseController {
 
 
     void setupLinks(Element container) {
+
+        saveLink = new AnchorElement();
+        saveLink.href = canvas.toDataUrl();
+        saveLink.target = "_blank";
+        saveLink.setInnerHtml("Download PNG?");
+        container.append(saveLink);
+
         trollCallLink = new AnchorElement(href: "trollCall.html?${doll.toDataUrlPart()}")..style.padding = "5px";
         trollCallLink.text = "Troll Call";
         trollCallLink.target = "_blank";
@@ -64,6 +72,7 @@ class BaseController {
     }
 
     void syncLinks() {
+        if(saveLink != null) saveLink.href = canvas.toDataUrl();
         if(trollCallLink != null) trollCallLink.href = "trollCall.html?${doll.toDataUrlPart()}";
         if(trollCardLink != null) trollCardLink.href = "trollCard.html?${doll.toDataUrlPart()}";
         if(echeladderLink != null) echeladderLink.href = "echeladder.html?${doll.toDataUrlPart()}";
