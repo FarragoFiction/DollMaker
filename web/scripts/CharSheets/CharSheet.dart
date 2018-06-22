@@ -231,7 +231,12 @@ abstract class CharSheet {
     }
 
     static String randomSpecibus([Doll doll]) {
-        Random rand  = new Random(doll.seed);
+        Random rand;
+        if(doll != null) {
+            rand = new Random(doll.seed);
+        }else {
+            rand = new Random();
+        }
         WeightedList<String> modifiers = new WeightedList<String>();
         modifiers.add("",1.0);
         modifiers.add("1/2",0.5);
