@@ -57,7 +57,8 @@ class Trove {
             storyDiv = new DivElement();
             element.append(storyDiv);
         }
-        //TODO eventually have a nice canvas with the participants drawn on and the trove drawn on
+        storyDiv.text = "";
+        print("creating new story");
         //and then all the text.
         //maybe it looks like a book? a photo albulm? instagram???
         if(romanticBG == null) {
@@ -75,7 +76,9 @@ class Trove {
         await drawParticipantsOnCanvas(buffer);
         await drawTroveOnCanvas(buffer);
         await drawStoryOnCanvas(buffer, storyDiv.text);
+        print("storyDiv text is ${storyDiv.text} which better have new lines");
         storyDiv.setInnerHtml(storyDiv.text.replaceAll("\n","<br>"));
+        print("adding brs");
         Renderer.clearCanvas(canvas);
         canvas.context2D.drawImage(buffer,0,0);
     }
@@ -151,6 +154,7 @@ class Trove {
         Random rand = new Random(seed);
         storyText = "";
         try {
+            storyText = "";
             TextStory story = new TextStory();
             story.setString("name1","${participants.first.name}");
             story.setString("name2","${participants.last.name}");
@@ -318,7 +322,6 @@ class Trove {
         }
         if(charmDiv != null) {
             drawCharms(null);
-            createStory(null);
         }
     }
 
