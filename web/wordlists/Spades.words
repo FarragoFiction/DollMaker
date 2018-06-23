@@ -13,7 +13,7 @@ Middle
     #noun|var@name2# #verb@past# a #randomRomanticItem# to taunt #noun|var@name1#. #middleComment#
     they never stop #verb_rivalry@past# over #noun@plural|var@romanticItem#. #middleComment#
     #noun|var@name2# never lets #noun|var@name1# forget the time they were scared of a #randomRomanticItem#. #middleComment# : 0.5
-    #randomParticipant#'s #noun_building# gets destroyed, and they know exactly who to blame.: 0.3
+    #randomParticipant#'s #noun_building# gets destroyed, and they knew exactly who to blame.: 0.3
     #noun|var@name2# #verb@present# a #noun# to taunt #noun|var@name1#. #middleComment# : 0.2
     they never stop #verb_rivalry@past# over #noun@plural#. #middleComment# : 0.1
     #noun|var@name2# never lets #noun|var@name1# forget the time they were scared of a #noun#. #middleComment# : 0.2

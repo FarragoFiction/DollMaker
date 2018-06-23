@@ -39,6 +39,7 @@ verb_rivalry
 
 verb_pale
     pap
+        pc: papp
     shoosh
     cuddle
         pc: cuddl

@@ -15,16 +15,16 @@ Middle
     #noun|var@name2# #verb@past# a #noun|var@romanticItem# to surprise #noun|var@name1#.
     #noun|var@name1# #verb@past# a #noun|var@romanticItem# to surprise #noun|var@name2#.
     They found they had more and more in common.
-    #noun|var@name2# took #noun|var@name1# on an elaborate date involving #noun@collective|var@romanticItem# of #noun@plural|var@romanticItem#.
-    #noun|var@name1# took #noun|var@name2# on an elaborate date involving #noun@collective|var@romanticItem# of #noun@plural|var@romanticItem#.
+    #noun|var@name2# took #noun|var@name1# on an elaborate date involving a #noun@collective|var@romanticItem# of #noun@plural|var@romanticItem#.
+    #noun|var@name1# took #noun|var@name2# on an elaborate date involving a #noun@collective|var@romanticItem# of #noun@plural|var@romanticItem#.
 
 
 End
     #noun|var@name2#  and  #noun|var@name1# remember to give each other #noun|var@romanticItem# as gifts every year.
-    They celebrate each new anniversary with love and support.
-    They support each other as they strive for their goals in life.
-    They build a life with each other as the foundation.
-    Their love is as passionate as it ever was.
+    they celebrate each new anniversary with love and support.
+    they support each other as they strive for their goals in life.
+    they build a life with each other as the foundation.
+    their love is as passionate as it ever was.
 
 startComment
     It was love at first sight.

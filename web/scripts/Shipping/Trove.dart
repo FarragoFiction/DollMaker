@@ -185,13 +185,9 @@ class Trove {
         drawCharms(null);
     }
 
+    //assume that whatever i get passed, only the first part might be lower case inner sentences are fine
     static String sentenceCase(String string) {
-        List<String> parts = string.split(new RegExp("[?.!]"));
-        String ret;
-        parts.forEach((String s) {
-            ret = "$ret ${s[0].toUpperCase()}${s.substring(1)} ";
-        });
-        return ret;
+        return "${string[0].toUpperCase()}${string.substring(1)}" ;
     }
 
     String getLines(String section, TextEngine textEngine, TextStory story) {
