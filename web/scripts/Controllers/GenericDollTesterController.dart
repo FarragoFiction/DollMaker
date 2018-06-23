@@ -34,6 +34,7 @@ void loadDoll() {
     //doing it this way ensures no incorrect sized canvas from a default doll.
     if(doll == null) doll =  Doll.randomDollOfType(1);
     CanvasElement canvas = new CanvasElement(width: doll.width, height: doll.height);
+    canvas.style.backgroundColor = "#eeeeee";
     querySelector("#doll").append(canvas);
     if(doll is QueenDoll) {
         controller = new QueenController(doll, canvas);

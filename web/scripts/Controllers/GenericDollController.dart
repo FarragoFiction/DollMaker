@@ -71,6 +71,7 @@ Future<Null> loadDoll() async {
     //doing it this way ensures no incorrect sized canvas from a default doll.
     if(doll == null) doll =  Doll.randomDollOfType(1);
     CanvasElement canvas = new CanvasElement(width: doll.width, height: doll.height);
+    canvas.style.backgroundColor = "#eeeeee";
     querySelector("#doll").append(canvas);
     DivElement linkDiv = new DivElement();
     AnchorElement a = new AnchorElement(href: "viewParts.html?type=${doll.renderingType}");

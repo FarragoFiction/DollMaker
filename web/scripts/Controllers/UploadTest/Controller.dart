@@ -83,6 +83,7 @@ Future<Null> loadDoll() async {
     if(doll == null) doll =  Doll.randomDollOfType(1);
     CanvasElement canvas = new CanvasElement(width: doll.width, height: doll.height);
     querySelector("#doll").append(canvas);
+    canvas.style.backgroundColor = "#eeeeee";
     if(doll is QueenDoll) {
         controller = new QueenController(doll, canvas);
 
