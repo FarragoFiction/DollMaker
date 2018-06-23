@@ -4,10 +4,55 @@ TextEngine Word List
 @verbs
 
 Beginning
-    #noun|var@name1# finds  #noun|var@name2# raging at a  #noun|var@romanticItem#. : 0.5
+    #noun|var@name1# #findPhrases#  #noun|var@name2# raging at a  #noun|var@romanticItem#. #noun|var@name1# #verb_pale@past# #pale_phrase#. #startComment#
+    #noun|var@name1# #findPhrases#  #noun|var@name2# sobbing uncontrollably. #noun|var@name1# #verb_pale@past# #pale_phrase#. #startComment#
+    #noun|var@name1# #findPhrases#  #noun|var@name2# panicking. #noun|var@name1# #verb_pale@past# #pale_phrase#. #startComment#
+    #noun|var@name1# #findPhrases#  #noun|var@name2# on the verge of killing a random Troll with a  #noun|var@romanticItem#. #noun|var@name1# #verb_pale@past# #pale_phrase#. #startComment#
+    #noun|var@name2# was screaming hoarsely at a #noun|var@romanticItem#. #noun|var@name1# asked what's wrong. #noun|var@name1# #verb_pale@past# #pale_phrase#. #startComment#
 
 Middle
-    #noun|var@name2# reminds #noun|var@name1# to eat. : 0.5
+    #noun|var@name2# reminds #noun|var@name1# to #healthyTask#. #middleComment#
+    #noun|var@name2# learns the sorts of movies that makes  #noun|var@name1# cry.
+    #noun|var@name1# proposed that #noun|var@name2# pick up one healthy new habit each month. #middleComment#
+    #noun|var@name2# backslides a bit and starts raging at a #noun|var@romanticItem#, but #noun|var@name1# #verb_pale@past# #pale_phrase#. #middleComment# :0.5
 
 End
-    #noun|var@name2#  and  #noun|var@name1# remember to give each other #noun|var@romanticItem# as gifts every year. : 0.5
+    #noun|var@name2#  and  #noun|var@name1# remember to give each other #noun|var@romanticItem# as gifts every year.
+    #noun|var@name1# and #noun|var@name2# lived happily ever after.
+
+findPhrases
+    found
+    stumbled upon
+    discovered
+    came across
+
+#healthyTask#
+    eat
+    sleep
+    bathe
+    brush their teeth
+    go to work
+    do their homework
+    clean up around the house
+
+startComment
+    It was so pale you could practically see right through it.
+    It was like something out of an especially tender romantic comedy.
+    It brought tears to your eyes just to see it.
+    Bystanders were scandalized with how tender it all was.
+
+middleComment
+    You could really see that #noun|var@name2# was getting more stable.
+    #noun|var@name1# was figuring out where #noun|var@name1# needed help, even out of a crisis.
+    #noun|var@name1# felt really useful.
+    #noun|var@name2# felt really cared for.
+
+
+pale_phrase
+    them right the fuck down
+    them all night
+    them until they were calm
+    them for hours
+    them gently
+    them authoritatively
+    them confidently

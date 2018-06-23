@@ -22,6 +22,7 @@ verb
     @verb_rivalry
     @verbpositiveFeedback
     @verbnegativeFeedback
+    @verb_pale
 
 
 verb_rivalry
@@ -35,6 +36,13 @@ verb_rivalry
     bicker
     struggle
         pc: struggl
+
+verb_pale
+    pap
+    shoosh
+    cuddle
+        pc: cuddl
+    caress
 
 verb_action
     // to be or not to be?

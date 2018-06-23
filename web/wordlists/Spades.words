@@ -4,14 +4,14 @@ TextEngine Word List
 @verbs
 
 Beginning
-    #noun|var@name1# and #noun|var@name2# #verb_rivalry@past# over a #randomRomanticItem#. #startComment# : 0.5
-    they #verb_rivalry@past# over a #randomRomanticItem#. #startComment# : 0.2
-    #noun|var@name1# and #noun|var@name2# #verb_rivalry@past# over a #noun#. #startComment# : 0.2
-    they #verb_rivalry@past# over a #noun#. #startComment# : 0.1
+    #noun|var@name1# and #noun|var@name2# #verb_rivalry@past# over a #randomRomanticItem#. #startComment#
+    they #verb_rivalry@past# over a #randomRomanticItem#. #startComment#
+    #noun|var@name1# and #noun|var@name2# #verb_rivalry@past# over a #noun#. #startComment#
+    they #verb_rivalry@past# over a #noun#. #startComment#
 
 Middle
-    #noun|var@name2# #verb@past# a #randomRomanticItem# to taunt #noun|var@name1#. #middleComment# : 0.5
-    they never stop #verb_rivalry@past# over #noun@plural|var@romanticItem#. #middleComment# : 0.2
+    #noun|var@name2# #verb@past# a #randomRomanticItem# to taunt #noun|var@name1#. #middleComment#
+    they never stop #verb_rivalry@past# over #noun@plural|var@romanticItem#. #middleComment#
     #noun|var@name2# never lets #noun|var@name1# forget the time they were scared of a #randomRomanticItem#. #middleComment# : 0.5
     #randomParticipant#'s #noun_building# gets destroyed, and they know exactly who to blame.: 0.3
     #noun|var@name2# #verb@present# a #noun# to taunt #noun|var@name1#. #middleComment# : 0.2
@@ -22,6 +22,11 @@ End
     #noun|var@name2#  and  #noun|var@name1# have yearly #randomRomanticItem# competitions.  #endComment# : 0.5
     they never get tired of  #verb_rivalry@continuous# over #randomRomanticItem#. #endComment#: 0.3
     #randomParticipant# always keeps things interesting by #verb@continuous# a #noun|var@romanticItem#. :0.5
+
+startComment
+    It was like something out of a shitty tsundere anime.
+    It was like the stars had their hate written in them.
+    You could almost see their hate written in the stars.
 
 
 middleComment
