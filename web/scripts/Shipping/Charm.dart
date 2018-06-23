@@ -17,7 +17,7 @@ a charm also has a name. it's trove will use these to generate text
  */
 
 class Charm {
-    static String SHOGUN = "Dynamo";
+    static String SHOGUN = "Shitsphere";
     static String TROLL = "Quadrants";
     static String LEPRECHAUN = "Troves";
     static String HUMAN = "Human";
