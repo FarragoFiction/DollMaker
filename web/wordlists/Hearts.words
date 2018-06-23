@@ -4,10 +4,46 @@ TextEngine Word List
 @verbs
 
 Beginning
-    #noun|var@name1# and  #noun|var@name2# both reach for the same #noun|var@romanticItem#. : 0.5
+    #noun|var@name1# and  #noun|var@name2# both reached for the same #noun|var@romanticItem#. #startComment#
+    #noun|var@name1# was struck by how #romanticDescription#  #noun|var@name2# was. Almost like a #noun|var@romanticItem#. :0.3
+    #noun|var@name1# couldn't ignore how #romanticDescription#  #noun|var@name2# was. #startComment#
+    #noun|var@name2# was struck by how #romanticDescription#  #noun|var@name1# was. Almost like a #noun|var@romanticItem#. :0.3
+    #noun|var@name2# couldn't ignore how #romanticDescription#  #noun|var@name1# was. #startComment#
+    they met at a #romanticDescription# festival. #startComment#
 
 Middle
-    #noun|var@name2# #verb@past# a #noun|var@romanticItem# to surprise #noun|var@name1#. : 0.5
+    #noun|var@name2# #verb@past# a #noun|var@romanticItem# to surprise #noun|var@name1#.
+    #noun|var@name1# #verb@past# a #noun|var@romanticItem# to surprise #noun|var@name2#.
+    They found they had more and more in common.
+    #noun|var@name2# took #noun|var@name1# on an elaborate date involving #noun@collective|var@romanticItem# of #noun@plural|var@romanticItem#.
+    #noun|var@name1# took #noun|var@name2# on an elaborate date involving #noun@collective|var@romanticItem# of #noun@plural|var@romanticItem#.
+
 
 End
-    #noun|var@name2#  and  #noun|var@name1# remember to give each other #noun|var@romanticItem# as gifts every year. : 0.5
+    #noun|var@name2#  and  #noun|var@name1# remember to give each other #noun|var@romanticItem# as gifts every year.
+    They celebrate each new anniversary with love and support.
+    They support each other as they strive for their goals in life.
+    They build a life with each other as the foundation.
+    Their love is as passionate as it ever was.
+
+startComment
+    It was love at first sight.
+    They stared deeply into each other's eyes.
+    You could almost hear the music swelling in the background.
+    It was beautiful.
+    It was so sweet
+
+
+
+romanticDescription
+    funny
+    beautiful
+    pretty
+    alluring
+    attractive
+    smart
+    witty
+    sensual
+    shapely
+
+
