@@ -15,6 +15,7 @@ Middle
     #noun|var@name2# #verb@past# a #noun|var@romanticItem# to surprise #noun|var@name1#.
     #noun|var@name1# #verb@past# a #noun|var@romanticItem# to surprise #noun|var@name2#.
     They found they had more and more in common.
+    They go on a romantic date to a #noun|var@romanticItem# #datespot#.
     #noun|var@name2# took #noun|var@name1# on an elaborate date involving a #noun@collective|var@romanticItem# of #noun@plural|var@romanticItem#.
     #noun|var@name1# took #noun|var@name2# on an elaborate date involving a #noun@collective|var@romanticItem# of #noun@plural|var@romanticItem#.
 
@@ -33,7 +34,12 @@ startComment
     It was beautiful.
     It was so sweet
 
-
+datespot
+    museum
+    gallery
+    project
+    expo
+    unveiling
 
 romanticDescription
     funny
