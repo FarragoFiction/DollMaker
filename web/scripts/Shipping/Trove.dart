@@ -185,13 +185,22 @@ class Trove {
         drawCharms(null);
     }
 
+    static String sentenceCase(String string) {
+        List<String> parts = string.split(new RegExp("[?.!]"));
+        String ret;
+        parts.forEach((String s) {
+            ret = "$ret ${s[0].toUpperCase()}${s.substring(1)} ";
+        });
+        return ret;
+    }
+
     String getLines(String section, TextEngine textEngine, TextStory story) {
         String ret = "";
         int numLines = getRandomNumberOfLines();
         ret = "$ret ${textEngine.phrase("${section}First", story: story)}";
         for(int i = 0; i< numLines; i++) {
            // print("number of lines is $numLines and i'm on $i");
-            ret = "$ret ${textEngine.phrase(section, story: story)}";
+            ret = "$ret ${sentenceCase(textEngine.phrase(section, story: story))}";
         }
         return ret;
     }
