@@ -5,13 +5,37 @@ TextEngine Word List
 //name1 and name2 are equally dominent , goofy silly, mix of all other troves
 
 Beginning
-    #noun|var@name1# and  #noun|var@name2# bond over trading silly memes. #diamondStart#
+    #noun|var@name1# and  #noun|var@name2# bond over trading #emotion# #diamondShit#. #diamondStart#
+    #noun|var@name2# and  #noun|var@name1# met online trading #emotion# #diamondShit#. #diamondStart#
+    they admired each others #emotion# #diamondShit#. #diamondStart#
 
 Middle
     #noun|var@name2# is so happy to find a new memory game to play with #noun|var@name1#. #diamondMiddle#
+    they always have fun.
+    they admired each others #emotion# #diamondShit#. #diamondStart#
+    #noun|var@name1# and  #noun|var@name2# bond over trading #emotion# #diamondShit#. #diamondStart#
+
 
 End
     #noun|var@name2#  and  #noun|var@name1# have developed an elaborate mythos of memes, jokes, and shitposts, all centered around #noun@plural|var@romanticItem# and #noun|var@romanticItem# related puns.#diamondEnd#
+    they remember to always have fun.
+    they always have fun being #emotion# with #diamondShit#. #diamondStart#
+
+
+
+emotion
+    silly
+    goofy
+    ridiculous
+
+diamondShit
+    memes
+    riddles
+    pranks
+    japes
+    slapstick shenanigans
+    jigs
+
 
 diamondStart
     #diamondComment#: 2.0
