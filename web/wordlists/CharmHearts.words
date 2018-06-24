@@ -13,15 +13,15 @@ End
     #noun|var@name2#  and  #noun|var@name1# remember to give each other #noun|var@romanticItem# as gifts every year. #heartEnd#
 
 heartStart
-    #diamondComment#: 2.0
+    #heartComment#: 2.0
     #startComment#
 
 heartMiddle
-    #diamondComment#: 2.0
+    #heartComment#: 2.0
     #middleComment#
 
 heartEnd
-    #diamondComment#: 2.0
+    #heartComment#: 2.0
     #endComment#
 
 

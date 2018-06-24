@@ -6,12 +6,20 @@ TextEngine Word List
 //its the tsundere charm. it's not like i like you or anything
 Beginning
     #noun|var@name1# secretly trips  #noun|var@name2#, then helps them up and dusts them off. #balloonStart#
+    #noun|var@name1# loudly declared that it isn't like they like #noun|var@name2# or anything. #balloonStart#
+    #noun|var@name1# publicly insults #noun|var@name2# about how they aren't living up to their potential. #balloonStart#
+
 
 Middle
     #noun|var@name2# teases #noun|var@name1# about being lazy until they finally write that novel about #noun|var@romanticItem# they've been meaning to. #balloonMiddle#
+    #noun|var@name2# convinces #noun|var@name1# to enter a #noun|var@romanticItem# competition by declaring that they are unbeatable. #balloonMiddle#
+    #noun|var@name2# doesn't let #noun|var@name1# be lazy and give up their dreams. #balloonMiddle#
 
 End
     #noun|var@name2#  and  #noun|var@name1# get along if there is #noun|var@romanticItem# to distract them. #balloonEnd#
+    if you squint, you can almost forget that #noun|var@name2#  and  #noun|var@name1# aren't supposed to be getting along. #balloonEnd#
+    #noun|var@name2#  and  #noun|var@name1# harrass each other into being better people. #balloonEnd#
+
 
 balloonStart
     #balloonComment#: 2.0
@@ -29,6 +37,7 @@ balloonEnd
 balloonComment
     That is some tsundere shit.
     Classic balloons.
+    We all knew what was going on.
     .
 
 middleComment
