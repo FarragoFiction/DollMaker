@@ -5,15 +5,27 @@ TextEngine Word List
 //name1 is dominent, does most actions. prankish riddles
 
 Beginning
-    #noun|var@name1# gigglesnorts relentlessly to  #noun|var@name2# about #noun@plural|var@romanticItem#. #moonComment#
-    #noun|var@name2# is a finalist in #noun|var@name2#'s #noun@plural|var@romanticItem# riddle competition. #moonComment#
+    #noun|var@name1# gigglesnorts relentlessly to  #noun|var@name2# about #noun@plural|var@romanticItem#. #moonStart#
+    #noun|var@name2# is a finalist in #noun|var@name2#'s #noun@plural|var@romanticItem# riddle competition. #moonStart#
 
 Middle
-    #noun|var@name2# actually solves one of #noun|var@name1#'s shitty riddles. : 0.5
+    #noun|var@name2# actually solves one of #noun|var@name1#'s shitty riddles. #moonMiddle#
 
 End
-    #noun|var@name1#  and devises a new and better riddle about #noun@plural|var@romanticItem# for #noun|var@name2# to solve. : 0.5
+    #noun|var@name1#  and devises a new and better riddle about #noun@plural|var@romanticItem# for #noun|var@name2# to solve. #moonEnd#
 
+
+moonStart
+    #moonComment#: 2.0
+    #startComment#
+
+moonMiddle
+    #moonComment#: 2.0
+    #middleComment#
+
+moonEnd
+    #moonComment#: 2.0
+    #endComment#
 
 moonComment
     Wow, you'd think they'd know better than to moon each other in public.

@@ -4,13 +4,25 @@ TextEngine Word List
 @verbs
 
 Beginning
-    #noun|var@name1# and  #noun|var@name2# both reach for the same #noun|var@romanticItem#. #heartComment# : 0.5
+    #noun|var@name1# and  #noun|var@name2# both reach for the same #noun|var@romanticItem#. #heartStart#
 
 Middle
-    #noun|var@name2# #verb@past# a #noun|var@romanticItem# to surprise #noun|var@name1#. : 0.5
+    #noun|var@name2# #verb@past# a #noun|var@romanticItem# to surprise #noun|var@name1#. #heartMiddle#
 
 End
-    #noun|var@name2#  and  #noun|var@name1# remember to give each other #noun|var@romanticItem# as gifts every year. : 0.5
+    #noun|var@name2#  and  #noun|var@name1# remember to give each other #noun|var@romanticItem# as gifts every year. #heartEnd#
+
+heartStart
+    #diamondComment#: 2.0
+    #startComment#
+
+heartMiddle
+    #diamondComment#: 2.0
+    #middleComment#
+
+heartEnd
+    #diamondComment#: 2.0
+    #endComment#
 
 
 heartComment

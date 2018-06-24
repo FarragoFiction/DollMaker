@@ -11,7 +11,7 @@ Middle
     #noun|var@name2# teases #noun|var@name1# about being lazy until they finally write that novel about #noun|var@romanticItem# they've been meaning to. #balloonMiddle#
 
 End
-    #noun|var@name2#  and  #noun|var@name1# mif there is #noun|var@romanticItem# to distract them. #balloonEnd#
+    #noun|var@name2#  and  #noun|var@name1# get along if there is #noun|var@romanticItem# to distract them. #balloonEnd#
 
 balloonStart
     #balloonComment#: 2.0

@@ -5,13 +5,25 @@ TextEngine Word List
 //name1 is dominent, does most actions. pranks
 
 Beginning
-    #noun|var@name1# pulls an amazing prank involving a #noun#, a #noun# and a   #noun|var@romanticItem# on  #noun|var@name2#.  #starsComment#: 0.5
+    #noun|var@name1# pulls an amazing prank involving a #noun#, a #noun# and a   #noun|var@romanticItem# on  #noun|var@name2#.  #starStart#
 
 Middle
-    #noun|var@name2# slips on a #noun# while #noun|var@name1# giggles from a far. : 0.5
+    #noun|var@name2# slips on a #noun# while #noun|var@name1# giggles from a far. #starMiddle#
 
 End
-    #noun|var@name1#  makes sure to pull out all the stops each April Fools.  #noun|var@name2# has started to panic if they even SEE a #noun|var@romanticItem# in the days leading up to it. : 0.5
+    #noun|var@name1#  makes sure to pull out all the stops each April Fools.  #noun|var@name2# has started to panic if they even SEE a #noun|var@romanticItem# in the days leading up to it. #starEnd#
+
+starStart
+    #starsComment#: 2.0
+    #startComment#
+
+starMiddle
+    #starsComment#: 2.0
+    #middleComment#
+
+starEnd
+    #starsComment#: 2.0
+    #endComment#
 
 starsComment
     #noun|var@name1# takes the prankster's gambit.

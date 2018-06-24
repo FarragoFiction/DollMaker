@@ -6,13 +6,26 @@ TextEngine Word List
  //(i.e one person tries to do thing but the other person wins through cleverness)
 
 Beginning
-    #noun|var@name1# sets up a joke to break the ice with #noun|var@name2# but it backfires completely when #noun|var@name2# makes a quick joke right back. #goldComment# : 0.5
+    #noun|var@name1# sets up a joke to break the ice with #noun|var@name2# but it backfires completely when #noun|var@name2# makes a quick joke right back. #goldStart#
 
 Middle
-    #noun|var@name2# spends days setting up a great prank, but #noun|var@name1# easily spots it and wins the gambit. : 0.5
+    #noun|var@name2# spends days setting up a great prank, but #noun|var@name1# easily spots it and wins the gambit. #goldMiddle#
 
 End
-    #noun|var@name2#  and  #noun|var@name1# go back and forth trying to one up each other by countering each other's pranks. : 0.5
+    #noun|var@name2#  and  #noun|var@name1# go back and forth trying to one up each other by countering each other's pranks. #goldEnd#
+
+
+goldStart
+    #goldComment#: 2.0
+    #startComment#
+
+goldMiddle
+    #goldComment#: 2.0
+    #middleComment#
+
+goldEnd
+    #goldComment#: 2.0
+    #endComment#
 
 
 goldComment

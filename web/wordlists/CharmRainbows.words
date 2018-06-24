@@ -6,20 +6,31 @@ TextEngine Word List
  //(i.e one person tries to do thing but the other person wins on accident)
 
 Beginning
-    #noun|var@name1# sets up a joke to break the ice with #noun|var@name2# but it backfires completely when #noun|var@name2# makes them slip on a #noun#. #rainbowComment# : 0.5
+    #noun|var@name1# sets up a joke to break the ice with #noun|var@name2# but it backfires completely when #noun|var@name2# makes them slip on a #noun#. #rainbowStart#
 
 Middle
-    #noun|var@name2# spends days setting up a great prank, but #noun|var@name1# disrupts it all when they accidentally duck at the last minute. : 0.5
+    #noun|var@name2# spends days setting up a great prank, but #noun|var@name1# disrupts it all when they accidentally duck at the last minute. #rainbowMiddle#
 
 End
-    #noun|var@name2#  and  #noun|var@name1# go back and forth trying to one up each other by countering each other's pranks, but mostly they keep comically failing.: 0.5
+    #noun|var@name2#  and  #noun|var@name1# go back and forth trying to one up each other by countering each other's pranks, but mostly they keep comically failing. #rainbowEnd#
+
+rainbowStart
+    #rainbowComment#: 2.0
+    #startComment#
+
+rainbowMiddle
+    #rainbowComment#: 2.0
+    #middleComment#
+
+rainbowEnd
+    #rainbowComment#: 2.0
+    #endComment#
 
 rainbowComment
     Wow, who could have predicted that?
     It was complete shenanigans.
     Classic rainbows.
     .
-    #startComment#
 
 middleComment
     Oh god. They suddenly started to do a jig in public. There could have been KIDS watching.
