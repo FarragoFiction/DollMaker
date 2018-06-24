@@ -4,13 +4,22 @@ TextEngine Word List
 @verbs
 
 Beginning
-    #noun|var@name2# leaves their phone number on a napkin for #noun|var@name1# to find. #cloverStart#: 0.5
+    #noun|var@name2# leaves their phone number on a napkin for #noun|var@name1# to find. #cloverStart#
+    #noun|var@name1# runs into  #noun|var@name1#, literally, with toast in their mouth, while late for school. #cloverStart#
+    #noun|var@name2# and #noun|var@name1# meet each other at a crowded party and hit it off, but fail to get each other's names. The next morning, they bump into each other on the subway. #cloverStart#
+
 
 Middle
     #noun|var@name1# randomly finds the #noun|var@romanticItem# #noun|var@name2# has been looking for and surprises them with it. #cloverMiddle#
+    #noun|var@name2# wins an all expense paid vacation for two and treats #noun|var@name2# to a romantic getaway. #cloverMiddle#
+    #noun|var@name1# manages to get reservations at a fancy #noun|var@romanticItem# themed restaurant at the last minute and takes #noun|var@name2# to it. #cloverMiddle#
+
 
 End
     #noun|var@name2#  wins tickets to #noun|var@name1#'s favorite play, The Lonely #noun|var@romanticItem#, just in time for their anniversary!  #cloverEnd#
+    #randomParticipant# wins an anniversary cruise to an island famous for #noun@plural.|var@romanticItem#!  #cloverEnd#
+    #randomParticipant#  forgets their anniversary, but a serendipitous #noun|var@romanticItem# reminds them before it's too late.  #cloverEnd#
+
 
 cloverStart
     #cloverComment#: 2.0
