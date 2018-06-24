@@ -7,12 +7,17 @@ TextEngine Word List
 Beginning
     #noun|var@name1# gigglesnorts relentlessly to  #noun|var@name2# about #noun@plural|var@romanticItem#. #moonStart#
     #noun|var@name2# is a finalist in #noun|var@name2#'s #noun@plural|var@romanticItem# riddle competition. #moonStart#
+    #noun|var@name1# keeps saying cryptic riddle fuckery to #noun|var@name2# about #noun@plural|var@romanticItem#. #moonStart#
 
 Middle
-    #noun|var@name2# actually solves one of #noun|var@name1#'s shitty riddles. #moonMiddle#
+    #noun|var@name2# actually solved one of #noun|var@name1#'s shitty riddles. #moonMiddle#
+    #noun|var@name1# came up with an even harder riddle about #noun@plural|var@romanticItem# to torment #noun|var@name2# with. #moonMiddle#
+    #noun|var@name1# actually solves one of #noun|var@name2#'s shitty riddles. #moonMiddle#
 
 End
-    #noun|var@name1#  and devises a new and better riddle about #noun@plural|var@romanticItem# for #noun|var@name2# to solve. #moonEnd#
+    #noun|var@name1#  devises a new and better riddle about #noun@plural|var@romanticItem# for #noun|var@name2# to solve. #moonEnd#
+    #noun|var@name1#  makes the worst riddle of all time about #noun@plural|var@romanticItem# to  torment #noun|var@name2# with. #moonEnd#
+    #noun|var@name2#  never gives up on any of #noun|var@name1#'s riddles. #moonEnd#
 
 
 moonStart
@@ -30,6 +35,8 @@ moonEnd
 moonComment
     Wow, you'd think they'd know better than to moon each other in public.
     That there is some moons alright.
+    Such shitty riddles.
+    Amazing gigglesnort.
     Classic moons.
     .
     #startComment#
