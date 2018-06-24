@@ -2,16 +2,27 @@ TextEngine Word List
 
 @nouns
 @verbs
-//name1 and name2 are equally dominent , japeish luck based things
+//name1 and name2 are equally dominent , japeish luck based things (mockery or practical jokes)
 
 Beginning
     #noun|var@name1# mocks  #noun|var@name2# after they trip on a #noun|var@romanticItem#.  #horseshoeStart#
+    #noun|var@name2# manages to make #noun|var@name2# publicly trip into a giant pile of manure. #horseshoeStart#
+    #noun|var@name2# convinces #noun|var@name2# that the word 'gullible' is written on the ceiling. #horseshoeStart#
+
 
 Middle
     #noun|var@name1# relishes the joy of japing #noun|var@name2#. #horseshoeMiddle#
+    #noun|var@name1# mocks #noun|var@name2#'s way of speaking publicly. #horseshoeMiddle#
+    #noun|var@name2# breaks into #noun|var@name1#'s #noun_building# and staples a single slice of bread to the wall, in order to make them think they've gone crazy. #horseshoeMiddle#
+
+
+
 
 End
-    #noun|var@name2#  and  #noun|var@name1# bicker like an old married couple, always mocking each other. #horseshoeEnd#
+    they bicker like an old married couple, always mocking each other. #horseshoeEnd#
+    #noun|var@name2#  just kind of gets used to checking the toilet for plastic wrap at this point. #horseshoeEnd#
+    #noun|var@name1# makes sure to pull down #noun|var@name2#'s pants in public during an important speech. #horseshoeEnd#
+
 
 
 horseshoeStart
@@ -29,6 +40,8 @@ horseshoeStart
 
 horseshoeComment
     Wow, look at those japes.
+    How embarrassing.
+    Will they ever live that down?
     Classic horseshoes.
     .
     #startComment#

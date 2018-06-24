@@ -4,13 +4,28 @@ TextEngine Word List
 @verbs
 
 Beginning
-    #noun|var@name1# and  #noun|var@name2# both reach for the same #noun|var@romanticItem#. #heartStart#
+    #noun|var@name1# and  #noun|var@name2# both reached for the same #noun|var@romanticItem#. #heartStart#
+    #noun|var@name1# was struck by how #romanticDescription#  #noun|var@name2# was. Almost like a #noun|var@romanticItem#. :0.3
+    #noun|var@name1# couldn't ignore how #romanticDescription#  #noun|var@name2# was. #heartStart#
+    #noun|var@name2# was struck by how #romanticDescription#  #noun|var@name1# was. Almost like a #noun|var@romanticItem#. :0.3
+    #noun|var@name2# couldn't ignore how #romanticDescription#  #noun|var@name1# was. #heartStart#
+    they met at a #romanticDescription# festival. #heartStart#
 
 Middle
     #noun|var@name2# #verb@past# a #noun|var@romanticItem# to surprise #noun|var@name1#. #heartMiddle#
+    #noun|var@name1# #verb@past# a #noun|var@romanticItem# to surprise #noun|var@name2#. #heartMiddle#
+    They found they had more and more in common. #heartMiddle#
+    They go on a romantic date to a #noun|var@romanticItem# #datespot# #heartMiddle#
+    #noun|var@name2# took #noun|var@name1# on an elaborate date involving a #noun@collective|var@romanticItem# of #noun@plural|var@romanticItem#. #heartMiddle#
+    #noun|var@name1# took #noun|var@name2# on an elaborate date involving a #noun@collective|var@romanticItem# of #noun@plural|var@romanticItem#. #heartMiddle#
+
 
 End
     #noun|var@name2#  and  #noun|var@name1# remember to give each other #noun|var@romanticItem# as gifts every year. #heartEnd#
+    they celebrate each new anniversary with love and support. #heartEnd#
+    they support each other as they strive for their goals in life. #heartEnd#
+    they build a life with each other as the foundation. #heartEnd#
+    their love is as passionate as it ever was. #heartEnd#
 
 heartStart
     #heartComment#: 2.0
@@ -24,6 +39,13 @@ heartEnd
     #heartComment#: 2.0
     #endComment#
 
+
+startComment
+    It was love at first sight.
+    They stared deeply into each other's eyes.
+    You could almost hear the music swelling in the background.
+    It was beautiful.
+    It was so sweet
 
 heartComment
     How sweet.
