@@ -5,19 +5,31 @@ TextEngine Word List
 //neither party necessarily means overtly for the thing to happen. subtle affection. (i.e. it looks like htey hate each other but secretly they are both taking care of each other via the hate)
 //its the tsundere charm. it's not like i like you or anything
 Beginning
-    #noun|var@name1# secretly trips  #noun|var@name2#, then helps them up and dusts them off. : 0.5
+    #noun|var@name1# secretly trips  #noun|var@name2#, then helps them up and dusts them off. #balloonStart#
 
 Middle
-    #noun|var@name2# teases #noun|var@name1# about being lazy until they finally write that novel about #noun|var@romanticItem# they've been meaning to. : 0.5
+    #noun|var@name2# teases #noun|var@name1# about being lazy until they finally write that novel about #noun|var@romanticItem# they've been meaning to. #balloonMiddle#
 
 End
-    #noun|var@name2#  and  #noun|var@name1# mif there is #noun|var@romanticItem# to distract them. : 0.5
+    #noun|var@name2#  and  #noun|var@name1# mif there is #noun|var@romanticItem# to distract them. #balloonEnd#
+
+balloonStart
+    #balloonComment#: 2.0
+    #startComment#
+
+balloonMiddle
+    #balloonComment#: 2.0
+    #middleComment#
+
+balloonEnd
+    #balloonComment#: 2.0
+    #endComment#
+
 
 balloonComment
     That is some tsundere shit.
     Classic balloons.
     .
-    #startComment#
 
 middleComment
     Oh god. They suddenly started to do a jig in public. There could have been KIDS watching.

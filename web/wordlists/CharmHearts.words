@@ -4,7 +4,7 @@ TextEngine Word List
 @verbs
 
 Beginning
-    #noun|var@name1# and  #noun|var@name2# both reach for the same #noun|var@romanticItem#. : 0.5
+    #noun|var@name1# and  #noun|var@name2# both reach for the same #noun|var@romanticItem#. #heartComment# : 0.5
 
 Middle
     #noun|var@name2# #verb@past# a #noun|var@romanticItem# to surprise #noun|var@name1#. : 0.5

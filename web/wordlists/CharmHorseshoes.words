@@ -5,7 +5,7 @@ TextEngine Word List
 //name1 and name2 are equally dominent , japeish luck based things
 
 Beginning
-    #noun|var@name1# mocks  #noun|var@name2# after they trip on a #noun|var@romanticItem#. : 0.5
+    #noun|var@name1# mocks  #noun|var@name2# after they trip on a #noun|var@romanticItem#.  #horseshoeComment# : 0.5
 
 Middle
     #noun|var@name1# relishes the joy of japing #noun|var@name2#. : 0.5

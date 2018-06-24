@@ -8,7 +8,7 @@ Beginning
     #noun|var@name1# and  #noun|var@name2# bond over trading silly memes. : 0.5
 
 Middle
-    #noun|var@name2# is so happy to find a new memory game to play with #noun|var@name1#. : 0.5
+    #noun|var@name2# is so happy to find a new memory game to play with #noun|var@name1#. #diamondComment#: 0.5
 
 End
     #noun|var@name2#  and  #noun|var@name1# have developed an elaborate mythos of memes, jokes, and shitposts, all centered around #noun@plural|var@romanticItem# and #noun|var@romanticItem# related puns. : 0.5
