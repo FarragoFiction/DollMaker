@@ -7,13 +7,19 @@ TextEngine Word List
 
 Beginning
     #noun|var@name1# sets up a joke to break the ice with #noun|var@name2# but it backfires completely when #noun|var@name2# makes them slip on a #noun#. #rainbowStart#
+    #noun|var@name2# sets up a small joke to get to know #noun|var@name1# but #noun|var@name1# doesn't get it and it falls hilariously flat. #rainbowStart#
+    #noun|var@name1# sets themselve up on a 'blind' date with #noun|var@name2# only to find that #noun|var@name2# was actually the one to arrange things. #rainbowStart#
 
 Middle
     #noun|var@name2# spends days setting up a great prank, but #noun|var@name1# disrupts it all when they accidentally duck at the last minute. #rainbowMiddle#
+    #noun|var@name1# comes up with an elaborate joke, but #noun|var@name2# changes the topic without ever even realizing it was a joke. #goldMiddle#
+    #noun|var@name2# makes a pun to impress #noun|var@name1# but they have no idea what the word the pun is based on means. #goldMiddle#
+
 
 End
     #noun|var@name2#  and  #noun|var@name1# go back and forth trying to one up each other by countering each other's pranks, but mostly they keep comically failing. #rainbowEnd#
-
+    #noun|var@name1#  and  #noun|var@name2#'s constant clumsiness countermands their attempts at pranks and japes. #goldEnd#
+    #noun|var@name2#  and  #noun|var@name1# have elaborate plans to prank each other, but keep comically failing. #goldEnd#
 rainbowStart
     #rainbowComment#: 2.0
     #startComment#
@@ -29,6 +35,7 @@ rainbowEnd
 rainbowComment
     Wow, who could have predicted that?
     It was complete shenanigans.
+    It was kind of embarassing how hard it failed.
     Classic rainbows.
     .
 
