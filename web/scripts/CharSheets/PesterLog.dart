@@ -158,6 +158,8 @@ class PesterLog extends CharSheet {
 
     //matches line color to player font color
     void fillChatTextMultiLine(CanvasElement canvas, String chat,int x, num y) {
+        tint = doll.associatedColor;
+        tint2 = secondDoll.associatedColor;
         print("trying to draw $chat");
         CanvasRenderingContext2D ctx = canvas.getContext("2d");
         double lineHeight = ctx
