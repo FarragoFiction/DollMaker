@@ -23,7 +23,7 @@ Future<Null> drawSheet() async {
     }else {
         doll = Doll.randomDollOfType(new Random().pickFrom(Doll.allDollTypes));
     }
-    sheet = new SylveonSheet(doll);
+    sheet = new SylveonSheet(doll, null);
     //sheet = new SylveonSheet(new MonsterPocketDoll());
 
     Element innerDiv  = new DivElement();

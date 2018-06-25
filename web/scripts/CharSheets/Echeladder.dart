@@ -39,7 +39,7 @@ class Echeladder extends CharSheet {
     TextLayer fifteen;
     TextLayer sixteen;
 
-    Echeladder(Doll doll) : super(doll) {
+    Echeladder(Doll doll, List<Doll>possibleDolls) : super(doll, possibleDolls) {
         randomizePalette();
         initLevels();
         double x = echeladderStartX + 6.0;

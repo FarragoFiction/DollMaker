@@ -24,7 +24,7 @@ class TrollCallSheet extends CharSheet {
     TextLayer fact3;
 
 
-    TrollCallSheet(Doll doll) : super(doll) {
+    TrollCallSheet(Doll doll, List<Doll>possibleDolls) : super(doll, possibleDolls) {
         tint = doll.associatedColor;
 
     }

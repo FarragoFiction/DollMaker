@@ -78,7 +78,7 @@ class SylveonSheet extends CharSheet {
   List<TextLayer> get textLayers => <TextLayer>[name,age,guardian,owner,handle, heightLayer, weightLayer,fetchModus,species,textColor,gender,specibus,ancestor,heart, spades, diamonds, clubs,className, aspect,proto1, spriteName,proto2,consorts,denizen,land];
   List<BarLayer> get barLayers => <BarLayer>[strength,stamina,agility,perception,accuracy,stealth,intelligence,imagination,psionics,occultLore,tactics,weaponSkill,persuasion,willpower,empathy,intimidation,expression,performance,prospit,derse];
 
-  SylveonSheet(Doll doll):super(doll) {
+  SylveonSheet(Doll doll, List<Doll>possibleDolls) : super(doll, possibleDolls) {
         double lineY = 70.0;
         name = new TextLayer("Name",nameForDoll(doll),60.0,lineY, fontSize: fontSize, maxWidth: 235, fontName: fontName, emphasis: emphasis);
         age = new TextLayer("Age","${rand.nextInt(7)+3}",350.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);

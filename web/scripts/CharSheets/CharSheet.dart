@@ -14,6 +14,8 @@ Or at least stats.
 TODO: Worry about this in the future.
  */
 abstract class CharSheet {
+    List<Doll> possibleDolls; //for randomizer;
+
     //actual image name of sheet should be type num.
     bool hideDoll = false;
     String folder = "images/CharSheets";
@@ -34,7 +36,7 @@ abstract class CharSheet {
     AnchorElement saveLink;
 
 
-    CharSheet(Doll this.doll) {
+    CharSheet(Doll this.doll, List<Doll>this.possibleDolls) {
         rand = new Random(doll.seed);
         tint = new Colour(rand.nextInt(255),rand.nextInt(255), rand.nextInt(255));
     }
@@ -65,8 +67,13 @@ abstract class CharSheet {
         dollButton2.onClick.listen((Event e) {
             print("Trying to load doll");
             dollDirty = true;
-            doll =Doll.randomDollOfType(rand.pickFrom(Doll.allDollTypes));
+            if(possibleDolls != null && possibleDolls.isNotEmpty) {
+                doll = new Random().pickFrom(possibleDolls);
+            }else {
+                doll = Doll.randomDollOfType(new Random().pickFrom(Doll.allDollTypes));
+            }
             draw();
+
         });
         return ret;
     }

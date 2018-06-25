@@ -24,7 +24,7 @@ Future<Null> drawSheet() async {
     }else {
         d = new HomestuckTrollDoll();
     }
-    sheet = new TrollCallSheet(d); //it's in the name, dunkass.
+    sheet = new TrollCallSheet(d,null); //it's in the name, dunkass.
     await sheet.setup();
 
     Element innerDiv  = new DivElement();

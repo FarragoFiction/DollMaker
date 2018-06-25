@@ -26,7 +26,7 @@ Future<Null> drawSheet() async {
         print("getting a random doll of any type");
 
     }
-    sheet = new Echeladder(doll);
+    sheet = new Echeladder(doll,null);
    // sheet = new Echeladder(new MonsterPocketDoll());
 
     Element innerDiv  = new DivElement();

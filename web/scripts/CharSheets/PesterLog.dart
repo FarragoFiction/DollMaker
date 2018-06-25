@@ -28,7 +28,6 @@ class PesterLog extends CharSheet {
     String chatHandle2 = "authorBot";
     Colour tint2;
     String chatText = "JR: HELLO WORLD\nAB:No need to shout.";
-    List<Doll> possibleDolls; //for randomizer;
     bool useRandomChat = true;
     /**
      *
@@ -45,12 +44,50 @@ class PesterLog extends CharSheet {
      */
 
 
-    PesterLog(Doll doll, Doll this.secondDoll, List<Doll> this.possibleDolls) : super(doll) {
+    PesterLog(Doll doll, Doll this.secondDoll, List<Doll>possibleDolls) : super(doll, possibleDolls) {
         tint = doll.associatedColor;
         tint2 = secondDoll.associatedColor;
         chatHandle1 = handleForDoll(doll);
         chatHandle2 = handleForDoll(secondDoll);
         intro = new TextLayer("X Began Pestering Y","",290.0,65.0, fontSize: 12, maxWidth: 220,fontColor: ReferenceColours.BLACK);
+    }
+
+    @override
+    Element makeDollLoader() {
+        Element ret = new DivElement();
+        ret.setInnerHtml("Doll URL: ");
+        TextAreaElement dollArea = new TextAreaElement();
+        dollArea.value = doll.toDataBytesX();
+        ButtonElement dollButton = new ButtonElement();
+        dollButton.setInnerHtml("Load Doll");
+        ret.append(dollArea);
+        ret.append(dollButton);
+
+        dollButton.onClick.listen((Event e) {
+            print("Trying to load doll");
+            dollDirty = true;
+            doll = Doll.loadSpecificDoll(dollArea.value);
+            print("trying to draw loaded doll");
+            draw();
+        });
+
+        ButtonElement dollButton2 = new ButtonElement();
+        dollButton2.setInnerHtml("Randomize Doll");
+        ret.append(dollButton2);
+
+        dollButton2.onClick.listen((Event e) {
+            print("Trying to load doll");
+            dollDirty = true;
+            if(possibleDolls != null && possibleDolls.isNotEmpty) {
+                doll = new Random().pickFrom(possibleDolls);
+            }else {
+                doll = Doll.randomDollOfType(new Random().pickFrom(Doll.allDollTypes));
+            }
+            chatHandle1 =  handleForDoll(doll);
+            draw();
+
+        });
+        return ret;
     }
 
     String get introText {
@@ -254,6 +291,7 @@ class PesterLog extends CharSheet {
             }else {
                 secondDoll = Doll.randomDollOfType(new Random().pickFrom(Doll.allDollTypes));
             }
+            chatHandle2 = handleForDoll(secondDoll);
             draw();
         });
 
