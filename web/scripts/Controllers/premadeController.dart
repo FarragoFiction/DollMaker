@@ -77,7 +77,7 @@ Future<Null> drawOneDoll(Doll d) async {
         document.execCommand('copy');
     });
 
-    AnchorElement editLink = new AnchorElement(href: "index.html?${d.toDataUrlPart()}")..text = "Edit"..target="_blank";
+    AnchorElement editLink = new AnchorElement(href: "index.html?${d.toDataUrlPart()}")..text = "Edit ${d.dollName}"..target="_blank";
     div.append(editLink);
 }
 
