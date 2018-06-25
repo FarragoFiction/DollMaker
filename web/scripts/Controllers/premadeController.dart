@@ -91,6 +91,12 @@ void pickCategory() {
     a.target = "_blank";
     a.text = "Perform Ectobiology?";
     category.append(a);
+
+    AnchorElement a2 = new AnchorElement(href: "pesterlog.html?target=${chosenCategory}");
+    a2.target = "_blank";
+    a2.text = "View Pesterlog?";
+    category.append(a2);
+
     container.append(category);
     if(chosenCategory == "homestuck") {
         container.appendHtml("Thanks to someoneLikeable, prismaticJelly and Grip for Canon Doll creation!");

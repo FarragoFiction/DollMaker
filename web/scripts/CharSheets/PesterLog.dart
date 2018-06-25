@@ -28,7 +28,7 @@ class PesterLog extends CharSheet {
     String chatHandle2 = "authorBot";
     Colour tint2;
     String chatText = "JR: HELLO WORLD\nAB:No need to shout.";
-
+    List<Doll> possibleDolls; //for randomizer;
     bool useRandomChat = true;
     /**
      *
@@ -45,7 +45,7 @@ class PesterLog extends CharSheet {
      */
 
 
-    PesterLog(Doll doll, Doll this.secondDoll) : super(doll) {
+    PesterLog(Doll doll, Doll this.secondDoll, List<Doll> this.possibleDolls) : super(doll) {
         tint = doll.associatedColor;
         tint2 = secondDoll.associatedColor;
         chatHandle1 = handleForDoll();
@@ -249,7 +249,11 @@ class PesterLog extends CharSheet {
         dollButton2.onClick.listen((Event e) {
             print("Trying to load doll");
             dollDirty2 = true;
-            secondDoll =Doll.randomDollOfType(rand.pickFrom(Doll.allDollTypes));
+            if(possibleDolls != null && possibleDolls.isNotEmpty) {
+                secondDoll = new Random().pickFrom(possibleDolls);
+            }else {
+                secondDoll = Doll.randomDollOfType(new Random().pickFrom(Doll.allDollTypes));
+            }
             draw();
         });
 
