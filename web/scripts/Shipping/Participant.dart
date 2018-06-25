@@ -52,7 +52,11 @@ class Participant{
         randomizeButton.onClick.listen((Event e) {
             Renderer.clearCanvas(tmpCanvas);
             cachedDollCanvas = null;
-            doll = Doll.randomDollOfType(doll.renderingType);
+            if(trove.possibleDolls != null && trove.possibleDolls.isNotEmpty) {
+                doll = new Random().pickFrom(trove.possibleDolls);
+            }else {
+                doll = Doll.randomDollOfType(doll.renderingType);
+            }
             tmpCanvas.width = doll.width;
             tmpCanvas.height = doll.height;
 

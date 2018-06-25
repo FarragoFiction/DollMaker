@@ -17,6 +17,8 @@ how to generate a date.
 it also has two or more dolls as participants, which it uses to seed its random (addative)
  */
 class Trove {
+    //if we have a target, only get dolls from here
+    List<Doll> possibleDolls;
     //only the first two will be named
     List<Participant> participants = new List<Participant>();
     String storyText;
@@ -44,7 +46,7 @@ class Trove {
     }
 
 
-    Trove(List<Participant> this.participants, {List<Charm> this.charms}) {
+    Trove(List<Participant> this.participants, List<Doll> this.possibleDolls, {List<Charm> this.charms}) {
         if(charms == null || charms.isEmpty) setCharmsRandom();
         if(romanticBG == null) {
             romanticBG = new ImageElement(src: "images/Charms/romanticBG.png");

@@ -31,17 +31,17 @@ Future<Null> main() async{
 Future<Null> ship() async{
         List<Participant> p = new List<Participant>();
         String chosenCategory = getParameterByName("target");
+        List<Doll> possibleDolls = new List<Doll>();
         if(chosenCategory == null) {
             randomParticipants(p);
         }else {
-            List<Doll> possibleDolls = new List<Doll>();
             await slurpDolls(possibleDolls, chosenCategory);
             possibleDolls.shuffle();//true random
             //todo have name/doll pairing
             p.add(new Participant(possibleDolls.first));
             p.add(new Participant(possibleDolls.last));
         }
-        trove = new Trove(p);
+        trove = new Trove(p, possibleDolls);
         trove.drawParticipants(container);
         trove.drawRomTypeDropdowns(container);
         trove.drawCharms(container);
