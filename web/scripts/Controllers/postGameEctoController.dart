@@ -11,6 +11,7 @@ Element parentContainer;
 Element childContainer;
 Element buttonContainer;
 
+List<Doll> possibleDolls = new List<Doll>();
 List<Doll> players = new List<Doll>();
 List<Doll> currentCropChildren = new List<Doll>();
 
@@ -62,18 +63,17 @@ Future<Null> initParents() async {
             players.add(Doll.randomDollOfType(type));
         }
     }else {
-        await slurpDolls(players, chosenCategory);
+        await slurpDolls(possibleDolls, chosenCategory);
+        List<Doll> tmpDolls = new List.from(possibleDolls);
         //random amount from that category
-        List<Doll> tmp = new List<Doll>();
         for (int i = 0; i < number; i++) {
-            if(players.isNotEmpty) {
-                Doll doll = rand.pickFrom(players);
-                tmp.add(doll);
-                players.remove(doll);
+            if(tmpDolls.isNotEmpty) {
+                Doll doll = rand.pickFrom(tmpDolls);
+                players.add(doll);
+                tmpDolls.remove(doll);
             }
         }
 
-        players = tmp;
     }
 }
 
@@ -141,7 +141,12 @@ void drawOneParent(Doll parent) {
 
     randomizeButton.onClick.listen((Event e) {
         Renderer.clearCanvas(parentCanvas);
-        Doll tmp = Doll.randomDollOfType(parent.renderingType);
+        Doll tmp;
+        if(possibleDolls != null && possibleDolls.isNotEmpty) {
+            tmp = new Random().pickFrom(possibleDolls);
+        }else {
+            tmp = Doll.randomDollOfType(parent.renderingType);
+        }
         players.remove(parent);
         players.add(tmp);
         parent = tmp;
