@@ -5,13 +5,20 @@ TextEngine Word List
 //name1 is dominent, does most actions. pranks
 
 Beginning
-    #noun|var@name1# pulls an amazing prank involving a #noun#, a #noun# and a   #noun|var@romanticItem# on  #noun|var@name2#.  #starStart#
+    #noun|var@name2# slips on a #noun# while #noun|var@name1# giggles from a far. #starStart#
+    #noun|var@name2# finds a flaming bag of dog shit on their front porch while #noun|var@name1# giggles from a far. #starStart#
+    #noun|var@name1# switches out the salt and sugar shakers at a restaurant #noun|var@name2# frequents. #starStart#
 
 Middle
-    #noun|var@name2# slips on a #noun# while #noun|var@name1# giggles from a far. #starMiddle#
+    #noun|var@name1# pulls an amazing prank involving a #noun#, a #noun# and a   #noun|var@romanticItem# on  #noun|var@name2#.  #starMiddle#
+    #noun|var@name1# duct tapes a #noun|var@romanticItem# to  #noun|var@name2#'s #noun_building#.  #starMiddle#
+    #noun|var@name1# convinces #noun|var@name2#'s that #noun|var@romanticItem# means #noun# in a foreign language. #starMiddle#
 
 End
-    #noun|var@name1#  makes sure to pull out all the stops each April Fools.  #noun|var@name2# has started to panic if they even SEE a #noun|var@romanticItem# in the days leading up to it. #starEnd#
+    #noun|var@name1#  makes sure to pull out all the stops each April Fools.  #noun|var@name2# has started to panic if they even SEE a #noun|var@romanticItem# in the days leading up to it. 
+    #noun|var@name2# makes always sure to double check the salt (or the sugar) when cooking.
+    #noun|var@name2# just sort of assumes any gift, especially food, isn't worth it from #noun|var@name1#.
+
 
 starStart
     #starsComment#: 2.0
@@ -28,7 +35,9 @@ starEnd
 starsComment
     #noun|var@name1# takes the prankster's gambit.
     Classic stars.
+    #noun|var@name2# vows revenge.
     It's completely amazing.
+    No one ever figures out how.
     #noun|var@name2# looked like a fool.
     #noun|var@name2# looked absolutely ridiculous.
 
