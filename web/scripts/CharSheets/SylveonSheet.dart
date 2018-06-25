@@ -80,13 +80,13 @@ class SylveonSheet extends CharSheet {
 
   SylveonSheet(Doll doll):super(doll) {
         double lineY = 70.0;
-        name = new TextLayer("Name",nameForDoll(),60.0,lineY, fontSize: fontSize, maxWidth: 235, fontName: fontName, emphasis: emphasis);
+        name = new TextLayer("Name",nameForDoll(doll),60.0,lineY, fontSize: fontSize, maxWidth: 235, fontName: fontName, emphasis: emphasis);
         age = new TextLayer("Age","${rand.nextInt(7)+3}",350.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
         guardian = new TextLayer("Guardian",guardianForDoll(name.text),540.0,lineY, fontSize: fontSize, maxWidth: 235, fontName: fontName, emphasis: emphasis);
         owner = new TextLayer("creator","AuthorBot",810.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
 
         lineY = 86.0;
-        handle = new TextLayer("Handle",handleForDoll(),70.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
+        handle = new TextLayer("Handle",handleForDoll(doll),70.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
         heightLayer = new TextLayer("Height","???",342.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
         weightLayer = new TextLayer("Weight","???",413.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
         fetchModus = new TextLayer("Fetch Modus",randomFetchModus(),564.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
@@ -161,7 +161,7 @@ class SylveonSheet extends CharSheet {
 
   String randomHeart() {
       if(rand.nextBool()) {
-        return nameForDoll();
+        return nameForDoll(doll);
       }else {
         return "";
       }
@@ -178,7 +178,7 @@ class SylveonSheet extends CharSheet {
     String randomClubs() {
         if(doll is HomestuckTrollDoll) {
             if(rand.nextBool()) {
-                return "${nameForDoll()} & ${nameForDoll()}";
+                return "${nameForDoll(doll)} & ${nameForDoll(doll)}";
             }else {
                 return "";
             }

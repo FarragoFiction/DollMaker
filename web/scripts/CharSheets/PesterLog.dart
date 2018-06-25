@@ -48,8 +48,8 @@ class PesterLog extends CharSheet {
     PesterLog(Doll doll, Doll this.secondDoll, List<Doll> this.possibleDolls) : super(doll) {
         tint = doll.associatedColor;
         tint2 = secondDoll.associatedColor;
-        chatHandle1 = handleForDoll();
-        chatHandle2 = handleForDoll();
+        chatHandle1 = handleForDoll(doll);
+        chatHandle2 = handleForDoll(secondDoll);
         intro = new TextLayer("X Began Pestering Y","",290.0,65.0, fontSize: 12, maxWidth: 220,fontColor: ReferenceColours.BLACK);
     }
 
