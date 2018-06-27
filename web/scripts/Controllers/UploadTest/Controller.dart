@@ -42,6 +42,7 @@ void shitpost() {
     //it's a set so no repeats
     Set<String> oneOfEachDollDirectory = new Set<String>();
     for(int i in Doll.allDollTypes) {
+        print("trying to make a doll of type $i");
         Doll doll = Doll.randomDollOfType(i);
         oneOfEachDollDirectory.addAll(doll.getAllNeededDirectories());
     }

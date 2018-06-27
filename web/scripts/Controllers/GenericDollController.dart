@@ -88,9 +88,15 @@ Future<Null> loadDoll() async {
     a2.text = "${doll.name} Zen Mode";
     a2.target = "_blank";
 
+    AnchorElement a4 = new AnchorElement(href: "http://farragofiction.com/PigeonRoomSim?type=${doll.renderingType}");
+    a4.text = "${doll.name} Physics Room";
+    a4.style.display = "block";
+    a4.target = "_blank";
+
 
     linkDiv.append(a);
     linkDiv2.append(a3);
+    linkDiv2.append(a4);
     linkDiv2.append(a2);
 
 

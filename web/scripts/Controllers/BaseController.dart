@@ -19,6 +19,7 @@ class BaseController {
     AnchorElement trollCardLink;
     AnchorElement echeladderLink;
     AnchorElement pesterlogLink;
+    AnchorElement pigeonRoomLink;
     AnchorElement charSheetLink;
 
 
