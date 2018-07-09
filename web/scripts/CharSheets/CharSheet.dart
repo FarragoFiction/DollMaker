@@ -215,7 +215,7 @@ abstract class CharSheet {
         Element ret = new DivElement();
         ret.className = "paddingTop";
         if(saveLink == null) saveLink = new AnchorElement();
-        saveLink.href = canvas.toDataUrl();
+        saveLink.download = canvas.toDataUrl();
         saveLink.target = "_blank";
         saveLink.setInnerHtml("Download PNG?");
         ret.append(saveLink);
@@ -224,7 +224,7 @@ abstract class CharSheet {
 
     void syncSaveLink() {
         if(saveLink != null) {
-            saveLink.href = canvas.toDataUrl();
+            saveLink.download = canvas.toDataUrl();
             saveLink.target = "_blank";
             saveLink.setInnerHtml("Download PNG?");
         }
