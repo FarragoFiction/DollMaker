@@ -281,7 +281,9 @@ class SylveonSheet extends CharSheet {
 
 
       if(saveLink == null) saveLink = new AnchorElement();
-      saveLink.download = canvas.toDataUrl();
+      saveLink.href = canvas.toDataUrl();
+      saveLink.download = "${doll.dollName}";
+
       syncSaveLink();
   }
 }

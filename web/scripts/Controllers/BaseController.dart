@@ -41,12 +41,13 @@ class BaseController {
     void setupLinks(Element container) {
 
         saveLink = new AnchorElement();
-        saveLink.download = canvas.toDataUrl();
+        saveLink.href = canvas.toDataUrl();
+        saveLink.download = "${doll.dollName}";
         //saveLink.target = "_blank";
         saveLink.setInnerHtml("Download PNG?");
         container.append(saveLink);
         saveLink.onMouseDown.listen((Event e) {
-            saveLink.download = canvas.toDataUrl();
+            saveLink.href = canvas.toDataUrl();
         });
 
         trollCallLink = new AnchorElement(href: "trollCall.html?${doll.toDataUrlPart()}")..style.padding = "5px";
