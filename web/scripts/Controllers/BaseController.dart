@@ -48,6 +48,7 @@ class BaseController {
         container.append(saveLink);
         saveLink.onMouseDown.listen((Event e) {
             saveLink.href = canvas.toDataUrl();
+            saveLink.download = "${doll.dollName}";
         });
 
         trollCallLink = new AnchorElement(href: "trollCall.html?${doll.toDataUrlPart()}")..style.padding = "5px";
