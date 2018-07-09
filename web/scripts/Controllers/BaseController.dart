@@ -42,7 +42,7 @@ class BaseController {
 
         saveLink = new AnchorElement();
         saveLink.href = canvas.toDataUrl();
-        saveLink.target = "_blank";
+        //saveLink.target = "_blank";
         saveLink.setInnerHtml("Download PNG?");
         container.append(saveLink);
         saveLink.onMouseDown.listen((Event e) {
