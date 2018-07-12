@@ -8,13 +8,16 @@ import 'package:RenderingLib/src/loader/loader.dart';
 
 import "BaseController.dart";
 List<SavedDoll> savedDolls = new List<SavedDoll>();
-Element container;
+Element     container = querySelector("#contents");
+
 
 void main() {
     loadNavbar();
-    loadDolls();
+    savedDolls = Doll.loadAllFromLocalStorage();
     downloadBackupLink();
     loadBackupButton();
+    loadDolls();
+
 }
 
 
@@ -24,8 +27,9 @@ void downloadBackupLink() {
     saveLink2.href = Url.createObjectUrl(blob).toString();
     saveLink2.target = "_blank";
     saveLink2.download = "savedDollsBackup.txt";
+    saveLink2.style.display = "block";
     saveLink2.setInnerHtml("Download Backup");
-    querySelector('#output').append(saveLink2);
+    container.append(saveLink2);
 }
 
 //because past jr was a dunkass and didn't use json
@@ -34,15 +38,16 @@ String saveDataToTextFile() {
     for(SavedDoll d in savedDolls) {
         ret.add( d.doll.toDataBytesX());
     }
-    return ret.join(",");
+    return ret.join("\n");
 }
 
 void loadBackupButton() {
     InputElement fileElement = new InputElement();
+    fileElement.style.display = "block";
     fileElement.type = "file";
     fileElement.setInnerHtml("Load from Backup?");
-    querySelector("#output").appendHtml("Load from Backup?");
-    querySelector("#output").append(fileElement);
+    container.appendHtml("Load from Backup?");
+    container.append(fileElement);
 
 
     fileElement.onChange.listen((e) {
@@ -57,6 +62,7 @@ void loadBackupButton() {
             window.location.href= "index.html";
         });
     });
+
 }
 
 void clearDolls() {
@@ -69,7 +75,7 @@ void clearDolls() {
 }
 
 void saveAllDolls(String loadData) {
-    List<String> dataStrings = loadData.split(",");
+    List<String> dataStrings = loadData.split("\n");
     for(int i = 0; i< dataStrings.length; i++) {
         window.localStorage["${Doll.localStorageKey}$i"] = dataStrings[i];
     }
@@ -77,9 +83,7 @@ void saveAllDolls(String loadData) {
 
 Future<Null> loadDolls() async {
     await Loader.preloadManifest();
-    savedDolls = Doll.loadAllFromLocalStorage();
     print("loaded ${savedDolls.length} dolls");
-    container = querySelector("#contents");
 
     if(savedDolls.length == 0) {
         container.setInnerHtml("<h1>You have no saved dolls! Maybe you should <a href = 'index.html?type=1'>make some</a> or something???</h1>");
