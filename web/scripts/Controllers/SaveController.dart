@@ -13,7 +13,13 @@ Element     container = querySelector("#contents");
 
 void main() {
     loadNavbar();
-    downloadBackupLink();
+    try {
+        savedDolls = Doll.loadAllFromLocalStorage();
+        downloadBackupLink();
+    }catch(e, stacktrace) {
+        print("error $e, $stacktrace");
+        downloadBackupLinkSimple();
+    }
     loadBackupButton();
     loadDolls();
 
@@ -32,8 +38,30 @@ void downloadBackupLink() {
     container.append(saveLink2);
 }
 
+void downloadBackupLinkSimple() {
+    print("rendering download link");
+    AnchorElement saveLink2 = new AnchorElement();
+    Blob blob = new Blob([saveDataToTextFileSimple()]); //needs to take in a list o flists
+    saveLink2.href = Url.createObjectUrl(blob).toString();
+    saveLink2.target = "_blank";
+    saveLink2.download = "savedDollsBackup.txt";
+    saveLink2.style.display = "block";
+    saveLink2.setInnerHtml("Download Backup");
+    container.append(saveLink2);
+}
+
 //because past jr was a dunkass and didn't use json
 String saveDataToTextFile() {
+    List<String> ret = new List<String>();
+    for(SavedDoll d in savedDolls) {
+        print("writing doll $d");
+        ret.add( d.doll.toDataBytesX());
+    }
+    return ret.join("\n");
+}
+
+//because past jr was a dunkass and didn't use json
+String saveDataToTextFileSimple() {
     List<String> ret = new List<String>();
     for(int i = 0; i<255; i++) {
         if(window.localStorage.containsKey("${Doll.localStorageKey}$i")) {
@@ -90,8 +118,6 @@ void saveAllDolls(String loadData) {
 
 Future<Null> loadDolls() async {
     await Loader.preloadManifest();
-    savedDolls = Doll.loadAllFromLocalStorage();
-
     print("loaded ${savedDolls.length} dolls");
 
     if(savedDolls.length == 0) {
