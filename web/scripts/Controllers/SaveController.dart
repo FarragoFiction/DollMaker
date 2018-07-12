@@ -13,7 +13,6 @@ Element     container = querySelector("#contents");
 
 void main() {
     loadNavbar();
-    savedDolls = Doll.loadAllFromLocalStorage();
     downloadBackupLink();
     loadBackupButton();
     loadDolls();
@@ -36,9 +35,12 @@ void downloadBackupLink() {
 //because past jr was a dunkass and didn't use json
 String saveDataToTextFile() {
     List<String> ret = new List<String>();
-    for(SavedDoll d in savedDolls) {
-        print("writing doll $d");
-        ret.add( d.doll.toDataBytesX());
+    for(int i = 0; i<255; i++) {
+        if(window.localStorage.containsKey("${Doll.localStorageKey}$i")) {
+            String str = window.localStorage["${Doll.localStorageKey}$i"];
+            print("writing doll $str");
+            ret.add(str);
+        }
     }
     return ret.join("\n");
 }
@@ -88,6 +90,8 @@ void saveAllDolls(String loadData) {
 
 Future<Null> loadDolls() async {
     await Loader.preloadManifest();
+    savedDolls = Doll.loadAllFromLocalStorage();
+
     print("loaded ${savedDolls.length} dolls");
 
     if(savedDolls.length == 0) {
