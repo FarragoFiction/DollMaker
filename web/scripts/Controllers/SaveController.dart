@@ -13,6 +13,66 @@ Element container;
 void main() {
     loadNavbar();
     loadDolls();
+    downloadBackupLink();
+    loadBackupButton();
+}
+
+
+void downloadBackupLink() {
+    AnchorElement saveLink2 = new AnchorElement();
+    Blob blob = new Blob([saveDataToTextFile()]); //needs to take in a list o flists
+    saveLink2.href = Url.createObjectUrl(blob).toString();
+    saveLink2.target = "_blank";
+    saveLink2.download = "savedDollsBackup.txt";
+    saveLink2.setInnerHtml("Download Backup");
+    querySelector('#output').append(saveLink2);
+}
+
+//because past jr was a dunkass and didn't use json
+String saveDataToTextFile() {
+    List<String> ret = new List<String>();
+    for(SavedDoll d in savedDolls) {
+        ret.add( d.doll.toDataBytesX());
+    }
+    return ret.join(",");
+}
+
+void loadBackupButton() {
+    InputElement fileElement = new InputElement();
+    fileElement.type = "file";
+    fileElement.setInnerHtml("Load from Backup?");
+    querySelector("#output").appendHtml("Load from Backup?");
+    querySelector("#output").append(fileElement);
+
+
+    fileElement.onChange.listen((e) {
+        List<File> loadFiles = fileElement.files;
+        File file = loadFiles.first;
+        FileReader reader = new FileReader();
+        reader.readAsText(file);
+        reader.onLoadEnd.listen((e) {
+            String loadData = reader.result;
+            clearDolls();
+            saveAllDolls(loadData);
+            window.location.href= "index.html";
+        });
+    });
+}
+
+void clearDolls() {
+    //fuck you if you want to store more than 1k dolls.
+    for(int i = 0; i<255; i++) {
+        if(window.localStorage.containsKey("${Doll.localStorageKey}$i")) {
+            window.localStorage.remove("${Doll.localStorageKey}$i");
+        }
+    }
+}
+
+void saveAllDolls(String loadData) {
+    List<String> dataStrings = loadData.split(",");
+    for(int i = 0; i< dataStrings.length; i++) {
+        window.localStorage["${Doll.localStorageKey}$i"] = dataStrings[i];
+    }
 }
 
 Future<Null> loadDolls() async {
