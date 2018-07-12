@@ -22,6 +22,7 @@ void main() {
 
 
 void downloadBackupLink() {
+    print("rendering download link");
     AnchorElement saveLink2 = new AnchorElement();
     Blob blob = new Blob([saveDataToTextFile()]); //needs to take in a list o flists
     saveLink2.href = Url.createObjectUrl(blob).toString();
@@ -36,12 +37,14 @@ void downloadBackupLink() {
 String saveDataToTextFile() {
     List<String> ret = new List<String>();
     for(SavedDoll d in savedDolls) {
+        print("writing doll $d");
         ret.add( d.doll.toDataBytesX());
     }
     return ret.join("\n");
 }
 
 void loadBackupButton() {
+    print("rendering back up button");
     InputElement fileElement = new InputElement();
     fileElement.style.display = "block";
     fileElement.type = "file";
@@ -59,13 +62,14 @@ void loadBackupButton() {
             String loadData = reader.result;
             clearDolls();
             saveAllDolls(loadData);
-            window.location.href= "index.html";
+            window.location.href= window.location.href; //reload
         });
     });
 
 }
 
 void clearDolls() {
+    print("clearing existing dolls");
     //fuck you if you want to store more than 1k dolls.
     for(int i = 0; i<255; i++) {
         if(window.localStorage.containsKey("${Doll.localStorageKey}$i")) {
@@ -77,6 +81,7 @@ void clearDolls() {
 void saveAllDolls(String loadData) {
     List<String> dataStrings = loadData.split("\n");
     for(int i = 0; i< dataStrings.length; i++) {
+        print("saving doll $i");
         window.localStorage["${Doll.localStorageKey}$i"] = dataStrings[i];
     }
 }
