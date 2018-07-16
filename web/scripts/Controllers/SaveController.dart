@@ -17,7 +17,7 @@ void main() {
         savedDolls = Doll.loadAllFromLocalStorage();
         downloadBackupLink();
     }catch(e, stacktrace) {
-        print("error $e, $stacktrace");
+        print("error loading dolls from local storage $e, $stacktrace");
         downloadBackupLinkSimple();
     }
     loadBackupButton();
