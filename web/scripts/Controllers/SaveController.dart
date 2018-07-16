@@ -121,7 +121,9 @@ Future<Null> loadDolls() async {
     print("loaded ${savedDolls.length} dolls");
 
     if(savedDolls.length == 0) {
-        container.setInnerHtml("<h1>You have no saved dolls! Maybe you should <a href = 'index.html?type=1'>make some</a> or something???</h1>");
+        DivElement errorElement = new DivElement();
+        errorElement.setInnerHtml("<h1>You have no saved dolls! Maybe you should <a href = 'index.html?type=1'>make some</a> or something???</h1>");
+        container.append(errorElement);
     }
 
     for(SavedDoll doll in savedDolls) {
