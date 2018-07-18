@@ -89,13 +89,23 @@ void pickCategory() {
     category.text = "$chosenCategory PreMade Dolls";
     AnchorElement a = new AnchorElement(href: "postGameEcto.html?target=${chosenCategory}");
     a.target = "_blank";
+    a.style.padding = "5px";
+
     a.text = "Perform Ectobiology?";
     category.append(a);
 
     AnchorElement a2 = new AnchorElement(href: "pesterlog.html?target=${chosenCategory}");
     a2.target = "_blank";
+    a2.style.padding = "5px";
     a2.text = "View Pesterlog?";
     category.append(a2);
+
+
+    AnchorElement a3 = new AnchorElement(href: "ship.html?target=${chosenCategory}");
+    a3.target = "_blank";
+    a3.style.padding = "5px";
+    a3.text = "View Ships?";
+    category.append(a3);
 
     container.append(category);
     if(chosenCategory == "homestuck") {
