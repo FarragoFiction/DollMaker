@@ -12,14 +12,14 @@ Beginning
 
 Middle
     #noun|var@name2# spends days setting up a great prank, but #noun|var@name1# disrupts it all when they accidentally duck at the last minute. #rainbowMiddle#
-    #noun|var@name1# comes up with an elaborate joke, but #noun|var@name2# changes the topic without ever even realizing it was a joke. #goldMiddle#
-    #noun|var@name2# makes a pun to impress #noun|var@name1# but they have no idea what the word the pun is based on means. #goldMiddle#
+    #noun|var@name1# comes up with an elaborate joke, but #noun|var@name2# changes the topic without ever even realizing it was a joke. #rainbowMiddle#
+    #noun|var@name2# makes a pun to impress #noun|var@name1# but they have no idea what the word the pun is based on means. #rainbowMiddle#
 
 
 End
     #noun|var@name2#  and  #noun|var@name1# go back and forth trying to one up each other by countering each other's pranks, but mostly they keep comically failing. #rainbowEnd#
-    #noun|var@name1#  and  #noun|var@name2#'s constant clumsiness countermands their attempts at pranks and japes. #goldEnd#
-    #noun|var@name2#  and  #noun|var@name1# have elaborate plans to prank each other, but keep comically failing. #goldEnd#
+    #noun|var@name1#  and  #noun|var@name2#'s constant clumsiness countermands their attempts at pranks and japes. #rainbowEnd#
+    #noun|var@name2#  and  #noun|var@name1# have elaborate plans to prank each other, but keep comically failing. #rainbowEnd#
 
 rainbowStart
     #rainbowComment#: 2.0
