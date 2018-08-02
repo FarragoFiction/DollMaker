@@ -9,9 +9,11 @@ import "QueenController.dart";
 import 'package:RenderingLib/src/loader/loader.dart';
 
 BaseController controller;
+DivElement linkDiv = new DivElement();
 
 
-void main() {
+Future<Null> main() async {
+    await Loader.preloadManifest();
     print("Hello World");
     loadNavbar();
     Random rand = new Random();
@@ -53,6 +55,28 @@ void hintAtEgg() {
     querySelector("#contents").append(a);
 }
 
+void setUpTrollShit() {
+
+    if(controller.doll is HomestuckTrollDoll) {
+        HomestuckTrollDoll troll = controller.doll as HomestuckTrollDoll;
+        String caste = troll.bloodColor;
+        int sign = troll.canonSymbol.imgNumber;
+        controller.casteLink = new AnchorElement(
+            href: "index.html?type=2&caste=${caste}");
+        controller.casteLink.text = "View More Dolls in Caste $caste";
+        controller.casteLink.style.display = "block";
+        controller.casteLink.target = "_blank";
+        linkDiv.append(controller.casteLink);
+
+        controller.signLink = new AnchorElement(
+            href: "index.html?type=2&sign=${sign}");
+        controller.signLink.text = "View More Dolls with sign $sign";
+        controller.signLink.target = "_blank";
+        controller.signLink.style.display = "block";
+        linkDiv.append(controller.signLink);
+    }
+}
+
 Future<Null> loadDoll() async {
     await Loader.preloadManifest();
 
@@ -73,7 +97,8 @@ Future<Null> loadDoll() async {
     CanvasElement canvas = new CanvasElement(width: doll.width, height: doll.height);
     canvas.style.backgroundColor = "#eeeeee";
     querySelector("#doll").append(canvas);
-    DivElement linkDiv = new DivElement();
+
+
     AnchorElement a = new AnchorElement(href: "viewParts.html?type=${doll.renderingType}");
     a.text = "View All Parts for ${doll.name}";
     a.target = "_blank";
@@ -110,13 +135,16 @@ Future<Null> loadDoll() async {
     }else {
         controller = new KidController(doll, canvas);
     }
-
+    setUpTrollShit();
     //whether i loaded or not, it's time to draw.
     controller.setupForms();
     controller.drawDollCreator();
     querySelector("title").text = "${doll.name} Doll Maker";
     DivElement credits = new DivElement()..text = "(idea and initial parts by ${doll.originalCreator})";
     querySelector("#doll").append(credits);
+    //makes sure caste/sign bullshit fits
+    controller.didTrollBullshit();
+
 }
 
 

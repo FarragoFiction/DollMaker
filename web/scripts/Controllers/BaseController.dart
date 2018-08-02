@@ -22,6 +22,9 @@ class BaseController {
     AnchorElement pigeonRoomLink;
     AnchorElement charSheetLink;
 
+    AnchorElement casteLink;
+    AnchorElement signLink;
+
 
 
 
@@ -83,6 +86,17 @@ class BaseController {
         if(echeladderLink != null) echeladderLink.href = "echeladder.html?${doll.toDataUrlPart()}";
         if(pesterlogLink != null) pesterlogLink.href = "pesterlog.html?${doll.toDataUrlPart()}";
         if(charSheetLink != null) charSheetLink.href = "charSheetCreator.html?${doll.toDataUrlPart()}";
+
+        if(doll is HomestuckTrollDoll) {
+            HomestuckTrollDoll troll = doll as HomestuckTrollDoll;
+            if (signLink != null)
+                signLink.href = "index.html?type=2&sign=${troll.canonSymbol.imgNumber}";
+                signLink.text = "View More Dolls With Sign ${troll.canonSymbol.imgNumber}";
+            if (casteLink != null)
+                casteLink.href = "index.html?type=2&caste=${troll.bloodColor}";
+                casteLink.text = "View More Dolls in Caste ${troll.bloodColor}";
+        }
+
     }
 
     void setupForms() {
@@ -232,9 +246,32 @@ class BaseController {
         }
     }
 
+    int getSign() {
+        String caste = getParameterByName("caste");
+        String sign = getParameterByName("sign");
+        if(caste != null) {
+            return HomestuckTrollDoll.casteToRandomSign(caste);
+        }
+        return int.parse(sign);
+    }
+
+    bool didTrollBullshit() {
+        if(doll is HomestuckTrollDoll && (getParameterByName("caste") !=null || getParameterByName("sign") !=null)) {
+            HomestuckTrollDoll troll = doll as HomestuckTrollDoll;
+            int signNumber = getSign();
+            troll.canonSymbol.imgNumber = signNumber;
+            troll.randomize(false);
+            return true;
+        }
+        return false;
+    }
+
     void randomizeDoll() {
         print("randomizing and redrawing");
-        doll.randomize();
+        if(didTrollBullshit()){
+        }else {
+            doll.randomize();
+        }
         //can't do it in regular draw part cuz onChange is a bitch.
         DollMakerTools.syncColorPickersToSprite(doll.palette);
         drawDollCreator();
