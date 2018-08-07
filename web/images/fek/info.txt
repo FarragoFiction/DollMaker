@@ -1,0 +1,20 @@
+Name: fek
+
+Canvas size: 214x214
+
+Layers:
+text
+accessory
+symbol
+hair
+face
+body
+
+Colours:
+https://docs.google.com/spreadsheets/d/1758xRsicLZlIbmtedF2OF2RSDe7glsdKvDZ9idA49Es/edit?usp=sharing
+
+(if deleting the ones that would not really be used imo (pants2, shirt2, shoes, wings) would fuck up the premade palletes, then maybe they would not hurt? they would also give more options, hmmmm)
+
+NOTE:
+There should be an empty, blank, transparent 0 part in every folder except of body. The reason it's not here is that GIMP threw out black, nontransparent squares. bluh
+
