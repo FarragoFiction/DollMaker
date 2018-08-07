@@ -9,7 +9,9 @@ import 'dart:async';
 void main() {
     loadNavbar();
     Random rand = new Random();
-    SCP scp = new SCP(querySelector("#contents"), Doll.randomDollOfType(rand.pickFrom(Doll.allDollTypes)));
+    List<int> types = new List.from(Doll.allDollTypes);
+    types.addAll(<int>[33,34,35]); //add tree some in manually
+    SCP scp = new SCP(querySelector("#contents"), Doll.randomDollOfType(rand.pickFrom(types)));
 }
 
 class SCP {
@@ -40,9 +42,9 @@ class SCP {
         if(isNotAnimate()) {
             categories.add("Safe", 3); //the living are neve safe (which sounds hella obvious but its an scp thing)
         }
-        categories.add("Euclid",1);
+        categories.add("Euclid",10);
         categories.add("Keter",0.3);
-        categories.add("Thaumiel",0.01);
+        categories.add("Thaumiel",0.001);
 
         if(doll is PigeonDoll) {
             objectClass = "Thaumiel";
