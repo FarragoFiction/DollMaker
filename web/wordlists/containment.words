@@ -1,0 +1,123 @@
+TextEngine Word List
+
+@nouns
+@verbs
+@adjectives
+
+ContainmentTop
+    #PhysicalContainers# #EntryProcedures#
+    #EntryProcedures#
+    #PhysicalContainers#
+    #PhysicalContainers# #EntryProcedures# #MaintenenceProcedures#
+    #EntryProcedures#  #MaintenenceProcedures#
+    #PhysicalContainers#  #MaintenenceProcedures#
+    #MaintenenceProcedures#
+
+PhysicalContainers
+    #PhysicalContainersIntros# #PhysicalContainersAddition# #PhysicalContainersAddition# #PhysicalContainersAddition#
+    #PhysicalContainersIntros# #PhysicalContainersAddition# #PhysicalContainersAddition#
+    #PhysicalContainersIntros# #PhysicalContainersAddition#
+
+
+PhysicalContainersIntros
+    #noun|var@name# is to be kept in a #physicalLocation|var@containerVariable# with #exactAmount# locks.
+    #noun|var@name# should be stored in a simulated #physicalLocation|var@containerVariable#.
+    #noun|var@name# should be stored in a #physicalLocation|var@containerVariable# lined with telekill alloy.: 0.1
+    #noun|var@name# is to be kept in a #exactAmount# by #exactAmount# meter box.
+
+
+
+PhysicalContainersAddition
+    The #physicalLocation|var@containerVariable# must be lined with a minimum of #exactAmount# #distanceMetric# of #metal#.
+    The #physicalLocation|var@containerVariable# must be painted #adj_color# every #exactAmount# #timeMetric#.
+    #noun|var@name# must be kept within sight of one or more #noun@plural|var@goodItem# at all times.
+    The #physicalLocation|var@containerVariable# must be kept at least #exactAmount# #distanceMetric# from naturally occurring #noun@plural|var@badItem#.
+
+EntryProcedures
+    Before entering the #physicalLocation|var@containerVariable#, personnel are required to #requiredProcedure#.
+    Prior to entering, personnel must #requiredProcedure#.
+    Entering personnel will #requiredProcedure#.
+    Entering personnel must #requiredProcedure#.
+
+MaintenenceProcedures
+    Must be fed daily.
+
+
+requiredProcedure
+    maintain eye contact at all time
+    avoid eye contact at all costs.
+    quack like a duck and shit on their rug:0.01
+    #verb# a #noun#
+    be reminded that #noun@plural|var@goodItem# exist and instructed to think of them carefully
+    be administered class B Amnesiacs, targeted towards erasing knowledge of #noun@plural|var@badItem#
+    be administered class #amnesiaClasses# Amnesiacs
+    have gone a minimum of #exactAmount# #timeMetric# without eating
+
+//stuff here is specifically calibrated for scps
+
+
+
+amnesiaClasses
+    A
+    B: 0.1
+    C: 0.01
+    D: 0.001
+    E: 0.0001
+    Omega: 0.00001
+
+verbButWithRedactions
+    #verb#
+    [REDACTED]: 0.1
+    [DATA EXPUNGED]: 0.1
+
+nounButWithRedactions
+    #noun#
+    [REDACTED]: 0.1
+    [DATA EXPUNGED]: 0.1
+
+
+distanceMetric
+    feet
+    inches
+    miles: 0.01
+    kilometers: 0.01
+    centimeters
+    millimeters
+    micrometers
+    nanometers
+
+timeMetric
+    days
+    minutes: 0.1
+    seconds: 0.01
+    hours
+    weeks
+    months
+    years: 0.1
+
+
+
+physicalLocationPersonSized
+    room: 10
+    bedroom
+    kitchen
+    bathroom
+    schoolroom
+    gymnasium
+    shipping container
+    battleship
+
+
+physicalLocationObjectSized
+    filingCabinet
+    envelope
+    locker
+    DVD rack
+    #material# box
+    carved #wood# box
+
+
+physicalLocation
+    #physicalLocationPersonSized#
+    #physicalLocationObjectSized#
+

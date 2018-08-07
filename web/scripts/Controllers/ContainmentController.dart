@@ -5,6 +5,7 @@ import "package:DollLibCorrect/DollRenderer.dart";
 import "../navbar.dart";
 import "../CharSheetLib.dart";
 import 'dart:async';
+import 'package:TextEngine/TextEngine.dart';
 
 void main() {
     loadNavbar();
@@ -20,6 +21,9 @@ class SCP {
     String name;
     Element container;
     String objectClass;
+
+    String containmentProcedure;
+
     int get id {
         //so two dolls with the same seed have different ids if they are different sub types
         int ret = doll.renderingType * 10000000;
@@ -54,12 +58,22 @@ class SCP {
 
     }
 
-    void renderSelf() {
+    Future<Null> setContainmentProcedures() async{
+        TextStory story = new TextStory();
+        story.setString("name","$name");
+        TextEngine textEngine = new TextEngine(doll.seed);
+        //top level things everything can access rember to import in words files
+        await textEngine.loadList("containment");
+        containmentProcedure = "${textEngine.phrase("ContainmentTop", story: story)}";
+    }
+
+    Future<Null> renderSelf() async {
+        await setContainmentProcedures();
         renderHeader();
         new SCPSection(container, "Item #", "$name");
         renderImage();
         new SCPSection(container, "Object Class", "$objectClass");
-        new SCPSection(container, "Special Containment Procedures", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae tellus consequat, facilisis dui sit amet, convallis purus. Pellentesque laoreet viverra velit, eget consectetur arcu viverra id. Nullam mattis at leo sit amet sagittis. Ut finibus mollis magna a ullamcorper. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec id diam non neque elementum imperdiet. Sed id arcu ante. Nunc et risus nunc.");
+        new SCPSection(container, "Special Containment Procedures", "$containmentProcedure");
         new SCPSection(container, "Description", "Aenean iaculis nibh diam, sed tempor ligula elementum ut. Ut viverra nisi quis magna ultrices ultrices. Duis elit nisl, vulputate in diam sed, porta maximus ex. Pellentesque rhoncus sodales augue a fermentum. Suspendisse ac tempor ligula, eu gravida eros. Donec blandit orci sapien, a luctus risus varius in. Etiam sit amet eros odio. Cras sed sem id nulla sollicitudin scelerisque at sed turpis. Nunc id odio quis nibh rutrum facilisis a sit amet felis. Phasellus lobortis volutpat accumsan. Maecenas vehicula, dui eget scelerisque ullamcorper, est mauris fermentum urna, a commodo eros erat id velit. Nam ut felis eu enim molestie finibus malesuada eu mauris. Aenean imperdiet pellentesque sem, in scelerisque ex viverra ac. Ut dictum dui ac tortor ullamcorper accumsan. Sed accumsan felis lobortis sapien ornare vestibulum. Pellentesque ultrices erat ut elementum condimentum. Aliquam lacus diam, pulvinar non nisl non, auctor sagittis felis. Nam sit amet consectetur risus. Cras porttitor varius purus interdum viverra. Sed nulla eros, dapibus id sem congue, dapibus vestibulum tortor. Suspendisse potenti. Aenean sollicitudin, ante eu eleifend laoreet, metus neque suscipit odio, sed pellentesque elit massa et ligula. Phasellus nec eleifend turpis. Aenean condimentum tortor non enim facilisis faucibus. Nunc ac lacus et eros ultrices tincidunt. Pellentesque blandit neque quis accumsan volutpat.");
 
     }

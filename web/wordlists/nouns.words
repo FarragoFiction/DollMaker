@@ -74,6 +74,26 @@ noun_building
     shop
     graveyard
 
+exactAmount
+    one
+    two
+    three
+    four
+    five
+    six
+    seven
+    eight
+    nine
+    ten
+    eleven
+    twelve
+    thirteen
+    four hundred and thirteen: 0.1
+    one hundred and thirteen: 0.1
+
+
+
+
 noun_animal
     ?collective: group
 
