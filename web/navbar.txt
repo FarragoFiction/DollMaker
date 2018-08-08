@@ -66,7 +66,7 @@
   </li>
 
   <li class = "menuButtonPureCSS"><a href="https://discord.gg/KPunMPc">DISCORD</a></li>
-  <li class = "menuButtonPureCSS"><a href="http://www.patreon.com/FarragoFiction">SUPPORT</a></li>
+  <li class = "menuButtonPureCSS"><a href="http://www.patreon.com/FarragoFiction">PATREON</a></li>
 
   </span>
 </ul>

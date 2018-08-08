@@ -14,24 +14,48 @@ ContainmentTop
     #MaintenenceProcedures#
 
 PhysicalContainers
-    #PhysicalContainersIntros# #PhysicalContainersAddition# #PhysicalContainersAddition# #PhysicalContainersAddition#
-    #PhysicalContainersIntros# #PhysicalContainersAddition# #PhysicalContainersAddition#
-    #PhysicalContainersIntros# #PhysicalContainersAddition#
+    #PhysicalContainersIntros# #PhysicalContainersLinerAddition# #PhysicalContainersConstructionAddition# #PhysicalContainersMiscAddition#
+    #PhysicalContainersIntros# #PhysicalContainersLinerAddition# #PhysicalContainersConstructionAddition# #PhysicalContainersMiscAddition# #PhysicalContainersMiscAddition#
+    #PhysicalContainersIntros# #PhysicalContainersLinerAddition# #PhysicalContainersConstructionAddition#
+    #PhysicalContainersIntros# #PhysicalContainersLinerAddition#  #PhysicalContainersMiscAddition#
+    #PhysicalContainersIntros# #PhysicalContainersConstructionAddition# #PhysicalContainersMiscAddition#
+    #PhysicalContainersIntros# #PhysicalContainersConstructionAddition# #PhysicalContainersLinerAddition# #PhysicalContainersMiscAddition#
+    #PhysicalContainersIntros# #PhysicalContainersLinerAddition#  #PhysicalContainersMiscAddition#
+    #PhysicalContainersIntros# #PhysicalContainersConstructionAddition# #PhysicalContainersMiscAddition#
+    #PhysicalContainersIntros# #PhysicalContainersConstructionAddition# #PhysicalContainersLinerAddition#
+    #PhysicalContainersIntros# #PhysicalContainersLinerAddition#
+    #PhysicalContainersIntros# #PhysicalContainersConstructionAddition#
+    #PhysicalContainersIntros# #PhysicalContainersMiscAddition#
+    #PhysicalContainersIntros# #PhysicalContainersConstructionAddition# #PhysicalContainersLinerAddition# #PhysicalContainersMiscAddition# #PhysicalContainersMiscAddition#
+
 
 
 PhysicalContainersIntros
     #noun|var@name# is to be kept in a #physicalLocation|var@container_variable# with #exactAmount# locks.
     #noun|var@name# should be stored in a simulated #physicalLocation|var@container_variable#.
     #noun|var@name# should be stored in a #physicalLocation|var@container_variable# lined with telekill alloy.: 0.1
-    #noun|var@name# is to be kept in a #exactAmount# by #exactAmount# meter box.
+    #noun|var@name# is to be kept in a #exactAmount# by #exactAmount# meter #physicalLocation|var@container_variable#.
+    #noun|var@name# should never leave a #exactAmount# by #exactAmount# meter #physicalLocation|var@container_variable#.
 
 
-
-PhysicalContainersAddition
+PhysicalContainersLinerAddition
     The #physicalLocation|var@container_variable# must be lined with a minimum of #exactAmount# #distanceMetric# of #metal#.
-    The #physicalLocation|var@container_variable# must be painted #adj_color# every #exactAmount# #timeMetric#.
+    The #physicalLocation|var@container_variable# must be painted #adj_color# (see Addendum 113 for color hex maps) every #exactAmount# #timeMetric#.:0.5
+    The outer surface of the  #physicalLocation|var@container_variable# must be lined with a minimum of #exactAmount# #distanceMetric# of #metal#.
+    The inner surface of the  #physicalLocation|var@container_variable# must be lined with a minimum of #exactAmount# #distanceMetric# of #metal#.
+
+PhysicalContainersConstructionAddition
+    The #physicalLocation|var@container_variable#  must be constructed entirely of #adj_material#.
+    The #physicalLocation|var@container_variable#  must be constructed entirely of body safe #adj_material#.:0.1
+    The #physicalLocation|var@container_variable#  must be constructed primarily of #adj_material#.
+
+PhysicalContainersMiscAddition
     #noun|var@name# must be kept within sight of one or more #noun@plural|var@goodItem# at all times.
+    The #physicalLocation|var@container_variable# must have at least #exactAmount# thousand volts of electricity running through all surfaces.
+    The #physicalLocation|var@container_variable# must have no access to The Internet.
+    The #physicalLocation|var@container_variable# must be kept at least #exactAmount# #distanceMetric# from any other SCP containing area.
     The #physicalLocation|var@container_variable# must be kept at least #exactAmount# #distanceMetric# from naturally occurring #noun@plural|var@badItem#.
+
 
 EntryProcedures
     Before entering the #physicalLocation|var@container_variable#, personnel are required to #requiredProcedure#.
@@ -45,8 +69,9 @@ MaintenenceProcedures
     #MaintenenceProceduresAddition# #MaintenenceProceduresAddition# #MaintenenceProceduresAddition#
 
 MaintenenceProceduresAddition
-    Must be fed daily.:0.1
+    #noun|var@name# must be fed daily.:0.1
     Must always have access to one or more #noun@plural|var@goodItem#.
+    #noun|var@name# must be on a constant IV of class #amnesiaClasses# amnesiacs.
     Must have #exactAmount# #volumeMetric# of water available at all times.
     Must be suspended over at least #exactAmount# #volumeMetric# of class #amnesiaClasses# or greater acid.
     Must never have access to one or more #noun@plural|var@badItem#.
@@ -64,7 +89,7 @@ MaintenenceProceduresAddition
     The #physicalLocation|var@container_variable# must be cleaned every #exactAmount# #timeMetric#.
     IV drip of liquid #adj_material# must be maintained at all times.
     Can roam freely across the facility except into areas designated “Euclid” or “Keter” unless otherwise authorized.:0.01
-    At least #exactAmount# operational cameras must have visual contact with #noun|var@name# at all times. One camera must be thoroughly inspected each #exactAmount# #timeMetric#.
+    At least #exactAmount# operational cameras must have visual contact with #noun|var@name# at all times. One camera must be thoroughly inspected every #exactAmount# #timeMetric#.
     Temperature must be maintained at exactly #exactAmount# degrees above zero, Celsius.
     Variations in temperature of either the #physicalLocation|var@container_variable# or #noun|var@name# itself should be logged.
     The #physicalLocation|var@container_variable# should be kept at exactly the boiling point of water.: 0.1
@@ -117,12 +142,14 @@ nounButWithRedactions
 distanceMetric
     feet
     inches
+    yards
+    leagues: 0.01
     miles: 0.01
     kilometers: 0.01
     centimeters
-    millimeters
-    micrometers
-    nanometers
+    millimeters: 0.1
+    micrometers: 0.01
+    nanometers: 0.01
 
 volumeMetric
     gallons
@@ -152,7 +179,7 @@ physicalLocationPersonSized
 
 
 physicalLocationObjectSized
-    filingCabinet
+    filing cabinet
     envelope
     locker
     DVD rack
@@ -160,7 +187,7 @@ physicalLocationObjectSized
     carved #wood# box
     dollhouse
     toybox: 0.1
-    vending machin: 0.1
+    vending machine: 0.1
 
 
 physicalLocation
