@@ -1,0 +1,76 @@
+TextEngine Word List
+
+@nouns
+@verbs
+@adjectives
+
+
+NotesTop
+    Be advised that #staff# is no longer allowed to access #noun|var@name#.
+    Be advised that #staff2# is no longer allowed to access #noun|var@name#.
+    Be advised that #staff# is no longer allowed to access #noun|var@name#. Even if it would be funny.: 0.1
+    Be advised that #staff# is no longer allowed to access #noun|var@name#. Even if it would annoy #staff2#.: 0.1
+    Be advised that #staff2# is no longer allowed to access #noun|var@name#. Even if it would be funny.: 0.1
+    Be advised that #staff2# is no longer allowed to access #noun|var@name#. Even if it would annoy #staff#.: 0.1
+    All documentation regarding #noun|var@name# can be found archived at [REDACTED].
+    Authorized personnel  may refer to documents #noun|var@name#-A through #noun|var@name#-C.
+    Casualty reports can be found archived at [REDACTED].
+    Pranks involving #noun|var@name# will officially be met with harsh penalties.
+    Pranks involving #noun|var@name# will officially be met with harsh penalties. Yes, even if they target #staff#.
+    Pranks involving #noun|var@name# will officially be met with harsh penalties. Yes, even if they target #classes# - Personnel.
+    JR will no longer be accepting bug reports related to #noun|var@name#.:0.5
+    On January 13th, [DATA EXPUNGED], #noun|var@name# was transferred to a secure facility just outside of [REDACTED].
+    Personnel Class-#classes# level or higher may access additional information [DATA EXPUNGED].
+
+
+classes
+    Observer
+    Buckaroo
+    Pioneer
+    Wrangler
+    A
+
+
+staff
+    JR
+    KR
+    PL
+    IO
+    MI
+    Shogun
+    FU: 0.1
+    AB
+    ABJ
+    TG
+    AW
+    SB
+    WM
+    RS
+    DM
+
+staff2
+    YD
+    CK
+    YN
+    OS
+    Wongle
+    Cat
+    Firanka
+    SD
+    Frew
+    NH
+    Cipah
+    Coolthulu
+    Azuki
+    CC
+    CA
+    DF
+    Peanut: 0.1
+    Floral
+    JP
+    Nero
+    MC
+    Purple
+    Zeadkin
+
+

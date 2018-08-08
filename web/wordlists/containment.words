@@ -60,9 +60,9 @@ PhysicalContainersMiscAddition
     The #physicalLocation|var@container_variable# must be kept at least #exactAmount# #distanceMetric# from any other SCP containing area.
     The #physicalLocation|var@container_variable# must be kept at least #exactAmount# #distanceMetric# from naturally occurring #noun@plural|var@badItem#.
     The #physicalLocation|var@container_variable# must be buried at least #exactAmount# #distanceMetric# underground, with an additional layer of #adj_material# covering it.
-    The #physicalLocation|var@container_variable#
-    The #physicalLocation|var@container_variable#
-    The #physicalLocation|var@container_variable#
+    The #physicalLocation|var@container_variable# must be suspended with at least #exactAmount# #distanceMetric# of vacuum on all sides.
+    The #physicalLocation|var@container_variable# must be located at least #exactAmount# #distanceMetric# underwater.
+    The #physicalLocation|var@container_variable# must be located exactly #exactAmount# million #distanceMetric# from the Earth's sun. :0.01
 
 EntryProcedures
     Before entering the #physicalLocation|var@container_variable#, personnel are required to #requiredProcedure#.
@@ -87,7 +87,7 @@ MaintenenceProceduresAddition
     Must be suspended over at least #exactAmount# #volumeMetric# of class #amnesiaClasses# or greater acid.
     Must never have access to one or more #noun@plural|var@badItem#.
     Must not be exposed to visible #noun@plural|var@badItem#.
-    Even the word '#noun|var@badItem#' is restricted from being spoken within #exactAmount# #distanceMetric# of #noun|var@name#.
+    The word '#noun|var@badItem#' is restricted from being spoken within #exactAmount# #distanceMetric# of #noun|var@name#.
     Cannot be moved higher than #exactAmount# miles above sea level.
     Cannot be moved higher than #exactAmount# #distanceMetric# above sea level.:0.1
     Cannot be relocated within #exactAmount# miles of a #noun#.
@@ -97,7 +97,7 @@ MaintenenceProceduresAddition
     Must have constant access to #noun@plural|var@goodItem#.
     Pray to any relevant gods that #noun|var@name# does not choose to escape.: 0.01
     Must be fed #noun@plural|var@goodItem# every #exactAmount# #timeMetric#.
-    Must be guarded by at least two Class-D Personnel with knowledge of FarragoFiction’s existence.: 0.01
+    Must be guarded by at least two Class-Observer Personnel with knowledge of FarragoFiction’s existence.: 0.01
     The #physicalLocation|var@container_variable# must be cleaned every #exactAmount# #timeMetric#.
     IV drip of liquid #adj_material# must be maintained at all times.
     Can roam freely across the facility except into areas designated “Euclid” or “Keter” unless otherwise authorized.:0.01

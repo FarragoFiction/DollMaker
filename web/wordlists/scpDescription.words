@@ -15,10 +15,16 @@ descriptionPhysical
     #descriptionPhysicalIntros# #descriptionPhysicalAdditions#
 
 descriptionPhysicalIntros
-    #noun|var@name# is identical to a standard member of their species, with the exception of highly developed #expectedBodyParts|var@bodyPart#.
+    #noun|var@name# is superficially identical to a standard member of their species, with the exception of highly developed #expectedBodyParts|var@bodyPart#.
     #noun|var@name# is physically a standard member of their species.
     #noun|var@name# has immediately noticeable #unusualBodyParts|var@bodyPart#.
-    #noun|var@name# generates a new #expectedBodyParts|var@bodyPart# every #exactAmount# #timeMetric#.
+    #noun|var@name# generates #exactAmount# new #expectedBodyParts|var@bodyPart# every #exactAmount# #timeMetric#.
+    #noun|var@name# is actually a highly evolved kind of bacteria.
+    #noun|var@name# is a ten pound 'junior' bowling ball, projecting an illusion.:0.1
+    #noun|var@name# is medically deceased, with no organ functions detectable by standard procedures.
+    Electrical scans reveal #noun|var@name# to be functionally a Toshiba Portege 3025CT laptop.:0.1
+
+
 
 descriptionPhysicalAdditions
     #descriptionSizeAdditions#
@@ -28,34 +34,112 @@ descriptionPhysicalAdditions
 
 descriptionSizeAdditions
     They stand #exactAmount# #distanceMetric# tall.
-    Their size varies from #exactAmount# #distanceMetric# to #exactAmount# #distanceMetric# tall.
-    Their #expectedBodyParts|var@bodyPart# is exactly #exactAmount# #distanceMetric#
+    Their size varies from #exactAmount# #distanceMetric# to #exactAmount# #distanceMetric# :0.1
+    Their #expectedBodyParts|var@bodyPart# are exactly #exactAmount# #distanceMetric#.
     They are a standard overall size for their species.
 
 descriptionCompositionAdditions
     They are composed of a 50% mixture of #adj_material# and #adj_material#.: 0.1
     Their outer covering is twice as durable as similar members of their species.
     Their chemical composition reveals nothing out of the ordinary.
-    Their outer covering is actually a thing layer of #adj_material#.
+    Their outer covering is actually a thin layer of #adj_material#.
+    They are not physically corporeal.
+    Bodily secretions are chemically identical to "New Coke" and Observer Class Personnel.
 
 
 descriptionPowers
-    #descriptionPowersIntros#  #descriptionPowersAdditions#
+    #descriptionPowersIntros#
+    #descriptionPowersIntros#  #descriptionPowersExplanation#
+    #noun|var@name#'s anomalous traits are physically incapable of being documented via written word, recordings or artistic renditions level [DATA EXPUNGED] or higher. To be verbally informed of #noun|var@name#'s anomalous qualities please see Pioneer Class Personnel or higher. :0.01
+
 
 descriptionPowersIntros
     #noun|var@name# can teleport anywhere there is a #noun|var@badItem#.
     #noun|var@name# is aware of everything that happens within #exactAmount# #distanceMetric# of a #noun|var@badItem#.
     #noun|var@name# can absorb and fully integrate #noun@plural|var@badItem#.
-    #noun|var@name# gains power exponentially upon exposure to #noun@plural|var@badItem#.
+    #noun|var@name# gains power exponentially upon #powerTriggers#.
+    #noun|var@name# can use its #expectedBodyParts|var@bodyPart# to #unusualSenses# distant targets.
+    #noun|var@name# uses its #expectedBodyParts|var@bodyPart# as a way to, essentially, #unusualSenses# distant targets.
+    Upon #powerTriggers#, #noun|var@name# splits into two identical copies of itself, each with full memory.
+    When #powerTriggers# occurs, #noun|var@name# gains unfathomable power.
+    Every #exactAmount# #timeMetric#, #noun|var@name# phases into another reality, reported to be "#report#".
 
-descriptionPowersAdditions
+
+
+
+powerTriggers
+    brain death
+    cell death
+    injury
+    alpha brain waves
+    beta brain waves
+    theta brain waves
+    delta brain waves
+    the mention of #noun@plural|var@badItem#
+    the exposure to #noun@plural|var@badItem#
+    seeing a #noun@plural|var@badItem#
+    hearing a #noun@plural|var@badItem#
+    smelling a #noun@plural|var@badItem#
+
+report
+    really neat
+    terrifyingly subjective
+    terrifyingly objective
+    nauseating
+    a den of horrors from which solace can not be reached: 0.5
+    hilarious
+    only slightly disturbing
+    disturbing
+    intense
+
+descriptionPowersExplanation
     It is unknown how this is accomplished.
     It is theorized that this is accomplished via [REDACTED].:0.1
+    It is suspected that this is accomplished via use of its unusual #expectedBodyParts|var@bodyPart#.
     #noun|var@name#  #expectedBodyParts|var@bodyPart# are completely unused for this function.
 
 descriptionBehavior
-    #noun|var@name# eats only #noun@plural|var@goodItem#
-    Upon exposure to a target thinking about #noun@plural|var@badItem#, #noun|var@name# enters a sort of 'rage mode'.
+    #descriptionBehaviorEmotions# #descriptionBehaviorActivities# #descriptionBehaviorDiet#
+    #descriptionBehaviorActivities# #descriptionBehaviorDiet# #descriptionBehaviorEmotions#
+    #descriptionBehaviorActivities# #descriptionBehaviorDiet# #descriptionBehaviorEmotions#
+    #descriptionBehaviorDiet# #descriptionBehaviorActivities# #noun|var@name#'s emotional state is incapable of being documented via written word, recordings or artistic renditions level [DATA EXPUNGED] or higher. To be verbally informed of #noun|var@name#'s emotional state please see Pioneer Class Personnel or higher. :0.01
+    #descriptionBehaviorEmotions# #descriptionBehaviorDiet# #noun|var@name#'s physical behavior is incapable of being documented via written word, recordings or artistic renditions level [DATA EXPUNGED] or higher. To be verbally informed of #noun|var@name#'s habits and activities please see Pioneer Class Personnel or higher. :0.01
+
+    #descriptionBehaviorEmotions# #descriptionBehaviorActivities# #noun|var@name#'s diet is incapable of being documented via written word, recordings or artistic renditions level [DATA EXPUNGED] or higher. To be verbally informed of #noun|var@name#'s dietary needs please see Pioneer Class Personnel or higher. :0.01
+
+
+descriptionBehaviorEmotions
+    Upon exposure to a target thinking about #noun@plural|var@badItem#, #noun|var@name# enters #provokedBehavior#.
+    Tampering with #noun|var@name#'s #noun|var@goodItem# provokes #provokedBehavior# in Observer Class Personnel.
+    Tampering with #noun|var@name#'s #noun|var@goodItem# provokes #provokedBehavior# in #noun|var@name#.
+    #noun|var@name# does not appear to have human analogous emotions.
+    #noun|var@name# never stops  #verb@continuous#.
+
+descriptionBehaviorActivities
+    #noun|var@name# insists it is a normal member of its species.
+    #noun|var@name#'s True Name is physically incapable of being pronounced by mortal lips.
+    Personnel report sounds of scraping.
+    #noun|var@name# speaks in an unintelligible language. Recordings provoke #provokedBehavior# in Observer-Class personnel.
+    Exposure to #noun|var@name# is reported by Observer-Class personnel to be #report#.
+
+
+descriptionBehaviorDiet
+    #noun|var@name# eats only #noun@plural|var@goodItem#.
+    #noun|var@name# does not appear to injest any materials for the purpose of survival.
+    #noun|var@name# appears to be disgusted by the concept of eating #noun@plural|var@goodItem#.
+    #noun|var@name# appears to be disgusted by the concept of eating.
+    #noun|var@name# has no biological needs.
+    Measured #unusualBodyParts|var@bodyPart# efficiency is markedly reduced after approximately #exactAmount# #timeMetric# without food.
+    Reported #unusualBodyParts|var@bodyPart# efficiency is markedly reduced after approximately #exactAmount# #timeMetric# without consuming #noun@plural|var@goodItem#.
+
+
+provokedBehavior
+    a period of intense emotional instability, followed by amnesia
+    a sort of rage mode
+    a spell of intense weeping
+    a medically significant coma
+    a period of pronounced brain ischemia
+    a state of intense heart palpitations
 
 
 
@@ -64,6 +148,7 @@ expectedBodyParts
     eyes
     fangs:0.1
     teeth
+    lips
     hands
     arms
     legs
@@ -73,6 +158,8 @@ expectedBodyParts
     nostrils
     hairs
     fingers
+    [REDACTED]: 0.3
+    [DATA EXPUNGED]: 0.1
 
 unusualBodyParts
     furs
@@ -85,12 +172,13 @@ unusualBodyParts
     excretions
     tendrils
     claws
-
-
-
-
-
+    [REDACTED]: 0.3
+    [DATA EXPUNGED]: 0.1
 
 unusualSenses
-
-unusualCapabilities
+    hear
+    see
+    smell
+    sense
+    touch
+    taste

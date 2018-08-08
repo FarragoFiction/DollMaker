@@ -24,6 +24,7 @@ class SCP {
 
     String containmentProcedure;
     String description;
+    String addendum;
 
     int get id {
         //so two dolls with the same seed have different ids if they are different sub types
@@ -68,7 +69,11 @@ class SCP {
         containmentProcedure = "${textEngine.phrase("ContainmentTop", story: story)}";
         await textEngine.loadList("scpDescription");
         description = "${textEngine.phrase("DescriptionTop", story: story)}";
-
+        Random rand = new Random();
+        if(rand.nextDouble() > 0.8) {
+            await textEngine.loadList("additionalNotes");
+            addendum = "${textEngine.phrase("NotesTop", story: story)}";
+        }
     }
 
     Future<Null> renderSelf() async {
@@ -79,6 +84,16 @@ class SCP {
         new SCPSection(container, "Object Class", "$objectClass");
         new SCPSection(container, "Special Containment Procedures", "$containmentProcedure");
         new SCPSection(container, "Description", "$description");
+        if(addendum != null) {
+            Random rand = new Random();
+            rand.nextInt();
+            //they seem to use both interchangably
+            if(rand.nextBool()) {
+                new SCPSection(container, "Addendum", "$addendum");
+            }else {
+                new SCPSection(container, "Additional Notes", "$addendum");
+            }
+        }
     }
 
     void renderImage() {

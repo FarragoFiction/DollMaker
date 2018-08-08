@@ -75,7 +75,6 @@ noun_building
     graveyard
 
 exactAmount
-    one
     two
     three
     four
@@ -90,6 +89,7 @@ exactAmount
     thirteen
     four hundred and thirteen: 0.1
     one hundred and thirteen: 0.1
+    four thousand and thirty seven: 0.01
 
 
 
