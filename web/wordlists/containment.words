@@ -64,7 +64,7 @@ MaintenenceProceduresAddition
     The #physicalLocation|var@container_variable# must be cleaned every #exactAmount# #timeMetric#.
     IV drip of liquid #adj_material# must be maintained at all times.
     Can roam freely across the facility except into areas designated “Euclid” or “Keter” unless otherwise authorized.:0.01
-    At least #exactAmount# operational cameras must have visual contact with ITEM# at all times. One camera must be thoroughly inspected each #timeMetric#.
+    At least #exactAmount# operational cameras must have visual contact with #noun|var@name# at all times. One camera must be thoroughly inspected each #exactAmount# #timeMetric#.
     Temperature must be maintained at exactly #exactAmount# degrees above zero, Celsius.
     Variations in temperature of either the #physicalLocation|var@container_variable# or #noun|var@name# itself should be logged.
     The #physicalLocation|var@container_variable# should be kept at exactly the boiling point of water.: 0.1
@@ -97,6 +97,11 @@ amnesiaClasses
     D: 0.001
     E: 0.0001
     Omega: 0.00001
+
+possibleItems
+    #noun@plural#: 3
+    #material# #noun@plural#
+    #adjective# #noun@plural#
 
 verbButWithRedactions
     #verb#
@@ -153,9 +158,12 @@ physicalLocationObjectSized
     DVD rack
     #adj_material# box
     carved #wood# box
+    dollhouse
+    toybox: 0.1
+    vending machin: 0.1
 
 
 physicalLocation
-    #physicalLocationPersonSized#
-    #physicalLocationObjectSized#
+    @physicalLocationPersonSized
+    @physicalLocationObjectSized
 
