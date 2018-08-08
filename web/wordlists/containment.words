@@ -40,18 +40,48 @@ EntryProcedures
     Entering personnel must #requiredProcedure#.
 
 MaintenenceProcedures
-    Must be fed daily.
+    #MaintenenceProceduresAddition#: 3
+    #MaintenenceProceduresAddition# #MaintenenceProceduresAddition#
+    #MaintenenceProceduresAddition# #MaintenenceProceduresAddition# #MaintenenceProceduresAddition#
 
+MaintenenceProceduresAddition
+    Must be fed daily.:0.1
+    Must always have access to one or more #noun@plural|var@goodItem#.
+    Must have #exactAmount# #volumeMetric# of water available at all times.
+    Must be suspended over at least #exactAmount# #volumeMetric# of class #amnesiaClasses# or greater acid.
+    Must never have access to one or more #noun@plural|var@badItem#.
+    Even the word '#noun|var@badItem#' is restricted from being spoken within #exactAmount# #distanceMetric# of #noun|var@name#.
+    Cannot be moved higher than #exactAmount# miles above sea level.
+    Cannot be moved higher than #exactAmount# #distanceMetric# above sea level.:0.1
+    Cannot be relocated within #exactAmount# miles of a #noun#.
+    Must not come into contact with #noun@plural|var@badItem#.
+    #noun|var@name#'s blindfold must not be damaged or disturbed in such a way as to allow eye contact.:0.1
+    #noun|var@name#'s #noun|var@goodItem# must not be damaged or disturbed.
+    Must have constant access to #noun@plural|var@goodItem#.
+    Must be fed #noun@plural|var@goodItem# every #exactAmount# #timeMetric#.
+    Must be guarded by at least two Class-D Personnel with knowledge of FarragoFiction’s existence.: 0.01
+    The #physicalLocation|var@containerVariable# must be cleaned every #exactAmount# #timeMetric#.
+    IV drip of liquid #material# must be maintained at all times.
+    Can roam freely across the facility except into areas designated “Euclid” or “Keter” unless otherwise authorized.:0.01
+    At least #exactAmount# operational cameras must have visual contact with ITEM# at all times. One camera must be thoroughly inspected each #timeMetric#.
+    Temperature must be maintained at exactly #exactAmount# degrees above zero, Celsius.
+    Variations in temperature of either the #physicalLocation|var@containerVariable# or #noun|var@name# itself should be logged.
+    The #physicalLocation|var@containerVariable# should be kept at exactly the boiling point of water.: 0.1
+    Every #exactAmount# #timeMetric# the temperature of the #physicalLocation|var@containerVariable# should vary by #exactAmount# degrees Celsius.
 
 requiredProcedure
-    maintain eye contact at all time
-    avoid eye contact at all costs.
+    maintain eye contact at all time: 0.5
+    avoid eye contact at all costs: 0.5
     quack like a duck and shit on their rug:0.01
     #verb# a #noun#
     be reminded that #noun@plural|var@goodItem# exist and instructed to think of them carefully
     be administered class B Amnesiacs, targeted towards erasing knowledge of #noun@plural|var@badItem#
     be administered class #amnesiaClasses# Amnesiacs
     have gone a minimum of #exactAmount# #timeMetric# without eating
+    have gone a minimum of #exactAmount# #timeMetric# without #verb@continuous#
+    not be aware of the existence of #noun@plural#.
+    not be be aware of the existence of ABJ.:0.01
+
 
 //stuff here is specifically calibrated for scps
 
@@ -85,6 +115,11 @@ distanceMetric
     millimeters
     micrometers
     nanometers
+
+volumeMetric
+    gallons
+    liters
+    ounces
 
 timeMetric
     days
