@@ -10,6 +10,10 @@ html, body {
 
 }
 
+.whiteCenterThingy{
+    height: 1000px;
+}
+
 .scpHeader{
     color: #901;
 }

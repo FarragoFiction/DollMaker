@@ -36,6 +36,9 @@ PhysicalContainersIntros
     #noun|var@name# should be stored in a #physicalLocation|var@container_variable# lined with telekill alloy.: 0.1
     #noun|var@name# is to be kept in a #exactAmount# by #exactAmount# meter #physicalLocation|var@container_variable#.
     #noun|var@name# should never leave a #exactAmount# by #exactAmount# meter #physicalLocation|var@container_variable#.
+    #noun|var@name# should be provided a #exactAmount# by #exactAmount# meter #physicalLocation|var@container_variable#.:0.1
+    #noun|var@name# should be encouraged to inhabit a #exactAmount# by #exactAmount# meter #physicalLocation|var@container_variable#.:0.1
+
 
 
 PhysicalContainersLinerAddition
@@ -43,6 +46,7 @@ PhysicalContainersLinerAddition
     The #physicalLocation|var@container_variable# must be painted #adj_color# (see Addendum 113 for color hex maps) every #exactAmount# #timeMetric#.:0.5
     The outer surface of the  #physicalLocation|var@container_variable# must be lined with a minimum of #exactAmount# #distanceMetric# of #metal#.
     The inner surface of the  #physicalLocation|var@container_variable# must be lined with a minimum of #exactAmount# #distanceMetric# of #metal#.
+    Fresh coats of #adj_color# paint (see Addendum 113 for color hex maps) must be applied every #exactAmount# hours.
 
 PhysicalContainersConstructionAddition
     The #physicalLocation|var@container_variable#  must be constructed entirely of #adj_material#.
@@ -55,7 +59,10 @@ PhysicalContainersMiscAddition
     The #physicalLocation|var@container_variable# must have no access to The Internet.
     The #physicalLocation|var@container_variable# must be kept at least #exactAmount# #distanceMetric# from any other SCP containing area.
     The #physicalLocation|var@container_variable# must be kept at least #exactAmount# #distanceMetric# from naturally occurring #noun@plural|var@badItem#.
-
+    The #physicalLocation|var@container_variable# must be buried at least #exactAmount# #distanceMetric# underground, with an additional layer of #adj_material# covering it.
+    The #physicalLocation|var@container_variable#
+    The #physicalLocation|var@container_variable#
+    The #physicalLocation|var@container_variable#
 
 EntryProcedures
     Before entering the #physicalLocation|var@container_variable#, personnel are required to #requiredProcedure#.
@@ -70,9 +77,13 @@ MaintenenceProcedures
 
 MaintenenceProceduresAddition
     #noun|var@name# must be fed daily.:0.1
+    Requires #exactAmount#  Scranton Reality Anchors at all times. :0.1
+    Requires #exactAmount#  Scranton Reality Anchors at all times, arranged into a pentagram. :0.01
     Must always have access to one or more #noun@plural|var@goodItem#.
     #noun|var@name# must be on a constant IV of class #amnesiaClasses# amnesiacs.
     Must have #exactAmount# #volumeMetric# of water available at all times.
+    Personnel must undergo psychological testing after engaging with #noun|var@name#.
+    Personnel must undergo psychological testing after engaging with #noun|var@name#. Should personnel be deemed unaffected, they may be reassigned to #noun|var@name# after no less than #exactAmount# months of other duties.
     Must be suspended over at least #exactAmount# #volumeMetric# of class #amnesiaClasses# or greater acid.
     Must never have access to one or more #noun@plural|var@badItem#.
     Must not be exposed to visible #noun@plural|var@badItem#.
@@ -84,6 +95,7 @@ MaintenenceProceduresAddition
     #noun|var@name#'s blindfold must not be damaged or disturbed in such a way as to allow eye contact.:0.1
     #noun|var@name#'s #noun|var@goodItem# must not be damaged or disturbed.
     Must have constant access to #noun@plural|var@goodItem#.
+    Pray to any relevant gods that #noun|var@name# does not choose to escape.: 0.01
     Must be fed #noun@plural|var@goodItem# every #exactAmount# #timeMetric#.
     Must be guarded by at least two Class-D Personnel with knowledge of FarragoFiction’s existence.: 0.01
     The #physicalLocation|var@container_variable# must be cleaned every #exactAmount# #timeMetric#.

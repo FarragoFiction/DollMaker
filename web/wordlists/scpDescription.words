@@ -1,0 +1,96 @@
+TextEngine Word List
+
+@nouns
+@verbs
+@adjectives
+
+DescriptionTop
+    #descriptionPhysical#<br><Br>#descriptionPowers#<br><Br>#descriptionBehavior#
+    #descriptionPhysical#<Br><Br>#descriptionPowers#
+    #descriptionPhysical#<Br><Br>#descriptionBehavior#
+    #descriptionPhysical#<br><Br>#descriptionBehavior#<br><Br>#descriptionPowers#
+
+
+descriptionPhysical
+    #descriptionPhysicalIntros# #descriptionPhysicalAdditions#
+
+descriptionPhysicalIntros
+    #noun|var@name# is identical to a standard member of their species, with the exception of highly developed #expectedBodyParts|var@bodyPart#.
+    #noun|var@name# is physically a standard member of their species.
+    #noun|var@name# has immediately noticeable #unusualBodyParts|var@bodyPart#.
+    #noun|var@name# generates a new #expectedBodyParts|var@bodyPart# every #exactAmount# #timeMetric#.
+
+descriptionPhysicalAdditions
+    #descriptionSizeAdditions#
+    #descriptionSizeAdditions# #descriptionCompositionAdditions#
+    #descriptionCompositionAdditions#
+    #descriptionCompositionAdditions# #descriptionSizeAdditions#
+
+descriptionSizeAdditions
+    They stand #exactAmount# #distanceMetric# tall.
+    Their size varies from #exactAmount# #distanceMetric# to #exactAmount# #distanceMetric# tall.
+    Their #expectedBodyParts|var@bodyPart# is exactly #exactAmount# #distanceMetric#
+    They are a standard overall size for their species.
+
+descriptionCompositionAdditions
+    They are composed of a 50% mixture of #adj_material# and #adj_material#.: 0.1
+    Their outer covering is twice as durable as similar members of their species.
+    Their chemical composition reveals nothing out of the ordinary.
+    Their outer covering is actually a thing layer of #adj_material#.
+
+
+descriptionPowers
+    #descriptionPowersIntros#  #descriptionPowersAdditions#
+
+descriptionPowersIntros
+    #noun|var@name# can teleport anywhere there is a #noun|var@badItem#.
+    #noun|var@name# is aware of everything that happens within #exactAmount# #distanceMetric# of a #noun|var@badItem#.
+    #noun|var@name# can absorb and fully integrate #noun@plural|var@badItem#.
+    #noun|var@name# gains power exponentially upon exposure to #noun@plural|var@badItem#.
+
+descriptionPowersAdditions
+    It is unknown how this is accomplished.
+    It is theorized that this is accomplished via [REDACTED].:0.1
+    #noun|var@name#  #expectedBodyParts|var@bodyPart# are completely unused for this function.
+
+descriptionBehavior
+    #noun|var@name# eats only #noun@plural|var@goodItem#
+    Upon exposure to a target thinking about #noun@plural|var@badItem#, #noun|var@name# enters a sort of 'rage mode'.
+
+
+
+expectedBodyParts
+    elbows:0.1
+    eyes
+    fangs:0.1
+    teeth
+    hands
+    arms
+    legs
+    feet
+    knees:0.1
+    ears
+    nostrils
+    hairs
+    fingers
+
+unusualBodyParts
+    furs
+    wings
+    scales
+    spines
+    horns
+    tentacles
+    clouds
+    excretions
+    tendrils
+    claws
+
+
+
+
+
+
+unusualSenses
+
+unusualCapabilities
