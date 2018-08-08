@@ -20,21 +20,21 @@ PhysicalContainers
 
 
 PhysicalContainersIntros
-    #noun|var@name# is to be kept in a #physicalLocation|var@containerVariable# with #exactAmount# locks.
-    #noun|var@name# should be stored in a simulated #physicalLocation|var@containerVariable#.
-    #noun|var@name# should be stored in a #physicalLocation|var@containerVariable# lined with telekill alloy.: 0.1
+    #noun|var@name# is to be kept in a #physicalLocation|var@container_variable# with #exactAmount# locks.
+    #noun|var@name# should be stored in a simulated #physicalLocation|var@container_variable#.
+    #noun|var@name# should be stored in a #physicalLocation|var@container_variable# lined with telekill alloy.: 0.1
     #noun|var@name# is to be kept in a #exactAmount# by #exactAmount# meter box.
 
 
 
 PhysicalContainersAddition
-    The #physicalLocation|var@containerVariable# must be lined with a minimum of #exactAmount# #distanceMetric# of #metal#.
-    The #physicalLocation|var@containerVariable# must be painted #adj_color# every #exactAmount# #timeMetric#.
+    The #physicalLocation|var@container_variable# must be lined with a minimum of #exactAmount# #distanceMetric# of #metal#.
+    The #physicalLocation|var@container_variable# must be painted #adj_color# every #exactAmount# #timeMetric#.
     #noun|var@name# must be kept within sight of one or more #noun@plural|var@goodItem# at all times.
-    The #physicalLocation|var@containerVariable# must be kept at least #exactAmount# #distanceMetric# from naturally occurring #noun@plural|var@badItem#.
+    The #physicalLocation|var@container_variable# must be kept at least #exactAmount# #distanceMetric# from naturally occurring #noun@plural|var@badItem#.
 
 EntryProcedures
-    Before entering the #physicalLocation|var@containerVariable#, personnel are required to #requiredProcedure#.
+    Before entering the #physicalLocation|var@container_variable#, personnel are required to #requiredProcedure#.
     Prior to entering, personnel must #requiredProcedure#.
     Entering personnel will #requiredProcedure#.
     Entering personnel must #requiredProcedure#.
@@ -50,6 +50,7 @@ MaintenenceProceduresAddition
     Must have #exactAmount# #volumeMetric# of water available at all times.
     Must be suspended over at least #exactAmount# #volumeMetric# of class #amnesiaClasses# or greater acid.
     Must never have access to one or more #noun@plural|var@badItem#.
+    Must not be exposed to visible #noun@plural|var@badItem#.
     Even the word '#noun|var@badItem#' is restricted from being spoken within #exactAmount# #distanceMetric# of #noun|var@name#.
     Cannot be moved higher than #exactAmount# miles above sea level.
     Cannot be moved higher than #exactAmount# #distanceMetric# above sea level.:0.1
@@ -60,18 +61,20 @@ MaintenenceProceduresAddition
     Must have constant access to #noun@plural|var@goodItem#.
     Must be fed #noun@plural|var@goodItem# every #exactAmount# #timeMetric#.
     Must be guarded by at least two Class-D Personnel with knowledge of FarragoFiction’s existence.: 0.01
-    The #physicalLocation|var@containerVariable# must be cleaned every #exactAmount# #timeMetric#.
-    IV drip of liquid #material# must be maintained at all times.
+    The #physicalLocation|var@container_variable# must be cleaned every #exactAmount# #timeMetric#.
+    IV drip of liquid #adj_material# must be maintained at all times.
     Can roam freely across the facility except into areas designated “Euclid” or “Keter” unless otherwise authorized.:0.01
     At least #exactAmount# operational cameras must have visual contact with ITEM# at all times. One camera must be thoroughly inspected each #timeMetric#.
     Temperature must be maintained at exactly #exactAmount# degrees above zero, Celsius.
-    Variations in temperature of either the #physicalLocation|var@containerVariable# or #noun|var@name# itself should be logged.
-    The #physicalLocation|var@containerVariable# should be kept at exactly the boiling point of water.: 0.1
-    Every #exactAmount# #timeMetric# the temperature of the #physicalLocation|var@containerVariable# should vary by #exactAmount# degrees Celsius.
+    Variations in temperature of either the #physicalLocation|var@container_variable# or #noun|var@name# itself should be logged.
+    The #physicalLocation|var@container_variable# should be kept at exactly the boiling point of water.: 0.1
+    Every #exactAmount# #timeMetric# the temperature of the #physicalLocation|var@container_variable# should vary by #exactAmount# degrees Celsius.
 
 requiredProcedure
-    maintain eye contact at all time: 0.5
+    maintain eye contact at all times: 0.5
+    instructed to maintain eye contact with #noun|var@name# at all times: 0.5
     avoid eye contact at all costs: 0.5
+    instructed to avoid eye contact with #noun|var@name# at all times: 0.5
     quack like a duck and shit on their rug:0.01
     #verb# a #noun#
     be reminded that #noun@plural|var@goodItem# exist and instructed to think of them carefully
@@ -133,7 +136,7 @@ timeMetric
 
 
 physicalLocationPersonSized
-    room: 10
+    room:10
     bedroom
     kitchen
     bathroom
@@ -148,7 +151,7 @@ physicalLocationObjectSized
     envelope
     locker
     DVD rack
-    #material# box
+    #adj_material# box
     carved #wood# box
 
 
