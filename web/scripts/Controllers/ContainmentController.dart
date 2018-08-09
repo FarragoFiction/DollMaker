@@ -12,7 +12,22 @@ void main() {
     Random rand = new Random();
     List<int> types = new List.from(Doll.allDollTypes);
     types.addAll(<int>[33,34,35]); //add tree some in manually
-    SCP scp = new SCP(querySelector("#contents"), Doll.randomDollOfType(rand.pickFrom(types)));
+
+    Doll doll;
+    String dataString = window.location.search;
+
+    if(dataString.isNotEmpty && getParameterByName("type",null)  != null) {
+        doll = Doll.randomDollOfType(int.parse(getParameterByName("type",null))); //chop off leading ?
+        print("getting a specific type");
+    }else if (dataString.isNotEmpty) {
+        doll = Doll.loadSpecificDoll(dataString.substring(1)); //chop off leading ?
+        print("getting a specific doll");
+    }else {
+        doll = Doll.randomDollOfType(rand.pickFrom(types));
+        print("getting a random doll of any type");
+
+    }
+    SCP scp = new SCP(querySelector("#contents"), doll);
 }
 
 class SCP {

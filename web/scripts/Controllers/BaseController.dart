@@ -16,6 +16,7 @@ class BaseController {
     AnchorElement eastereggLink;
     AnchorElement saveLink;
     AnchorElement trollCallLink;
+    AnchorElement containmentLink;
     AnchorElement trollCardLink;
     AnchorElement echeladderLink;
     AnchorElement pesterlogLink;
@@ -59,6 +60,11 @@ class BaseController {
         trollCallLink.target = "_blank";
         container.append(trollCallLink);
 
+        containmentLink = new AnchorElement(href: "containment.html?${doll.toDataUrlPart()}")..style.padding = "5px";
+        containmentLink.text = "Containment Procedures";
+        containmentLink.target = "_blank";
+        container.append(containmentLink);
+
         trollCardLink = new AnchorElement(href: "trollCard.html?${doll.toDataUrlPart()}")..style.padding = "5px";
         trollCardLink.text = "Troll Card";
         trollCardLink.target = "_blank";
@@ -82,6 +88,8 @@ class BaseController {
 
     void syncLinks() {
         if(trollCallLink != null) trollCallLink.href = "trollCall.html?${doll.toDataUrlPart()}";
+        if(containmentLink != null) containmentLink.href = "containment.html?${doll.toDataUrlPart()}";
+
         if(trollCardLink != null) trollCardLink.href = "trollCard.html?${doll.toDataUrlPart()}";
         if(echeladderLink != null) echeladderLink.href = "echeladder.html?${doll.toDataUrlPart()}";
         if(pesterlogLink != null) pesterlogLink.href = "pesterlog.html?${doll.toDataUrlPart()}";
