@@ -66,6 +66,7 @@ class SCP {
         categories.add("Euclid",10);
         categories.add("Keter",0.3);
         categories.add("Thaumiel",0.001);
+        categories.add("Apollyon",0.0001);
 
         if(doll is PigeonDoll) {
             objectClass = "Thaumiel";

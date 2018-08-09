@@ -117,9 +117,9 @@ powerTriggers
     delta brain waves
     the mention of #noun@plural|var@badItem#
     the exposure to #noun@plural|var@badItem#
-    seeing a #noun@plural|var@badItem#
-    hearing a #noun@plural|var@badItem#
-    smelling a #noun@plural|var@badItem#
+    seeing a #noun|var@badItem#
+    hearing a #noun|var@badItem#
+    smelling a #noun|var@badItem#
     death
     encountering a human
     encountering a living being
@@ -218,6 +218,7 @@ provokedBehavior
     a very satisfying nap
     a round of absolute fisticuffs
     a state of frantic dancing
+    a period of ominous t-posing: 0.1
 
 
 
