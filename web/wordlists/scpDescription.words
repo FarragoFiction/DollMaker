@@ -181,7 +181,7 @@ descriptionBehaviorEmotions
     #noun|var@name# is actually a really good guy. Come on, I'll introduce you to them.
     #noun|var@name# has inhuman amounts of charisma.
     #noun|var@name# is provoked by #noun@plural|var@badItem#.
-    #noun@plural|var@badItem# will attempt to kill anything withing #exactAmount# #distanceMetric# of a #noun|var@badItem#
+    #noun|var@name# will attempt to kill anything withing #exactAmount# #distanceMetric# of a #noun|var@badItem#
     #noun|var@name# is friendly and cooperative with personnel.
 
 descriptionBehaviorActivities
