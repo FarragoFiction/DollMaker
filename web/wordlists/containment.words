@@ -23,9 +23,9 @@ PhysicalContainers
     #PhysicalContainersIntros# #PhysicalContainersLinerAddition#  #PhysicalContainersMiscAddition#
     #PhysicalContainersIntros# #PhysicalContainersConstructionAddition# #PhysicalContainersMiscAddition#
     #PhysicalContainersIntros# #PhysicalContainersConstructionAddition# #PhysicalContainersLinerAddition#
-    #PhysicalContainersIntros# #PhysicalContainersLinerAddition#
-    #PhysicalContainersIntros# #PhysicalContainersConstructionAddition#
-    #PhysicalContainersIntros# #PhysicalContainersMiscAddition#
+    #PhysicalContainersIntros# #PhysicalContainersLinerAddition#: 10
+    #PhysicalContainersIntros# #PhysicalContainersConstructionAddition#: 10
+    #PhysicalContainersIntros# #PhysicalContainersMiscAddition#: 10
     #PhysicalContainersIntros# #PhysicalContainersConstructionAddition# #PhysicalContainersLinerAddition# #PhysicalContainersMiscAddition# #PhysicalContainersMiscAddition#
 
 
@@ -73,7 +73,6 @@ EntryProcedures
 MaintenenceProcedures
     #MaintenenceProceduresAddition#: 3
     #MaintenenceProceduresAddition# #MaintenenceProceduresAddition#
-    #MaintenenceProceduresAddition# #MaintenenceProceduresAddition# #MaintenenceProceduresAddition#
 
 MaintenenceProceduresAddition
     #noun|var@name# must be fed daily.:0.1
@@ -111,6 +110,8 @@ requiredProcedure
     maintain eye contact at all times: 0.5
     instructed to maintain eye contact with #noun|var@name# at all times: 0.5
     avoid eye contact at all costs: 0.5
+    wear a class 3 or greater blindfold
+    wear a class 3 or greater noise cancelation device
     instructed to avoid eye contact with #noun|var@name# at all times: 0.5
     quack like a duck and shit on their rug:0.01
     #verb# a #noun#
@@ -188,6 +189,12 @@ physicalLocationPersonSized
     gymnasium
     shipping container
     battleship
+    cell
+    prison cell
+    laboratory
+    latrine
+    cafeteria
+
 
 
 physicalLocationObjectSized
@@ -200,6 +207,8 @@ physicalLocationObjectSized
     dollhouse
     toybox: 0.1
     vending machine: 0.1
+    container
+    toilet
 
 
 physicalLocation
