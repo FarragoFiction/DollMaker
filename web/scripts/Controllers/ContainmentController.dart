@@ -85,7 +85,7 @@ class SCP {
         containmentProcedure = "${textEngine.phrase("ContainmentTop", story: story)}";
         await textEngine.loadList("scpDescription");
         description = "${textEngine.phrase("DescriptionTop", story: story)}";
-        Random rand = new Random();
+        Random rand = new Random(doll.seed);
         if(rand.nextDouble() > 0.8) {
             await textEngine.loadList("additionalNotes");
             addendum = "${textEngine.phrase("NotesTop", story: story)}";
