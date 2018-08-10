@@ -90,6 +90,7 @@ class SCP {
             await textEngine.loadList("additionalNotes");
             addendum = "${textEngine.phrase("NotesTop", story: story)}";
         }
+        //print(textEngine.wordLists);
     }
 
     Future<Null> renderSelf() async {

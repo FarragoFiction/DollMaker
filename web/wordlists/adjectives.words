@@ -4,6 +4,7 @@
 //adjective order: opinion-size-age-shape-colour-origin-material-purpose
 //from kr
 
+@materials
 
 adjective
     @adj_positive
@@ -627,6 +628,7 @@ adj_material
     liquid
     ice
 
+// temporary edit before restructure - PL
 metal
     metal
     aluminum
@@ -649,6 +651,9 @@ metal
     titanium
     mythril: 0.2
     adamantium: 0.2
+    beryllium bronze: 0.5
+    //@material_element: 2000
+
 
 wood
     wood

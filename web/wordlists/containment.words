@@ -44,14 +44,14 @@ PhysicalContainersIntros
 PhysicalContainersLinerAddition
     The #physicalLocation|var@container_variable# must be lined with a minimum of #exactAmount# #distanceMetric# of #metal#.
     The #physicalLocation|var@container_variable# must be painted #adj_color# (see Addendum 113 for color hex maps) every #exactAmount# #timeMetric#.:0.5
-    The outer surface of the  #physicalLocation|var@container_variable# must be lined with a minimum of #exactAmount# #distanceMetric# of #metal#.
-    The inner surface of the  #physicalLocation|var@container_variable# must be lined with a minimum of #exactAmount# #distanceMetric# of #metal#.
+    The outer surface of the #physicalLocation|var@container_variable# must be lined with a minimum of #exactAmount# #distanceMetric# of #metal#.
+    The inner surface of the #physicalLocation|var@container_variable# must be lined with a minimum of #exactAmount# #distanceMetric# of #metal#.
     Fresh coats of #adj_color# paint (see Addendum 113 for color hex maps) must be applied every #exactAmount# hours.
 
 PhysicalContainersConstructionAddition
-    The #physicalLocation|var@container_variable#  must be constructed entirely of #adj_material#.
-    The #physicalLocation|var@container_variable#  must be constructed entirely of body safe #adj_material#.:0.1
-    The #physicalLocation|var@container_variable#  must be constructed primarily of #adj_material#.
+    The #physicalLocation|var@container_variable# must be constructed entirely of #adj_material#.
+    The #physicalLocation|var@container_variable# must be constructed entirely of body safe #adj_material#.:0.1
+    The #physicalLocation|var@container_variable# must be constructed primarily of #adj_material#.
 
 PhysicalContainersMiscAddition
     #noun|var@name# must be kept within sight of one or more #noun@plural|var@goodItem# at all times.
@@ -76,14 +76,14 @@ MaintenenceProcedures
 
 MaintenenceProceduresAddition
     #noun|var@name# must be fed daily.:0.1
-    Requires #exactAmount#  Scranton Reality Anchors at all times. :0.1
-    Requires #exactAmount#  Scranton Reality Anchors at all times, arranged into a pentagram. :0.01
+    Requires #exactAmount# Scranton Reality Anchors at all times. :0.1
+    Requires #exactAmount# Scranton Reality Anchors at all times, arranged into a pentagram. :0.01
     Must always have access to one or more #noun@plural|var@goodItem#.
-    #noun|var@name# must be on a constant IV of class #amnesiaClasses# amnesiacs.
+    #noun|var@name# must be on a constant IV of class #amnesticClasses# amnestics.
     Must have #exactAmount# #volumeMetric# of water available at all times.
     Personnel must undergo psychological testing after engaging with #noun|var@name#.
     Personnel must undergo psychological testing after engaging with #noun|var@name#. Should personnel be deemed unaffected, they may be reassigned to #noun|var@name# after no less than #exactAmount# months of other duties.
-    Must be suspended over at least #exactAmount# #volumeMetric# of class #amnesiaClasses# or greater acid.
+    Must be suspended over at least #exactAmount# #volumeMetric# of class #amnesticClasses# or greater acid.
     Must never have access to one or more #noun@plural|var@badItem#.
     Must not be exposed to visible #noun@plural|var@badItem#.
     The word '#noun|var@badItem#' is restricted from being spoken within #exactAmount# #distanceMetric# of #noun|var@name#.
@@ -116,8 +116,8 @@ requiredProcedure
     quack like a duck and shit on their rug:0.01
     #verb# a #noun#
     be reminded that #noun@plural|var@goodItem# exist and instructed to think of them carefully
-    be administered class B Amnesiacs, targeted towards erasing knowledge of #noun@plural|var@badItem#
-    be administered class #amnesiaClasses# Amnesiacs
+    be administered class B Amnestics, targeted towards erasing knowledge of #noun@plural|var@badItem#
+    be administered class #amnesticClasses# Amnestics
     have gone a minimum of #exactAmount# #timeMetric# without eating
     have gone a minimum of #exactAmount# #timeMetric# without #verb@continuous#
     not be aware of the existence of #noun@plural#.
@@ -128,7 +128,7 @@ requiredProcedure
 
 
 
-amnesiaClasses
+amnesticClasses
     A
     B: 0.1
     C: 0.01
@@ -143,19 +143,48 @@ possibleItems
 
 verbButWithRedactions
     #verb#
-    [REDACTED]: 0.1
-    [DATA EXPUNGED]: 0.1
+    #redaction#: 0.2
 
 nounButWithRedactions
     #noun#
-    [REDACTED]: 0.1
-    [DATA EXPUNGED]: 0.1
+    #redaction#: 0.2
 
+redaction
+    [REDACTED]
+    [DATA EXPUNGED]
+    #redactionBlock#
+
+redactionBlock
+    #redactionSubBlock#: 0.2
+    #redactionSubBlock# #redactionSubBlock#
+    #redactionSubBlock# #redactionSubBlock# #redactionSubBlock#: 0.5
+
+redactionSubBlock
+    // weights are based on real word occurrence
+    // where a weight is commented, the comment is the "real" weight, and the used is adjusted for looks
+    █: 0.05 // 0.1
+    ██: 0.25 // 0.5
+    ███: 1.0 // 1.2
+    ████: 2.0
+    █████: 2.1
+    ██████: 1.8
+    ███████: 1.0
+    ████████: 0.5
+    █████████: 0.1
+    ██████████: 0.02
+    ███████████: 0.01
+    ████████████: 0.005
+    █████████████: 0.005
+    ██████████████: 0.0001
+    █ #redactionSubBlock#: 0.75
+    ██ #redactionSubBlock#: 0.75
+    #redactionSubBlock# #redactionSubBlock#: 0.4
 
 distanceMetric
     feet
     inches
     yards
+    meters
     leagues: 0.01
     miles: 0.01
     kilometers: 0.01
@@ -167,6 +196,7 @@ distanceMetric
 volumeMetric
     gallons
     liters
+    thousand liters: 0.2
     ounces
 
 timeMetric
@@ -188,12 +218,24 @@ physicalLocationPersonSized
     schoolroom
     gymnasium
     shipping container
-    battleship
+    battleship: 0.5
     cell
     prison cell
     laboratory
     latrine
     cafeteria
+    shop
+    shopping mall: 0.5
+    ship
+    train car
+    airport terminal
+    greenhouse
+    enclosure: 2
+    dormitory
+    observatory
+    tomb
+    cavern
+    environment: 0.5
 
 
 
@@ -208,7 +250,15 @@ physicalLocationObjectSized
     toybox: 0.1
     vending machine: 0.1
     container
-    toilet
+    toilet: 0.5
+    crate
+    #adj_material# crate
+    secure storage locker: 5.0
+    #wood# chest
+    etched #metal# box
+    carved #stone# coffer
+    #metal# inlaid #wood# box: 0.5
+    thimble: 0.1
 
 
 physicalLocation

@@ -1,0 +1,268 @@
+TextEngine Word List
+
+// Materials, many and varied, with approximate weights for rarity
+// by PL
+
+material_all
+    @material_metal
+
+//#############################################################################################
+// ELEMENTS
+//#############################################################################################
+
+material_element
+    @material_element_nonmetal
+    @material_element_noble_gas
+    @material_element_metalloid
+    @material_element_metal
+
+material_element_nonmetal
+    @material_element_nonmetal_gas
+    @material_element_nonmetal_liquid
+    @material_element_nonmetal_solid
+
+material_element_nonmetal_gas
+    hydrogen
+        symbol: H
+    nitrogen
+        symbol: N
+    oxygen
+        symbol: O
+    fluorine
+        symbol: F
+    chlorine
+        symbol: Cl
+
+material_element_nonmetal_liquid // lol just bromine
+    bromine
+        symbol: Br
+
+material_element_nonmetal_solid
+    carbon
+        symbol: C
+    phosphorous
+        symbol: P
+    sulfur
+        symbol: S
+    selenium
+        symbol: Se
+    iodine
+        symbol: I
+
+material_element_noble_gas
+    helium
+        symbol: He
+    neon
+        symbol: Ne
+    argon
+        symbol: Ar
+    krypton
+        symbol: Kr
+    xenon
+        symbol: Xe
+    radon
+        symbol: Rn
+
+material_element_metalloid
+    boron
+        symbol: B
+    silicon
+        symbol: Si
+    germanium
+        symbol: Ge
+    arsenic
+        symbol: As
+    antimony
+        symbol: Sb
+    tellurium
+        symbol: Te
+    astatine
+        symbol: At
+
+material_element_metal
+    @material_element_metal_alkali
+    @material_element_metal_alkali_earth
+    @material_element_metal_lanthanoid
+    @material_element_metal_actinoids
+    @material_element_metal_transition
+    @material_element_metal_post_transition
+
+material_element_metal_alkali
+    lithium
+        symbol: Li
+    sodium
+        symbol: Na
+    potassium
+        symbol: K
+    rubidium
+        symbol: Rb
+    caesium
+        symbol: Cs
+    francium
+        symbol: Fr
+
+material_element_metal_alkali_earth
+    beryllium
+        symbol: Be
+    magnesium
+        symbol: Mg
+    calcium
+        symbol: Ca
+    strontium
+        symbol: Sr
+    barium
+        symbol: Ba
+    radium
+        symbol: Ra
+
+material_element_metal_lanthanoid
+    lanthanum
+        symbol: La
+    cerium
+        symbol: Ce
+    praseodymium
+        symbol: Pr
+    neodymium
+        symbol: Nd
+    promethium
+        symbol: Pm
+    samarium
+        symbol: Sm
+    europium
+        symbol: Eu
+    gadolinium
+        symbol: Gd
+    terbium
+        symbol: Tb
+    dysprosium
+        symbol: Dy
+    holmium
+        symbol: Ho
+    erbium
+        symbol: Er
+    thulium
+        symbol: Tm
+    ytterbium
+        symbol: Yb
+    lutetium
+        symbol: Lu
+
+material_element_metal_actinoids
+    actinium
+        symbol: Ac
+    thorium
+        symbol: Th
+    protactinium
+        symbol: Pa
+    uranium
+        symbol: U
+    neptunium
+        symbol: Np
+    plutonium
+        symbol: Pu
+    americium
+        symbol: Am
+    curium
+        symbol: Cm
+    berkelium
+        symbol: Bk
+    californium
+        symbol: Cf
+    einsteinium
+        symbol: Es
+    fermium
+        symbol: Fm
+    mendelevium
+        symbol: Md
+    nobelium
+        symbol: No
+    lawrencium
+        symbol: Lr
+
+material_element_metal_transition
+    scandium
+        symbol: Sc
+    titanium
+        symbol: Ti
+    vanadium
+        symbol: V
+    chromium
+        symbol: Cr
+    manganese
+        symbol: Mn
+    iron
+        symbol: Fe
+    cobalt
+        symbol: Co
+    nickel
+        symbol: Ni
+    copper
+        symbol: Cu
+    zinc
+        symbol: Zn
+    yttrium
+        symbol: Y
+    zirconium
+        symbol: Zr
+    niobium
+        symbol: Nb
+    molybdenum
+        symbol: Mo
+    technetium
+        symbol: Tc
+    ruthenium
+        symbol: Ru
+    rhodium
+        symbol: Rh
+    palladium
+        symbol: Pd
+    silver
+        symbol: Ag
+    cadmium
+        symbol: Cd
+    hafnium
+        symbol: Hf
+    tantalum
+        symbol: Ta
+    tungsten
+        symbol: W
+    rhenium
+        symbol: Re
+    osmium
+        symbol: Os
+    iridium
+        symbol: Ir
+    platinum
+        symbol: Pt
+    gold
+        symbol: Au
+    mercury
+        symbol: Hg
+
+material_element_metal_post_transition
+    aluminium
+        symbol: Al
+    gallium
+        symbol: Ga
+    indium
+        symbol: In
+    tin
+        symbol: Sn
+    thallium
+        symbol: Tl
+    lead
+        symbol: Pb
+    bismuth
+        symbol: Bi
+    polonium
+        symbol: Po
+    flerovium
+        symbol: Fl
+
+
+//#############################################################################################
+// METALS
+//#############################################################################################
+
+material_metal
+    @material_element_metal
