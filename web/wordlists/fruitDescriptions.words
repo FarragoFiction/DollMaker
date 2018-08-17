@@ -1,0 +1,279 @@
+TextEngine Word List
+
+@nouns
+@verbs
+@adjectives
+
+FruitDescriptions
+    #useDescription# #physicalDescription#: 2.0
+    #flavorDescription#  #textureDescription#
+    #textureDescription#  #flavorDescription#
+    #physicalDescription#
+    #useDescription#: 2.0
+    #physicalDescription# #physicalDescription#
+    #physicalDescription# #useDescription#: 2.0
+    #smellDescription# #useDescription#
+    #smellDescription# #flavorDescription#
+    #smellDescription# #textureDescription#
+    #useDescription# #smellDescription#: 2.0
+    #flavorDescription# #smellDescription#
+    #textureDescription# #smellDescription#
+    #smellDescription#
+    #flavorDescription#
+    #textureDescription#
+
+
+physicalDescription
+    #flavorDescription#
+    #textureDescription#
+    #smellDescription#
+
+flavorDescription
+    The #fruitPart# is #amount# #flavor#.
+    Has a #flavor# #fruitPart#.
+    #fameDescription# for having a #fruitPart# that is #flavor#.
+    #newTasters# are surprised that the #fruitPart# is #amount# #flavor#.:0.3
+    WARNING DO NOT EAT.: 0.3
+    The #flavor# flavor is overwhelming.
+
+smellDescription
+    The #fruitPart# smells #amount# #adj_smell#.
+    Has a #adj_smell# smelling #fruitPart#.
+    #fameDescription# for having a #fruitPart# that smells #adj_smell#.
+    #newTasters# are surprised that the #fruitPart# smells #amount# #adj_smell#.:0.3
+    The #fruitPart# smells #amount# #flavor#.
+    Has a #flavor# smelling #fruitPart#.
+    #fameDescription# for having a #fruitPart# that smells #flavor#.
+    #newTasters# are surprised that the #fruitPart# smells #amount# #flavor#.:0.3
+    WARNING DO NOT SNIFF.: 0.3
+    Also known as the '#adj_smell# fruit', mostly because of it's #fruitPart#.
+
+textureDescription
+    The #fruitPart# is #amount# #texture#.
+    Has a #texture# #fruitPart#.
+    #fameDescription# for having a #fruitPart# that is #texture#.
+    #newTasters# are surprised that the #fruitPart# is #amount# #texture#.:0.3
+    WARNING DO NOT TOUCH.: 0.3
+    Surprisingly, the juice is actually #adj_color#.
+    The stem appears to be made of #wood#.
+    Just touching it, you can tell if its #adj_negative#.
+    If you brush your hand carefully along the rind, you can tell if its #adj_positive#.
+    Inside, the seeds are #adj_shape# and #adj_color#.
+    #adj_old# rinds quickly become #adj_negative#.
+    The #fruitPart# almost feels like #fabric#.
+
+
+
+fameDescription
+    Famous
+    Known worldwide
+    Legendary
+    Locally famous
+    Globally famous
+    Grandmas know it
+    Moms know it
+    Dads know it
+    Grandpas know it
+    Wisemen know it
+    Sages know it
+    Bakers know it
+    Children know it
+    Mages know it: 0.1
+    Pranksters know it: 0.1
+    Wizards know it: 0.1
+    Witches know it: 0.1
+    Enchanters know it: 0.1
+    Alchemists know it: 0.1
+
+
+
+newTasters
+    New Tasters
+    Tourists
+    Visitors
+    Children
+    Pets: 0.3
+    Travelers
+    Tasters
+    Birds: 0.3
+    Horses: 0.3
+
+
+useDescription
+    #people# use it for making #uses#.
+    It really improves #uses#.
+    #uses# are heavily improved by it.
+    It's famous for being a key ingredient in #uses#.
+    You can't make #uses# without it.
+    Ancient cookbooks described it as being useful in #uses#.
+    It really makes #uses# #adj_positive#.
+    It is #adj_positive# in #uses#.
+    It is #adj_negative# in #uses#.
+    Overusing it in #uses# risks them becoming #adj_negative#.
+    You would never want to use it for making #uses#.
+    It is #adj_surprising# to imagine someone using it for #uses#.
+    There are #adj_many# uses for it, but it is most famously used in #uses#.
+    There are #adj_few# uses for it, most people just throw it away.: 0.1
+    #fameDescription# for dying #fabric# a brilliant shade of #adj_color#.
+    Icons of it commonly decorate #adj_material#.
+    Ancient #people# kept #adj_material# shrines of it.
+    It is said to keep #people# away.:0.1
+    Local tradition says eating one each day keeps #people# away.
+    Boiling it in vinegar is said to make a good #statTypes# potion.
+    The syrup can be used to make a home #medicineTypes# remedy.
+    They say as long as you have one, you will never need #people#.
+    #stone# idols of it were worshiped by ancient #people#.
+    #semiPrecious# carvings of it were kept in ancient shrines. 0.4
+    Ancient rulers would decorate their crowns with #gem# carvings of it.:0.1
+
+people
+    Doctors: 2.0
+    Bards
+    Princes
+    Knights
+    Seers
+    Pages
+    Mages
+    Shoguns
+    Lords
+    Muses
+    Faeries
+    Elves
+    Locals
+    Tourists
+    Clowns
+    Rogues
+    Sylphs
+    Fae
+    Thieves
+    Heirs
+    Wastes
+    Programmers
+    Witches
+    Scribes
+    Sages
+    Children
+    Mothers
+    Fathers
+    Moms
+    Dads
+    Aunts
+    Uncles
+    Grandmas
+    Grandpas
+    Orange Skinned Dudes: 0.1
+    Aliens: 0.1
+    JPEG Artifacts: 0.1
+
+uses
+    pies
+    jams
+    snacks
+    salads
+    butters
+    jellies
+    petfood
+    wine
+    brandy
+    beer
+    liqueur
+    mixed drinks
+    drinks
+    cocktails
+    compotes
+    candy
+    #statTypes# potions: 0.3
+    #statTypes# spells: 0.3
+    #medicineTypes# medicines
+
+statTypes
+    strength
+    speed
+    power
+    fire
+    ice
+    poison
+    antidote
+    elixer
+    dexterity
+    invisibility
+    resistance
+    defense
+    regeneration
+    health
+    mana
+    energy
+    stamina
+
+medicineTypes
+    cold
+    flu
+    cough
+    rash
+    burn
+    nausea
+    itch
+    antiseptic
+    energy
+    antibiotic
+    stamina
+
+
+
+fruitPart
+    rind
+    core
+    body
+    seed
+    juice
+    pulp
+
+amount
+    a little
+    sort of
+    a little bit
+    extremely
+    surprisingly
+    a tiny bit
+    just a bit
+    overwhelmingly
+    intensely
+
+
+flavor
+    sweet:3.0
+    sour: 2.0
+    bitter: 0.5
+    tangy
+    flavorful
+    delicious
+    gross
+    delicate
+    #adj_taste#: 3.0
+    strong
+    tasty
+    forbidden
+    szechuan sauce like: 0.5
+    tidepod like: 0.1
+    body butter and despair like: 0.1
+    justice like: 0.5
+    deceit like: 0.1
+
+texture
+    juicy
+    hard
+    firm
+    soft
+    squishy
+    pliable
+    succulent
+    crisp
+    moist
+    rough
+    fuzzy
+    grainy
+    #adj_tactile#: 3.0
+    coarse
+    smooth
+    pulpy
+

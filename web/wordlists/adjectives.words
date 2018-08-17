@@ -1,32 +1,101 @@
 ﻿TextEngine Word List
 
 
-//adjective order: opinion-size-age-shape-colour-origin-material-purpose
-//from kr
+//adjective order: quantity-opinion-size-age-shape-colour-origin-material-purpose
+//by kr
 
 @materials
 
 adjective
-    @adj_positive
-    @adj_negative
-    @adj_surprising
-    @adj_large
-    @adj_small
     @adj_many
     @adj_much
     @adj_few
     @adj_less
-    @adj_tactile
-    @adj_taste
-    @adj_smell
+    @adj_positive
+    @adj_negative
+    @adj_surprising
+    @adj_spades
+    @adj_hearts
+    @adj_diamonds
+    @adj_clubs
+    @adj_large
+    @adj_small
     @adj_new
     @adj_old
     @adj_shape
+    @adj_tactile
+    @adj_taste
+    @adj_smell
     @adj_color
+//@adj_origin - seems too contextual to be useful
     @adj_material
 //@adj_purpose - I can't think of a good way to use this for now
+
 //Many and few are for countable nouns; much and less are for uncountable nouns.
 
+
+//#############################################################################################
+// QUANTITY
+//#############################################################################################
+
+adj_many
+    many
+    countless
+    numerous
+    endless
+    no end of
+    too many
+    a variety of
+    a multitude of
+    oodles of
+    quite a number of
+    so many
+    a lot of
+    lots of
+    how many: 0.1
+
+adj_much
+    much
+    lots of
+    a lot of
+    abundant
+    bountiful
+    a generous amount of
+    so much
+    too much
+    no end of
+
+adj_few
+    few
+    fewer
+    a scattering of
+    an inconsequential number of
+    not many
+    not too many
+    a paltry number of
+    some
+    a thin scattering of
+    a couple
+    a handful
+    a few
+
+adj_less
+    less
+    a trifling amount of
+    meager
+    negligible
+    not much
+    a piddling amount of
+    rare
+    scarcely any
+    some
+    a sparse amount of
+    sporadic
+    straggling
+
+//#############################################################################################
+// OPINION
+//#############################################################################################
 
 adj_positive
     good
@@ -107,6 +176,35 @@ adj_surprising
     unimaginable
     hard-to-swallow
 
+adj_spades
+    infuriating
+    aggravating
+    smug
+    intolerable
+    rage-inducing
+    fucking
+    
+adj_hearts
+    charming
+    beautiful
+    handsome
+    sweet
+    sexy
+
+adj_diamonds
+    kind
+    calming
+    cuddly
+
+adj_clubs
+    irritating
+    annoying
+    meddling
+
+//#############################################################################################
+// SIZE
+//#############################################################################################
+
 adj_large
     large
     big
@@ -184,60 +282,43 @@ adj_small
     itty-bitty: 0.1
     teeny-weeny: 0.1
 
-adj_many
-    many
-    countless
-    numerous
-    endless
-    no end of
-    too many
-    a variety of
-    a multitude of
-    oodles of
-    quite a number of
-    so many
-    a lot of
-    lots of
-    how many: 0.1
+//#############################################################################################
+// AGE
+//#############################################################################################
 
-adj_much
-    much
-    lots of
-    a lot of
-    abundant
-    bountiful
-    a generous amount of
-    so much
-    too much
-    no end of
+adj_new
+    new
+    brand-new
+    fresh
+    young
+    recent
+    novel
+    cutting-edge
 
-adj_few
-    few
-    fewer
-    a scattering of
-    an inconsequential number of
-    not many
-    not too many
-    a paltry number of
-    some
-    a thin scattering of
-    a couple
-    a handful
-    a few
+adj_old
+    old
+    worn
+    used
+    aged
+    ancient
+    antique
+    traditional
+    out-of-date
+    stale
 
-adj_less
-    less
-    a trifling amount of
-    meager
-    negligible
-    not much
-    a piddling amount of
-    rare
-    scarcely any
-    some
-    a sparse amount of
-    sporadic
-    straggling
+//#############################################################################################
+// SHAPE and other "sense" words
+//#############################################################################################
+
+adj_shape
+    long
+    short
+    wide
+    narrow
+    thin
+    thick
+    rounded
+    angular
 
 adj_tactile
     smooth
@@ -274,35 +355,9 @@ adj_smell
     perfumed
     odorous
 
-adj_new
-    new
-    brand-new
-    fresh
-    young
-    recent
-    novel
-    cutting-edge
-
-adj_old
-    old
-    worn
-    used
-    aged
-    ancient
-    antique
-    traditional
-    out-of-date
-    stale
-
-adj_shape
-    long
-    short
-    wide
-    narrow
-    thin
-    thick
-    rounded
-    angular
+//#############################################################################################
+// COLOR
+//#############################################################################################
 
 adj_color
     @color_blood
@@ -322,7 +377,6 @@ adj_color
     @color_brown
     @color_white
     @color_black
-
 
 color_blood
     candy red: 0.001
@@ -607,6 +661,10 @@ color_black
     starless
     stygian
 
+//#############################################################################################
+// MATERIALS - May be moved entirely to other file?
+//#############################################################################################
+
 adj_material
     @metal
     @wood
@@ -653,7 +711,6 @@ metal
     adamantium: 0.2
     beryllium bronze: 0.5
     //@material_element: 2000
-
 
 wood
     wood

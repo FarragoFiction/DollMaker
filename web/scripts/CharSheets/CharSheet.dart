@@ -275,7 +275,8 @@ abstract class CharSheet {
         if(doll is DadDoll || doll is MomDoll) return humanRelative(name);
         return randomAsFuckName();
     }
-    String nameForDoll(Doll d) {
+    //deprecated, use text engine now
+    Future<String> nameForDollOld(Doll d) async{
         if(d.dollName != d.name) return d.dollName;
         if(d is HomestuckTrollDoll || d is HiveswapDoll) return trollName();
         if(d is HomestuckDoll) return humanName();

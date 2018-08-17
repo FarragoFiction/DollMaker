@@ -52,6 +52,7 @@ noun_object
     legendary artifact
     legendary weapon
     ring of orbs no-fold
+         plural: rings of orbs no-fold
     mechanical bull
     coin
     talisman
@@ -61,6 +62,9 @@ noun_timeframe
     day
     month
     year
+    sweep
+    decade
+    century
 
 noun_building
     ?collective: district
@@ -102,27 +106,39 @@ noun_animal
     dog
         collective: pack
     bird
+        collective: flock
     fish
         plural: fish
+        collective: school
     robot
         collective: superiority
     gnome
     penguin
+        collective: colony
     hamster
     guinea pig
     pig
+        collective: herd
     cow
         collective: herd
     sheep
         plural: sheep
+        collective: flock
     goat
+        collective: flock
     pigeon
-        collective: fock
+        collective: flock
     lobster
     camel
+        collective: herd
     giraffe
+        collective: herd
     elephant
+        collective: herd
     oyster
+        collective: bed
+    locust
+        collective: plague
     louse
         plural: lice
     mouse
@@ -131,11 +147,18 @@ noun_animal
         plural: moose
     cherub
     troll
+        collective: argument
     human
+        collective: mob
     monkey
+        collective: troop
     gorilla
+        collective: band
     rat
+        collective: pack
     chinchilla
+
+animal_pet
 
 noun_food
     @noun_vegetable
@@ -157,10 +180,13 @@ noun_vegetable
     carrot
     tomato
         plural: tomatoes
+        collective: bushel
     lettuce
         plural: lettuce
+        collective: head
     broccoli
         plural: broccoli
+        collective: head
     sprout
     yam
     cucumber

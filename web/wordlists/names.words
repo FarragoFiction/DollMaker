@@ -1,0 +1,2523 @@
+﻿TextEngine Word List
+
+
+// Lists of names!
+// by KR
+
+
+@markovnames
+
+
+name_all
+    @trollname_all
+    @wigglername_all
+    @kidname_all
+    @cherubname_all
+    @robotname_all
+    @ancestortitle_all
+    @denizenname_all
+    @leprechaunname_all
+    @horrorterrorname_all
+    @suckname_all
+    @carapacename_all
+    @satyrname_all
+
+    
+//###################################################
+// DOLL NAMES
+//###################################################
+
+dollname_kid
+    @kidname_all
+dollname_troll
+    @trollname_all
+dollname_cherub
+    @cherubname_all
+dollname_baby
+    @kidname_all
+dollname_grub
+    @wigglername_all
+dollname_consort
+    @wigglername_all
+dollname_denizen
+    @denizenname_all
+dollname_dad
+    #kidname_male# #kidname_last#
+dollname_mom
+    #kidname_female# #kidname_last#
+dollname_bro
+    #kidname_male# #kidname_last#
+dollname_hiveswap
+    @trollname_all
+dollname_pigeon
+    @wigglername_all
+dollname_satyr
+    @satyrname_all
+dollname_queen
+    #queenname_first# #queenname_last#
+dollname_monsterpocket
+    #fakemon_markov#
+dollname_superbsuck
+    @suckname_all
+dollname_virus
+    @horrorterrorname_all
+dollname_dog
+    @wigglername_all
+dollname_talksprite
+    @kidname_all
+dollname_easteregg
+    egg
+dollname_hatchedchick
+    @wigglername_all
+dollname_broom
+    @brooms
+dollname_cat
+    @wigglername_all
+dollname_blobmonster
+    @horrorterrorname_all
+dollname_ancestor
+    @ancestortitle_all
+dollname_openbound
+    @trollname_all
+dollname_fek
+    fek
+dollname_flower
+    flower
+dollname_fruit
+    set by sim
+
+//#############################################################################################
+// TROLLS
+//#############################################################################################
+
+trollname_all
+    #trollname_first# #trollname_last#
+    
+trollname_markov
+    #trollname_first_markov# #trollname_last_markov#
+
+trollname_first
+    @trollname_first_canon
+    @trollname_first_neta
+    @trollname_first_markov
+
+trollname_last
+    @trollname_last_canon
+    @trollname_last_neta
+    @trollname_last_markov
+    
+//######################################################
+// TROLL FIRST NAMES
+//######################################################
+
+trollname_first_canon
+    Aradia
+    Tavros
+    Sollux
+    Karkat
+    Nepeta
+    Kanaya
+    Terezi
+    Vriska
+    Equius
+    Gamzee
+    Eridan
+    Feferi
+    Damara
+    Rufioh
+    Mituna
+    Kankri
+    Meulin
+    Porrim
+    Latula
+    Aranea
+    Horuss
+    Kurloz
+    Cronus
+    Meenah
+    Mierfa
+    Nektan
+    Xefros
+    Diemen
+    Fozzer
+    Marsti
+    Skylla
+    Vikare
+    Chixie
+    Zebede
+    Folykl
+    Kuprum
+    Cirava
+    Azdaja
+    Charun
+    Polypa
+    Boldir
+    Konyyl
+    Daraya
+    Lynera
+    Wanshi
+    Bronya
+    Lanque
+    Tegiri
+    Tirona
+    Tagora
+    Stelsa
+    Mallek
+    Ardata
+    Remele
+    Nihkee
+    Amisia
+    Galekh
+    Zebruh
+    Barzum
+    Baizli
+    Chahut
+    Marvus
+    Dammek
+    Trizza
+
+trollname_first_neta
+    Anstus
+    Jibade
+    Marqis
+    Nimare
+
+//######################################################
+// TROLL LAST NAMES
+//######################################################
+
+trollname_last_canon
+    Megido
+    Nitram
+    Captor
+    Vantas
+    Leijon
+    Maryam
+    Pyrope
+    Serket
+    Zahhak
+    Makara
+    Ampora
+    Peixes
+    Durgas
+    Whelan
+    Tritoh
+    Xicali
+    Velyes
+    Houtek
+    Koriga
+    Ratite
+    Roixmr
+    Tongva
+    Darane
+    Maxlol
+    Hermod
+    Knelax
+    Krojib
+    Goezee
+    Lamati
+    Okimaw
+    Jonjet
+    Skalbi
+    Adyata
+    Ursama
+    Bombyx
+    Kalbur
+    Kasund
+    Gorjek
+    Sezyat
+    Adalov
+    Carmia
+    Namaaq
+    Moolah
+    Erdehn
+    Xigisi
+    Codakk
+    Soleil
+    Maenad
+    Xoloto
+    Elwurd
+    Tethis
+
+trollname_last_neta
+    Alilou
+    Baruch
+    Marston
+
+//#############################################################################################
+// WIGGLERS
+//#############################################################################################
+
+//credit to duckking for a large chunk of the titles and last names!
+
+wigglername_all
+    #wigglername_title# #wigglername_first#
+    #wigglername_title# #wigglername_first##wigglername_end#
+    #wigglername_title# #wigglername_first# #wigglername_last#
+    #wigglername_title# #wigglername_last#
+    #wigglername_title##wigglername_end#
+    #wigglername_first# #wigglername_first#
+    #wigglername_first# #wigglername_last#
+    #wigglername_first# #wigglername_first# #wigglername_last#
+    #wigglername_first# #wigglername_last##wigglername_end#
+
+//######################################################
+// WIGGLER TITLES
+//######################################################
+
+wigglername_title
+    Abbess
+    Abbot
+    Archbishop
+    Archdeacon
+    Archpriest
+    Assistant
+    Bard
+    Baroness
+    Bishop
+    Brother
+    Cardinal
+    Chief
+    Chieftain
+    Chorbishop
+    Cleric
+    Dean
+    Dr.
+    Druid
+    Duchess
+    Duke
+    Earl
+    Elder
+    Executioner
+    Father
+    Heir
+    Judge
+    King
+    Knight
+    Lord
+    Mage
+    Maid
+    Marchioness
+    Marquess
+    Master
+    Monk
+    Monsignor
+    Mother
+    Mr.
+    Novice
+    Page
+    Pastor
+    Patriarch
+    Player
+    Pope
+    Prince
+    Princess
+    Professor
+    Queen
+    Rabbi
+    Researcher
+    Reverend
+    Rogue
+    Saint
+    Seer
+    Sensei
+    Sherrif
+    Sister
+    Supreme
+    Sylph
+    Thief
+    TV's
+    Vice
+    Vice President
+    Vice-Chancellor
+    Viscount
+    Viscountess
+    Witch
+
+//######################################################
+// WIGGLER FIRST NAMES
+//######################################################
+
+wigglername_first
+    Albert
+    Arnold
+    Autumn
+    Baby
+    Barney
+    Bibbles
+    Bubbles
+    Candy
+    Capybara
+    Casey
+    Charles
+    Chuck
+    Crow
+    Donut
+    Duncan
+    Ender
+    Farmstink
+    Fluffy
+    Fred
+    Freddy
+    George
+    Gordon
+    Grubby
+    Hannibal
+    Harvey
+    Hugo
+    Irving
+    Isaac
+    Ivo
+    Jack
+    James
+    Jerry
+    Jibbly
+    Jiggy
+    Jim
+    Juice
+    Juicy
+    Julius
+    Kid
+    Lil
+    Liv
+    Luigi
+    Meowgon
+    Meowsers
+    Mew
+    Micheal
+    Mike
+    Milton
+    Misty
+    Morgan
+    Nic
+    Nikalo
+    Obnoxio
+    Oswald
+    Peewee
+    Peter
+    Santa
+    Sauce
+    Scoobert
+    Scooby
+    Selina
+    Stan
+    Sterling
+    Steven
+    Stevie
+    Teddy
+    Thomas
+    Tina
+    Tom
+    Tony
+    Waluigi
+    Wario
+    Wiggler
+    Wiggly
+    Zoosmell
+    Zygmunt
+
+//######################################################
+// WIGGLER LAST NAMES
+//######################################################
+
+wigglername_last
+    Addington
+    Ainsworth
+    Archer
+    the Asshole
+    Beena
+    Boi
+    Butt
+    Butter
+    Buttlass
+    Cage
+    Cakes
+    Clowder
+    Diabetes
+    Dorkbutt
+    Dumbface
+    Dutton
+    Edington
+    Face
+    Faraday
+    Fluffybutton
+    Gigabyte
+    Gladestone
+    Grub
+    Heart
+    Juice
+    Katanta
+    Kazoo
+    Kilobyte
+    Legs
+    Licker
+    Lickface
+    Lobster
+    Logan
+    Love
+    Malone
+    McEnderton
+    McProblems
+    Megabyte
+    Noir
+    Oldington the Third
+    Oppenheimer
+    Perlstein
+    Pie
+    Poof
+    Poofykins
+    Pooper
+    Pooplord
+    Poppenfresh
+    Puffers
+    Puker
+    Ribs
+    Rock
+    Rockerfeller
+    S Preston
+    Sakura
+    Samson
+    Sandwich
+    Sauce
+    Savage
+    Sebastion
+    Sniffles
+    Snugglepuff
+    Spangler
+    Squeezykins
+    Stubblies
+    Taylor
+    Terabyte
+    Valentine
+    von Horn
+    von Salamancer
+    von Wigglebottom
+    von Wigglesmith
+    Wigglesona
+
+//######################################################
+// WIGGLER ENDINGS
+//######################################################
+
+wigglername_end
+     III
+     IV
+     IX
+     the Shippest
+     V
+     VI
+     VII
+     VIII
+     X
+    , CPA
+    , esq
+    , Junior
+    , MD
+    , Ph.D.
+    , Senior
+    , the Third
+    -chan
+    -Mew
+    
+
+//#############################################################################################
+// KIDS
+//#############################################################################################
+
+kidname_all
+    #kidname_first# #kidname_last#
+
+kidname_first
+    @kidname_first_canon_female
+    @kidname_first_canon_male
+    @kidname_first_common_female
+    @kidname_first_common_male
+    
+kidname_female
+    @kidname_first_canon_female
+    @kidname_first_common_female
+kidname_male
+    @kidname_first_canon_male
+    @kidname_first_common_male
+    
+kidname_last
+    @kidname_last_canon
+    @kidname_last_common
+
+//######################################################
+// KID FIRST NAMES
+//######################################################
+
+kidname_first_canon_female
+    Rose
+    Jade
+    Jane
+    Roxy
+    Joey
+    
+kidname_first_canon_male
+    John
+    Dave
+    Jade
+    Jane
+    Roxy
+    Jude
+    
+//common human first names are sourced from census lists in the US and UK
+
+kidname_first_common_female
+    Emily
+    Jessica
+    Ashley
+    Jennifer
+    Emma
+    Madison
+    Hannah
+    Amanda
+    Melissa
+    Amy
+    Michelle
+    Lisa
+    Alexis
+    Samantha
+    Sarah
+    Brittany
+    Heather
+    Kimberly
+    Abigail
+    Olivia
+    Angela
+    Amelia
+    Isla
+    Ava
+    Isabella
+    Lily
+    Ella
+    Mia
+    Poppy
+    Sophie
+    Ruby
+    Grace
+    Chloe
+    Evie
+    Lucy
+    Ellie
+    Charlotte
+    Katie
+    Megan
+    Lauren
+    Rebecca
+    Georgia
+    Alex
+
+kidname_first_common_male
+    Jacob
+    Michael
+    Matthew
+    Christopher
+    Jason
+    James
+    Joshua
+    David
+    John
+    Ethan
+    Andrew
+    Nicholas
+    Tyler
+    Daniel
+    Robert
+    Oliver
+    Harry
+    George
+    Jack
+    Noah
+    Charlie
+    Muhammad
+    Thomas
+    Oscar
+    William
+    Alfie
+    Riley
+    Samuel
+    Joseph
+    Benjamin
+    Lewis
+    Callum
+    Jordan
+    Ryan
+    Liam
+    Alex
+
+//######################################################
+// KID LAST NAMES
+//######################################################
+
+kidname_last_canon
+    Egbert
+    Lalonde
+    Strider
+    Harley
+    Crocker
+    English
+    Claire
+    
+//common human surnames are top 100 from 2000 US census
+
+kidname_last_common
+    Smith
+    Johnson
+    Williams
+    Brown
+    Jones
+    Miller
+    Davis
+    Garcia
+    Rodriguez
+    Wilson
+    Martinez
+    Anderson
+    Taylor
+    Thomas
+    Hernandez
+    Moore
+    Martin
+    Jackson
+    Thompson
+    White
+    Lopez
+    Lee
+    Gonzalez
+    Harris
+    Clark
+    Lewis
+    Robinson
+    Walker
+    Perez
+    Hall
+    Young
+    Allen
+    Sanchez
+    Wright
+    King
+    Scott
+    Green
+    Baker
+    Adams
+    Nelson
+    Hill
+    Ramirez
+    Campbell
+    Mitchell
+    Roberts
+    Carter
+    Phillips
+    Evans
+    Turner
+    Torres
+    Parker
+    Collins
+    Edwards
+    Stewart
+    Flores
+    Morris
+    Nguyen
+    Murphy
+    Rivera
+    Cook
+    Rogers
+    Morgan
+    Peterson
+    Cooper
+    Reed
+    Bailey
+    Bell
+    Gomez
+    Kelly
+    Howard
+    Ward
+    Cox
+    Diaz
+    Richardson
+    Wood
+    Watson
+    Brooks
+    Bennett
+    Gray
+    James
+    Reyes
+    Cruz
+    Hughes
+    Price
+    Myers
+    Long
+    Foster
+    Sanders
+    Ross
+    Morales
+    Powell
+    Sullivan
+    Russell
+    Ortiz
+    Jenkins
+    Gutierrez
+    Perry
+    Butler
+    Barnes
+    Fisher
+
+
+//#############################################################################################
+// CHERUBS
+//#############################################################################################
+
+cherubname_all
+    @cherubname_canon
+    @cherubname_discord
+
+//######################################################
+// CHERUB NAMES
+//######################################################
+
+cherubname_canon
+    Calliope
+    Caliborn
+
+cherubname_discord
+    Wongle
+
+//#############################################################################################
+// ROBOTS
+//#############################################################################################
+
+robotname_all
+    @robotname_canon
+    @robotname_sim
+
+//######################################################
+// ROBOT NAMES
+//######################################################
+
+robotname_canon
+    Sawtooth
+    Squarewave
+    
+robotname_sim
+    Authorbot
+    Authorbot Junior
+    Shogunbot
+
+//#############################################################################################
+// ANCESTORS
+//#############################################################################################
+
+ancestortitle_all
+    @ancestortitle_canon
+
+//######################################################
+// ANCESTOR TITLES
+//######################################################
+
+ancestortitle_canon
+    The Handmaid
+    the Summoner
+    The Ψiioniic
+    The Helmsman
+    The Signless
+    The Sufferer
+    The Disciple
+    The Dolorosa
+    Neophyte Redglare
+    Marquise Spinneret Mindfang
+    E%ecutor Darkleer
+    The Expatri8
+    The Grand Highblood
+    Orphaner Dualscar
+    Her Imperious Condescension
+    The Condesce
+
+
+//#############################################################################################
+// LEPRECHAUNS
+//#############################################################################################
+
+leprechaunname_all
+    @leprechaunname_canon
+    @leprechaunname_sim
+
+leprechaunname_sim
+    @leprechaunname_1_sim
+    @leprechaunname_2_sim
+    @leprechaunname_3_sim
+    @leprechaunname_4_sim
+    @leprechaunname_5_sim
+    @leprechaunname_6_sim
+    @leprechaunname_7_sim
+    @leprechaunname_8_sim
+    @leprechaunname_9_sim
+    @leprechaunname_10_sim
+    @leprechaunname_11_sim
+    @leprechaunname_12_sim
+    @leprechaunname_13_sim
+    @leprechaunname_14_sim
+    @leprechaunname_15_sim
+    @leprechaunname_inf_sim
+
+//######################################################
+// LEPRECHAUN NAMES
+//######################################################
+
+leprechaunname_canon
+    Itchy
+    Doze
+    Trace
+    Clover
+    Fin
+    Die
+    Crowbar
+    Snowman
+    Stitch
+    Sawbuck
+    Matchsticks
+    Eggs
+    Biscuits
+    Quarters
+    Cans
+
+leprechaunname_1_sim
+    Itchy
+    Partridge
+    Ridge
+    Lonely
+    Yuno
+    Ace
+    Jan
+    Yan
+
+leprechaunname_2_sim
+    Doze
+    Wei
+    Turtle
+    Dove
+    Matrix
+    Bull
+    Hands
+    Tan
+
+leprechaunname_3_sim
+    Trace
+    Tree
+    Henry
+    Frenchie
+    Link
+    Hattrick
+    Charm
+    Tethera
+
+leprechaunname_4_sim
+    Clover
+
+leprechaunname_5_sim
+    Fin
+    Rings
+    Goldboy
+    Plato
+    Sense
+    Byron
+    Johnny
+    Pimp
+
+leprechaunname_6_sim
+    Die
+    Sez
+    Goose
+    Buzz
+    Juan
+    Seraph
+    Diamond
+    Sethera
+
+leprechaunname_7_sim
+    Crowbar
+
+leprechaunname_8_sim
+    Snowman
+
+leprechaunname_9_sim
+    Stitch
+    Nein
+    Lady
+    Dancer
+    Dragon
+    Muse
+    Cat
+    Dickory
+
+leprechaunname_10_sim
+    Sawbuck
+    Diaz
+    Hamilton
+    Alexander
+    Leaper
+    Fingers
+    Neon
+    Dock
+
+leprechaunname_11_sim
+    Matchsticks
+    Amp
+    Piper
+    Rep
+    Salt
+    Rocket
+    Duck
+    Yan-a-dik
+
+leprechaunname_12_sim
+    Eggs
+    Dozer
+    Drummer
+    Killer
+    Magnum
+    Nerve
+    Solar
+    Tan-a-dik
+
+leprechaunname_13_sim
+    Biscuits
+    Bakers
+    Jason
+    Curse
+    Emirp
+    Archimedes
+    Luna
+    Tethera-dik
+
+leprechaunname_14_sim
+    Quarters
+    Chef
+    Shakespear
+    Cyber
+    Babylon
+    Osirus
+    Fortress
+    Pethera-dik
+
+leprechaunname_15_sim
+    Cans
+    Pho
+    Quiche
+    Bonita
+    Mystic
+    Salute
+    Mandarin
+    Bumfit
+
+leprechaunname_inf_sim
+    Flowers
+    Soy
+    Wasabi
+    Spot
+    Fido
+    Slasher
+    Paints
+    Researcher
+    Librarian
+    The House
+    Snake Eyes
+    Eyepatch
+    Shanks
+    Machette
+    Gums
+    Nose
+    Max
+    Mad
+    Wedge
+    Biggs
+    Big Daddy
+    Coins
+    Shadow
+    Undertaker
+    Numbers
+    Jalapeno
+    Hard
+    Cocktail
+    Sriracha
+    Kerburn
+    Sour
+    Doc
+    Hirohito
+    Barbeque
+    Tojo
+    Szechuan
+    Kestik
+    Sweet
+    Ketchup
+    Catsup
+
+
+//#############################################################################################
+// DENIZENS
+//#############################################################################################
+
+denizenname_all
+    @denizenname_canon
+    @denizenname_sim
+
+//######################################################
+// DENIZEN NAMES
+//######################################################
+
+denizenname_canon
+    Echidna
+    Hephaestus
+    Cetus
+    Typheus
+    Abraxas
+    Yaldabaoth
+    Nix
+    Hemera
+    
+denizenname_sim
+    ?secretname:?MAIN?
+    
+    Eriotur
+    Abraxas
+    Succra
+    Watojo
+    Bluhubit
+    Swefrat
+    Helaja
+    Fischapris
+    Red Squiggles
+    Yaldabaoth
+    Y'all'd'vebaoth
+    HairSeven
+    Javascript
+    The Null
+        secretname: Nobrop
+    The Ever-Searching
+        secretname: Paraxalan
+    The Dilletant
+        secretname: Algebron
+    The Wanderer
+        secretname: Doomod
+    Jörmungandr
+    Apollyon
+    Siseneg
+    Borunam
+    The Glitch
+        secretname: Shogun
+    The Researcher
+        secretname: Jadeacher
+    Karmiution
+    The Robot
+        secretname: Authorot
+    The Scout
+        secretname: Abbiejean
+    The Librarian
+        secretname: Aspiratcher
+    The Hollow One
+        secretname: Recurscker
+    Insurorracle
+    The Dreamwaker
+        secretname: Maniomnia
+    Kazerad
+    Shiva
+    Goliath
+
+
+//#############################################################################################
+// HORRORTERRORS
+//#############################################################################################
+
+horrorterrorname_all
+    @horrorterrorname_canon
+    @horrorterrorname_outergod
+    @horrorterrorname_greatoldone
+
+//######################################################
+// HORRORTERROR NAMES
+//######################################################
+
+horrorterrorname_canon
+    Fluthlu
+    Nrub'yiglith
+    Oglogoth
+    
+horrorterrorname_outergod
+    Abhoth
+    Aiueb Gnshal
+    Aletheia
+    Azathoth
+    Azhorra-Tha
+    The Blackness from the Stars
+    The Cloud-Thing
+    C'thalpa
+    Cxaxukluth
+    Daoloth
+    Darkness
+    D’endrrah
+    Ghroth
+    The Hydra
+    Ialdagorth
+    Kaajh'Kaalbh
+    Lu-Kthu
+    Mh'ithrha
+    Mlandoth and Mril Thorion
+    Mother of Pus
+    The Nameless Mist
+    Ngyr-Korath
+    Nyarlathotep
+    Nyctelios
+    Ny-Rakath
+    Olkoth
+    Shabbith-Ka
+    Shub-Niggurath
+    Star Mother
+    Suc'Naath
+    Tru'nembra
+    Tulzscha
+    Ubbo-Sathla
+    Uvhash
+    Xa'ligha
+    Xexanoth
+    Ycnàgnnisssz
+    Yhoundeh
+    Yibb-Tstll
+    Yidhra
+    Yog-Sothoth
+    Yomagn'tho
+    
+horrorterrorname_greatoldone
+    ?epithet: The Great Old One
+    
+    Abholos
+        epithet: Devourer in the Mist
+    Alala
+        epithet: Herald of S'glhuo
+    Ammutseba
+        epithet: Devourer of Stars
+    Amon-Gorloth
+        epithet: Creator of the Nile and Universe's Equilibrium
+    Aphoom-Zhah
+        epithet: The Cold Flame
+    Arwassa
+        epithet: The Silent Shouter on the Hill
+    Atlach-Nacha
+        epithet: The Spinner in Darkness
+    Ayi'ig
+        epithet: The Serpent Goddess
+    Aylith
+        epithet: The Widow in the Woods
+    Baoht Z'uqqa-Mogg
+        epithet: The Bringer of Pestilence
+    Basatan
+        epithet: Master of the Crabs
+    B’gnu-Thun
+        epithet: The Soul-Chilling Ice-God
+    Bokrug
+        epithet: The Doom of Sarnath
+    Bugg-Shash
+        epithet: He Who Comes in the Dark
+    Byatis
+        epithet: The Berkeley Toad
+    Chaugnar Faugn
+        epithet: The Horror from the Hills
+    Coatlicue
+        epithet: Serpent Skirted One
+    Coinchenn
+    Crom Cruach
+        epithet: Master of the Runes
+    Cthaat
+        epithet: The Dark Water God
+    Cthaeghya 
+    Cthugha
+        epithet: The Living Flame
+    Cthulhu
+        epithet: The Call of Cthulhu
+    Cthylla
+        epithet: Secret Daughter of Cthulhu
+    Ctoggha
+        epithet: The Dream-Daemon
+    Cyäegha
+        epithet: The Destroying Eye
+    Cynothoglys
+        epithet: She Whose Hand Embalms
+    Dhumin
+        epithet: The Burrower from the Bluff
+    The Dweller in the Gulf
+        epithet: Eidolon of the Blind
+    Dygra
+        epithet: The Stone-Thing
+    Dythalla
+        epithet: Lord of Lizards
+    Dzéwà
+        epithet: The White God
+    Eihort
+        epithet: God of the Labyrinth
+    Ei'lor
+        epithet: The Star-Seed
+    Etepsed Egnis
+    Ghadamon
+        epithet: A Seed of Azathoth
+    Ghatanothoa
+        epithet: Lord of the Volcano
+    Ghisguth
+        epithet: The Sound of Deep Waters
+    Gi-Hoveg
+        epithet: The Aether Anemone
+    Glaaki
+        epithet: The Inhabitant of the Lake
+    Gleeth
+        epithet: The Blind God of the Moon
+    Gloon
+        epithet: The Corrupter of Flesh
+    Gobogeg
+        epithet: The Twice-Invoked
+    God of the Red Flux
+    Gog-Hoor
+        epithet: Eater of the Insane
+    Golgoroth
+        epithet: God of the Black Stone
+    Golothess
+    The Green God
+        epithet: The Horror Under Warrendown
+    Groth-Golka
+        epithet: The Demon Bird-God
+    Gtuhanai
+        epithet: The Destroyer God of the Aartnna
+    Gurathnaka
+        epithet: The Eater of Dreams
+    Gur'la-ya
+        epithet: The Lurker in the Doom-laden Shadows
+    Gwarloth
+    Gzxtyos
+        epithet: Mate of Othuyeg
+    Han
+        epithet: The Dark One
+    Hastalÿk
+        epithet: The Contagion
+    Hastur
+        epithet: #hastur_epithets#
+    H’chtelegoth
+        epithet: The Great Tentacled God
+    Haiogh-Yai
+        epithet: The Outsider
+    Hnarqu
+        epithet: The Great One
+    Hziulquoigmnzhah
+        epithet: The God of Cykranosh
+    Idh-yaa
+        epithet: Xothic Matriarch
+    Inpesca
+        epithet: The Sea Horror
+    Iod
+        epithet: The Shining Hunter
+    Istasha
+        epithet: Mistress of Darkness
+    Ithaqua
+        epithet: God of the Cold White Silence
+    Janai'ngo
+        epithet: Guardian and the Key of the Watery Gates
+    Juk-Shabb
+        epithet: God of Yekub
+    Kaalut
+        epithet: The Ravenous One
+    Kag'Naru of the Air
+    Kassogtha
+        epithet: The Leviathan of Diseases
+    Kaunuzoth
+        epithet: Cannoosut
+    Khal'kru
+        epithet: All-in-All
+    Klosmiebhyx
+    K'nar'st
+        epithet: Spawn of the Forgotten
+    Krang
+        epithet: The Dead One
+    Kthaw'keth
+        epithet: the Scourge of Yaksh
+    Kurpannga
+        epithet: The Devil-dingo
+    Lam
+        epithet: The Grey
+    Lexur'iga-serr'roth
+        epithet: He Who Devours All in the Dark
+    Lythalia
+        epithet: The Forest-Goddess
+    Mappo no Ryujin
+        epithet: Harbinger of Doom
+    M’basui Gwandu
+        epithet: The River Abomination
+    M'Nagalah
+        epithet: The Devourer
+    Mnomquah
+        epithet: Lord of the Black Lake
+    Mordiggian
+        epithet: Lord of Zul-Bha-Sair
+    Mormo
+        epithet: The Thousand-Faced Moon
+    Mortllgh
+        epithet: Storm of Steel
+    Mynoghra
+        epithet: She-Daemon of the Shadows
+    Nctosa & Nctolhu
+        epithet: The Twin Spawn of Cthulhu
+    Ngirrth’lu
+        epithet: The Stalker in the Snows
+    Northot
+        epithet: The Thing That Should Not Be
+    Nssu-Ghahnb
+        epithet: The Heart of the Ages
+    Nug and Yeb
+        epithet: The Twin Blasphemies
+    Nyaghoggua
+        epithet: The Kraken Within
+    Nycrama
+        epithet: The Zombifying Essence
+    Nyogtha
+        epithet: The Haunter of the Red Abyss
+    Ob'mbu
+        epithet: The Shatterer
+    Oorn
+        epithet: Mnomquah's Mate
+    Othuum
+        epithet: The Oceanic Horror
+    Othuyeg
+        epithet: The Doom-Walker
+    Perse
+    Pharol
+        epithet: Pharol the Black
+    Psuchawrl
+        epithet: The Elder One
+    Ptar-Axtlan
+        epithet: The Leopard That Stalks the Night
+    Quachil Uttaus
+        epithet: Treader of the Dust
+    Quyagen
+        epithet: The Eye of Z'ylsm
+    Q'yth-az
+        epithet: The Crystalloid Intellect
+    Raandaii-B'nk
+    Ragnalla
+        epithet: The Seeker in the Skies
+    Raphanasuan
+        epithet: The One from the Sun Race
+    Rhagorthua
+        epithet: Father of All Winds
+    Rhan-Tegoth
+        epithet: He of the Ivory Throne
+    Rhogog
+        epithet: The Bearer of the Cup of the Blood of the Ancients
+    Rh'Thulla of the Wind
+    Rlim Shaikorth
+        epithet: The White Worm
+    Rokon
+    Saaitii
+        epithet: The Hog
+    Scathach
+    Sedmelluq
+        epithet: The Great Manipulator
+    Sfatlicllp
+        epithet: The Fallen Wisdom
+    Shaklatal
+        epithet: The Eye of Wicked Sight
+    Shathak
+        epithet: Mistress of the Abyssal Slime
+    Shaurash-Ho
+    Sheb-Teth
+        epithet: The Devourer of Souls
+    Shista
+        epithet: The God of Fidelity
+    Shlithneth
+    Sho-Gath
+        epithet: The God in the Box
+    Shterot
+        epithet: The Tenebrous One
+    Shudde M'ell
+        epithet: The Burrower Beneath
+    Shuy-Nihl
+        epithet: The Devourer in the Earth
+    Sthanee
+        epithet: The Lost One
+    S'tya-Yg'Nalle
+        epithet: The Whiteness
+    Summanus
+        epithet: The Terror that Walketh in Darkness
+    Swarog
+    Thanaroa
+        epithet: The Shining One
+    Tharapithia
+        epithet: The Shadow in the Crimson Light
+    Thasaidon
+        epithet: The Master of the Endless Void
+    Thog
+        epithet: The Demon-God of Xuthal
+    Toth
+    Th'rygh
+        epithet: The God-Beast
+    Tsathoggua
+        epithet: The Sleeper of N'kai
+    Tulushuggua
+        epithet: The Watery Dweller Beneath
+    Turua
+        epithet: Father of the Swamps
+    Uitzilcapac
+        epithet: The Lord of Pain
+    Ut'Ulls-Hr'Her
+        epithet: The Black Glory of Creation
+    Vhuzompha
+        epithet: Mother and Father to All Marine Life
+    Vibur
+        epithet: The Thing from Beyond
+    Vile-Oct
+    Volgna-Gath
+        epithet: the Keeper of Secrets
+    Voltiyig
+        epithet: Yig's Terrifying Son
+    Vthyarilops
+        epithet: The Starfish God
+    Vulthoom
+        epithet: 
+    The Worm that Gnaws in the Night
+        epithet: The Doom of Shaggai
+    Xalafu
+        epithet: The Dread One
+    Xcthol
+        epithet: The Goat God
+    Xinlurgash
+        epithet: The Ever-Consuming
+    Xirdneth
+        epithet: The Lord of Unreality
+    Xitalu
+        epithet: The Being of Higher Dimension
+    Xotli
+        epithet: The Black Kraken of Atlantis
+    Xoxiigghua
+    Yegg-Ha
+        epithet: The Faceless One
+    Y'golonac
+        epithet: The Defiler
+    Yhagni
+    Yhashtur
+        epithet: The Worm-God of the Lords of Thule
+    Yig
+        epithet: Father of Serpents
+    Y'lla
+        epithet: Master of the Seas
+    'Ymnar
+        epithet: The Dark Stalker
+    Yog-Sapha
+        epithet: The Lord of the Things Which Dwell Beneath the Surface
+    Yorith
+        epithet: The Oldest Dreamer
+    Ysbaddaden
+        epithet: The Chief of the Giants
+    Ythogtha
+        epithet: The Thing in the Pit
+    Yug-Siturath
+        epithet: The All-Consuming Fog
+    Zathog
+        epithet: The Black Lord of Whirling Vortices
+    Zhar and Lloigor
+        epithet: The Twin Obscenities
+    Zindarak
+        epithet: The Fiery Messenger
+    Zoth-Ommog
+        epithet: The Dweller in the Depths
+    Zstylzhemghi
+        epithet: Matriarch of Swarms
+    Zushakon
+        epithet: Old Night
+    Z'toggua
+    Zvilpogghua
+        epithet: The Feaster from the Stars
+
+hastur_epithets
+    The King in Yellow: 1.0
+    He Who is Not to be Named: 2.0
+    The Unspeakable: 1.5
+    Lord of Interstellar Spaces: 1.0
+    The Peacock King: 0.75
+    Zukala-Koth: 0.2
+    
+    
+//#############################################################################################
+// SUPERBSUCK
+//#############################################################################################
+
+//gonna mix some regular human names into this because I think it'll be funny that way
+
+suckname_all
+    #suckname_first# #wigglername_last#
+    
+suckname_first
+    @wigglername_first
+    @wigglername_first
+    @wigglername_first
+    @kidname_first
+
+//#############################################################################################
+// CARAPACIANS
+//#############################################################################################
+
+carapacename_all
+    #carapacename_first# #carapacename_last#
+
+carapacename_first
+    @carapacename_first_canon
+    @carapacename_first_sim
+
+carapacename_first_canon
+    @carapacename_first_a_canon
+    @carapacename_first_b_canon
+    @carapacename_first_c_canon
+    @carapacename_first_d_canon
+//    @carapacename_first_e_canon
+//    @carapacename_first_f_canon
+//    @carapacename_first_g_canon
+    @carapacename_first_h_canon
+//    @carapacename_first_i_canon
+    @carapacename_first_j_canon
+//    @carapacename_first_k_canon
+//    @carapacename_first_l_canon
+    @carapacename_first_m_canon
+    @carapacename_first_n_canon
+//    @carapacename_first_o_canon
+    @carapacename_first_p_canon
+//    @carapacename_first_q_canon
+//    @carapacename_first_r_canon
+    @carapacename_first_s_canon
+//    @carapacename_first_t_canon
+//    @carapacename_first_u_canon
+//    @carapacename_first_v_canon
+    @carapacename_first_w_canon
+//    @carapacename_first_x_canon
+//    @carapacename_first_y_canon
+//    @carapacename_first_z_canon
+
+carapacename_first_sim
+    @carapacename_first_a_sim
+    @carapacename_first_b_sim
+    @carapacename_first_c_sim
+    @carapacename_first_d_sim
+    @carapacename_first_e_sim
+//    @carapacename_first_f_sim
+    @carapacename_first_g_sim
+    @carapacename_first_h_sim
+//    @carapacename_first_i_sim
+    @carapacename_first_j_sim
+    @carapacename_first_k_sim
+//    @carapacename_first_l_sim
+    @carapacename_first_m_sim
+    @carapacename_first_n_sim
+//    @carapacename_first_o_sim
+    @carapacename_first_p_sim
+//    @carapacename_first_q_sim
+    @carapacename_first_r_sim
+    @carapacename_first_s_sim
+//    @carapacename_first_t_sim
+//    @carapacename_first_u_sim
+//    @carapacename_first_v_sim
+    @carapacename_first_w_sim
+//    @carapacename_first_x_sim
+    @carapacename_first_y_sim
+    @carapacename_first_z_sim
+    
+
+carapacename_last
+    @carapacename_last_canon
+    @carapacename_last_sim
+
+carapacename_last_canon
+//    @carapacename_last_a_canon
+    @carapacename_last_b_canon
+//    @carapacename_last_c_canon
+    @carapacename_last_d_canon
+//    @carapacename_last_e_canon
+//    @carapacename_last_f_canon
+//    @carapacename_last_g_canon
+//    @carapacename_last_h_canon
+//    @carapacename_last_i_canon
+//    @carapacename_last_j_canon
+    @carapacename_last_k_canon
+//    @carapacename_last_l_canon
+    @carapacename_last_m_canon
+//    @carapacename_last_n_canon
+//    @carapacename_last_o_canon
+    @carapacename_last_p_canon
+    @carapacename_last_q_canon
+    @carapacename_last_r_canon
+    @carapacename_last_s_canon
+//    @carapacename_last_t_canon
+//    @carapacename_last_u_canon
+    @carapacename_last_v_canon
+//    @carapacename_last_w_canon
+//    @carapacename_last_x_canon
+//    @carapacename_last_y_canon
+//    @carapacename_last_z_canon
+
+carapacename_last_sim
+    @carapacename_last_a_sim
+    @carapacename_last_b_sim
+    @carapacename_last_c_sim
+    @carapacename_last_d_sim
+    @carapacename_last_e_sim
+//    @carapacename_last_f_sim
+//    @carapacename_last_g_sim
+//    @carapacename_last_h_sim
+    @carapacename_last_i_sim
+//    @carapacename_last_j_sim
+    @carapacename_last_k_sim
+//    @carapacename_last_l_sim
+    @carapacename_last_m_sim
+    @carapacename_last_n_sim
+//    @carapacename_last_o_sim
+    @carapacename_last_p_sim
+//    @carapacename_last_q_sim
+    @carapacename_last_r_sim
+    @carapacename_last_s_sim
+//    @carapacename_last_t_sim
+    @carapacename_last_u_sim
+    @carapacename_last_v_sim
+//    @carapacename_last_w_sim
+//    @carapacename_last_x_sim
+//    @carapacename_last_y_sim
+//    @carapacename_last_z_sim
+
+queenname_first
+    @carapacename_first_b_canon
+    @carapacename_first_b_sim
+    @carapacename_first_w_canon
+    @carapacename_first_w_sim
+queenname_last
+    @carapacename_last_q_canon
+    @carapacename_last_q_sim
+
+//######################################################
+// CARAPACE FIRST NAMES
+//######################################################
+
+carapacename_first_a_canon
+    Aimless
+    Authority
+    Armaments
+
+carapacename_first_b_canon
+    Black
+    Banished
+
+carapacename_first_c_canon
+    Courtyard
+    Clubs
+
+carapacename_first_d_canon
+    Draconian
+    Diamonds
+
+//carapacename_first_e_canon
+//carapacename_first_f_canon
+//carapacename_first_g_canon
+
+carapacename_first_h_canon
+    Hegemonic
+    Hearts
+
+//carapacename_first_i_canon
+
+carapacename_first_j_canon
+    Jack
+
+//carapacename_first_k_canon
+//carapacename_first_l_canon
+
+carapacename_first_m_canon
+    Ms.
+
+carapacename_first_n_canon
+    Noir
+
+//carapacename_first_o_canon
+
+carapacename_first_p_canon
+    Peregrine
+    Postal
+    Prospitian
+
+//carapacename_first_q_canon
+//carapacename_first_r_canon
+
+carapacename_first_s_canon
+    Spades
+    Sovereign
+    Scurrilous
+
+//carapacename_first_t_canon
+//carapacename_first_u_canon
+//carapacename_first_v_canon
+
+carapacename_first_w_canon
+    White
+    Writ
+    Windswept
+    Wayward
+    Warweary
+    Wizardly
+    Wastelandic
+
+//carapacename_first_x_canon
+//carapacename_first_y_canon
+//carapacename_first_z_canon
+
+carapacename_first_a_sim
+    Ace
+    Audacious
+    Asshole
+    Authority
+    Aimless
+    Authoritarian
+    Agitated
+    Amethyst
+    Absurd
+    Abstaining
+carapacename_first_a_sim_crowned
+    Ascended
+    Ascendant
+    Adamant
+
+carapacename_first_b_sim
+    Beetle
+    Butterfly
+    Bug
+carapacename_first_b_sim_crowned
+    Brigand
+
+carapacename_first_c_sim
+    Cordial
+    Courtyard
+    Clubs
+    Curious
+    Cheerful
+    Cheery
+    Chipper
+    Clutzy
+    Chaotic
+carapacename_first_c_sim_crowned
+    Crowned
+    Capering
+    Chaotic
+    Collateral
+    Clever
+    Creative
+    Classy
+    Calamitous
+
+carapacename_first_d_sim
+    Diamonds
+    Draconian
+    Dignified
+    Deep
+    Drunk
+    Dance
+    Delusory
+carapacename_first_d_sim_crowned
+    Dashing
+    Dartabout
+    Derelict
+    Doom
+
+carapacename_first_e_sim
+    Eldritch
+    Eccentric
+    Eclectic
+carapacename_first_e_sim_crowned
+    Efflorant
+
+//carapacename_first_f_sim
+
+carapacename_first_g_sim
+    Gooby
+    Garrulous
+    Gourmet
+    Gourmand
+    Gastronomical
+carapacename_first_g_sim_crowned
+    Gluttonous
+
+carapacename_first_h_sim
+    Hearts
+    Hegemonic
+    Horse
+    Heavy
+    Handsome
+    Hysterical
+    Haunting
+    Honored
+    Holy
+    Happy
+    High
+carapacename_first_h_sim_crowned
+    Herokilling
+    Hateful
+    Hazardous
+    Hallowed
+
+//carapacename_first_i_sim
+
+carapacename_first_j_sim
+    Jazz
+    Jazzed
+    Jazzy
+carapacename_first_j_sim_crowned
+    Jilted
+
+carapacename_first_k_sim
+    Kid
+    Kind
+    Keen
+    Knave
+carapacename_first_k_sim_crowned
+    Knight
+
+//carapacename_first_l_sim
+
+carapacename_first_m_sim
+    Ms.
+    Mirthful
+    Majestic
+    Mrs.
+    Miss
+    Morbid
+    Malicious
+    Medical
+    Meticulous
+    Miles
+    Maverick
+    Mass
+    Mobster
+    Monster
+    Maestro
+    Mafia
+carapacename_first_m_sim_crowned
+    Massacre
+    Malpracticing
+    Mass
+    Master
+
+carapacename_first_n_sim
+    Nervous
+    Naive
+    Nice
+carapacename_first_n_sim_crowned
+    Notorious
+    Neverending
+
+//carapacename_first_o_sim
+
+carapacename_first_p_sim
+    Problem
+    Parchment
+    Pedant
+    Paramount
+    Patriotic
+    Persistent
+    Pickle
+    Persnickety
+    Parcel
+    Perigrine
+    Postal
+    Prospitian
+    Persevering
+    Punctual
+    Persistent
+carapacename_first_p_sim_crowned
+    Paragon
+    Promised
+    Patient
+    Peaceful
+    Punititve
+    Prospitian
+    Purple
+
+//carapacename_first_q_sim
+
+carapacename_first_r_sim
+    Royal
+    Regal
+    Rolling
+carapacename_first_r_sim_crowned
+    Rampaging
+
+carapacename_first_s_sim
+    Spades
+    Septuple
+    Six
+    Skullduggerous
+    Silicon
+    Sparky
+    Saddened
+    Stupid
+    Steven
+    Sally
+carapacename_first_s_sim_crowned
+    Sovereign
+    Seven
+    String
+    Sans
+
+//carapacename_first_t_sim
+//carapacename_first_u_sim
+//carapacename_first_v_sim
+
+carapacename_first_w_sim
+    Wayward
+    Wizardly
+    Warweary
+    Wandering
+carapacename_first_w_sim_crowned
+    Wicked
+
+//carapacename_first_x_sim
+
+carapacename_first_y_sim
+    Yogistic
+    Yard
+    Yelling
+carapacename_first_y_sim_crowned
+
+carapacename_first_z_sim
+    Zipping
+    Zany
+    Zephyr
+carapacename_first_z_sim_crowned
+    Zero
+
+
+//######################################################
+// CARAPACE LAST NAMES
+//######################################################
+
+//carapacename_last_a_canon
+
+carapacename_last_b_canon
+    Brute
+    Boxcars
+
+//carapacename_last_c_canon
+
+carapacename_last_d_canon
+    Droll
+    Deuce
+    Dignitary
+    Droog
+
+//carapacename_last_e_canon
+//carapacename_last_f_canon
+//carapacename_last_g_canon
+//carapacename_last_h_canon
+//carapacename_last_i_canon
+//carapacename_last_j_canon
+
+carapacename_last_k_canon
+    King
+    Keeper
+
+//carapacename_last_l_canon
+
+carapacename_last_m_canon
+    Mendicant
+    Mistress
+    Monarch
+
+//carapacename_last_n_canon
+//carapacename_last_o_canon
+
+carapacename_last_p_canon
+    Paint
+
+carapacename_last_q_canon
+    Queen
+    Questant
+    Quasiroyal
+
+carapacename_last_r_canon
+    Renegade
+    Regulator
+    Regent
+
+carapacename_last_s_canon
+    Slick
+    Slayer
+    Straggler
+
+//carapacename_last_t_canon
+//carapacename_last_u_canon
+
+carapacename_last_v_canon
+    Vagabond
+    Villein
+    Vassal
+    Vindicator
+
+//carapacename_last_w_canon
+//carapacename_last_x_canon
+//carapacename_last_y_canon
+//carapacename_last_z_canon
+
+carapacename_last_a_sim
+    Acolyte
+    Alien
+    Advocate
+carapacename_last_a_sim_crowned
+    Atronach
+
+carapacename_last_b_sim
+    Brute
+    Boxcar
+    Bartender
+    Brawler
+    Beefcake
+    Broad
+    Bird
+    Bartender
+    Baker
+    Breakmaker
+    Breadmaker
+    Boi
+carapacename_last_b_sim_crowned
+    Beast
+    Bastard
+    Bard
+    Bloodshed
+    Butcher
+    Boi
+    
+carapacename_last_c_sim
+    Coach
+    Coaster
+    Coder
+    Copycat
+    Citrine
+    Cobalt
+    Crystal
+carapacename_last_c_sim_crowned
+    Casualties
+    Caretaker
+
+carapacename_last_d_sim
+    Deuce
+    Droll
+    Dabbler
+    Demoman
+    Dwarf
+    Dunce
+    Droog
+    Dignitary
+    Diplomat
+    Detective
+    Dwarf
+    Dick
+    Dame
+    Dancer
+    Debutante
+    Doctor
+    Deputy
+    Dentist
+    Dark
+    Doctor
+carapacename_last_d_sim_crowned
+    Destroyer
+    Demigod
+    Demon
+    Demoness
+    Despot
+    Dacnomaniac
+
+carapacename_last_e_sim
+    Edgeworth
+    Egoist
+    Engineer
+    Edge
+    Effect
+    Enthusiast
+    Entomologist
+    Enquirer
+    Entertainer
+    Executant
+    Educator
+    Enchanter
+carapacename_last_e_sim_crowned
+    Effect
+    Eclectica
+    Executioner
+
+//carapacename_last_f_sim
+//carapacename_last_g_sim
+//carapacename_last_h_sim
+
+carapacename_last_i_sim
+    Inspector
+    Innovator
+    Investegator
+    Illuminator
+    Inventress
+    Introvert
+carapacename_last_i_sim_crowned
+    Idol
+    Inversion
+    Incarnation
+    
+//carapacename_last_j_sim
+
+carapacename_last_k_sim
+    Kingpin
+    Killer
+    Kilo
+    Kaiser
+carapacename_last_k_sim_crowned
+    Kriminal
+
+//carapacename_last_l_sim
+
+carapacename_last_m_sim
+    Mistress
+    Mendicate
+    Mailer
+    Maillady
+carapacename_last_m_sim_crowned
+    Marauder
+    Monarch
+
+carapacename_last_n_sim
+    Nutritionist
+    Noodle
+    Nibbler
+    Nourisher
+carapacename_last_n_sim_crowned
+    Newt
+
+//carapacename_last_o_sim
+
+carapacename_last_p_sim
+    Paper
+    Paint
+    Painter
+    Philanthropist
+    Practitioner
+    Philosopher
+    Pundit
+    Preacher
+    Pediatrician
+    Priest
+    Pope
+carapacename_last_p_sim_crowned
+    Primer
+    Prophet
+    Patrician
+
+//carapacename_last_q_sim
+
+carapacename_last_r_sim
+    Regulator
+    Renegade
+    Radical
+    Rifleer
+carapacename_last_r_sim_crowned
+    Rioter
+    
+carapacename_last_s_sim
+    Slick
+    Shanks
+    Shankmaster
+    Snake
+    Sleuth
+    Secretary
+    Steward
+    Singer
+    Songstress
+    Savant
+carapacename_last_s_sim_crowned
+    Slayer
+    Shiv
+    Stabber
+    Sherrif
+    Savior
+    Seraph
+    Seductress
+
+//carapacename_last_t_sim
+
+carapacename_last_u_sim
+    Und
+    Universe
+    Uncovered
+carapacename_last_u_sim_crowned
+    Undertale
+
+carapacename_last_v_sim
+    Vagrant
+    Villein
+    Vassal
+    Villager
+carapacename_last_v_sim_crowned
+    Villain
+
+//carapacename_last_w_sim
+//carapacename_last_x_sim
+//carapacename_last_y_sim
+//carapacename_last_z_sim
+
+
+//#############################################################################################
+// SATYRS
+//#############################################################################################
+
+//Ancient Greek names, five letters long. Setup like this to leave room for other types of names or specific named characters.
+satyrname_all
+    @satyrname_greek
+    
+//######################################################
+// SATYR NAMES
+//######################################################
+
+satyrname_greek
+    Abgar
+    Actor
+    Adeia
+    Aedon
+    Aegle
+    Aegon
+    Aeson
+    Aesop
+    Aetes
+    Agape
+    Agave
+    Aketa
+    Aktis
+    Aktor
+    Alcon
+    Altes
+    Anais
+    Ancus
+    Arcas
+    Ardys
+    Arete
+    Arges
+    Argos
+    Arion
+    Asius
+    Aster
+    Athis
+    Atlas
+    Attis
+    Audax
+    Azeus
+    Bacis
+    Belos
+    Biton
+    Borus
+    Boter
+    Bulis
+    Chloë
+    Cilix
+    Cilla
+    Circe
+    Cleon
+    Cobon
+    Coeus
+    Conon
+    Crios
+    Crisa
+    Cylon
+    Damia
+    Damon
+    Danaë
+    Dares
+    Davos
+    Demas
+    Dione
+    Dirce
+    Dolon
+    Doris
+    Doros
+    Dryas
+    Duris
+    Dymas
+    Egina
+    Eleon
+    Elpir
+    Enops
+    Erato
+    Eurus
+    Evios
+    Gelon
+    Glyke
+    Gorgo
+    Gyges
+    Gyras
+    Hades
+    Halie
+    Helle
+    Hiero
+    Hylas
+    Hymen
+    Iaera
+    Iamus
+    Iasos
+    Iasus
+    Idaca
+    Idaea
+    Iphis
+    Irene
+    Ision
+    Kapys
+    Kasos
+    Kebes
+    Khlöe
+    Kimon
+    Kleio
+    Konon
+    Korax
+    Kotys
+    Kreon
+    Kynna
+    Kyros
+    Labda
+    Lagos
+    Laios
+    Lamia
+    Lampo
+    Lamus
+    Lasos
+    Leuce
+    Linus
+    Lukos
+    Lycus
+    Lydus
+    Lykon
+    Lysis
+    Macar
+    Maeon
+    Maera
+    Males
+    Maron
+    Medea
+    Medon
+    Medus
+    Meges
+    Melas
+    Meles
+    Metis
+    Meton
+    Midas
+    Mikon
+    Milto
+    Minas
+    Minos
+    Morys
+    Mydon
+    Myrto
+    Nicon
+    Nilus
+    Niobe
+    Nisos
+    Notus
+    Nyssa
+    Ochos
+    Odius
+    Onias
+    Orcus
+    Orges
+    Orion
+    Orius
+    Paios
+    Pales
+    Paris
+    Perse
+    Phaia
+    Phylo
+    Pluto
+    Podes
+    Poeas
+    Poros
+    Priam
+    Prone
+    Proto
+    Pylas
+    Pylia
+    Pyris
+    Raisa
+    Rhene
+    Rhoda
+    Rhode
+    Ribes
+    Rizon
+    Sabas
+    Sinis
+    Sinon
+    Socus
+    Speio
+    Talos
+    Telys
+    Tenes
+    Teres
+    Teuta
+    Thais
+    Theas
+    Thebe
+    Theos
+    Thero
+    Thoas
+    Thoön
+    Thyia
+    Timon
+    Tuche
+    Tyche
+    Zetes
+
+//#############################################################################################
+// BROOMS
+//#############################################################################################
+
+brooms
+    Air Wave Gold
+    Australian Flyabout
+    Bluebottle
+    Cleansweep Eleven
+    Cleansweep Five
+    Cleansweep One
+    Cleansweep Seven
+    Cleansweep Six
+    Cleansweep Three
+    Cleansweep Two
+    Comet 140
+    Comet 180
+    Comet 260
+    Comet 290
+    Firebolt
+    Firebolt Supreme
+    Moontrimmer
+    Nimbus 1000
+    Nimbus 1001
+    Nimbus 1500
+    Nimbus 1700
+    Nimbus 2000
+    Nimbus 2001
+    Oakshaft 79
+    Shooting Star
+    Siberian Arrow
+    Silver Arrow
+    Starsweeper XXI
+    Swiftstick
+    Thunderbolt VII
+    Tinderblast
+    Transylvanian Barb
+    Turbo XXX
+    Twigger 90
+    Varápidos
+    Yajirushi
+    Broomy McBroomface
+    The Staff of Faygo
+    Shovelator
+    My Stick
+    The Impaler

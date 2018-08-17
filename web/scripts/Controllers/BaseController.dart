@@ -5,6 +5,7 @@ import "package:DollLibCorrect/DollRenderer.dart";
 import "../DollMakerTools.dart";
 import "../navbar.dart";
 import "dart:async";
+
 //bluh
 class BaseController {
     Doll doll;
@@ -25,6 +26,7 @@ class BaseController {
 
     AnchorElement casteLink;
     AnchorElement signLink;
+    TextInputElement nameForm;
 
 
 
@@ -114,13 +116,13 @@ class BaseController {
 
         ButtonElement copyButton = querySelector("#copyButton");
         LabelElement nameLabel = new LabelElement()..text = "Name:";
-        TextInputElement name = new TextInputElement();
-        name.value = doll.dollName;
+        nameForm = new TextInputElement();
+        nameForm.value = doll.dollName;
 
 
 
         TextAreaElement dataBox = querySelector("#shareableURL");
-        querySelector("#samplePaletteControls").append(nameLabel)..append(name);
+        querySelector("#samplePaletteControls").append(nameLabel)..append(nameForm);
         dataBox.value = "${window.location.origin}${window.location.pathname}?${doll.toDataUrlPart()}";
         copyButton.onClick.listen((Event e) {
             TextAreaElement dataBox = querySelector("#shareableURL");
@@ -131,8 +133,8 @@ class BaseController {
         setupLinks(querySelector("#info"));
 
 
-        name.onInput.listen((Event e) {
-            doll.dollName = name.value;
+        nameForm.onInput.listen((Event e) {
+            doll.dollName = nameForm.value;
             syncLinks();
             dataBox.value = "${window.location.origin}${window.location.pathname}?${doll.toDataUrlPart()}";
         });
@@ -208,6 +210,8 @@ class BaseController {
 
     Future<Null> drawDollCreator([bool inQueue = false]) async {
 
+        await doll.setNameFromEngine();
+        nameForm.value = doll.dollName;
         if(doll is EasterEggDoll) {
             if(eastereggLink == null) {
                 eastereggLink = new AnchorElement(href: (doll as EasterEggDoll).getEasterEgg());

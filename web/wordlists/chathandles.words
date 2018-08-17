@@ -1,0 +1,1537 @@
+TextEngine Word List
+
+// chatHandles
+// by KR
+
+
+
+chathandle_sim
+    #chathandle_sim_first##chathandle_sim_last#
+
+//interests are listed twice to simulate rate of occurence within the sim
+chathandle_sim_first
+    @classchat_all
+    @interestchat_by_interest
+    @interestchat_by_interest
+chathandle_sim_last
+    @aspecthandle_all
+    @interesthandle_by_interest
+    @interesthandle_by_interest
+
+
+//#############################################################################################
+// CHAT CLIENTS
+//#############################################################################################
+
+chatclients
+    Pesterchum
+    Trollian
+    BettyBother
+    Delirious Biznasty
+    Serious Business
+    Rebelgram
+    
+
+//#############################################################################################
+// CANON
+//#############################################################################################
+
+chathandle_kid
+    ghostyTrickster
+        short: GT
+    ectoBiologist
+        short: EB
+    tentacleTherapist
+        short: TT
+    turntechGodhead
+        short: TG
+    gardenGnostic
+        short: GG
+    gutsyGumshoe
+        short: GG
+    tipsyGnostalgic
+        short: TG
+    timaeusTestified
+        short: TT
+    golgothasTerror
+        short: GT
+
+chathandle_troll
+    apocalypseArisen
+        short: AA
+    adiosToreador
+        short: AT
+    twinArmageddons
+        short: TA
+    carcinoGeneticist
+        short: CG
+    arsenicCatnip
+        short: AC
+    grimAuxiliatrix
+        short: GA
+    gallowsCalibrator
+        short: GC
+    arachnidsGrip
+        short: AG
+    centaursTesticle
+        short: CT
+    terminallyCapricious
+        short: TC
+    caligulasAquarium
+        short: CA
+    cuttlefishCuller
+        short: CC
+
+chathandle_cherub
+    uranianUmbra
+        short: UU
+    undyingUmbrage
+        short: uu
+
+chathandle_seriousbusiness
+    pipefan413
+    fedorafreak
+    grayslacks66
+    wellPressedAttire
+    officeurchin1280
+    2busy4this
+    The Dignitary
+    HATLIKER
+    1dapperblackshell
+    FineryFiend
+    NoNeed4PantsThx
+    ChuffedAboutDuds
+    WANT_MORE_SOCKS
+    )(er Imperious Condescension
+        short: )(IC
+
+
+//#############################################################################################
+// CLASS
+//#############################################################################################
+
+classchat_all
+//    @classchat_bane
+    @classchat_bard
+//    @classchat_dame
+    @classchat_grace
+//    @classchat_guard
+    @classchat_guide
+    @classchat_heir
+    @classchat_knight
+    @classchat_lord
+    @classchat_mage
+    @classchat_maid
+    @classchat_muse
+    @classchat_page
+    @classchat_prince
+    @classchat_rogue
+    @classchat_sage
+    @classchat_scout
+    @classchat_scribe
+    @classchat_seer
+    @classchat_smith
+    @classchat_sylph
+    @classchat_thief
+//    @classchat_ward
+    @classchat_waste
+    @classchat_witch
+//    @classchat_wright
+
+//classchat_bane
+//    blight
+//    bugbear
+//    bruised
+//    breakdown
+//    bilious
+
+classchat_bard
+    bat
+    benign
+    blissful
+    boisterous
+    bonkers
+    broken
+    bizarre
+    barking
+    
+//classchat_dame
+//    doll
+//    duchess
+//    dominating
+//    dainty
+//    dignified
+
+classchat_grace
+    graceful
+    gracious
+    great
+    gratuitous
+    greeting
+    gloved
+    gone
+
+//classchat_guard
+//    guarded
+//    girded
+//    gilt
+//    garrison
+//    gallant
+
+classchat_guide
+    guiding
+    gracious
+    great
+    gratuitous
+    greeting
+    gloved
+    gone
+
+classchat_heir
+    home
+    honorable
+    humble
+    hot
+    horrific
+    hardened
+    havocs
+
+classchat_knight
+    keen
+    knightly
+    kooky
+    kindred
+    kaos
+
+classchat_lord
+    lording
+    leaderly
+    laughing
+    laughsassin
+    lawful
+    lordly
+    legendary
+    legionnaires
+    lacerating
+    lactate
+    legislacerator
+
+classchat_mage
+    magnificent
+    managerial
+    major
+    majestic
+    mannerly
+    malignant
+    morbid
+
+classchat_maid
+    meandering
+    motley
+    musing
+    mischievous
+    macabre
+    maiden
+    morose
+
+classchat_muse
+    magical
+    musing
+    majestic
+    managerial
+
+classchat_page
+    passionate
+    patient
+    peaceful
+    perfect
+    perceptive
+    practical
+    pathetic
+
+classchat_prince
+    precocious
+    priceless
+    proficient
+    prominent
+    proper
+    perfect
+    pantheon
+
+classchat_rogue
+    rouge
+    radical
+    retrobate
+    roguish
+    retroactive
+    robins
+    red
+
+classchat_sage
+    serious
+    sightly
+    sanctimonious
+    sarcastic
+    sassy
+    scintillating
+    synergistic
+    savant
+
+classchat_scout
+    surly
+    sour
+    sweet
+    stylish
+    soaring
+    serene
+    salacious
+
+classchat_scribe
+    serious
+    sightly
+    sanctimonious
+    sarcastic
+    sassy
+    scintillating
+    synergistic
+    savant
+
+classchat_seer
+    sightly
+    sanctimonious
+    sarcastic
+    sassy
+    scintillating
+    synergistic
+    savant
+
+classchat_smith
+    silver
+    skillful
+    standard
+    symbolic
+    snarky
+    scheming
+    shifty
+    stylish
+    serendipitous
+    shallow
+    saucy
+    stimulating
+
+classchat_sylph
+    serious
+    surly
+    sour
+    sweet
+    stylish
+    soaring
+    serene
+    salacious
+
+classchat_thief
+    talented
+    terrible
+    talkative
+    tenacious
+    tried
+    torrented
+
+//classchat_ward
+//    watched
+//    welcome
+//    withheld
+//    warranted
+//    willful
+
+classchat_waste
+    wasteful
+    worrying
+    wacky
+    withering
+    worldly
+    weighty
+
+classchat_witch
+    wondering
+    wonderful
+    wacky
+    withering
+    worldly
+    weighty
+
+//classchat_wright
+//    working
+//    witty
+//    wry
+//    worthy
+//    willful
+
+
+//#############################################################################################
+// ASPECT
+//#############################################################################################
+
+aspecthandle_all
+    @aspecthandle_blood
+    @aspecthandle_breath
+    @aspecthandle_doom
+    @aspecthandle_dream
+//    @aspecthandle_fate
+//    @aspecthandle_flow
+    @aspecthandle_heart
+    @aspecthandle_hope
+//    @aspecthandle_law
+    @aspecthandle_life
+    @aspecthandle_light
+//    @aspecthandle_might
+    @aspecthandle_mind
+//    @aspecthandle_mist
+    @aspecthandle_rage
+//    @aspecthandle_rain
+//    @aspecthandle_rhyme
+//    @aspecthandle_sand
+//    @aspecthandle_sky
+//    @aspecthandle_snow
+    @aspecthandle_space
+//    @aspecthandle_stars
+    @aspecthandle_time
+    @aspecthandle_void
+
+
+aspecthandle_blood
+    Business
+    Buyer
+    Butler
+    Butcher
+    Barber
+    Bowler
+    Belligerent
+
+aspecthandle_breath
+    Business
+    Biologist
+    Backpacker
+    Babysitter
+    Baker
+    Balooner
+    Braid
+ 
+aspecthandle_doom
+    Dancer
+    Dean
+    Decorator
+    Deliverer
+    Director
+    Delegate
+    Destined
+
+aspecthandle_dream
+    Dreamer
+    Dilettante
+    Designer
+    Delusion
+    Dancer
+    Doormat
+    Decorator
+    Delirium
+    Disaster
+    Disorder
+
+//aspecthandle_fate
+//aspecthandle_flow
+
+aspecthandle_heart
+    Heart
+    Hacker
+    Harbinger
+    Handler
+    Helper
+    Historian
+    Hobbyist
+
+aspecthandle_hope
+    Honcho
+    Humorist
+    Horse
+    Haberdasher
+    Hooligan
+
+//aspecthandle_law
+
+aspecthandle_life
+    Leader
+    Lecturer
+    Liaison
+    Loyalist
+    Lyricist
+
+aspecthandle_light
+    Laborer
+    Launderer
+    Layabout
+    Legend
+    Lawyer
+    Lifeguard
+
+//aspecthandle_might
+
+aspecthandle_mind
+    Man
+    Machine
+    Magician
+    Magistrate
+    Mechanic
+    Mediator
+    Messenger
+
+//aspecthandle_mist
+
+aspecthandle_rage
+    Raconteur
+    Reveler
+    Reader
+    Reporter
+    Racketeer
+    
+//aspecthandle_rain
+//aspecthandle_rhyme
+//aspecthandle_sand
+//aspecthandle_sky
+//aspecthandle_snow
+
+aspecthandle_space
+    Stuck
+    Salamander
+    Salientia
+    Spacer
+    Scientist
+    Synergy
+    Spaceman
+
+//aspecthandle_stars
+
+aspecthandle_time
+    Teetotaler
+    Traveler
+    Tailor
+    Taster
+    Target
+    Teacher
+    Therapist
+    Testicle
+
+aspecthandle_void
+    Vagrant
+    Vegetarian
+    Veterinarian
+    Vigilante
+    Virtuoso
+
+
+//#############################################################################################
+// INTEREST
+//#############################################################################################
+
+interestchat_by_interest
+    @interestchat_academic
+    @interestchat_athletic
+    @interestchat_comedy
+    @interestchat_culture
+    @interestchat_domestic
+    @interestchat_fantasy
+    @interestchat_justice
+    @interestchat_music
+    @interestchat_popCulture
+    @interestchat_romantic
+    @interestchat_social
+    @interestchat_technology
+    @interestchat_terrible
+    @interestchat_writing
+
+interestchat_academic
+    biological
+    hypothetical
+    machiavellian
+    meandering
+    measured
+    pants
+    particular
+    pedagogical
+    princeton
+    researching
+    scholarly
+    scholastic
+    scientific
+    scientist
+    serious
+    spectacled
+    theoretical
+
+interestchat_athletic
+    ball
+    brawny
+    burly
+    hard
+    hardy
+    kinetic
+    mighty
+    muscley
+    muscular
+    phenomenal
+    physical
+    preening
+    robust
+    running
+    sports
+    sporty
+    strapping
+    strong
+    sturdy
+    tennis
+    trophy
+    winning
+
+interestchat_comedy
+    beagle
+    haha
+    harlequins
+    hoho
+    humor
+    knavish
+    kooky
+    mercurial
+    mime
+    mischievous
+    pantomime
+    practicing
+    pranking
+    sarcastic
+    satirical
+    talkative
+    wokka
+
+interestchat_culture
+    beautiful
+    haute
+    highbrow
+    keen
+    majestic
+    melodramatic
+    monochrome
+    poetic
+    precise
+    priceless
+    realistic
+    refined
+    sensational
+    serious
+    theatrical
+    watercolor
+
+interestchat_domestic
+    baking
+    home
+    homey
+    knitting
+    mature
+    meddling
+    missing
+    motherly
+    patient
+    recipe
+    rising
+    stylish
+    trendy
+
+interestchat_fantasy
+    best
+    hazy
+    hellkite
+    kappas
+    malachite
+    minotaurs
+    musing
+    pacific
+    peaceful
+    restful
+    serene
+    shivan
+    sylphic
+    sylvan
+    titans
+    witches
+
+interestchat_justice
+    broken
+    hardboiled
+    karmic
+    keen
+    mind
+    mysterious
+    perceptive
+    police
+    retribution
+    saving
+    searching
+    tracking
+    watching
+
+interestchat_music
+    beating
+    harmonious
+    keyboard
+    melodious
+    monotone
+    mozarts
+    musical
+    pianissimo
+    pianist
+    piano
+    pitch
+    polytempo
+    rhythmic
+    serenading
+    singing
+    staccato
+    swelling
+    synthesized
+    tuneful
+    waltzing
+
+interestchat_popCulture
+    bat
+    bitchin
+    heroic
+    knightly
+    mega
+    mighty
+    player
+    power
+    roguish
+    sensational
+    super
+    thors
+    titanic
+    turbo
+    wonder
+    wonderful
+    worthy
+
+interestchat_romantic
+    blushing
+    hearts
+    kinky
+    matchmaking
+    mesmerizing
+    mirrored
+    pairing
+    passionate
+    perverse
+    precious
+    romantic
+    serenading
+    serendipitous
+    true
+    warm
+    wishful
+
+interestchat_social
+    benign
+    honest
+    kind
+    master
+    matchmaking
+    petulant
+    playful
+    precious
+    regular
+    sarcastic
+    social
+    talkative
+    trusting
+    wondering
+
+interestchat_technology
+    battery
+    hardware
+    kilo
+    kludge
+    machinist
+    mechanical
+    pixel
+    programming
+    python
+    robotic
+    serial
+    silicon
+    statistical
+    techno
+    windows
+
+interestchat_terrible
+    bastard
+    hateful
+    hellbound
+    heretical
+    killer
+    master
+    mundane
+    murderous
+    persnickety
+    perverted
+    pungent
+    rough
+    sneering
+    snooty
+    tyranical
+    wasted
+    wicked
+
+interestchat_writing
+    bookish
+    hardcover
+    knowledgeable
+    meandering
+    mysterious
+    page
+    pageturning
+    reporting
+    scribbler
+    scribbling
+    scribing
+    tricky
+    wordsmiths
+    wordy
+    writing
+
+
+interestchat_by_letter
+    @interestchat_b
+    @interestchat_g
+    @interestchat_h
+    @interestchat_k
+    @interestchat_l
+    @interestchat_m
+    @interestchat_p
+    @interestchat_r
+    @interestchat_s
+    @interestchat_t
+    @interestchat_w
+
+interestchat_b
+    ball
+    bastard
+    bat
+    battery
+    beagle
+    beating
+    beautiful
+    benign
+    best
+    biological
+    bitchin
+    blushing
+    bookish
+    brawny
+    broken
+    burly
+
+interestchat_g
+    @classchat_grace
+    @classchat_guide
+
+interestchat_h
+    haha
+    hard
+    hardboiled
+    hardcover
+    hardware
+    hardy
+    harlequins
+    harmonious
+    hateful
+    haute
+    hazy
+    hearts
+    hellbound
+    hellkite
+    heretical
+    heroic
+    highbrow
+    hoho
+    home
+    homey
+    honest
+    humor
+    hypothetical
+
+interestchat_k
+    kappas
+    karmic
+    keen
+    keyboard
+    killer
+    kilo
+    kind
+    kinetic
+    kinky
+    kludge
+    knavish
+    knightly
+    knitting
+    knowledgeable
+    kooky
+
+interestchat_l
+    @classchat_lord
+
+interestchat_m
+    machiavellian
+    machinist
+    majestic
+    malachite
+    master
+    matchmaking
+    mature
+    meandering
+    measured
+    mechanical
+    meddling
+    mega
+    melodious
+    melodramatic
+    mercurial
+    mesmerizing
+    mighty
+    mime
+    mind
+    minotaurs
+    mirrored
+    mischievous
+    missing
+    monochrome
+    monotone
+    motherly
+    mozarts
+    mundane
+    murderous
+    muscley
+    muscular
+    musical
+    musing
+    mysterious
+
+interestchat_p
+    pacific
+    page
+    pageturning
+    pairing
+    pantomime
+    pants
+    particular
+    passionate
+    patient
+    peaceful
+    pedagogical
+    perceptive
+    persnickety
+    perverse
+    perverted
+    petulant
+    phenomenal
+    physical
+    pianissimo
+    pianist
+    piano
+    pitch
+    pixel
+    player
+    playful
+    poetic
+    police
+    polytempo
+    power
+    practicing
+    pranking
+    precious
+    precise
+    preening
+    priceless
+    princeton
+    programming
+    pungent
+    python
+
+interestchat_r
+    realistic
+    recipe
+    refined
+    regular
+    reporting
+    researching
+    restful
+    retribution
+    rhythmic
+    rising
+    robotic
+    robust
+    roguish
+    romantic
+    rough
+    running
+
+interestchat_s
+    sarcastic
+    satirical
+    saving
+    scholarly
+    scholastic
+    scientific
+    scientist
+    scribbler
+    scribbling
+    scribing
+    searching
+    sensational
+    serenading
+    serendipitous
+    serene
+    serial
+    serious
+    shivan
+    silicon
+    singing
+    sneering
+    snooty
+    social
+    spectacled
+    sports
+    sporty
+    staccato
+    statistical
+    strapping
+    strong
+    sturdy
+    stylish
+    super
+    swelling
+    sylphic
+    sylvan
+    synthesized
+
+interestchat_t
+    talkative
+    techno
+    tennis
+    theatrical
+    theoretical
+    thors
+    titanic
+    titans
+    tracking
+    trendy
+    tricky
+    trophy
+    true
+    trusting
+    tuneful
+    turbo
+    tyrannical
+
+interestchat_w
+    waltzing
+    warm
+    wasted
+    watching
+    watercolor
+    wicked
+    windows
+    winning
+    wishful
+    witches
+    wokka
+    wonder
+    wonderful
+    wondering
+    wordsmiths
+    wordy
+    worthy
+    writing
+
+
+interesthandle_by_interest
+    @interesthandle_academic
+    @interesthandle_athletic
+    @interesthandle_comedy
+    @interesthandle_culture
+    @interesthandle_domestic
+    @interesthandle_fantasy
+    @interesthandle_justice
+    @interesthandle_music
+    @interesthandle_popCulture
+    @interesthandle_romantic
+    @interesthandle_social
+    @interesthandle_technology
+    @interesthandle_terrible
+    @interesthandle_writing
+
+interesthandle_academic
+    Biologist
+    Botanist
+    Business
+    Dean
+    Director
+    Herbalist
+    Honcho
+    Lecturer
+    Minder
+    Minerologist
+    Researcher
+    Scholar
+    Scientist
+    Stuck
+    Student
+    Trainee
+    Verbalist
+
+interesthandle_athletic
+    Baller
+    Brawler
+    Brawn
+    Darter
+    Handler
+    Heavy
+    Leaper
+    Major
+    Racer
+    Runner
+    Swimmer
+    Tracker
+    Trainer
+    Vaulter
+
+interesthandle_comedy
+    Baboon
+    Boor
+    Bum
+    Dummy
+    Huckster
+    Humorist
+    Laugher
+    Leaper
+    Mime
+    Raconteur
+    Sellout
+    Silly
+    Trickster
+    Vaudevillian
+
+interesthandle_culture
+    Balmoral
+    Beauty
+    Business
+    Davinci
+    Dramatist
+    Hegemony
+    Hierarchy
+    Librarian
+    Museum
+    Renaissance
+    Repository
+    Treaty
+    Viniculture
+
+interesthandle_domestic
+    Baker
+    Darner
+    Decorator
+    Helper
+    Hestia
+    Launderer
+    Mender
+    Mentor
+    Sewer
+    Tailor
+    Teacher
+    Vegetarian
+
+interesthandle_fantasy
+    Banshee
+    Basilisk
+    Believer
+    Boggart
+    Dragon
+    Dwarf
+    Harpy
+    Lamia
+    Magician
+    Manticore
+    Mermaid
+    Roc
+    Sandman
+    Shinigami
+    Siren
+    Tengu
+    Vampire
+
+interesthandle_justice
+    Defender
+    Detective
+    Laywer
+    Liaison
+    Loyalist
+    Moralist
+    Perception
+    Rebel
+    Retribution
+    Searcher
+    Tracker
+    Vigilante
+    Watchman
+
+interesthandle_music
+    Ballerina
+    Baritone
+    Bass
+    Dancer
+    Harpist
+    Harpsichordist
+    Lutist
+    Lyricist
+    Musician
+    Rapper
+    Singer
+    Siren
+    Tenor
+    Trumpeter
+    Violist
+    Virtuoso
+
+interesthandle_popCulture
+    Blockbuster
+    Buddy
+    Bystander
+    Director
+    Hero
+    Legend
+    Liaison
+    Man
+    Mission
+    Movie
+    Repeat
+    Spy
+    Superhero
+    Supervillain
+    Talent
+    Villain
+
+interesthandle_romantic
+    Beau
+    Beauty
+    Dreamer
+    Heart
+    Hearthrob
+    Magnet
+    Miracle
+    Rainbow
+    Romantic
+    Serendipity
+    Team
+    Virtue
+
+interesthandle_social
+    Bishop
+    Buddy
+    Defender
+    Dog
+    Healer
+    Helper
+    Leader
+    Lender
+    Mender
+    Mentor
+    Rally
+    Socialist
+    Therapist
+    Veterinarian
+
+interesthandle_technology
+    Binary
+    Breaker
+    Data
+    Droid
+    Hacker
+    Haxor
+    L33T
+    Lag
+    Laptop
+    Machine
+    Machinist
+    Robot
+    Roboticist
+    Runner
+    Spaceman
+    Technologist
+    Vaporware
+
+interesthandle_terrible
+    Barbarian
+    Bastard
+    Bitch
+    Blasphemer
+    Butcher
+    Dastard
+    Demigod
+    Demon
+    Despot
+    Devil
+    Hellhound
+    Hoarder
+    Horror
+    Lupin
+    Mindflayer
+    Mummy
+    Shark
+    Superior
+    Tyrant
+    Victim
+
+interesthandle_writing
+    Bard
+    Booker
+    Drifter
+    Hagiomaniac
+    Host
+    Labret
+    Lacuna
+    Missive
+    Reader
+    Shakespeare
+    Thesis
+    Traveler
+    Varvel
+
+
+interesthandle_by_letter
+    @interesthandle_b
+    @interesthandle_d
+    @interesthandle_h
+    @interesthandle_l
+    @interesthandle_m
+    @interesthandle_r
+    @interesthandle_s
+    @interesthandle_t
+    @interesthandle_v
+
+interesthandle_b
+    Baboon
+    Baker
+    Baller
+    Ballerina
+    Balmoral
+    Banshee
+    Barbarian
+    Bard
+    Baritone
+    Basilisk
+    Bass
+    Bastard
+    Beau
+    Beauty
+    Believer
+    Binary
+    Biologist
+    Bishop
+    Bitch
+    Blasphemer
+    Blockbuster
+    Boggart
+    Booker
+    Boor
+    Botanist
+    Brawler
+    Brawn
+    Breaker
+    Buddy
+    Bum
+    Business
+    Butcher
+    Bystander
+
+interesthandle_d
+    Dancer
+    Darner
+    Darter
+    Dastard
+    Data
+    Davinci
+    Dean
+    Decorator
+    Defender
+    Demigod
+    Demon
+    Despot
+    Detective
+    Devil
+    Director
+    Dog
+    Dragon
+    Dramatist
+    Dreamer
+    Drifter
+    Droid
+    Dummy
+    Dwarf
+
+interesthandle_h
+    Hacker
+    Hagiomaniac
+    Handler
+    Harpist
+    Harpsichordist
+    Harpy
+    Haxor
+    Healer
+    Heart
+    Hearthrob
+    Heavy
+    Hegemony
+    Hellhound
+    Helper
+    Herbalist
+    Hero
+    Hestia
+    Hierarchy
+    Hoarder
+    Honcho
+    Horror
+    Host
+    Huckster
+    Humorist
+
+interesthandle_l
+    L33T
+    Labret
+    Lacuna
+    Lag
+    Lamia
+    Laptop
+    Laugher
+    Launderer
+    Laywer
+    Leader
+    Leaper
+    Lecturer
+    Legend
+    Lender
+    Liaison
+    Librarian
+    Loyalist
+    Lupin
+    Lutist
+    Lyricist
+
+interesthandle_m
+    Machine
+    Machinist
+    Magician
+    Magnet
+    Major
+    Man
+    Manticore
+    Mender
+    Mentor
+    Mermaid
+    Mime
+    Minder
+    Mindflayer
+    Minerologist
+    Miracle
+    Mission
+    Missive
+    Moralist
+    Movie
+    Mummy
+    Museum
+    Musician
+
+interesthandle_r
+    Racer
+    Raconteur
+    Rainbow
+    Rally
+    Rapper
+    Reader
+    Rebel
+    Renaissance
+    Repeat
+    Repository
+    Researcher
+    Retribution
+    Robot
+    Roboticist
+    Roc
+    Romantic
+    Runner
+
+interesthandle_s
+    Sandman
+    Scholar
+    Scientist
+    Searcher
+    Sellout
+    Serendipity
+    Sewer
+    Shakespeare
+    Shark
+    Shinigami
+    Silly
+    Singer
+    Siren
+    Socialist
+    Spaceman
+    Spy
+    Stuck
+    Student
+    Superhero
+    Superior
+    Supervillain
+    Swimmer
+
+interesthandle_t
+    Tailor
+    Talent
+    Teacher
+    Team
+    Technologist
+    Tengu
+    Tenor
+    Therapist
+    Thesis
+    Tracker
+    Trainee
+    Trainer
+    Traveler
+    Treaty
+    Trickster
+    Trumpeter
+    Tyrant
+
+interesthandle_v
+    Vampire
+    Vaporware
+    Varvel
+    Vaudevillian
+    Vaulter
+    Vegetarian
+    Verbalist
+    Veterinarian
+    Victim
+    Vigilante
+    Villain
+    Viniculture
+    Violist
+    Virtue
+    Virtuoso
+

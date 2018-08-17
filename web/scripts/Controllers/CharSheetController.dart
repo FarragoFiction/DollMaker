@@ -24,6 +24,7 @@ Future<Null> drawSheet() async {
         doll = Doll.randomDollOfType(new Random().pickFrom(Doll.allDollTypes));
     }
     sheet = new SylveonSheet(doll, null);
+    await (sheet as SylveonSheet).setup();
     //sheet = new SylveonSheet(new MonsterPocketDoll());
 
     Element innerDiv  = new DivElement();

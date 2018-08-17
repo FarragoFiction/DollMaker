@@ -79,106 +79,110 @@ class SylveonSheet extends CharSheet {
   List<BarLayer> get barLayers => <BarLayer>[strength,stamina,agility,perception,accuracy,stealth,intelligence,imagination,psionics,occultLore,tactics,weaponSkill,persuasion,willpower,empathy,intimidation,expression,performance,prospit,derse];
 
   SylveonSheet(Doll doll, List<Doll>possibleDolls) : super(doll, possibleDolls) {
-        double lineY = 70.0;
-        name = new TextLayer("Name",nameForDoll(doll),60.0,lineY, fontSize: fontSize, maxWidth: 235, fontName: fontName, emphasis: emphasis);
-        age = new TextLayer("Age","${rand.nextInt(7)+3}",350.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
-        guardian = new TextLayer("Guardian",guardianForDoll(name.text),540.0,lineY, fontSize: fontSize, maxWidth: 235, fontName: fontName, emphasis: emphasis);
-        owner = new TextLayer("creator","AuthorBot",810.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
-
-        lineY = 86.0;
-        handle = new TextLayer("Handle",handleForDoll(doll),70.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
-        heightLayer = new TextLayer("Height","???",342.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
-        weightLayer = new TextLayer("Weight","???",413.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
-        fetchModus = new TextLayer("Fetch Modus",randomFetchModus(),564.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
-        species = new TextLayer("Species",getDollType(),824.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
-
-        lineY = 102.0;
-        textColor = new TextLayer("Text Color: ",doll.associatedColor.toStyleString(),132.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
-        gender = new TextLayer("Gender: ",rand.pickFrom(<String>["F","M","???"]),373.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
-        specibus = new TextLayer("Strife Specibus: ",CharSheet.randomSpecibus(doll),596.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
-        ancestor = new TextLayer("Ancestor: ","???",832.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
-
-        lineY = 145.0;
-        heart = new TextLayer("Heart Quadrant: ",randomHeart(),48.0,lineY, fontSize: fontSize, maxWidth: 235, fontName: fontName, emphasis: emphasis);
-        spades = new TextLayer("Spades Quadrant: ",randomNotHeart(),322.0,lineY, fontSize: fontSize, maxWidth: 235, fontName: fontName, emphasis: emphasis);
-        lineY = 172.0;
-        diamonds = new TextLayer("Diamond Quadrant: ",randomNotHeart(),48.0,lineY, fontSize: fontSize, maxWidth: 235, fontName: fontName, emphasis: emphasis);
-        clubs = new TextLayer("Club Quadrant: ",randomClubs(),322.0,lineY, fontSize: fontSize, maxWidth: 235, fontName: fontName, emphasis: emphasis);
-
-        double leftx = 57.0;
-        double rightx= 313.0;
-
-
-        strength = new BarLayer("Strength", "${rand.nextInt(10)}",leftx,228.0);
-        stamina = new BarLayer("Stamina", "${rand.nextInt(10)}",rightx,228.0);
-
-        agility = new BarLayer("Agility", "${rand.nextInt(10)}",leftx,282.0);
-        perception = new BarLayer("Perception", "${rand.nextInt(10)}",rightx,282.0);
-
-        accuracy = new BarLayer("Accuracy", "${rand.nextInt(10)}",leftx,332.0);
-        stealth = new BarLayer("Stealth", "${rand.nextInt(10)}",rightx,332.0);
-
-        intelligence = new BarLayer("Intelligence", "${rand.nextInt(10)}",leftx,398.0);
-        imagination = new BarLayer("Imagination", "${rand.nextInt(10)}",rightx,398.0);
-
-        psionics = new BarLayer("Psionics", "${rand.nextInt(10)}",leftx,450.0);
-        occultLore = new BarLayer("Occult Lore", "${rand.nextInt(10)}",rightx,450.0);
-
-
-        tactics = new BarLayer("Tactics", "${rand.nextInt(10)}",leftx,502.0);
-        weaponSkill = new BarLayer("Weapon Skill", "${rand.nextInt(10)}",rightx,502.0);
-
-        persuasion = new BarLayer("Persuasion", "${rand.nextInt(10)}",leftx,570.0);
-        willpower = new BarLayer("Will Power", "${rand.nextInt(10)}",rightx,570.0);
-
-        empathy = new BarLayer("Empathy", "${rand.nextInt(10)}",leftx,620.0);
-        intimidation = new BarLayer("Intimidation", "${rand.nextInt(10)}",rightx,620.0);
-
-        expression = new BarLayer("Expression", "${rand.nextInt(10)}",leftx,670.0);
-        performance = new BarLayer("Performance", "${rand.nextInt(10)}",rightx,670.0);
-
-
-        lineY = 728.0;
-        className = new TextLayer("Class: ",randomClass(),119.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
-        spriteName = new TextLayer("SpriteName: ","???",334.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
-
-        lineY = 746.0;
-        aspect = new TextLayer("Aspect: ",randomAspect(),127.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
-        proto1 = new TextLayer("Prototype1: ","???",335.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
-        proto2 = new TextLayer("Prototype2: ","???",335.0,762.0, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
-        consorts = new TextLayer("Consorts: ","???",312.0,778.0, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
-
-        bool moon = rand.nextBool();
-        prospit = new CheckLayer("Prospit", "${moon ? 0:1}",89.0,749.0);
-        derse = new CheckLayer("Derse", "${moon ? 1:0}",89.0,766.0);
-
-
-        lineY = 794.0;
-        land = new TextLayer("Land: ","???",142.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
-        denizen = new TextLayer("Denizen: ","???",413.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
-        tint = doll.associatedColor;
   }
 
-  String randomHeart() {
+  Future<Null> setup() async {
+      double lineY = 70.0;
+      await doll.setNameFromEngine();
+      name = new TextLayer("Name",doll.dollName,60.0,lineY, fontSize: fontSize, maxWidth: 235, fontName: fontName, emphasis: emphasis);
+      age = new TextLayer("Age","${rand.nextInt(7)+3}",350.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
+      guardian = new TextLayer("Guardian",guardianForDoll(name.text),540.0,lineY, fontSize: fontSize, maxWidth: 235, fontName: fontName, emphasis: emphasis);
+      owner = new TextLayer("creator","AuthorBot",810.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
+
+      lineY = 86.0;
+      handle = new TextLayer("Handle",handleForDoll(doll),70.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
+      heightLayer = new TextLayer("Height","???",342.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
+      weightLayer = new TextLayer("Weight","???",413.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
+      fetchModus = new TextLayer("Fetch Modus",randomFetchModus(),564.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
+      species = new TextLayer("Species",getDollType(),824.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
+
+      lineY = 102.0;
+      textColor = new TextLayer("Text Color: ",doll.associatedColor.toStyleString(),132.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
+      gender = new TextLayer("Gender: ",rand.pickFrom(<String>["F","M","???"]),373.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
+      specibus = new TextLayer("Strife Specibus: ",CharSheet.randomSpecibus(doll),596.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
+      ancestor = new TextLayer("Ancestor: ","???",832.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
+
+      lineY = 145.0;
+      heart = new TextLayer("Heart Quadrant: ",await randomHeart(),48.0,lineY, fontSize: fontSize, maxWidth: 235, fontName: fontName, emphasis: emphasis);
+      spades = new TextLayer("Spades Quadrant: ",await randomNotHeart(),322.0,lineY, fontSize: fontSize, maxWidth: 235, fontName: fontName, emphasis: emphasis);
+      lineY = 172.0;
+      diamonds = new TextLayer("Diamond Quadrant: ",await randomNotHeart(),48.0,lineY, fontSize: fontSize, maxWidth: 235, fontName: fontName, emphasis: emphasis);
+      clubs = new TextLayer("Club Quadrant: ",await randomClubs(),322.0,lineY, fontSize: fontSize, maxWidth: 235, fontName: fontName, emphasis: emphasis);
+
+      double leftx = 57.0;
+      double rightx= 313.0;
+
+
+      strength = new BarLayer("Strength", "${rand.nextInt(10)}",leftx,228.0);
+      stamina = new BarLayer("Stamina", "${rand.nextInt(10)}",rightx,228.0);
+
+      agility = new BarLayer("Agility", "${rand.nextInt(10)}",leftx,282.0);
+      perception = new BarLayer("Perception", "${rand.nextInt(10)}",rightx,282.0);
+
+      accuracy = new BarLayer("Accuracy", "${rand.nextInt(10)}",leftx,332.0);
+      stealth = new BarLayer("Stealth", "${rand.nextInt(10)}",rightx,332.0);
+
+      intelligence = new BarLayer("Intelligence", "${rand.nextInt(10)}",leftx,398.0);
+      imagination = new BarLayer("Imagination", "${rand.nextInt(10)}",rightx,398.0);
+
+      psionics = new BarLayer("Psionics", "${rand.nextInt(10)}",leftx,450.0);
+      occultLore = new BarLayer("Occult Lore", "${rand.nextInt(10)}",rightx,450.0);
+
+
+      tactics = new BarLayer("Tactics", "${rand.nextInt(10)}",leftx,502.0);
+      weaponSkill = new BarLayer("Weapon Skill", "${rand.nextInt(10)}",rightx,502.0);
+
+      persuasion = new BarLayer("Persuasion", "${rand.nextInt(10)}",leftx,570.0);
+      willpower = new BarLayer("Will Power", "${rand.nextInt(10)}",rightx,570.0);
+
+      empathy = new BarLayer("Empathy", "${rand.nextInt(10)}",leftx,620.0);
+      intimidation = new BarLayer("Intimidation", "${rand.nextInt(10)}",rightx,620.0);
+
+      expression = new BarLayer("Expression", "${rand.nextInt(10)}",leftx,670.0);
+      performance = new BarLayer("Performance", "${rand.nextInt(10)}",rightx,670.0);
+
+
+      lineY = 728.0;
+      className = new TextLayer("Class: ",randomClass(),119.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
+      spriteName = new TextLayer("SpriteName: ","???",334.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
+
+      lineY = 746.0;
+      aspect = new TextLayer("Aspect: ",randomAspect(),127.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
+      proto1 = new TextLayer("Prototype1: ","???",335.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
+      proto2 = new TextLayer("Prototype2: ","???",335.0,762.0, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
+      consorts = new TextLayer("Consorts: ","???",312.0,778.0, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
+
+      bool moon = rand.nextBool();
+      prospit = new CheckLayer("Prospit", "${moon ? 0:1}",89.0,749.0);
+      derse = new CheckLayer("Derse", "${moon ? 1:0}",89.0,766.0);
+
+
+      lineY = 794.0;
+      land = new TextLayer("Land: ","???",142.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
+      denizen = new TextLayer("Denizen: ","???",413.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
+      tint = doll.associatedColor;
+  }
+
+  Future<String> randomHeart() async {
       if(rand.nextBool()) {
-        return nameForDoll(doll);
+        return await doll.getNameFromEngine();
       }else {
         return "";
       }
   }
 
-    String randomNotHeart() {
+    Future<String> randomNotHeart() async {
         if(doll is HomestuckTrollDoll) {
-            return randomHeart();
+            return await randomHeart();
         }else {
             return "N/A";
         }
     }
 
-    String randomClubs() {
+    Future<String> randomClubs() async {
         if(doll is HomestuckTrollDoll) {
             if(rand.nextBool()) {
-                return "${nameForDoll(doll)} & ${nameForDoll(doll)}";
+                return "${await doll.getNameFromEngine()} & ${await doll.getNameFromEngine()}";
             }else {
                 return "";
             }

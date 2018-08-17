@@ -1,6 +1,6 @@
 <div class = "banner">
 <table><tr><td>
-      <a href = "http://farragofiction.com/SBURBSim/landing.html"><img src = "images/ad.png"/></a></td>
+      <a href = "http://farragofiction.com"><img src = "images/ad.png"/></a></td>
             <Td><a href = "http://www.patreon.com/FarragoFiction"><img src = "images/ad2.png"/></a></td>
             </tr>
             </table>
