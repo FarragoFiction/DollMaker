@@ -254,7 +254,7 @@ abstract class CharSheet {
     }
 
     String handleForDoll(Doll d) {
-        if(d.dollName != d.name && d.dollName != null && d.dollName.isNotEmpty) return d.dollName;
+        //if(d.dollName != d.name && d.dollName != null && d.dollName.isNotEmpty) return d.dollName;
         List<String> firstNames = <String>["ecto","pants","tentacle","garden","turntech","tipsy","golgothas","ghosty","gutsy","apocalypse","adios","twin","carcino","arsenic","grim","gallows","arachnids","centaurs","terminally","jaded","recursive","caligulas","cuttlefish","manic","aspiring","karmic","woo","insufferable","no","dilletant","bourbon","jaunty","faraway","fantastical","jolly","jilted","farrago","reclaimed","authorial","resting","rioting","blazing","frosty","callous","cynical","careful","magestic","proud","friendly","timaeus","uranian","undying"];
         List<String> lastNames = <String>["Biologist","Therapist","Godhead","Terror","Trickster","Gnostic","Gnostalgic","Gumshoe","Arisen","Toreador","Armageddons","Geneticist","Catnip","Auxiliatrix","Calibrator","Grip","Testicle","Capricious","Aquarium","Culler","Reseracher","Slacker","Insomniac","Watcher","Retribution","Mod","Oracle","Body","Mathematician","Recluse","Cephalopd","Squid","Fairy","Fiction","Author","Bot","Majesty","Minion","King","Queen","Fan","Scholar","Athelete","Lawyer","Dragon","Beast","Testified","Umbra","Umbrage","Frog","Turtle","Player","Gamer","Knitter","Crafter","Dreamer","Seeker"];
         return "${rand.pickFrom(firstNames)}${rand.pickFrom(lastNames)}";

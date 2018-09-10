@@ -32,7 +32,9 @@ class TrollCallSheet extends CharSheet {
     Future<Null> setup() async {
 
         Colour color = new Colour.from(tint)..setHSV(tint.hue, 0.2, 1.0 );
-        await doll.setNameFromEngine();
+        if(doll.dollName == doll.name || doll.dollName == null || doll.dollName.isEmpty) {
+            await doll.setNameFromEngine();
+        }
         name = new TextLayer("Name",await doll.dollName.toUpperCase(),345.0,470.0, fontSize: 60, maxWidth: 100, fontName: "trollcall", emphasis: emphasis,fontColor: color);
         fact1 = new TextLayer("Fact1","",370.0,130.0, fontSize: 25, maxWidth: 220, fontName: "trollcall", emphasis: emphasis,fontColor: color);
         fact2 = new TextLayer("Fact2","",370.0,210.0, fontSize: 25, maxWidth: 220, fontName: "trollcall", emphasis: emphasis,fontColor:color);

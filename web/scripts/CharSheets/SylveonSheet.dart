@@ -83,8 +83,9 @@ class SylveonSheet extends CharSheet {
 
   Future<Null> setup() async {
       double lineY = 70.0;
-      await doll.setNameFromEngine();
-      name = new TextLayer("Name",doll.dollName,60.0,lineY, fontSize: fontSize, maxWidth: 235, fontName: fontName, emphasis: emphasis);
+      if(doll.dollName == doll.name || doll.dollName == null || doll.dollName.isEmpty) {
+          await doll.setNameFromEngine();
+      }      name = new TextLayer("Name",doll.dollName,60.0,lineY, fontSize: fontSize, maxWidth: 235, fontName: fontName, emphasis: emphasis);
       age = new TextLayer("Age","${rand.nextInt(7)+3}",350.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);
       guardian = new TextLayer("Guardian",guardianForDoll(name.text),540.0,lineY, fontSize: fontSize, maxWidth: 235, fontName: fontName, emphasis: emphasis);
       owner = new TextLayer("creator","AuthorBot",810.0,lineY, fontSize: fontSize, fontName: fontName, emphasis: emphasis);

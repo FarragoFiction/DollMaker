@@ -14,7 +14,7 @@
       <a href="index.html?type=1">Kid Maker</a>
       <a href="index.html?type=2">Troll Maker</a>
       <a href="index.html?type=27">Ancestor Maker by Ner0 and AA</a>
-      <a href="index.html?type=14">Openbound Maker by Ner0</a>
+      <a href="index.html?type=21">Openbound Maker by Ner0</a>
       <a href="index.html?type=14">Hiveswap Maker by MC</a>
       <a href="index.html?type=15">Satyr Maker by PM</a>
       <a href="index.html?type=17">SuperbSuck Maker by KW</a>
