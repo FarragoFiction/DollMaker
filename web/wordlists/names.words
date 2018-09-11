@@ -21,13 +21,15 @@ name_all
     @suckname_all
     @carapacename_all
     @satyrname_all
-
+    @brooms
     
 //###################################################
 // DOLL NAMES
 //###################################################
 
 dollname_kid
+    @kidname_all
+dollname_duck
     @kidname_all
 dollname_troll
     @trollname_all
@@ -84,7 +86,7 @@ dollname_fek
 dollname_flower
     flower
 dollname_fruit
-    set by sim
+    n/a - set by sim
 
 //#############################################################################################
 // TROLLS
@@ -282,6 +284,7 @@ wigglername_title
     Chorbishop
     Cleric
     Dean
+    DJ
     Dr.
     Druid
     Duchess
@@ -300,10 +303,12 @@ wigglername_title
     Marchioness
     Marquess
     Master
+    Miss
     Monk
     Monsignor
     Mother
     Mr.
+    Ninja
     Novice
     Page
     Pastor
@@ -322,9 +327,12 @@ wigglername_title
     Seer
     Sensei
     Sherrif
+    Sir
     Sister
+    Squire
     Supreme
     Sylph
+    The
     Thief
     TV's
     Vice
@@ -339,48 +347,85 @@ wigglername_title
 //######################################################
 
 wigglername_first
+    3-D
     Albert
+    Alfalfa
+    Al Pastor
+    Alex
     Arnold
     Autumn
     Baby
     Barney
+    Bartholomew
     Bibbles
+    Biscuit
+    Bitey
+    Blinx
     Bubbles
+    Bubsy
+    Butterball
     Candy
     Capybara
+    Carrot
     Casey
     Charles
+    Chauncey
+    Chester
     Chuck
+    Cocoa
+    Cotton Ball
     Crow
     Donut
     Duncan
+    Emma
     Ender
+    Falon
     Farmstink
+    Fat
+    Fatty
+    Feelix
+    Fluffers
     Fluffy
+    Foxy
     Fred
     Freddy
     George
     Gordon
     Grubby
+    Ham
+    Hammy
+    Hamtaro
     Hannibal
     Harvey
+    Heather
     Hugo
     Irving
     Isaac
+    Isabelle
+    Itty
     Ivo
+    Izzy
     Jack
     James
     Jerry
+    Jhonathan
     Jibbly
     Jiggy
     Jim
     Juice
     Juicy
     Julius
+    Karate
+    Katz
     Kid
+    Kifarella
+    Kit Kat
+    Lester
     Lil
+    Lilly
     Liv
     Luigi
+    Mango
     Meowgon
     Meowsers
     Mew
@@ -388,24 +433,42 @@ wigglername_first
     Mike
     Milton
     Misty
+    Moose
     Morgan
     Nic
     Nikalo
+    Nutmeg
     Obnoxio
     Oswald
+    Peep
+    Peepi
     Peewee
     Peter
+    Princess
+    Purrbox
+    Pusheen
+    Rapunzel
+    Reginald
+    Rudy
     Santa
     Sauce
     Scoobert
     Scooby
     Selina
+    Spartacus
     Stan
     Sterling
     Steven
     Stevie
+    Stimpy
+    Stripey
+    Sugar
+    Sugar Bubbles
+    Tato
     Teddy
     Thomas
+    Tiger
+    Tigger
     Tina
     Tom
     Tony
@@ -413,6 +476,7 @@ wigglername_first
     Wario
     Wiggler
     Wiggly
+    Yo-Yo
     Zoosmell
     Zygmunt
 
@@ -423,42 +487,61 @@ wigglername_first
 wigglername_last
     Addington
     Ainsworth
+    Applesauce
     Archer
     the Asshole
+    Bastard
     Beena
+    Bitty
     Boi
+    Burrito
     Butt
     Butter
     Buttlass
     Cage
     Cakes
+    Cheeto
     Clowder
+    Dee
     Diabetes
     Dorkbutt
     Dumbface
     Dutton
+    Eats-a-Lot
     Edington
     Face
+    Fancypants
     Faraday
+    Farquaad
+    Fish
+    Fluffybutt
     Fluffybutton
+    Fuzzlekins
     Gigabyte
     Gladestone
     Grub
     Heart
     Juice
+    Kajilly
     Katanta
     Kazoo
     Kilobyte
+    Kitty
     Legs
     Licker
     Lickface
+    Lix-a-Lot
     Lobster
     Logan
     Love
     Malone
     McEnderton
+    McFishyface
+    McFluff-n-Stuff
     McProblems
     Megabyte
+    Muffin
+    Ninja
     Noir
     Oldington the Third
     Oppenheimer
@@ -469,8 +552,11 @@ wigglername_last
     Pooper
     Pooplord
     Poppenfresh
+    the Potato
+    Pounce-a-Lot
     Puffers
     Puker
+    Puppers
     Ribs
     Rock
     Rockerfeller
@@ -482,17 +568,22 @@ wigglername_last
     Savage
     Sebastion
     Sniffles
+    Snowball
     Snugglepuff
     Spangler
+    Spreadsheets
     Squeezykins
     Stubblies
+    Tango
     Taylor
     Terabyte
     Valentine
     von Horn
+    von Poops-a-Lot
     von Salamancer
     von Wigglebottom
     von Wigglesmith
+    Wario
     Wigglesona
 
 //######################################################
@@ -503,7 +594,6 @@ wigglername_end
      III
      IV
      IX
-     the Shippest
      V
      VI
      VII
@@ -511,13 +601,20 @@ wigglername_end
      X
     , CPA
     , esq
+    , Jr.
     , Junior
     , MD
     , Ph.D.
     , Senior
     , the Third
+     the Asshole
+     the Great
+     the Shippest
+     the Wonderful
     -chan
+    -face
     -Mew
+     of Fishlandia
     
 
 //#############################################################################################
@@ -811,7 +908,10 @@ robotname_sim
 //#############################################################################################
 
 ancestortitle_all
-    @ancestortitle_canon
+    #ancestortitle_canon#: 0.5
+    #ancestortitle_specific#: 0.25
+    The #ancestortitle_epithet#: 2.0
+    #ancestortitle_epithet# #ancestortitle_nickname#
 
 //######################################################
 // ANCESTOR TITLES
@@ -819,7 +919,7 @@ ancestortitle_all
 
 ancestortitle_canon
     The Handmaid
-    the Summoner
+    The Summoner
     The Ψiioniic
     The Helmsman
     The Signless
@@ -834,6 +934,895 @@ ancestortitle_canon
     Orphaner Dualscar
     Her Imperious Condescension
     The Condesce
+
+ancestortitle_specific
+    El Jefe
+    Il Duce
+    La Divina
+    La Stupenda
+    Mr. Soul
+    Old Blue Eyes
+    The Chairman of the Board
+    Son of Laertes
+    Man of Pain
+    The Great Bambino
+    The Big Bopper
+    The First Lady of Song
+    The Great Communicator
+    The Great Commoner
+    The Great Emancipator
+    The Great Silent One
+    Soul Brother Number 1
+    The Godfather of Soul
+    The High Priestess of Soul
+    The Iron Chancellor
+    The Iron Lady
+    The King of Pop
+    The King of Soccer
+    The Queen of Pop
+    The Material Girl
+    The Queen of Soul
+    The Red Baron
+    The Philosopher
+    The Steel Butterfly
+    The Boy Who Lived
+    The Dark Knight
+    The Man of Steel
+    The Caped Crusader
+
+ancestortitle_epithet
+//"Summoner," "Disciple"
+    Abandonded
+    Academic
+    Acclaimed
+    Accurate
+    Accursed
+    Ackerman
+    Acrobat
+    Actor
+    Adept
+    Admirable
+    Admired
+    Adorable
+    Adored
+    Affectionate
+    Aggressive
+    Aggressor
+    Agile
+    Alert
+    Alewife
+    Alnager
+    Ambitious
+    Amused
+    Ancient
+    Angel
+    Angelic
+    Angry
+    Anguished
+    Animal
+    Anomaly
+    Ant
+    Anvil
+    Anxious
+    Architect
+    Arkwright
+    Army
+    Aromatic
+    Arrow
+    Artist
+    Artistic
+    Assassin
+    Athletic
+    Austere
+    Authentic
+    Awful
+    Awkward
+    Axe
+    Baboon
+    Baby
+    Babyface
+    Bad
+    Baker
+    Bald
+    Barbarian
+    Bastard
+    Bear
+    Bearclaw
+    Beard
+    Beast
+    Beautiful
+    Behemoth
+    Beloved
+    Bewitched
+    Big Spender
+    Bitter
+    Black
+    Black Knight
+    Blade
+    Bland
+    Blessed
+    Blind
+    Blind Visionary
+    Blissful
+    Blond
+    Bloodied
+    Bloodlust
+    Bloody
+    Blushing
+    Boar
+    Bodyguard
+    Bold
+    Bony
+    Boring
+    Boss
+    Boulder
+    Boulderfist
+    Bowyer
+    Brave
+    Brazier
+    Bright
+    Brilliant
+    Brilliant Mind
+    Broken
+    Bronze
+    Brute
+    Bull
+    Bullet
+    Butcher
+    Butterfly
+    Calm
+    Carefree
+    Careless
+    Catchpole
+    Caulker
+    Cautious
+    Celebrated
+    Challenger
+    Champion
+    Chandler
+    Charming
+    Chaste
+    Cheap
+    Cheap Shot
+    Chicken
+    Chiffonier
+    Chubby
+    Clean
+    Clever
+    Cloud
+    Clueless
+    Cobbler
+    Cobra
+    Cold
+    Collier
+    Colorful
+    Colossal
+    Colossus
+    Common
+    Commoner
+    Competent
+    Complex
+    Composed
+    Concerned
+    Confused
+    Conjurer
+    Conqueror
+    Content
+    Cook
+    Cooper
+    Cordwainer
+    Corrupt
+    Corrupted
+    Corrupter
+    Corruptor
+    Costermonger
+    Coward
+    Coyote
+    Crafty
+    Crazy
+    Creep
+    Criminal
+    Crocker
+    Crooked
+    Crow
+    Cruel
+    Cuddler
+    Cuddly
+    Cuddly Bear
+    Cunning
+    Currier
+    Cursed
+    Cutest
+    Dagger
+    Damaged
+    Damned
+    Dancer
+    Danger
+    Dangerous
+    Dapper
+    Dark
+    Dark Lord
+    Dark One
+    Dead
+    Dead Mind
+    Deaf
+    Deceiver
+    Decent
+    Defiant
+    Delayed
+    Delirious
+    Demigod
+    Demon
+    Demonic
+    Deserter
+    Destroyer
+    Devil
+    Devoted
+    Devotee
+    Digital
+    Diligent
+    Dimwitted
+    Dire
+    Dirty
+    Discrete
+    Disfigured
+    Disguised
+    Disloyal
+    Doctor
+    Dog
+    Don
+    Dragon
+    Dragonheart
+    Drake
+    Draper
+    Drayman
+    Dread
+    Dreary
+    Droopy
+    Drummer
+    Duffer
+    Duke
+    Dull
+    Eager
+    Eagle Eyes
+    Early
+    Earnest
+    Easy-going
+    Ecstatic
+    Edge
+    Educated
+    Eggler
+    Elegant
+    Eliminator
+    Emotional
+    Enchanted
+    Enchanting
+    Enforcer
+    Enigma
+    Enlightened
+    Enormous
+    Envious
+    Equal
+    Eternal
+    Eternal Hunger
+    Euphoric
+    Evil
+    Exalted
+    Example
+    Executioner
+    Exile
+    Expert
+    Factor
+    Failure
+    Faint
+    Fair
+    Fairy
+    Fake
+    Fake King
+    Falconer
+    False
+    Famous
+    Fancy
+    Fang
+    Farrier
+    Fat
+    Fearless
+    Feeble Mind
+    Feisty
+    Feline
+    Feminine
+    Feral
+    Fickle
+    Fiend
+    Fierce
+    Fire
+    Firestarter
+    Fish
+    Fishmonger
+    Flamboyant
+    Flame
+    Flawed
+    Flawless
+    Fletcher
+    Flurry
+    Fool
+    Forgiving
+    Forsaken
+    Fortunate
+    Fox
+    Freak
+    Free
+    Friend
+    Frozen
+    Fuller
+    Funny
+    Fury
+    Fuzzy
+    Generous
+    Gentle
+    Gentle Giant
+    Gentle Heart
+    Genuine
+    Ghost
+    Giant
+    Giantslayer
+    Gifted
+    Giving
+    Glazier
+    Gloomy
+    Glorious
+    Gold
+    Good
+    Graceful
+    Grand
+    Grasshopper
+    Grave
+    Gravedigger
+    Gravekeeper
+    Gray
+    Great
+    Greatest
+    Greedy
+    Grim
+    Gross
+    Grotesque
+    Grumpy
+    Guardian
+    Guest
+    Guilty
+    Haberdasher
+    Hairy
+    Hallowed
+    Hammer
+    Handsome
+    Harmless
+    Harsh
+    Hasty
+    Hawk
+    Hawker
+    Hayward
+    Heartless
+    Hen
+    Hermit
+    Hideous
+    Hobbler
+    Hog
+    Hollow
+    Holy
+    Honest
+    Honorable
+    Honorbound
+    Honored
+    Honorless
+    Hooper
+    Horror
+    Hospitable
+    Hostler
+    Hound
+    Huckster
+    Humble
+    Hunger
+    Hungry
+    Hunter
+    Hurricane
+    Icecutter
+    Idealist
+    Idle
+    Ignorant
+    Ill-Tempered
+    Illustrious
+    Immortal
+    Impure
+    Inborn
+    Incredible
+    Infamous
+    Infant
+    Infantile
+    Inferior
+    Infinite
+    Innocent
+    Insane
+    Insecure
+    Insomniac
+    Inventor
+    Invincible
+    Ironclad
+    Ironfist
+    Ironmonger
+    Jackal
+    Jaded
+    Jealous
+    Jester
+    Jigsaw
+    Joiner
+    Joker
+    Jolly
+    Judge
+    Just
+    Juvenile
+    Keeler
+    Keen
+    Kid
+    Kind
+    King
+    Kitten
+    Knacker
+    Knowing
+    Lamb
+    Lame
+    Lamplighter
+    Lapidary
+    Last
+    Late
+    Lawful
+    Lazy
+    Lean
+    Learned
+    Lector
+    Legionnaire
+    Light
+    Light Lord
+    Limp
+    Lion
+    Lionheart
+    Lionroar
+    Little
+    Log
+    Lone
+    Lone Wolf
+    Lonely
+    Loner
+    Loser
+    Lost
+    Lost Mind
+    Lost One
+    Loud
+    Love Fool
+    Loving
+    Loyal
+    Loyal Heart
+    Lucky
+    Luxurious
+    Mad
+    Mage
+    Magnanimous
+    Magnificent
+    Majestic
+    Maker
+    Mammoth
+    Maneater
+    Maniac
+    Manslayer
+    Marked
+    Martyr
+    Marvelous
+    Masculine
+    Massive
+    Master
+    Meager
+    Medic
+    Meek
+    Mellow
+    Menace
+    Merciful
+    Merry
+    Mighty
+    Mild
+    Milliner
+    Mind Bender
+    Miracle
+    Misguided
+    Modern
+    Modest
+    Mole
+    Monk
+    Monster
+    Moral
+    Mountain
+    Mouse
+    Muleskinner
+    Muse
+    Mutant
+    Mute
+    Naive
+    Naughty
+    Navigator
+    Necromancer
+    Needy
+    Nervous
+    Nightingale
+    Nightmare
+    Nightowl
+    Nimble
+    Nimble Mind
+    Noble
+    Nobody
+    Nocturnal
+    Numb
+    Numb Mind
+    Nurse
+    Oaf
+    Observer
+    Old
+    One
+    Oracle
+    Ornate
+    Overprotective
+    Owl
+    Ox
+    Paladin
+    Pale
+    Paragon
+    Passionate
+    Patient
+    Peaceful
+    Penny Pincher
+    Perfumed
+    Phantom
+    Philosopher
+    Phoenix
+    Phony
+    Physician
+    Pickpocket
+    Pinsetter
+    Pious
+    Plain
+    Pleasant
+    Plowright
+    Plumber
+    Porter
+    Powerful
+    Precious
+    Prestigious
+    Prime
+    Prince
+    Prodigy
+    Prophet
+    Proud
+    Prudent
+    Puddler
+    Puny
+    Puppy
+    Pyro
+    Quack
+    Quaint
+    Quarryman
+    Quick
+    Quiet
+    Quirky
+    Rabid
+    Raker
+    Rash
+    Rat
+    Raven
+    Razor
+    Realist
+    Rebel
+    Rebellious
+    Reckless
+    Red
+    Reliable
+    Resurrectionist
+    Rich
+    Rider
+    Ripper
+    Risen Commoner
+    Rogue
+    Roper
+    Rose
+    Rotten
+    Round
+    Rude
+    Sadist
+    Sadistic
+    Saint
+    Sarcastic
+    Savage
+    Sawyer
+    Scar
+    Scarred
+    Scented
+    Scientist
+    Scrawny
+    Secret
+    Secret Master
+    Sentinel
+    Serene
+    Serpent
+    Servant
+    Shadow
+    Shady
+    Shallow
+    Shamed
+    Shameless
+    Sheep
+    Shepherd
+    Shield
+    Short
+    Shy
+    Sickly
+    Silencer
+    Silent
+    Silver
+    Simple
+    Simple-minded
+    Sinless
+    Sinner
+    Skeleton
+    Skinny
+    Slater
+    Slayer
+    Sleeper
+    Sleepy
+    Slopseller
+    Small
+    Snake
+    Sneaky
+    Snowflake
+    Soothsayer
+    Sophisticated
+    Speaker
+    Specialist
+    Spider
+    Stalker
+    Stammerer
+    Stark
+    Steadfast
+    Stevedore
+    Storm
+    Stout
+    Strict
+    Strong
+    Student
+    Stupid
+    Surgeon
+    Swift
+    Swine
+    Sympathetic
+    Tall
+    Tame
+    Tanner
+    Teamster
+    Temper
+    Tempest
+    Terrible
+    Terrific
+    Terror
+    Thatcher
+    Thief
+    Thirst
+    Thirsty
+    Thoughtful
+    Thoughtless
+    Thug
+    Thunder
+    Tinker
+    Tiny
+    Titan
+    Tongue
+    Tower
+    Tragic
+    Traitor
+    Treasure
+    Treasured
+    Trivial
+    Turbulent
+    Turner
+    Tyrant
+    Ugly
+    Undying
+    Unfit
+    Unfortunate
+    Unlucky
+    Unsung Hero
+    Useless
+    Vain
+    Valiant
+    Vengeful
+    Venom
+    Vermin
+    Vicious
+    Victorious
+    Victualer
+    Vigilant
+    Violent
+    Viper
+    Virgin
+    Vulture
+    Wainwright
+    Wandering Mind
+    Warlock
+    Warmonger
+    Warrior
+    Watcher
+    Weak
+    Weary
+    Weasel
+    Weird
+    Weirkeeper
+    Wharfinger
+    Wheelwright
+    Whelp
+    Whisper
+    White Knight
+    Whitesmith
+    Wicked
+    Widow
+    Wild
+    Wildling
+    Wise
+    Witch
+    Wizard
+    Wolf
+    Wonder
+    Wonderful
+    Worm
+    Worthless
+    Wrathful
+    Wreckage
+    Wretched
+    Wyrm
+    Young
+    Youthful
+    Zealous
+    Handmaid
+    Summoner
+    Ψiioniic
+    Helmsman
+    Signless
+    Sufferer
+    Disciple
+    Dolorosa
+    Neophyte
+    Marquise
+    E%ecutor
+    Expatri8
+    Grand Highblood
+    Orphaner
+
+ancestortitle_nickname
+//"Redglare," "Darkleer"
+    #ancestortitle_nickname_first##ancestortitle_nickname_second#
+
+ancestortitle_nickname_first
+    Battle
+    Bear
+    Blood
+    Bone
+    Boulder
+    Bright
+    Dark
+    Dead
+    Death
+    Demon
+    Doom
+    Dragon
+    Dual
+    Ember
+    Fire
+    Fist
+    Frost
+    Fuse
+    Giant
+    Gold
+    Gore
+    Grand
+    Great
+    Hell
+    Iron
+    Light
+    Mind
+    Molten
+    Moon
+    Night
+    Phoenix
+    Proud
+    Rage
+    Raven
+    Red
+    Rock
+    Rumble
+    Shadow
+    Sharp
+    Shield
+    Silent
+    Silver
+    Single
+    Skull
+    Spirit
+    Star
+    Steel
+    Stone
+    Storm
+    Stout
+    Strong
+    Swift
+    Thunder
+    True
+    Void
+    War
+    Wild
+    Wolf
+
+ancestortitle_nickname_second
+    bane
+    blade
+    blood
+    blow
+    bolt
+    bow
+    breaker
+    brow
+    chaser
+    claw
+    cleaver
+    crest
+    ember
+    cut
+    eye
+    fang
+    fist
+    flayer
+    fury
+    gaze
+    glare
+    grim
+    grimace
+    grip
+    hair
+    hallow
+    hammer
+    hand
+    head
+    heart
+    helm
+    hide
+    leer
+    mane
+    mantle
+    might
+    moon
+    pelt
+    rage
+    roar
+    scar
+    scream
+    shade
+    shadow
+    shield
+    shout
+    snarl
+    song
+    sorrow
+    stare
+    stride
+    strike
+    sword
+    sworn
+    talon
+    thorn
+    tongue
+    visage
 
 
 //#############################################################################################

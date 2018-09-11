@@ -32,23 +32,31 @@ Future<Null> drawAllBoxes() async {
     }
 }
 
-void drawBox(Doll doll) {
+Future<Null> drawBox(Doll doll) async{
     print ("drawing box for $doll");
     DivElement box = new DivElement();
     box.style.width = "${doll.width}";
+    box.style.display ="inline-block";
     AnchorElement a = new AnchorElement(href: "index.html?type=${doll.renderingType}");
     a.target = "_blank";
     box.append(a);
     CanvasElement canvas = new CanvasElement(width:doll.width, height:doll.height);
+    CanvasElement realCanvas = new CanvasElement(width:200,height:200);
     box.style.border = "3px solid black";
     canvas.style.marginTop = "10px";
     canvas.style.border = "3px solid black";
 
     DivElement name = new DivElement();
-    name.text = "${doll.name} (idea and original parts by ${doll.originalCreator})";
+    name.text = "${doll.name}";
+
+    DivElement credit = new DivElement();
+    credit.setInnerHtml("Original Idea and Parts: <br><br>${doll.originalCreator}");
+
     box.append(name);
-    a.append(canvas);
+    box.append(credit);
+    a.append(realCanvas);
     div.append(box);
     //this is async but i don't care. i WANT it to not wait.
-    DollRenderer.drawDoll(canvas, doll);
+    await DollRenderer.drawDoll(canvas, doll);
+    Renderer.drawToFitCentered(realCanvas, canvas);
 }
