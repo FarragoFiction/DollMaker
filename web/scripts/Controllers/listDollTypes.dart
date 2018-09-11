@@ -41,7 +41,7 @@ Future<Null> drawBox(Doll doll) async{
     a.target = "_blank";
     box.append(a);
     CanvasElement canvas = new CanvasElement(width:doll.width, height:doll.height);
-    CanvasElement realCanvas = new CanvasElement(width:200,height:200);
+    CanvasElement realCanvas = new CanvasElement(width:300,height:300);
     box.style.border = "3px solid black";
     canvas.style.marginTop = "10px";
     canvas.style.border = "3px solid black";
@@ -50,7 +50,7 @@ Future<Null> drawBox(Doll doll) async{
     name.text = "${doll.name}";
 
     DivElement credit = new DivElement();
-    credit.setInnerHtml("Original Idea and Parts: <br><br>${doll.originalCreator}");
+    credit.setInnerHtml("<br>Original Idea and Parts: <br>${doll.originalCreator}");
 
     box.append(name);
     box.append(credit);
