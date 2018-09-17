@@ -34,7 +34,11 @@ class FileUploadObject
         CanvasElement canvas = new CanvasElement(width: controller.doll.width, height: controller.doll.height);
         canvas.context2D.drawImage(upload,0,0);
         //json["data"] = "${upload.src}";
-        json["data"] = canvas.toDataUrl();
+        String data = canvas.toDataUrl();
+        if(upload.src.length < data.length) {
+            data = upload.src;
+        }
+        json["data"] = data;
         return json;
     }
 
