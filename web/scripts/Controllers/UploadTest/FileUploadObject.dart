@@ -30,7 +30,11 @@ class FileUploadObject
         JSONObject json = new JSONObject();
         json["directory"] = layer.imgNameBase;
         json["maxImageNumberKnown"] = "${layer.maxImageNumber}";
-        json["data"] = "${upload.src}"; //TODO as a blob or whatever
+        //i know for a fact this src has stuff or this would crash anyways so just do it okay
+        CanvasElement canvas = new CanvasElement(width: controller.doll.width, height: controller.doll.height);
+        canvas.context2D.drawImage(upload,0,0);
+        //json["data"] = "${upload.src}";
+        json["data"] = canvas.toDataUrl();
         return json;
     }
 
