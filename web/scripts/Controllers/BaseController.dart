@@ -99,12 +99,16 @@ class BaseController {
 
         if(doll is HomestuckTrollDoll) {
             HomestuckTrollDoll troll = doll as HomestuckTrollDoll;
-            if (signLink != null)
-                signLink.href = "index.html?type=2&sign=${troll.canonSymbol.imgNumber}";
-                signLink.text = "View More Dolls With Sign ${troll.canonSymbol.imgNumber}";
-            if (casteLink != null)
+            if (signLink != null) {
+                signLink.href =
+                "index.html?type=2&sign=${troll.canonSymbol.imgNumber}";
+                signLink.text =
+                "View More Dolls With Sign ${troll.canonSymbol.imgNumber}";
+            }
+            if (casteLink != null) {
                 casteLink.href = "index.html?type=2&caste=${troll.bloodColor}";
                 casteLink.text = "View More Dolls in Caste ${troll.bloodColor}";
+            }
         }
 
     }
