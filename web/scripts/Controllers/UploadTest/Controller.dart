@@ -15,12 +15,23 @@ DivElement uploaderDiv;
 List<UploadObject> uploadObjects = new List<UploadObject>();
 Future<Null> main() async {
     loadNavbar();
+    checkServerStatus();
     Random rand = new Random();
     uploaderDiv = querySelector("#uploader");
     print("going to load doll");
     await loadDoll();
     //shitpost(); //enable this when i need to know all directories
     makeUploadObjects();
+}
+
+void checkServerStatus() {
+    HttpRequest.getString("http://www.farragofiction.com:4037")
+        .then((String fileContents) {
+        print("uploader is up");
+    })
+        .catchError((Error error) {
+            querySelector("#navbar").appendHtml("<h1>It looks like the uploader is down. Maybe JR is doing a slurp? Maybe something is wrong?</h1>");
+    });
 }
 
 void makeUploadObjects() {
