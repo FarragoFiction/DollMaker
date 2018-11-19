@@ -10,7 +10,10 @@ import "dart:async";
 BaseController controller;
 
 DivElement uploaderDiv;
-
+//guys it takes me 6+ hours to do a slurp now.
+//I LOVE seeing how creative you all are. But...for now, I need to stop accepting new parts at all hours.
+//I'll make newsposts on the discord when i'm accepting more parts again.
+bool acceptingParts = false;
 //probably don't need to keep refs but it can't hurt
 List<UploadObject> uploadObjects = new List<UploadObject>();
 Future<Null> main() async {
@@ -30,7 +33,13 @@ void checkServerStatus() {
         print("uploader is up");
     })
         .catchError((Error error) {
-            querySelector("#navbar").appendHtml("<h1>It looks like the uploader is down. Maybe JR is doing a slurp? Maybe something is wrong?</h1>");
+            if(acceptingParts==true) {
+                querySelector("#navbar").appendHtml(
+                    "<h1>It looks like the uploader is down. Maybe JR is doing a slurp? Maybe something is wrong?</h1>");
+            }else {
+                querySelector("#navbar").appendHtml(
+                    "<h1>JR: Doll Uploading is going to be disabled for the next while, while I refactor the DollEngine to not require each and every sub sim to be recompiled each time so much as an eyelash is uploaded. This will also let me see if its been responsible for the huge uptick in CPU usage I've been noticing.</h1>");
+            }
     });
 }
 
