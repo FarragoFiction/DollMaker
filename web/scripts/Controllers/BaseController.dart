@@ -32,6 +32,8 @@ class BaseController {
 
 
     AnchorElement hatchLink;
+    AnchorElement grubLink;
+
 
     List<String> actionQueue = new List<String>();
     int actionQueueIndex = 0;
@@ -144,7 +146,15 @@ class BaseController {
         });
 
         if(doll is HatchableDoll) {
+            if(doll is HomestuckTrollDoll) {
+                HomestuckGrubDoll grub = makeGrub();
 
+                grubLink = new AnchorElement(href:"${window.location.origin}${window.location.pathname}?${grub.toDataUrlPart()}" );
+                grubLink.text = "Grubify?";
+                grubLink.style.display="block";
+                grubLink.target = "_blank";
+                querySelector("#info").append(grubLink);
+            }
             Doll newDoll = (doll as HatchableDoll).hatch();
 
             hatchLink = new AnchorElement(href:"${window.location.origin}${window.location.pathname}?${newDoll.toDataUrlPart()}" );
@@ -152,6 +162,8 @@ class BaseController {
             hatchLink.style.display="block";
             hatchLink.target = "_blank";
             querySelector("#info").append(hatchLink);
+
+
         }
 
 
@@ -182,6 +194,16 @@ class BaseController {
             querySelector("#contents").append(redo);
             redo.onClick.listen((e) => redoFunction());
         }
+    }
+
+    HomestuckGrubDoll makeGrub() {
+        HomestuckGrubDoll grub = new HomestuckGrubDoll();
+        Doll.convertOneDollToAnother(doll, grub);
+
+        grub.canonSymbol.imgNumber = 0;
+        grub.symbol.imgNumber = 0;
+        grub.pickCasteAppropriateBody();
+        return grub;
     }
 
 
@@ -252,6 +274,11 @@ class BaseController {
         syncLinks();
         if(hatchLink != null && doll is HatchableDoll) {
             hatchLink.href = "${window.location.origin}${window.location.pathname}?${(doll as HatchableDoll).hatch().toDataUrlPart()}";
+        }
+
+        if(grubLink != null && doll is HomestuckTrollDoll) {
+            HomestuckGrubDoll grub = makeGrub();
+            grubLink.href = "${window.location.origin}${window.location.pathname}?${grub.toDataUrlPart()}" ;
         }
 
 
