@@ -5,7 +5,8 @@ import "dart:html";
 import "../navbar.dart";
 import "dart:async";
 import 'package:DollLibCorrect/DollRenderer.dart';
-import 'package:RenderingLib/src/loader/loader.dart';
+import 'package:CommonLib/Random.dart';
+import 'package:RenderingLib/RendereringLib.dart';
 
 Element container;
 Element childContainer;
@@ -21,7 +22,6 @@ CanvasElement canvas2;
 
 Future<Null> main() async{
     loadNavbar();
-    await Loader.preloadManifest();
     container = querySelector("#contents");
     childContainer = new DivElement();
     ship();

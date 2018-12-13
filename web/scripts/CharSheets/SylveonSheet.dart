@@ -1,10 +1,13 @@
 
-import 'package:RenderingLib/src/loader/loader.dart';
 import "package:DollLibCorrect/DollRenderer.dart";
 import "CharSheet.dart";
 import 'dart:async';
 import "BarLayer.dart";
 import 'dart:html';
+import 'package:CommonLib/Colours.dart';
+import 'package:CommonLib/Random.dart';
+import 'package:LoaderLib/Loader.dart';
+import 'package:RenderingLib/RendereringLib.dart';
 
 /*
 Based on the char sheet by Sylveon on discord

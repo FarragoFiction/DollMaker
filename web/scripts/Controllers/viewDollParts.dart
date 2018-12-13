@@ -2,8 +2,10 @@ import "package:DollLibCorrect/DollRenderer.dart";
 import "../navbar.dart";
 import "dart:html";
 import "dart:async";
-import 'package:RenderingLib/src/loader/loader.dart';
-
+import 'package:CommonLib/Colours.dart';
+import 'package:CommonLib/Random.dart';
+import 'package:LoaderLib/Loader.dart';
+import 'package:RenderingLib/RendereringLib.dart';
 
 List<Doll> dollExamples = new List<Doll>();
 List<CustomRadio> dollRadios = new List<CustomRadio>();
@@ -60,7 +62,6 @@ void drawAllParts(Element container) {
 }
 
 Future<Null> drawAllBoxes() async {
-    await Loader.preloadManifest();
 
     for(Doll doll in dollExamples) {
         drawDollBox(doll);

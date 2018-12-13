@@ -3,7 +3,6 @@ import "package:DollLibCorrect/DollRenderer.dart";
 import "../DollMakerTools.dart";
 import "../navbar.dart";
 import "dart:async";
-import 'package:RenderingLib/src/loader/loader.dart';
 
 import "BaseController.dart";
 
@@ -23,7 +22,6 @@ bool loading = false;
 bool paused = false;
 
 Future<Null> main() async {
-    await Loader.preloadManifest();
     loadNavbar();
     DivElement borderElement = new DivElement();
     borderElement.style.marginLeft = "auto";

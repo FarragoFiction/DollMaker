@@ -3,6 +3,9 @@ import "CharSheet.dart";
 import 'dart:async';
 import "BarLayer.dart";
 import 'dart:html';
+import 'package:CommonLib/Colours.dart';
+import 'package:CommonLib/Random.dart';
+import 'package:RenderingLib/RendereringLib.dart';
 
 //echeladder has X text boxes for echeladder rank
 //and a section for boonies earned.

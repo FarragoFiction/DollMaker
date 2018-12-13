@@ -1,7 +1,7 @@
 import 'UploadObject.dart';
 import "dart:html";
 import "package:DollLibCorrect/DollRenderer.dart";
-import "../../DollMakerTools.dart";
+import 'package:CommonLib/Random.dart';
 import "../../navbar.dart";
 
 import "../BaseController.dart";

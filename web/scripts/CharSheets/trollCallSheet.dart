@@ -2,10 +2,13 @@
 import "package:DollLibCorrect/DollRenderer.dart";
 import "package:TextEngine/TextEngine.dart";
 import "CharSheet.dart";
-import 'package:RenderingLib/src/loader/loader.dart';
 import 'dart:async';
 import "BarLayer.dart";
 import 'dart:html';
+import 'package:CommonLib/Colours.dart';
+import 'package:CommonLib/Random.dart';
+import 'package:LoaderLib/Loader.dart';
+import 'package:RenderingLib/RendereringLib.dart';
 
 class TrollCallSheet extends CharSheet {
 

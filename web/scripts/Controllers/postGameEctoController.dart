@@ -2,9 +2,11 @@ import 'DollSlurper.dart';
 import "dart:html";
 import "../navbar.dart";
 import "dart:async";
+import 'package:CommonLib/Random.dart';
 import 'package:CommonLib/src/collection/weighted_lists.dart';
 import 'package:DollLibCorrect/DollRenderer.dart';
-import 'package:RenderingLib/src/loader/loader.dart';
+
+import 'package:RenderingLib/RendereringLib.dart';
 
 Element container;
 Element parentContainer;
@@ -30,7 +32,6 @@ WeightedList<int> dollTypes = new WeightedList<int>();
 Future<Null> main() async{
     loadNavbar();
     rand.nextInt(); //init
-    await Loader.preloadManifest();
     initValidTypes();
     container = querySelector("#ectoContents");
     childContainer = new DivElement();

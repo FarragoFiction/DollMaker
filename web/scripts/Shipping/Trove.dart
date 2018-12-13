@@ -5,7 +5,10 @@ import 'dart:html';
 import "dart:math" as Math;
 import 'package:DollLibCorrect/DollRenderer.dart';
 import 'package:TextEngine/TextEngine.dart';
-
+import 'package:CommonLib/Colours.dart';
+import 'package:CommonLib/Random.dart';
+import 'package:LoaderLib/Loader.dart';
+import 'package:RenderingLib/RendereringLib.dart';
 /*
 
 a trove is 1 or more (let's say up to 13) Charms.

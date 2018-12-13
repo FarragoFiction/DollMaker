@@ -4,7 +4,6 @@ import "package:DollLibCorrect/DollRenderer.dart";
 import "../DollMakerTools.dart";
 import "../navbar.dart";
 import "dart:async";
-import 'package:RenderingLib/src/loader/loader.dart';
 
 import "BaseController.dart";
 List<SavedDoll> savedDolls = new List<SavedDoll>();
@@ -117,7 +116,6 @@ void saveAllDolls(String loadData) {
 }
 
 Future<Null> loadDolls() async {
-    await Loader.preloadManifest();
     print("loaded ${savedDolls.length} dolls");
 
     if(savedDolls.length == 0) {

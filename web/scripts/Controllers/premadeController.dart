@@ -2,9 +2,9 @@ import '../navbar.dart';
 import "dart:html";
 import "dart:async";
 
+import 'package:CommonLib/Utility.dart';
 import 'package:DollLibCorrect/DollRenderer.dart';
 import 'package:RenderingLib/RendereringLib.dart';
-import 'package:RenderingLib/src/loader/loader.dart';
 
 Element container;
 List<String> cateogories = <String>["wranglers","credits","homestuck","rps"];
@@ -15,7 +15,6 @@ List<Doll> dolls = new List<Doll>();
 
 Future<Null> main() async {
     loadNavbar();
-    await Loader.preloadManifest();
     container = querySelector("#contents");
     pickCategory();
     drawLinks();

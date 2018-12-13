@@ -1,7 +1,10 @@
 import 'Trove.dart';
 import 'dart:html';
 import 'package:DollLibCorrect/DollRenderer.dart';
-
+import 'package:CommonLib/Colours.dart';
+import 'package:CommonLib/Random.dart';
+import 'package:LoaderLib/Loader.dart';
+import 'package:RenderingLib/RendereringLib.dart';
 /*
 a participant has a doll and a name and....a....gender???
  */

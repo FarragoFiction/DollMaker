@@ -6,14 +6,13 @@ import "dart:async";
 
 import "BaseController.dart";
 import "QueenController.dart";
-import 'package:RenderingLib/src/loader/loader.dart';
 
 BaseController controller;
 DivElement linkDiv = new DivElement();
 
 
 Future<Null> main() async {
-    await Loader.preloadManifest();
+    await Loader.loadManifest();
     print("Hello World");
     loadNavbar();
     Random rand = new Random();
@@ -78,7 +77,7 @@ void setUpTrollShit() {
 }
 
 Future<Null> loadDoll() async {
-    await Loader.preloadManifest();
+    await Loader.loadManifest();
 
     print("loading doll");
     String dataString = window.location.search;

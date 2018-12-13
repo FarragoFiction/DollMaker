@@ -2,13 +2,12 @@ import "package:DollLibCorrect/DollRenderer.dart";
 import "../navbar.dart";
 import "dart:html";
 import "dart:async";
-import 'package:RenderingLib/src/loader/loader.dart';
+import 'package:RenderingLib/RendereringLib.dart';
 
 
 List<Doll> dollExamples = new List<Doll>();
 DivElement div;
 Future<Null> main() async {
-    await Loader.preloadManifest();
     loadNavbar();
     div = querySelector("#output");
     initDollList();
@@ -25,7 +24,6 @@ void initDollList() {
 }
 
 Future<Null> drawAllBoxes() async {
-    await Loader.preloadManifest();
 
     for(Doll doll in dollExamples) {
         drawBox(doll);

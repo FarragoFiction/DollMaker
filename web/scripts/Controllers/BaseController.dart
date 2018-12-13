@@ -1,10 +1,15 @@
 
 import "../HomestuckDollLib.dart";
+import 'BaseController.dart';
 import "dart:html";
-import "package:DollLibCorrect/DollRenderer.dart";
+export "package:DollLibCorrect/DollRenderer.dart";
 import "../DollMakerTools.dart";
 import "../navbar.dart";
 import "dart:async";
+export 'package:CommonLib/Colours.dart';
+export 'package:CommonLib/Random.dart';
+export 'package:LoaderLib/Loader.dart';
+export 'package:RenderingLib/RendereringLib.dart';
 
 //bluh
 class BaseController {

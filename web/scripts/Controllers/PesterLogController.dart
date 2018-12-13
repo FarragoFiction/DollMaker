@@ -1,6 +1,7 @@
 import "../HomestuckDollLib.dart";
 import 'DollSlurper.dart';
 import "dart:html";
+import 'package:CommonLib/Random.dart';
 import "package:DollLibCorrect/DollRenderer.dart";
 import "../navbar.dart";
 import "../CharSheetLib.dart";
