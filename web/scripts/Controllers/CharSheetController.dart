@@ -17,6 +17,7 @@ void main() {
 
 Future<Null> drawSheet() async {
     String dataString = window.location.search;
+    await Doll.loadFileData();
     Doll doll;
     if(dataString.isNotEmpty && getParameterByName("type",null)  != null) {
         doll = Doll.randomDollOfType(int.parse(getParameterByName("type",null))); //chop off leading ?

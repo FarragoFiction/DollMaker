@@ -6,8 +6,9 @@ import "../CharSheetLib.dart";
 import 'dart:async';
 
 TrollCallSheetAncient sheet;
-void main() {
+Future<Null> main() async {
     loadNavbar();
+    await Doll.loadFileData();
     drawSheet();
 
 }

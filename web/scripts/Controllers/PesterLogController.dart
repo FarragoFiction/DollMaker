@@ -17,6 +17,7 @@ void main() {
 
 Future<Null> drawSheet() async {
     Random rand = new Random();
+    await Doll.loadFileData();
     String dataString = window.location.search;
     Doll doll;
     Doll doll2;

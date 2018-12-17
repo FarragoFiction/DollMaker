@@ -10,8 +10,10 @@ List<SavedDoll> savedDolls = new List<SavedDoll>();
 Element     container = querySelector("#contents");
 
 
-void main() {
+Future<Null> main() async{
     loadNavbar();
+    await Doll.loadFileData();
+
     try {
         savedDolls = Doll.loadAllFromLocalStorage();
         downloadBackupLink();

@@ -15,6 +15,7 @@ List<Doll> dolls = new List<Doll>();
 
 Future<Null> main() async {
     loadNavbar();
+    await Doll.loadFileData();
     container = querySelector("#contents");
     pickCategory();
     drawLinks();

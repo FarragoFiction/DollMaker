@@ -1,3 +1,4 @@
+import 'dart:async';
 import "dart:html";
 import "package:DollLibCorrect/DollRenderer.dart";
 import "../DollMakerTools.dart";
@@ -9,9 +10,11 @@ import 'package:RenderingLib/RendereringLib.dart';
 Doll doll;
 
 
-void main() {
+Future<Null> main() async{
     print("Hello World");
+
     loadNavbar();
+    await Doll.loadFileData();
     Random rand = new Random();
     doll = new HomestuckDoll();
     drawDollCreator();

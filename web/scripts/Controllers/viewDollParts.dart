@@ -15,8 +15,9 @@ Doll selectedDoll;
 SpriteLayer selectedPart;
 SpanElement detailDiv;
 SpanElement partDetailDiv;
-void main() {
+Future<Null> main() async{
     loadNavbar();
+    await Doll.loadFileData();
     div = querySelector("#output");
     detailDiv = new SpanElement();
     detailDiv.text = "Select a Doll to View It's Details";

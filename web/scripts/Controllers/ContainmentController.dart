@@ -11,8 +11,10 @@ import 'package:CommonLib/Random.dart';
 import 'package:LoaderLib/Loader.dart';
 import 'package:RenderingLib/RendereringLib.dart';
 
-void main() {
+Future<Null> main() async{
     loadNavbar();
+    await Doll.loadFileData();
+
     Random rand = new Random();
     List<int> types = new List.from(Doll.allDollTypes);
     types.addAll(<int>[33,34,35]); //add tree some in manually

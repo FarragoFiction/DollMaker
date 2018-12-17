@@ -20,7 +20,7 @@ CanvasElement canvas2;
 
 Future<Null> main() async{
     loadNavbar();
-    await Loader.loadManifest();
+    await Doll.loadFileData();
     container = querySelector("#contents");
     childContainer = new DivElement();
     initParents();

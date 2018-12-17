@@ -23,6 +23,7 @@ bool paused = false;
 
 Future<Null> main() async {
     loadNavbar();
+    await Doll.loadFileData();
     DivElement borderElement = new DivElement();
     borderElement.style.marginLeft = "auto";
     borderElement.style.marginRight = "auto";

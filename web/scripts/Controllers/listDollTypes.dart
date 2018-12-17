@@ -9,6 +9,7 @@ List<Doll> dollExamples = new List<Doll>();
 DivElement div;
 Future<Null> main() async {
     loadNavbar();
+    await Doll.loadFileData();
     div = querySelector("#output");
     initDollList();
     drawAllBoxes();

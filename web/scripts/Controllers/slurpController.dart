@@ -15,7 +15,8 @@ RegExp filePattern = new RegExp('<a href="([^?]*?)">');
 RegExp extensionPattern = new RegExp("\\\.(${extensions.join("|")})\$");
 RegExp numberedFilePattern = new RegExp("([a-zA-Z_]+?)(\\d+?)\\.");
 
-void main() {
+Future<Null> main() async{
+    await Doll.loadFileData();
     container = querySelector("#contents");
     todo("for each doll, for each doll part, print out name of file path");
     todo("for each file path, print out contents as text");

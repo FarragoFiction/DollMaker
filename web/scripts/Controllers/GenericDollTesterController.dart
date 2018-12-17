@@ -9,7 +9,9 @@ import "BaseController.dart";
 BaseController controller;
 
 
-void main() {
+Future<Null> main() async {
+    await Doll.loadFileData();
+
     print("Hello World");
     loadNavbar();
     Random rand = new Random();

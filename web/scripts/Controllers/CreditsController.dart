@@ -2,7 +2,7 @@ import "../navbar.dart";
 import 'dart:async';
 
 
-void main() {
+Future<Null> main() async {
     print("Hello World");
     loadNavbar();
     start();

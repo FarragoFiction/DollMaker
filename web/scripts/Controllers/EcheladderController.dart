@@ -7,8 +7,9 @@ import "../CharSheetLib.dart";
 import 'dart:async';
 
 Echeladder sheet;
-void main() {
+Future<Null> main() async{
     loadNavbar();
+    await Doll.loadFileData();
     drawSheet();
 
 }

@@ -1,13 +1,16 @@
 import "../HomestuckDollLib.dart";
+import 'dart:async';
 import "dart:html";
 import "package:DollLibCorrect/DollRenderer.dart";
 import "../DollMakerTools.dart";
 import "../navbar.dart";
 
 
-void main() {
+Future<Null> main() async{
     print("Hello World");
     loadNavbar();
+    await Doll.loadFileData();
+
 
     printPalette();
 

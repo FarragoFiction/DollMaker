@@ -31,6 +31,7 @@ WeightedList<int> dollTypes = new WeightedList<int>();
 
 Future<Null> main() async{
     loadNavbar();
+    await Doll.loadFileData();
     rand.nextInt(); //init
     initValidTypes();
     container = querySelector("#ectoContents");

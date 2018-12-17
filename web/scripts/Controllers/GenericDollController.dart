@@ -12,7 +12,8 @@ DivElement linkDiv = new DivElement();
 
 
 Future<Null> main() async {
-    await Loader.loadManifest();
+    await Doll.loadFileData();
+
     print("Hello World");
     loadNavbar();
     Random rand = new Random();
