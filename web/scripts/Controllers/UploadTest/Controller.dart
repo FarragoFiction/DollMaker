@@ -13,12 +13,13 @@ DivElement uploaderDiv;
 //guys it takes me 6+ hours to do a slurp now.
 //I LOVE seeing how creative you all are. But...for now, I need to stop accepting new parts at all hours.
 //I'll make newsposts on the discord when i'm accepting more parts again.
-bool acceptingParts = false;
+bool acceptingParts = true;
 //probably don't need to keep refs but it can't hurt
 List<UploadObject> uploadObjects = new List<UploadObject>();
 Future<Null> main() async {
     loadNavbar();
-    checkServerStatus();
+    await Doll.loadFileData();
+    //checkServerStatus();
     Random rand = new Random();
     uploaderDiv = querySelector("#uploader");
     print("going to load doll");
@@ -27,6 +28,7 @@ Future<Null> main() async {
     makeUploadObjects();
 }
 
+//this gets  a cors problem out of nowhere i guess ignore for now
 void checkServerStatus() {
     HttpRequest.getString("http://www.farragofiction.com:4037")
         .then((String fileContents) {
