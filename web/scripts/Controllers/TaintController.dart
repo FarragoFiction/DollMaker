@@ -13,37 +13,48 @@ import 'package:RenderingLib/RendereringLib.dart';
 Random rand = new Random();
 
 Element contents;
-CanvasElement buffer = new CanvasElement(width:1000, height: 1000);
-CanvasElement canvas = new CanvasElement(width:1000, height: 1000);
+CanvasElement buffer = new CanvasElement(width:1000, height: 600);
+CanvasElement canvas = new CanvasElement(width:1000, height: 600);
 ImageElement image;
-//TODO draw single pumpkin
-//TODO draw animated line of pumpkins
-//TODO allow pumpkin direction to sudddenly change by 90 degrees
-//TODO allow pumpkin drawer to teleport to any existing pumpkin location
-//TODO allow multiple pumpkin drawers at a time
 //TODO allow ppl to upload an image so long as it can be resized to 50 px wide
-//TODO maybe have a diff image for each indepednant pumpking drawer?
-//TODO ????????????????????????????????????????
+//TODO let people import a doll that gets resized.
 
+
+//TODO if an image is uploaded the seed should be the data length?
 int seed =13;
 Future<Null> main() async{
     loadNavbar();
     contents = querySelector("#contents");
+    ButtonElement button = new ButtonElement()..text = "Start Spreading Taint?";
+    contents.append(button);
     contents.append(canvas);
-    image = await Loader.getResource("images/this_pumpkin.png");
-    PumpkinDrawer pumpkinDrawer = new PumpkinDrawer(image,canvas,buffer,seed);
-    pumpkinDrawer.draw();
+    buffer.context2D.fillRect(0,0,buffer.width,buffer.height);
+    canvas.context2D.fillRect(0,0,buffer.width,buffer.height);
+    button.onClick.listen((Event e) {
+        button.text = "The Taint Cannot Be Stopped";
+        button.disabled = true;
+        init();
+    });
+}
+
+Future<Null> init() async {
+  image = await Loader.getResource("images/this_pumpkin.png");
+  CanvasElement imageCanvas = new CanvasElement(width: 13, height: 13);
+  imageCanvas.context2D.drawImageScaled(image, 0, 0, 13, 13);
+  PumpkinDrawer pumpkinDrawer = new PumpkinDrawer(
+      imageCanvas, canvas, buffer, seed);
+  pumpkinDrawer.draw();
 }
 
 
 
 //each pumpkin drawer is responsible for drawing a single pumpking that moves in a line
 class PumpkinDrawer {
-    ImageElement image;
+    CanvasElement image;
     CanvasElement canvas;
     CanvasElement buffer;
     int cursorX = 500;
-    int cursorY = 500;
+    int cursorY = 300;
     int xDirection = 13;
     int yDirection = 0;
     int imageWidth = 13;
@@ -56,7 +67,7 @@ class PumpkinDrawer {
     //so i can teleport to somewhere i've previously drawn
     List<Point> history = new List<Point>();
 
-    PumpkinDrawer(ImageElement this.image, CanvasElement this.canvas, CanvasElement this.buffer, int seed) {
+    PumpkinDrawer(CanvasElement this.image, CanvasElement this.canvas, CanvasElement this.buffer, int seed) {
         rand = new Random(seed);
         xDirection = imageWidth;
         rand.nextInt(); //init
