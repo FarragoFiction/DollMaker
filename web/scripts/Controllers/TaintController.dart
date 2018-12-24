@@ -13,7 +13,7 @@ import 'package:RenderingLib/RendereringLib.dart';
 Random rand = new Random();
 
 Element contents;
-CanvasElement buffer;
+CanvasElement buffer = new CanvasElement(width:1000, height: 1000);
 CanvasElement canvas = new CanvasElement(width:1000, height: 1000);
 ImageElement image;
 //TODO draw single pumpkin
@@ -44,14 +44,17 @@ class PumpkinDrawer {
     CanvasElement buffer;
     int cursorX = 500;
     int cursorY = 500;
-    int xDirection = 50;
+    int xDirection = 13;
     int yDirection = 0;
-    int imageWidth = 50;
+    int imageWidth = 13;
     double oddsTurning = .13;
+    int minBeforeTurning = 3;
+    int numPumpkinsInRow = 0;
     Random rand;
 
     PumpkinDrawer(ImageElement this.image, CanvasElement this.canvas, CanvasElement this.buffer, int seed) {
         rand = new Random(seed);
+        xDirection = imageWidth;
         rand.nextInt(); //init
     }
 
@@ -69,15 +72,29 @@ class PumpkinDrawer {
         //if you're currently going horizontally go vertical or vice versa.
         if(xDirection != 0) {
             yDirection = direction;
+            xDirection = 0;
         }else {
             xDirection = direction;
+            yDirection = 0;
         }
+        numPumpkinsInRow = 0;
+    }
+
+    bool offScreen() {
+        if(cursorY > canvas.height-imageWidth || cursorY < 0) {
+            return true;
+        }
+
+        if(cursorX > canvas.width-imageWidth || cursorX < 0) {
+            return true;
+        }
+        return false;
     }
 
     void move() {
         cursorY += yDirection;
         cursorX += xDirection;
-        if(rand.nextDouble() < oddsTurning) {
+        if(numPumpkinsInRow > minBeforeTurning && (rand.nextDouble() < oddsTurning || offScreen())) {
             changeDirection();
         }
     }
@@ -86,6 +103,8 @@ class PumpkinDrawer {
         move();
         buffer.context2D.drawImage(image,cursorX,cursorY);
         drawBuffer();
+        numPumpkinsInRow ++;
+        new Timer(new Duration(milliseconds: 1000), () => draw());
     }
 }
 
