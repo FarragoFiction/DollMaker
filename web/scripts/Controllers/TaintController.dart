@@ -47,10 +47,14 @@ class PumpkinDrawer {
     int xDirection = 13;
     int yDirection = 0;
     int imageWidth = 13;
-    double oddsTurning = .13;
-    int minBeforeTurning = 3;
+    double oddsTurning = .03;
+    double teleportationRate = 0.01;
+    int minBeforeTurning = 13;
     int numPumpkinsInRow = 0;
     Random rand;
+
+    //so i can teleport to somewhere i've previously drawn
+    List<Point> history = new List<Point>();
 
     PumpkinDrawer(ImageElement this.image, CanvasElement this.canvas, CanvasElement this.buffer, int seed) {
         rand = new Random(seed);
@@ -91,12 +95,24 @@ class PumpkinDrawer {
         return false;
     }
 
+    void teleport() {
+        Point newPoint = rand.pickFrom(history);
+        cursorY = newPoint.y;
+        cursorX = newPoint.x;
+    }
+
     void move() {
-        cursorY += yDirection;
-        cursorX += xDirection;
         if(numPumpkinsInRow > minBeforeTurning && (rand.nextDouble() < oddsTurning || offScreen())) {
             changeDirection();
         }
+        cursorY += yDirection;
+        cursorX += xDirection;
+        //if you're STILL off screen just fucking leave
+        if(offScreen() || rand.nextDouble() < teleportationRate) {
+            changeDirection();
+            teleport();
+        }
+
     }
 
     Future<Null> draw() async {
@@ -104,7 +120,9 @@ class PumpkinDrawer {
         buffer.context2D.drawImage(image,cursorX,cursorY);
         drawBuffer();
         numPumpkinsInRow ++;
-        new Timer(new Duration(milliseconds: 1000), () => draw());
+        history.add(new Point(cursorX, cursorY));
+        new Timer(new Duration(milliseconds: 100), () => draw());
     }
 }
+
 
