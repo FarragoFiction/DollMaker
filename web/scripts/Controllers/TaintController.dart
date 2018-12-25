@@ -25,20 +25,41 @@ int seed =13;
 Future<Null> main() async{
     loadNavbar();
     contents = querySelector("#contents");
-    ButtonElement button = new ButtonElement()..text = "Start Spreading Taint?";
+    ButtonElement button = new ButtonElement()..text = "Consent To Spread Taint?";
     contents.append(button);
+    image = await Loader.getResource("images/this_pumpkin.png");
+    InputElement fileElement = new InputElement();
+    fileElement.type = "file";
+    fileElement.classes.add("fileUploadButton");
+    contents.append(fileElement);
     contents.append(canvas);
-    buffer.context2D.fillRect(0,0,buffer.width,buffer.height);
-    canvas.context2D.fillRect(0,0,buffer.width,buffer.height);
     button.onClick.listen((Event e) {
         button.text = "The Taint Cannot Be Stopped";
         button.disabled = true;
         init();
     });
+
+
+
+    fileElement.onChange.listen((e) {
+        List<File> loadFiles = fileElement.files;
+        File file = loadFiles.first;
+        FileReader reader = new FileReader();
+        reader.readAsDataUrl(file);
+        print("the file was $file");
+        reader.onLoadEnd.listen((e) {
+            //sparse
+            String loadData = reader.result;
+            //String old = chat.icon.src;
+           image.src = loadData;
+            button.text = "The Taint Cannot Be Stopped";
+            button.disabled = true;
+            init();
+        });
+    });
 }
 
 Future<Null> init() async {
-  image = await Loader.getResource("images/this_pumpkin.png");
   CanvasElement imageCanvas = new CanvasElement(width: 13, height: 13);
   imageCanvas.context2D.drawImageScaled(image, 0, 0, 13, 13);
   PumpkinDrawer pumpkinDrawer = new PumpkinDrawer(
