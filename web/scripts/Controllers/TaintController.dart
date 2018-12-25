@@ -16,7 +16,6 @@ Element contents;
 CanvasElement buffer = new CanvasElement(width:1000, height: 600);
 CanvasElement canvas = new CanvasElement(width:1000, height: 600);
 ImageElement image;
-//TODO allow ppl to upload an image so long as it can be resized to 50 px wide
 //TODO let people import a doll that gets resized.
 
 
@@ -32,6 +31,12 @@ Future<Null> main() async{
     fileElement.type = "file";
     fileElement.classes.add("fileUploadButton");
     contents.append(fileElement);
+
+    LabelElement label = new LabelElement()..text = "Doll String";
+    TextAreaElement dollUpload = new TextAreaElement();
+    contents.append(label);
+    contents.append(dollUpload);
+
     contents.append(canvas);
     button.onClick.listen((Event e) {
         button.text = "The Taint Cannot Be Stopped";
@@ -50,6 +55,7 @@ Future<Null> main() async{
         reader.onLoadEnd.listen((e) {
             //sparse
             String loadData = reader.result;
+            seed = loadData.length;
             //String old = chat.icon.src;
            image.src = loadData;
             button.text = "The Taint Cannot Be Stopped";
@@ -57,6 +63,31 @@ Future<Null> main() async{
             init();
         });
     });
+
+    dollUpload.onChange.listen((e) {
+
+        button.text = "The Taint Cannot Be Stopped";
+        button.disabled = true;
+        Doll doll = Doll.loadSpecificDoll(dollUpload.value);
+        initDoll(doll);
+
+    });
+
+
+}
+
+Future<Null> initDoll(Doll doll) async{
+    CanvasElement tmpCanvas = doll.blankCanvas;
+    tmpCanvas.width = doll.width;
+    tmpCanvas.height = doll.height;
+
+    DollRenderer.drawDoll(tmpCanvas, doll);
+    CanvasElement imageCanvas = new CanvasElement(width: 13, height: 13);
+    imageCanvas.context2D.drawImageScaled(tmpCanvas, 0, 0, 13, 13);
+    PumpkinDrawer pumpkinDrawer = new PumpkinDrawer(
+        imageCanvas, canvas, buffer, seed);
+    pumpkinDrawer.draw();
+
 }
 
 Future<Null> init() async {
