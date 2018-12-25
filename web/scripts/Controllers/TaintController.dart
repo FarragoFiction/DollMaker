@@ -16,6 +16,7 @@ Element contents;
 CanvasElement buffer = new CanvasElement(width:1000, height: 600);
 CanvasElement canvas = new CanvasElement(width:1000, height: 600);
 ImageElement image;
+int imageWidth = 13;
 //TODO let people import a doll that gets resized.
 
 
@@ -31,11 +32,20 @@ Future<Null> main() async{
     fileElement.type = "file";
     fileElement.classes.add("fileUploadButton");
     contents.append(fileElement);
+    await Doll.loadFileData();
 
     LabelElement label = new LabelElement()..text = "Doll String";
     TextAreaElement dollUpload = new TextAreaElement();
     contents.append(label);
     contents.append(dollUpload);
+
+    LabelElement unitLabel = new LabelElement()..text = "Unit Width: $imageWidth";
+    RangeInputElement widthElement = new RangeInputElement();
+    widthElement.min = "13";
+    widthElement.value="$imageWidth";
+    widthElement.max="113";
+    contents.append(unitLabel);
+    contents.append(widthElement);
 
     contents.append(canvas);
     button.onClick.listen((Event e) {
@@ -73,6 +83,11 @@ Future<Null> main() async{
 
     });
 
+    widthElement.onChange.listen((e) {
+        imageWidth = int.parse(widthElement.value);
+        unitLabel.text = "Unit Width: $imageWidth";
+    });
+
 
 }
 
@@ -81,20 +96,20 @@ Future<Null> initDoll(Doll doll) async{
     tmpCanvas.width = doll.width;
     tmpCanvas.height = doll.height;
 
-    DollRenderer.drawDoll(tmpCanvas, doll);
-    CanvasElement imageCanvas = new CanvasElement(width: 13, height: 13);
-    imageCanvas.context2D.drawImageScaled(tmpCanvas, 0, 0, 13, 13);
+    await DollRenderer.drawDoll(tmpCanvas, doll);
+    CanvasElement imageCanvas = new CanvasElement(width: imageWidth, height: imageWidth);
+    imageCanvas.context2D.drawImageScaled(tmpCanvas, 0, 0, imageWidth, imageWidth);
     PumpkinDrawer pumpkinDrawer = new PumpkinDrawer(
-        imageCanvas, canvas, buffer, seed);
+        imageCanvas, canvas, buffer, imageWidth,seed);
     pumpkinDrawer.draw();
 
 }
 
 Future<Null> init() async {
-  CanvasElement imageCanvas = new CanvasElement(width: 13, height: 13);
-  imageCanvas.context2D.drawImageScaled(image, 0, 0, 13, 13);
+  CanvasElement imageCanvas = new CanvasElement(width: imageWidth, height: imageWidth);
+  imageCanvas.context2D.drawImageScaled(image, 0, 0, imageWidth, imageWidth);
   PumpkinDrawer pumpkinDrawer = new PumpkinDrawer(
-      imageCanvas, canvas, buffer, seed);
+      imageCanvas, canvas, buffer,imageWidth, seed);
   pumpkinDrawer.draw();
 }
 
@@ -119,7 +134,7 @@ class PumpkinDrawer {
     //so i can teleport to somewhere i've previously drawn
     List<Point> history = new List<Point>();
 
-    PumpkinDrawer(CanvasElement this.image, CanvasElement this.canvas, CanvasElement this.buffer, int seed) {
+    PumpkinDrawer(CanvasElement this.image, CanvasElement this.canvas, CanvasElement this.buffer, int this.imageWidth,int seed) {
         rand = new Random(seed);
         xDirection = imageWidth;
         rand.nextInt(); //init
@@ -127,6 +142,7 @@ class PumpkinDrawer {
 
 
 
+    //huh, using a buffer makes it just a shade nondeterministic which is weird, it wobbles
     Future<Null> drawBuffer() async {
         canvas.context2D.drawImage(buffer,0,0);
     }
@@ -180,8 +196,8 @@ class PumpkinDrawer {
 
     Future<Null> draw() async {
         move();
-        buffer.context2D.drawImage(image,cursorX,cursorY);
-        drawBuffer();
+        canvas.context2D.drawImage(image,cursorX,cursorY);
+        //drawBuffer();
         numPumpkinsInRow ++;
         history.add(new Point(cursorX, cursorY));
         new Timer(new Duration(milliseconds: 100), () => draw());

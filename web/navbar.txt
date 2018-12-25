@@ -45,7 +45,7 @@
       <a href="http://www.farragofiction.com/DollSim/trollCall.html">TrollCall Sheets</a>
       <a href="http://www.farragofiction.com/DollSim/trollCard.html">Ancient TrollCards</a>
       <a href="containment.html">Containment Procedures</a>
-
+       <a href="this_pumpkin.html">Taint Sim</a>
        <a href="http://www.farragofiction.com/DollSim/echeladder.html">Make Echeladders</a>
 
 
