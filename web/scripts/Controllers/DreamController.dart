@@ -186,7 +186,11 @@ class DreamDrawer {
 
     //TODO actually use image data to get the real color
     Colour getColorAtCursor() {
-        return ReferenceColours.RED;
+        int y = cursorY.floor();
+        int x = cursorX.floor();
+        //dm probably gave me this math way back in modern art sim
+        int i = (y * canvas.width + x)* 4; //array is in sets of rgba
+        return new Colour(imageData.data[i],imageData.data[i+1],imageData.data[i+2],imageData.data[i]);
     }
 
 
