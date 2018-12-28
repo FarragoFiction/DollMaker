@@ -103,17 +103,14 @@ Future<Null> initDoll(Doll doll) async{
     tmpCanvas.height = doll.height;
 
     await DollRenderer.drawDoll(tmpCanvas, doll);
-    CanvasElement imageCanvas = new CanvasElement(width: imageWidth, height: imageWidth);
-    imageCanvas.context2D.drawImageScaled(tmpCanvas, 0, 0, imageWidth, imageWidth);
-    DreamDrawer pumpkinDrawer = new DreamDrawer(
-        imageCanvas, canvas, imageWidth,seed);
+    DreamDrawer pumpkinDrawer = new DreamDrawer(tmpCanvas, canvas, imageWidth,seed);
     pumpkinDrawer.draw();
 
 }
 
 Future<Null> init() async {
-  CanvasElement imageCanvas = new CanvasElement(width: imageWidth, height: imageWidth);
-  imageCanvas.context2D.drawImageScaled(image, 0, 0, imageWidth, imageWidth);
+  CanvasElement imageCanvas = new CanvasElement(width: image.width, height: image.height);
+  imageCanvas.context2D.drawImage(image,0,0);
   DreamDrawer dreamDrawer = new DreamDrawer(
       imageCanvas, canvas,imageWidth, seed);
   dreamDrawer.draw();
@@ -197,7 +194,9 @@ class DreamDrawer {
     //TODO draw a square of size imageWidth where the color comes from the image buffer
     Future<Null> draw() async {
         if(imageData == null) {
-            imageData=canvas.context2D.getImageData(0, 0, canvas.width, canvas.height);
+            imageData=image.context2D.getImageData(0, 0, canvas.width, canvas.height);
+            //don't want a clear canvas
+            canvas.context2D.drawImage(image,0,0);
         }
 
         move();
