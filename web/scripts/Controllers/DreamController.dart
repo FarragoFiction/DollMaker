@@ -4,6 +4,7 @@ import 'DollSlurper.dart';
 import "dart:html";
 import "../navbar.dart";
 import "dart:async";
+import 'package:CommonLib/src/colours/colour.dart';
 import 'package:DollLibCorrect/DollRenderer.dart';
 import 'package:CommonLib/Random.dart';
 import 'package:LoaderLib/Loader.dart';
@@ -184,6 +185,11 @@ class DreamDrawer {
         return false;
     }
 
+    //TODO actually use image data to get the real color
+    Colour getColorAtCursor() {
+        return ReferenceColours.RED;
+    }
+
 
     //TODO draw a square of size imageWidth where the color comes from the image buffer
     Future<Null> draw() async {
@@ -192,7 +198,11 @@ class DreamDrawer {
         }
 
         move();
-        canvas.context2D.drawImage(image,cursorX,cursorY);
+        //canvas.context2D.drawImage(image,cursorX,cursorY);
+        Colour color = getColorAtCursor();
+        //note to future jr this might be hella slow
+        canvas.context2D.setFillColorRgb(color.red, color.green, color.blue);
+        canvas.context2D.fillRect(cursorX, cursorY, imageWidth,imageWidth);
         new Timer(new Duration(milliseconds: 100), () => draw());
     }
 
