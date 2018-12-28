@@ -125,27 +125,26 @@ class DreamDrawer {
     CanvasElement image;
     ImageData imageData;
     CanvasElement canvas;
-    int cursorX = 500;
-    int cursorY = 300;
-    int xDirection = 13;
-    int yDirection = 0;
+    double cursorX = 500.0;
+    double cursorY = 300.0;
+    double xDirection = 13.0;
+    double yDirection = 5.0;
     int imageWidth = 13;
     //higher is more consistent
-    double directionConsistency = 0.9;
+    double directionConsistency = 0.1;
     Random rand;
 
 
     DreamDrawer(CanvasElement this.image, CanvasElement this.canvas, int this.imageWidth,int seed) {
         rand = new Random(seed);
-        xDirection = imageWidth;
         rand.nextInt(); //init
     }
 
     void changeDirection() {
         //only change direction if its time
         if(rand.nextDouble() > directionConsistency) {
-            xDirection = (imageWidth * (rand.nextDouble()+0.5).round());
-            yDirection = (imageWidth * (rand.nextDouble()+0.5).round());
+            xDirection = (imageWidth * (rand.nextDouble()+0.5));
+            yDirection = (imageWidth * (rand.nextDouble()+0.5));
             //either amount could be negative
             if(rand.nextBool()) {
                 xDirection = -1 * xDirection;
@@ -158,16 +157,16 @@ class DreamDrawer {
     }
 
     void teleport() {
-        cursorX = rand.nextInt(canvas.width);
-        cursorY = rand.nextInt(canvas.height);
+        cursorX = 1.0*rand.nextInt(canvas.width);
+        cursorY = 1.0*rand.nextInt(canvas.height);
     }
 
     void move() {
         changeDirection();
-        cursorY += yDirection;
-        cursorX += xDirection;
+        cursorY += yDirection* (rand.nextDouble()+0.5);
+        cursorX += xDirection* (rand.nextDouble()+0.5);
         //if you're STILL off screen just fucking leave
-        if(offScreen() || rand.nextDouble() > directionConsistency) {
+        if(offScreen()) {
             changeDirection();
             teleport();
         }
