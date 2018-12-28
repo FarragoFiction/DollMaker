@@ -33,7 +33,7 @@ Future<Null> main() async{
     contents = querySelector("#contents");
     ButtonElement button = new ButtonElement()..text = "Dream?";
     contents.append(button);
-    image = await Loader.getResource("images/New_Trees_Background.png");
+    image = await Loader.getResource("images/New_Trees_Background_Plus_Prince.png");
     InputElement fileElement = new InputElement();
     fileElement.type = "file";
     fileElement.classes.add("fileUploadButton");
@@ -47,7 +47,7 @@ Future<Null> main() async{
 
     LabelElement unitLabel = new LabelElement()..text = "Unit Width: $imageWidth";
     RangeInputElement widthElement = new RangeInputElement();
-    widthElement.min = "13";
+    widthElement.min = "1";
     widthElement.value="$imageWidth";
     widthElement.max="113";
     contents.append(unitLabel);
@@ -55,7 +55,7 @@ Future<Null> main() async{
 
     contents.append(canvas);
     button.onClick.listen((Event e) {
-        button.text = "The Taint Cannot Be Stopped";
+        button.text = "You're Not Strong Enough To Wake Up";
         button.disabled = true;
         init();
     });
@@ -104,7 +104,8 @@ Future<Null> initDoll(Doll doll) async{
 
     await DollRenderer.drawDoll(tmpCanvas, doll);
     DreamDrawer pumpkinDrawer = new DreamDrawer(tmpCanvas, canvas, imageWidth,seed);
-    pumpkinDrawer.draw();
+    pumpkinDrawer.noise();
+    pumpkinDrawer.drawNoise();
 
 }
 
@@ -113,7 +114,8 @@ Future<Null> init() async {
   imageCanvas.context2D.drawImage(image,0,0);
   DreamDrawer dreamDrawer = new DreamDrawer(
       imageCanvas, canvas,imageWidth, seed);
-  dreamDrawer.draw();
+  dreamDrawer.noise();
+  dreamDrawer.drawNoise();
 }
 
 
@@ -192,7 +194,7 @@ class DreamDrawer {
 
 
     //TODO draw a square of size imageWidth where the color comes from the image buffer
-    Future<Null> draw() async {
+    Future<Null> drawSquiggles() async {
         if(imageData == null) {
             imageData=image.context2D.getImageData(0, 0, canvas.width, canvas.height);
             //don't want a clear canvas
@@ -205,7 +207,32 @@ class DreamDrawer {
         //note to future jr this might be hella slow
         canvas.context2D.setFillColorRgb(color.red, color.green, color.blue);
         canvas.context2D.fillRect(cursorX, cursorY, imageWidth,imageWidth);
-        new Timer(new Duration(milliseconds: 100), () => draw());
+        new Timer(new Duration(milliseconds: 100), () => drawSquiggles());
+    }
+
+    //TODO draw a square of size imageWidth where the color comes from the image buffer
+    Future<Null> drawNoise() async {
+        noise(113);
+        new Timer(new Duration(milliseconds: 100), () => drawNoise());
+    }
+
+    void noise([int amount=666]) {
+      if(imageData == null) {
+          imageData=image.context2D.getImageData(0, 0, image.width, image.height);
+          //don't want a clear canvas
+          canvas.width = image.width;
+          canvas.height = image.height;
+          canvas.context2D.drawImage(image,0,0);
+      }
+      for(int i =0; i<amount; i++) {
+          teleport();
+          //canvas.context2D.drawImage(image,cursorX,cursorY);
+          Colour color = getColorAtCursor();
+          //note to future jr this might be hella slow
+          canvas.context2D.setFillColorRgb(
+              color.red, color.green, color.blue);
+          canvas.context2D.fillRect(cursorX, cursorY, imageWidth, imageWidth);
+      }
     }
 
 
