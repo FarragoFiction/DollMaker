@@ -20,7 +20,7 @@ dependencies:
   TextEngine:
       git: git://github.com/FarragoFiction/TextEngine.git
   CommonLib:
-            git: git://github.com/FarragoFiction/CommonLib.git
+      git: git://github.com/FarragoFiction/CommonLib.git
 
 dev_dependencies:
   browser: ^0.10.0

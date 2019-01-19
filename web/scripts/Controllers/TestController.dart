@@ -1,49 +1,47 @@
 import 'dart:async';
-import "dart:html";
-import "package:DollLibCorrect/DollRenderer.dart";
-import "../DollMakerTools.dart";
-import "../navbar.dart";
-import 'package:CommonLib/Colours.dart';
-import 'package:CommonLib/Random.dart';
+
+import 'dart:html';
+import 'package:DollLibCorrect/src/Dolls/Doll.dart';
+import 'package:DollLibCorrect/src/Dolls/KidBased/HomestuckLamiaDoll.dart';
+import 'package:DollLibCorrect/src/Dolls/Layers/SpriteLayer.dart';
 import 'package:LoaderLib/Loader.dart';
 import 'package:RenderingLib/RendereringLib.dart';
-Doll doll;
 
+Element container = querySelector("#contents");
 
-Future<Null> main() async{
-    print("Hello World");
-
-    loadNavbar();
+Future<Null> main() async {
     await Doll.loadFileData();
-    Random rand = new Random();
-    doll = new HomestuckDoll();
-    drawDollCreator();
-    setupForms();
-}
+    //draw each horn for each doll, colored
+    HomestuckLamiaDoll selectedDoll = new HomestuckLamiaDoll();
+    SpriteLayer leftHorn = selectedDoll.extendedLeftHorn;
+    SpriteLayer rightHorn = selectedDoll.extendedRightHorn;
 
+    for(int i = 0; i<leftHorn.maxImageNumber+1; i++) {
+        drawPart(selectedDoll,leftHorn,rightHorn, i);
+    }
 
-void setupForms() {
-
-
-    ButtonElement loadButton = querySelector("#loadButton");
-    loadButton.onClick.listen((Event e) {
-        print('loading');
-        TextAreaElement dataBox = querySelector("#shareableURL");
-        //TODO if i'm given a url, chop it off till the ? do this in doll.
-        String dataString = dataBox.value;
-        doll = Doll.loadSpecificDoll(dataString);
-        drawDollCreator();
-    });
 
 }
 
+Future<Null> drawPart(Doll doll, SpriteLayer part1, SpriteLayer part2, int imgNumber) async{
+    ImageElement img1 = await Loader.getResource("${part1.imgNameBase}${imgNumber}.${part1.imgFormat}");
+    ImageElement img2 = await Loader.getResource("${part2.imgNameBase}${imgNumber}.${part2.imgFormat}");
 
+    CanvasElement canvas = new CanvasElement(width: doll.width, height: doll.height);
+    canvas.context2D.drawImage(img1,0,0);
+    canvas.context2D.drawImage(img2,0,0);
 
-void drawDollCreator() {
-    print("Draw doll creator");
+    CanvasElement visible = new CanvasElement(width:100,height:100);
 
-    CanvasElement canvas = querySelector("#doll_creator");
-    Renderer.clearCanvas(canvas);
-    DollRenderer.drawDoll(canvas, doll);
+    Renderer.swapPalette(canvas, doll.paletteSource, doll.palette);
+    visible.context2D.drawImageScaled(canvas,0,0,100,100);
+    DivElement me = new DivElement();
+    me.style.border= "1px solid black";
+    me.style.width = "100px";
+    me.style.display = "inline-block";
+    me.append(visible);
+    DivElement number = new DivElement()..text = "$imgNumber";
+    me.append(number);
+    container.append(me);
 
 }
