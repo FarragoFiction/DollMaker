@@ -2,6 +2,8 @@ import 'dart:async';
 import 'dart:html';
 
 import 'package:DollLibCorrect/DollRenderer.dart';
+import 'package:LoaderLib/Loader.dart';
+import 'package:RenderingLib/RendereringLib.dart';
 
 
 List<String> extensions = <String>[
@@ -44,11 +46,11 @@ void printOneDollPath(Doll doll) {
     dollDiv.style.backgroundColor = "#aaaaaa";
     container.append(dollDiv);
     for(SpriteLayer layer in doll.renderingOrderLayers) {
-        printOneDirectory(layer, "$source/${layer.imgNameBase}", dollDiv);
+        printOneDirectory(doll, layer, "$source/${layer.imgNameBase}", dollDiv);
     }
 }
 
-Future<Null> printOneDirectory(SpriteLayer layer, String dir, Element div) async {
+Future<Null> printOneDirectory(Doll doll, SpriteLayer layer, String dir, Element div) async {
     DivElement line = new DivElement();
     line.style.padding = "10px";
     div.append(line);
@@ -68,7 +70,7 @@ Future<Null> printOneDirectory(SpriteLayer layer, String dir, Element div) async
     view.onClick.listen((Event e) {
         print("toggling");
         if(parts.children.isEmpty) {
-            fillParts(dir, files, parts);
+            fillParts(doll, dir, files, parts);
         }
         if(parts.style.display == "inline-block") {
             view.text = "Show Parts";
@@ -80,12 +82,33 @@ Future<Null> printOneDirectory(SpriteLayer layer, String dir, Element div) async
     });
 }
 
-void fillParts(String dir, List<String> files, DivElement parts) {
+Future<Null> fillParts(Doll doll ,String dir, List<String> files, DivElement parts) async {
     for(String file in files) {
         String fileName = "$dir$file";
         print("trying out $fileName");
-        ImageElement img = new ImageElement(src: fileName, height: 150);
-        parts.append(img);
+        DivElement container = new DivElement();
+        container.style.display = "inline-block";
+        DivElement label = new DivElement()..text = "$fileName";
+        container.append(label);
+        CanvasElement visible = new CanvasElement(width:150,height:150);
+        container.append(visible);
+        parts.append(container);
+        ImageElement img = new ImageElement();
+        img.crossOrigin = "Anonymous";
+        //can't use pl's loader cuz it doesn't set cross origin
+        img.src = fileName;
+        img.onLoad.listen((Event e) {
+            CanvasElement temp = new CanvasElement(
+                width: doll.width, height: doll.height);
+            temp.context2D.drawImage(img, 0, 0);
+            Renderer.swapPalette(temp, doll.paletteSource, doll.palette);
+            visible.context2D.drawImageScaled(temp, 0, 0, 150, 150);
+        });
+
+        img.onError.listen((Event e) {
+            DivElement error = new DivElement()..text = "Error loading part $e";
+            container.append(error);
+        });
     }
 }
 
