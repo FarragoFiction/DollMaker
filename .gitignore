@@ -1,6 +1,7 @@
 .DS_STORE
 .idea/
 *.iml
+.dart_tool/
 
 *.DS_STORE
 
