@@ -90,12 +90,12 @@ class UploadObject {
             //http://farragofiction.com:4037/experiment
             String loc = "${serverHost}:${serverPort}/experiment";
             print("about to post to $loc");
-            HttpRequest.postFormData(loc, toJSON().json).then((HttpRequest request) {
+            HttpRequest.postFormData(loc, toJSON().jsonObj).then((HttpRequest request) {
 
                 print("success? $request, ${request.responseText}");
                 AnchorElement a = new AnchorElement(href: "http://www.farragofiction.com:4037")..text = "Uploaded Successfully to Server! Click to view all uploaded parts since last slurp."..target = "_blank";
                 results.append(a);
-                request.onReadyStateChange.listen((ProgressEvent response) => print("response is ${response.type}"));
+                request.onReadyStateChange.listen((Event response) => print("response is ${response.type}"));
 
 
             }).catchError((error) {

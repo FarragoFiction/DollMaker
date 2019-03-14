@@ -4,13 +4,10 @@ version: 0.0.1
 #homepage: https://www.example.com
 #author: JR <email@example.com>
 environment:
-  sdk: '>=1.20.1 <2.0.0'
+  sdk: '>=2.2.0 <3.0.0'
 
 dependencies:
-  js: ^0.6.0
-  xml: "^2.6.0"
-  source_map_stack_trace: ^1.1.4
-  archive: "^1.0.31"
+
   DollLibCorrect:
     git: git://github.com/FarragoFiction/DollLibCorrect.git
   RenderingLib:
@@ -23,11 +20,9 @@ dependencies:
       git: git://github.com/FarragoFiction/CommonLib.git
 
 dev_dependencies:
-  browser: ^0.10.0
-  dart_to_js_script_rewriter: ^1.0.1
+  build_runner: ^1.0.0
+  build_test: ^0.10.2
+  build_web_compilers: ^0.4.0
 
 transformers:
-- $dart2js:
-    sourceMaps: true
-    commandLineOptions: [--fast-startup, --trust-type-annotations]
-    $exclude: ["web/manifest/tarbuilder.dart", "web/manifest/sourcemanifest.txt"]
+- - dart_to_js_script_rewriter

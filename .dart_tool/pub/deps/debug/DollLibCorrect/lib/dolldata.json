@@ -1,0 +1,439 @@
+{
+  "Egg": {
+    "layers": {
+      "Body": 13
+    }
+  },
+
+  "Kid": {
+    "layers": {
+      "Body": 646,
+      "FacePaint": 187,
+      "Glasses": 275,
+      "Glasses2": 310,
+      "HairFront": 341,
+      "HairBack": 341,
+      "LeftEye": 278,
+      "RightEye": 278,
+      "Mouth": 281,
+      "Symbol": 420
+    }
+  },
+
+  "Troll": {
+    "defaultBody": 48,
+    "mutantEyes": [2,11,31,44,46,47,85],
+    "bannedBodies": [238,252,256,259,235,226,227,230,96,219,221,223,5,11,14,43,50,59,65,66,67,70,72,75,74,98,100,101,102,106,107,109,63,17],
+    "layers": {
+      "CanonSymbol": 288,
+      "FinLeft": 26,
+      "FinRight": 26,
+      "Wings": 78,
+      "LeftHorn": 347,
+      "RightHorn": 347
+    }
+  },
+
+  "Smol": {
+    "layers": {
+      "SmolBody": 21
+    }
+  },
+
+  "Vessel": {
+    "layers": {
+      "Head": 9,
+      "Torso": 4,
+      "Legs": 3
+    }
+  },
+
+
+  "MagicalDoll": {
+    "layers": {
+      "HairBack": 11,
+      "BowBack": 6,
+      "Body": 16,
+      "Socks": 8,
+      "Shoes": 6,
+      "Skirt": 24,
+      "BowFront": 12,
+      "Eyes": 2,
+      "Eyebrows": 2,
+      "Mouth": 3,
+      "HairFront": 11,
+      "Glasses": 8
+    }
+  },
+
+  "Leaf": {
+    "layers": {
+      "body": 25
+    }
+  },
+
+  "Cherub": {
+    "layers": {
+      "Mouth": 15,
+      "Wings": 2,
+      "LeftEye": 35,
+      "RightEye": 35,
+      "Cheeks": 24,
+      "Body": 239,
+      "Glasses": 113,
+      "Glasses2": 113
+    }
+  },
+
+  "Baby": {
+    "layers": {
+      "Body": 3
+    }
+  },
+
+  "Grub": {
+    "landDwellerBodies": [0,1,2,3,4,5,6,7,8],
+    "seaDwellerBodies1": [9,10,11,12,13,14,15,16,17],
+    "seaDwellerBodies2": [18,19,20,21,22,23,24,26,26],
+    "upsideDownBodies": [7,8,26,25,16,17],
+    "layers": {
+      "Body": 26
+    }
+  },
+
+  "Consort": {
+    "layers": {
+      "Body": 45
+    }
+  },
+
+  "Denizen": {
+    "layers": {
+      "Back": 11,
+      "Core": 2,
+      "Body": 15,
+      "AspectFace": 14,
+      "Mouth": 15,
+      "Eyes": 19,
+      "Other": 10
+    }
+  },
+
+  "Dad": {
+    "layers": {
+      "Base": 0,
+      "Hat": 14,
+      "Nose": 10,
+      "Shirt": 6,
+      "Pants": 10
+    }
+  },
+
+  "Mom": {
+    "layers": {
+      "Base": 0,
+      "Outfit": 11,
+      "Mouth": 9,
+      "Drink": 7,
+      "Hair": 14
+    }
+  },
+
+  "Bro": {
+    "layers": {
+      "Base": 0,
+      "Outfit": 6,
+      "Hat": 5,
+      "Glasses": 7,
+      "Hair": 5
+    }
+  },
+
+  "Hiveswap": {
+    "layers": {
+      "HairFront": 19,
+      "HairBack": 19,
+      "LeftFin": 1,
+      "RightFin": 1,
+      "Body": 12,
+      "Glasses": 4,
+      "FacePaint": 5,
+      "EyeBrows": 6,
+      "LeftEye": 13,
+      "RightEye": 13,
+      "LeftHorn": 11,
+      "RightHorn": 11,
+      "Mouth": 22
+    }
+  },
+
+  "Pigeon": {
+    "layers": {
+      "Body": 1,
+      "Head": 3,
+      "Wing": 1,
+      "Tail": 0
+    }
+  },
+
+  "Satyr": {
+    "defaultBody": 48,
+    "bannedBodies": [96,219,221,223,5,11,14,43,50,59,65,66,67,70,72,75,74,98,100,101,102,106,107,109,63,17],
+    "layers": {
+      "SatyrSymbol": 21,
+      "Fluff": 19,
+      "Tail": 9,
+      "LeftHorn": 17,
+      "RightHorn": 17,
+      "FacePattern": 24
+    }
+  },
+
+  "Queen": {
+    "parts": [
+      "Bird",
+      "Bug",
+      "Buggy_As_Fuck_Retro_Game",
+      "Butler",
+      "Cat",
+      "Chihuahua",
+      "Chinchilla",
+      "Clippy",
+      "Cow",
+      "Cowboy",
+      "Doctor",
+      "Dutton",
+      "Fly",
+      "Game_Bro",
+      "Game_Grl",
+      "Gerbil",
+      "Github",
+      "Golfer",
+      "Google",
+      "Horse",
+      "Husky",
+      "Internet_Troll",
+      "Kid_Rock",
+      "Librarian",
+      "Llama",
+      "Mosquito",
+      "Nic_Cage",
+      "Penguin",
+      "Pitbull",
+      "Pomeranian",
+      "Pony",
+      "Praying_Mantis",
+      "Rabbit",
+      "Robot",
+      "Sleuth",
+      "Sloth",
+      "Tissue",
+      "Web_Comic_Creator",
+      "Pigeon",
+      "Octopus",
+      "Worm",
+      "Kitten",
+      "Fish"
+    ]
+  },
+
+  "Duck": {
+    "layers": {
+      "Body": 42,
+      "Beak": 6,
+      "Eyes": 8,
+      "Glasses": 9,
+      "HairFront": 26,
+      "HairBack": 26,
+      "Symbol": 15
+    }
+  },
+
+  "Lamia": {
+    "seaDwellerBodies": [7,8,9,12,13,27,28,29,34,35,39,40,46,50,51,52,60,61],
+    "layers": {
+      "Body": 74
+    }
+  },
+
+  "Monster Pocket": {
+    "layers": {
+      "Body": 3,
+      "LeftArm": 3,
+      "RightArm": 3,
+      "Head": 3
+    }
+  },
+
+  "Superb Suck": {
+    "layers": {
+      "Body": 76,
+      "Face": 38,
+      "Hair": 61,
+      "Symbol": 51,
+      "CanonSymbol": 288
+    }
+  },
+
+  "Virus": {
+    "layers": {
+      "Capsid": 3,
+      "DecoLegs": 2,
+      "Body": 2,
+      "Leg1": 3,
+      "Leg2": 3,
+      "Leg3": 3,
+      "Leg4": 3
+    }
+  },
+
+  "Dog": {
+    "layers": {
+      "Tail": 3,
+      "Body": 4,
+      "ChestFur": 1,
+      "LeftHeadFur": 1,
+      "RightHeadFur": 1,
+      "Head": 1,
+      "LeftEye": 3,
+      "RightEye": 3,
+      "LeftEar": 1,
+      "RightEar": 1,
+      "Snout": 3,
+      "Accessory": 3,
+      "BackLegs": 1,
+      "FrontLegs": 1
+    }
+  },
+
+  "TalkSprite": {
+    "layers": {
+      "HairFront": 6,
+      "HairBack": 6,
+      "Body": 0,
+      "FacePaint": 2,
+      "Brows": 2,
+      "Mouth": 3,
+      "LeftEye": 3,
+      "RightEye": 3,
+      "Nose": 2,
+      "Accessory": 1,
+      "Shirt": 7,
+      "Symbol": 15,
+      "Hood": 11
+    }
+  },
+
+  "EasterEgg": {
+    "layers": {
+      "Base": 113,
+      "Middle": 85,
+      "Bottom": 28,
+      "Top": 35
+    }
+  },
+
+  "HatchedChick": {
+    "layers": {
+      "Base": 46,
+      "Middle": 20,
+      "Bottom": 6,
+      "Top": 61
+    }
+  },
+
+  "Broom": {
+    "layers": {
+      "Handle": 11,
+      "Head": 14
+    }
+  },
+
+  "Cat": {
+    "layers": {
+      "Tail": 25,
+      "Body": 5,
+      "ChestFur": 2,
+      "Head": 1,
+      "LeftEye": 5,
+      "RightEye": 5,
+      "LeftEar": 6,
+      "RightEar": 6,
+      "Snout": 5,
+      "Accessory": 0,
+      "BackLegs": 2,
+      "FrontLegs": 5,
+      "LeftHeadFur": 1,
+      "RightHeadFur": 1
+    }
+  },
+
+  "BlobMonster": {
+    "layers": {
+      "Body": 13,
+      "Horns": 14,
+      "Mouth": 13,
+      "Eyes": 8,
+      "Limb": 8
+    }
+  },
+
+  "Ancestor": {
+    "layers": {
+      "Body": 36,
+      "Fin": 1,
+      "BehindAccessory": 4,
+      "HairBack": 18,
+      "Facepaint": 2,
+      "Mouth": 13,
+      "LeftEye": 7,
+      "RightEye": 7,
+      "FrontAccessory": 5,
+      "HairFront": 18,
+      "LeftHorn": 17,
+      "RightHorn": 17
+    }
+  },
+
+  "OpenBound": {
+    "layers": {
+      "HairFront": 33,
+      "HairBack": 33,
+      "FinLeft": 1,
+      "FinRight": 1,
+      "Body": 40,
+      "Cape": 8,
+      "Mouth": 7,
+      "EyeLeft": 8,
+      "EyeRight": 8,
+      "Accessory": 15,
+      "Accessory2": 15,
+      "HornLeft": 14,
+      "HornRight": 14,
+      "Symbol": 21
+    }
+  },
+
+  "Fek": {
+    "layers": {
+      "Body": 22,
+      "canonSymbol": 288,
+      "Face": 15,
+      "Text": 11,
+      "Glasses": 10,
+      "Hair": 34,
+      "Horns": 17,
+      "Symbol": 20,
+      "FacePaint": 5
+    }
+  },
+
+  "Doc": {
+    "layers": {
+      "Body": 11,
+      "Head": 37,
+      "Accessory": 4,
+      "Legs": 14
+    }
+  }
+}
