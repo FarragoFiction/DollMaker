@@ -131,7 +131,6 @@ Future<Null> init() async {
 }
 
 Future<Null> initTaint() async {
-    window.alert("the taint");
     CanvasElement imageCanvas = new CanvasElement(width: image.width, height: image.height);
     imageCanvas.context2D.drawImage(image,0,0);
     DreamTaint dreamDrawer = new DreamTaint(
@@ -284,15 +283,15 @@ class DreamTaint extends DreamDrawer {
       //if i return here i definitly see a black canvas in the end product
       ImageData boxImageData =sacrificeCanvas.context2D.getImageData(0, 0, sacrificeCanvas.width, sacrificeCanvas.height);
 
-      int maxY = canvas.height;
+      int maxY = (sacrificeCanvas.height).floor();//blindly doubling it for now to make it look right
+
+      int maxX = (sacrificeCanvas.width).floor();//blindly doubling it for now to make it look right
       Uint8ClampedList data = boxImageData.data; //Uint8ClampedList
       int currentGradient = 255;
-      int row = 0;
       for(int i =0; i<data.length; i+=4) {
-          if(i%maxY == 0){
-              row ++;
-          }
-          currentGradient = (255* row/maxY).ceil();
+          int pixelIndex = (i/4).floor();
+          int y = (pixelIndex/maxX).floor();
+          currentGradient = 255-(255* y/maxY).ceil();
           data[i+3] = currentGradient;
       }
       sacrificeCanvas.context2D.putImageData(boxImageData, 0,0);
@@ -313,7 +312,7 @@ class DreamTaint extends DreamDrawer {
           //don't want a clear canvas
           canvas.width = imageCanvas.width;
           canvas.height = imageCanvas.height;
-          canvas.context2D.drawImage(imageCanvas,0,0);
+         // canvas.context2D.drawImage(imageCanvas,0,0);
           CanvasElement sacrifice = new CanvasElement(width: imageCanvas.width, height: imageCanvas.height);
           coverWithGradient(sacrifice);
           canvas.context2D.drawImage(sacrifice,0,0);
