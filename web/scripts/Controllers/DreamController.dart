@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import '../Shipping/Participant.dart';
 import '../Shipping/Trove.dart';
 import 'DollSlurper.dart';
@@ -33,7 +35,11 @@ Future<Null> main() async{
     contents = querySelector("#contents");
     ButtonElement button = new ButtonElement()..text = "Dream?";
     contents.append(button);
+
+    ButtonElement buttonTaint = new ButtonElement()..text = "Dream of Taint?";
+    contents.append(buttonTaint);
     image = await Loader.getResource("images/New_Trees_Background_Plus_Prince.png");
+    //TODO let the input file either be a dream or taint dream
     InputElement fileElement = new InputElement();
     fileElement.type = "file";
     fileElement.classes.add("fileUploadButton");
@@ -58,6 +64,12 @@ Future<Null> main() async{
         button.text = "You're Not Strong Enough To Wake Up";
         button.disabled = true;
         init();
+    });
+
+    buttonTaint.onClick.listen((Event e) {
+        buttonTaint.text = "You're Not Strong Enough To Stop It. You never were.";
+        buttonTaint.disabled = true;
+        initTaint();
     });
 
 
@@ -118,10 +130,21 @@ Future<Null> init() async {
   dreamDrawer.drawNoise();
 }
 
+Future<Null> initTaint() async {
+    window.alert("the taint");
+    CanvasElement imageCanvas = new CanvasElement(width: image.width, height: image.height);
+    imageCanvas.context2D.drawImage(image,0,0);
+    DreamTaint dreamDrawer = new DreamTaint(
+        imageCanvas, canvas,imageWidth, seed);
+    dreamDrawer.noise();
+    dreamDrawer.drawNoise();
+}
+
+
 
 
 class DreamDrawer {
-    CanvasElement image;
+    CanvasElement imageCanvas;
     ImageData imageData;
     CanvasElement canvas;
     double cursorX = 500.0;
@@ -134,7 +157,7 @@ class DreamDrawer {
     Random rand;
 
 
-    DreamDrawer(CanvasElement this.image, CanvasElement this.canvas, int this.imageWidth,int seed) {
+    DreamDrawer(CanvasElement this.imageCanvas, CanvasElement this.canvas, int this.imageWidth,int seed) {
         rand = new Random(seed);
         rand.nextInt(); //init
     }
@@ -196,9 +219,9 @@ class DreamDrawer {
     //TODO draw a square of size imageWidth where the color comes from the image buffer
     Future<Null> drawSquiggles() async {
         if(imageData == null) {
-            imageData=image.context2D.getImageData(0, 0, canvas.width, canvas.height);
+            imageData=imageCanvas.context2D.getImageData(0, 0, canvas.width, canvas.height);
             //don't want a clear canvas
-            canvas.context2D.drawImage(image,0,0);
+            canvas.context2D.drawImage(imageCanvas,0,0);
         }
 
         move();
@@ -218,11 +241,11 @@ class DreamDrawer {
 
     void noise([int amount=666]) {
       if(imageData == null) {
-          imageData=image.context2D.getImageData(0, 0, image.width, image.height);
+          imageData=imageCanvas.context2D.getImageData(0, 0, imageCanvas.width, imageCanvas.height);
           //don't want a clear canvas
-          canvas.width = image.width;
-          canvas.height = image.height;
-          canvas.context2D.drawImage(image,0,0);
+          canvas.width = imageCanvas.width;
+          canvas.height = imageCanvas.height;
+          canvas.context2D.drawImage(imageCanvas,0,0);
       }
       for(int i =0; i<amount; i++) {
           teleport();
@@ -238,4 +261,67 @@ class DreamDrawer {
 
 }
 
+class DreamTaint extends DreamDrawer {
+    int threshold = 255;
+  DreamTaint(CanvasElement image, CanvasElement canvas, int imageWidth, int seed) : super(image, canvas, imageWidth, seed);
+
+  @override
+  Future<Null> drawSquiggles() async {
+      window.alert("HOLY SHIT");
+  }
+
+  @override
+  Future<Null> drawNoise() async {
+
+      new Timer(new Duration(milliseconds: 100), () => drawNoise());
+  }
+
+  //if you give me a canvas i will paint it black and make it gradient
+  void coverWithGradient(CanvasElement sacrificeCanvas) {
+        //TODO go through each pixel and make it solid black wiht an alpha value that slowly decreases based on y.
+      //TODO play around with this later and make it procedural. can be circular or diagnoal or whatever
+      sacrificeCanvas.context2D.fillRect(0,0, sacrificeCanvas.width, sacrificeCanvas.height); //make it a black box
+      //if i return here i definitly see a black canvas in the end product
+      ImageData boxImageData =sacrificeCanvas.context2D.getImageData(0, 0, sacrificeCanvas.width, sacrificeCanvas.height);
+
+      int maxY = canvas.height;
+      Uint8ClampedList data = boxImageData.data; //Uint8ClampedList
+      int currentGradient = 255;
+      int row = 0;
+      for(int i =0; i<data.length; i+=4) {
+          if(i%maxY == 0){
+              row ++;
+          }
+          currentGradient = (255* row/maxY).ceil();
+          data[i+3] = currentGradient;
+      }
+      sacrificeCanvas.context2D.putImageData(boxImageData, 0,0);
+  }
+
+  @override
+  void noise([int speed=1]) {
+      /*
+      TODO
+       take in an image
+    * draw a gradient with alpha over that image
+    * have a variable outside the method called threshold or whatever
+    * if the value (or maybe saturation) is greater than that threshold, display it as a black pixel
+    * animate over time, slowly decreasing that threshold
+       */
+      if(imageData == null) {
+          imageData=imageCanvas.context2D.getImageData(0, 0, imageCanvas.width, imageCanvas.height);
+          //don't want a clear canvas
+          canvas.width = imageCanvas.width;
+          canvas.height = imageCanvas.height;
+          canvas.context2D.drawImage(imageCanvas,0,0);
+          CanvasElement sacrifice = new CanvasElement(width: imageCanvas.width, height: imageCanvas.height);
+          coverWithGradient(sacrifice);
+          canvas.context2D.drawImage(sacrifice,0,0);
+      }
+
+
+
+  }
+
+}
 
