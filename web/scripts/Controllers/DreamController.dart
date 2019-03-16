@@ -33,31 +33,40 @@ int seed =13;
 Future<Null> main() async{
     loadNavbar();
     contents = querySelector("#contents");
+    Element dream = new DivElement();
+    Element taint = new DivElement();
+    contents.append(dream);
+    contents.append(taint);
     ButtonElement button = new ButtonElement()..text = "Dream?";
-    contents.append(button);
+    dream.append(button);
 
     ButtonElement buttonTaint = new ButtonElement()..text = "Dream of Taint?";
-    contents.append(buttonTaint);
+    taint.append(buttonTaint);
     image = await Loader.getResource("images/New_Trees_Background_Plus_Prince.png");
     //TODO let the input file either be a dream or taint dream
     InputElement fileElement = new InputElement();
     fileElement.type = "file";
     fileElement.classes.add("fileUploadButton");
-    contents.append(fileElement);
+    dream.append(fileElement);
+
+    InputElement fileElementTaint = new InputElement();
+    fileElementTaint.type = "file";
+    fileElementTaint.classes.add("fileUploadButton");
+    taint.append(fileElementTaint);
     await Doll.loadFileData();
 
     LabelElement label = new LabelElement()..text = "Doll String";
     TextAreaElement dollUpload = new TextAreaElement();
-    contents.append(label);
-    contents.append(dollUpload);
+    dream.append(label);
+    dream.append(dollUpload);
 
     LabelElement unitLabel = new LabelElement()..text = "Unit Width: $imageWidth";
     RangeInputElement widthElement = new RangeInputElement();
     widthElement.min = "1";
     widthElement.value="$imageWidth";
     widthElement.max="113";
-    contents.append(unitLabel);
-    contents.append(widthElement);
+    dream.append(unitLabel);
+    dream.append(widthElement);
 
     contents.append(canvas);
     button.onClick.listen((Event e) {
@@ -89,6 +98,24 @@ Future<Null> main() async{
             button.text = "You're Not Strong Enough To Wake Up";
             button.disabled = true;
             init();
+        });
+    });
+
+    fileElementTaint.onChange.listen((e) {
+        List<File> loadFiles = fileElementTaint.files;
+        File file = loadFiles.first;
+        FileReader reader = new FileReader();
+        reader.readAsDataUrl(file);
+        print("the file was $file");
+        reader.onLoadEnd.listen((e) {
+            //sparse
+            String loadData = reader.result;
+            seed = loadData.length;
+            //String old = chat.icon.src;
+            image.src = loadData;
+            button.text = "You're Not Strong Enough To Wake Up";
+            button.disabled = true;
+            initTaint();
         });
     });
 
@@ -132,9 +159,11 @@ Future<Null> init() async {
 
 Future<Null> initTaint() async {
     CanvasElement imageCanvas = new CanvasElement(width: image.width, height: image.height);
+    CanvasElement debugCanvas = new CanvasElement(width: image.width, height: image.height);
+    contents.append(debugCanvas);
     imageCanvas.context2D.drawImage(image,0,0);
     DreamTaint dreamDrawer = new DreamTaint(
-        imageCanvas, canvas,imageWidth, seed);
+        imageCanvas, canvas,debugCanvas,imageWidth, seed);
     dreamDrawer.noise();
     dreamDrawer.drawNoise();
 }
@@ -261,22 +290,13 @@ class DreamDrawer {
 }
 
 class DreamTaint extends DreamDrawer {
-    int threshold = 255;
-  DreamTaint(CanvasElement image, CanvasElement canvas, int imageWidth, int seed) : super(image, canvas, imageWidth, seed);
-
-  @override
-  Future<Null> drawSquiggles() async {
-      window.alert("HOLY SHIT");
-  }
-
-  @override
-  Future<Null> drawNoise() async {
-
-      new Timer(new Duration(milliseconds: 100), () => drawNoise());
-  }
+    double currentThreshold = 1.0;
+    CanvasElement debugCanvas;
+    ImageData outputImageData;
+  DreamTaint(CanvasElement image, CanvasElement canvas, CanvasElement this.debugCanvas, int imageWidth, int seed) : super(image, canvas, imageWidth, seed);
 
   //if you give me a canvas i will paint it black and make it gradient
-  void coverWithGradient(CanvasElement sacrificeCanvas) {
+  void coverWithAlphaGradient(CanvasElement sacrificeCanvas) {
         //TODO go through each pixel and make it solid black wiht an alpha value that slowly decreases based on y.
       //TODO play around with this later and make it procedural. can be circular or diagnoal or whatever
       sacrificeCanvas.context2D.fillRect(0,0, sacrificeCanvas.width, sacrificeCanvas.height); //make it a black box
@@ -297,8 +317,76 @@ class DreamTaint extends DreamDrawer {
       sacrificeCanvas.context2D.putImageData(boxImageData, 0,0);
   }
 
-  @override
-  void noise([int speed=1]) {
+    //if you give me a canvas i will paint it black and make it gradient
+    void coverWithLinearGradient(CanvasElement sacrificeCanvas) {
+        //TODO go through each pixel and make it solid black wiht an alpha value that slowly decreases based on y.
+        //TODO play around with this later and make it procedural. can be circular or diagnoal or whatever
+        //sacrificeCanvas.context2D.fillRect(0,0, sacrificeCanvas.width, sacrificeCanvas.height); //make it a black box
+        //if i return here i definitly see a black canvas in the end product
+        ImageData boxImageData =sacrificeCanvas.context2D.getImageData(0, 0, sacrificeCanvas.width, sacrificeCanvas.height);
+        //at + b * (1-t)
+        //t =currentGradient
+        //a and b are the two colors. a is the top color, b is the bottom color
+        //
+        int maxY = (sacrificeCanvas.height).floor();//blindly doubling it for now to make it look right
+
+        int maxX = (sacrificeCanvas.width).floor();//blindly doubling it for now to make it look right
+        Uint8ClampedList data = boxImageData.data; //Uint8ClampedList
+        int startColor = 255;
+        int endColor = 0;
+        for(int i =0; i<data.length; i+=4) {
+            int pixelIndex = (i/4).floor();
+            int y = (pixelIndex/maxX).floor();
+            double t = (y/maxY);
+            int dmsGradientCalc = ((startColor * t) + (endColor * (1-t))).round();
+            data[i+0] = dmsGradientCalc;
+            data[i+1] = dmsGradientCalc;
+            data[i+2] = dmsGradientCalc;
+            data[i+3] = 255;
+
+        }
+        sacrificeCanvas.context2D.putImageData(boxImageData, 0,0);
+    }
+
+    void stepThreshold() {
+      currentThreshold += -1*0.01;
+      if(currentThreshold <= 0) {
+        currentThreshold = 1.0;
+      }
+      print("threshold is ${currentThreshold}");
+    }
+
+    void thresholdFunction() {
+        Uint8ClampedList data = imageData.data; //Uint8ClampedList
+        Uint8ClampedList newData =outputImageData.data;
+
+        for(int i =0; i<data.length; i+=4) {
+            int pixelIndex = (i/4).floor();
+            //its 0 if its above a threshold and 255 otherwise.
+            //its not the raw 0-255 value, but some saturation or something
+            double amount = 0.299 * (data[i]/255) + 0.587 * (data[i+1]/255) + 0.114 * (data[i+2]/255);
+
+            if(amount > currentThreshold) {
+               // window.alert("black");
+                newData[i] = 0;
+                newData[i+1] = 0;
+                newData[i+2] = 0;
+                newData[i+3] = 255;
+            }else {
+                newData[i] = 255;
+                newData[i+1] = 255;
+                newData[i+2] = 255;
+                newData[i+3] = 255;
+            }
+        }
+        canvas.context2D.putImageData(outputImageData, 0,0);
+        stepThreshold();
+
+    }
+
+
+    @override
+  Future<Null> noise([int speed=1]) async {
       /*
       TODO
        take in an image
@@ -308,19 +396,27 @@ class DreamTaint extends DreamDrawer {
     * animate over time, slowly decreasing that threshold
        */
       if(imageData == null) {
-          imageData=imageCanvas.context2D.getImageData(0, 0, imageCanvas.width, imageCanvas.height);
           //don't want a clear canvas
           canvas.width = imageCanvas.width;
           canvas.height = imageCanvas.height;
-         // canvas.context2D.drawImage(imageCanvas,0,0);
+          debugCanvas.width = imageCanvas.width;
+          debugCanvas.height = imageCanvas.height;
+          //canvas.context2D.drawImage(imageCanvas,0,0);
           CanvasElement sacrifice = new CanvasElement(width: imageCanvas.width, height: imageCanvas.height);
-          coverWithGradient(sacrifice);
-          canvas.context2D.drawImage(sacrifice,0,0);
+          coverWithLinearGradient(sacrifice);
+          debugCanvas.context2D.drawImage(sacrifice,0,0);
+          debugCanvas.context2D.globalAlpha = 0.4;
+          debugCanvas.context2D.drawImage(imageCanvas,0,0);
+          debugCanvas.context2D.globalAlpha = 1.0;
+          imageData= debugCanvas.context2D.getImageData(0, 0, debugCanvas.width, debugCanvas.height);
+          outputImageData =canvas.context2D.getImageData(0, 0, canvas.width, canvas.height);
+
       }
+      thresholdFunction();
+      await window.animationFrame;
+      new Timer(new Duration(milliseconds: 90), () => noise);
 
-
-
-  }
+    }
 
 }
 
