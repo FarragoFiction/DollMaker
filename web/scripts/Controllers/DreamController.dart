@@ -33,8 +33,8 @@ int seed =13;
 Future<Null> main() async{
     loadNavbar();
     contents = querySelector("#contents");
-    Element dream = new DivElement();
-    Element taint = new DivElement();
+    Element dream = new DivElement()..classes.add("box");
+    Element taint = new DivElement()..classes.add("box");;
     contents.append(dream);
     contents.append(taint);
     ButtonElement button = new ButtonElement()..text = "Dream?";
@@ -49,10 +49,9 @@ Future<Null> main() async{
     fileElement.classes.add("fileUploadButton");
     dream.append(fileElement);
 
-    InputElement fileElementTaint = new InputElement();
-    fileElementTaint.type = "file";
-    fileElementTaint.classes.add("fileUploadButton");
-    taint.append(fileElementTaint);
+    Element taintUpload = Loader.loadButton(Formats.png, processTaintImage, caption: "Sacrifice an Image to the Taint?");
+
+    taint.append(taintUpload);
     await Doll.loadFileData();
 
     LabelElement label = new LabelElement()..text = "Doll String";
@@ -97,27 +96,12 @@ Future<Null> main() async{
            image.src = loadData;
             button.text = "You're Not Strong Enough To Wake Up";
             button.disabled = true;
+            buttonTaint.disabled = true;
             init();
         });
     });
 
-    fileElementTaint.onChange.listen((e) {
-        List<File> loadFiles = fileElementTaint.files;
-        File file = loadFiles.first;
-        FileReader reader = new FileReader();
-        reader.readAsDataUrl(file);
-        print("the file was $file");
-        reader.onLoadEnd.listen((e) {
-            //sparse
-            String loadData = reader.result;
-            seed = loadData.length;
-            //String old = chat.icon.src;
-            image.src = loadData;
-            button.text = "You're Not Strong Enough To Wake Up";
-            button.disabled = true;
-            initTaint();
-        });
-    });
+
 
     dollUpload.onChange.listen((e) {
 
@@ -134,6 +118,11 @@ Future<Null> main() async{
     });
 
 
+}
+
+void processTaintImage(ImageElement fileElementTaint, String words) {
+        image = fileElementTaint;
+      initTaint();
 }
 
 Future<Null> initDoll(Doll doll) async{

@@ -13,6 +13,11 @@ html, body {
     display: inline-block;
 }
 
+.box{
+    border: 3px solid #6d6d6d;
+    padding: 15px;
+}
+
 button{
     margin: 5px;
 }
