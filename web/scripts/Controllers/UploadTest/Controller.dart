@@ -105,6 +105,9 @@ Future<Null> loadDoll() async {
     //doing it this way ensures no incorrect sized canvas from a default doll.
     if(doll == null) doll =  Doll.randomDollOfType(1);
     CanvasElement canvas = new CanvasElement(width: doll.width, height: doll.height);
+    canvas.style.position = "fixed";
+    canvas.style.left = "0px";
+    canvas.style.top = "0px";
     querySelector("#doll").append(canvas);
     canvas.style.backgroundColor = "#eeeeee";
     if(doll is QueenDoll) {
