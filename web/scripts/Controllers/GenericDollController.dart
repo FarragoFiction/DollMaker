@@ -96,6 +96,8 @@ Future<Null> loadDoll() async {
     if(doll == null) doll =  Doll.randomDollOfType(1);
     CanvasElement canvas = new CanvasElement(width: doll.width, height: doll.height);
     canvas.style.backgroundColor = "#eeeeee";
+    canvas.style.position = "absolute";
+    canvas.style.top= "0px";
     querySelector("#doll").append(canvas);
 
 
