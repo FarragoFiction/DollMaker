@@ -109,6 +109,7 @@ Future<Null> loadDoll() async {
     canvas.style.left = "0px";
     canvas.style.top = "0px";
     querySelector("#doll").append(canvas);
+    querySelector("#doll").style.width = "${canvas.width}px";
     canvas.style.backgroundColor = "#eeeeee";
     if(doll is QueenDoll) {
         controller = new QueenController(doll, canvas);

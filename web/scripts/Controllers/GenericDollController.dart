@@ -80,7 +80,7 @@ void setUpTrollShit() {
 Future<Null> loadDoll() async {
     await Loader.loadManifest();
 
-    print("loading doll");
+    print("loading doll generic");
     String dataString = window.location.search;
     print("dataSTring is $dataString");
     Doll doll;
@@ -98,7 +98,11 @@ Future<Null> loadDoll() async {
     canvas.style.backgroundColor = "#eeeeee";
     canvas.style.position = "absolute";
     canvas.style.top= "0px";
-    querySelector("#doll").append(canvas);
+    Element dollDiv = querySelector("#doll");
+    dollDiv.append(canvas);
+    dollDiv.style.width = "${canvas.width}px";
+
+    print("doll is ${doll.name} with width ${doll.width},  width should be ${dollDiv.style.width}");
 
 
     AnchorElement a = new AnchorElement(href: "viewParts.html?type=${doll.renderingType}");
@@ -144,6 +148,8 @@ Future<Null> loadDoll() async {
     querySelector("title").text = "${doll.name} Doll Maker";
     DivElement credits = new DivElement()..text = "(idea and initial parts by ${doll.originalCreator})";
     querySelector("#doll").append(credits);
+    querySelector("#doll").style.width = "${canvas.width}px";
+
     //makes sure caste/sign bullshit fits
     controller.didTrollBullshit();
 
