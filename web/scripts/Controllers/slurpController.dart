@@ -31,6 +31,7 @@ void todo(String todoString) {
 }
 
 void printAllDollPaths() {
+    print("printing all doll paths");
     for(int i in Doll.allDollTypes) {
         printOneDollPath(Doll.randomDollOfType(i));
     }
