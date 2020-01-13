@@ -2,6 +2,7 @@
 <table><tr><td>
 <a href ="http://www.farragofiction.com"><img width="190px" src = "images/ff_logo.png"></a>
             <Td>
+<img src = 'images/coin_link.png'>Congrats to Anya, the winner of the LOHAE coin raffle!!!
 
             </td>
             </tr>
