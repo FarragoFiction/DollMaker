@@ -9,15 +9,28 @@ environment:
 dependencies:
 
   DollLibCorrect:
-    git: git://github.com/FarragoFiction/DollLibCorrect.git
-  RenderingLib:
-    git: git://github.com/FarragoFiction/RenderingLib.git
-  LoaderLib:
-      git: git://github.com/FarragoFiction/LoaderLib.git
-  TextEngine:
-      git: git://github.com/FarragoFiction/TextEngine.git
+    git:
+      url: git://github.com/FarragoFiction/DollLibCorrect.git
+      ref: Dart-2.2.0
+  BlackJack:
+    git:
+      url: git://github.com/FarragoFiction/BlackJack.git
   CommonLib:
-      git: git://github.com/FarragoFiction/CommonLib.git
+    git:
+      url: git://github.com/FarragoFiction/CommonLib.git
+      ref: Dart-2.2.0
+  TextEngine:
+    git:
+      url: git://github.com/FarragoFiction/TextEngine.git
+      ref: Dart-2.2.0
+  RenderingLib:
+    git:
+      url: git://github.com/FarragoFiction/RenderingLib.git
+      ref: Dart-2.2.0
+  LoaderLib:
+      git:
+        url: git://github.com/FarragoFiction/LoaderLib.git
+        ref: Dart-2.2.0
 
 dev_dependencies:
   build_runner: ^1.0.0

@@ -78,7 +78,6 @@ void setUpTrollShit() {
 }
 
 Future<Null> loadDoll() async {
-    await Loader.loadManifest();
 
     print("loading doll generic");
     String dataString = window.location.search;
